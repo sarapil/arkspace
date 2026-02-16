@@ -1,0 +1,168 @@
+{
+ "actions": [],
+ "autoname": "format:LDOC-{####}",
+ "creation": "2026-02-20 00:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "member",
+  "member_name",
+  "column_break_basic",
+  "document_type",
+  "document_number",
+  "details_section",
+  "issue_date",
+  "expiry_date",
+  "column_break_details",
+  "issuing_authority",
+  "status",
+  "attachment_section",
+  "document_file",
+  "document_file_back",
+  "notes_section",
+  "notes"
+ ],
+ "fields": [
+  {
+   "fieldname": "member",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Member / العميل",
+   "options": "Customer",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "member.customer_name",
+   "fieldname": "member_name",
+   "fieldtype": "Data",
+   "label": "Member Name / اسم العميل",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_basic",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "document_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Document Type / نوع المستند",
+   "options": "National ID / البطاقة الشخصية\nPassport / جواز السفر\nDriver License / رخصة القيادة\nTax Card / البطاقة الضريبية\nCommercial Register / السجل التجاري\nCompany License / ترخيص الشركة\nForeign Company Docs / مستندات شركة أجنبية\nPower of Attorney / توكيل رسمي\nNotarized Document / مستند موثق\nOther / أخرى",
+   "reqd": 1
+  },
+  {
+   "fieldname": "document_number",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Document Number / رقم المستند"
+  },
+  {
+   "fieldname": "details_section",
+   "fieldtype": "Section Break",
+   "label": "Details / التفاصيل"
+  },
+  {
+   "fieldname": "issue_date",
+   "fieldtype": "Date",
+   "label": "Issue Date / تاريخ الإصدار"
+  },
+  {
+   "fieldname": "expiry_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Expiry Date / تاريخ الانتهاء"
+  },
+  {
+   "fieldname": "column_break_details",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "issuing_authority",
+   "fieldtype": "Data",
+   "label": "Issuing Authority / جهة الإصدار"
+  },
+  {
+   "default": "Valid / ساري",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Status / الحالة",
+   "options": "Valid / ساري\nExpired / منتهي\nPending / قيد المراجعة\nRejected / مرفوض"
+  },
+  {
+   "fieldname": "attachment_section",
+   "fieldtype": "Section Break",
+   "label": "Attachments / المرفقات"
+  },
+  {
+   "fieldname": "document_file",
+   "fieldtype": "Attach Image",
+   "label": "Document (Front) / المستند (وجه أمامي)"
+  },
+  {
+   "fieldname": "document_file_back",
+   "fieldtype": "Attach Image",
+   "label": "Document (Back) / المستند (وجه خلفي)"
+  },
+  {
+   "fieldname": "notes_section",
+   "fieldtype": "Section Break",
+   "label": "Notes / ملاحظات",
+   "collapsible": 1
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Small Text",
+   "label": "Notes / ملاحظات"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-02-20 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "ARKSpace Contracts",
+ "name": "Legal Document",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "read": 1,
+   "role": "ARKSpace Admin",
+   "write": 1
+  },
+  {
+   "create": 1,
+   "read": 1,
+   "role": "ARKSpace Manager",
+   "write": 1
+  },
+  {
+   "create": 1,
+   "read": 1,
+   "role": "ARKSpace Sales",
+   "write": 1
+  },
+  {
+   "read": 1,
+   "role": "ARKSpace Front Desk"
+  }
+ ],
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

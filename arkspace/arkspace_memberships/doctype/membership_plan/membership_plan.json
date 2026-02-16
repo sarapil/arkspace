@@ -1,0 +1,210 @@
+{
+ "actions": [],
+ "autoname": "format:MP-{####}",
+ "creation": "2026-02-09 00:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "plan_name",
+  "plan_name_ar",
+  "plan_type",
+  "column_break_basic",
+  "space_type",
+  "is_active",
+  "pricing_section",
+  "monthly_price",
+  "quarterly_price",
+  "yearly_price",
+  "column_break_pricing",
+  "currency",
+  "setup_fee",
+  "benefits_section",
+  "included_hours",
+  "included_credits",
+  "max_guests",
+  "column_break_benefits",
+  "meeting_room_hours",
+  "printing_pages",
+  "storage_gb",
+  "description_section",
+  "description",
+  "description_ar"
+ ],
+ "fields": [
+  {
+   "fieldname": "plan_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Plan Name",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "plan_name_ar",
+   "fieldtype": "Data",
+   "label": "Plan Name (Arabic)"
+  },
+  {
+   "fieldname": "plan_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Plan Type",
+   "options": "Hot Desk\nDedicated Desk\nPrivate Office\nMeeting Room\nEvent Space\nVirtual Office",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_basic",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "space_type",
+   "fieldtype": "Link",
+   "label": "Space Type",
+   "options": "Space Type"
+  },
+  {
+   "default": "1",
+   "fieldname": "is_active",
+   "fieldtype": "Check",
+   "label": "Active"
+  },
+  {
+   "fieldname": "pricing_section",
+   "fieldtype": "Section Break",
+   "label": "Pricing"
+  },
+  {
+   "fieldname": "monthly_price",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Monthly Price",
+   "reqd": 1
+  },
+  {
+   "fieldname": "quarterly_price",
+   "fieldtype": "Currency",
+   "label": "Quarterly Price"
+  },
+  {
+   "fieldname": "yearly_price",
+   "fieldtype": "Currency",
+   "label": "Yearly Price"
+  },
+  {
+   "fieldname": "column_break_pricing",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "currency",
+   "fieldtype": "Link",
+   "label": "Currency",
+   "options": "Currency"
+  },
+  {
+   "fieldname": "setup_fee",
+   "fieldtype": "Currency",
+   "label": "Setup Fee"
+  },
+  {
+   "fieldname": "benefits_section",
+   "fieldtype": "Section Break",
+   "label": "Benefits"
+  },
+  {
+   "default": "0",
+   "fieldname": "included_hours",
+   "fieldtype": "Int",
+   "label": "Included Hours / Month"
+  },
+  {
+   "default": "0",
+   "fieldname": "included_credits",
+   "fieldtype": "Int",
+   "label": "Included Credits"
+  },
+  {
+   "default": "0",
+   "fieldname": "max_guests",
+   "fieldtype": "Int",
+   "label": "Max Guests"
+  },
+  {
+   "fieldname": "column_break_benefits",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "meeting_room_hours",
+   "fieldtype": "Int",
+   "label": "Meeting Room Hours / Month"
+  },
+  {
+   "default": "0",
+   "fieldname": "printing_pages",
+   "fieldtype": "Int",
+   "label": "Printing Pages / Month"
+  },
+  {
+   "default": "0",
+   "fieldname": "storage_gb",
+   "fieldtype": "Float",
+   "label": "Cloud Storage (GB)"
+  },
+  {
+   "fieldname": "description_section",
+   "fieldtype": "Section Break",
+   "label": "Description"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Text Editor",
+   "label": "Description"
+  },
+  {
+   "fieldname": "description_ar",
+   "fieldtype": "Text Editor",
+   "label": "Description (Arabic)"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-02-09 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "ARKSpace Memberships",
+ "name": "Membership Plan",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "read": 1,
+   "role": "ARKSpace Admin",
+   "write": 1
+  },
+  {
+   "read": 1,
+   "role": "ARKSpace Manager",
+   "write": 1
+  },
+  {
+   "read": 1,
+   "role": "ARKSpace Sales"
+  }
+ ],
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

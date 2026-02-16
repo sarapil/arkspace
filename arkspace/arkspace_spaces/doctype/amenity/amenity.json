@@ -1,0 +1,133 @@
+{
+ "actions": [],
+ "autoname": "field:amenity_name",
+ "creation": "2026-02-09 00:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "amenity_name",
+  "amenity_name_ar",
+  "column_break_01",
+  "icon",
+  "color",
+  "pricing_section",
+  "hourly_price",
+  "daily_price",
+  "column_break_pricing",
+  "monthly_price",
+  "is_complimentary",
+  "description_section",
+  "description"
+ ],
+ "fields": [
+  {
+   "fieldname": "amenity_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Amenity Name",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "amenity_name_ar",
+   "fieldtype": "Data",
+   "label": "\u0627\u0644\u0627\u0633\u0645 \u0628\u0627\u0644\u0639\u0631\u0628\u064a\u0629"
+  },
+  {
+   "fieldname": "column_break_01",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "fa-solid fa-circle-check",
+   "fieldname": "icon",
+   "fieldtype": "Data",
+   "label": "Icon"
+  },
+  {
+   "default": "#2563EB",
+   "fieldname": "color",
+   "fieldtype": "Color",
+   "label": "Color"
+  },
+  {
+   "fieldname": "pricing_section",
+   "fieldtype": "Section Break",
+   "label": "Pricing"
+  },
+  {
+   "default": "0",
+   "fieldname": "hourly_price",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Hourly Price"
+  },
+  {
+   "default": "0",
+   "fieldname": "daily_price",
+   "fieldtype": "Currency",
+   "label": "Daily Price"
+  },
+  {
+   "fieldname": "column_break_pricing",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "monthly_price",
+   "fieldtype": "Currency",
+   "label": "Monthly Price"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_complimentary",
+   "fieldtype": "Check",
+   "description": "If checked, this amenity is free with any booking",
+   "label": "Complimentary"
+  },
+  {
+   "fieldname": "description_section",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Small Text",
+   "label": "Description"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-02-09 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "ARKSpace Spaces",
+ "name": "Amenity",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "read": 1,
+   "role": "ARKSpace Admin",
+   "write": 1
+  },
+  {
+   "read": 1,
+   "role": "ARKSpace Manager"
+  }
+ ],
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "amenity_name"
+}

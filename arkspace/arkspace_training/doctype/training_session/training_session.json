@@ -1,0 +1,231 @@
+{
+ "actions": [],
+ "autoname": "naming_series:",
+ "creation": "2026-01-15 10:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "title",
+  "training_module",
+  "column_break_1",
+  "status",
+  "session_date",
+  "start_time",
+  "end_time",
+  "section_break_venue",
+  "venue",
+  "space",
+  "branch",
+  "column_break_2",
+  "max_participants",
+  "registered_count",
+  "instructor",
+  "section_break_details",
+  "description",
+  "notes",
+  "section_break_settings",
+  "is_online",
+  "meeting_url",
+  "is_free",
+  "fee_amount",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "label": "Naming Series",
+   "options": "TS-.YYYY.-.#####",
+   "default": "TS-.YYYY.-.#####"
+  },
+  {
+   "fieldname": "title",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Session Title",
+   "reqd": 1
+  },
+  {
+   "fieldname": "training_module",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Training Module",
+   "options": "Training Module",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Status",
+   "options": "Scheduled\nIn Progress\nCompleted\nCancelled",
+   "default": "Scheduled"
+  },
+  {
+   "fieldname": "session_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Session Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "start_time",
+   "fieldtype": "Time",
+   "label": "Start Time",
+   "reqd": 1
+  },
+  {
+   "fieldname": "end_time",
+   "fieldtype": "Time",
+   "label": "End Time",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_venue",
+   "fieldtype": "Section Break",
+   "label": "Venue"
+  },
+  {
+   "fieldname": "venue",
+   "fieldtype": "Data",
+   "label": "Venue Name"
+  },
+  {
+   "fieldname": "space",
+   "fieldtype": "Link",
+   "label": "Space",
+   "options": "Co-working Space"
+  },
+  {
+   "fieldname": "branch",
+   "fieldtype": "Link",
+   "label": "Branch",
+   "options": "Branch"
+  },
+  {
+   "fieldname": "column_break_2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "max_participants",
+   "fieldtype": "Int",
+   "label": "Max Participants",
+   "default": "20"
+  },
+  {
+   "fieldname": "registered_count",
+   "fieldtype": "Int",
+   "label": "Registered",
+   "read_only": 1,
+   "default": "0"
+  },
+  {
+   "fieldname": "instructor",
+   "fieldtype": "Data",
+   "label": "Instructor"
+  },
+  {
+   "fieldname": "section_break_details",
+   "fieldtype": "Section Break",
+   "label": "Details"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Text Editor",
+   "label": "Description"
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Text",
+   "label": "Session Notes"
+  },
+  {
+   "fieldname": "section_break_settings",
+   "fieldtype": "Section Break",
+   "label": "Settings"
+  },
+  {
+   "fieldname": "is_online",
+   "fieldtype": "Check",
+   "label": "Online Session",
+   "default": "0"
+  },
+  {
+   "fieldname": "meeting_url",
+   "fieldtype": "Data",
+   "label": "Meeting URL",
+   "depends_on": "eval:doc.is_online"
+  },
+  {
+   "fieldname": "is_free",
+   "fieldtype": "Check",
+   "label": "Free Session",
+   "default": "1"
+  },
+  {
+   "fieldname": "fee_amount",
+   "fieldtype": "Currency",
+   "label": "Fee Amount",
+   "depends_on": "eval:!doc.is_free"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Training Session",
+   "print_hide": 1,
+   "read_only": 1
+  }
+ ],
+ "icon": "fa-solid fa-chalkboard-teacher",
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2026-01-15 10:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "ARKSpace Training",
+ "name": "Training Session",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "cancel": 1,
+   "create": 1,
+   "read": 1,
+   "report": 1,
+   "role": "ARKSpace Admin",
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "read": 1,
+   "role": "ARKSpace Member"
+  }
+ ],
+ "sort_field": "session_date",
+ "sort_order": "DESC",
+ "title_field": "title",
+ "track_changes": 1
+}

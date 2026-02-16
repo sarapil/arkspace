@@ -1,0 +1,152 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:badge_name",
+ "creation": "2026-01-15 10:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "badge_name",
+  "badge_code",
+  "column_break_1",
+  "category",
+  "level",
+  "points",
+  "section_break_desc",
+  "description",
+  "criteria",
+  "section_break_media",
+  "icon",
+  "image",
+  "section_break_stats",
+  "total_awarded",
+  "is_active"
+ ],
+ "fields": [
+  {
+   "fieldname": "badge_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Badge Name",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "badge_code",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Badge Code",
+   "unique": 1
+  },
+  {
+   "fieldname": "column_break_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "category",
+   "fieldtype": "Select",
+   "label": "Category",
+   "options": "\nCompletion\nStreak\nMastery\nCommunity\nSpecial",
+   "reqd": 1
+  },
+  {
+   "fieldname": "level",
+   "fieldtype": "Select",
+   "label": "Level",
+   "options": "Bronze\nSilver\nGold\nPlatinum",
+   "default": "Bronze"
+  },
+  {
+   "fieldname": "points",
+   "fieldtype": "Int",
+   "label": "Points",
+   "default": "10"
+  },
+  {
+   "fieldname": "section_break_desc",
+   "fieldtype": "Section Break",
+   "label": "Description"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Text Editor",
+   "label": "Description"
+  },
+  {
+   "fieldname": "criteria",
+   "fieldtype": "Small Text",
+   "label": "Award Criteria"
+  },
+  {
+   "fieldname": "section_break_media",
+   "fieldtype": "Section Break",
+   "label": "Media"
+  },
+  {
+   "fieldname": "icon",
+   "fieldtype": "Data",
+   "label": "Icon Class",
+   "description": "FontAwesome class e.g. fa-solid fa-trophy"
+  },
+  {
+   "fieldname": "image",
+   "fieldtype": "Attach Image",
+   "label": "Badge Image"
+  },
+  {
+   "fieldname": "section_break_stats",
+   "fieldtype": "Section Break",
+   "label": "Statistics"
+  },
+  {
+   "fieldname": "total_awarded",
+   "fieldtype": "Int",
+   "label": "Total Awarded",
+   "read_only": 1,
+   "default": "0"
+  },
+  {
+   "fieldname": "is_active",
+   "fieldtype": "Check",
+   "label": "Active",
+   "default": "1"
+  }
+ ],
+ "icon": "fa-solid fa-award",
+ "image_field": "image",
+ "links": [],
+ "modified": "2026-01-15 10:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "ARKSpace Training",
+ "name": "Training Badge",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "read": 1,
+   "role": "ARKSpace Admin",
+   "write": 1
+  },
+  {
+   "read": 1,
+   "role": "ARKSpace Member"
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "title_field": "badge_name",
+ "track_changes": 1
+}

@@ -1,0 +1,859 @@
+# ARKSpace Arabic Translations
+# ترجمات ARKSpace العربية
+# Copyright (c) 2026, ARKSpace Team
+# This file is distributed under the same license as the ARKSpace package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: ARKSpace 5.0.0\n"
+"Report-Msgid-Bugs-To: dev@arkspace.io\n"
+"POT-Creation-Date: 2026-02-15 00:00+0400\n"
+"PO-Revision-Date: 2026-02-15 00:00+0400\n"
+"Last-Translator: ARKSpace Team <dev@arkspace.io>\n"
+"Language-Team: Arabic\n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
+
+# ─── App General ───────────────────────────────────────
+msgid "ARKSpace"
+msgstr "أرك سبيس"
+
+msgid "Enterprise Co-Working Space Management"
+msgstr "إدارة مساحات العمل المشتركة للمؤسسات"
+
+# ─── Workspace ─────────────────────────────────────────
+msgid "ARKSpace Management"
+msgstr "إدارة أرك سبيس"
+
+msgid "Spaces"
+msgstr "المساحات"
+
+msgid "Bookings & Members"
+msgstr "الحجوزات والأعضاء"
+
+msgid "CRM & Sales"
+msgstr "المبيعات وإدارة العلاقات"
+
+msgid "Reports & Analytics"
+msgstr "التقارير والتحليلات"
+
+msgid "Settings & Configuration"
+msgstr "الإعدادات والتكوين"
+
+# ─── DocTypes ──────────────────────────────────────────
+msgid "Co-working Space"
+msgstr "مساحة عمل مشتركة"
+
+msgid "Space Type"
+msgstr "نوع المساحة"
+
+msgid "Space Booking"
+msgstr "حجز مساحة"
+
+msgid "Amenity"
+msgstr "مرفق"
+
+msgid "Membership"
+msgstr "عضوية"
+
+msgid "Membership Plan"
+msgstr "خطة العضوية"
+
+msgid "Member Credit Wallet"
+msgstr "محفظة رصيد العضو"
+
+msgid "Credit Transaction"
+msgstr "معاملة الرصيد"
+
+msgid "Workspace Lead"
+msgstr "عميل محتمل"
+
+msgid "Workspace Tour"
+msgstr "جولة في المساحة"
+
+msgid "ARKSpace Settings"
+msgstr "إعدادات أرك سبيس"
+
+msgid "Design Configuration"
+msgstr "إعدادات التصميم"
+
+msgid "Training Module"
+msgstr "وحدة تدريبية"
+
+msgid "Training Session"
+msgstr "جلسة تدريبية"
+
+msgid "Training Badge"
+msgstr "شارة تدريبية"
+
+# ─── Fields — Co-working Space ─────────────────────────
+msgid "Space Name"
+msgstr "اسم المساحة"
+
+msgid "Branch"
+msgstr "الفرع"
+
+msgid "Floor"
+msgstr "الطابق"
+
+msgid "Space Number"
+msgstr "رقم المساحة"
+
+msgid "Capacity"
+msgstr "السعة"
+
+msgid "Capacity & Size"
+msgstr "السعة والمساحة"
+
+msgid "Area (sqm)"
+msgstr "المساحة (م²)"
+
+msgid "Pricing"
+msgstr "التسعير"
+
+msgid "Hourly Rate"
+msgstr "السعر بالساعة"
+
+msgid "Daily Rate"
+msgstr "السعر اليومي"
+
+msgid "Monthly Rate"
+msgstr "السعر الشهري"
+
+msgid "Status"
+msgstr "الحالة"
+
+msgid "Available"
+msgstr "متاح"
+
+msgid "Occupied"
+msgstr "مشغول"
+
+msgid "Maintenance"
+msgstr "صيانة"
+
+msgid "Reserved"
+msgstr "محجوز"
+
+msgid "Current Member"
+msgstr "العضو الحالي"
+
+msgid "Amenities"
+msgstr "المرافق"
+
+msgid "Media"
+msgstr "الوسائط"
+
+msgid "Main Image"
+msgstr "الصورة الرئيسية"
+
+msgid "Gallery"
+msgstr "المعرض"
+
+# ─── Fields — Space Booking ────────────────────────────
+msgid "Booking ID"
+msgstr "رقم الحجز"
+
+msgid "Space"
+msgstr "المساحة"
+
+msgid "Member"
+msgstr "العضو"
+
+msgid "Booking Type"
+msgstr "نوع الحجز"
+
+msgid "Hourly"
+msgstr "بالساعة"
+
+msgid "Daily"
+msgstr "يومي"
+
+msgid "Monthly"
+msgstr "شهري"
+
+msgid "Time"
+msgstr "الوقت"
+
+msgid "Start"
+msgstr "البداية"
+
+msgid "End"
+msgstr "النهاية"
+
+msgid "Duration (hours)"
+msgstr "المدة (ساعات)"
+
+msgid "Billing"
+msgstr "الفواتير"
+
+msgid "Rate"
+msgstr "السعر"
+
+msgid "Total Amount"
+msgstr "المبلغ الإجمالي"
+
+msgid "Discount %"
+msgstr "نسبة الخصم %"
+
+msgid "Net Amount"
+msgstr "المبلغ الصافي"
+
+msgid "Pending"
+msgstr "قيد الانتظار"
+
+msgid "Confirmed"
+msgstr "مؤكد"
+
+msgid "Checked In"
+msgstr "تم الوصول"
+
+msgid "Checked Out"
+msgstr "تم المغادرة"
+
+msgid "Cancelled"
+msgstr "ملغى"
+
+msgid "No Show"
+msgstr "لم يحضر"
+
+msgid "Completed"
+msgstr "مكتمل"
+
+msgid "Checked In At"
+msgstr "وقت الوصول"
+
+msgid "Checked Out At"
+msgstr "وقت المغادرة"
+
+msgid "Sales Invoice"
+msgstr "فاتورة المبيعات"
+
+msgid "Add-on Amenities"
+msgstr "المرافق الإضافية"
+
+msgid "Amenity Total"
+msgstr "إجمالي المرافق"
+
+# ─── Fields — Amenity ──────────────────────────────────
+msgid "Amenity Name"
+msgstr "اسم المرفق"
+
+msgid "Icon"
+msgstr "أيقونة"
+
+msgid "Color"
+msgstr "اللون"
+
+msgid "Description"
+msgstr "الوصف"
+
+msgid "Hourly Price"
+msgstr "سعر الساعة"
+
+msgid "Daily Price"
+msgstr "السعر اليومي"
+
+msgid "Monthly Price"
+msgstr "السعر الشهري"
+
+msgid "Complimentary"
+msgstr "مجاني"
+
+# ─── Fields — Membership ──────────────────────────────
+msgid "Membership Plan"
+msgstr "خطة العضوية"
+
+msgid "Billing Cycle"
+msgstr "دورة الفوترة"
+
+msgid "Quarterly"
+msgstr "ربع سنوي"
+
+msgid "Yearly"
+msgstr "سنوي"
+
+msgid "Start Date"
+msgstr "تاريخ البداية"
+
+msgid "End Date"
+msgstr "تاريخ النهاية"
+
+msgid "Auto Renew"
+msgstr "تجديد تلقائي"
+
+msgid "Active"
+msgstr "نشط"
+
+msgid "Expired"
+msgstr "منتهي"
+
+msgid "Suspended"
+msgstr "موقف"
+
+msgid "Draft"
+msgstr "مسودة"
+
+msgid "Initial Credits"
+msgstr "الرصيد الأولي"
+
+msgid "Credit Wallet"
+msgstr "محفظة الرصيد"
+
+# ─── Fields — Membership Plan ─────────────────────────
+msgid "Plan Name"
+msgstr "اسم الخطة"
+
+msgid "Plan Type"
+msgstr "نوع الخطة"
+
+msgid "Hot Desk"
+msgstr "مكتب مشترك"
+
+msgid "Dedicated Desk"
+msgstr "مكتب مخصص"
+
+msgid "Private Office"
+msgstr "مكتب خاص"
+
+msgid "Meeting Room"
+msgstr "غرفة اجتماعات"
+
+msgid "Event Space"
+msgstr "قاعة فعاليات"
+
+msgid "Virtual Office"
+msgstr "مكتب افتراضي"
+
+msgid "Setup Fee"
+msgstr "رسوم التأسيس"
+
+msgid "Included Hours"
+msgstr "الساعات المشمولة"
+
+msgid "Included Credits"
+msgstr "الرصيد المشمول"
+
+msgid "Max Guests"
+msgstr "الحد الأقصى للضيوف"
+
+# ─── Fields — Credit Wallet ───────────────────────────
+msgid "Total Credits"
+msgstr "إجمالي الرصيد"
+
+msgid "Used Credits"
+msgstr "الرصيد المستخدم"
+
+msgid "Available Credits"
+msgstr "الرصيد المتاح"
+
+msgid "Transactions"
+msgstr "المعاملات"
+
+msgid "Credit"
+msgstr "إضافة"
+
+msgid "Debit"
+msgstr "خصم"
+
+msgid "Refund"
+msgstr "استرداد"
+
+# ─── Fields — Workspace Lead ─────────────────────────
+msgid "Lead Name"
+msgstr "اسم العميل المحتمل"
+
+msgid "Email"
+msgstr "البريد الإلكتروني"
+
+msgid "Phone"
+msgstr "الهاتف"
+
+msgid "Source"
+msgstr "المصدر"
+
+msgid "Website"
+msgstr "الموقع الإلكتروني"
+
+msgid "Referral"
+msgstr "إحالة"
+
+msgid "Walk-in"
+msgstr "زيارة مباشرة"
+
+msgid "Social Media"
+msgstr "وسائل التواصل"
+
+msgid "New"
+msgstr "جديد"
+
+msgid "Contacted"
+msgstr "تم التواصل"
+
+msgid "Tour Scheduled"
+msgstr "جولة مجدولة"
+
+msgid "Negotiating"
+msgstr "تفاوض"
+
+msgid "Converted"
+msgstr "تم التحويل"
+
+msgid "Lost"
+msgstr "خسارة"
+
+msgid "Budget Monthly"
+msgstr "الميزانية الشهرية"
+
+msgid "Team Size"
+msgstr "حجم الفريق"
+
+msgid "Converted Customer"
+msgstr "العميل المحول"
+
+# ─── Actions & Buttons ────────────────────────────────
+msgid "Actions"
+msgstr "الإجراءات"
+
+msgid "Check In"
+msgstr "تسجيل الوصول"
+
+msgid "Check Out"
+msgstr "تسجيل المغادرة"
+
+msgid "Book"
+msgstr "حجز"
+
+msgid "Book Now"
+msgstr "احجز الآن"
+
+msgid "New Booking"
+msgstr "حجز جديد"
+
+msgid "Cancel"
+msgstr "إلغاء"
+
+msgid "Submit"
+msgstr "اعتماد"
+
+msgid "Save"
+msgstr "حفظ"
+
+msgid "Refresh"
+msgstr "تحديث"
+
+msgid "Convert to Customer"
+msgstr "تحويل لعميل"
+
+msgid "Schedule Tour"
+msgstr "جدولة جولة"
+
+# ─── Bulk Operations ──────────────────────────────────
+msgid "Bulk Check In"
+msgstr "تسجيل وصول جماعي"
+
+msgid "Bulk Check Out"
+msgstr "تسجيل مغادرة جماعي"
+
+msgid "Bulk Cancel"
+msgstr "إلغاء جماعي"
+
+msgid "Bulk No Show"
+msgstr "عدم حضور جماعي"
+
+msgid "Please select bookings first"
+msgstr "يرجى تحديد الحجوزات أولاً"
+
+msgid "Check in {0} booking(s)?"
+msgstr "تسجيل وصول {0} حجز(حجوزات)؟"
+
+msgid "Check out {0} booking(s)?"
+msgstr "تسجيل مغادرة {0} حجز(حجوزات)؟"
+
+msgid "Cancel {0} booking(s)? This cannot be undone."
+msgstr "إلغاء {0} حجز(حجوزات)؟ لا يمكن التراجع."
+
+msgid "Mark {0} booking(s) as No Show?"
+msgstr "تحديد {0} حجز(حجوزات) كلم يحضر؟"
+
+msgid "{0}: {1} succeeded"
+msgstr "{0}: نجح {1}"
+
+msgid ", {0} failed"
+msgstr "، فشل {0}"
+
+msgid "Bulk {0} Result"
+msgstr "نتيجة {0} الجماعي"
+
+# ─── Floor Plan ───────────────────────────────────────
+msgid "Floor Plan — مخطط الطابق"
+msgstr "مخطط الطابق"
+
+msgid "Total"
+msgstr "الإجمالي"
+
+msgid "available"
+msgstr "متاح"
+
+msgid "total"
+msgstr "إجمالي"
+
+msgid "No spaces found"
+msgstr "لا توجد مساحات"
+
+msgid "Add Co-working Spaces to see them on the floor plan."
+msgstr "أضف مساحات عمل مشتركة لعرضها على مخطط الطابق."
+
+msgid "Quick Book — {0}"
+msgstr "حجز سريع — {0}"
+
+msgid "Booking {0} created!"
+msgstr "تم إنشاء الحجز {0}!"
+
+# ─── Setup Wizard ─────────────────────────────────────
+msgid "Welcome to ARKSpace — مرحباً بكم"
+msgstr "مرحباً بكم في أرك سبيس"
+
+msgid "Configure your co-working space management system."
+msgstr "قم بتكوين نظام إدارة مساحات العمل المشتركة."
+
+msgid "Let's set up your co-working space in a few easy steps."
+msgstr "دعنا نقوم بإعداد مساحة العمل في خطوات سهلة."
+
+msgid "Workspace Name"
+msgstr "اسم مساحة العمل"
+
+msgid "The name of your co-working space brand"
+msgstr "اسم العلامة التجارية لمساحة العمل"
+
+msgid "Default Currency"
+msgstr "العملة الافتراضية"
+
+msgid "Timezone"
+msgstr "المنطقة الزمنية"
+
+msgid "Branches — الفروع"
+msgstr "الفروع"
+
+msgid "Add your co-working space locations. You can add more later."
+msgstr "أضف مواقع مساحات العمل. يمكنك إضافة المزيد لاحقاً."
+
+msgid "Main Branch"
+msgstr "الفرع الرئيسي"
+
+msgid "Branch 2 (Optional)"
+msgstr "الفرع 2 (اختياري)"
+
+msgid "Branch 3 (Optional)"
+msgstr "الفرع 3 (اختياري)"
+
+msgid "Space Types — أنواع المساحات"
+msgstr "أنواع المساحات"
+
+msgid "Select the types of spaces you offer."
+msgstr "اختر أنواع المساحات التي تقدمها."
+
+msgid "Hot Desk — مكتب مشترك"
+msgstr "مكتب مشترك"
+
+msgid "Dedicated Desk — مكتب مخصص"
+msgstr "مكتب مخصص"
+
+msgid "Private Office — مكتب خاص"
+msgstr "مكتب خاص"
+
+msgid "Meeting Room — غرفة اجتماعات"
+msgstr "غرفة اجتماعات"
+
+msgid "Event Space — قاعة فعاليات"
+msgstr "قاعة فعاليات"
+
+msgid "Virtual Office — مكتب افتراضي"
+msgstr "مكتب افتراضي"
+
+msgid "First Membership Plan — خطة العضوية الأولى"
+msgstr "خطة العضوية الأولى"
+
+msgid "Create your first membership plan to get started."
+msgstr "أنشئ أول خطة عضوية للبدء."
+
+msgid "Basic Hot Desk"
+msgstr "مكتب مشترك أساسي"
+
+# ─── Portal ───────────────────────────────────────────
+msgid "Welcome"
+msgstr "مرحباً"
+
+msgid "No membership found"
+msgstr "لم يتم العثور على عضوية"
+
+msgid "Contact us to set up your membership and start using ARKSpace."
+msgstr "تواصل معنا لإعداد عضويتك وبدء استخدام أرك سبيس."
+
+msgid "Active Memberships"
+msgstr "العضويات النشطة"
+
+msgid "Total Bookings"
+msgstr "إجمالي الحجوزات"
+
+msgid "Total Spent"
+msgstr "إجمالي الإنفاق"
+
+msgid "Upcoming Bookings"
+msgstr "الحجوزات القادمة"
+
+msgid "Recent Bookings"
+msgstr "الحجوزات الأخيرة"
+
+msgid "No active memberships"
+msgstr "لا توجد عضويات نشطة"
+
+msgid "No upcoming bookings"
+msgstr "لا توجد حجوزات قادمة"
+
+msgid "No recent bookings"
+msgstr "لا توجد حجوزات سابقة"
+
+msgid "ARKSpace — Member Portal"
+msgstr "أرك سبيس — بوابة الأعضاء"
+
+msgid "Book a Space"
+msgstr "حجز مساحة"
+
+msgid "Booking created: {0}"
+msgstr "تم إنشاء الحجز: {0}"
+
+msgid "Booking failed. Please check availability."
+msgstr "فشل الحجز. يرجى التحقق من التوفر."
+
+msgid "Booking cancelled successfully"
+msgstr "تم إلغاء الحجز بنجاح"
+
+msgid "Failed to cancel booking"
+msgstr "فشل إلغاء الحجز"
+
+msgid "Are you sure you want to cancel this booking?"
+msgstr "هل أنت متأكد من إلغاء هذا الحجز؟"
+
+msgid "No spaces available at the moment."
+msgstr "لا توجد مساحات متاحة حالياً."
+
+msgid "Notes"
+msgstr "ملاحظات"
+
+# ─── Reports ──────────────────────────────────────────
+msgid "Revenue Summary"
+msgstr "ملخص الإيرادات"
+
+msgid "Space Occupancy"
+msgstr "إشغال المساحات"
+
+msgid "Membership Analytics"
+msgstr "تحليلات العضوية"
+
+# ─── Workflows ────────────────────────────────────────
+msgid "Approve"
+msgstr "موافقة"
+
+msgid "Reject"
+msgstr "رفض"
+
+msgid "Suspend"
+msgstr "تعليق"
+
+msgid "Reactivate"
+msgstr "إعادة تفعيل"
+
+msgid "Renew"
+msgstr "تجديد"
+
+# ─── Notifications ────────────────────────────────────
+msgid "Booking Confirmation"
+msgstr "تأكيد الحجز"
+
+msgid "Membership Welcome"
+msgstr "ترحيب بالعضوية"
+
+msgid "Membership Expiry Reminder"
+msgstr "تذكير انتهاء العضوية"
+
+msgid "Booking Cancelled"
+msgstr "حجز ملغى"
+
+# ─── Print Formats ────────────────────────────────────
+msgid "Membership Card"
+msgstr "بطاقة العضوية"
+
+msgid "Membership Receipt"
+msgstr "إيصال العضوية"
+
+# ─── Validation Messages ──────────────────────────────
+msgid "End time must be after start time"
+msgstr "يجب أن يكون وقت النهاية بعد وقت البداية"
+
+msgid "Space {0} is already booked for this time period (Booking: {1})"
+msgstr "المساحة {0} محجوزة بالفعل لهذه الفترة (الحجز: {1})"
+
+msgid "No {0} rate configured for space {1}"
+msgstr "لا يوجد سعر {0} مُعد للمساحة {1}"
+
+msgid "Booking must be submitted before check-in"
+msgstr "يجب اعتماد الحجز قبل تسجيل الوصول"
+
+msgid "Only Confirmed bookings can be checked in. Current status: {0}"
+msgstr "يمكن تسجيل وصول الحجوزات المؤكدة فقط. الحالة الحالية: {0}"
+
+msgid "Booking must be submitted"
+msgstr "يجب اعتماد الحجز"
+
+msgid "Only Checked In bookings can be checked out. Current status: {0}"
+msgstr "يمكن تسجيل مغادرة الحجوزات المسجلة فقط. الحالة الحالية: {0}"
+
+msgid "Cannot cancel before submitting"
+msgstr "لا يمكن الإلغاء قبل الاعتماد"
+
+msgid "Insufficient credits"
+msgstr "رصيد غير كافٍ"
+
+msgid "Status is Converted but no customer linked"
+msgstr "الحالة محولة لكن لا يوجد عميل مرتبط"
+
+msgid "Please login to access the member portal"
+msgstr "يرجى تسجيل الدخول للوصول إلى بوابة الأعضاء"
+
+# ─── Roles ────────────────────────────────────────────
+msgid "ARKSpace Admin"
+msgstr "مدير أرك سبيس"
+
+msgid "ARKSpace Manager"
+msgstr "مشرف أرك سبيس"
+
+msgid "ARKSpace Sales"
+msgstr "مبيعات أرك سبيس"
+
+msgid "ARKSpace Operations"
+msgstr "عمليات أرك سبيس"
+
+msgid "ARKSpace Front Desk"
+msgstr "استقبال أرك سبيس"
+
+msgid "ARKSpace Member"
+msgstr "عضو أرك سبيس"
+
+msgid "ARKSpace Viewer"
+msgstr "مشاهد أرك سبيس"
+
+# ─── Number Cards ─────────────────────────────────────
+msgid "Total Spaces"
+msgstr "إجمالي المساحات"
+
+msgid "Active Members"
+msgstr "الأعضاء النشطون"
+
+msgid "Today's Bookings"
+msgstr "حجوزات اليوم"
+
+msgid "Monthly Revenue"
+msgstr "الإيرادات الشهرية"
+
+# ─── Dashboard Charts ─────────────────────────────────
+msgid "Monthly Bookings"
+msgstr "الحجوزات الشهرية"
+
+msgid "Revenue Trend"
+msgstr "اتجاه الإيرادات"
+
+msgid "Membership Distribution"
+msgstr "توزيع العضويات"
+
+msgid "Space Utilization"
+msgstr "استخدام المساحات"
+
+msgid "Lead Pipeline"
+msgstr "مسار العملاء المحتملين"
+
+# ─── Training ─────────────────────────────────────────
+msgid "Training Catalog"
+msgstr "كتالوج التدريب"
+
+msgid "Enroll"
+msgstr "التسجيل"
+
+msgid "Progress"
+msgstr "التقدم"
+
+msgid "Badges"
+msgstr "الشارات"
+
+msgid "Sessions"
+msgstr "الجلسات"
+
+# ─── Misc ─────────────────────────────────────────────
+msgid "All Floors"
+msgstr "جميع الطوابق"
+
+msgid "Live"
+msgstr "مباشر"
+
+msgid "Company"
+msgstr "الشركة"
+
+msgid "Fiscal Year Start"
+msgstr "بداية السنة المالية"
+
+msgid "Primary Language"
+msgstr "اللغة الرئيسية"
+
+msgid "Secondary Language"
+msgstr "اللغة الثانوية"
+
+msgid "Date Format"
+msgstr "تنسيق التاريخ"
+
+msgid "Booking Prefix"
+msgstr "بادئة الحجز"
+
+msgid "Membership Prefix"
+msgstr "بادئة العضوية"
+
+msgid "Invoice Prefix"
+msgstr "بادئة الفاتورة"
+
+msgid "Lead Prefix"
+msgstr "بادئة العميل المحتمل"
+
+msgid "Features"
+msgstr "الميزات"
+
+msgid "Enable VoIP"
+msgstr "تفعيل VoIP"
+
+msgid "Enable ARKAMOR IoT"
+msgstr "تفعيل ARKAMOR IoT"
+
+msgid "Enable ARKANOOR Hub"
+msgstr "تفعيل سوق ARKANOOR"
+
+msgid "Enable AI Features"
+msgstr "تفعيل ميزات الذكاء الاصطناعي"
+
+msgid "Integrations"
+msgstr "التكاملات"
+
+msgid "General"
+msgstr "عام"
+
+msgid "Localization"
+msgstr "التعريب"
+
+msgid "Numbering"
+msgstr "الترقيم"
+
+msgid "Qty"
+msgstr "الكمية"
+
+msgid "Amount"
+msgstr "المبلغ"

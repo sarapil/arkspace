@@ -1,0 +1,135 @@
+{
+ "actions": [],
+ "autoname": "format:CTPL-{####}",
+ "creation": "2026-02-20 00:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "template_name",
+  "language",
+  "column_break_basic",
+  "contract_type",
+  "is_active",
+  "terms_section",
+  "terms_ar",
+  "terms_en",
+  "placeholders_section",
+  "available_placeholders",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "template_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Template Name",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "default": "Bilingual",
+   "fieldname": "language",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Language",
+   "options": "Arabic\nEnglish\nBilingual",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_basic",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Membership",
+   "fieldname": "contract_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Contract Type",
+   "options": "Membership\nBooking\nOffice Rental\nEvent Space\nVirtual Office\nOther",
+   "reqd": 1
+  },
+  {
+   "default": "1",
+   "fieldname": "is_active",
+   "fieldtype": "Check",
+   "label": "Active"
+  },
+  {
+   "fieldname": "terms_section",
+   "fieldtype": "Section Break",
+   "label": "Contract Terms / شروط العقد"
+  },
+  {
+   "fieldname": "terms_ar",
+   "fieldtype": "Text Editor",
+   "label": "Terms (Arabic) / الشروط بالعربية",
+   "description": "Use placeholders: {{member_name}}, {{space_name}}, {{start_date}}, {{end_date}}, {{rate}}, {{plan_name}}, etc."
+  },
+  {
+   "fieldname": "terms_en",
+   "fieldtype": "Text Editor",
+   "label": "Terms (English)"
+  },
+  {
+   "fieldname": "placeholders_section",
+   "fieldtype": "Section Break",
+   "label": "Available Placeholders",
+   "collapsible": 1
+  },
+  {
+   "fieldname": "available_placeholders",
+   "fieldtype": "Small Text",
+   "label": "Placeholders",
+   "read_only": 1,
+   "default": "{{member_name}}, {{member_email}}, {{member_id}}, {{space_name}}, {{space_type}}, {{space_address}}, {{branch}}, {{plan_name}}, {{plan_type}}, {{start_date}}, {{end_date}}, {{rate}}, {{currency}}, {{billing_cycle}}, {{net_amount}}, {{contract_date}}, {{contract_number}}, {{company_name}}, {{company_address}}"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Contract Template",
+   "print_hide": 1,
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-02-20 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "ARKSpace Contracts",
+ "name": "Contract Template",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "read": 1,
+   "role": "ARKSpace Admin",
+   "write": 1
+  },
+  {
+   "read": 1,
+   "role": "ARKSpace Manager",
+   "write": 1
+  }
+ ],
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1,
+ "title_field": "template_name"
+}

@@ -1,0 +1,79 @@
+{%- extends "templates/web.html" -%}
+
+{%- block page_content -%}
+<div class="arkspace-portal">
+	<div class="portal-header">
+		<h1><i class="fa-solid fa-calendar-plus"></i> {{ _("Book a Space") }}</h1>
+		<a href="/arkspace_portal" class="ark-btn ark-btn-primary">
+			<i class="fa-solid fa-arrow-left"></i> {{ _("Back to Portal") }}
+		</a>
+	</div>
+
+	<!-- Filters -->
+	<div class="ark-card" style="margin-bottom: 2rem;">
+		<form method="GET" style="display: flex; gap: 1rem; flex-wrap: wrap; align-items: end;">
+			<div>
+				<label style="font-weight: 600; font-size: 0.85rem;">{{ _("Space Type") }}</label>
+				<select name="space_type" class="form-control" style="min-width: 180px;">
+					<option value="">{{ _("All Types") }}</option>
+					{% for t in space_types %}
+					<option value="{{ t }}" {{ "selected" if t == selected_type else "" }}>{{ t }}</option>
+					{% endfor %}
+				</select>
+			</div>
+			<div>
+				<label style="font-weight: 600; font-size: 0.85rem;">{{ _("Branch") }}</label>
+				<select name="branch" class="form-control" style="min-width: 180px;">
+					<option value="">{{ _("All Branches") }}</option>
+					{% for b in branches %}
+					<option value="{{ b }}" {{ "selected" if b == selected_branch else "" }}>{{ b }}</option>
+					{% endfor %}
+				</select>
+			</div>
+			<button type="submit" class="ark-btn ark-btn-gold">
+				<i class="fa-solid fa-search"></i> {{ _("Filter") }}
+			</button>
+		</form>
+	</div>
+
+	<!-- Available Spaces -->
+	{% if spaces %}
+	<div class="ark-space-grid">
+		{% for s in spaces %}
+		<div class="ark-space-card">
+			{% if s.main_image %}
+			<img src="{{ s.main_image }}" alt="{{ s.space_name }}" class="space-image">
+			{% else %}
+			<div class="space-image" style="display:flex;align-items:center;justify-content:center;">
+				<i class="fa-solid fa-building" style="font-size: 3rem; color: #9CA3AF;"></i>
+			</div>
+			{% endif %}
+			<div class="space-details">
+				<div class="space-name">{{ s.space_name }}</div>
+				<div class="space-type">{{ s.space_type }} — {{ _("Capacity") }}: {{ s.capacity }}</div>
+				<div style="margin-top: 0.75rem; display: flex; gap: 0.5rem; flex-wrap: wrap;">
+					{% if s.hourly_rate %}
+					<span class="space-rate">{{ frappe.utils.fmt_money(s.hourly_rate) }}/{{ _("hr") }}</span>
+					{% endif %}
+					{% if s.daily_rate %}
+					<span class="space-rate">{{ frappe.utils.fmt_money(s.daily_rate) }}/{{ _("day") }}</span>
+					{% endif %}
+				</div>
+				<div style="margin-top: 1rem;">
+					<a href="/app/space-booking/new?space={{ s.name }}" class="ark-btn ark-btn-primary" style="width: 100%; justify-content: center;">
+						<i class="fa-solid fa-calendar-check"></i> {{ _("Book Now") }}
+					</a>
+				</div>
+			</div>
+		</div>
+		{% endfor %}
+	</div>
+	{% else %}
+	<div class="ark-card" style="text-align: center; padding: 3rem;">
+		<i class="fa-solid fa-search" style="font-size: 3rem; color: #9CA3AF; margin-bottom: 1rem;"></i>
+		<h3>{{ _("No spaces available") }}</h3>
+		<p style="color: #6B7280;">{{ _("Try changing your filters or check back later.") }}</p>
+	</div>
+	{% endif %}
+</div>
+{%- endblock -%}

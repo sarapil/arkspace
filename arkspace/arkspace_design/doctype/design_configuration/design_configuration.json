@@ -1,0 +1,201 @@
+{
+ "actions": [],
+ "creation": "2026-02-09 00:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "colors_section",
+  "primary_color",
+  "secondary_color",
+  "column_break_colors",
+  "accent_color",
+  "success_color",
+  "danger_color",
+  "buttons_section",
+  "button_border_radius",
+  "column_break_buttons",
+  "button_font_weight",
+  "links_section",
+  "link_color",
+  "link_hover_color",
+  "column_break_links",
+  "link_underline",
+  "icons_section",
+  "icon_library",
+  "column_break_icons",
+  "default_icon_size",
+  "rtl_section",
+  "enable_rtl",
+  "column_break_rtl",
+  "arabic_font",
+  "english_font"
+ ],
+ "fields": [
+  {
+   "fieldname": "colors_section",
+   "fieldtype": "Section Break",
+   "label": "Colors"
+  },
+  {
+   "default": "#1B365D",
+   "fieldname": "primary_color",
+   "fieldtype": "Color",
+   "label": "Primary Color"
+  },
+  {
+   "default": "#C4A962",
+   "fieldname": "secondary_color",
+   "fieldtype": "Color",
+   "label": "Secondary Color"
+  },
+  {
+   "fieldname": "column_break_colors",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "#2563EB",
+   "fieldname": "accent_color",
+   "fieldtype": "Color",
+   "label": "Accent Color"
+  },
+  {
+   "default": "#10B981",
+   "fieldname": "success_color",
+   "fieldtype": "Color",
+   "label": "Success Color"
+  },
+  {
+   "default": "#EF4444",
+   "fieldname": "danger_color",
+   "fieldtype": "Color",
+   "label": "Danger Color"
+  },
+  {
+   "fieldname": "buttons_section",
+   "fieldtype": "Section Break",
+   "label": "Buttons"
+  },
+  {
+   "default": "8",
+   "fieldname": "button_border_radius",
+   "fieldtype": "Int",
+   "label": "Button Border Radius (px)"
+  },
+  {
+   "fieldname": "column_break_buttons",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "600",
+   "fieldname": "button_font_weight",
+   "fieldtype": "Select",
+   "label": "Button Font Weight",
+   "options": "400\n500\n600\n700"
+  },
+  {
+   "fieldname": "links_section",
+   "fieldtype": "Section Break",
+   "label": "Links"
+  },
+  {
+   "default": "#2563EB",
+   "fieldname": "link_color",
+   "fieldtype": "Color",
+   "label": "Link Color"
+  },
+  {
+   "default": "#1D4ED8",
+   "fieldname": "link_hover_color",
+   "fieldtype": "Color",
+   "label": "Link Hover Color"
+  },
+  {
+   "fieldname": "column_break_links",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "link_underline",
+   "fieldtype": "Check",
+   "label": "Underline Links"
+  },
+  {
+   "fieldname": "icons_section",
+   "fieldtype": "Section Break",
+   "label": "Icons"
+  },
+  {
+   "default": "Font Awesome 6",
+   "fieldname": "icon_library",
+   "fieldtype": "Select",
+   "label": "Icon Library",
+   "options": "Font Awesome 6\nMaterial Icons\nCustom"
+  },
+  {
+   "fieldname": "column_break_icons",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "md",
+   "fieldname": "default_icon_size",
+   "fieldtype": "Select",
+   "label": "Default Icon Size",
+   "options": "sm\nmd\nlg"
+  },
+  {
+   "fieldname": "rtl_section",
+   "fieldtype": "Section Break",
+   "label": "RTL Support"
+  },
+  {
+   "default": "1",
+   "fieldname": "enable_rtl",
+   "fieldtype": "Check",
+   "label": "Enable RTL"
+  },
+  {
+   "fieldname": "column_break_rtl",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Cairo",
+   "fieldname": "arabic_font",
+   "fieldtype": "Data",
+   "label": "Arabic Font"
+  },
+  {
+   "default": "Inter",
+   "fieldname": "english_font",
+   "fieldtype": "Data",
+   "label": "English Font"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "issingle": 1,
+ "links": [],
+ "modified": "2026-02-09 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "ARKSpace Design",
+ "name": "Design Configuration",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "read": 1,
+   "role": "ARKSpace Admin",
+   "write": 1
+  }
+ ],
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

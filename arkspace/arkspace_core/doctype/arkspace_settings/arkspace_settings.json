@@ -1,0 +1,235 @@
+{
+ "actions": [],
+ "creation": "2026-02-09 00:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "general_section",
+  "company",
+  "default_currency",
+  "column_break_general",
+  "fiscal_year_start",
+  "localization_section",
+  "primary_language",
+  "secondary_language",
+  "column_break_locale",
+  "timezone",
+  "date_format",
+  "numbering_section",
+  "booking_prefix",
+  "membership_prefix",
+  "column_break_numbering",
+  "invoice_prefix",
+  "lead_prefix",
+  "features_section",
+  "enable_voip",
+  "enable_arkamor",
+  "column_break_features",
+  "enable_arkanoor",
+  "enable_ai",
+  "integration_section",
+  "arkanoor_api_key",
+  "column_break_integration",
+  "freepbx_host",
+  "freepbx_api_key",
+  "ai_section",
+  "openai_api_key"
+ ],
+ "fields": [
+  {
+   "fieldname": "general_section",
+   "fieldtype": "Section Break",
+   "label": "General"
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company",
+   "reqd": 1
+  },
+  {
+   "default": "AED",
+   "fieldname": "default_currency",
+   "fieldtype": "Link",
+   "label": "Default Currency",
+   "options": "Currency"
+  },
+  {
+   "fieldname": "column_break_general",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "January",
+   "fieldname": "fiscal_year_start",
+   "fieldtype": "Select",
+   "label": "Fiscal Year Start",
+   "options": "January\nApril\nJuly"
+  },
+  {
+   "fieldname": "localization_section",
+   "fieldtype": "Section Break",
+   "label": "Localization"
+  },
+  {
+   "default": "ar",
+   "fieldname": "primary_language",
+   "fieldtype": "Link",
+   "label": "Primary Language",
+   "options": "Language"
+  },
+  {
+   "default": "en",
+   "fieldname": "secondary_language",
+   "fieldtype": "Link",
+   "label": "Secondary Language",
+   "options": "Language"
+  },
+  {
+   "fieldname": "column_break_locale",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Asia/Dubai",
+   "fieldname": "timezone",
+   "fieldtype": "Select",
+   "label": "Timezone",
+   "options": "\nAsia/Dubai\nAfrica/Cairo\nAsia/Riyadh\nEurope/Istanbul"
+  },
+  {
+   "default": "dd-mm-yyyy",
+   "fieldname": "date_format",
+   "fieldtype": "Select",
+   "label": "Date Format",
+   "options": "dd-mm-yyyy\nyyyy-mm-dd"
+  },
+  {
+   "fieldname": "numbering_section",
+   "fieldtype": "Section Break",
+   "label": "Numbering"
+  },
+  {
+   "default": "BK-",
+   "fieldname": "booking_prefix",
+   "fieldtype": "Data",
+   "label": "Booking Prefix"
+  },
+  {
+   "default": "MEM-",
+   "fieldname": "membership_prefix",
+   "fieldtype": "Data",
+   "label": "Membership Prefix"
+  },
+  {
+   "fieldname": "column_break_numbering",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "INV-",
+   "fieldname": "invoice_prefix",
+   "fieldtype": "Data",
+   "label": "Invoice Prefix"
+  },
+  {
+   "default": "LD-",
+   "fieldname": "lead_prefix",
+   "fieldtype": "Data",
+   "label": "Lead Prefix"
+  },
+  {
+   "fieldname": "features_section",
+   "fieldtype": "Section Break",
+   "label": "Features"
+  },
+  {
+   "default": "0",
+   "fieldname": "enable_voip",
+   "fieldtype": "Check",
+   "label": "Enable VoIP"
+  },
+  {
+   "default": "0",
+   "fieldname": "enable_arkamor",
+   "fieldtype": "Check",
+   "label": "Enable ARKAMOR IoT"
+  },
+  {
+   "fieldname": "column_break_features",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "enable_arkanoor",
+   "fieldtype": "Check",
+   "label": "Enable ARKANOOR Hub"
+  },
+  {
+   "default": "0",
+   "fieldname": "enable_ai",
+   "fieldtype": "Check",
+   "label": "Enable AI Features"
+  },
+  {
+   "fieldname": "integration_section",
+   "fieldtype": "Section Break",
+   "label": "Integrations"
+  },
+  {
+   "fieldname": "arkanoor_api_key",
+   "fieldtype": "Password",
+   "label": "ARKANOOR API Key"
+  },
+  {
+   "fieldname": "column_break_integration",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "freepbx_host",
+   "fieldtype": "Data",
+   "label": "FreePBX Host"
+  },
+  {
+   "fieldname": "freepbx_api_key",
+   "fieldtype": "Password",
+   "label": "FreePBX API Key"
+  },
+  {
+   "fieldname": "ai_section",
+   "fieldtype": "Section Break",
+   "label": "AI"
+  },
+  {
+   "fieldname": "openai_api_key",
+   "fieldtype": "Password",
+   "label": "OpenAI API Key"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "issingle": 1,
+ "links": [],
+ "modified": "2026-02-09 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "ARKSpace Core",
+ "name": "ARKSpace Settings",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "read": 1,
+   "role": "ARKSpace Admin",
+   "write": 1
+  }
+ ],
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

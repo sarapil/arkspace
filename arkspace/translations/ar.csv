@@ -1,0 +1,272 @@
+source_text,translated_text,context
+ARKSpace,أرك سبيس,App Name
+Enterprise Co-Working Space Management,إدارة مساحات العمل المشتركة للمؤسسات,App Description
+ARKSpace Management,إدارة أرك سبيس,Workspace
+Spaces,المساحات,Module
+Bookings & Members,الحجوزات والأعضاء,Module
+CRM & Sales,المبيعات وإدارة العلاقات,Module
+Reports & Analytics,التقارير والتحليلات,Module
+Settings & Configuration,الإعدادات والتكوين,Module
+Co-working Space,مساحة عمل مشتركة,DocType
+Space Type,نوع المساحة,DocType
+Space Booking,حجز مساحة,DocType
+Amenity,مرفق,DocType
+Membership,عضوية,DocType
+Membership Plan,خطة العضوية,DocType
+Member Credit Wallet,محفظة رصيد العضو,DocType
+Credit Transaction,معاملة الرصيد,DocType
+Workspace Lead,عميل محتمل,DocType
+Workspace Tour,جولة في المساحة,DocType
+ARKSpace Settings,إعدادات أرك سبيس,DocType
+Design Configuration,إعدادات التصميم,DocType
+Training Module,وحدة تدريبية,DocType
+Training Session,جلسة تدريبية,DocType
+Training Badge,شارة تدريبية,DocType
+Space Name,اسم المساحة,Co-working Space
+Branch,الفرع,Co-working Space
+Floor,الطابق,Co-working Space
+Space Number,رقم المساحة,Co-working Space
+Capacity,السعة,Co-working Space
+Capacity & Size,السعة والمساحة,Co-working Space
+Area (sqm),المساحة (م²),Co-working Space
+Pricing,التسعير,Section
+Hourly Rate,السعر بالساعة,Co-working Space
+Daily Rate,السعر اليومي,Co-working Space
+Monthly Rate,السعر الشهري,Co-working Space
+Status,الحالة,Field
+Available,متاح,Status
+Occupied,مشغول,Status
+Maintenance,صيانة,Status
+Reserved,محجوز,Status
+Current Member,العضو الحالي,Co-working Space
+Amenities,المرافق,Section
+Media,الوسائط,Section
+Main Image,الصورة الرئيسية,Co-working Space
+Gallery,المعرض,Co-working Space
+Booking ID,رقم الحجز,Space Booking
+Space,المساحة,Space Booking
+Member,العضو,Space Booking
+Booking Type,نوع الحجز,Space Booking
+Hourly,بالساعة,Booking Type
+Daily,يومي,Booking Type
+Monthly,شهري,Booking Type
+Time,الوقت,Section
+Start,البداية,Space Booking
+End,النهاية,Space Booking
+Duration (hours),المدة (ساعات),Space Booking
+Billing,الفواتير,Section
+Rate,السعر,Space Booking
+Total Amount,المبلغ الإجمالي,Space Booking
+Discount %,نسبة الخصم %,Space Booking
+Net Amount,المبلغ الصافي,Space Booking
+Pending,قيد الانتظار,Status
+Confirmed,مؤكد,Status
+Checked In,تم الوصول,Status
+Checked Out,تم المغادرة,Status
+Cancelled,ملغى,Status
+No Show,لم يحضر,Status
+Completed,مكتمل,Status
+Checked In At,وقت الوصول,Space Booking
+Checked Out At,وقت المغادرة,Space Booking
+Sales Invoice,فاتورة المبيعات,Space Booking
+Add-on Amenities,المرافق الإضافية,Space Booking Section
+Amenity Total,إجمالي المرافق,Space Booking
+Amenity Name,اسم المرفق,Amenity
+Icon,أيقونة,Amenity
+Color,اللون,Amenity
+Description,الوصف,Field
+Hourly Price,سعر الساعة,Amenity
+Daily Price,السعر اليومي,Amenity
+Monthly Price,السعر الشهري,Amenity
+Complimentary,مجاني,Amenity
+Billing Cycle,دورة الفوترة,Membership
+Quarterly,ربع سنوي,Billing Cycle
+Yearly,سنوي,Billing Cycle
+Start Date,تاريخ البداية,Field
+End Date,تاريخ النهاية,Field
+Auto Renew,تجديد تلقائي,Membership
+Active,نشط,Status
+Expired,منتهي,Status
+Suspended,موقف,Status
+Draft,مسودة,Status
+Initial Credits,الرصيد الأولي,Membership
+Credit Wallet,محفظة الرصيد,Membership
+Plan Name,اسم الخطة,Membership Plan
+Plan Type,نوع الخطة,Membership Plan
+Hot Desk,مكتب مشترك,Plan Type
+Dedicated Desk,مكتب مخصص,Plan Type
+Private Office,مكتب خاص,Plan Type
+Meeting Room,غرفة اجتماعات,Plan Type
+Event Space,قاعة فعاليات,Plan Type
+Virtual Office,مكتب افتراضي,Plan Type
+Setup Fee,رسوم التأسيس,Membership Plan
+Included Hours,الساعات المشمولة,Membership Plan
+Included Credits,الرصيد المشمول,Membership Plan
+Max Guests,الحد الأقصى للضيوف,Membership Plan
+Total Credits,إجمالي الرصيد,Credit Wallet
+Used Credits,الرصيد المستخدم,Credit Wallet
+Available Credits,الرصيد المتاح,Credit Wallet
+Transactions,المعاملات,Credit Wallet
+Credit,إضافة,Transaction Type
+Debit,خصم,Transaction Type
+Refund,استرداد,Transaction Type
+Lead Name,اسم العميل المحتمل,Workspace Lead
+Email,البريد الإلكتروني,Field
+Phone,الهاتف,Field
+Source,المصدر,Workspace Lead
+Website,الموقع الإلكتروني,Source
+Referral,إحالة,Source
+Walk-in,زيارة مباشرة,Source
+Social Media,وسائل التواصل,Source
+New,جديد,Status
+Contacted,تم التواصل,Status
+Tour Scheduled,جولة مجدولة,Status
+Negotiating,تفاوض,Status
+Converted,تم التحويل,Status
+Lost,خسارة,Status
+Budget Monthly,الميزانية الشهرية,Workspace Lead
+Team Size,حجم الفريق,Workspace Lead
+Converted Customer,العميل المحول,Workspace Lead
+Actions,الإجراءات,Button
+Check In,تسجيل الوصول,Button
+Check Out,تسجيل المغادرة,Button
+Book,حجز,Button
+Book Now,احجز الآن,Button
+New Booking,حجز جديد,Button
+Cancel,إلغاء,Button
+Submit,اعتماد,Button
+Save,حفظ,Button
+Refresh,تحديث,Button
+Convert to Customer,تحويل لعميل,Button
+Schedule Tour,جدولة جولة,Button
+Bulk Check In,تسجيل وصول جماعي,Bulk Operation
+Bulk Check Out,تسجيل مغادرة جماعي,Bulk Operation
+Bulk Cancel,إلغاء جماعي,Bulk Operation
+Bulk No Show,عدم حضور جماعي,Bulk Operation
+Please select bookings first,يرجى تحديد الحجوزات أولاً,Bulk Operation
+"Check in {0} booking(s)?",تسجيل وصول {0} حجز(حجوزات)؟,Bulk Operation
+"Check out {0} booking(s)?",تسجيل مغادرة {0} حجز(حجوزات)؟,Bulk Operation
+"Cancel {0} booking(s)? This cannot be undone.","إلغاء {0} حجز(حجوزات)؟ لا يمكن التراجع.",Bulk Operation
+"Mark {0} booking(s) as No Show?",تحديد {0} حجز(حجوزات) كلم يحضر؟,Bulk Operation
+"{0}: {1} succeeded","{0}: نجح {1}",Bulk Operation
+", {0} failed","، فشل {0}",Bulk Operation
+"Bulk {0} Result",نتيجة {0} الجماعي,Bulk Operation
+Floor Plan — مخطط الطابق,مخطط الطابق,Floor Plan Page
+Total,الإجمالي,Floor Plan
+available,متاح,Floor Plan
+total,إجمالي,Floor Plan
+No spaces found,لا توجد مساحات,Floor Plan
+Add Co-working Spaces to see them on the floor plan.,أضف مساحات عمل مشتركة لعرضها على مخطط الطابق.,Floor Plan
+"Quick Book — {0}",حجز سريع — {0},Floor Plan
+"Booking {0} created!",تم إنشاء الحجز {0}!,Floor Plan
+Welcome to ARKSpace — مرحباً بكم,مرحباً بكم في أرك سبيس,Setup Wizard
+Configure your co-working space management system.,قم بتكوين نظام إدارة مساحات العمل المشتركة.,Setup Wizard
+Let's set up your co-working space in a few easy steps.,دعنا نقوم بإعداد مساحة العمل في خطوات سهلة.,Setup Wizard
+Workspace Name,اسم مساحة العمل,Setup Wizard
+The name of your co-working space brand,اسم العلامة التجارية لمساحة العمل,Setup Wizard
+Default Currency,العملة الافتراضية,Setup Wizard
+Timezone,المنطقة الزمنية,Setup Wizard
+Branches — الفروع,الفروع,Setup Wizard
+Add your co-working space locations. You can add more later.,أضف مواقع مساحات العمل. يمكنك إضافة المزيد لاحقاً.,Setup Wizard
+Main Branch,الفرع الرئيسي,Setup Wizard
+Branch 2 (Optional),الفرع 2 (اختياري),Setup Wizard
+Branch 3 (Optional),الفرع 3 (اختياري),Setup Wizard
+Space Types — أنواع المساحات,أنواع المساحات,Setup Wizard
+Select the types of spaces you offer.,اختر أنواع المساحات التي تقدمها.,Setup Wizard
+Hot Desk — مكتب مشترك,مكتب مشترك,Setup Wizard
+Dedicated Desk — مكتب مخصص,مكتب مخصص,Setup Wizard
+Private Office — مكتب خاص,مكتب خاص,Setup Wizard
+Meeting Room — غرفة اجتماعات,غرفة اجتماعات,Setup Wizard
+Event Space — قاعة فعاليات,قاعة فعاليات,Setup Wizard
+Virtual Office — مكتب افتراضي,مكتب افتراضي,Setup Wizard
+First Membership Plan — خطة العضوية الأولى,خطة العضوية الأولى,Setup Wizard
+Create your first membership plan to get started.,أنشئ أول خطة عضوية للبدء.,Setup Wizard
+Basic Hot Desk,مكتب مشترك أساسي,Setup Wizard
+Welcome,مرحباً,Portal
+No membership found,لم يتم العثور على عضوية,Portal
+"Contact us to set up your membership and start using ARKSpace.",تواصل معنا لإعداد عضويتك وبدء استخدام أرك سبيس.,Portal
+Active Memberships,العضويات النشطة,Portal
+Total Bookings,إجمالي الحجوزات,Portal
+Total Spent,إجمالي الإنفاق,Portal
+Upcoming Bookings,الحجوزات القادمة,Portal
+Recent Bookings,الحجوزات الأخيرة,Portal
+No active memberships,لا توجد عضويات نشطة,Portal
+No upcoming bookings,لا توجد حجوزات قادمة,Portal
+No recent bookings,لا توجد حجوزات سابقة,Portal
+ARKSpace — Member Portal,أرك سبيس — بوابة الأعضاء,Portal
+Book a Space,حجز مساحة,Portal
+"Booking created: {0}",تم إنشاء الحجز: {0},Portal
+Booking failed. Please check availability.,فشل الحجز. يرجى التحقق من التوفر.,Portal
+Booking cancelled successfully,تم إلغاء الحجز بنجاح,Portal
+Failed to cancel booking,فشل إلغاء الحجز,Portal
+Are you sure you want to cancel this booking?,هل أنت متأكد من إلغاء هذا الحجز؟,Portal
+No spaces available at the moment.,لا توجد مساحات متاحة حالياً.,Portal
+Notes,ملاحظات,Field
+Revenue Summary,ملخص الإيرادات,Report
+Space Occupancy,إشغال المساحات,Report
+Membership Analytics,تحليلات العضوية,Report
+Approve,موافقة,Workflow
+Reject,رفض,Workflow
+Suspend,تعليق,Workflow
+Reactivate,إعادة تفعيل,Workflow
+Renew,تجديد,Workflow
+Booking Confirmation,تأكيد الحجز,Notification
+Membership Welcome,ترحيب بالعضوية,Notification
+Membership Expiry Reminder,تذكير انتهاء العضوية,Notification
+Booking Cancelled,حجز ملغى,Notification
+Membership Card,بطاقة العضوية,Print Format
+Membership Receipt,إيصال العضوية,Print Format
+End time must be after start time,يجب أن يكون وقت النهاية بعد وقت البداية,Validation
+"Space {0} is already booked for this time period (Booking: {1})","المساحة {0} محجوزة بالفعل لهذه الفترة (الحجز: {1})",Validation
+"No {0} rate configured for space {1}","لا يوجد سعر {0} مُعد للمساحة {1}",Validation
+Booking must be submitted before check-in,يجب اعتماد الحجز قبل تسجيل الوصول,Validation
+"Only Confirmed bookings can be checked in. Current status: {0}","يمكن تسجيل وصول الحجوزات المؤكدة فقط. الحالة الحالية: {0}",Validation
+Booking must be submitted,يجب اعتماد الحجز,Validation
+"Only Checked In bookings can be checked out. Current status: {0}","يمكن تسجيل مغادرة الحجوزات المسجلة فقط. الحالة الحالية: {0}",Validation
+Cannot cancel before submitting,لا يمكن الإلغاء قبل الاعتماد,Validation
+Insufficient credits,رصيد غير كافٍ,Validation
+Status is Converted but no customer linked,الحالة محولة لكن لا يوجد عميل مرتبط,Validation
+Please login to access the member portal,يرجى تسجيل الدخول للوصول إلى بوابة الأعضاء,Validation
+ARKSpace Admin,مدير أرك سبيس,Role
+ARKSpace Manager,مشرف أرك سبيس,Role
+ARKSpace Sales,مبيعات أرك سبيس,Role
+ARKSpace Operations,عمليات أرك سبيس,Role
+ARKSpace Front Desk,استقبال أرك سبيس,Role
+ARKSpace Member,عضو أرك سبيس,Role
+ARKSpace Viewer,مشاهد أرك سبيس,Role
+Total Spaces,إجمالي المساحات,Number Card
+Active Members,الأعضاء النشطون,Number Card
+Today's Bookings,حجوزات اليوم,Number Card
+Monthly Revenue,الإيرادات الشهرية,Number Card
+Monthly Bookings,الحجوزات الشهرية,Dashboard Chart
+Revenue Trend,اتجاه الإيرادات,Dashboard Chart
+Membership Distribution,توزيع العضويات,Dashboard Chart
+Space Utilization,استخدام المساحات,Dashboard Chart
+Lead Pipeline,مسار العملاء المحتملين,Dashboard Chart
+Training Catalog,كتالوج التدريب,Training
+Enroll,التسجيل,Button
+Progress,التقدم,Training
+Badges,الشارات,Training
+Sessions,الجلسات,Training
+All Floors,جميع الطوابق,Floor Plan Filter
+Live,مباشر,Floor Plan
+Company,الشركة,Settings
+Fiscal Year Start,بداية السنة المالية,Settings
+Primary Language,اللغة الرئيسية,Settings
+Secondary Language,اللغة الثانوية,Settings
+Date Format,تنسيق التاريخ,Settings
+Booking Prefix,بادئة الحجز,Settings
+Membership Prefix,بادئة العضوية,Settings
+Invoice Prefix,بادئة الفاتورة,Settings
+Lead Prefix,بادئة العميل المحتمل,Settings
+Features,الميزات,Settings Section
+Enable VoIP,تفعيل VoIP,Settings
+Enable ARKAMOR IoT,تفعيل ARKAMOR IoT,Settings
+Enable ARKANOOR Hub,تفعيل سوق ARKANOOR,Settings
+Enable AI Features,تفعيل ميزات الذكاء الاصطناعي,Settings
+Integrations,التكاملات,Settings Section
+General,عام,Settings Section
+Localization,التعريب,Settings Section
+Numbering,الترقيم,Settings Section
+Qty,الكمية,Field
+Amount,المبلغ,Field

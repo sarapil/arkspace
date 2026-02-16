@@ -1,0 +1,28 @@
+[project]
+name = "arkspace"
+authors = [
+    { name = "ARKSpace Team", email = "dev@arkspace.io" }
+]
+description = "Enterprise Co-Working Space Management + ARKANOOR Marketplace"
+requires-python = ">=3.10"
+readme = "README.md"
+dynamic = ["version"]
+dependencies = []
+
+[build-system]
+requires = ["flit_core >=3.4,<4"]
+build-backend = "flit_core.buildapi"
+
+[tool.bench.dev-dependencies]
+
+[tool.ruff]
+line-length = 110
+target-version = "py310"
+
+[tool.ruff.lint]
+select = [
+    "F",
+    "E",
+    "W",
+    "I",
+]

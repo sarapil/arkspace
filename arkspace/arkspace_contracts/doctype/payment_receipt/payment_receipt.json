@@ -1,0 +1,238 @@
+{
+ "actions": [],
+ "autoname": "format:RCT-{YYYY}-{####}",
+ "creation": "2026-02-20 00:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "is_submittable": 1,
+ "field_order": [
+  "receipt_type",
+  "receipt_date",
+  "column_break_header",
+  "member",
+  "member_name",
+  "contract_section",
+  "member_contract",
+  "membership",
+  "column_break_contract",
+  "space_booking",
+  "period_section",
+  "period_from",
+  "period_to",
+  "column_break_period",
+  "billing_cycle",
+  "payment_section",
+  "amount",
+  "currency",
+  "column_break_payment",
+  "payment_method",
+  "reference_number",
+  "payment_date",
+  "notes_section",
+  "notes",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "default": "Membership Payment / دفعة عضوية",
+   "fieldname": "receipt_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Receipt Type / نوع الإيصال",
+   "options": "Membership Payment / دفعة عضوية\nBooking Payment / دفعة حجز\nDeposit / تأمين\nSetup Fee / رسوم تأسيس\nAmenity Fee / رسوم خدمات\nOther / أخرى",
+   "reqd": 1
+  },
+  {
+   "default": "Today",
+   "fieldname": "receipt_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Receipt Date / تاريخ الإيصال",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_header",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "member",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Member / العميل",
+   "options": "Customer",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "member.customer_name",
+   "fieldname": "member_name",
+   "fieldtype": "Data",
+   "label": "Member Name / اسم العميل",
+   "read_only": 1
+  },
+  {
+   "fieldname": "contract_section",
+   "fieldtype": "Section Break",
+   "label": "Related Documents / المستندات المرتبطة"
+  },
+  {
+   "fieldname": "member_contract",
+   "fieldtype": "Link",
+   "label": "Contract / العقد",
+   "options": "Member Contract"
+  },
+  {
+   "fieldname": "membership",
+   "fieldtype": "Link",
+   "label": "Membership / العضوية",
+   "options": "Membership"
+  },
+  {
+   "fieldname": "column_break_contract",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "space_booking",
+   "fieldtype": "Link",
+   "label": "Booking / الحجز",
+   "options": "Space Booking"
+  },
+  {
+   "fieldname": "period_section",
+   "fieldtype": "Section Break",
+   "label": "Payment Period / فترة الدفع"
+  },
+  {
+   "fieldname": "period_from",
+   "fieldtype": "Date",
+   "label": "From / من"
+  },
+  {
+   "fieldname": "period_to",
+   "fieldtype": "Date",
+   "label": "To / إلى"
+  },
+  {
+   "fieldname": "column_break_period",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "billing_cycle",
+   "fieldtype": "Select",
+   "label": "Billing Cycle / دورة الفوترة",
+   "options": "\nMonthly / شهري\nQuarterly / ربع سنوي\nYearly / سنوي\nOne-time / مرة واحدة"
+  },
+  {
+   "fieldname": "payment_section",
+   "fieldtype": "Section Break",
+   "label": "Payment Details / بيانات الدفع"
+  },
+  {
+   "fieldname": "amount",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Amount / المبلغ",
+   "reqd": 1
+  },
+  {
+   "default": "EGP",
+   "fieldname": "currency",
+   "fieldtype": "Link",
+   "label": "Currency / العملة",
+   "options": "Currency"
+  },
+  {
+   "fieldname": "column_break_payment",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Cash / نقدي",
+   "fieldname": "payment_method",
+   "fieldtype": "Select",
+   "label": "Payment Method / طريقة الدفع",
+   "options": "Cash / نقدي\nBank Transfer / تحويل بنكي\nCheck / شيك\nCard / بطاقة\nOnline / إلكتروني\nOther / أخرى"
+  },
+  {
+   "fieldname": "reference_number",
+   "fieldtype": "Data",
+   "label": "Reference Number / رقم المرجع"
+  },
+  {
+   "fieldname": "payment_date",
+   "fieldtype": "Date",
+   "label": "Payment Date / تاريخ الدفع"
+  },
+  {
+   "fieldname": "notes_section",
+   "fieldtype": "Section Break",
+   "label": "Notes / ملاحظات",
+   "collapsible": 1
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Small Text",
+   "label": "Notes / ملاحظات"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Payment Receipt",
+   "print_hide": 1,
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-02-20 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "ARKSpace Contracts",
+ "name": "Payment Receipt",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "read": 1,
+   "role": "ARKSpace Admin",
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "read": 1,
+   "role": "ARKSpace Manager",
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "read": 1,
+   "role": "ARKSpace Sales",
+   "write": 1
+  },
+  {
+   "create": 1,
+   "read": 1,
+   "role": "ARKSpace Front Desk",
+   "write": 1
+  }
+ ],
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

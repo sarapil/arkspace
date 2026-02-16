@@ -1,0 +1,90 @@
+<style>
+    @page { margin: 15mm; }
+    .contract-print { font-family: 'Cairo', 'Inter', sans-serif; max-width: 800px; margin: 0 auto; color: #1B365D; direction: rtl; text-align: right; }
+    .contract-header { background: linear-gradient(135deg, #1B365D 0%, #0F1D33 100%); color: #fff; padding: 30px; border-radius: 12px 12px 0 0; text-align: center; }
+    .contract-header h1 { margin: 0; font-size: 24px; letter-spacing: 1px; }
+    .gold-bar { height: 4px; background: linear-gradient(90deg, #C4A962, #A38B4C); }
+    .contract-body { padding: 30px; border: 1px solid #E5E7EB; border-top: none; }
+    .contract-number { text-align: center; font-size: 13px; color: #6B7280; margin-bottom: 20px; }
+    .section-title { font-size: 15px; font-weight: 700; color: #1B365D; border-bottom: 2px solid #C4A962; padding-bottom: 6px; margin: 24px 0 12px; }
+    .info-table { width: 100%; border-collapse: collapse; margin-bottom: 16px; }
+    .info-table td { padding: 8px 12px; border-bottom: 1px solid #F3F4F6; }
+    .info-table .label { color: #6B7280; width: 35%; font-size: 12px; }
+    .info-table .value { font-weight: 600; }
+    .terms-ar { line-height: 2; border: 1px solid #E5E7EB; padding: 16px; border-radius: 8px; background: #FAFBFC; }
+    .signatures-grid { display: flex; justify-content: space-between; margin-top: 40px; direction: ltr; }
+    .signature-box { width: 45%; text-align: center; }
+    .signature-box .sig-label { font-size: 12px; color: #6B7280; margin-bottom: 8px; }
+    .signature-box .sig-name { font-weight: 700; font-size: 14px; margin-bottom: 4px; }
+    .signature-line { border-bottom: 2px solid #1B365D; height: 60px; margin: 20px 0 8px; }
+    .signature-img { max-height: 60px; margin: 10px 0; }
+    .contract-footer { text-align: center; color: #9CA3AF; font-size: 11px; margin-top: 30px; padding-top: 16px; border-top: 1px solid #E5E7EB; }
+</style>
+
+<div class="contract-print">
+    <div class="contract-header">
+        <h1>عقد إيجار مساحة عمل مشتركة</h1>
+    </div>
+    <div class="gold-bar"></div>
+
+    <div class="contract-body">
+        <div class="contract-number">
+            رقم العقد: <strong>{{ doc.name }}</strong>
+            &nbsp;&nbsp;|&nbsp;&nbsp;
+            التاريخ: <strong>{{ doc.get_formatted("contract_date") }}</strong>
+        </div>
+
+        <div class="section-title">بيانات العميل</div>
+        <table class="info-table">
+            <tr><td class="label">الاسم</td><td class="value">{{ doc.member_name or doc.member }}</td></tr>
+            {% if doc.member_email %}<tr><td class="label">البريد الإلكتروني</td><td class="value">{{ doc.member_email }}</td></tr>{% endif %}
+            {% if doc.member_phone %}<tr><td class="label">الهاتف</td><td class="value">{{ doc.member_phone }}</td></tr>{% endif %}
+            {% if doc.member_address %}<tr><td class="label">العنوان</td><td class="value">{{ doc.member_address }}</td></tr>{% endif %}
+        </table>
+
+        <div class="section-title">بيانات الوحدة</div>
+        <table class="info-table">
+            {% if doc.space %}<tr><td class="label">الوحدة</td><td class="value">{{ doc.space }}</td></tr>{% endif %}
+            {% if doc.space_type %}<tr><td class="label">النوع</td><td class="value">{{ doc.space_type }}</td></tr>{% endif %}
+            {% if doc.branch %}<tr><td class="label">الفرع</td><td class="value">{{ doc.branch }}</td></tr>{% endif %}
+            {% if doc.floor %}<tr><td class="label">الطابق</td><td class="value">{{ doc.floor }}</td></tr>{% endif %}
+            {% if doc.unit_details %}<tr><td class="label">الوصف</td><td class="value">{{ doc.unit_details }}</td></tr>{% endif %}
+        </table>
+
+        <div class="section-title">البيانات المالية</div>
+        <table class="info-table">
+            <tr><td class="label">المدة</td><td class="value">{{ doc.get_formatted("start_date") }} — {{ doc.get_formatted("end_date") }}</td></tr>
+            {% if doc.membership_plan %}<tr><td class="label">الخطة</td><td class="value">{{ doc.membership_plan }}</td></tr>{% endif %}
+            {% if doc.billing_cycle %}<tr><td class="label">دورة الفوترة</td><td class="value">{{ doc.billing_cycle }}</td></tr>{% endif %}
+            <tr><td class="label">القيمة</td><td class="value">{{ doc.get_formatted("rate") }} {{ doc.currency }}</td></tr>
+            {% if doc.discount_percent %}<tr><td class="label">الخصم</td><td class="value">{{ doc.discount_percent }}%</td></tr>{% endif %}
+            <tr><td class="label" style="font-weight:700;">الصافي</td><td class="value" style="font-size: 16px; color: #C4A962;">{{ doc.get_formatted("net_amount") }} {{ doc.currency }}</td></tr>
+            {% if doc.deposit_amount %}<tr><td class="label">التأمين</td><td class="value">{{ doc.get_formatted("deposit_amount") }} {{ doc.currency }}</td></tr>{% endif %}
+        </table>
+
+        {% if doc.contract_terms_ar %}
+        <div class="section-title">شروط وأحكام العقد</div>
+        <div class="terms-ar">{{ doc.contract_terms_ar }}</div>
+        {% endif %}
+
+        <div class="section-title">التوقيعات</div>
+        <div class="signatures-grid">
+            <div class="signature-box">
+                <div class="sig-label">ممثل الشركة</div>
+                <div class="signature-line"></div>
+                <div class="sig-name">{{ doc.company_signatory or '________________' }}</div>
+            </div>
+            <div class="signature-box">
+                <div class="sig-label">العميل</div>
+                {% if doc.member_signature %}
+                <img class="signature-img" src="{{ doc.member_signature }}" alt="توقيع">
+                {% else %}
+                <div class="signature-line"></div>
+                {% endif %}
+                <div class="sig-name">{{ doc.member_name or doc.member }}</div>
+            </div>
+        </div>
+
+        <div class="contract-footer">ARKSpace — إدارة مساحات العمل المشتركة</div>
+    </div>
+</div>

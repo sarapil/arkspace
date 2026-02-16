@@ -1,0 +1,225 @@
+<style>
+    @page { margin: 15mm; }
+    .contract-print { font-family: 'Inter', 'Cairo', sans-serif; max-width: 800px; margin: 0 auto; color: #1B365D; }
+    .contract-header { background: linear-gradient(135deg, #1B365D 0%, #0F1D33 100%); color: #fff; padding: 30px; border-radius: 12px 12px 0 0; text-align: center; }
+    .contract-header h1 { margin: 0; font-size: 22px; letter-spacing: 1px; }
+    .contract-header .subtitle { opacity: 0.85; font-size: 14px; margin-top: 4px; }
+    .gold-bar { height: 4px; background: linear-gradient(90deg, #C4A962, #A38B4C); }
+    .contract-body { padding: 30px; border: 1px solid #E5E7EB; border-top: none; }
+    .contract-number { text-align: center; font-size: 13px; color: #6B7280; margin-bottom: 20px; }
+    .section-title { font-size: 14px; font-weight: 700; color: #1B365D; border-bottom: 2px solid #C4A962; padding-bottom: 6px; margin: 24px 0 12px; }
+    .section-title-ar { direction: rtl; text-align: right; }
+    .info-table { width: 100%; border-collapse: collapse; margin-bottom: 16px; }
+    .info-table td { padding: 8px 12px; border-bottom: 1px solid #F3F4F6; }
+    .info-table .label { color: #6B7280; width: 35%; font-size: 12px; }
+    .info-table .value { font-weight: 600; }
+    .info-table .label-ar { text-align: right; direction: rtl; }
+    .terms-section { margin: 20px 0; }
+    .terms-ar { direction: rtl; text-align: right; font-family: 'Cairo', sans-serif; line-height: 1.8; border: 1px solid #E5E7EB; padding: 16px; border-radius: 8px; margin-bottom: 16px; background: #FAFBFC; }
+    .terms-en { direction: ltr; text-align: left; line-height: 1.8; border: 1px solid #E5E7EB; padding: 16px; border-radius: 8px; background: #FAFBFC; }
+    .signatures-grid { display: flex; justify-content: space-between; margin-top: 40px; }
+    .signature-box { width: 45%; text-align: center; }
+    .signature-box .sig-label { font-size: 12px; color: #6B7280; margin-bottom: 8px; }
+    .signature-box .sig-name { font-weight: 700; font-size: 14px; margin-bottom: 4px; }
+    .signature-box .sig-title { font-size: 12px; color: #6B7280; }
+    .signature-line { border-bottom: 2px solid #1B365D; height: 60px; margin: 20px 0 8px; }
+    .signature-img { max-height: 60px; margin: 10px 0; }
+    .legal-docs-table { width: 100%; border-collapse: collapse; font-size: 12px; }
+    .legal-docs-table th { background: #F3F4F6; padding: 8px; text-align: left; font-weight: 600; }
+    .legal-docs-table td { padding: 8px; border-bottom: 1px solid #F3F4F6; }
+    .contract-footer { text-align: center; color: #9CA3AF; font-size: 11px; margin-top: 30px; padding-top: 16px; border-top: 1px solid #E5E7EB; }
+</style>
+
+<div class="contract-print">
+    <!-- Header -->
+    <div class="contract-header">
+        <h1>عقد إيجار / تأجير مساحة عمل</h1>
+        <div class="subtitle">Co-working Space Rental Agreement</div>
+    </div>
+    <div class="gold-bar"></div>
+
+    <div class="contract-body">
+        <div class="contract-number">
+            Contract No. / رقم العقد: <strong>{{ doc.name }}</strong>
+            &nbsp;&nbsp;|&nbsp;&nbsp;
+            Date / التاريخ: <strong>{{ doc.get_formatted("contract_date") }}</strong>
+        </div>
+
+        <!-- Member Details -->
+        <div class="section-title">Member Details / بيانات العميل</div>
+        <table class="info-table">
+            <tr>
+                <td class="label">Name / الاسم</td>
+                <td class="value">{{ doc.member_name or doc.member }}</td>
+            </tr>
+            {% if doc.member_email %}
+            <tr>
+                <td class="label">Email / البريد</td>
+                <td class="value">{{ doc.member_email }}</td>
+            </tr>
+            {% endif %}
+            {% if doc.member_phone %}
+            <tr>
+                <td class="label">Phone / الهاتف</td>
+                <td class="value">{{ doc.member_phone }}</td>
+            </tr>
+            {% endif %}
+            {% if doc.member_address %}
+            <tr>
+                <td class="label">Address / العنوان</td>
+                <td class="value">{{ doc.member_address }}</td>
+            </tr>
+            {% endif %}
+        </table>
+
+        <!-- Unit / Space Details -->
+        <div class="section-title">Unit Details / بيانات الوحدة</div>
+        <table class="info-table">
+            {% if doc.space %}
+            <tr>
+                <td class="label">Space / الوحدة</td>
+                <td class="value">{{ doc.space }}</td>
+            </tr>
+            {% endif %}
+            {% if doc.space_type %}
+            <tr>
+                <td class="label">Type / النوع</td>
+                <td class="value">{{ doc.space_type }}</td>
+            </tr>
+            {% endif %}
+            {% if doc.branch %}
+            <tr>
+                <td class="label">Branch / الفرع</td>
+                <td class="value">{{ doc.branch }}</td>
+            </tr>
+            {% endif %}
+            {% if doc.floor %}
+            <tr>
+                <td class="label">Floor / الطابق</td>
+                <td class="value">{{ doc.floor }}</td>
+            </tr>
+            {% endif %}
+            {% if doc.unit_details %}
+            <tr>
+                <td class="label">Description / الوصف</td>
+                <td class="value">{{ doc.unit_details }}</td>
+            </tr>
+            {% endif %}
+        </table>
+
+        <!-- Financial Details -->
+        <div class="section-title">Financial Details / البيانات المالية</div>
+        <table class="info-table">
+            <tr>
+                <td class="label">Period / المدة</td>
+                <td class="value">{{ doc.get_formatted("start_date") }} — {{ doc.get_formatted("end_date") }}</td>
+            </tr>
+            {% if doc.membership_plan %}
+            <tr>
+                <td class="label">Plan / الخطة</td>
+                <td class="value">{{ doc.membership_plan }}</td>
+            </tr>
+            {% endif %}
+            {% if doc.billing_cycle %}
+            <tr>
+                <td class="label">Billing / الفوترة</td>
+                <td class="value">{{ doc.billing_cycle }}</td>
+            </tr>
+            {% endif %}
+            <tr>
+                <td class="label">Rate / القيمة</td>
+                <td class="value">{{ doc.get_formatted("rate") }} {{ doc.currency }}</td>
+            </tr>
+            {% if doc.discount_percent %}
+            <tr>
+                <td class="label">Discount / الخصم</td>
+                <td class="value">{{ doc.discount_percent }}%</td>
+            </tr>
+            {% endif %}
+            <tr>
+                <td class="label" style="font-weight:700;">Net Amount / الصافي</td>
+                <td class="value" style="font-size: 16px; color: #C4A962;">{{ doc.get_formatted("net_amount") }} {{ doc.currency }}</td>
+            </tr>
+            {% if doc.deposit_amount %}
+            <tr>
+                <td class="label">Deposit / التأمين</td>
+                <td class="value">{{ doc.get_formatted("deposit_amount") }} {{ doc.currency }}</td>
+            </tr>
+            {% endif %}
+        </table>
+
+        <!-- Legal Documents -->
+        {% if doc.legal_documents %}
+        <div class="section-title">Legal Documents / المستندات القانونية</div>
+        <table class="legal-docs-table">
+            <thead>
+                <tr>
+                    <th>Document / المستند</th>
+                    <th>Number / الرقم</th>
+                    <th>Expiry / الانتهاء</th>
+                    <th>Status / الحالة</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for d in doc.legal_documents %}
+                <tr>
+                    <td>{{ d.document_type }}</td>
+                    <td>{{ d.document_number or '-' }}</td>
+                    <td>{{ frappe.format(d.expiry_date, "Date") if d.expiry_date else '-' }}</td>
+                    <td>{{ d.status or '-' }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% endif %}
+
+        <!-- Terms Arabic -->
+        {% if doc.contract_terms_ar %}
+        <div class="section-title section-title-ar">شروط وأحكام العقد</div>
+        <div class="terms-ar">{{ doc.contract_terms_ar }}</div>
+        {% endif %}
+
+        <!-- Terms English -->
+        {% if doc.contract_terms_en %}
+        <div class="section-title">Terms and Conditions</div>
+        <div class="terms-en">{{ doc.contract_terms_en }}</div>
+        {% endif %}
+
+        <!-- Signatures -->
+        <div class="section-title">Signatures / التوقيعات</div>
+        <div class="signatures-grid">
+            <div class="signature-box">
+                <div class="sig-label">Company Representative / ممثل الشركة</div>
+                <div class="signature-line"></div>
+                <div class="sig-name">{{ doc.company_signatory or '________________' }}</div>
+                <div class="sig-title">{{ doc.company_signatory_title or '' }}</div>
+            </div>
+            <div class="signature-box">
+                <div class="sig-label">Member / العميل</div>
+                {% if doc.member_signature %}
+                <img class="signature-img" src="{{ doc.member_signature }}" alt="Signature">
+                {% else %}
+                <div class="signature-line"></div>
+                {% endif %}
+                <div class="sig-name">{{ doc.member_name or doc.member }}</div>
+                {% if doc.signed_date %}
+                <div class="sig-title">{{ doc.get_formatted("signed_date") }}</div>
+                {% endif %}
+            </div>
+        </div>
+
+        {% if doc.witness_name %}
+        <div style="margin-top: 30px; text-align: center;">
+            <div class="sig-label">Witness / الشاهد</div>
+            <div class="sig-name">{{ doc.witness_name }}</div>
+            {% if doc.witness_id %}
+            <div class="sig-title">ID: {{ doc.witness_id }}</div>
+            {% endif %}
+        </div>
+        {% endif %}
+
+        <div class="contract-footer">
+            ARKSpace — Co-working Space Management | إدارة مساحات العمل المشتركة
+        </div>
+    </div>
+</div>

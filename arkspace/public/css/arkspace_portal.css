@@ -1,0 +1,252 @@
+/* ARKSpace Member Portal Styles */
+
+:root {
+	--ark-navy: #1B365D;
+	--ark-gold: #C4A962;
+	--ark-bg: #F8F9FA;
+	--ark-card-bg: #FFFFFF;
+	--ark-border: #E5E7EB;
+	--ark-radius: 12px;
+	--ark-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* Portal Layout */
+.arkspace-portal {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 2rem 1rem;
+}
+
+.arkspace-portal h1,
+.arkspace-portal h2 {
+	color: var(--ark-navy);
+}
+
+.arkspace-portal .portal-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 2rem;
+	flex-wrap: wrap;
+	gap: 1rem;
+}
+
+.arkspace-portal .portal-header h1 {
+	margin: 0;
+	font-size: 1.75rem;
+}
+
+/* KPI Strip */
+.ark-kpi-strip {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+	gap: 1rem;
+	margin-bottom: 2rem;
+}
+
+.ark-kpi-card {
+	background: var(--ark-card-bg);
+	border: 1px solid var(--ark-border);
+	border-radius: var(--ark-radius);
+	padding: 1.25rem;
+	text-align: center;
+	box-shadow: var(--ark-shadow);
+}
+
+.ark-kpi-card .kpi-value {
+	font-size: 2rem;
+	font-weight: 700;
+	color: var(--ark-navy);
+	line-height: 1.2;
+}
+
+.ark-kpi-card .kpi-label {
+	font-size: 0.85rem;
+	color: #6B7280;
+	margin-top: 0.25rem;
+}
+
+.ark-kpi-card.gold .kpi-value {
+	color: var(--ark-gold);
+}
+
+/* Cards Grid */
+.ark-cards-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+	gap: 1.5rem;
+	margin-bottom: 2rem;
+}
+
+.ark-card {
+	background: var(--ark-card-bg);
+	border: 1px solid var(--ark-border);
+	border-radius: var(--ark-radius);
+	padding: 1.5rem;
+	box-shadow: var(--ark-shadow);
+}
+
+.ark-card h3 {
+	color: var(--ark-navy);
+	font-size: 1.1rem;
+	margin-top: 0;
+	margin-bottom: 1rem;
+	padding-bottom: 0.5rem;
+	border-bottom: 2px solid var(--ark-gold);
+}
+
+/* Booking List */
+.ark-booking-list {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.ark-booking-list li {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0.75rem 0;
+	border-bottom: 1px solid var(--ark-border);
+}
+
+.ark-booking-list li:last-child {
+	border-bottom: none;
+}
+
+.ark-booking-info {
+	flex: 1;
+}
+
+.ark-booking-info .space-name {
+	font-weight: 600;
+	color: var(--ark-navy);
+}
+
+.ark-booking-info .booking-time {
+	font-size: 0.85rem;
+	color: #6B7280;
+}
+
+/* Status Badges */
+.ark-status {
+	display: inline-block;
+	padding: 0.2rem 0.6rem;
+	border-radius: 999px;
+	font-size: 0.75rem;
+	font-weight: 600;
+	text-transform: uppercase;
+}
+
+.ark-status.active, .ark-status.confirmed { background: #D1FAE5; color: #065F46; }
+.ark-status.expired, .ark-status.checked-out { background: #E5E7EB; color: #374151; }
+.ark-status.cancelled { background: #FEE2E2; color: #991B1B; }
+.ark-status.pending { background: #FEF3C7; color: #92400E; }
+.ark-status.checked-in { background: #DBEAFE; color: #1E40AF; }
+
+/* Space Cards for Booking */
+.ark-space-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+	gap: 1.5rem;
+}
+
+.ark-space-card {
+	background: var(--ark-card-bg);
+	border: 1px solid var(--ark-border);
+	border-radius: var(--ark-radius);
+	overflow: hidden;
+	box-shadow: var(--ark-shadow);
+	transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.ark-space-card:hover {
+	transform: translateY(-2px);
+	box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+}
+
+.ark-space-card .space-image {
+	width: 100%;
+	height: 180px;
+	object-fit: cover;
+	background: #E5E7EB;
+}
+
+.ark-space-card .space-details {
+	padding: 1rem;
+}
+
+.ark-space-card .space-name {
+	font-weight: 700;
+	color: var(--ark-navy);
+	font-size: 1.05rem;
+}
+
+.ark-space-card .space-type {
+	color: #6B7280;
+	font-size: 0.85rem;
+}
+
+.ark-space-card .space-rate {
+	font-weight: 700;
+	color: var(--ark-gold);
+	font-size: 1.1rem;
+	margin-top: 0.5rem;
+}
+
+/* Buttons */
+.ark-btn {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.5rem;
+	padding: 0.6rem 1.2rem;
+	border: none;
+	border-radius: 8px;
+	font-weight: 600;
+	font-size: 0.9rem;
+	cursor: pointer;
+	transition: all 0.2s;
+	text-decoration: none;
+}
+
+.ark-btn-primary {
+	background: var(--ark-navy);
+	color: white;
+}
+.ark-btn-primary:hover {
+	background: #152B4D;
+	color: white;
+	text-decoration: none;
+}
+
+.ark-btn-gold {
+	background: var(--ark-gold);
+	color: var(--ark-navy);
+}
+.ark-btn-gold:hover {
+	background: #B39952;
+	color: var(--ark-navy);
+	text-decoration: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+	.ark-kpi-strip {
+		grid-template-columns: repeat(2, 1fr);
+	}
+	.ark-cards-grid {
+		grid-template-columns: 1fr;
+	}
+	.ark-space-grid {
+		grid-template-columns: 1fr;
+	}
+}
+
+/* RTL Support */
+[dir="rtl"] .ark-booking-list li {
+	flex-direction: row-reverse;
+}
+
+[dir="rtl"] .portal-header {
+	flex-direction: row-reverse;
+}

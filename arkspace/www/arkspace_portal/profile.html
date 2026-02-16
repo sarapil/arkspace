@@ -1,0 +1,86 @@
+{%- extends "templates/web.html" -%}
+
+{%- block page_content -%}
+<div class="arkspace-portal">
+	<div class="portal-header">
+		<h1><i class="fa-solid fa-user-circle"></i> {{ _("My Profile") }}</h1>
+		<a href="/arkspace_portal" class="ark-btn ark-btn-primary">
+			<i class="fa-solid fa-arrow-left"></i> {{ _("Back to Portal") }}
+		</a>
+	</div>
+
+	<div class="ark-cards-grid">
+		<!-- User Info -->
+		<div class="ark-card">
+			<h3><i class="fa-solid fa-user"></i> {{ _("Personal Information") }}</h3>
+			<div style="display: flex; align-items: center; gap: 1.5rem; margin-bottom: 1.5rem;">
+				{% if user_image %}
+				<img src="{{ user_image }}" alt="{{ user_name }}"
+					 style="width:80px;height:80px;border-radius:50%;object-fit:cover;">
+				{% else %}
+				<div style="width:80px;height:80px;border-radius:50%;background:#E5E7EB;display:flex;align-items:center;justify-content:center;">
+					<i class="fa-solid fa-user" style="font-size:2rem;color:#9CA3AF;"></i>
+				</div>
+				{% endif %}
+				<div>
+					<div style="font-size: 1.25rem; font-weight: 700;">{{ user_name }}</div>
+					<div style="color: #6B7280;">{{ email }}</div>
+					{% if mobile_no %}
+					<div style="color: #6B7280;">{{ mobile_no }}</div>
+					{% endif %}
+				</div>
+			</div>
+			<a href="/update-profile" class="ark-btn ark-btn-gold" style="width: 100%; justify-content: center;">
+				<i class="fa-solid fa-pen-to-square"></i> {{ _("Edit Profile") }}
+			</a>
+		</div>
+
+		<!-- Customer / Membership Info -->
+		<div class="ark-card">
+			<h3><i class="fa-solid fa-building"></i> {{ _("Membership Details") }}</h3>
+			{% if member_doc %}
+			<table style="width:100%; border-collapse: collapse;">
+				<tr style="border-bottom: 1px solid #E5E7EB;">
+					<td style="padding: 0.5rem 0; font-weight: 600; color: #6B7280;">{{ _("Customer ID") }}</td>
+					<td style="padding: 0.5rem 0;">{{ member_doc.name }}</td>
+				</tr>
+				<tr style="border-bottom: 1px solid #E5E7EB;">
+					<td style="padding: 0.5rem 0; font-weight: 600; color: #6B7280;">{{ _("Customer Name") }}</td>
+					<td style="padding: 0.5rem 0;">{{ member_doc.customer_name }}</td>
+				</tr>
+				{% if member_doc.customer_group %}
+				<tr style="border-bottom: 1px solid #E5E7EB;">
+					<td style="padding: 0.5rem 0; font-weight: 600; color: #6B7280;">{{ _("Customer Group") }}</td>
+					<td style="padding: 0.5rem 0;">{{ member_doc.customer_group }}</td>
+				</tr>
+				{% endif %}
+				{% if member_doc.territory %}
+				<tr>
+					<td style="padding: 0.5rem 0; font-weight: 600; color: #6B7280;">{{ _("Territory") }}</td>
+					<td style="padding: 0.5rem 0;">{{ member_doc.territory }}</td>
+				</tr>
+				{% endif %}
+			</table>
+			{% else %}
+			<p style="color: #6B7280;">{{ _("No linked customer account found. Contact support to link your account.") }}</p>
+			{% endif %}
+		</div>
+	</div>
+
+	<!-- Quick Links -->
+	<div class="ark-card" style="margin-top: 2rem;">
+		<h3><i class="fa-solid fa-link"></i> {{ _("Quick Links") }}</h3>
+		<div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+			<a href="/arkspace_portal" class="ark-btn ark-btn-primary">
+				<i class="fa-solid fa-gauge"></i> {{ _("Dashboard") }}
+			</a>
+			<a href="/arkspace_portal/book" class="ark-btn ark-btn-gold">
+				<i class="fa-solid fa-calendar-plus"></i> {{ _("Book a Space") }}
+			</a>
+			<a href="/update-password" class="ark-btn">
+				<i class="fa-solid fa-key"></i> {{ _("Change Password") }}
+			</a>
+		</div>
+	</div>
+</div>
+{%- endblock -%}

@@ -1,0 +1,420 @@
+{
+ "actions": [],
+ "autoname": "format:CTR-{YYYY}-{####}",
+ "creation": "2026-02-20 00:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "is_submittable": 1,
+ "field_order": [
+  "contract_title",
+  "contract_date",
+  "column_break_header",
+  "contract_template",
+  "status",
+  "member_section",
+  "member",
+  "member_name",
+  "member_email",
+  "column_break_member",
+  "member_phone",
+  "member_address",
+  "space_section",
+  "space",
+  "space_type",
+  "column_break_space",
+  "branch",
+  "floor",
+  "unit_details",
+  "membership_section",
+  "membership",
+  "membership_plan",
+  "column_break_membership",
+  "billing_cycle",
+  "period_section",
+  "start_date",
+  "end_date",
+  "column_break_period",
+  "auto_renew",
+  "financial_section",
+  "rate",
+  "currency",
+  "column_break_financial",
+  "discount_percent",
+  "net_amount",
+  "deposit_amount",
+  "legal_docs_section",
+  "legal_documents",
+  "terms_section",
+  "contract_terms_ar",
+  "contract_terms_en",
+  "signatures_section",
+  "company_signatory",
+  "company_signatory_title",
+  "column_break_signatures",
+  "member_signature",
+  "signed_date",
+  "witness_section",
+  "witness_name",
+  "witness_id",
+  "notes_section",
+  "notes",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "contract_title",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Contract Title / عنوان العقد",
+   "reqd": 1
+  },
+  {
+   "default": "Today",
+   "fieldname": "contract_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Contract Date / تاريخ العقد",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_header",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "contract_template",
+   "fieldtype": "Link",
+   "label": "Contract Template / نموذج العقد",
+   "options": "Contract Template"
+  },
+  {
+   "default": "Draft / مسودة",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Status / الحالة",
+   "options": "Draft / مسودة\nActive / ساري\nExpired / منتهي\nTerminated / منهي\nCancelled / ملغي"
+  },
+  {
+   "fieldname": "member_section",
+   "fieldtype": "Section Break",
+   "label": "Member Details / بيانات العميل"
+  },
+  {
+   "fieldname": "member",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Member / العميل",
+   "options": "Customer",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "member.customer_name",
+   "fieldname": "member_name",
+   "fieldtype": "Data",
+   "label": "Member Name / اسم العميل",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "member.email_id",
+   "fieldname": "member_email",
+   "fieldtype": "Data",
+   "label": "Email / البريد الإلكتروني",
+   "options": "Email",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_member",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "member.mobile_no",
+   "fieldname": "member_phone",
+   "fieldtype": "Data",
+   "label": "Phone / الهاتف",
+   "options": "Phone"
+  },
+  {
+   "fieldname": "member_address",
+   "fieldtype": "Small Text",
+   "label": "Address / العنوان"
+  },
+  {
+   "fieldname": "space_section",
+   "fieldtype": "Section Break",
+   "label": "Unit / Space Details / بيانات الوحدة"
+  },
+  {
+   "fieldname": "space",
+   "fieldtype": "Link",
+   "label": "Space / الوحدة",
+   "options": "Co-working Space"
+  },
+  {
+   "fetch_from": "space.space_type",
+   "fieldname": "space_type",
+   "fieldtype": "Data",
+   "label": "Space Type / نوع الوحدة",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_space",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "branch",
+   "fieldtype": "Link",
+   "label": "Branch / الفرع",
+   "options": "Branch"
+  },
+  {
+   "fieldname": "floor",
+   "fieldtype": "Data",
+   "label": "Floor / الطابق"
+  },
+  {
+   "fieldname": "unit_details",
+   "fieldtype": "Small Text",
+   "label": "Unit Description / وصف الوحدة",
+   "description": "Area, capacity, facilities, etc. / المساحة، السعة، التجهيزات"
+  },
+  {
+   "fieldname": "membership_section",
+   "fieldtype": "Section Break",
+   "label": "Membership / العضوية"
+  },
+  {
+   "fieldname": "membership",
+   "fieldtype": "Link",
+   "label": "Membership / العضوية",
+   "options": "Membership"
+  },
+  {
+   "fetch_from": "membership.membership_plan",
+   "fieldname": "membership_plan",
+   "fieldtype": "Data",
+   "label": "Plan / الخطة",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_membership",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "membership.billing_cycle",
+   "fieldname": "billing_cycle",
+   "fieldtype": "Data",
+   "label": "Billing Cycle / دورة الفوترة",
+   "read_only": 1
+  },
+  {
+   "fieldname": "period_section",
+   "fieldtype": "Section Break",
+   "label": "Contract Period / مدة العقد"
+  },
+  {
+   "fieldname": "start_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Start Date / تاريخ البداية",
+   "reqd": 1
+  },
+  {
+   "fieldname": "end_date",
+   "fieldtype": "Date",
+   "label": "End Date / تاريخ النهاية",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_period",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "auto_renew",
+   "fieldtype": "Check",
+   "label": "Auto Renew / تجديد تلقائي"
+  },
+  {
+   "fieldname": "financial_section",
+   "fieldtype": "Section Break",
+   "label": "Financial / البيانات المالية"
+  },
+  {
+   "fieldname": "rate",
+   "fieldtype": "Currency",
+   "label": "Rate / القيمة",
+   "reqd": 1
+  },
+  {
+   "default": "EGP",
+   "fieldname": "currency",
+   "fieldtype": "Link",
+   "label": "Currency / العملة",
+   "options": "Currency"
+  },
+  {
+   "fieldname": "column_break_financial",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "discount_percent",
+   "fieldtype": "Percent",
+   "label": "Discount % / نسبة الخصم"
+  },
+  {
+   "fieldname": "net_amount",
+   "fieldtype": "Currency",
+   "label": "Net Amount / الصافي",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "deposit_amount",
+   "fieldtype": "Currency",
+   "label": "Security Deposit / التأمين"
+  },
+  {
+   "fieldname": "legal_docs_section",
+   "fieldtype": "Section Break",
+   "label": "Legal Documents / المستندات القانونية"
+  },
+  {
+   "fieldname": "legal_documents",
+   "fieldtype": "Table",
+   "label": "Attached Legal Documents / المستندات المرفقة",
+   "options": "Contract Legal Document"
+  },
+  {
+   "fieldname": "terms_section",
+   "fieldtype": "Section Break",
+   "label": "Contract Terms / شروط العقد"
+  },
+  {
+   "fieldname": "contract_terms_ar",
+   "fieldtype": "Text Editor",
+   "label": "Terms (Arabic) / الشروط بالعربية"
+  },
+  {
+   "fieldname": "contract_terms_en",
+   "fieldtype": "Text Editor",
+   "label": "Terms (English) / الشروط بالإنجليزية"
+  },
+  {
+   "fieldname": "signatures_section",
+   "fieldtype": "Section Break",
+   "label": "Signatures / التوقيعات"
+  },
+  {
+   "fieldname": "company_signatory",
+   "fieldtype": "Data",
+   "label": "Company Representative / ممثل الشركة"
+  },
+  {
+   "fieldname": "company_signatory_title",
+   "fieldtype": "Data",
+   "label": "Title / المسمى الوظيفي"
+  },
+  {
+   "fieldname": "column_break_signatures",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "member_signature",
+   "fieldtype": "Signature",
+   "label": "Member Signature / توقيع العميل"
+  },
+  {
+   "fieldname": "signed_date",
+   "fieldtype": "Date",
+   "label": "Signed Date / تاريخ التوقيع"
+  },
+  {
+   "fieldname": "witness_section",
+   "fieldtype": "Section Break",
+   "label": "Witness / الشاهد",
+   "collapsible": 1
+  },
+  {
+   "fieldname": "witness_name",
+   "fieldtype": "Data",
+   "label": "Witness Name / اسم الشاهد"
+  },
+  {
+   "fieldname": "witness_id",
+   "fieldtype": "Data",
+   "label": "Witness ID / رقم هوية الشاهد"
+  },
+  {
+   "fieldname": "notes_section",
+   "fieldtype": "Section Break",
+   "label": "Notes / ملاحظات",
+   "collapsible": 1
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Text Editor",
+   "label": "Notes / ملاحظات"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Member Contract",
+   "print_hide": 1,
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-02-20 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "ARKSpace Contracts",
+ "name": "Member Contract",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "read": 1,
+   "role": "ARKSpace Admin",
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "read": 1,
+   "role": "ARKSpace Manager",
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "read": 1,
+   "role": "ARKSpace Sales",
+   "write": 1
+  },
+  {
+   "read": 1,
+   "role": "ARKSpace Front Desk"
+  }
+ ],
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1,
+ "title_field": "contract_title"
+}

@@ -1,0 +1,120 @@
+<style>
+    @page { margin: 12mm; }
+    .receipt-print { font-family: 'Inter', 'Cairo', sans-serif; max-width: 600px; margin: 0 auto; color: #1B365D; }
+    .receipt-header { background: linear-gradient(135deg, #1B365D 0%, #2A4A7F 100%); color: #fff; padding: 24px; border-radius: 12px 12px 0 0; text-align: center; }
+    .receipt-header h1 { margin: 0; font-size: 20px; }
+    .receipt-header .subtitle { opacity: 0.85; font-size: 12px; margin-top: 2px; }
+    .gold-bar { height: 4px; background: linear-gradient(90deg, #C4A962, #A38B4C); }
+    .receipt-body { padding: 24px; border: 1px solid #E5E7EB; border-top: none; border-radius: 0 0 12px 12px; }
+    .receipt-number { display: flex; justify-content: space-between; font-size: 12px; color: #6B7280; margin-bottom: 16px; padding-bottom: 12px; border-bottom: 1px dashed #E5E7EB; }
+    .info-table { width: 100%; border-collapse: collapse; margin-bottom: 16px; }
+    .info-table td { padding: 6px 10px; border-bottom: 1px solid #F3F4F6; font-size: 13px; }
+    .info-table .label { color: #6B7280; width: 40%; }
+    .info-table .value { font-weight: 600; }
+    .amount-box { text-align: center; background: linear-gradient(135deg, #1B365D 0%, #0F1D33 100%); color: #fff; padding: 20px; border-radius: 10px; margin: 16px 0; }
+    .amount-box .amount { font-size: 28px; font-weight: 800; color: #C4A962; }
+    .amount-box .amount-label { font-size: 12px; opacity: 0.85; }
+    .receipt-footer { text-align: center; color: #9CA3AF; font-size: 10px; margin-top: 20px; padding-top: 12px; border-top: 1px dashed #E5E7EB; }
+    .stamp-area { display: flex; justify-content: space-between; margin-top: 24px; }
+    .stamp-box { width: 45%; text-align: center; font-size: 12px; color: #6B7280; }
+    .stamp-line { border-bottom: 1px solid #1B365D; height: 40px; margin-bottom: 4px; }
+</style>
+
+<div class="receipt-print">
+    <div class="receipt-header">
+        <h1>إيصال دفع / Payment Receipt</h1>
+        <div class="subtitle">ARKSpace — Co-working Space Management</div>
+    </div>
+    <div class="gold-bar"></div>
+
+    <div class="receipt-body">
+        <div class="receipt-number">
+            <span>Receipt No. / رقم الإيصال: <strong>{{ doc.name }}</strong></span>
+            <span>Date / التاريخ: <strong>{{ doc.get_formatted("receipt_date") }}</strong></span>
+        </div>
+
+        <table class="info-table">
+            <tr>
+                <td class="label">Member / العميل</td>
+                <td class="value">{{ doc.member_name or doc.member }}</td>
+            </tr>
+            <tr>
+                <td class="label">Receipt Type / نوع الإيصال</td>
+                <td class="value">{{ doc.receipt_type }}</td>
+            </tr>
+            {% if doc.member_contract %}
+            <tr>
+                <td class="label">Contract / العقد</td>
+                <td class="value">{{ doc.member_contract }}</td>
+            </tr>
+            {% endif %}
+            {% if doc.membership %}
+            <tr>
+                <td class="label">Membership / العضوية</td>
+                <td class="value">{{ doc.membership }}</td>
+            </tr>
+            {% endif %}
+            {% if doc.space_booking %}
+            <tr>
+                <td class="label">Booking / الحجز</td>
+                <td class="value">{{ doc.space_booking }}</td>
+            </tr>
+            {% endif %}
+            {% if doc.period_from and doc.period_to %}
+            <tr>
+                <td class="label">Period / الفترة</td>
+                <td class="value">{{ doc.get_formatted("period_from") }} — {{ doc.get_formatted("period_to") }}</td>
+            </tr>
+            {% endif %}
+            {% if doc.billing_cycle %}
+            <tr>
+                <td class="label">Billing / الفوترة</td>
+                <td class="value">{{ doc.billing_cycle }}</td>
+            </tr>
+            {% endif %}
+            <tr>
+                <td class="label">Payment Method / طريقة الدفع</td>
+                <td class="value">{{ doc.payment_method }}</td>
+            </tr>
+            {% if doc.reference_number %}
+            <tr>
+                <td class="label">Reference / المرجع</td>
+                <td class="value">{{ doc.reference_number }}</td>
+            </tr>
+            {% endif %}
+            {% if doc.payment_date %}
+            <tr>
+                <td class="label">Payment Date / تاريخ الدفع</td>
+                <td class="value">{{ doc.get_formatted("payment_date") }}</td>
+            </tr>
+            {% endif %}
+        </table>
+
+        <div class="amount-box">
+            <div class="amount-label">Amount Paid / المبلغ المدفوع</div>
+            <div class="amount">{{ doc.get_formatted("amount") }} {{ doc.currency }}</div>
+        </div>
+
+        {% if doc.notes %}
+        <div style="font-size: 12px; color: #6B7280; margin-top: 12px;">
+            <strong>Notes / ملاحظات:</strong> {{ doc.notes }}
+        </div>
+        {% endif %}
+
+        <div class="stamp-area">
+            <div class="stamp-box">
+                <div class="stamp-line"></div>
+                Cashier / أمين الصندوق
+            </div>
+            <div class="stamp-box">
+                <div class="stamp-line"></div>
+                Stamp / الختم
+            </div>
+        </div>
+
+        <div class="receipt-footer">
+            This receipt is an official record of payment / هذا الإيصال سجل رسمي للدفع
+            <br>ARKSpace — إدارة مساحات العمل المشتركة
+        </div>
+    </div>
+</div>

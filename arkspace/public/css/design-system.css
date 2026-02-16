@@ -1,0 +1,382 @@
+/* ============================================================
+   ARKSpace Design System — نظام التصميم
+   ============================================================ */
+
+/* ========================
+   CSS VARIABLES
+   ======================== */
+:root {
+    --ark-navy: #1B365D;
+    --ark-gold: #C4A962;
+    --ark-blue: #2563EB;
+    --ark-blue-dark: #1D4ED8;
+    --ark-blue-darker: #1E40AF;
+    --ark-green: #10B981;
+    --ark-green-dark: #059669;
+    --ark-orange: #F59E0B;
+    --ark-red: #EF4444;
+    --ark-red-dark: #DC2626;
+    --ark-purple: #6366F1;
+    --ark-bg-primary: #FFFFFF;
+    --ark-bg-secondary: #F8FAFC;
+    --ark-bg-tertiary: #F1F5F9;
+    --ark-text-primary: #1F2937;
+    --ark-text-secondary: #6B7280;
+    --ark-text-muted: #9CA3AF;
+    --ark-radius: 8px;
+    --ark-transition: all 0.3s ease;
+}
+
+/* ========================
+   BUTTON STYLES — أنماط الأزرار
+   ======================== */
+
+.btn-arkspace-primary {
+    background: linear-gradient(135deg, var(--ark-blue) 0%, var(--ark-blue-dark) 100%);
+    color: #FFFFFF;
+    border: none;
+    border-radius: var(--ark-radius);
+    padding: 12px 24px;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    transition: var(--ark-transition);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 2px 4px rgba(37, 99, 235, 0.3);
+}
+
+.btn-arkspace-primary:hover {
+    background: linear-gradient(135deg, var(--ark-blue-dark) 0%, var(--ark-blue-darker) 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.4);
+}
+
+.btn-arkspace-primary:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(37, 99, 235, 0.3);
+}
+
+.btn-arkspace-primary i {
+    font-size: 16px;
+}
+
+/* Secondary Button */
+.btn-arkspace-secondary {
+    background: #FFFFFF;
+    color: var(--ark-navy);
+    border: 2px solid var(--ark-navy);
+    border-radius: var(--ark-radius);
+    padding: 10px 22px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--ark-transition);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-arkspace-secondary:hover {
+    background: var(--ark-navy);
+    color: #FFFFFF;
+}
+
+/* Success Button */
+.btn-arkspace-success {
+    background: linear-gradient(135deg, var(--ark-green) 0%, var(--ark-green-dark) 100%);
+    color: #FFFFFF;
+    border: none;
+    border-radius: var(--ark-radius);
+    padding: 12px 24px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--ark-transition);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-arkspace-success:hover {
+    background: linear-gradient(135deg, var(--ark-green-dark) 0%, #047857 100%);
+    transform: translateY(-2px);
+}
+
+/* Danger Button */
+.btn-arkspace-danger {
+    background: linear-gradient(135deg, var(--ark-red) 0%, var(--ark-red-dark) 100%);
+    color: #FFFFFF;
+    border: none;
+    border-radius: var(--ark-radius);
+    padding: 12px 24px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--ark-transition);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-arkspace-danger:hover {
+    background: linear-gradient(135deg, var(--ark-red-dark) 0%, #B91C1C 100%);
+}
+
+/* Gold / VIP Button */
+.btn-arkspace-gold {
+    background: linear-gradient(135deg, var(--ark-gold) 0%, #A38B4C 100%);
+    color: var(--ark-navy);
+    border: none;
+    border-radius: var(--ark-radius);
+    padding: 12px 24px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: var(--ark-transition);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 2px 8px rgba(196, 169, 98, 0.4);
+}
+
+.btn-arkspace-gold:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(196, 169, 98, 0.5);
+}
+
+/* Icon-Only Button */
+.btn-arkspace-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background: var(--ark-bg-tertiary);
+    color: var(--ark-navy);
+    cursor: pointer;
+    transition: var(--ark-transition);
+}
+
+.btn-arkspace-icon:hover {
+    background: var(--ark-navy);
+    color: #FFFFFF;
+}
+
+/* ========================
+   LINK STYLES — أنماط الروابط
+   ======================== */
+
+.link-arkspace {
+    color: var(--ark-blue);
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.link-arkspace:hover {
+    color: var(--ark-blue-dark);
+    text-decoration: underline;
+}
+
+.link-arkspace:visited {
+    color: #7C3AED;
+}
+
+.link-arkspace i {
+    font-size: 12px;
+    transition: transform 0.2s ease;
+}
+
+.link-arkspace:hover i {
+    transform: translateX(-4px);
+}
+
+/* Navigation Link */
+.link-arkspace-nav {
+    color: var(--ark-navy);
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.2s ease;
+}
+
+.link-arkspace-nav:hover {
+    background: var(--ark-bg-tertiary);
+    color: var(--ark-blue);
+}
+
+.link-arkspace-nav.active {
+    background: var(--ark-blue);
+    color: #FFFFFF;
+}
+
+/* Card Link */
+.link-arkspace-card {
+    display: block;
+    padding: 16px;
+    border-radius: 12px;
+    background: #FFFFFF;
+    border: 1px solid #E5E7EB;
+    text-decoration: none;
+    color: inherit;
+    transition: var(--ark-transition);
+}
+
+.link-arkspace-card:hover {
+    border-color: var(--ark-blue);
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.15);
+    transform: translateY(-2px);
+}
+
+/* ========================
+   SHORTCUT CARDS — بطاقات الاختصارات
+   ======================== */
+
+.shortcut-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #FFFFFF 0%, var(--ark-bg-secondary) 100%);
+    border: 1px solid #E5E7EB;
+    text-decoration: none;
+    color: var(--ark-navy);
+    transition: var(--ark-transition);
+    min-width: 120px;
+}
+
+.shortcut-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(27, 54, 93, 0.15);
+    border-color: var(--ark-gold);
+}
+
+.shortcut-card .icon-wrapper {
+    width: 56px;
+    height: 56px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 12px;
+    font-size: 24px;
+}
+
+.shortcut-card .icon-wrapper.blue { background: rgba(37, 99, 235, 0.1); color: var(--ark-blue); }
+.shortcut-card .icon-wrapper.green { background: rgba(16, 185, 129, 0.1); color: var(--ark-green); }
+.shortcut-card .icon-wrapper.gold { background: rgba(196, 169, 98, 0.1); color: var(--ark-gold); }
+.shortcut-card .icon-wrapper.purple { background: rgba(139, 92, 246, 0.1); color: var(--ark-purple); }
+.shortcut-card .icon-wrapper.red { background: rgba(239, 68, 68, 0.1); color: var(--ark-red); }
+
+.shortcut-card .label {
+    font-weight: 600;
+    font-size: 14px;
+    text-align: center;
+}
+
+.shortcut-card .count {
+    font-size: 12px;
+    color: var(--ark-text-secondary);
+    margin-top: 4px;
+}
+
+/* ========================
+   STATUS BADGES — شارات الحالة
+   ======================== */
+
+.status-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.status-badge.status-active { background: rgba(16, 185, 129, 0.1); color: var(--ark-green); }
+.status-badge.status-pending { background: rgba(245, 158, 11, 0.1); color: var(--ark-orange); }
+.status-badge.status-cancelled { background: rgba(239, 68, 68, 0.1); color: var(--ark-red); }
+.status-badge.status-draft { background: rgba(107, 114, 128, 0.1); color: var(--ark-text-secondary); }
+.status-badge.status-completed { background: rgba(37, 99, 235, 0.1); color: var(--ark-blue); }
+
+/* ========================
+   KPI CARDS — بطاقات المؤشرات
+   ======================== */
+
+.kpi-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 20px;
+    border-radius: 12px;
+    background: #FFFFFF;
+    border: 1px solid #E5E7EB;
+}
+
+.kpi-card .kpi-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+}
+
+.kpi-card.kpi-blue .kpi-icon { background: rgba(37, 99, 235, 0.1); color: var(--ark-blue); }
+.kpi-card.kpi-green .kpi-icon { background: rgba(16, 185, 129, 0.1); color: var(--ark-green); }
+.kpi-card.kpi-gold .kpi-icon { background: rgba(196, 169, 98, 0.1); color: var(--ark-gold); }
+.kpi-card.kpi-purple .kpi-icon { background: rgba(139, 92, 246, 0.1); color: var(--ark-purple); }
+
+.kpi-card .kpi-content { flex: 1; }
+
+.kpi-card .kpi-title {
+    font-size: 13px;
+    color: var(--ark-text-secondary);
+    margin-bottom: 4px;
+}
+
+.kpi-card .kpi-value {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--ark-text-primary);
+}
+
+.kpi-card .kpi-trend {
+    font-size: 12px;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    margin-top: 4px;
+}
+
+.kpi-card .kpi-trend.trend-up { color: var(--ark-green); }
+.kpi-card .kpi-trend.trend-down { color: var(--ark-red); }
+.kpi-card .kpi-trend.trend-neutral { color: var(--ark-text-muted); }
+
+/* ========================
+   RTL SUPPORT — دعم العربية
+   ======================== */
+
+[dir="rtl"] .link-arkspace:hover i {
+    transform: translateX(4px);
+}
+
+[dir="rtl"] .btn-arkspace-primary,
+[dir="rtl"] .btn-arkspace-secondary,
+[dir="rtl"] .btn-arkspace-success,
+[dir="rtl"] .btn-arkspace-danger {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .link-arkspace-nav {
+    flex-direction: row-reverse;
+}

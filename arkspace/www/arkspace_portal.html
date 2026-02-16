@@ -1,0 +1,117 @@
+{%- extends "templates/web.html" -%}
+
+{%- block page_content -%}
+<div class="arkspace-portal">
+	<!-- Header -->
+	<div class="portal-header">
+		<h1>
+			<i class="fa-solid fa-building"></i>
+			{{ _("Welcome") }}, {{ member_name or frappe.session.user }}
+		</h1>
+		<div>
+			<a href="/arkspace_portal/book" class="ark-btn ark-btn-primary">
+				<i class="fa-solid fa-calendar-plus"></i> {{ _("New Booking") }}
+			</a>
+		</div>
+	</div>
+
+	{% if no_membership %}
+	<div class="ark-card" style="text-align: center; padding: 3rem;">
+		<i class="fa-solid fa-user-plus" style="font-size: 3rem; color: var(--ark-gold); margin-bottom: 1rem;"></i>
+		<h2>{{ _("No membership found") }}</h2>
+		<p>{{ _("Contact us to set up your membership and start using ARKSpace.") }}</p>
+	</div>
+	{% else %}
+
+	<!-- KPI Strip -->
+	<div class="ark-kpi-strip">
+		<div class="ark-kpi-card">
+			<div class="kpi-value">{{ stats.active_memberships or 0 }}</div>
+			<div class="kpi-label">{{ _("Active Memberships") }}</div>
+		</div>
+		<div class="ark-kpi-card">
+			<div class="kpi-value">{{ stats.total_bookings or 0 }}</div>
+			<div class="kpi-label">{{ _("Total Bookings") }}</div>
+		</div>
+		<div class="ark-kpi-card">
+			<div class="kpi-value">{{ frappe.utils.fmt_money(stats.total_spent or 0) }}</div>
+			<div class="kpi-label">{{ _("Total Spent") }}</div>
+		</div>
+		<div class="ark-kpi-card gold">
+			<div class="kpi-value">{{ wallet.available_credits or 0 }}</div>
+			<div class="kpi-label">{{ _("Available Credits") }}</div>
+		</div>
+	</div>
+
+	<!-- Cards Grid -->
+	<div class="ark-cards-grid">
+		<!-- Active Memberships -->
+		<div class="ark-card">
+			<h3><i class="fa-solid fa-id-card"></i> {{ _("Active Memberships") }}</h3>
+			{% if memberships %}
+			<ul class="ark-booking-list">
+				{% for m in memberships %}
+				<li>
+					<div class="ark-booking-info">
+						<div class="space-name">{{ m.membership_plan }}</div>
+						<div class="booking-time">
+							{{ m.plan_type }} — {{ m.billing_cycle }}<br>
+							{{ frappe.utils.formatdate(m.start_date) }} → {{ frappe.utils.formatdate(m.end_date) }}
+						</div>
+					</div>
+					<span class="ark-status active">{{ _("Active") }}</span>
+				</li>
+				{% endfor %}
+			</ul>
+			{% else %}
+			<p style="color: #6B7280;">{{ _("No active memberships") }}</p>
+			{% endif %}
+		</div>
+
+		<!-- Upcoming Bookings -->
+		<div class="ark-card">
+			<h3><i class="fa-solid fa-calendar-check"></i> {{ _("Upcoming Bookings") }}</h3>
+			{% if upcoming_bookings %}
+			<ul class="ark-booking-list">
+				{% for b in upcoming_bookings %}
+				<li>
+					<div class="ark-booking-info">
+						<div class="space-name">{{ b.space }}</div>
+						<div class="booking-time">{{ frappe.utils.format_datetime(b.start_datetime) }}</div>
+					</div>
+					<span class="ark-status {{ b.status | lower | replace(' ', '-') }}">{{ b.status }}</span>
+				</li>
+				{% endfor %}
+			</ul>
+			{% else %}
+			<p style="color: #6B7280;">{{ _("No upcoming bookings") }}</p>
+			{% endif %}
+		</div>
+	</div>
+
+	<!-- Recent Bookings -->
+	<div class="ark-card" style="margin-bottom: 2rem;">
+		<h3><i class="fa-solid fa-clock-rotate-left"></i> {{ _("Recent Bookings") }}</h3>
+		{% if recent_bookings %}
+		<ul class="ark-booking-list">
+			{% for b in recent_bookings %}
+			<li>
+				<div class="ark-booking-info">
+					<div class="space-name">{{ b.space }} — {{ b.booking_type }}</div>
+					<div class="booking-time">
+						{{ frappe.utils.format_datetime(b.start_datetime) }}
+						({{ b.duration_hours }}h) — {{ frappe.utils.fmt_money(b.net_amount or 0) }}
+					</div>
+				</div>
+				<span class="ark-status {{ b.status | lower | replace(' ', '-') }}">{{ b.status }}</span>
+			</li>
+			{% endfor %}
+		</ul>
+		{% else %}
+		<p style="color: #6B7280;">{{ _("No recent bookings") }}</p>
+		{% endif %}
+	</div>
+
+	{% endif %}
+</div>
+{%- endblock -%}

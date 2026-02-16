@@ -1,0 +1,30 @@
+{
+ "attach_files": "",
+ "attach_print": 1,
+ "channel": "Email",
+ "creation": "2026-02-15 16:57:35.633660",
+ "days_in_advance": 0,
+ "docstatus": 0,
+ "doctype": "Notification",
+ "document_type": "Space Booking",
+ "enabled": 1,
+ "event": "Submit",
+ "idx": 0,
+ "is_standard": 1,
+ "message": "<div style=\"font-family: 'Inter', sans-serif; max-width: 600px; margin: 0 auto;\">\n<div style=\"background: linear-gradient(135deg, #1B365D 0%, #2A4A7F 100%); color: #fff; padding: 24px 30px; border-radius: 12px 12px 0 0;\">\n    <h2 style=\"margin: 0; font-size: 20px;\">\u2705 {{ _(\"Booking Confirmed\") }}</h2>\n    <p style=\"margin: 4px 0 0; opacity: 0.85; font-size: 13px;\">{{ doc.booking_id or doc.name }}</p>\n</div>\n<div style=\"border-bottom: 4px solid #C4A962;\"></div>\n<div style=\"padding: 24px 30px; background: #fff; border: 1px solid #E5E7EB; border-top: none; border-radius: 0 0 12px 12px;\">\n    <p>{{ _(\"Dear\") }} <strong>{{ doc.member_name or doc.member }}</strong>,</p>\n    <p>{{ _(\"Your booking has been confirmed with the following details\") }}:</p>\n    <table style=\"width: 100%; border-collapse: collapse; margin: 16px 0;\">\n        <tr><td style=\"padding: 8px 0; color: #6B7280; width: 40%;\">{{ _(\"Space\") }}</td><td style=\"padding: 8px 0; font-weight: 600;\">{{ doc.space }}</td></tr>\n        <tr><td style=\"padding: 8px 0; color: #6B7280;\">{{ _(\"Type\") }}</td><td style=\"padding: 8px 0; font-weight: 600;\">{{ doc.booking_type }}</td></tr>\n        <tr><td style=\"padding: 8px 0; color: #6B7280;\">{{ _(\"Start\") }}</td><td style=\"padding: 8px 0; font-weight: 600;\">{{ doc.get_formatted(\"start_datetime\") }}</td></tr>\n        <tr><td style=\"padding: 8px 0; color: #6B7280;\">{{ _(\"End\") }}</td><td style=\"padding: 8px 0; font-weight: 600;\">{{ doc.get_formatted(\"end_datetime\") }}</td></tr>\n        <tr><td style=\"padding: 8px 0; color: #6B7280;\">{{ _(\"Amount\") }}</td><td style=\"padding: 8px 0; font-weight: 700; color: #1B365D; font-size: 16px;\">{{ doc.get_formatted(\"net_amount\") }}</td></tr>\n    </table>\n    <p style=\"color: #9CA3AF; font-size: 12px; margin-top: 20px;\">ARKSpace \u2014 {{ _(\"Co-working Space Management\") }}</p>\n</div>\n</div>",
+ "message_type": "HTML",
+ "modified": "2026-02-15 16:57:35.633660",
+ "modified_by": "Administrator",
+ "module": "ARKSpace Spaces",
+ "name": "ARKSpace - Booking Confirmation",
+ "owner": "Administrator",
+ "print_format": "Booking Confirmation",
+ "recipients": [
+  {
+   "receiver_by_document_field": "member_email"
+  }
+ ],
+ "send_system_notification": 1,
+ "send_to_all_assignees": 0,
+ "subject": "Booking Confirmed \u2014 {{ doc.booking_id or doc.name }}"
+}

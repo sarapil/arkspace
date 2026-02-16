@@ -1,0 +1,21 @@
+{
+ "align_labels_right": 1,
+ "creation": "2026-02-20 00:00:00.000000",
+ "custom_format": 1,
+ "doc_type": "Member Contract",
+ "docstatus": 0,
+ "doctype": "Print Format",
+ "font_size": 12,
+ "html": "",
+ "idx": 0,
+ "line_breaks": 1,
+ "modified": "2026-02-20 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "ARKSpace Contracts",
+ "name": "Member Contract AR",
+ "owner": "Administrator",
+ "print_format_type": "Jinja",
+ "raw_printing": 0,
+ "show_section_headings": 1,
+ "standard": "Yes"
+}

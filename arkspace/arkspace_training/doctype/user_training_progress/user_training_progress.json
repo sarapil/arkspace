@@ -1,0 +1,188 @@
+{
+ "actions": [],
+ "autoname": "naming_series:",
+ "creation": "2026-01-15 10:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "user",
+  "member",
+  "column_break_1",
+  "training_module",
+  "training_session",
+  "section_break_progress",
+  "status",
+  "progress_percent",
+  "score",
+  "column_break_2",
+  "enrollment_date",
+  "completion_date",
+  "section_break_badge",
+  "badge",
+  "badge_awarded_on",
+  "section_break_notes",
+  "feedback",
+  "rating",
+  "notes"
+ ],
+ "fields": [
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "label": "Naming Series",
+   "options": "UTP-.YYYY.-.#####",
+   "default": "UTP-.YYYY.-.#####"
+  },
+  {
+   "fieldname": "user",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "User",
+   "options": "User",
+   "reqd": 1
+  },
+  {
+   "fieldname": "member",
+   "fieldtype": "Link",
+   "label": "Member (Customer)",
+   "options": "Customer"
+  },
+  {
+   "fieldname": "column_break_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "training_module",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Training Module",
+   "options": "Training Module",
+   "reqd": 1
+  },
+  {
+   "fieldname": "training_session",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Training Session",
+   "options": "Training Session"
+  },
+  {
+   "fieldname": "section_break_progress",
+   "fieldtype": "Section Break",
+   "label": "Progress"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Status",
+   "options": "Enrolled\nIn Progress\nCompleted\nDropped",
+   "default": "Enrolled"
+  },
+  {
+   "fieldname": "progress_percent",
+   "fieldtype": "Percent",
+   "label": "Progress %",
+   "default": "0"
+  },
+  {
+   "fieldname": "score",
+   "fieldtype": "Float",
+   "label": "Score",
+   "precision": "1"
+  },
+  {
+   "fieldname": "column_break_2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "enrollment_date",
+   "fieldtype": "Date",
+   "label": "Enrollment Date",
+   "reqd": 1,
+   "default": "Today"
+  },
+  {
+   "fieldname": "completion_date",
+   "fieldtype": "Date",
+   "label": "Completion Date"
+  },
+  {
+   "fieldname": "section_break_badge",
+   "fieldtype": "Section Break",
+   "label": "Badge"
+  },
+  {
+   "fieldname": "badge",
+   "fieldtype": "Link",
+   "label": "Awarded Badge",
+   "options": "Training Badge"
+  },
+  {
+   "fieldname": "badge_awarded_on",
+   "fieldtype": "Date",
+   "label": "Badge Awarded On",
+   "depends_on": "eval:doc.badge"
+  },
+  {
+   "fieldname": "section_break_notes",
+   "fieldtype": "Section Break",
+   "label": "Feedback & Notes"
+  },
+  {
+   "fieldname": "feedback",
+   "fieldtype": "Small Text",
+   "label": "Feedback"
+  },
+  {
+   "fieldname": "rating",
+   "fieldtype": "Rating",
+   "label": "Rating"
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Text",
+   "label": "Internal Notes"
+  }
+ ],
+ "icon": "fa-solid fa-chart-line",
+ "links": [],
+ "modified": "2026-01-15 10:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "ARKSpace Training",
+ "name": "User Training Progress",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "read": 1,
+   "report": 1,
+   "role": "ARKSpace Admin",
+   "write": 1
+  },
+  {
+   "create": 1,
+   "read": 1,
+   "role": "ARKSpace Member",
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}
