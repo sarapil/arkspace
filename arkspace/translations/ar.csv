@@ -1,272 +1,1878 @@
-source_text,translated_text,context
-ARKSpace,أرك سبيس,App Name
-Enterprise Co-Working Space Management,إدارة مساحات العمل المشتركة للمؤسسات,App Description
-ARKSpace Management,إدارة أرك سبيس,Workspace
-Spaces,المساحات,Module
-Bookings & Members,الحجوزات والأعضاء,Module
-CRM & Sales,المبيعات وإدارة العلاقات,Module
-Reports & Analytics,التقارير والتحليلات,Module
-Settings & Configuration,الإعدادات والتكوين,Module
-Co-working Space,مساحة عمل مشتركة,DocType
-Space Type,نوع المساحة,DocType
-Space Booking,حجز مساحة,DocType
-Amenity,مرفق,DocType
-Membership,عضوية,DocType
-Membership Plan,خطة العضوية,DocType
-Member Credit Wallet,محفظة رصيد العضو,DocType
-Credit Transaction,معاملة الرصيد,DocType
-Workspace Lead,عميل محتمل,DocType
-Workspace Tour,جولة في المساحة,DocType
-ARKSpace Settings,إعدادات أرك سبيس,DocType
-Design Configuration,إعدادات التصميم,DocType
-Training Module,وحدة تدريبية,DocType
-Training Session,جلسة تدريبية,DocType
-Training Badge,شارة تدريبية,DocType
-Space Name,اسم المساحة,Co-working Space
-Branch,الفرع,Co-working Space
-Floor,الطابق,Co-working Space
-Space Number,رقم المساحة,Co-working Space
-Capacity,السعة,Co-working Space
-Capacity & Size,السعة والمساحة,Co-working Space
-Area (sqm),المساحة (م²),Co-working Space
-Pricing,التسعير,Section
-Hourly Rate,السعر بالساعة,Co-working Space
-Daily Rate,السعر اليومي,Co-working Space
-Monthly Rate,السعر الشهري,Co-working Space
-Status,الحالة,Field
-Available,متاح,Status
-Occupied,مشغول,Status
-Maintenance,صيانة,Status
-Reserved,محجوز,Status
-Current Member,العضو الحالي,Co-working Space
-Amenities,المرافق,Section
-Media,الوسائط,Section
-Main Image,الصورة الرئيسية,Co-working Space
-Gallery,المعرض,Co-working Space
-Booking ID,رقم الحجز,Space Booking
-Space,المساحة,Space Booking
-Member,العضو,Space Booking
-Booking Type,نوع الحجز,Space Booking
-Hourly,بالساعة,Booking Type
-Daily,يومي,Booking Type
-Monthly,شهري,Booking Type
-Time,الوقت,Section
-Start,البداية,Space Booking
-End,النهاية,Space Booking
-Duration (hours),المدة (ساعات),Space Booking
-Billing,الفواتير,Section
-Rate,السعر,Space Booking
-Total Amount,المبلغ الإجمالي,Space Booking
-Discount %,نسبة الخصم %,Space Booking
-Net Amount,المبلغ الصافي,Space Booking
-Pending,قيد الانتظار,Status
-Confirmed,مؤكد,Status
-Checked In,تم الوصول,Status
-Checked Out,تم المغادرة,Status
-Cancelled,ملغى,Status
-No Show,لم يحضر,Status
-Completed,مكتمل,Status
-Checked In At,وقت الوصول,Space Booking
-Checked Out At,وقت المغادرة,Space Booking
-Sales Invoice,فاتورة المبيعات,Space Booking
-Add-on Amenities,المرافق الإضافية,Space Booking Section
-Amenity Total,إجمالي المرافق,Space Booking
-Amenity Name,اسم المرفق,Amenity
-Icon,أيقونة,Amenity
-Color,اللون,Amenity
-Description,الوصف,Field
-Hourly Price,سعر الساعة,Amenity
-Daily Price,السعر اليومي,Amenity
-Monthly Price,السعر الشهري,Amenity
-Complimentary,مجاني,Amenity
-Billing Cycle,دورة الفوترة,Membership
-Quarterly,ربع سنوي,Billing Cycle
-Yearly,سنوي,Billing Cycle
-Start Date,تاريخ البداية,Field
-End Date,تاريخ النهاية,Field
-Auto Renew,تجديد تلقائي,Membership
-Active,نشط,Status
-Expired,منتهي,Status
-Suspended,موقف,Status
-Draft,مسودة,Status
-Initial Credits,الرصيد الأولي,Membership
-Credit Wallet,محفظة الرصيد,Membership
-Plan Name,اسم الخطة,Membership Plan
-Plan Type,نوع الخطة,Membership Plan
-Hot Desk,مكتب مشترك,Plan Type
-Dedicated Desk,مكتب مخصص,Plan Type
-Private Office,مكتب خاص,Plan Type
-Meeting Room,غرفة اجتماعات,Plan Type
-Event Space,قاعة فعاليات,Plan Type
-Virtual Office,مكتب افتراضي,Plan Type
-Setup Fee,رسوم التأسيس,Membership Plan
-Included Hours,الساعات المشمولة,Membership Plan
-Included Credits,الرصيد المشمول,Membership Plan
-Max Guests,الحد الأقصى للضيوف,Membership Plan
-Total Credits,إجمالي الرصيد,Credit Wallet
-Used Credits,الرصيد المستخدم,Credit Wallet
-Available Credits,الرصيد المتاح,Credit Wallet
-Transactions,المعاملات,Credit Wallet
-Credit,إضافة,Transaction Type
-Debit,خصم,Transaction Type
-Refund,استرداد,Transaction Type
-Lead Name,اسم العميل المحتمل,Workspace Lead
-Email,البريد الإلكتروني,Field
-Phone,الهاتف,Field
-Source,المصدر,Workspace Lead
-Website,الموقع الإلكتروني,Source
-Referral,إحالة,Source
-Walk-in,زيارة مباشرة,Source
-Social Media,وسائل التواصل,Source
-New,جديد,Status
-Contacted,تم التواصل,Status
-Tour Scheduled,جولة مجدولة,Status
-Negotiating,تفاوض,Status
-Converted,تم التحويل,Status
-Lost,خسارة,Status
-Budget Monthly,الميزانية الشهرية,Workspace Lead
-Team Size,حجم الفريق,Workspace Lead
-Converted Customer,العميل المحول,Workspace Lead
-Actions,الإجراءات,Button
-Check In,تسجيل الوصول,Button
-Check Out,تسجيل المغادرة,Button
-Book,حجز,Button
-Book Now,احجز الآن,Button
-New Booking,حجز جديد,Button
-Cancel,إلغاء,Button
-Submit,اعتماد,Button
-Save,حفظ,Button
-Refresh,تحديث,Button
-Convert to Customer,تحويل لعميل,Button
-Schedule Tour,جدولة جولة,Button
-Bulk Check In,تسجيل وصول جماعي,Bulk Operation
-Bulk Check Out,تسجيل مغادرة جماعي,Bulk Operation
-Bulk Cancel,إلغاء جماعي,Bulk Operation
-Bulk No Show,عدم حضور جماعي,Bulk Operation
-Please select bookings first,يرجى تحديد الحجوزات أولاً,Bulk Operation
-"Check in {0} booking(s)?",تسجيل وصول {0} حجز(حجوزات)؟,Bulk Operation
-"Check out {0} booking(s)?",تسجيل مغادرة {0} حجز(حجوزات)؟,Bulk Operation
-"Cancel {0} booking(s)? This cannot be undone.","إلغاء {0} حجز(حجوزات)؟ لا يمكن التراجع.",Bulk Operation
-"Mark {0} booking(s) as No Show?",تحديد {0} حجز(حجوزات) كلم يحضر؟,Bulk Operation
-"{0}: {1} succeeded","{0}: نجح {1}",Bulk Operation
-", {0} failed","، فشل {0}",Bulk Operation
-"Bulk {0} Result",نتيجة {0} الجماعي,Bulk Operation
-Floor Plan — مخطط الطابق,مخطط الطابق,Floor Plan Page
-Total,الإجمالي,Floor Plan
-available,متاح,Floor Plan
-total,إجمالي,Floor Plan
-No spaces found,لا توجد مساحات,Floor Plan
-Add Co-working Spaces to see them on the floor plan.,أضف مساحات عمل مشتركة لعرضها على مخطط الطابق.,Floor Plan
-"Quick Book — {0}",حجز سريع — {0},Floor Plan
-"Booking {0} created!",تم إنشاء الحجز {0}!,Floor Plan
-Welcome to ARKSpace — مرحباً بكم,مرحباً بكم في أرك سبيس,Setup Wizard
-Configure your co-working space management system.,قم بتكوين نظام إدارة مساحات العمل المشتركة.,Setup Wizard
-Let's set up your co-working space in a few easy steps.,دعنا نقوم بإعداد مساحة العمل في خطوات سهلة.,Setup Wizard
-Workspace Name,اسم مساحة العمل,Setup Wizard
-The name of your co-working space brand,اسم العلامة التجارية لمساحة العمل,Setup Wizard
-Default Currency,العملة الافتراضية,Setup Wizard
-Timezone,المنطقة الزمنية,Setup Wizard
-Branches — الفروع,الفروع,Setup Wizard
-Add your co-working space locations. You can add more later.,أضف مواقع مساحات العمل. يمكنك إضافة المزيد لاحقاً.,Setup Wizard
-Main Branch,الفرع الرئيسي,Setup Wizard
-Branch 2 (Optional),الفرع 2 (اختياري),Setup Wizard
-Branch 3 (Optional),الفرع 3 (اختياري),Setup Wizard
-Space Types — أنواع المساحات,أنواع المساحات,Setup Wizard
-Select the types of spaces you offer.,اختر أنواع المساحات التي تقدمها.,Setup Wizard
-Hot Desk — مكتب مشترك,مكتب مشترك,Setup Wizard
-Dedicated Desk — مكتب مخصص,مكتب مخصص,Setup Wizard
-Private Office — مكتب خاص,مكتب خاص,Setup Wizard
-Meeting Room — غرفة اجتماعات,غرفة اجتماعات,Setup Wizard
-Event Space — قاعة فعاليات,قاعة فعاليات,Setup Wizard
-Virtual Office — مكتب افتراضي,مكتب افتراضي,Setup Wizard
-First Membership Plan — خطة العضوية الأولى,خطة العضوية الأولى,Setup Wizard
-Create your first membership plan to get started.,أنشئ أول خطة عضوية للبدء.,Setup Wizard
-Basic Hot Desk,مكتب مشترك أساسي,Setup Wizard
-Welcome,مرحباً,Portal
-No membership found,لم يتم العثور على عضوية,Portal
-"Contact us to set up your membership and start using ARKSpace.",تواصل معنا لإعداد عضويتك وبدء استخدام أرك سبيس.,Portal
-Active Memberships,العضويات النشطة,Portal
-Total Bookings,إجمالي الحجوزات,Portal
-Total Spent,إجمالي الإنفاق,Portal
-Upcoming Bookings,الحجوزات القادمة,Portal
-Recent Bookings,الحجوزات الأخيرة,Portal
-No active memberships,لا توجد عضويات نشطة,Portal
-No upcoming bookings,لا توجد حجوزات قادمة,Portal
-No recent bookings,لا توجد حجوزات سابقة,Portal
-ARKSpace — Member Portal,أرك سبيس — بوابة الأعضاء,Portal
-Book a Space,حجز مساحة,Portal
-"Booking created: {0}",تم إنشاء الحجز: {0},Portal
-Booking failed. Please check availability.,فشل الحجز. يرجى التحقق من التوفر.,Portal
-Booking cancelled successfully,تم إلغاء الحجز بنجاح,Portal
-Failed to cancel booking,فشل إلغاء الحجز,Portal
-Are you sure you want to cancel this booking?,هل أنت متأكد من إلغاء هذا الحجز؟,Portal
-No spaces available at the moment.,لا توجد مساحات متاحة حالياً.,Portal
-Notes,ملاحظات,Field
-Revenue Summary,ملخص الإيرادات,Report
-Space Occupancy,إشغال المساحات,Report
-Membership Analytics,تحليلات العضوية,Report
-Approve,موافقة,Workflow
-Reject,رفض,Workflow
-Suspend,تعليق,Workflow
-Reactivate,إعادة تفعيل,Workflow
-Renew,تجديد,Workflow
-Booking Confirmation,تأكيد الحجز,Notification
-Membership Welcome,ترحيب بالعضوية,Notification
-Membership Expiry Reminder,تذكير انتهاء العضوية,Notification
-Booking Cancelled,حجز ملغى,Notification
-Membership Card,بطاقة العضوية,Print Format
-Membership Receipt,إيصال العضوية,Print Format
-End time must be after start time,يجب أن يكون وقت النهاية بعد وقت البداية,Validation
-"Space {0} is already booked for this time period (Booking: {1})","المساحة {0} محجوزة بالفعل لهذه الفترة (الحجز: {1})",Validation
-"No {0} rate configured for space {1}","لا يوجد سعر {0} مُعد للمساحة {1}",Validation
-Booking must be submitted before check-in,يجب اعتماد الحجز قبل تسجيل الوصول,Validation
-"Only Confirmed bookings can be checked in. Current status: {0}","يمكن تسجيل وصول الحجوزات المؤكدة فقط. الحالة الحالية: {0}",Validation
-Booking must be submitted,يجب اعتماد الحجز,Validation
-"Only Checked In bookings can be checked out. Current status: {0}","يمكن تسجيل مغادرة الحجوزات المسجلة فقط. الحالة الحالية: {0}",Validation
-Cannot cancel before submitting,لا يمكن الإلغاء قبل الاعتماد,Validation
-Insufficient credits,رصيد غير كافٍ,Validation
-Status is Converted but no customer linked,الحالة محولة لكن لا يوجد عميل مرتبط,Validation
-Please login to access the member portal,يرجى تسجيل الدخول للوصول إلى بوابة الأعضاء,Validation
-ARKSpace Admin,مدير أرك سبيس,Role
-ARKSpace Manager,مشرف أرك سبيس,Role
-ARKSpace Sales,مبيعات أرك سبيس,Role
-ARKSpace Operations,عمليات أرك سبيس,Role
-ARKSpace Front Desk,استقبال أرك سبيس,Role
-ARKSpace Member,عضو أرك سبيس,Role
-ARKSpace Viewer,مشاهد أرك سبيس,Role
-Total Spaces,إجمالي المساحات,Number Card
-Active Members,الأعضاء النشطون,Number Card
-Today's Bookings,حجوزات اليوم,Number Card
-Monthly Revenue,الإيرادات الشهرية,Number Card
-Monthly Bookings,الحجوزات الشهرية,Dashboard Chart
-Revenue Trend,اتجاه الإيرادات,Dashboard Chart
-Membership Distribution,توزيع العضويات,Dashboard Chart
-Space Utilization,استخدام المساحات,Dashboard Chart
-Lead Pipeline,مسار العملاء المحتملين,Dashboard Chart
-Training Catalog,كتالوج التدريب,Training
-Enroll,التسجيل,Button
-Progress,التقدم,Training
-Badges,الشارات,Training
-Sessions,الجلسات,Training
-All Floors,جميع الطوابق,Floor Plan Filter
-Live,مباشر,Floor Plan
-Company,الشركة,Settings
-Fiscal Year Start,بداية السنة المالية,Settings
-Primary Language,اللغة الرئيسية,Settings
-Secondary Language,اللغة الثانوية,Settings
-Date Format,تنسيق التاريخ,Settings
-Booking Prefix,بادئة الحجز,Settings
-Membership Prefix,بادئة العضوية,Settings
-Invoice Prefix,بادئة الفاتورة,Settings
-Lead Prefix,بادئة العميل المحتمل,Settings
-Features,الميزات,Settings Section
-Enable VoIP,تفعيل VoIP,Settings
-Enable ARKAMOR IoT,تفعيل ARKAMOR IoT,Settings
-Enable ARKANOOR Hub,تفعيل سوق ARKANOOR,Settings
-Enable AI Features,تفعيل ميزات الذكاء الاصطناعي,Settings
-Integrations,التكاملات,Settings Section
-General,عام,Settings Section
-Localization,التعريب,Settings Section
-Numbering,الترقيم,Settings Section
-Qty,الكمية,Field
-Amount,المبلغ,Field
+% of Total,% من الإجمالي
+", {0} failed",، فشل {0}
+2D Plan — المخطط,المخطط
+"A co-working space is a bookable resource — desks, rooms, studios, or any physical area.",مساحة العمل المشتركة هي مورد قابل للحجز — مكاتب، غرف، استوديوهات، أو أي مساحة مادية.
+A pending request already exists,يوجد طلب معلق بالفعل
+A pending request already exists between these members,يوجد طلب تواصل معلق بالفعل بين هذين العضوين
+About ARKSpace,عن أرك سبيس
+About ARKSpace — عن أرك سبيس,عن أرك سبيس
+Accent Color,لون التمييز
+Accept,قبول
+Accept or Decline,قبول أو رفض
+"Accept payments via Stripe, Tap, or other gateways configured in ARKSpace Settings.",استقبل المدفوعات عبر Stripe أو Tap أو البوابات الأخرى المكوّنة في إعدادات أرك سبيس.
+Accepted,مقبول
+Achievement Badges,شارات الإنجاز
+Action,إجراء
+Action Controls,عناصر التحكم
+Actions,إجراءات
+Active,نشط
+Active / ساري,ساري
+Active Members,الأعضاء النشطون
+Active Members / الأعضاء النشطون,الأعضاء النشطون
+Active Membership,عضوية نشطة
+Active Memberships,العضويات النشطة
+Active subscriptions,الاشتراكات النشطة
+Activity based on bookings,نشاط بناءً على الحجوزات
+Actual,الفعلي
+Add,إضافة
+Add Co-working Spaces to see them on the floor plan.,أضف مساحات عمل مشتركة لعرضها على مخطط الطابق.
+Add Credits,إضافة رصيد
+Add your co-working space locations. You can add more later.,أضف مواقع مساحات العمل. يمكنك إضافة المزيد لاحقاً.
+Add-on Amenities,المرافق الإضافية
+Address / العنوان,العنوان
+Adjustment Type,نوع التعديل
+Admin,المسؤول
+"Admin, Manager, Front Desk, Ops, Member",المسؤول، المدير، الاستقبال، العمليات، العضو
+Advanced,متقدم
+All Booking Types,جميع أنواع الحجز
+All Branches,جميع الفروع
+All Floors,جميع الطوابق
+All Floors — كل الطوابق,كل الطوابق
+All Skills,جميع المهارات
+All Spaces,جميع المساحات
+All Types,جميع الأنواع
+Allow Anonymous Posts / السماح بالمنشورات المجهولة,السماح بالمنشورات المجهولة
+Allow Cross-Location Booking / السماح بالحجز بين الفروع,السماح بالحجز بين الفروع
+Allow Day Passes / السماح بالتصاريح اليومية,السماح بالتصاريح اليومية
+Allow Walk-in / السماح بالحضور المباشر,السماح بالحضور المباشر
+Already checked in at {0},تم تسجيل الدخول مسبقاً في {0}
+Already have an account?,هل لديك حساب بالفعل؟
+Always,دائماً
+Amended From,معدّل من
+Amenities,المرافق
+"Amenities are linked to spaces via Space Amenity child entries, enabling filter-by-amenity bookings.",ترتبط المرافق بالمساحات عبر إدخالات مرافق المساحة، مما يتيح الحجز حسب المرافق المتاحة.
+"Amenities are the features available in a space — WiFi, projector, whiteboard, coffee machine, etc.",المرافق هي الميزات المتوفرة في المساحة — واي فاي، بروجكتور، سبورة، ماكينة قهوة، إلخ.
+Amenities — المرافق,المرافق
+Amenity,مرفق
+Amenity Catalog,دليل المرافق
+Amenity Fee / رسوم خدمات,رسوم خدمات
+Amenity Name,اسم المرفق
+Amenity Total,إجمالي المرافق
+Amount,المبلغ
+Amount / المبلغ,المبلغ
+Amount must be greater than zero,يجب أن يكون المبلغ أكبر من صفر
+Amounts,المبالغ
+An account with this email already exists. Please login.,يوجد حساب بهذا البريد الإلكتروني بالفعل. يرجى تسجيل الدخول.
+Analytics,التحليلات
+Analytics & reports,التحليلات والتقارير
+Analytics & Reports,التحليلات والتقارير
+Analytics / التحليلات,التحليلات
+Analytics Dashboard,لوحة التحليلات
+Analytics Overview,نظرة عامة على التحليلات
+Analytics Snapshot,لقطة التحليلات
+Analytics snapshot captured successfully,تم التقاط لقطة التحليلات بنجاح
+Analytics — التحليلات,التحليلات
+Announcement,إعلان
+Anonymous Member,عضو مجهول
+App Configuration,تكوين التطبيق
+Applies To,ينطبق على
+Approval,الموافقة
+Approval Status,حالة الموافقة
+Approve,موافقة
+"Approve, cancel, check-in gated",الموافقة، الإلغاء، التحقق عند الدخول
+Approved,موافق عليه
+Approved By,تمت الموافقة بواسطة
+Arabic,العربية
+Arabic + RTL Support,دعم العربية واتجاه RTL
+Arabic Font,الخط العربي
+Arabic terms are required,الشروط بالعربية مطلوبة
+Archived,مؤرشف
+Are you sure you want to cancel this booking?,هل أنت متأكد من إلغاء هذا الحجز؟
+Are you sure you want to refund this payment?,هل أنت متأكد من استرداد هذا الدفع؟
+Are you sure you want to suspend this membership?,هل أنت متأكد من تعليق هذه العضوية؟
+Area,المساحة
+Area (sqm),المساحة (م²)
+ARK Booking Flow,تدفق حجوزات آرك
+ARK Command Center,مركز قيادة آرك
+ARK Command Center — مركز القيادة,مركز القيادة
+ARK Community Network,شبكة مجتمع آرك
+ARK Community — شبكة المجتمع,شبكة المجتمع
+ARK Explorer,مستكشف آرك
+ARK Explorer — المستكشف,المستكشف
+ARK Live — المخطط التفاعلي,ARK Live — المخطط التفاعلي
+ARK Live — عرض المساحات التفاعلي,عرض المساحات التفاعلي
+ARK Onboarding,تأهيل آرك
+ARK Onboarding — جولة تعريفية,جولة تعريفية
+ARKANOOR Marketplace,سوق أركانور
+ARKSpace,أرك سبيس
+ARKSpace Admin,مدير أرك سبيس
+ARKSpace Analytics Dashboard,لوحة تحليلات أرك سبيس
+ARKSpace Branch,فرع أرك سبيس
+ARKSpace Check-in,تسجيل دخول ARKSpace
+ARKSpace Community,مجتمع أرك سبيس
+ARKSpace Configuration,إعدادات أرك سبيس
+"ARKSpace delivers enterprise-grade co-working management with full ERPNext integration — at zero licensing cost, fully open source.",أرك سبيس يقدم إدارة مساحات عمل مشتركة بمستوى مؤسسي مع تكامل كامل مع ERPNext — بدون تكلفة ترخيص، مفتوح المصدر بالكامل.
+ARKSpace Front Desk,استقبال أرك سبيس
+ARKSpace Help,مساعدة أرك سبيس
+ARKSpace Help — مساعدة أرك سبيس,مساعدة أرك سبيس
+ARKSpace is a complete co-working space management system. This guided tour will show you how everything connects together.,أرك سبيس نظام متكامل لإدارة مساحات العمل المشتركة. هذه الجولة التعريفية ستوضح كيف يترابط كل شيء معاً.
+ARKSpace is a comprehensive co-working space management platform.,أرك سبيس منصة شاملة لإدارة مساحات العمل المشتركة.
+ARKSpace Management,إدارة أرك سبيس
+ARKSpace Manager,مشرف أرك سبيس
+ARKSpace Member,عضو أرك سبيس
+ARKSpace Onboarding,جولة تعريفية لأرك سبيس
+ARKSpace Operations,عمليات أرك سبيس
+ARKSpace provides comprehensive analytics across all operations:,أرك سبيس يوفر تحليلات شاملة عبر جميع العمليات:
+ARKSpace Sales,مبيعات أرك سبيس
+ARKSpace Settings,إعدادات أرك سبيس
+ARKSpace Settings not found. Please configure ARKSpace first.,لم يتم العثور على إعدادات أرك سبيس. يرجى تكوين أرك سبيس أولاً.
+"ARKSpace tracks occupancy, revenue, member growth, bookings, and forecasts — all in one place.",يتتبع آرك سبيس الإشغال والإيرادات ونمو الأعضاء والحجوزات والتوقعات — الكل في مكان واحد.
+ARKSpace uses CAPS (Capability-Based Access Control) for fine-grained security.,أرك سبيس يستخدم نظام CAPS للتحكم الدقيق في الصلاحيات.
+ARKSpace Viewer,مشاهد أرك سبيس
+ARKSpace — Enterprise Co-Working Management,أرك سبيس — إدارة مساحات العمل المشتركة للمؤسسات
+ARKSpace — Member Portal,أرك سبيس — بوابة الأعضاء
+Assign amenities to spaces so members can filter bookings by required facilities.,اربط المرافق بالمساحات ليتمكن الأعضاء من تصفية الحجوزات حسب المرافق المطلوبة.
+Assigned Space,المساحة المخصصة
+Assigned To,مسند إلى
+Assignment,التعيين
+"Attach code examples to documentation entries for API usage, integrations, and automation recipes.",أرفق أمثلة برمجية بإدخالات التوثيق لاستخدام API والتكاملات ووصفات الأتمتة.
+Attach legal documents and templates to contracts for compliance tracking.,أرفق المستندات القانونية والنماذج بالعقود لتتبع الامتثال.
+Attached Legal Documents / المستندات المرفقة,المستندات المرفقة
+Attached Legals,المستندات القانونية المرفقة
+Attachments / المرفقات,المرفقات
+Attendees,الحضور
+Attendees for {0},الحضور في {0}
+attends,يحضر
+Author / الكاتب,الكاتب
+Author Name / اسم الكاتب,اسم الكاتب
+Auto Generated,مُنشأ تلقائياً
+Auto Renew,تجديد تلقائي
+Auto Renew / تجديد تلقائي,تجديد تلقائي
+Auto-Capture Snapshots / التقاط تلقائي للقطات,التقاط تلقائي للقطات
+Auto-created from Online Payment {0},تم الإنشاء تلقائياً من الدفع الإلكتروني {0}
+Auto-Expire Day Passes / انتهاء التصاريح تلقائياً,انتهاء التصاريح تلقائياً
+Auto-Expiry,انتهاء تلقائي
+Auto-generated from Day Pass {0},تم إنشاؤه تلقائياً من تصريح {0}
+Auto-generated from Membership {0},تم الإنشاء تلقائياً من العضوية {0}
+Auto-generated from Space Booking {0},تم الإنشاء تلقائياً من حجز المساحة {0}
+Auto-generated receipts for every payment — linked to invoices and credit transactions.,إيصالات تُنشأ تلقائياً لكل دفعة — مرتبطة بالفواتير ومعاملات الرصيد.
+Auto-Reconcile Payments,مطابقة المدفوعات تلقائياً
+Auto-refresh in {0}s,تحديث تلقائي خلال {0} ثانية
+Auto-renewal disabled,تم إلغاء التجديد التلقائي
+Auto-renewal enabled,تم تفعيل التجديد التلقائي
+"Automatic daily captures of occupancy, revenue, and membership metrics.",التقاط تلقائي يومي لمقاييس الإشغال والإيرادات والعضويات.
+Available,المتاح
+available,متاح
+Available Credits,الرصيد المتاح
+Available for Booking,متاح للحجز
+Available Placeholders,العناصر النائبة المتاحة
+Available Plans,الخطط المتاحة
+Available Spaces / المساحات المتاحة,المساحات المتاحة
+Available — متاح,متاح
+Average Booking Duration / متوسط مدة الحجز,متوسط مدة الحجز
+Average Revenue Per Booking / متوسط الإيراد لكل حجز,متوسط الإيراد لكل حجز
+Avg Occupancy %,متوسط الإشغال %
+Avg Revenue,متوسط الإيرادات
+Award badges upon completing training modules or achieving milestones.,امنح شارات عند إتمام وحدات التدريب أو تحقيق إنجازات.
+Award Criteria,معايير المنح
+Awarded Badge,الشارة الممنوحة
+Back to Portal,العودة للبوابة
+Badge,الشارة
+Badge #,شارة #
+Badge Awarded On,تاريخ منح الشارة
+Badge Code,رمز الشارة
+Badge Display,عرض الشارات
+Badge Image,صورة الشارة
+Badge Name,اسم الشارة
+Badge Number,رقم الشارة
+Badge Printed,تمت طباعة الشارة
+Badges,الشارات
+Badges appear on member profiles in the directory and community pages.,تظهر الشارات على ملفات الأعضاء في الدليل وصفحات المجتمع.
+Bank Transfer / تحويل بنكي,تحويل بنكي
+Base Amount,المبلغ الأساسي
+Base: {0} → Final: {1},الأساسي: {0} → النهائي: {1}
+Basic Hot Desk,مكتب مشترك أساسي
+Beginner,مبتدئ
+Benefits,المزايا
+Bilingual,ثنائي اللغة
+Bilingual template requires both Arabic and English terms,النموذج ثنائي اللغة يتطلب شروطاً بالعربية والإنجليزية
+Billing,الفواتير
+Billing & Invoicing,الفوترة والفواتير
+Billing Cycle,دورة الفوترة
+Billing Cycle / دورة الفوترة,دورة الفوترة
+Book,حجز
+Book a Space,حجز مساحة
+Book a Space — ARKSpace,حجز مساحة — أرك سبيس
+Book Now,احجز الآن
+Book Now — احجز الآن,احجز الآن
+Book Space — حجز المساحة,حجز المساحة
+booked,محجوز
+Booking,الحجز
+Booking / الحجز,الحجز
+Booking Analytics,تحليلات الحجوزات
+Booking approvals,موافقات الحجوزات
+Booking Cancelled,حجز ملغى
+Booking cancelled successfully,تم إلغاء الحجز بنجاح
+Booking Cancelled — {{ doc.booking_id or doc.name }},إلغاء الحجز — {{ doc.booking_id or doc.name }}
+Booking Confirmation,تأكيد الحجز
+Booking Confirmed,تأكيد الحجز
+Booking Confirmed — {{ doc.booking_id or doc.name }},تأكيد الحجز — {{ doc.booking_id or doc.name }}
+Booking created: {0},تم إنشاء الحجز: {0}
+Booking Duration,مدة الحجز
+Booking failed. Please check availability.,فشل الحجز. يرجى التحقق من التوفر.
+Booking Flow,تدفق الحجوزات
+Booking Flow Monitor,مراقبة تدفق الحجوزات
+Booking ID,رقم الحجز
+Booking Lifecycle,دورة حياة الحجز
+Booking must be submitted,يجب اعتماد الحجز
+Booking must be submitted before check-in,يجب اعتماد الحجز قبل تسجيل الوصول
+Booking Patterns,أنماط الحجوزات
+Booking Patterns by Hour,أنماط الحجز حسب الساعة
+Booking Payment / دفعة حجز,دفعة حجز
+Booking Prefix,بادئة الحجز
+Booking Revenue,إيرادات الحجوزات
+Booking Revenue / إيرادات الحجوزات,إيرادات الحجوزات
+Booking status is {0} — cannot check in,حالة الحجز {0} — لا يمكن تسجيل الدخول
+Booking Type,نوع الحجز
+Booking Type — نوع الحجز,نوع الحجز
+Booking Types,أنواع الحجوزات
+Booking {0} created for {1}!,تم إنشاء الحجز {0} لـ {1}!
+Booking {0} created!,تم إنشاء الحجز {0}!
+Booking {0} is already {1},الحجز {0} بالفعل {1}
+Booking {0} is not submitted,الحجز {0} غير معتمد
+Booking {0} not found,الحجز {0} غير موجود
+"Booking {0} status is {1}, expected Checked In",حالة الحجز {0} هي {1}، المتوقع مسجل الدخول
+"Booking {0} status is {1}, expected Confirmed",حالة الحجز {0} هي {1}، المتوقع مؤكد
+Bookings,الحجوزات
+Bookings & CRM,الحجوزات والعملاء
+Bookings & Members,الحجوزات والأعضاء
+Bookings (Period),الحجوزات (الفترة)
+Bookings / الحجوزات,الحجوزات
+Bookings by Hour,الحجوزات حسب الساعة
+Bookings — الحجوزات,الحجوزات
+Branch,الفرع
+Branch / الفرع,الفرع
+Branch 2 (Optional),الفرع 2 (اختياري)
+Branch 3 (Optional),الفرع 3 (اختياري)
+Branch Code / رمز الفرع,رمز الفرع
+Branch Comparison,مقارنة الفروع
+Branch management,إدارة الفروع
+Branch Manager / مدير الفرع,مدير الفرع
+Branch Name (Arabic) / اسم الفرع بالعربية,اسم الفرع بالعربية
+Branch Name / اسم الفرع,اسم الفرع
+Branch operations oversight,مراقبة عمليات الفروع
+Branch Transfers,نقل الفروع
+Branch — الفرع,الفرع
+Branches,الفروع
+Branches — الفروع,الفروع
+Brand Consistency,اتساق الهوية البصرية
+Bronze,برونزي
+Browse,تصفح
+Browse first,تصفح أولاً
+Browse our plans and start your membership today!,تصفح خططنا وابدأ عضويتك اليوم!
+Browse Spaces,تصفح المساحات
+Budget,الميزانية
+Budget Monthly,الميزانية الشهرية
+"Build connections, share knowledge, and attend events:",ابنِ علاقات، شارك المعرفة، واحضر الفعاليات:
+Build your community,بناء مجتمعك
+Built-in CRM & Lead Pipeline,CRM مدمج ومسار عملاء
+Bulk Cancel,إلغاء جماعي
+Bulk Check In,تسجيل وصول جماعي
+Bulk Check Out,تسجيل مغادرة جماعي
+Bulk Generate QR,إنشاء QR جماعي
+Bulk No Show,عدم حضور جماعي
+Bulk {0} Result,نتيجة {0} الجماعي
+Bundles,الحزم
+Busiest Day / أكثر يوم ازدحاماً,أكثر يوم ازدحاماً
+Business,أعمال
+Business Incubators,حاضنات الأعمال
+Button Border Radius (px),نصف قطر حدود الزر (بكسل)
+Button Font Weight,وزن خط الزر
+Buttons,الأزرار
+Cancel,إلغاء
+Cancel before check-in. Refund policies apply per space type.,الإلغاء قبل تسجيل الدخول. تطبق سياسات الاسترداد حسب نوع المساحة.
+Cancel Registration,إلغاء التسجيل
+Cancel {0} booking(s)? This cannot be undone.,إلغاء {0} حجز(حجوزات)؟ لا يمكن التراجع.
+Cancellation,الإلغاء
+Cancelled,ملغى
+Cancelled / ملغي,ملغي
+Cancelled At,ألغي في
+Cancelled Bookings / حجوزات ملغاة,حجوزات ملغاة
+Cannot cancel before submitting,لا يمكن الإلغاء قبل الاعتماد
+Cannot check in a visitor with status {0},لا يمكن تسجيل دخول زائر بحالة {0}
+Cannot determine payment amount from {0},تعذّر تحديد مبلغ الدفع من {0}
+Cannot send a networking request to yourself,لا يمكن إرسال طلب تواصل لنفسك
+Cannot send a request to yourself,لا يمكن إرسال طلب لنفسك
+Capabilities,الصلاحيات
+Capacity,السعة
+Capacity & Pricing,السعة والتسعير
+Capacity & Size,السعة والمساحة
+Capacity / السعة,السعة
+Capacity must be at least 1,يجب أن تكون السعة 1 على الأقل
+"Capacity recalculated: {0} desks, {1} offices, {2} meeting rooms",تم إعادة حساب السعة: {0} مكاتب، {1} مكاتب خاصة، {2} غرف اجتماعات
+CAPS Field-Level Security,أمان على مستوى الحقل (CAPS)
+Card,بطاقة
+Card / بطاقة,بطاقة
+Card Last 4,آخر 4 أرقام
+Cash,نقدي
+Cash / نقدي,نقدي
+Category,الفئة
+Category / الفئة,الفئة
+Change Password,تغيير كلمة المرور
+Check / شيك,شيك
+Check In,تسجيل الدخول
+Check In Now,سجل الدخول الآن
+Check in {0} booking(s)?,تسجيل وصول {0} حجز(حجوزات)؟
+Check Out,تسجيل الخروج
+Check out {0} booking(s)?,تسجيل مغادرة {0} حجز(حجوزات)؟
+Check-in,تسجيل الدخول
+"Check-in frequency, booking patterns, membership utilization per member.",تكرار تسجيل الدخول، أنماط الحجوزات، استخدام العضوية لكل عضو.
+Checked In,تم تسجيل الدخول
+Checked In / تم تسجيل الدخول,تم تسجيل الدخول
+Checked In At,وقت تسجيل الدخول
+Checked in successfully,تم تسجيل الدخول بنجاح
+Checked Out,تم تسجيل الخروج
+Checked Out At,وقت تسجيل الخروج
+Checked out — Duration: {0}h,تم الخروج — المدة: {0} ساعة
+Checking in visitor...,جارٍ تسجيل دخول الزائر...
+Checking in...,جاري تسجيل الدخول...
+Checking out...,جاري تسجيل الخروج...
+Checkout URL,رابط الدفع
+Choose a Plan,اختر خطة
+Choose a topic to explore. Each path includes visual explanations.,اختر موضوعاً لاستكشافه. كل مسار يتضمن شروحات بصرية.
+Choose a topic to learn about:,اختر موضوعاً للتعلم:
+Choose Plan,اختيار الخطة
+Choose Your Pass,اختر تصريحك
+Churned,منسحب
+Churned Members / أعضاء مغادرون,أعضاء مغادرون
+City / المدينة,المدينة
+"Classroom booking, study halls, lab scheduling. Day pass for visitors, membership for enrolled students.",حجز الفصول، قاعات الدراسة، جدولة المختبرات. تصريح يوم للزوار، عضوية للطلاب المسجلين.
+Click on a space to view details or book,اضغط على مساحة لعرض التفاصيل أو الحجز
+Closing Time / وقت الإغلاق,وقت الإغلاق
+Cloud Storage (GB),التخزين السحابي (جيجابايت)
+Co-Working Day Pass Fee,رسوم تصريح اليوم لمساحة العمل
+Co-Working Membership Fee,رسوم عضوية مساحة العمل
+Co-working Space,مساحة العمل المشترك
+Co-Working Space Booking,حجز مساحة عمل مشتركة
+Co-working Space Management,إدارة مساحات العمل المشتركة
+Code Examples,أمثلة الكود
+Code Examples — أمثلة البرمجة,أمثلة البرمجة
+Code Snippets,مقتطفات برمجية
+Color,اللون
+Colors,الألوان
+Command Center,مركز القيادة
+Comments Count / عدد التعليقات,عدد التعليقات
+Commercial Register / السجل التجاري,السجل التجاري
+Community,المجتمع
+Community & Events,المجتمع والفعاليات
+Community / المجتمع,المجتمع
+Community Board,لوحة المجتمع
+Community Board & Networking,لوحة مجتمع وتواصل
+Community Board — لوحة المجتمع,لوحة المجتمع
+Community Event,فعالية مجتمعية
+Community Events,فعاليات المجتمع
+Community events,فعاليات المجتمع
+Community Features,ميزات المجتمع
+Community Feed,تغذية المجتمع
+Community management,إدارة المجتمع
+Community Network,شبكة المجتمع
+Community Post,منشور المجتمع
+Community Posts,منشورات المجتمع
+Company,الشركة
+Company / الشركة,الشركة
+Company License / ترخيص الشركة,ترخيص الشركة
+Company Name,اسم الشركة
+Company Representative / ممثل الشركة,ممثل الشركة
+Compare snapshots over time to identify trends and optimize operations.,قارن اللقطات عبر الزمن لتحديد الاتجاهات وتحسين العمليات.
+Comparison Report,تقرير المقارنة
+Complete,مكتمل
+Complete Tour,إتمام الجولة
+Completed,مكتمل
+Completed At,اكتمل في
+Completion,إتمام
+Completion Date,تاريخ الإتمام
+Completion Status,حالة الإتمام
+Compliance Tracking,تتبع الامتثال
+Complimentary,مجاني
+Condition,الشرط
+Conditions,الشروط
+Configure brand colors and assets that apply across all ARKSpace pages.,اضبط ألوان الهوية والأصول المرئية التي تُطبَّق على جميع صفحات أرك سبيس.
+"Configure payment gateways, notification preferences, QR settings, and branch defaults.",كوّن بوابات الدفع وتفضيلات الإشعارات وإعدادات QR وافتراضيات الفروع.
+Configure your co-working space management system.,قم بتكوين نظام إدارة مساحات العمل المشتركة.
+Confirm,تأكيد
+Confirm Booking — تأكيد الحجز,تأكيد الحجز
+Confirmed,مؤكد
+Confirmed Booking,حجز مؤكد
+Confirmed — مؤكد,مؤكد
+Connect,تواصل
+"Connect ERPNext billing, WhatsApp notifications, and CAPS security from one place.",اربط فوترة ERPNext وإشعارات واتساب وأمان CAPS من مكان واحد.
+Connect with Members,تواصل مع الأعضاء
+connected,متصل
+Connection,اتصال
+Connection accepted!,تم قبول الاتصال!
+Connection request accepted,تم قبول طلب التواصل
+Connection request declined,تم رفض طلب التواصل
+Connection request sent to {0},تم إرسال طلب التواصل إلى {0}
+Connections,العلاقات
+Consider adding feedback for completed tours,يُنصح بإضافة ملاحظات للجولات المكتملة
+"Consider setting at least one pricing tier (hourly, daily, or monthly)",يُنصح بتعيين مستوى تسعير واحد على الأقل (ساعي، يومي، أو شهري)
+Contact / التواصل,التواصل
+Contact us to set up your membership and start using ARKSpace.,تواصل معنا لإعداد عضويتك وبدء استخدام أرك سبيس.
+Contacted,تم التواصل
+Content,المحتوى
+Content / المحتوى,المحتوى
+Contract / العقد,العقد
+Contract Date / تاريخ العقد,تاريخ العقد
+Contract Management,إدارة العقود
+Contract Period / مدة العقد,مدة العقد
+Contract Template,نموذج العقد
+Contract Template / نموذج العقد,نموذج العقد
+Contract Templates — قوالب العقود,قوالب العقود
+Contract terms (Arabic or English) are required before submission,يجب إدخال شروط العقد (بالعربية أو الإنجليزية) قبل الاعتماد
+Contract Terms / شروط العقد,شروط العقد
+Contract Title / عنوان العقد,عنوان العقد
+Contract Type,نوع العقد
+Contracts — العقود,العقود
+Conversion,التحويل
+Convert,تحويل
+Convert leads to members or booking customers.,حوّل العملاء المحتملين إلى أعضاء أو عملاء حجوزات.
+Convert to Customer,تحويل لعميل
+Convert to Membership,تحويل إلى عضوية
+Convert tour visitors into members or booking customers directly from the tour record.,حوّل زوار الجولات إلى أعضاء أو عملاء حجوزات مباشرة من سجل الجولة.
+Convert {0} to a Customer?,تحويل {0} إلى عميل؟
+Converted,تم التحويل
+Converted Customer,العميل المحول
+Converted Membership,العضوية المحولة
+Converted to Membership,تحويل إلى عضوية
+Converting to membership...,جاري التحويل إلى عضوية...
+Coordinates / الإحداثيات,الإحداثيات
+Corporate,شركات
+Cost,التكلفة
+"Cost, revenue, pricing masked per role",التكلفة والإيرادات والتسعير مقنّعة حسب الدور
+Could not generate payment link. Please try again.,تعذّر إنشاء رابط الدفع. يرجى المحاولة مرة أخرى.
+Count,العدد
+Country / البلد,البلد
+Cover Image,صورة الغلاف
+Create & Check In,إنشاء وتسجيل الدخول
+Create Account,إنشاء حساب
+"Create and manage contracts for memberships, space rentals, and services.",أنشئ وأدر العقود للعضويات وإيجارات المساحات والخدمات.
+Create and manage training sessions for member skill development.,أنشئ وأدر جلسات تدريبية لتطوير مهارات الأعضاء.
+Create Booking,إنشاء حجز
+"Create contract templates with standard terms for memberships, space rental, and services.",أنشئ قوالب عقود بشروط معيارية للعضويات وتأجير المساحات والخدمات.
+"Create events with capacity limits, RSVP, and space allocation.",أنشئ فعاليات بحدود سعة وتأكيد حضور وتخصيص مساحات.
+"Create internal documentation for space policies, procedures, and member guidelines.",أنشئ توثيقاً داخلياً لسياسات المساحة والإجراءات وإرشادات الأعضاء.
+"Create membership plans with different access levels, amenities, and pricing.",أنشئ خطط عضوية بمستويات وصول ومرافق وأسعار مختلفة.
+"Create rules that adjust pricing based on peak hours, membership tier, duration, or advance booking.",أنشئ قواعد تعدّل التسعير بناءً على ساعات الذروة أو مستوى العضوية أو المدة أو الحجز المسبق.
+Create your first membership plan to get started.,أنشئ أول خطة عضوية للبدء.
+Creating a Booking,إنشاء حجز
+Creating day pass...,جاري إنشاء التصريح...
+Creating membership...,جارٍ إنشاء العضوية...
+Creating your account...,جارٍ إنشاء حسابك...
+Creating your day pass...,جاري إنشاء تصريحك...
+Creative,إبداعية
+Credit,إضافة
+Credit Flow,تدفق الرصيد
+Credit Transaction,معاملة الرصيد
+Credit Transactions — معاملات الرصيد,معاملات الرصيد
+Credit Wallet,محفظة الرصيد
+Credit Wallet — محفظة الرصيد,محفظة الرصيد
+Credits,رصيد
+credits,أرصدة
+"Credits can be added via online payment, manual adjustment, or membership plan allocation.",يمكن إضافة الرصيد عبر الدفع الإلكتروني أو التعديل اليدوي أو تخصيص خطة العضوية.
+CRM & Leads,إدارة العملاء المحتملين
+CRM & Sales,المبيعات وإدارة العلاقات
+CRM Pipeline,خط أنابيب المبيعات
+CRM pipeline management,إدارة مسار العملاء
+CRM — إدارة العملاء,إدارة العملاء
+CRM — العملاء,العملاء
+Cross-Location Search,البحث عبر الفروع
+Cross-Location Space Search,البحث عن المساحات عبر الفروع
+Cross-references,مراجع تبادلية
+Currency,العملة
+Currency / العملة,العملة
+Current Attendees / الحضور الحالي,الحضور الحالي
+Current Member,العضو الحالي
+Current Occupancy / الإشغال الحالي,الإشغال الحالي
+Current Occupant,المستخدم الحالي
+Current plan,الخطة الحالية
+Currently Occupied,مشغول حالياً
+Custom,مخصص
+Customer Group,مجموعة العملاء
+Customer ID,رقم العميل
+Customer Name,اسم العميل
+Customer Type,نوع العميل
+"Customize colors, logo, and layout for the member-facing portal.",خصص الألوان والشعار والتخطيط لبوابة الأعضاء.
+Daily,يومي
+Daily Price,السعر اليومي
+Daily Rate,السعر اليومي
+Daily Snapshots,اللقطات اليومية
+"Daily/weekly/monthly revenue breakdown by branch, space type, and payment method.",تفصيل الإيرادات يومي/أسبوعي/شهري حسب الفرع ونوع المساحة وطريقة الدفع.
+Danger Color,لون الخطر
+Dashboard,لوحة التحكم
+Dashboard KPIs,مؤشرات الأداء الرئيسية
+Date,التاريخ
+Date Format,تنسيق التاريخ
+Date From,من تاريخ
+Date Range,نطاق التاريخ
+Date Range condition requires both start and end dates,شرط نطاق التاريخ يتطلب تاريخ البداية والنهاية
+Date start must be before date end,تاريخ البداية يجب أن يكون قبل تاريخ النهاية
+Date To,إلى تاريخ
+Date — التاريخ,التاريخ
+Date:,التاريخ:
+day,يوم
+Day of Week,يوم الأسبوع
+Day of Week condition requires a day selection,شرط يوم الأسبوع يتطلب اختيار يوم
+Day Pass,تصريح يومي
+Day Pass & Trials / تصريح اليوم والتجربة,تصريح اليوم والتجربة
+Day Pass Count / عدد التصاريح اليومية,عدد التصاريح اليومية
+Day Pass Created!,تم إنشاء التصريح!
+Day pass date cannot be in the past,لا يمكن أن يكون تاريخ التصريح في الماضي
+Day pass is not checked in,التصريح غير مسجل دخول
+Day pass issuance,إصدار تصاريح اليوم
+Day pass must be Active to check in (current: {0}),يجب أن يكون التصريح نشطاً لتسجيل الدخول (الحالي: {0})
+Day Pass QR,QR تصريح اليوم
+Day Pass Revenue / إيرادات التصاريح اليومية,إيرادات التصاريح اليومية
+Day pass status is {0} — cannot check in,حالة التصريح {0} — لا يمكن تسجيل الدخول
+Day Pass System,نظام تصاريح اليوم
+Day Pass {0} created for {1},تم إنشاء التصريح {0} لـ {1}
+Day Pass {0} not found,التصريح {0} غير موجود
+Day Pass {0} — {1} ({2}),تصريح {0} — {1} ({2})
+Day Pass — تصاريح اليوم,تصاريح اليوم
+Day Passes,تصاريح اليوم
+Day passes provide single-day access without a full membership.,تصاريح اليوم توفر دخولاً ليوم واحد بدون عضوية كاملة.
+days,أيام
+Dear,عزيزي/عزيزتي
+Debit,خصم
+Decline,رفض
+Declined,مرفوض
+Dedicated Desk,مكتب مخصص
+Dedicated Desk — مكتب مخصص,مكتب مخصص
+Default Branch / الفرع الافتراضي,الفرع الافتراضي
+Default Currency,العملة الافتراضية
+Default Day Pass Rate / سعر التصريح الافتراضي,سعر التصريح الافتراضي
+Default Gateway,البوابة الافتراضية
+Default Icon Size,حجم الأيقونة الافتراضي
+Default Instructor,المدرب الافتراضي
+"Define all available amenities — WiFi, projector, printer, coffee, parking, lockers, etc.",حدد جميع المرافق المتاحة — واي فاي، بروجكتور، طابعة، قهوة، مواقف، خزائن، إلخ.
+"Define membership tiers with different access levels, credit allowances, and amenity bundles.",حدد مستويات العضوية بصلاحيات مختلفة وحصص رصيد وباقات مرافق.
+"Define which documentation entries must be read before this one, creating a structured learning path.",حدد إدخالات التوثيق التي يجب قراءتها قبل هذا الإدخال لإنشاء مسار تعلم منظم.
+Delivery,توصيل
+Demo Day,يوم عرض
+Depends On,يعتمد على
+Deposit,تأمين
+Deposit / تأمين,تأمين
+Depth,العمق
+Depth — العمق,العمق
+Description,الوصف
+Description (Arabic) / الوصف بالعربية,الوصف بالعربية
+Description / الوصف,الوصف
+Design Config — إعدادات التصميم,إعدادات التصميم
+Design Configuration,إعدادات التصميم
+Details,التفاصيل
+Details / التفاصيل,التفاصيل
+Directory,الدليل
+Disable Auto-Renew,إلغاء التجديد التلقائي
+Discount %,نسبة الخصم
+Discount % / نسبة الخصم,نسبة الخصم
+Discussion,نقاش
+Display / العرض,العرض
+Document (Back) / المستند (وجه خلفي),المستند (وجه خلفي)
+Document (Front) / المستند (وجه أمامي),المستند (وجه أمامي)
+Document Number / رقم المستند,رقم المستند
+Document Type / نوع المستند,نوع المستند
+Documentation Entry,مدخل التوثيق
+Documentation Type,نوع التوثيق
+Documentation — التوثيق,التوثيق
+Download QR Code,تحميل رمز QR
+Draft,مسودة
+Draft / مسودة,مسودة
+Draft → Submitted → Confirmed → Checked In → Checked Out → Invoiced,مسودة → مقدم → مؤكد → مسجل الدخول → مغادر → مفوتر
+Driver License / رخصة القيادة,رخصة القيادة
+Driving License,رخصة القيادة
+Dropped,انسحب
+Duration (hours),المدة (ساعات)
+Duration (min),المدة (دقائق)
+Dynamic Pricing,التسعير الديناميكي
+Dynamic pricing applied: {0},تم تطبيق التسعير الديناميكي: {0}
+"Each booking, day pass, or amenity usage deducts credits. Top-ups and plan renewals add credits.",كل حجز أو تصريح يومي أو استخدام مرافق يخصم من الرصيد. الشحن وتجديد الخطة يضيفان رصيداً.
+Each confirmed booking generates a QR code for self-service check-in.,كل حجز مؤكد ينشئ رمز QR لتسجيل الدخول الذاتي.
+"Each member has a credit wallet showing current balance, total earned, and total spent.",لكل عضو محفظة رصيد تعرض الرصيد الحالي والمكتسب والمنفق.
+"Each plan includes benefits: booking credits, locker access, event invites, etc.",كل خطة تتضمن مزايا: رصيد حجوزات، وصول للخزائن، دعوات فعاليات، إلخ.
+"Each type can have its own default pricing structure: hourly, daily, or monthly rates.",كل نوع يمكن أن يكون له هيكل تسعير افتراضي خاص: أسعار ساعية أو يومية أو شهرية.
+Early Bird,الحجز المبكر
+Edit Profile,تعديل الملف الشخصي
+EGP,ج.م.
+Email,البريد الإلكتروني
+Email / البريد الإلكتروني,البريد الإلكتروني
+Employee ↔ Member,موظف ↔ عضو
+Enable AI Features,تفعيل ميزات الذكاء الاصطناعي
+Enable Analytics / تفعيل التحليلات,تفعيل التحليلات
+Enable ARKAMOR IoT,تفعيل ARKAMOR IoT
+Enable ARKANOOR Hub,تفعيل سوق ARKANOOR
+Enable Auto-Renew,تفعيل التجديد التلقائي
+Enable Community / تفعيل المجتمع,تفعيل المجتمع
+Enable Day Pass / تفعيل تصريح اليوم,تفعيل تصريح اليوم
+Enable Events / تفعيل الفعاليات,تفعيل الفعاليات
+Enable Member Directory / تفعيل دليل الأعضاء,تفعيل دليل الأعضاء
+Enable Multi-Location / تفعيل تعدد الفروع,تفعيل تعدد الفروع
+Enable Online Payments,تفعيل الدفع الإلكتروني
+Enable RTL,تفعيل RTL
+Enable Trial / تفعيل التجربة,تفعيل التجربة
+Enable VoIP,تفعيل VoIP
+End,النهاية
+End Date,تاريخ النهاية
+End Date & Time / تاريخ ووقت الانتهاء,تاريخ ووقت الانتهاء
+End Date / تاريخ النهاية,تاريخ النهاية
+End date must be after start date,تاريخ الانتهاء يجب أن يكون بعد تاريخ البدء
+End Time,وقت الانتهاء
+End time must be after start time,يجب أن يكون وقت النهاية بعد وقت البداية
+End Time must be after Start Time,يجب أن يكون وقت النهاية بعد وقت البداية
+End — النهاية,النهاية
+"End-to-end platform for managing shared workspaces — from booking and membership to billing, community, and marketplace. Built on ERPNext for seamless financial integration.",منصة متكاملة لإدارة مساحات العمل المشتركة — من الحجز والعضوية إلى الفوترة والمجتمع والسوق. مبنية على ERPNext للتكامل المالي السلس.
+Engagement,التفاعل
+English,الإنجليزية
+English Font,الخط الإنجليزي
+English terms are required,الشروط بالإنجليزية مطلوبة
+Enroll,التسجيل
+Enrolled,مسجل
+Enrollment Date,تاريخ التسجيل
+Enter your full name,أدخل اسمك الكامل
+Enterprise,مؤسسي
+Enterprise Co-Working Space Management,إدارة مساحات العمل المشتركة للمؤسسات
+Entity,الكيان
+Entity Relationships — علاقات البيانات,علاقات البيانات
+Entity Type,نوع الكيان
+Entity Type — نوع الكيان,نوع الكيان
+Entity — الكيان,الكيان
+"Entries support Markdown, images, and code examples for technical documentation.",تدعم الإدخالات Markdown والصور وأمثلة البرمجة للتوثيق الفني.
+ERPNext Branch / فرع ERPNext,فرع ERPNext
+Evening,مسائي
+Event,فعالية
+Event Attendee,حضور فعالية
+Event coordination,تنسيق الفعاليات
+Event is full,الفعالية ممتلئة
+Event Management,إدارة الفعاليات
+Event Management & RSVP,إدارة الفعاليات وتأكيد الحضور
+Event Name (Arabic) / اسم الفعالية بالعربية,اسم الفعالية بالعربية
+Event Name / اسم الفعالية,اسم الفعالية
+Event Registration,تسجيل في فعالية
+Event Registration Update,تحديث تسجيل الفعالية
+Event Space,قاعة فعاليات
+Event Space — قاعة فعاليات,قاعة فعاليات
+Event Type / نوع الفعالية,نوع الفعالية
+Events,الفعاليات
+Events can be open to all or restricted to membership tiers.,يمكن أن تكون الفعاليات مفتوحة للجميع أو مقيدة بمستويات العضوية.
+Events — الفعاليات,الفعاليات
+"Every credit movement is logged with type, amount, reference document, and timestamp.",تُسجَّل كل حركة رصيد بالنوع والمبلغ والمستند المرجعي والتوقيت.
+"Exam room scheduling, specialist time-slots. Patient check-in via QR, billing integration with insurance.",جدولة غرف الفحص، مواعيد المتخصصين. تسجيل المرضى عبر QR، تكامل الفوترة مع التأمين.
+Exchange Rate,سعر الصرف
+Expected,متوقع
+Expected & checked in,متوقع ومسجل الدخول
+Expected Arrival,الوصول المتوقع
+Expected Departure,المغادرة المتوقعة
+Expected departure must be after expected arrival,وقت المغادرة المتوقع يجب أن يكون بعد وقت الوصول المتوقع
+Expected Start,تاريخ البدء المتوقع
+Expert,خبير
+Expire,انتهاء
+Expired,منتهي
+expired,منتهي
+Expired / منتهي,منتهي
+Expires,تنتهي في
+Expires At,ينتهي في
+Expiry / الانتهاء,الانتهاء
+Expiry Date / تاريخ الانتهاء,تاريخ الانتهاء
+Explore,استكشاف
+Explore Connections,استكشاف العلاقات
+Explore Relationships,استكشاف العلاقات
+Explore your ARKSpace tools:,استكشف أدوات آرك سبيس:
+Explorer,المستكشف
+Failed,فشل
+Failed to cancel booking,فشل إلغاء الحجز
+Failed to generate QR for booking {0},فشل في توليد QR للحجز {0}
+Failed to initiate payment. Please check your payment gateway configuration.,فشل بدء الدفع. يرجى التحقق من إعدادات بوابة الدفع.
+FAQ,الأسئلة الشائعة
+Fawry,فوري
+Feature,الميزة
+Features,الميزات
+Fee,الرسوم
+Fee / الرسوم,الرسوم
+Fee Amount,مبلغ الرسوم
+Feed,الخلاصة
+Feedback,ملاحظات
+Feedback & Notes,الملاحظات والتقييم
+Field Restrictions,قيود الحقول
+"Fill in visitor details and save, or use Quick Walk-in for immediate check-in.",املأ تفاصيل الزائر واحفظ، أو استخدم الدخول السريع لتسجيل الدخول الفوري.
+Filter,تصفية
+Filter by branch,تصفية حسب الفرع
+Financial / البيانات المالية,البيانات المالية
+First Membership Plan — خطة العضوية الأولى,خطة العضوية الأولى
+Fiscal Year Start,بداية السنة المالية
+Fitness & Wellness,اللياقة والعافية
+Fixed Amount,مبلغ ثابت
+Floor,الطابق
+Floor / الطابق,الطابق
+Floor Plan,مخطط الطابق
+Floor plan monitoring,مراقبة مخطط الطابق
+Floor Plan — مخطط الطابق,مخطط الطابق
+Floor — الطابق,الطابق
+Flow,التدفق
+"Follow the onboarding wizard to learn how ARKSpace works, or jump directly to any section.",اتبع معالج الإعداد لتتعرف على طريقة عمل أرك سبيس، أو انتقل مباشرة إلى أي قسم.
+Follow Up,المتابعة
+Follow Up Date,تاريخ المتابعة
+Forecast,التوقعات
+Forecast Start,بدء التنبؤ
+Foreign Company Docs / مستندات شركة أجنبية,مستندات شركة أجنبية
+frappe_visual is required. Please install it first.,مكتبة frappe_visual مطلوبة. يرجى تثبيتها أولاً.
+Free,مجاني
+Free Session,جلسة مجانية
+Free Trial,تجربة مجانية
+Fri,الجمعة
+Friday,الجمعة
+From,من
+From / من,من
+From Date,من تاريخ
+From Member / من العضو,من العضو
+From Member Name / اسم العضو المرسل,اسم العضو المرسل
+Front Desk,الاستقبال
+Front Desk Bundle,حزمة الاستقبال
+Full Admin Bundle,حزمة المسؤول الكاملة
+Full Day,يوم كامل
+Full Documentation,التوثيق الكامل
+Full ERP Integration (ERPNext),تكامل ERP كامل (ERPNext)
+Full Interactive Tour,جولة تفاعلية كاملة
+Full Name,الاسم الكامل
+Full system configuration,تكوين النظام الكامل
+Fullscreen,شاشة كاملة
+Gallery,المعرض
+Gallery Images,معرض الصور
+Gateway,بوابة الدفع
+Gateway Details,تفاصيل البوابة
+Gateway Fee,رسوم البوابة
+Gateway Reference,مرجع البوابة
+Gateway Response,استجابة البوابة
+Gateway Status,حالة البوابة
+General,عام
+Generate QR Code,إنشاء رمز QR
+Generating QR Code...,جارٍ إنشاء رمز QR...
+Generating QR codes for today's bookings...,جارٍ إنشاء رموز QR لحجوزات اليوم...
+Get Day Pass,احصل على تصريح
+Get instant access to our workspace — no membership required,احصل على وصول فوري لمساحة العمل — بدون عضوية
+Get Started,ابدأ الآن
+Getting Started — ابدأ الآن,ابدأ الآن
+Go to Login,الذهاب لتسجيل الدخول
+Gold,ذهبي
+Grand Total,المجموع الكلي
+Grid View — عرض الشبكة,عرض الشبكة
+Group By,تجميع حسب
+Guest,الضيف
+Guest Name,اسم الضيف
+Guest Type,نوع الضيف
+Hackathon,هاكاثون
+Half Day,نصف يوم
+Handle membership lifecycle,إدارة دورة حياة العضوية
+Help,مساعدة
+Here are the visual tools available to you:,إليك الأدوات البصرية المتاحة لك:
+Here's how the booking flow works:,هكذا يعمل تدفق الحجوزات:
+Host,المضيف
+Host (Member),المضيف (العضو)
+Host Department,قسم المضيف
+Host Name,اسم المضيف
+Host Notification,إشعار المضيف
+Host:,المضيف:
+Hot Desk,مكتب مشترك
+Hot Desk — مكتب مشترك,مكتب مشترك
+"Hot Desk, Private Office, Meeting Room…",مكتب مشترك، مكتب خاص، غرفة اجتماعات...
+Hourly,بالساعة
+Hourly Price,سعر الساعة
+Hourly Rate,السعر بالساعة
+Hourly · Daily · Monthly,ساعي · يومي · شهري
+Hours Booked,الساعات المحجوزة
+hours included,ساعة متضمنة
+How Spaces & Bookings Work,كيف تعمل المساحات والحجوزات
+hr,ساعة
+Icon,أيقونة
+Icon Class,فئة الأيقونة
+Icon Library,مكتبة الأيقونات
+Icons,الأيقونات
+ID Number,رقم الهوية
+ID Type,نوع الهوية
+ID Verification,التحقق من الهوية
+Idea,فكرة
+"If you have any questions, please contact our front desk.",إذا كان لديك أي أسئلة، يرجى التواصل مع الاستقبال.
+Image / الصورة,الصورة
+In Progress,قيد التنفيذ
+Included Credits,الرصيد المشمول
+Included Hours,الساعات المشمولة
+Included Hours / Month,الساعات المشمولة / شهر
+Industry Use-Cases — حالات الاستخدام,حالات الاستخدام
+Initial Credits,الرصيد الأولي
+Initiated,مبدوء
+Initiated At,بدأ في
+Initiating payment...,جارٍ بدء الدفع...
+Instructor,المدرب
+Insufficient credits,رصيد غير كافٍ
+"Insufficient credits. Available: {0}, Requested: {1}",رصيد غير كافٍ. المتاح: {0}، المطلوب: {1}
+Integration Setup,إعداد التكامل
+Integrations,التكاملات
+Integrations — التكاملات,التكاملات
+Interactive 2D Floor Plan,مخطط طابق تفاعلي ثنائي الأبعاد
+Interest,الاهتمام
+Interest Level,مستوى الاهتمام
+Interested,مهتم
+Interested Plan,الخطة المهتم بها
+Interested Space Type,نوع المساحة المهتم بها
+Intermediate,متوسط
+Internal Notes,ملاحظات داخلية
+Interview,مقابلة
+Invalid action. Use 'accept' or 'decline'.,إجراء غير صالح. استخدم 'قبول' أو 'رفض'.
+Invalid QR code — authentication failed,رمز QR غير صالح — فشل التحقق
+Invalid QR code — missing parameters,رمز QR غير صالح — معلمات مفقودة
+Invalid webhook signature,توقيع الـ webhook غير صالح
+Invoice,الفاتورة
+Invoice Prefix,بادئة الفاتورة
+Invoices,الفواتير
+Iqama,الإقامة
+Is Active / نشط,نشط
+Is Anonymous / مجهول,مجهول
+Is Featured / مميز,مميز
+Is Free / مجاني,مجاني
+Is Mandatory,إلزامي
+Is Pinned / مثبت,مثبت
+Is Trial,تجربة
+Issue at front desk or online. QR code generated for entry.,إصدار من الاستقبال أو عبر الإنترنت. يتم إنشاء رمز QR للدخول.
+Issue Date / تاريخ الإصدار,تاريخ الإصدار
+Issuing Authority / جهة الإصدار,جهة الإصدار
+It will be auto-renewed.,سيتم تجديدها تلقائياً.
+Job Posting,إعلان وظيفي
+Join ARKSpace,انضم إلى ARKSpace
+Key business workflows in ARKSpace,سير العمل الرئيسية في أرك سبيس
+Knowledge Base,قاعدة المعرفة
+Language,اللغة
+Last 30 Days,آخر 30 يوم
+Last 6 Months,آخر 6 أشهر
+Last 60 Days,آخر 60 يوم
+Last 90 Days,آخر 90 يوم
+Last Reviewed,آخر مراجعة
+Last Year,السنة الماضية
+Latitude / خط العرض,خط العرض
+Lead,عميل محتمل
+Lead already converted,تم تحويل العميل المحتمل بالفعل
+Lead Conversion,تحويل العملاء المحتملين
+"Lead conversion funnel, tour scheduling, follow-up tracking.",مسار تحويل العملاء، جدولة الجولات، تتبع المتابعات.
+Lead Name,اسم العميل المحتمل
+Lead Pipeline,مسار العملاء المحتملين
+Lead Prefix,بادئة العميل المحتمل
+Leave 0 for free trial / اترك 0 للتجربة المجانية,اترك 0 للتجربة المجانية
+Legal Document,مستند قانوني
+Legal Document / المستند القانوني,المستند القانوني
+Legal Documents,المستندات القانونية
+Legal Documents / المستندات القانونية,المستندات القانونية
+Legal Documents — المستندات القانونية,المستندات القانونية
+Legal Documents — المستندات القانونية للعقود,المستندات القانونية للعقود
+Legend,مفتاح الرموز
+Let's set up your co-working space in a few easy steps.,دعنا نقوم بإعداد مساحة العمل في خطوات سهلة.
+Level,المستوى
+Like,إعجاب
+Like ♡,إعجاب ♡
+Liked,أعجبني
+Liked!,تم الإعجاب!
+Likes Count / عدد الإعجابات,عدد الإعجابات
+Link Color,لون الرابط
+Link Hover Color,لون الرابط عند التمرير
+"Link legal documents (NDAs, terms of service, waivers) to specific contracts.",اربط المستندات القانونية (اتفاقيات السرية، شروط الخدمة، إخلاءات المسؤولية) بعقود محددة.
+Link related documentation entries to help readers discover connected topics and guides.,اربط إدخالات التوثيق ذات الصلة لمساعدة القراء على اكتشاف المواضيع والأدلة المرتبطة.
+Link spaces to floor zones for the Live Floor Plan view.,اربط المساحات بمناطق الطابق لعرض المخطط التفاعلي.
+Link to Spaces,الربط بالمساحات
+Linked Documents,المستندات المرتبطة
+Links,الروابط
+Live,مباشر
+Live Floor Plan,المخطط الحي للطابق
+Live Plan,المخطط المباشر
+Load More,تحميل المزيد
+Loading command center...,جاري تحميل مركز القيادة...
+Loading community...,جاري تحميل المجتمع...
+Loading exploration…,جارِ تحميل الاستكشاف…
+Loading explorer...,جاري تحميل المستكشف...
+Loading flow...,جاري تحميل التدفق...
+Loading graph...,جاري تحميل الرسم البياني...
+Localization,التعريب
+Location / الموقع,الموقع
+Login here,سجّل الدخول هنا
+Long Booking,حجز طويل
+Longitude / خط الطول,خط الطول
+Lost,مفقود
+lost,مفقود
+Lunch & Learn,غداء وتعلم
+Main Branch,الفرع الرئيسي
+Main Image,الصورة الرئيسية
+"Maintain a library of legal documents — terms of service, NDAs, waivers, and policies.",أنشئ مكتبة مستندات قانونية — شروط الخدمة، اتفاقيات السرية، إخلاءات المسؤولية، والسياسات.
+Maintenance,صيانة
+Maintenance Spaces / مساحات الصيانة,مساحات الصيانة
+Maintenance — صيانة,صيانة
+Manage multiple locations with independent settings but centralized reporting.,أدر مواقع متعددة بإعدادات مستقلة لكن تقارير مركزية.
+Manage spaces and process bookings,إدارة المساحات ومعالجة الحجوزات
+Manager,المدير
+Manager Bundle,حزمة المدير
+Manual,يدوي
+Mark one image as the primary thumbnail that appears in listings and cards.,حدد صورة واحدة كصورة مصغرة رئيسية تظهر في القوائم والبطاقات.
+Mark {0} booking(s) as No Show?,تحديد {0} حجز(حجوزات) كلم يحضر؟
+Marketplace,السوق
+Marketplace access,الوصول إلى السوق
+Master Legal Library,المكتبة القانونية الرئيسية
+Mastery,إتقان
+Max Adjustment Cap,حد أقصى للتعديل
+Max Attendees / الحد الأقصى للحضور,الحد الأقصى للحضور
+Max Capacity / السعة القصوى,السعة القصوى
+Max Guests,الحد الأقصى للضيوف
+Max Hours,الحد الأقصى (ساعات)
+Max Participants,الحد الأقصى للمشاركين
+Max Trial Days / أقصى أيام التجربة,أقصى أيام التجربة
+Media,الوسائط
+Medical Clinics,العيادات الطبية
+Meeting,اجتماع
+Meeting Room,غرفة اجتماعات
+Meeting Room Hours / Month,ساعات غرفة الاجتماعات / شهر
+Meeting Room — غرفة اجتماعات,غرفة اجتماعات
+meeting rooms,غرف اجتماعات
+Meeting URL,رابط الاجتماع
+Meetup,لقاء
+Member,عضو
+Member (Customer),العضو (العميل)
+Member / العميل,العميل
+Member Activity,نشاط العضو
+Member Analytics,تحليلات الأعضاء
+Member Bundle,حزمة العضو
+Member check-in/check-out,تسجيل دخول/خروج الأعضاء
+Member Contract,عقد العضو
+Member Credit Wallet,محفظة رصيد العضو
+Member Details / بيانات العميل,بيانات العميل
+Member Directory,دليل الأعضاء
+Member Email,البريد الإلكتروني للعضو
+Member Events,فعاليات الأعضاء
+Member Growth,نمو الأعضاء
+Member Name,اسم العضو
+Member Name / اسم العميل,اسم العميل
+Member not found,العضو غير موجود
+Member Signature / توقيع العميل,توقيع العميل
+Member Skill,مهارة العضو
+Member Skills — مهارات العضو,مهارات العضو
+Member Tier,مستوى العضو
+Member — العضو,العضو
+Members,الأعضاء
+Members / الأعضاء,الأعضاء
+"Members browse available spaces, create bookings, and go through the confirmation and check-in flow.",يتصفح الأعضاء المساحات المتاحة وينشئون الحجوزات ويمرون بتدفق التأكيد وتسجيل الدخول.
+Members can list their skills and expertise for the community directory and networking.,يمكن للأعضاء إدراج مهاراتهم وخبراتهم في دليل المجتمع وشبكة التواصل.
+"Members can share knowledge, ask questions, and post announcements on the community board.",يمكن للأعضاء مشاركة المعرفة وطرح الأسئلة ونشر الإعلانات في لوحة المجتمع.
+"Members choose a plan, register, and enjoy active membership with renewal and upgrade options.",يختار الأعضاء خطة ويسجلون ويتمتعون بعضوية نشطة مع خيارات التجديد والترقية.
+"Members connect, share events, and build a vibrant co-working community.",يتواصل الأعضاء ويشاركون الفعاليات ويبنون مجتمع عمل مشترك نابض بالحياة.
+Members will appear here when they connect with each other,سيظهر الأعضاء هنا عندما يتواصلون مع بعضهم
+Membership,العضوية
+Membership / العضوية,العضوية
+Membership Analytics,تحليلات العضوية
+Membership Card,بطاقة العضوية
+Membership created: {0},تم إنشاء العضوية: {0}
+Membership Credit Applied,رصيد العضوية المطبق
+Membership dashboard,لوحة العضويات
+Membership Details,تفاصيل العضوية
+Membership Distribution,توزيع العضويات
+Membership Expiring Soon,العضوية تنتهي قريباً
+Membership Expiring Soon — {{ doc.membership_plan }},عضويتك تنتهي قريباً — {{ doc.membership_plan }}
+Membership Expiry Reminder,تذكير انتهاء العضوية
+Membership Expiry Reminder — {0} days,تذكير انتهاء العضوية — {0} يوم
+Membership Lifecycle,دورة حياة العضوية
+Membership lifecycle: from plan selection to renewal.,دورة حياة العضوية: من اختيار الخطة إلى التجديد.
+Membership Payment / دفعة عضوية,دفعة عضوية
+Membership Plan,خطة العضوية
+Membership plan {0} — {1},خطة العضوية {0} — {1}
+Membership Plans — خطط العضوية,خطط العضوية
+Membership Prefix,بادئة العضوية
+Membership Receipt,إيصال العضوية
+Membership renewed! New membership: {0},تم تجديد العضوية! العضوية الجديدة: {0}
+Membership Revenue,إيرادات العضويات
+Membership Revenue / إيرادات العضويات,إيرادات العضويات
+Membership transferred from {0} to {1},تم نقل العضوية من {0} إلى {1}
+Membership transferred to {0},تم نقل العضوية إلى {0}
+Membership Welcome,ترحيب بالعضوية
+Membership {0} created! Credit: {1},تم إنشاء العضوية {0}! الرصيد: {1}
+Membership {0} — Plan: {1} ({2}),العضوية {0} — الخطة: {1} ({2})
+Membership — عضوية,عضوية
+Memberships,العضويات
+Memberships — العضويات,العضويات
+Message / الرسالة,الرسالة
+Messaging,الرسائل
+Meta,البيانات الوصفية
+Method,الطريقة
+Min Hours,الحد الأدنى (ساعات)
+Minimum Rate,الحد الأدنى للسعر
+Minimum Rate Floor,حد أدنى للسعر
+Mode,الوضع
+Module Map — خريطة الوحدات,خريطة الوحدات
+Module Name,اسم الوحدة
+Module Structure,هيكل الوحدة
+"Module, Action, Field, Report",وحدة، إجراء، حقل، تقرير
+Mon,الإثنين
+Monday,الإثنين
+Month,الشهر
+month,شهر
+Month Revenue,إيرادات الشهر
+Monthly,شهري
+Monthly / شهري,شهري
+Monthly Bookings,الحجوزات الشهرية
+Monthly Budget,الميزانية الشهرية
+Monthly Price,السعر الشهري
+Monthly price must be greater than zero,السعر الشهري يجب أن يكون أكبر من صفر
+Monthly Rate,السعر الشهري
+Monthly Revenue,الإيرادات الشهرية
+Multi-Branch Centralized,إدارة مركزية متعددة الفروع
+Multi-Branch Management,إدارة متعددة الفروع
+Multi-Location / تعدد الفروع,تعدد الفروع
+Multi-Vendor Marketplace,سوق متعدد البائعين
+"Multi-vendor marketplace for co-working services, supplies, equipment rental. Cross-branch inventory and fulfillment.",سوق متعدد البائعين لخدمات العمل المشتركة والمستلزمات وتأجير المعدات. مخزون وتنفيذ عبر الفروع.
+"Multiple print formats available: bilingual (AR/EN), Arabic-only, and English-only.",تتوفر تنسيقات طباعة متعددة: ثنائي اللغة (عربي/إنجليزي)، عربي فقط، وإنجليزي فقط.
+Multiplier,مضاعف
+Multiplier must be greater than zero,المضاعف يجب أن يكون أكبر من صفر
+My Connections,اتصالاتي
+My Memberships,عضوياتي
+My Payments,مدفوعاتي
+My Profile,ملفي الشخصي
+My Profile — ARKSpace,ملفي الشخصي — أرك سبيس
+m²,م²
+National ID,الهوية الوطنية
+National ID / البطاقة الشخصية,البطاقة الشخصية
+Navigation History,سجل التنقل
+Need at least 3 months of data,يلزم بيانات لا تقل عن 3 أشهر
+Need Follow Up,يحتاج متابعة
+Need more help?,تحتاج مزيداً من المساعدة؟
+Negotiating,قيد التفاوض
+Net Amount,المبلغ الصافي
+Net Amount / الصافي,الصافي
+Net Growth,النمو الصافي
+Net Received,صافي المستلم
+Networking,تواصل
+Networking Request,طلب تواصل
+Networking Request Accepted,تم قبول طلب التواصل
+Networking — التواصل,التواصل
+New,جديد
+New Booking,حجز جديد
+New Bookings / حجوزات جديدة,حجوزات جديدة
+New Community Post,منشور مجتمع جديد
+New Members,أعضاء جدد
+New Members / أعضاء جدد,أعضاء جدد
+New Networking Request,طلب تواصل جديد
+New Plan,الخطة الجديدة
+New Post,منشور جديد
+New → Active → Expiring → Expired. Auto-renewal and manual renewal supported.,جديد → نشط → قيد الانتهاء → منتهي. يدعم التجديد التلقائي واليدوي.
+Next,التالي
+Next Follow Up,المتابعة التالية
+No,لا
+No account found,لم يتم العثور على حساب
+No active memberships,لا توجد عضويات نشطة
+No analytics data available for the selected period.,لا توجد بيانات تحليلية للفترة المحددة.
+No attendees registered yet,لا يوجد حاضرون مسجلون بعد
+No available spaces found,لم يتم العثور على مساحات متاحة
+No Branch,بدون فرع
+No branch data available,لا توجد بيانات فروع متاحة
+No community data yet,لا توجد بيانات مجتمع بعد
+No invoices found,لم يتم العثور على فواتير
+No linked customer account found. Contact support to link your account.,لم يتم العثور على حساب عميل مرتبط. تواصل مع الدعم لربط حسابك.
+No linked Customer for {0}. Invoice not created.,لا يوجد عميل مرتبط بـ {0}. لم يتم إنشاء الفاتورة.
+No linked Customer found for {0}. Sales Invoice was not created.,لم يتم العثور على عميل مرتبط بـ {0}. لم يتم إنشاء فاتورة.
+No members found,لم يتم العثور على أعضاء
+No membership found,لم يتم العثور على عضوية
+No online payments,لا توجد مدفوعات إلكترونية
+No other plans available.,لا توجد خطط أخرى متاحة.
+No Plan (Free Account),بدون خطة (حساب مجاني)
+No posts yet,لا توجد منشورات بعد
+No posts yet. Be the first to share!,لا توجد منشورات بعد. كن أول من يشارك!
+No profile data,لا توجد بيانات شخصية
+No recent bookings,لا توجد حجوزات سابقة
+No relationships found,لا توجد علاقات
+No Show,لم يحضر
+No Shows / عدم الحضور,عدم الحضور
+No spaces available,لا توجد مساحات متاحة
+No spaces available at the moment.,لا توجد مساحات متاحة حالياً.
+No spaces found,لا توجد مساحات
+No upcoming bookings,لا توجد حجوزات قادمة
+No upcoming events,لا توجد فعاليات قادمة
+No {0} rate configured for space {1},لا يوجد سعر {0} مُعد للمساحة {1}
+Not enough data for forecasting (need 14+ days),بيانات غير كافية للتنبؤ (يلزم 14+ يوماً)
+Not Interested,غير مهتم
+Notarized Document / مستند موثق,مستند موثق
+Notes,ملاحظات
+Notes / ملاحظات,ملاحظات
+Notes — ملاحظات,ملاحظات
+Notifications,الإشعارات
+Number / الرقم,الرقم
+Numbering,الترقيم
+Occupancy,الإشغال
+Occupancy %,نسبة الإشغال %
+Occupancy Heatmap,خريطة الإشغال الحرارية
+Occupancy Rate,نسبة الإشغال
+Occupancy Rate / نسبة الإشغال,نسبة الإشغال
+Occupancy Report,تقرير الإشغال
+Occupied,مشغول
+Occupied Spaces / المساحات المشغولة,المساحات المشغولة
+Occupied — مشغول,مشغول
+Off-Peak Discount,خصم خارج الذروة
+Office Rental,إيجار مكتب
+Onboarding,تهيئة
+one-time,دفعة واحدة
+One-time / مرة واحدة,مرة واحدة
+Online,عبر الإنترنت
+Online / إلكتروني,إلكتروني
+Online Pay,الدفع الإلكتروني
+Online Payment,الدفع الإلكتروني
+Online payment via {0} — {1},دفع إلكتروني عبر {0} — {1}
+Online payment {0} failed — {1},فشل الدفع الإلكتروني {0} — {1}
+Online Payments,المدفوعات الإلكترونية
+Online payments are not enabled. Please contact the administrator.,المدفوعات الإلكترونية غير مفعّلة. يرجى التواصل مع المسؤول.
+Online Payments — الدفع الإلكتروني,الدفع الإلكتروني
+Online Session,جلسة عن بُعد
+Only active memberships can be transferred,يمكن نقل العضويات النشطة فقط
+Only active memberships can be upgraded,يمكن ترقية العضويات النشطة فقط
+Only Checked In bookings can be checked out. Current status: {0},يمكن تسجيل مغادرة الحجوزات المسجلة فقط. الحالة الحالية: {0}
+Only completed payments can be refunded,يمكن استرداد المدفوعات المكتملة فقط
+Only Confirmed bookings can be checked in. Current status: {0},يمكن تسجيل وصول الحجوزات المؤكدة فقط. الحالة الحالية: {0}
+Only submitted memberships can be renewed,يمكن تجديد العضويات المقدمة فقط
+Only the recipient can accept this request,المستلم فقط يمكنه قبول هذا الطلب
+Only the recipient can decline this request,المستلم فقط يمكنه رفض هذا الطلب
+Open for Registration,مفتوح للتسجيل
+Open in Form,فتح في النموذج
+Open Source,مفتوح المصدر
+Open Space,فتح المساحة
+Opening Time / وقت الافتتاح,وقت الافتتاح
+Opening time must be before closing time,وقت الافتتاح يجب أن يكون قبل وقت الإغلاق
+Operations,العمليات
+Operations / العمليات,العمليات
+Operations Bundle,حزمة العمليات
+optional — you can choose later,اختياري — يمكنك الاختيار لاحقاً
+"Organize spaces by type: Hot Desk, Private Office, Meeting Room, Event Hall, Studio, etc.",نظّم المساحات حسب النوع: مكتب مشترك، مكتب خاص، غرفة اجتماعات، قاعة فعاليات، استوديو، إلخ.
+"Organize training content into modules — each module contains sessions, resources, and assessments.",نظم محتوى التدريب في وحدات — كل وحدة تحتوي على جلسات وموارد وتقييمات.
+Organizer / المنظم,المنظم
+organizes,ينظّم
+Other,أخرى
+Other / أخرى,أخرى
+Other Revenue / إيرادات أخرى,إيرادات أخرى
+Outcome,النتيجة
+Outstanding,المستحق
+Override Rate,تجاوز السعر
+Override rate cannot be negative,سعر التجاوز لا يمكن أن يكون سالباً
+Overview — نظرة عامة,نظرة عامة
+pages/month,صفحة/شهر
+Paid,مدفوع
+Panel,حوارية
+Parent,أساسي
+Partially Refunded,مسترد جزئياً
+Partner,شريك
+Pass,التصريح
+Pass Date,تاريخ التصريح
+Pass Type,نوع التصريح
+Passes & Visitors / التصاريح والزوار,التصاريح والزوار
+Passes expire at end of business day automatically.,تنتهي التصاريح تلقائياً في نهاية يوم العمل.
+Passport,جواز السفر
+Passport / جواز السفر,جواز السفر
+Past Events,فعاليات سابقة
+Past Memberships,العضويات السابقة
+Patterns / الأنماط,الأنماط
+Pay,ادفع
+Pay Online,ادفع إلكترونياً
+Payment,الدفع
+Payment amount must be greater than zero,مبلغ الدفع يجب أن يكون أكبر من صفر
+Payment completed successfully!,تم الدفع بنجاح!
+Payment Date / تاريخ الدفع,تاريخ الدفع
+Payment Details,تفاصيل الدفع
+Payment Details / بيانات الدفع,بيانات الدفع
+Payment Entry,قيد الدفع
+Payment failed. Please try again.,فشل الدفع. يرجى المحاولة مرة أخرى.
+Payment For,الدفع مقابل
+Payment Gateways,بوابات الدفع
+Payment ID,معرّف الدفع
+Payment initiation failed. Please try again.,فشل بدء الدفع. يرجى المحاولة مرة أخرى.
+Payment Link Expiry (hours),انتهاء رابط الدفع (ساعات)
+Payment Method,طريقة الدفع
+Payment Method / طريقة الدفع,طريقة الدفع
+Payment Period / فترة الدفع,فترة الدفع
+Payment Receipt,إيصال دفع
+Payment Receipts — إيصالات الدفع,إيصالات الدفع
+Payment received successfully! Thank you.,تم استلام الدفع بنجاح! شكراً لك.
+Payment Reconciliation,مطابقة المدفوعات
+Payment Reconciliation Error,خطأ في مطابقة الدفع
+Payment status: {0},حالة الدفع: {0}
+Payment Success Message,رسالة نجاح الدفع
+Payment Webhook Error,خطأ في إشعار الدفع
+Payment window opened. Complete the payment in the new tab.,تم فتح نافذة الدفع. أكمل الدفع في التبويب الجديد.
+Payment {0} completed!,تم الدفع {0}!
+Payments,المدفوعات
+PayPal,باي بال
+Peak Hour / ساعة الذروة,ساعة الذروة
+Peak Hours,ساعات الذروة
+"Peak hours, cancellation rates, no-show tracking, average booking duration.",ساعات الذروة، معدلات الإلغاء، تتبع عدم الحضور، متوسط مدة الحجز.
+Pending,قيد الانتظار
+Pending / قيد المراجعة,قيد المراجعة
+Pending Requests,طلبات معلقة
+Percentage,نسبة مئوية
+Period,الفترة
+Period To must be after Period From,يجب أن يكون تاريخ النهاية بعد تاريخ البداية
+Period Type / نوع الفترة,نوع الفترة
+Permissions,الصلاحيات
+Personal Information,المعلومات الشخصية
+persons,أشخاص
+Phone,الهاتف
+Phone / الهاتف,الهاتف
+Pin,تثبيت
+Pin Post,تثبيت المنشور
+Pinned Posts,المنشورات المثبتة
+Placeholders,العناصر النائبة
+Plan,الخطة
+Plan / الخطة,الخطة
+Plan Benefits,مزايا الخطة
+Plan Name,اسم الخطة
+Plan Name (Arabic),اسم الخطة (بالعربية)
+Plan Pricing,تسعير الخطة
+Plan Setup,إعداد الخطة
+Plan Type,نوع الخطة
+Plans,الخطط
+Plans & Tiers,الخطط والمستويات
+Platinum,بلاتيني
+Please contact us to renew your membership and continue enjoying our services.,يرجى التواصل معنا لتجديد عضويتك والاستمتاع بخدماتنا.
+Please enter your name first,الرجاء إدخال اسمك أولاً
+Please fill in the required fields.,يرجى ملء الحقول المطلوبة.
+Please link a Customer before marking as Converted,يرجى ربط عميل قبل التحويل
+Please login to access the member portal,يرجى تسجيل الدخول للوصول إلى بوابة الأعضاء
+Please login to access your memberships,يرجى تسجيل الدخول للوصول إلى عضوياتك
+Please login to book a space,يرجى تسجيل الدخول لحجز مساحة
+Please login to view your payments,يرجى تسجيل الدخول لعرض مدفوعاتك
+Please login to view your profile,يرجى تسجيل الدخول لعرض ملفك الشخصي
+Please register or contact us to set up your membership.,سجّل أو تواصل معنا لإعداد عضويتك.
+Please renew your membership to continue enjoying our services.,يرجى تجديد عضويتك للاستمتاع بخدماتنا.
+Please select a Contract Template first,يرجى اختيار نموذج العقد أولاً
+Please select a different plan or billing cycle,يرجى اختيار خطة أو دورة فوترة مختلفة
+Please select bookings first,يرجى تحديد الحجوزات أولاً
+Points,النقاط
+Popular,شائع
+Popular (10+ likes),شائع (10+ إعجاب)
+Popular Booking Type / نوع الحجز الأكثر شعبية,نوع الحجز الأكثر شعبية
+Popular Space Type / نوع المساحة الأكثر شعبية,نوع المساحة الأكثر شعبية
+Populate from Template,تعبئة من القالب
+Portal Appearance,مظهر البوابة
+Post,منشور
+Post created successfully,تم إنشاء المنشور بنجاح
+Post Type / نوع المنشور,نوع المنشور
+Postal Code / الرمز البريدي,الرمز البريدي
+posted,نُشر
+Postponed,مؤجل
+Posts,المنشورات
+"Posts support likes, pinning, and comment threads to foster engagement.",المنشورات تدعم الإعجابات والتثبيت وسلاسل التعليقات لتعزيز التفاعل.
+Power of Attorney / توكيل رسمي,توكيل رسمي
+Powered by ARKSpace,مدعوم من ARKSpace
+"Pre-register visitors, track walk-ins, and generate entry badges with QR codes.",سجّل الزوار مسبقاً وتتبع الزيارات بدون موعد وأنشئ شارات دخول برموز QR.
+Pre-registered,مسجل مسبقاً
+Pre-registered By,مسجل مسبقاً بواسطة
+Preparing payment link...,جارٍ تحضير رابط الدفع...
+Prerequisite,المتطلب
+Prerequisites,المتطلبات السابقة
+Prerequisites — المتطلبات المسبقة,المتطلبات المسبقة
+Previous,السابق
+Price Adjustment,تعديل السعر
+Pricing,التسعير
+Pricing by Type,التسعير حسب النوع
+Pricing Rule,قاعدة التسعير
+Pricing rules & contracts,قواعد التسعير والعقود
+Pricing Rules — قواعد التسعير,قواعد التسعير
+Primary Color,اللون الأساسي
+Primary Image,الصورة الرئيسية
+Primary Language,اللغة الرئيسية
+Print,طباعة
+Print Arabic Contract,طباعة العقد بالعربية
+Print Badge,طباعة الشارة
+Print Bilingual,طباعة ثنائي اللغة
+Print English Contract,طباعة العقد بالإنجليزية
+Print Formats,تنسيقات الطباعة
+Print QR,طباعة QR
+Print QR Code,طباعة رمز QR
+Printing Pages / Month,صفحات الطباعة / شهر
+Private Office,مكتب خاص
+Private Office — مكتب خاص,مكتب خاص
+Processing refund...,جارٍ معالجة الاسترداد...
+Processing renewal...,جارٍ معالجة التجديد...
+Processing upgrade...,جارٍ معالجة الترقية...
+Proficiency Level / مستوى الإتقان,مستوى الإتقان
+Profile,الملف الشخصي
+Progress,التقدم
+Progress %,نسبة التقدم %
+Progress Tracking,تتبع التقدم
+Projected,المتوقع
+Promotion,عرض ترويجي
+Prorated credit: {0},الرصيد النسبي: {0}
+Published,منشور
+Purpose,الغرض
+Purpose Details,تفاصيل الغرض
+Purpose of Visit,غرض الزيارة
+Purpose:,الغرض:
+QR Check-in,تسجيل دخول QR
+QR Code,رمز QR
+QR code check-in,تسجيل الدخول بـ QR
+QR Code generated successfully,تم إنشاء رمز QR بنجاح
+QR code generation requires 'segno' or 'qrcode' package. Install with: pip install segno,إنشاء رمز QR يتطلب مكتبة 'segno' أو 'qrcode'. قم بالتثبيت بـ: pip install segno
+QR Code Self Check-in,تسجيل دخول ذاتي بـ QR
+QR Generation Error,خطأ في توليد QR
+QR Token,رمز التحقق
+Qty,الكمية
+Quarterly,ربع سنوي
+Quarterly / ربع سنوي,ربع سنوي
+Question,سؤال
+Quick Access,وصول سريع
+Quick Book — {0},حجز سريع — {0}
+Quick booking,حجز سريع
+Quick Links,روابط سريعة
+Quick Walk-in,حضور مباشر سريع
+Quick Walk-in Day Pass,تصريح حضور مباشر سريع
+Rate,السعر
+Rate / القيمة,القيمة
+Rate Multiplier / مضاعف السعر,مضاعف السعر
+Rating,التقييم
+Razorpay,رازورباي
+Reactivate,إعادة تفعيل
+Reading Order,ترتيب القراءة
+Ready to explore ARKSpace?,هل أنت مستعد لاستكشاف أرك سبيس؟
+Real-time 2D floor plan with SVG overlay showing space status and occupancy.,مخطط طابق ثنائي الأبعاد مباشر مع طبقة SVG تعرض حالة المساحة والإشغال.
+Real-time and historical occupancy rates with heatmaps per branch and floor.,معدلات إشغال لحظية وتاريخية مع خرائط حرارية لكل فرع وطابق.
+Reason,السبب
+Recalculate Capacity,إعادة حساب السعة
+Receipt Date / تاريخ الإيصال,تاريخ الإيصال
+Receipt Generation,إنشاء الإيصالات
+Receipt Type / نوع الإيصال,نوع الإيصال
+Recent Bookings,الحجوزات الأخيرة
+Recent Posts,المنشورات الأخيرة
+Recipients can accept or decline requests. Accepted connections appear in your network.,يمكن للمستلمين قبول أو رفض الطلبات. الاتصالات المقبولة تظهر في شبكتك.
+Reference,المرجع
+Reference Number / رقم المرجع,رقم المرجع
+Referral,إحالة
+Referral Code,رمز الإحالة
+Referred,محال
+Refresh,تحديث
+Refund,استرداد
+Refund Amount,مبلغ الاسترداد
+Refund Payment,استرداد الدفع
+Refund processed via {0} for {1},تم الاسترداد عبر {0} لـ {1}
+Refund processed: {0},تم الاسترداد: {0}
+Refunded,مسترد
+Regenerate,إعادة إنشاء
+Regenerate QR,إعادة توليد QR
+Regenerate QR Code,إعادة إنشاء رمز QR
+Register,تسجيل
+Register for Event,التسجيل في الفعالية
+Register Now,سجّل الآن
+Registered,المسجلون
+Registered successfully!,تم التسجيل بنجاح!
+Registering and checking in visitor...,جارٍ تسجيل وإدخال الزائر...
+Registration cancelled for {0},تم إلغاء التسجيل في {0}
+Registration Closed,التسجيل مغلق
+Registration Deadline / آخر موعد للتسجيل,آخر موعد للتسجيل
+Registration deadline has passed,انتهى موعد التسجيل
+Registration deadline must be before event start,آخر موعد للتسجيل يجب أن يكون قبل بدء الفعالية
+Registration failed. Please try again or contact support.,فشل التسجيل. يرجى المحاولة مرة أخرى أو التواصل مع الدعم.
+Registration Required / التسجيل مطلوب,التسجيل مطلوب
+Reject,رفض
+Reject Visitor,رفض الزائر
+Rejected,مرفوض
+Rejected / مرفوض,مرفوض
+Rejected: {0},مرفوض: {0}
+Related,مرتبط
+Related Docs — مستندات ذات صلة,مستندات ذات صلة
+Related DocType,نوع المستند المرتبط
+Related Documents,المستندات المرتبطة
+Related Documents / المستندات المرتبطة,المستندات المرتبطة
+Related Entry,المدخل المرتبط
+Relation Type,نوع العلاقة
+Relations,العلاقات
+Renew,تجديد
+Renew Membership,تجديد العضوية
+Renew Now,جدّد الآن
+Renewal,تجديد
+Renewed,مجدد
+renewed,مجدد
+Reported,مُبلّغ عنه
+Reports & Analytics,التقارير والتحليلات
+Reports & Analytics — التقارير والتحليلات,التقارير والتحليلات
+Request declined,تم رفض الطلب
+Rescheduled,أُعيد جدولته
+Reserved,محجوز
+Reserved Spaces / المساحات المحجوزة,المساحات المحجوزة
+Respond,استجابة
+Responded At / تاريخ الرد,تاريخ الرد
+Results,النتائج
+Retention %,نسبة الاحتفاظ %
+Retention Days / أيام الاحتفاظ بالبيانات,أيام الاحتفاظ بالبيانات
+Retention Rate / نسبة الاحتفاظ,نسبة الاحتفاظ
+Reusable Templates,قوالب قابلة لإعادة الاستخدام
+Revenue,الإيرادات
+Revenue / الإيرادات,الإيرادات
+Revenue by Type,الإيرادات حسب النوع
+Revenue Forecast,توقعات الإيرادات
+Revenue Forecasting & Analytics,التنبؤ بالإيرادات والتحليلات
+Revenue Summary,ملخص الإيرادات
+Revenue tracking,تتبع الإيرادات
+Revenue Trend,اتجاه الإيرادات
+Revenue Trends,اتجاهات الإيرادات
+Reviewed By,تمت المراجعة بواسطة
+Rich Content,محتوى غني
+RTL Support,دعم RTL
+Rule Details,تفاصيل القاعدة
+Rule Name,اسم القاعدة
+Rule Priority,أولوية القاعدة
+Rule Type,نوع القاعدة
+Rules are evaluated by priority. The first matching rule determines the final price.,تُقيّم القواعد حسب الأولوية. أول قاعدة مطابقة تحدد السعر النهائي.
+Sales Invoice,فاتورة المبيعات
+Sales Invoice {0} cancelled,تم إلغاء الفاتورة {0}
+Sales Invoice {0} created for booking {1},تم إنشاء الفاتورة {0} للحجز {1}
+Sales Invoice {0} created for membership {1},تم إنشاء الفاتورة {0} للعضوية {1}
+Sat,السبت
+Saturday,السبت
+Save,حفظ
+Scan for check-in,امسح لتسجيل الدخول
+Scan to check in,امسح للتسجيل
+Schedule,الجدول
+Schedule and track space tours for leads.,جدوِل وتتبع جولات المساحات للعملاء المحتملين.
+Schedule guided tours for prospective members. Track attendance and follow-up.,جدوِل جولات إرشادية للأعضاء المحتملين. تتبع الحضور والمتابعة.
+Schedule Tour,جدولة جولة
+Scheduled,مجدول
+Score,الدرجة
+Search,بحث
+Search across all branches for available spaces,البحث عبر جميع الفروع عن المساحات المتاحة
+Search members...,البحث عن أعضاء...
+Seasonal,موسمي
+Seat Number,رقم المقعد
+Secondary Color,اللون الثانوي
+Secondary Language,اللغة الثانوية
+Security & Permissions — الأمان والصلاحيات,الأمان والصلاحيات
+Security Deposit / التأمين,التأمين
+See Also,انظر أيضاً
+See how ARKSpace compares to the leading co-working management platforms.,تعرف على مقارنة أرك سبيس مع أبرز منصات إدارة مساحات العمل المشتركة.
+Select a DocType,اختر نوع المستند
+Select a record,اختر سجلاً
+Select a Space,اختر مساحة
+Select an entity and click Explore,اختر كياناً واضغط استكشاف
+Select an entity to explore,اختر كياناً لاستكشافه
+Select an entity type and record to explore its connections,اختر نوع الكيان والسجل لاستكشاف علاقاته
+"Select space, date/time range, and member. Pricing is auto-calculated.",اختر المساحة ونطاق التاريخ/الوقت والعضو. يتم حساب التسعير تلقائياً.
+Select Target Branch,اختر الفرع المستهدف
+Select the types of spaces you offer.,اختر أنواع المساحات التي تقدمها.
+Self-service booking,الحجز الذاتي
+Send Connection Request,إرسال طلب تواصل
+Send networking requests to other members based on skills and interests.,أرسل طلبات تواصل لأعضاء آخرين بناءً على المهارات والاهتمامات.
+Session Date,تاريخ الجلسة
+Session Notes,ملاحظات الجلسة
+Session Title,عنوان الجلسة
+Session {0} is full ({1}/{2}),الجلسة {0} ممتلئة ({1}/{2})
+Sessions,الجلسات
+"Set capacity, hourly/daily/monthly rates, and dynamic pricing rules.",حدد السعة وأسعار الساعة/اليوم/الشهر وقواعد التسعير الديناميكي.
+Set module prerequisites so members progress through a structured learning path.,حدد متطلبات مسبقة للوحدات ليتقدم الأعضاء عبر مسار تعلم منظم.
+"Set monthly, quarterly, or annual pricing. Link to ERPNext Item for invoicing.",حدد التسعير الشهري أو الربع سنوي أو السنوي. اربط بصنف ERPNext للفوترة.
+Settings,الإعدادات
+Settings & Configuration,الإعدادات والتكوين
+Settings / الإعدادات,الإعدادات
+Settings — الإعدادات,الإعدادات
+Setup Fee,رسوم التأسيس
+Setup Fee / رسوم تأسيس,رسوم تأسيس
+Setup Fee Charged,تم تحصيل رسوم التأسيس
+"Shared desks, private offices, meeting rooms. Hourly/daily/monthly booking with membership tiers and community events.",مكاتب مشتركة، مكاتب خاصة، غرف اجتماعات. حجز ساعي/يومي/شهري مع مستويات عضوية وفعاليات مجتمعية.
+Show this QR code at the front desk,أظهر رمز QR هذا في الاستقبال
+Showcase,عرض
+Signatures / التوقيعات,التوقيعات
+Signed Date / تاريخ التوقيع,تاريخ التوقيع
+Silver,فضي
+Skill Matching,مطابقة المهارات
+Skill Name / اسم المهارة,اسم المهارة
+Skill Profiles,ملفات المهارات
+Skills,المهارات
+"Skills appear in the member directory, enabling networking requests based on complementary expertise.",تظهر المهارات في دليل الأعضاء، مما يتيح طلبات التواصل بناءً على الخبرات المتكاملة.
+Smart Booking (Hourly/Daily/Monthly),حجز ذكي (ساعي/يومي/شهري)
+Smart Co-Working Space Management,إدارة ذكية لمساحات العمل المشتركة
+Snapshot already exists for {0} - {1},اللقطة موجودة بالفعل لـ {0} - {1}
+Snapshot Date / تاريخ اللقطة,تاريخ اللقطة
+Snapshot ID / معرف اللقطة,معرف اللقطة
+Social,اجتماعي
+Social Media,وسائل التواصل
+Source,المصدر
+source_text,translated_text
+Space,المساحة
+Space / المساحة,المساحة
+Space / الوحدة,الوحدة
+Space Amenities — مرافق المساحة,مرافق المساحة
+Space Booking,حجز مساحة
+Space Explorer,مستكشف المساحات
+Space Images — صور المساحة,صور المساحة
+Space maintenance,صيانة المساحات
+Space Name,اسم المساحة
+Space Number,رقم المساحة
+Space Occupancy,إشغال المساحات
+Space status monitoring,مراقبة حالة المساحات
+Space Type,نوع المساحة
+Space Type / نوع الوحدة,نوع الوحدة
+Space Types,أنواع المساحات
+"Space Types categorize your physical resources — Hot Desk, Private Office, Meeting Room, Event Hall, Studio, etc.",أنواع المساحات تصنّف مواردك المادية — مكتب مشترك، مكتب خاص، غرفة اجتماعات، قاعة فعاليات، استوديو، إلخ.
+Space Types — أنواع المساحات,أنواع المساحات
+Space Utilization,استخدام المساحات
+Space {0} is already booked for this time period (Booking: {1}),المساحة {0} محجوزة بالفعل لهذه الفترة (الحجز: {1})
+Spaces,المساحات
+Spaces & Bookings,المساحات والحجوزات
+Spaces Overview / نظرة عامة على المساحات,نظرة عامة على المساحات
+Spaces to Show,المساحات للعرض
+Spaces to Show (comma-separated names),المساحات للعرض (أسماء مفصولة بفواصل)
+Spaces — المساحات,المساحات
+Special,خاص
+Specific Space,مساحة محددة
+"Specify included booking hours, locker access, event invites, and printing credits per plan.",حدد ساعات الحجز المتضمنة والوصول للخزائن ودعوات الفعاليات وأرصدة الطباعة لكل خطة.
+Stackable,قابل للتراكم
+Stacking,التراكم
+Stacking Group,مجموعة التراكم
+Staff scheduling,جدولة الموظفين
+Stakeholders — أصحاب المصلحة,أصحاب المصلحة
+Start,البداية
+Start a trial membership and experience full benefits,ابدأ عضوية تجريبية واستمتع بكامل المزايا
+Start by creating events and encouraging members to connect!,ابدأ بإنشاء فعاليات وتشجيع الأعضاء على التواصل!
+Start Date,تاريخ البداية
+Start Date & Time / تاريخ ووقت البدء,تاريخ ووقت البدء
+Start Date / تاريخ البداية,تاريخ البداية
+Start Onboarding,ابدأ الجولة التعريفية
+Start Time,وقت البدء
+Start Trial,ابدأ التجربة
+Start — البداية,البداية
+"Startup desks, mentoring rooms, pitch halls. Milestone-based memberships, investor events, CRM pipeline for startups.",مكاتب الشركات الناشئة، غرف الإرشاد، قاعات العروض. عضويات مبنية على الإنجازات، فعاليات المستثمرين، مسار CRM للشركات الناشئة.
+State / المنطقة,المنطقة
+Statistics,الإحصائيات
+Status,الحالة
+Status / الحالة,الحالة
+Status is Converted but no customer linked,الحالة محولة لكن لا يوجد عميل مرتبط
+Streak,تتابع
+Stripe,سترايب
+Stripe Configuration,إعدادات Stripe
+Stripe Publishable Key,مفتاح Stripe العام
+Stripe Python library is not installed. Run: pip install stripe,مكتبة Stripe غير مثبتة. نفذ: pip install stripe
+Stripe Secret Key,مفتاح Stripe السري
+Stripe Webhook Secret,سر Webhook لـ Stripe
+"Studio bookings, class scheduling, personal training rooms. Membership + day-pass model with automated renewals.",حجز الاستوديوهات، جدولة الحصص، غرف التدريب الشخصي. نموذج عضوية + تصريح يوم مع تجديدات تلقائية.
+Submit,اعتماد
+Subscribe,اشتراك
+Subscribe to {0},الاشتراك في {0}
+Success Color,لون النجاح
+Successfully checked in!,تم تسجيل الدخول بنجاح!
+Successfully registered for {0},تم التسجيل بنجاح في {0}
+Summary (max 200 chars),الملخص (200 حرف كحد أقصى)
+Summary must be 200 characters or less,الملخص يجب ألا يتجاوز 200 حرف
+Sun,الأحد
+Sunday,الأحد
+Suspend,تعليق
+Suspended,موقف
+Syllabus,المنهج
+Syllabus / Content Outline,المنهج / مخطط المحتوى
+Tags / الوسوم,الوسوم
+Tap,تاب
+Tap Configuration,إعدادات Tap
+Tap Publishable Key,مفتاح Tap العام
+Tap Secret Key,مفتاح Tap السري
+Tap secret key is not configured in ARKSpace Settings,مفتاح Tap السري غير مكوّن في إعدادات أرك سبيس
+Tap Webhook Secret,سر Webhook لـ Tap
+Target Branch,الفرع المستهدف
+Target branch {0} not found,الفرع المستهدف {0} غير موجود
+Tax Card / البطاقة الضريبية,البطاقة الضريبية
+Team Size,حجم الفريق
+Technical,تقنية
+Template Name,اسم النموذج
+Template Variables,متغيرات القالب
+Terminated / منهي,منهي
+Terms (Arabic) / الشروط بالعربية,الشروط بالعربية
+Terms (English),الشروط بالإنجليزية
+Terms (English) / الشروط بالإنجليزية,الشروط بالإنجليزية
+Terms populated from template,تم تعبئة الشروط من القالب
+Territory,المنطقة
+The day pass amount ({0}) will be applied as credit.,سيتم تطبيق مبلغ التصريح ({0}) كرصيد.
+The name of your co-working space brand,اسم العلامة التجارية لمساحة العمل
+This booking has already ended,انتهى هذا الحجز بالفعل
+This booking has been cancelled,تم إلغاء هذا الحجز
+This day pass has already been converted,تم تحويل هذا التصريح بالفعل
+This day pass is not valid today,هذا التصريح غير صالح اليوم
+This event is full,هذه الفعالية ممتلئة
+This will overwrite current contract terms. Continue?,سيتم استبدال شروط العقد الحالية. متابعة؟
+Thu,الخميس
+Thursday,الخميس
+Tiered Memberships & Auto-Renewal,عضويات بمستويات وتجديد تلقائي
+Time,الوقت
+Time Range,نطاق الوقت
+Time Range condition requires both start and end times,شرط نطاق الوقت يتطلب وقت البداية والنهاية
+Timestamps,التوقيتات
+Timezone,المنطقة الزمنية
+Timezone / المنطقة الزمنية,المنطقة الزمنية
+Title / العنوان,العنوان
+Title / المسمى الوظيفي,المسمى الوظيفي
+To,إلى
+To / إلى,إلى
+To Date,إلى تاريخ
+To Member / إلى العضو,إلى العضو
+To Member Name / اسم العضو المستقبل,اسم العضو المستقبل
+Today's Bookings,حجوزات اليوم
+Today's Visitors,زوار اليوم
+"Today: {0} passes, {1} checked in, {2} checked out, Revenue: {3}",اليوم: {0} تصاريح، {1} مسجل دخول، {2} مسجل خروج، الإيرادات: {3}
+Too early to check in. Your booking starts at {0},مبكر جداً للتسجيل. حجزك يبدأ في {0}
+Top-up Methods,طرق الشحن
+Total,الإجمالي
+total,إجمالي
+Total Amount,المبلغ الإجمالي
+Total Awarded,إجمالي الممنوحة
+Total Bookings,إجمالي الحجوزات
+Total Bookings / إجمالي الحجوزات,إجمالي الحجوزات
+Total Credits,إجمالي الرصيد
+Total Desks / إجمالي المكاتب,إجمالي المكاتب
+Total Earned,إجمالي المكتسب
+Total Enrollments,إجمالي التسجيلات
+Total Invoices,إجمالي الفواتير
+Total Meeting Rooms / إجمالي غرف الاجتماعات,إجمالي غرف الاجتماعات
+Total Offices / إجمالي المكاتب الخاصة,إجمالي المكاتب الخاصة
+Total Paid,إجمالي المدفوع
+Total Revenue,إجمالي الإيرادات
+Total Revenue / إجمالي الإيرادات,إجمالي الإيرادات
+Total Sessions,إجمالي الجلسات
+Total Spaces,إجمالي المساحات
+Total Spaces / إجمالي المساحات,إجمالي المساحات
+Total Spent,إجمالي الإنفاق
+Tour,جولة
+Tour / Visit,جولة / زيارة
+Tour Feedback,ملاحظات الجولة
+Tour Scheduled,جولة مجدولة
+Tour Scheduling,جدولة الجولات
+Tours,الجولات
+Tours — الجولات,الجولات
+Track attendance and completion status for each participant.,تتبع حضور وحالة إكمال كل مشارك.
+Track document versions to ensure members always agree to the latest terms.,تتبع إصدارات المستندات لضمان موافقة الأعضاء دائماً على أحدث الشروط.
+Track each member's progress through training modules and sessions.,تتبع تقدم كل عضو في وحدات وجلسات التدريب.
+Track performance metrics,تتبع مؤشرات الأداء
+Track prospective members from inquiry to tour to conversion.,تتبع الأعضاء المحتملين من الاستفسار إلى الجولة إلى التحويل.
+Track which legal documents each member has acknowledged and signed.,تتبع المستندات القانونية التي أقر بها كل عضو ووقّعها.
+Traditional Co-Working,مساحات العمل المشتركة التقليدية
+Training Badge,شارة تدريبية
+Training Badges — شارات التدريب,شارات التدريب
+Training Catalog,كتالوج التدريب
+Training Module,وحدة تدريبية
+Training Modules — وحدات التدريب,وحدات التدريب
+Training Progress — تقدم التدريب,تقدم التدريب
+Training Session,جلسة تدريبية
+Training Sessions,جلسات التدريب
+Training — التدريب,التدريب
+Transaction Log,سجل المعاملات
+Transactions,المعاملات
+Transfer,نقل
+Transfer Branch,نقل فرع
+Transfer members and bookings between branches seamlessly.,انقل الأعضاء والحجوزات بين الفروع بسلاسة.
+Transfer Membership,نقل العضوية
+Trend Analysis,تحليل الاتجاهات
+Trial,تجربة
+Trial / تجربة,تجربة
+Trial Conversions / تحويلات التجربة,تحويلات التجربة
+Trial Days / أيام التجربة,أيام التجربة
+Trial Days Remaining,أيام التجربة المتبقية
+Trial Includes Benefits / التجربة تشمل المزايا,التجربة تشمل المزايا
+Trial Plan,خطة التجربة
+Trial Price / سعر التجربة,سعر التجربة
+Trial Started!,بدأت التجربة!
+Try Before You Join,جرّب قبل الانضمام
+Try changing your filters or check back later.,حاول تغيير الفلاتر أو تحقق لاحقاً.
+Tue,الثلاثاء
+Tuesday,الثلاثاء
+Tutorial,دليل تعليمي
+Type,النوع
+Type / النوع,النوع
+Unassigned,غير مخصص
+Under Maintenance,تحت الصيانة
+Underline Links,تسطير الروابط
+Unit / Space Details / بيانات الوحدة,بيانات الوحدة
+Unit Description / وصف الوحدة,وصف الوحدة
+University / Training Centers,الجامعات / مراكز التدريب
+Unknown error,خطأ غير معروف
+Unlike,إلغاء الإعجاب
+Unlike ❤️,إلغاء الإعجاب ❤️
+Unliked,تم إلغاء الإعجاب
+Unpin,إلغاء التثبيت
+Unpin Post,إلغاء تثبيت المنشور
+Unsupported payment gateway: {0},بوابة دفع غير مدعومة: {0}
+Up to {0} guests,حتى {0} ضيوف
+Upcoming,قادمة
+Upcoming Bookings,الحجوزات القادمة
+Upcoming Events,الفعاليات القادمة
+Upgrade,ترقية
+Upgrade Membership,ترقية العضوية
+Upgrade Now,رقِّ الآن
+upgraded,مرقّى
+Upgraded to {0}!,تمت الترقية إلى {0}!
+Upload multiple images for each space to showcase in the portal and booking screen.,ارفع صوراً متعددة لكل مساحة لعرضها في البوابة وشاشة الحجز.
+"Use Jinja variables for member name, dates, pricing, and space details — auto-filled at contract creation.",استخدم متغيرات Jinja لاسم العضو والتواريخ والتسعير وتفاصيل المساحة — تُملأ تلقائياً عند إنشاء العقد.
+Used,المستخدم
+Used Credits,الرصيد المستخدم
+User,المستخدم
+User & role management,إدارة المستخدمين والأدوار
+User Training Progress,تقدم المتدرب
+User {0} is already enrolled in {1},المستخدم {0} مسجل بالفعل في {1}
+Utilization %,نسبة الاستخدام %
+Valid / ساري,ساري
+Valid From,صالح من
+Valid To,صالح حتى
+Valid Today Only,صالحة اليوم فقط
+Validity,الصلاحية
+Venue,المكان
+Venue Name,اسم المكان
+Verify with Gateway,تحقق من البوابة
+Verifying payment with gateway...,جارٍ التحقق من الدفع مع البوابة...
+Version,الإصدار
+Version Control,التحكم بالإصدارات
+View,عرض
+View Analytics,عرض التحليلات
+View Attendees,عرض الحضور
+View Bookings,عرض الحجوزات
+"View completion percentage, time spent, and badges earned per member.",اعرض نسبة الإتمام والوقت المستغرق والشارات المكتسبة لكل عضو.
+View Details,عرض التفاصيل
+View Members,عرض الأعضاء
+View Memberships,عرض العضويات
+View Plans,عرض الخطط
+View Spaces,عرض المساحات
+View Wallet,عرض المحفظة
+Views Count / عدد المشاهدات,عدد المشاهدات
+Virtual Office,مكتب افتراضي
+Virtual Office — مكتب افتراضي,مكتب افتراضي
+"Visit the About page for a full app overview, or start the Onboarding wizard.",زر صفحة نبذة عن التطبيق للحصول على نظرة شاملة، أو ابدأ معالج الإعداد.
+Visiting Branch,الفرع المُزار
+Visiting Space,المساحة المُزارة
+Visitor,زائر
+VISITOR,زائر
+Visitor approved,تمت الموافقة على الزائر
+Visitor arrival notification error,خطأ في إشعار وصول الزائر
+VISITOR BADGE,شارة الزائر
+Visitor Company,شركة الزائر
+Visitor Count / عدد الزوار,عدد الزوار
+Visitor Email,بريد الزائر الإلكتروني
+Visitor has been approved,تمت الموافقة على الزائر
+Visitor has been rejected,تم رفض الزائر
+Visitor Image,صورة الزائر
+Visitor is already approved,الزائر تمت الموافقة عليه بالفعل
+Visitor is already checked in,الزائر مسجل الدخول بالفعل
+Visitor is not checked in,الزائر غير مسجل دخول
+Visitor is not in a state that allows check-in,الزائر ليس في حالة تسمح بتسجيل الدخول
+Visitor Log,سجل الزوار
+Visitor management,إدارة الزوار
+Visitor Management,إدارة الزوار
+Visitor must be checked in before checking out,يجب تسجيل دخول الزائر قبل تسجيل الخروج
+Visitor Name,اسم الزائر
+Visitor notification error,خطأ في إشعار الزائر
+Visitor Phone,هاتف الزائر
+Visitor Pre-registered: {0},زائر مسجل مسبقاً: {0}
+Visitor rejected,تم رفض الزائر
+Visitor {0} is already checked in,الزائر {0} مسجل دخول بالفعل
+Visitors,الزوار
+Visitors Today,زوار اليوم
+Visitors — الزوار,الزوار
+vs Last Week,مقارنة بالأسبوع الماضي
+Walk In,زيارة مباشرة
+Walk-in,حضور مباشر
+Wallet,محفظة
+Wallet Balance,رصيد المحفظة
+Webhook-based automatic reconciliation keeps your invoices and payments in sync.,المطابقة التلقائية عبر Webhook تبقي فواتيرك ومدفوعاتك متزامنة.
+Webhook: No payment reference,إشعار الدفع: لا يوجد مرجع دفع
+Webhook: Payment not found,إشعار الدفع: الدفعة غير موجودة
+Website,الموقع الإلكتروني
+Website / الموقع الإلكتروني,الموقع الإلكتروني
+Wed,الأربعاء
+Wednesday,الأربعاء
+Weekend,عطلة نهاية الأسبوع
+Weekly,أسبوعي
+Welcome,مرحباً
+Welcome aboard! 🎉 مرحباً بك!,مرحباً بك! 🎉
+Welcome to ARKSpace,مرحباً بك في آرك سبيس
+Welcome to ARKSpace — {{ doc.membership_plan }},مرحباً بكم في أرك سبيس — {{ doc.membership_plan }}
+Welcome to ARKSpace — مرحباً بكم,مرحباً بكم في أرك سبيس
+Welcome to ARKSpace!,مرحباً بك في ARKSpace!
+Welcome! Your trial day pass has been created.,مرحباً! تم إنشاء تصريح التجربة الخاص بك.
+Wellness,صحة ورفاهية
+What are Space Amenities?,ما هي مرافق المساحة؟
+What are Space Types?,ما هي أنواع المساحات؟
+What is a Space?,ما هي المساحة؟
+What would you like to explore?,ماذا تريد أن تستكشف؟
+WhatsApp Notifications,إشعارات واتساب
+"When a visitor checks in, the host member is automatically notified.",عندما يسجل الزائر دخوله، يتم إشعار العضو المضيف تلقائياً.
+Why ARKSpace? — لماذا أرك سبيس؟,لماذا أرك سبيس؟
+Withdrawn,مسحوب
+Witness / الشاهد,الشاهد
+Witness ID / رقم هوية الشاهد,رقم هوية الشاهد
+Witness Name / اسم الشاهد,اسم الشاهد
+Workflow,سير العمل
+Workflows — سير العمل,سير العمل
+Working Days / أيام العمل,أيام العمل
+Workshop,ورشة عمل
+Workspace Lead,عميل محتمل
+Workspace Name,اسم مساحة العمل
+Workspace Tour,جولة تعريفية
+WoW Change,التغيير أسبوعياً
+Write something...,اكتب شيئاً...
+Yearly,سنوي
+Yearly / سنوي,سنوي
+Yes,نعم
+You are already registered for this event,أنت مسجل بالفعل في هذه الفعالية
+You are not registered for this event,أنت غير مسجل في هذه الفعالية
+You cannot send a networking request to yourself,لا يمكنك إرسال طلب تواصل لنفسك
+You do not have permission to access this data,ليس لديك إذن للوصول إلى هذه البيانات
+You're All Set!,أنت جاهز!
+You're all set!,أنت جاهز!
+Your account has been created. A welcome email has been sent to {0}. Please check your email to set your password.,تم إنشاء حسابك. تم إرسال بريد ترحيبي إلى {0}. يرجى التحقق من بريدك الإلكتروني لتعيين كلمة المرور.
+Your booking has been cancelled,تم إلغاء حجزك
+Your booking has been confirmed with the following details,تم تأكيد حجزك بالتفاصيل التالية
+Your co-working space management hub,مركز إدارة مساحة العمل المشترك الخاص بك
+Your company or organization,شركتك أو مؤسستك
+Your current membership will be cancelled and a prorated credit may apply.,سيتم إلغاء عضويتك الحالية وقد ينطبق رصيد نسبي.
+Your Day Pass,تصريحك
+Your day pass is ready. Show the QR code at the front desk.,تصريحك جاهز. أظهر رمز QR في الاستقبال.
+Your Details,بياناتك
+Your membership has been activated successfully,تم تفعيل عضويتك بنجاح
+Your membership is expiring on,عضويتك تنتهي في
+Your membership is now active,عضويتك الآن نشطة
+Your membership will be automatically renewed. No action is needed.,سيتم تجديد عضويتك تلقائياً. لا حاجة لأي إجراء.
+Your networking request was accepted!,تم قبول طلب التواصل الخاص بك!
+Your role,دورك
+Your visitor <b>{0}</b> has checked in and is waiting for you.,زائرك <b>{0}</b> سجّل دخوله وينتظرك.
+Your visitor {0} from {1} has arrived,وصل زائرك {0} من {1}
+Your visitor {0} has arrived,زائرك {0} قد وصل
+{0} capacity,سعة {0}
+{0} checked in (Day Pass),{0} سجل دخول (تصريح يوم)
+{0} checked in to {1},{0} سجّل الدخول في {1}
+{0} checked in — Badge #{1},{0} تم تسجيل الدخول — شارة #{1}
+{0} checked out,{0} تم تسجيل الخروج
+{0} checked out (Day Pass),{0} سجل خروج (تصريح يوم)
+{0} has arrived,{0} وصل
+{0} has left,{0} غادر
+{0} legal document(s) found,تم العثور على {0} مستند(مستندات) قانوني
+{0} QR codes generated,تم إنشاء {0} رمز QR
+{0} — {1} ({2}),{0} — {1} ({2})
+{0}: {1},{0}: {1}
+{0}: {1} succeeded,{0}: نجح {1}
+اختر كياناً واضغط استكشاف,اختر كياناً واضغط استكشاف
+التوثيق بالعربية,التوثيق بالعربية
+الحجوزات والعملاء,الحجوزات والعملاء
+العنوان بالعربية,العنوان بالعربية
+المخطط التفاعلي,المخطط التفاعلي
+المستكشف,المستكشف
+الملخص بالعربية,الملخص بالعربية
+حيوي وعصري — إدارة مساحتك بالكامل من نظام واحد,حيوي وعصري — إدارة مساحتك بالكامل من نظام واحد
+شبكة المجتمع,شبكة المجتمع
+عضو/مستأجر,عضو/مستأجر
+ماذا تريد أن تتعلم؟,ماذا تريد أن تتعلم؟
+مالك مساحة مشتركة,مالك مساحة مشتركة
+محاسب,محاسب
+مدير عمليات,مدير عمليات
+مرحباً بك في أرك سبيس! 🚀,مرحباً بك في أرك سبيس! 🚀
+مركز القيادة,مركز القيادة
+🎫 Memberships,🎫 العضويات
+🎫 العضويات,🎫 العضويات
+🎯 ابدأ الآن!,🎯 ابدأ الآن!
+🏢 Spaces & Bookings,🏢 المساحات والحجوزات
+🏢 المساحات والحجوزات,🏢 المساحات والحجوزات
+👥 Community,👥 المجتمع
+👥 المجتمع والتواصل,👥 المجتمع والتواصل
+📊 Analytics & Reports,📊 التحليلات والتقارير
+📊 التحليلات والتقارير,📊 التحليلات والتقارير

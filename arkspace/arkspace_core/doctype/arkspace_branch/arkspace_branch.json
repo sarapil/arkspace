@@ -1,0 +1,387 @@
+{
+ "actions": [],
+ "autoname": "field:branch_name",
+ "creation": "2026-03-21 00:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "basic_section",
+  "branch_name",
+  "branch_name_ar",
+  "branch_code",
+  "column_break_basic",
+  "branch",
+  "company",
+  "is_active",
+  "location_section",
+  "address_line_1",
+  "address_line_2",
+  "city",
+  "column_break_location",
+  "state",
+  "country",
+  "postal_code",
+  "coordinates_section",
+  "latitude",
+  "column_break_coords",
+  "longitude",
+  "contact_section",
+  "branch_manager",
+  "phone",
+  "column_break_contact",
+  "email",
+  "website",
+  "operations_section",
+  "operating_hours_start",
+  "operating_hours_end",
+  "column_break_ops",
+  "timezone",
+  "working_days",
+  "capacity_section",
+  "total_desks",
+  "total_offices",
+  "total_meeting_rooms",
+  "column_break_capacity",
+  "max_capacity",
+  "current_occupancy",
+  "settings_section",
+  "default_currency",
+  "default_rate_multiplier",
+  "column_break_settings",
+  "allow_walkin_bookings",
+  "allow_day_passes",
+  "display_section",
+  "image",
+  "description",
+  "column_break_display",
+  "description_ar"
+ ],
+ "fields": [
+  {
+   "fieldname": "basic_section",
+   "fieldtype": "Section Break",
+   "label": "Basic Info / المعلومات الأساسية"
+  },
+  {
+   "fieldname": "branch_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Branch Name / اسم الفرع",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "branch_name_ar",
+   "fieldtype": "Data",
+   "label": "Branch Name (Arabic) / الاسم بالعربية"
+  },
+  {
+   "fieldname": "branch_code",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Branch Code / رمز الفرع",
+   "unique": 1
+  },
+  {
+   "fieldname": "column_break_basic",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "branch",
+   "fieldtype": "Link",
+   "label": "ERPNext Branch / فرع ERPNext",
+   "options": "Branch",
+   "description": "Links to ERPNext Branch for accounting integration"
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company / الشركة",
+   "options": "Company"
+  },
+  {
+   "default": "1",
+   "fieldname": "is_active",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "Active / نشط"
+  },
+  {
+   "fieldname": "location_section",
+   "fieldtype": "Section Break",
+   "label": "Location / الموقع"
+  },
+  {
+   "fieldname": "address_line_1",
+   "fieldtype": "Data",
+   "label": "Address Line 1 / العنوان 1"
+  },
+  {
+   "fieldname": "address_line_2",
+   "fieldtype": "Data",
+   "label": "Address Line 2 / العنوان 2"
+  },
+  {
+   "fieldname": "city",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "City / المدينة"
+  },
+  {
+   "fieldname": "column_break_location",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "state",
+   "fieldtype": "Data",
+   "label": "State / Province / الولاية"
+  },
+  {
+   "fieldname": "country",
+   "fieldtype": "Link",
+   "label": "Country / الدولة",
+   "options": "Country"
+  },
+  {
+   "fieldname": "postal_code",
+   "fieldtype": "Data",
+   "label": "Postal Code / الرمز البريدي"
+  },
+  {
+   "fieldname": "coordinates_section",
+   "fieldtype": "Section Break",
+   "label": "Coordinates / الإحداثيات",
+   "collapsible": 1
+  },
+  {
+   "fieldname": "latitude",
+   "fieldtype": "Float",
+   "label": "Latitude / خط العرض",
+   "precision": "6"
+  },
+  {
+   "fieldname": "column_break_coords",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "longitude",
+   "fieldtype": "Float",
+   "label": "Longitude / خط الطول",
+   "precision": "6"
+  },
+  {
+   "fieldname": "contact_section",
+   "fieldtype": "Section Break",
+   "label": "Contact / التواصل"
+  },
+  {
+   "fieldname": "branch_manager",
+   "fieldtype": "Link",
+   "label": "Branch Manager / مدير الفرع",
+   "options": "User"
+  },
+  {
+   "fieldname": "phone",
+   "fieldtype": "Phone",
+   "label": "Phone / الهاتف"
+  },
+  {
+   "fieldname": "column_break_contact",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "label": "Email / البريد الإلكتروني",
+   "options": "Email"
+  },
+  {
+   "fieldname": "website",
+   "fieldtype": "Data",
+   "label": "Website / الموقع الإلكتروني",
+   "options": "URL"
+  },
+  {
+   "fieldname": "operations_section",
+   "fieldtype": "Section Break",
+   "label": "Operations / العمليات"
+  },
+  {
+   "default": "08:00",
+   "fieldname": "operating_hours_start",
+   "fieldtype": "Time",
+   "label": "Opening Time / وقت الافتتاح"
+  },
+  {
+   "default": "22:00",
+   "fieldname": "operating_hours_end",
+   "fieldtype": "Time",
+   "label": "Closing Time / وقت الإغلاق"
+  },
+  {
+   "fieldname": "column_break_ops",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "timezone",
+   "fieldtype": "Select",
+   "label": "Timezone / المنطقة الزمنية",
+   "options": "\nAsia/Dubai\nAsia/Riyadh\nAsia/Kuwait\nEurope/London\nEurope/Berlin\nAmerica/New_York\nAmerica/Los_Angeles\nAsia/Kolkata\nAsia/Singapore\nAsia/Tokyo"
+  },
+  {
+   "default": "Sunday\nMonday\nTuesday\nWednesday\nThursday",
+   "fieldname": "working_days",
+   "fieldtype": "Small Text",
+   "label": "Working Days / أيام العمل",
+   "description": "One day per line"
+  },
+  {
+   "fieldname": "capacity_section",
+   "fieldtype": "Section Break",
+   "label": "Capacity / السعة"
+  },
+  {
+   "default": "0",
+   "fieldname": "total_desks",
+   "fieldtype": "Int",
+   "label": "Total Desks / إجمالي المكاتب"
+  },
+  {
+   "default": "0",
+   "fieldname": "total_offices",
+   "fieldtype": "Int",
+   "label": "Total Offices / إجمالي المكاتب الخاصة"
+  },
+  {
+   "default": "0",
+   "fieldname": "total_meeting_rooms",
+   "fieldtype": "Int",
+   "label": "Total Meeting Rooms / إجمالي قاعات الاجتماعات"
+  },
+  {
+   "fieldname": "column_break_capacity",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "max_capacity",
+   "fieldtype": "Int",
+   "label": "Max Capacity / السعة القصوى"
+  },
+  {
+   "default": "0",
+   "fieldname": "current_occupancy",
+   "fieldtype": "Int",
+   "label": "Current Occupancy / الإشغال الحالي",
+   "read_only": 1
+  },
+  {
+   "fieldname": "settings_section",
+   "fieldtype": "Section Break",
+   "label": "Branch Settings / إعدادات الفرع"
+  },
+  {
+   "fieldname": "default_currency",
+   "fieldtype": "Link",
+   "label": "Currency / العملة",
+   "options": "Currency"
+  },
+  {
+   "default": "1",
+   "fieldname": "default_rate_multiplier",
+   "fieldtype": "Float",
+   "label": "Rate Multiplier / مضاعف السعر",
+   "description": "1.0 = standard pricing. 1.5 = 50% premium.",
+   "precision": "2"
+  },
+  {
+   "fieldname": "column_break_settings",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "1",
+   "fieldname": "allow_walkin_bookings",
+   "fieldtype": "Check",
+   "label": "Allow Walk-in Bookings / السماح بالحجوزات المباشرة"
+  },
+  {
+   "default": "1",
+   "fieldname": "allow_day_passes",
+   "fieldtype": "Check",
+   "label": "Allow Day Passes / السماح بتصاريح اليوم"
+  },
+  {
+   "fieldname": "display_section",
+   "fieldtype": "Section Break",
+   "label": "Display / العرض"
+  },
+  {
+   "fieldname": "image",
+   "fieldtype": "Attach Image",
+   "label": "Branch Image / صورة الفرع"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Text Editor",
+   "label": "Description / الوصف"
+  },
+  {
+   "fieldname": "column_break_display",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "description_ar",
+   "fieldtype": "Text Editor",
+   "label": "Description (Arabic) / الوصف بالعربية"
+  }
+ ],
+ "image_field": "image",
+ "index_web_pages_for_search": 1,
+ "links": [
+  {
+   "group": "Spaces",
+   "link_doctype": "Co-working Space",
+   "link_fieldname": "branch"
+  }
+ ],
+ "modified": "2026-03-21 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "ARKSpace Core",
+ "name": "ARKSpace Branch",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "ARKSpace Admin",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "read": 1,
+   "report": 1,
+   "role": "ARKSpace Manager"
+  }
+ ],
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "branch_name",
+ "track_changes": 1
+}

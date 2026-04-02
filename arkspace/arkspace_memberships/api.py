@@ -7,7 +7,7 @@
 
 import frappe
 from frappe import _
-from frappe.utils import nowdate, getdate, add_months, flt
+from frappe.utils import add_months, flt, getdate, nowdate
 
 
 @frappe.whitelist()
@@ -64,8 +64,10 @@ def get_membership_plans(plan_type=None, is_active=True):
 
 
 @frappe.whitelist()
-def create_membership(member, membership_plan, billing_cycle="Monthly",
-					  start_date=None, discount_percent=0, assigned_space=None, branch=None):
+def create_membership(
+	member, membership_plan, billing_cycle="Monthly",
+	start_date=None, discount_percent=0, assigned_space=None, branch=None,
+):
 	"""Create and submit a new Membership.
 
 	Args:
@@ -208,3 +210,349 @@ def get_member_dashboard(member):
 			"active_memberships": len(memberships),
 		},
 	}
+
+
+# ═══════════════════════════════════════════════════════════════════════════
+# Self-Service Portal APIs
+# ═══════════════════════════════════════════════════════════════════════════
+
+
+@frappe.whitelist()
+def renew_membership(membership_name, billing_cycle=None):
+	"""تجديد العضوية — Renew an existing membership.
+
+	Creates a new Membership as a continuation of the current one.
+
+	Args:
+		membership_name: existing Membership name
+		billing_cycle: Monthly/Quarterly/Yearly (keeps current if not provided)
+
+	Returns:
+		dict with new membership details
+	"""
+	old = frappe.get_doc("Membership", membership_name)
+
+	# Validate ownership
+	_validate_member_access(old.member)
+
+	if old.docstatus != 1:
+		frappe.throw(_("Only submitted memberships can be renewed"))
+
+	cycle = billing_cycle or old.billing_cycle
+	start = old.end_date if getdate(old.end_date) >= getdate(nowdate()) else getdate(nowdate())
+
+	new_membership = frappe.get_doc({
+		"doctype": "Membership",
+		"member": old.member,
+		"membership_plan": old.membership_plan,
+		"billing_cycle": cycle,
+		"start_date": start,
+		"assigned_space": old.assigned_space,
+		"branch": old.branch,
+		"auto_renew": old.auto_renew,
+	})
+	new_membership.insert()
+	new_membership.submit()
+
+	return {
+		"membership": new_membership.name,
+		"status": new_membership.status,
+		"start_date": str(new_membership.start_date),
+		"end_date": str(new_membership.end_date),
+		"net_amount": new_membership.net_amount,
+		"billing_cycle": new_membership.billing_cycle,
+	}
+
+
+@frappe.whitelist()
+def upgrade_membership(membership_name, new_plan, billing_cycle=None):
+	"""ترقية / تغيير الخطة — Upgrade or change membership plan.
+
+	Cancels the current membership and creates a new one with the new plan.
+
+	Args:
+		membership_name: current Membership name
+		new_plan: new Membership Plan name
+		billing_cycle: optional new billing cycle
+
+	Returns:
+		dict with new membership details
+	"""
+	old = frappe.get_doc("Membership", membership_name)
+
+	_validate_member_access(old.member)
+
+	if old.docstatus != 1 or old.status != "Active":
+		frappe.throw(_("Only active memberships can be upgraded"))
+
+	if old.membership_plan == new_plan and not billing_cycle:
+		frappe.throw(_("Please select a different plan or billing cycle"))
+
+	# Calculate prorated credit for remaining days
+	today = getdate(nowdate())
+	end = getdate(old.end_date)
+	if end > today:
+		total_days = (end - getdate(old.start_date)).days or 1
+		remaining_days = (end - today).days
+		prorated_credit = flt(old.net_amount * remaining_days / total_days, 2)
+	else:
+		prorated_credit = 0
+
+	# Cancel old membership
+	old.cancel()
+
+	# Create new membership starting today
+	cycle = billing_cycle or old.billing_cycle
+	new_membership = frappe.get_doc({
+		"doctype": "Membership",
+		"member": old.member,
+		"membership_plan": new_plan,
+		"billing_cycle": cycle,
+		"start_date": nowdate(),
+		"assigned_space": old.assigned_space,
+		"branch": old.branch,
+		"auto_renew": old.auto_renew,
+	})
+	new_membership.insert()
+	new_membership.submit()
+
+	return {
+		"membership": new_membership.name,
+		"previous": old.name,
+		"prorated_credit": prorated_credit,
+		"status": new_membership.status,
+		"plan": new_plan,
+		"start_date": str(new_membership.start_date),
+		"end_date": str(new_membership.end_date),
+		"net_amount": new_membership.net_amount,
+	}
+
+
+@frappe.whitelist()
+def get_renewal_options(membership_name):
+	"""خيارات التجديد — Get renewal options for a membership.
+
+	Returns pricing for different billing cycles based on current plan.
+	"""
+	mem = frappe.get_doc("Membership", membership_name)
+	_validate_member_access(mem.member)
+
+	plan = frappe.get_doc("Membership Plan", mem.membership_plan)
+
+	options = []
+	cycles = {
+		"Monthly": plan.monthly_price,
+		"Quarterly": plan.quarterly_price or flt(plan.monthly_price * 3 * 0.9, 2),
+		"Yearly": plan.yearly_price or flt(plan.monthly_price * 12 * 0.8, 2),
+	}
+
+	for cycle, price in cycles.items():
+		if price:
+			options.append({
+				"billing_cycle": cycle,
+				"price": price,
+				"currency": plan.currency or frappe.defaults.get_default("currency"),
+				"is_current": cycle == mem.billing_cycle,
+			})
+
+	return {
+		"membership": mem.name,
+		"current_plan": mem.membership_plan,
+		"current_cycle": mem.billing_cycle,
+		"end_date": str(mem.end_date),
+		"options": options,
+	}
+
+
+@frappe.whitelist(allow_guest=True)
+def register_member(full_name, email, phone=None, plan=None,
+                    billing_cycle="Monthly", company_name=None):
+	"""تسجيل عضو جديد — Self-service member registration.
+
+	Creates a User + Customer + optional Membership.
+
+	Args:
+		full_name: member full name
+		email: email address (becomes the login)
+		phone: phone number
+		plan: Membership Plan name (optional — create membership if provided)
+		billing_cycle: Monthly/Quarterly/Yearly
+		company_name: company name (optional)
+
+	Returns:
+		dict with registration details
+	"""
+	# Check if user already exists
+	if frappe.db.exists("User", email):
+		frappe.throw(_("An account with this email already exists. Please login."))
+
+	# Create User
+	user = frappe.get_doc({
+		"doctype": "User",
+		"email": email,
+		"first_name": full_name.split(" ")[0],
+		"last_name": " ".join(full_name.split(" ")[1:]) if " " in full_name else "",
+		"user_type": "Website User",
+		"send_welcome_email": 1,
+	})
+	user.insert(ignore_permissions=True)
+
+	# Create Customer
+	customer = frappe.get_doc({
+		"doctype": "Customer",
+		"customer_name": full_name,
+		"customer_type": "Individual" if not company_name else "Company",
+		"customer_group": frappe.db.get_single_value("Selling Settings", "customer_group")
+			or "All Customer Groups",
+		"territory": frappe.db.get_single_value("Selling Settings", "territory")
+			or "All Territories",
+		"email_id": email,
+		"mobile_no": phone,
+	})
+	customer.insert(ignore_permissions=True)
+
+	# Link User to Customer via Contact
+	contact = frappe.get_doc({
+		"doctype": "Contact",
+		"first_name": full_name.split(" ")[0],
+		"last_name": " ".join(full_name.split(" ")[1:]) if " " in full_name else "",
+		"user": email,
+		"email_ids": [{"email_id": email, "is_primary": 1}],
+		"links": [{"link_doctype": "Customer", "link_name": customer.name}],
+	})
+	if phone:
+		contact.append("phone_nos", {"phone": phone, "is_primary_phone": 1})
+	contact.insert(ignore_permissions=True)
+
+	result = {
+		"user": user.name,
+		"customer": customer.name,
+		"contact": contact.name,
+	}
+
+	# Create membership if plan specified
+	if plan and frappe.db.exists("Membership Plan", plan):
+		membership = frappe.get_doc({
+			"doctype": "Membership",
+			"member": customer.name,
+			"membership_plan": plan,
+			"billing_cycle": billing_cycle,
+			"start_date": nowdate(),
+		})
+		membership.insert(ignore_permissions=True)
+		membership.submit()
+		result["membership"] = membership.name
+		result["membership_status"] = membership.status
+
+	frappe.db.commit()
+
+	return result
+
+
+@frappe.whitelist()
+def get_payment_history(member=None, limit=20):
+	"""سجل المدفوعات — Get payment history for a member.
+
+	Returns invoices and online payments.
+	"""
+	if not member:
+		member = _get_current_member()
+
+	_validate_member_access(member)
+
+	# Sales Invoices
+	invoices = frappe.get_all(
+		"Sales Invoice",
+		filters={
+			"customer": member,
+			"docstatus": ["!=", 2],
+		},
+		fields=[
+			"name", "posting_date", "grand_total", "outstanding_amount",
+			"currency", "status", "due_date",
+		],
+		order_by="posting_date desc",
+		limit=limit,
+	)
+
+	# Online Payments
+	online_payments = frappe.get_all(
+		"Online Payment",
+		filters={
+			"member": member,
+		},
+		fields=[
+			"name", "initiated_at", "amount", "currency", "gateway",
+			"status", "payment_method_type", "card_last_four",
+		],
+		order_by="initiated_at desc",
+		limit=limit,
+	)
+
+	# Payment summary
+	total_paid = frappe.db.sql("""
+		SELECT COALESCE(SUM(grand_total - outstanding_amount), 0)
+		FROM `tabSales Invoice`
+		WHERE customer=%s AND docstatus=1
+	""", member)[0][0]
+
+	total_outstanding = frappe.db.sql("""
+		SELECT COALESCE(SUM(outstanding_amount), 0)
+		FROM `tabSales Invoice`
+		WHERE customer=%s AND docstatus=1 AND outstanding_amount > 0
+	""", member)[0][0]
+
+	return {
+		"member": member,
+		"invoices": invoices,
+		"online_payments": online_payments,
+		"summary": {
+			"total_paid": flt(total_paid, 2),
+			"total_outstanding": flt(total_outstanding, 2),
+			"invoice_count": len(invoices),
+		},
+	}
+
+
+@frappe.whitelist()
+def toggle_auto_renew(membership_name, auto_renew):
+	"""تبديل التجديد التلقائي — Toggle auto-renewal for a membership."""
+	mem = frappe.get_doc("Membership", membership_name)
+	_validate_member_access(mem.member)
+
+	mem.db_set("auto_renew", 1 if int(auto_renew) else 0)
+	return {"membership": mem.name, "auto_renew": mem.auto_renew}
+
+
+# ═══════════════════════════════════════════════════════════════════════════
+# Internal Helpers
+# ═══════════════════════════════════════════════════════════════════════════
+
+
+def _validate_member_access(member):
+	"""Ensure the current user has access to this member's data."""
+	if frappe.session.user == "Administrator":
+		return
+	if "System Manager" in frappe.get_roles():
+		return
+	if "ARKSpace Admin" in frappe.get_roles():
+		return
+
+	current_member = _get_current_member()
+	if current_member != member:
+		frappe.throw(_("You do not have permission to access this data"), frappe.PermissionError)
+
+
+def _get_current_member():
+	"""Find Customer linked to current user."""
+	contacts = frappe.get_all("Contact", filters={"user": frappe.session.user}, pluck="name")
+	if contacts:
+		customer = frappe.db.get_value(
+			"Dynamic Link",
+			{"parenttype": "Contact", "link_doctype": "Customer", "parent": ["in", contacts]},
+			"link_name",
+		)
+		if customer:
+			return customer
+
+	return frappe.db.get_value("Customer", {"email_id": frappe.session.user}, "name")

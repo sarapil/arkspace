@@ -2,11 +2,11 @@
 # For license information, please see license.txt
 
 import frappe
-from frappe.tests.utils import FrappeTestCase
+from arkspace.tests.compat import ARKSpaceTestCase
 from frappe.utils import today, add_days
 
 
-class TestWorkspaceTour(FrappeTestCase):
+class TestWorkspaceTour(ARKSpaceTestCase):
 	"""Test cases for Workspace Tour DocType."""
 
 	def setUp(self):

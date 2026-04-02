@@ -12,7 +12,7 @@ def run():
 
     # ── 1. Branches (already created) ──
     print("\n📍 Branches...")
-    branch_names = ["الرياض - الفرع الرئيسي", "جدة", "الدمام"]
+    branch_names = ["الإسكندرية - الفرع الرئيسي", "القاهرة", "الجيزة"]
     branches = []
     for bn in branch_names:
         if not frappe.db.exists("Branch", bn):
@@ -42,14 +42,14 @@ def run():
     # ── 5. Customers (Members) ──
     print("\n👤 Creating Member Customers...")
     members_data = [
-        {"customer_name": "أحمد الراشد", "customer_type": "Individual", "customer_group": "Individual", "territory": TERRITORY},
-        {"customer_name": "سارة المنصور", "customer_type": "Individual", "customer_group": "Individual", "territory": TERRITORY},
-        {"customer_name": "محمد العتيبي", "customer_type": "Individual", "customer_group": "Individual", "territory": TERRITORY},
-        {"customer_name": "نورة الدوسري", "customer_type": "Individual", "customer_group": "Individual", "territory": TERRITORY},
-        {"customer_name": "خالد الشمري", "customer_type": "Individual", "customer_group": "Individual", "territory": TERRITORY},
-        {"customer_name": "شركة التقنية المتقدمة", "customer_type": "Company", "customer_group": "Commercial", "territory": TERRITORY},
-        {"customer_name": "مؤسسة الإبداع الرقمي", "customer_type": "Company", "customer_group": "Commercial", "territory": TERRITORY},
-        {"customer_name": "شركة النجاح للاستشارات", "customer_type": "Company", "customer_group": "Commercial", "territory": TERRITORY},
+        {"customer_name": "أحمد مصطفى", "customer_type": "Individual", "customer_group": "Individual", "territory": TERRITORY},
+        {"customer_name": "سارة الشناوي", "customer_type": "Individual", "customer_group": "Individual", "territory": TERRITORY},
+        {"customer_name": "محمد عبد الحميد", "customer_type": "Individual", "customer_group": "Individual", "territory": TERRITORY},
+        {"customer_name": "نورهان السيد", "customer_type": "Individual", "customer_group": "Individual", "territory": TERRITORY},
+        {"customer_name": "خالد حسن", "customer_type": "Individual", "customer_group": "Individual", "territory": TERRITORY},
+        {"customer_name": "شركة النيل للتقنية", "customer_type": "Company", "customer_group": "Commercial", "territory": TERRITORY},
+        {"customer_name": "مؤسسة الأهرام الرقمية", "customer_type": "Company", "customer_group": "Commercial", "territory": TERRITORY},
+        {"customer_name": "شركة الدلتا للاستشارات", "customer_type": "Company", "customer_group": "Commercial", "territory": TERRITORY},
     ]
     member_names = []
     for md in members_data:
@@ -202,13 +202,13 @@ def run():
     lead_names = []
     if existing_leads == 0:
         leads_data = [
-            {"lead_name": "فهد القحطاني", "email": "fahad@example.com", "phone": "+966501234567", "company_name": "شركة الأفق", "source": "Website", "status": "New", "interested_plan": plan_names[0], "team_size": 3, "budget_monthly": 5000, "branch": branches[0]},
-            {"lead_name": "ريم السبيعي", "email": "reem@example.com", "phone": "+966502345678", "source": "Referral", "status": "Contacted", "interested_plan": plan_names[2], "team_size": 1, "budget_monthly": 4000, "branch": branches[0]},
-            {"lead_name": "عبدالله الحربي", "email": "abdullah@example.com", "phone": "+966503456789", "company_name": "مجموعة الابتكار", "source": "Walk In", "status": "Tour Scheduled", "interested_plan": plan_names[3], "team_size": 6, "budget_monthly": 10000, "branch": branches[0]},
-            {"lead_name": "هند العمري", "email": "hind@example.com", "phone": "+966504567890", "source": "Social Media", "status": "Negotiating", "interested_plan": plan_names[4], "team_size": 10, "budget_monthly": 15000, "branch": branches[1]},
-            {"lead_name": "ماجد الغامدي", "email": "majed@example.com", "phone": "+966505678901", "company_name": "شركة الرؤية", "source": "Event", "status": "Converted", "interested_plan": plan_names[1], "team_size": 2, "budget_monthly": 3000, "branch": branches[1], "converted_customer": member_names[5]},
-            {"lead_name": "لمياء العنزي", "email": "lamia@example.com", "phone": "+966506789012", "source": "Partner", "status": "Lost", "interested_plan": plan_names[5], "team_size": 1, "budget_monthly": 1000, "branch": branches[2]},
-            {"lead_name": "تركي المطيري", "email": "turki@example.com", "phone": "+966507890123", "source": "Website", "status": "New", "interested_plan": plan_names[0], "team_size": 4, "budget_monthly": 6000, "branch": branches[2]},
+            {"lead_name": "عمرو الشربيني", "email": "amr@example.com", "phone": "+201001234567", "company_name": "شركة الأفق", "source": "Website", "status": "New", "interested_plan": plan_names[0], "team_size": 3, "budget_monthly": 5000, "branch": branches[0]},
+            {"lead_name": "ريم عبد العزيز", "email": "reem@example.com", "phone": "+201002345678", "source": "Referral", "status": "Contacted", "interested_plan": plan_names[2], "team_size": 1, "budget_monthly": 4000, "branch": branches[0]},
+            {"lead_name": "عبدالله البنا", "email": "abdullah@example.com", "phone": "+201003456789", "company_name": "مجموعة الابتكار", "source": "Walk In", "status": "Tour Scheduled", "interested_plan": plan_names[3], "team_size": 6, "budget_monthly": 10000, "branch": branches[0]},
+            {"lead_name": "هند إبراهيم", "email": "hind@example.com", "phone": "+201004567890", "source": "Social Media", "status": "Negotiating", "interested_plan": plan_names[4], "team_size": 10, "budget_monthly": 15000, "branch": branches[1]},
+            {"lead_name": "ماجد عبد الرحمن", "email": "majed@example.com", "phone": "+201005678901", "company_name": "شركة الرؤية", "source": "Event", "status": "Converted", "interested_plan": plan_names[1], "team_size": 2, "budget_monthly": 3000, "branch": branches[1], "converted_customer": member_names[5]},
+            {"lead_name": "لمياء علي", "email": "lamia@example.com", "phone": "+201006789012", "source": "Partner", "status": "Lost", "interested_plan": plan_names[5], "team_size": 1, "budget_monthly": 1000, "branch": branches[2]},
+            {"lead_name": "تامر السيد", "email": "tamer@example.com", "phone": "+201007890123", "source": "Website", "status": "New", "interested_plan": plan_names[0], "team_size": 4, "budget_monthly": 6000, "branch": branches[2]},
         ]
         for ld in leads_data:
             doc = frappe.get_doc({"doctype": "Workspace Lead", **ld})
@@ -235,7 +235,7 @@ def run():
             doc.insert(ignore_permissions=True)
             print(f"  ✅ {doc.name} - {td_item['status']}")
     else:
-        print(f"  ⏭️ Tours already exist or no leads")
+        print("  ⏭️ Tours already exist or no leads")
     frappe.db.commit()
 
     # ── 11. Training Data ──
@@ -243,12 +243,12 @@ def run():
     
     # Training Modules
     training_modules_data = [
-        {"module_name": "مقدمة في العمل المشترك", "category": "Onboarding", "level": "Beginner", "status": "Published", "duration_hours": 2, "instructor": "أ. سلمان الأحمد", "description": "تعرف على أساسيات بيئة العمل المشترك وكيفية الاستفادة القصوى من المساحة"},
-        {"module_name": "ريادة الأعمال للمبتدئين", "category": "Business", "level": "Beginner", "status": "Published", "duration_hours": 8, "instructor": "د. منال العتيبي", "description": "دورة شاملة في أساسيات ريادة الأعمال"},
-        {"module_name": "التسويق الرقمي المتقدم", "category": "Business", "level": "Advanced", "status": "Published", "duration_hours": 12, "instructor": "أ. نايف الشهري", "description": "استراتيجيات التسويق الرقمي المتقدمة"},
-        {"module_name": "البرمجة بلغة Python", "category": "Technical", "level": "Intermediate", "status": "Published", "duration_hours": 20, "instructor": "م. ياسر الدوسري", "description": "تعلم البرمجة بلغة بايثون من الصفر"},
-        {"module_name": "التصميم الإبداعي", "category": "Creative", "level": "Beginner", "status": "Published", "duration_hours": 6, "instructor": "أ. لينا الحربي", "description": "أساسيات التصميم الجرافيكي والإبداعي"},
-        {"module_name": "إدارة المشاريع الاحترافية", "category": "Business", "level": "Advanced", "status": "Draft", "duration_hours": 15, "instructor": "م. بدر الراشد"},
+        {"module_name": "مقدمة في العمل المشترك", "category": "Onboarding", "level": "Beginner", "status": "Published", "duration_hours": 2, "instructor": "أ. سليمان العلي", "description": "تعرف على أساسيات بيئة العمل المشترك وكيفية الاستفادة القصوى من المساحة"},
+        {"module_name": "ريادة الأعمال للمبتدئين", "category": "Business", "level": "Beginner", "status": "Published", "duration_hours": 8, "instructor": "د. منال عبد اللطيف", "description": "دورة شاملة في أساسيات ريادة الأعمال"},
+        {"module_name": "التسويق الرقمي المتقدم", "category": "Business", "level": "Advanced", "status": "Published", "duration_hours": 12, "instructor": "أ. عمر الشريف", "description": "استراتيجيات التسويق الرقمي المتقدمة"},
+        {"module_name": "البرمجة بلغة Python", "category": "Technical", "level": "Intermediate", "status": "Published", "duration_hours": 20, "instructor": "م. ياسر عبد الرحيم", "description": "تعلم البرمجة بلغة بايثون من الصفر"},
+        {"module_name": "التصميم الإبداعي", "category": "Creative", "level": "Beginner", "status": "Published", "duration_hours": 6, "instructor": "أ. لينا النجار", "description": "أساسيات التصميم الجرافيكي والإبداعي"},
+        {"module_name": "إدارة المشاريع الاحترافية", "category": "Business", "level": "Advanced", "status": "Draft", "duration_hours": 15, "instructor": "م. بدر العليمي"},
     ]
     tm_names = []
     for tm in training_modules_data:
@@ -289,8 +289,8 @@ def run():
             {"title": "جلسة تعريفية - الدفعة 5", "training_module": tm_names[0], "session_date": today - timedelta(days=7), "start_time": "10:00:00", "end_time": "12:00:00", "status": "Completed", "branch": branches[0], "space": space_names[5] if len(space_names) > 5 else None, "max_participants": 15, "is_free": 1},
             {"title": "ريادة الأعمال - الحلقة 1", "training_module": tm_names[1], "session_date": today - timedelta(days=3), "start_time": "14:00:00", "end_time": "16:00:00", "status": "Completed", "branch": branches[0], "space": space_names[5] if len(space_names) > 5 else None, "max_participants": 20, "is_free": 0, "fee_amount": 200},
             {"title": "ورشة التسويق الرقمي", "training_module": tm_names[2], "session_date": today + timedelta(days=2), "start_time": "09:00:00", "end_time": "13:00:00", "status": "Scheduled", "branch": branches[0], "space": space_names[7] if len(space_names) > 7 else None, "max_participants": 30, "is_free": 0, "fee_amount": 500},
-            {"title": "بايثون للمبتدئين - الحلقة 1", "training_module": tm_names[3], "session_date": today + timedelta(days=5), "start_time": "18:00:00", "end_time": "20:00:00", "status": "Scheduled", "branch": branches[0], "max_participants": 25, "is_online": 1, "meeting_url": "https://meet.arkspace.sa/python-101", "is_free": 1},
-            {"title": "التصميم الإبداعي - جلسة جدة", "training_module": tm_names[4], "session_date": today + timedelta(days=10), "start_time": "11:00:00", "end_time": "14:00:00", "status": "Scheduled", "branch": branches[1], "max_participants": 15, "is_free": 0, "fee_amount": 300},
+            {"title": "بايثون للمبتدئين - الحلقة 1", "training_module": tm_names[3], "session_date": today + timedelta(days=5), "start_time": "18:00:00", "end_time": "20:00:00", "status": "Scheduled", "branch": branches[0], "max_participants": 25, "is_online": 1, "meeting_url": "https://meet.arkspace.eg/python-101", "is_free": 1},
+            {"title": "التصميم الإبداعي - جلسة القاهرة", "training_module": tm_names[4], "session_date": today + timedelta(days=10), "start_time": "11:00:00", "end_time": "14:00:00", "status": "Scheduled", "branch": branches[1], "max_participants": 15, "is_free": 0, "fee_amount": 300},
         ]
         for sd in sessions_data:
             doc = frappe.get_doc({"doctype": "Training Session", **sd})

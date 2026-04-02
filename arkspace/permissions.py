@@ -201,3 +201,25 @@ def _get_customer_for_user(user):
         fieldname="link_name",
     )
     return customer
+
+
+def has_app_permission():
+    """Check if the current user has permission to access the ARKSpace app.
+
+    Returns True for any user with an ARKSpace role or System Manager.
+    Used by add_to_apps_screen in hooks.py.
+    """
+    user = frappe.session.user
+    if user == "Administrator":
+        return True
+
+    roles = frappe.get_roles(user)
+    arkspace_roles = {
+        "System Manager",
+        "ARKSpace Admin",
+        "ARKSpace Manager",
+        "ARKSpace Operations",
+        "ARKSpace Front Desk",
+        "ARKSpace Member",
+    }
+    return bool(arkspace_roles & set(roles))

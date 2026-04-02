@@ -1,0 +1,185 @@
+{
+ "actions": [],
+ "autoname": "POST-.YYYY.-.#####",
+ "creation": "2026-03-21 00:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "post_section",
+  "title",
+  "post_type",
+  "column_break_post",
+  "author",
+  "author_name",
+  "branch",
+  "content_section",
+  "content",
+  "tags",
+  "engagement_section",
+  "likes_count",
+  "comments_count",
+  "views_count",
+  "column_break_engagement",
+  "is_pinned",
+  "is_anonymous",
+  "status"
+ ],
+ "fields": [
+  {
+   "fieldname": "post_section",
+   "fieldtype": "Section Break",
+   "label": "Post / المنشور"
+  },
+  {
+   "fieldname": "title",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Title / العنوان",
+   "reqd": 1
+  },
+  {
+   "default": "Discussion",
+   "fieldname": "post_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Type / النوع",
+   "options": "Discussion\nAnnouncement\nQuestion\nIdea\nShowcase\nJob Posting\nEvent"
+  },
+  {
+   "fieldname": "column_break_post",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "__user",
+   "fieldname": "author",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Author / الكاتب",
+   "options": "User",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "author.full_name",
+   "fieldname": "author_name",
+   "fieldtype": "Data",
+   "label": "Author Name / اسم الكاتب",
+   "read_only": 1
+  },
+  {
+   "fieldname": "branch",
+   "fieldtype": "Link",
+   "label": "Branch / الفرع",
+   "options": "Branch"
+  },
+  {
+   "fieldname": "content_section",
+   "fieldtype": "Section Break",
+   "label": "Content / المحتوى"
+  },
+  {
+   "fieldname": "content",
+   "fieldtype": "Text Editor",
+   "label": "Content / المحتوى",
+   "reqd": 1
+  },
+  {
+   "fieldname": "tags",
+   "fieldtype": "Small Text",
+   "label": "Tags / الوسوم",
+   "description": "Comma-separated tags"
+  },
+  {
+   "fieldname": "engagement_section",
+   "fieldtype": "Section Break",
+   "label": "Engagement / التفاعل"
+  },
+  {
+   "default": "0",
+   "fieldname": "likes_count",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Likes / إعجابات",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "comments_count",
+   "fieldtype": "Int",
+   "label": "Comments / تعليقات",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "views_count",
+   "fieldtype": "Int",
+   "label": "Views / مشاهدات",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_engagement",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_pinned",
+   "fieldtype": "Check",
+   "label": "Pinned / مثبت"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_anonymous",
+   "fieldtype": "Check",
+   "label": "Anonymous / مجهول"
+  },
+  {
+   "default": "Published",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status / الحالة",
+   "options": "Draft\nPublished\nArchived\nReported"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-03-21 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "ARKSpace Community",
+ "name": "Community Post",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "read": 1,
+   "role": "ARKSpace Admin",
+   "write": 1
+  },
+  {
+   "create": 1,
+   "read": 1,
+   "role": "ARKSpace Member",
+   "write": 1
+  },
+  {
+   "read": 1,
+   "role": "Guest"
+  }
+ ],
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "title",
+ "track_changes": 1
+}

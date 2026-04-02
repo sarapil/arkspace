@@ -2,11 +2,11 @@
 # For license information, please see license.txt
 
 import frappe
-from frappe.tests.utils import FrappeTestCase
+from arkspace.tests.compat import ARKSpaceTestCase
 from frappe.utils import add_days, today, getdate
 
 
-class TestLegalDocument(FrappeTestCase):
+class TestLegalDocument(ARKSpaceTestCase):
     """Test cases for Legal Document DocType."""
 
     def _get_customer(self):

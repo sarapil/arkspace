@@ -2,11 +2,11 @@
 # See license.txt
 
 import frappe
-from frappe.tests.utils import FrappeTestCase
+from arkspace.tests.compat import ARKSpaceTestCase
 from frappe.utils import now_datetime, add_to_date, flt
 
 
-class TestSpaceBooking(FrappeTestCase):
+class TestSpaceBooking(ARKSpaceTestCase):
 	"""Test cases for Space Booking DocType."""
 
 	def setUp(self):

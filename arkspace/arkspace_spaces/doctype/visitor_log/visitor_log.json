@@ -1,0 +1,333 @@
+{
+ "actions": [],
+ "autoname": "format:VIS-{YYYY}-{#####}",
+ "creation": "2026-02-10 00:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "visitor_name",
+  "visitor_email",
+  "visitor_phone",
+  "visitor_company",
+  "column_break_visitor",
+  "id_type",
+  "id_number",
+  "visitor_image",
+  "visit_section",
+  "purpose",
+  "purpose_details",
+  "column_break_visit",
+  "host",
+  "host_name",
+  "host_department",
+  "space_section",
+  "visiting_space",
+  "visiting_branch",
+  "column_break_space",
+  "expected_arrival",
+  "expected_departure",
+  "checkin_section",
+  "status",
+  "column_break_checkin",
+  "checked_in_at",
+  "checked_out_at",
+  "badge_section",
+  "badge_number",
+  "badge_printed",
+  "column_break_badge",
+  "qr_token",
+  "preregistration_section",
+  "preregistered",
+  "preregistered_by",
+  "column_break_prereg",
+  "approval_status",
+  "approved_by",
+  "notes_section",
+  "notes",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "visitor_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Visitor Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "visitor_email",
+   "fieldtype": "Data",
+   "label": "Visitor Email",
+   "options": "Email"
+  },
+  {
+   "fieldname": "visitor_phone",
+   "fieldtype": "Data",
+   "label": "Visitor Phone",
+   "options": "Phone"
+  },
+  {
+   "fieldname": "visitor_company",
+   "fieldtype": "Data",
+   "label": "Visitor Company"
+  },
+  {
+   "fieldname": "column_break_visitor",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "id_type",
+   "fieldtype": "Select",
+   "label": "ID Type",
+   "options": "\nNational ID\nPassport\nIqama\nDriving License\nOther"
+  },
+  {
+   "fieldname": "id_number",
+   "fieldtype": "Data",
+   "label": "ID Number"
+  },
+  {
+   "fieldname": "visitor_image",
+   "fieldtype": "Attach Image",
+   "label": "Photo"
+  },
+  {
+   "fieldname": "visit_section",
+   "fieldtype": "Section Break",
+   "label": "Visit Details"
+  },
+  {
+   "default": "Meeting",
+   "fieldname": "purpose",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Purpose",
+   "options": "Meeting\nInterview\nDelivery\nMaintenance\nTour\nEvent\nOther",
+   "reqd": 1
+  },
+  {
+   "fieldname": "purpose_details",
+   "fieldtype": "Small Text",
+   "label": "Purpose Details"
+  },
+  {
+   "fieldname": "column_break_visit",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "host",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Host (Member)",
+   "options": "Customer"
+  },
+  {
+   "fetch_from": "host.customer_name",
+   "fieldname": "host_name",
+   "fieldtype": "Data",
+   "label": "Host Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "host_department",
+   "fieldtype": "Data",
+   "label": "Host Department"
+  },
+  {
+   "fieldname": "space_section",
+   "fieldtype": "Section Break",
+   "label": "Location & Schedule"
+  },
+  {
+   "fieldname": "visiting_space",
+   "fieldtype": "Link",
+   "label": "Space",
+   "options": "Co-working Space"
+  },
+  {
+   "fieldname": "visiting_branch",
+   "fieldtype": "Link",
+   "label": "Branch",
+   "options": "Branch"
+  },
+  {
+   "fieldname": "column_break_space",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "expected_arrival",
+   "fieldtype": "Datetime",
+   "label": "Expected Arrival"
+  },
+  {
+   "fieldname": "expected_departure",
+   "fieldtype": "Datetime",
+   "label": "Expected Departure"
+  },
+  {
+   "fieldname": "checkin_section",
+   "fieldtype": "Section Break",
+   "label": "Check-in / Check-out"
+  },
+  {
+   "default": "Expected",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Status",
+   "options": "\nExpected\nChecked In\nChecked Out\nCancelled\nNo Show"
+  },
+  {
+   "fieldname": "column_break_checkin",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "checked_in_at",
+   "fieldtype": "Datetime",
+   "label": "Checked In At",
+   "read_only": 1
+  },
+  {
+   "fieldname": "checked_out_at",
+   "fieldtype": "Datetime",
+   "label": "Checked Out At",
+   "read_only": 1
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "badge_section",
+   "fieldtype": "Section Break",
+   "label": "Badge"
+  },
+  {
+   "fieldname": "badge_number",
+   "fieldtype": "Data",
+   "label": "Badge Number"
+  },
+  {
+   "default": "0",
+   "fieldname": "badge_printed",
+   "fieldtype": "Check",
+   "label": "Badge Printed"
+  },
+  {
+   "fieldname": "column_break_badge",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "qr_token",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "QR Token",
+   "read_only": 1
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "preregistration_section",
+   "fieldtype": "Section Break",
+   "label": "Pre-registration"
+  },
+  {
+   "default": "0",
+   "fieldname": "preregistered",
+   "fieldtype": "Check",
+   "label": "Pre-registered"
+  },
+  {
+   "fieldname": "preregistered_by",
+   "fieldtype": "Link",
+   "label": "Pre-registered By",
+   "options": "User",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_prereg",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Pending",
+   "fieldname": "approval_status",
+   "fieldtype": "Select",
+   "label": "Approval Status",
+   "options": "\nPending\nApproved\nRejected"
+  },
+  {
+   "fieldname": "approved_by",
+   "fieldtype": "Link",
+   "label": "Approved By",
+   "options": "User",
+   "read_only": 1
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "notes_section",
+   "fieldtype": "Section Break",
+   "label": "Notes"
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Text Editor",
+   "label": "Notes"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Visitor Log",
+   "print_hide": 1,
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-02-10 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "ARKSpace Spaces",
+ "name": "Visitor Log",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "read": 1,
+   "role": "ARKSpace Admin",
+   "write": 1
+  },
+  {
+   "create": 1,
+   "read": 1,
+   "role": "ARKSpace Manager",
+   "write": 1
+  },
+  {
+   "create": 1,
+   "read": 1,
+   "role": "ARKSpace Front Desk",
+   "write": 1
+  },
+  {
+   "read": 1,
+   "role": "ARKSpace Operations"
+  }
+ ],
+ "quick_entry": 1,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "visitor_name",
+ "track_changes": 1
+}

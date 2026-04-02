@@ -1,30 +1,78 @@
 app_name = "arkspace"
 app_title = "ARKSpace"
-app_publisher = "ARKSpace Team"
+app_publisher = "Arkan Lab"
 app_description = "Enterprise Co-Working Space Management + ARKANOOR Marketplace"
 app_email = "dev@arkspace.io"
 app_license = "mit"
-app_icon = "fa-solid fa-building"
+app_icon = "/assets/arkspace/images/arkspace-logo-animated.svg"
+app_logo = "/assets/arkspace/images/arkspace-logo-animated.svg"
 app_color = "#1B365D"
+app_home = "/desk"
 
 # Required Apps
 required_apps = ["erpnext"]
 
+# --- v16: App Screen Integration ---------------------------------------------
+# Shows ARKSpace on the Frappe v16 desktop apps screen
+
+add_to_apps_screen = [
+    {
+        "name": "arkspace",
+        "logo": "/assets/arkspace/images/arkspace-logo-animated.svg",
+        "title": "ARKSpace",
+        "route": "/desk/arkspace",
+        "has_permission": "arkspace.permissions.has_app_permission",
+    }
+]
+
+# --- Website Context (branding) -----------------------------------------------
+
+website_context = {
+    "favicon": "/assets/arkspace/images/favicon.svg",
+    "splash_image": "/assets/arkspace/images/arkspace-splash.svg",
+    "app_logo": "/assets/arkspace/images/arkspace-login.svg",
+}
+
 # --- Static Assets -----------------------------------------------------------
 
 app_include_css = [
+    "/assets/arkspace/css/arkspace-variables.css",
     "/assets/arkspace/css/design-system.css",
     "/assets/arkspace/css/arkspace.css",
 ]
 
 app_include_js = [
     "/assets/arkspace/js/arkspace.js",
+    "/assets/arkspace/js/arkspace_help.js",
+    "/assets/arkspace/js/online_payments.js",
+    "/assets/arkspace/js/dynamic_pricing.js",
+    "/assets/arkspace/js/qr_checkin.js",
+    "/assets/arkspace/js/visitor_management.js",
+    "/assets/arkspace/js/day_pass.js",
+    "/assets/arkspace/js/analytics.js",
+    "/assets/arkspace/js/multi_location.js",
+    "/assets/arkspace/js/community.js",
 ]
 
 # --- Website Assets -----------------------------------------------------------
 
 web_include_css = "/assets/arkspace/css/arkspace_portal.css"
 web_include_js = "/assets/arkspace/js/arkspace_portal.js"
+
+# --- Portal Menu Items --------------------------------------------------------
+
+portal_menu_items = [
+    {"title": "ARKSpace Dashboard", "route": "/arkspace_portal", "role": ""},
+    {"title": "My Memberships", "route": "/memberships", "role": ""},
+    {"title": "My Payments", "route": "/payments", "role": ""},
+    {"title": "Book a Space", "route": "/arkspace_portal/book", "role": ""},
+    {"title": "My Profile", "route": "/arkspace_portal/profile", "role": ""},
+    {"title": "Day Pass", "route": "/day_pass", "role": ""},
+    {"title": "Analytics", "route": "/analytics", "role": "ARKSpace Admin"},
+    {"title": "Community", "route": "/community", "role": ""},
+    {"title": "Events", "route": "/events", "role": ""},
+    {"title": "Member Directory", "route": "/directory", "role": ""},
+]
 
 # --- DocType Events -----------------------------------------------------------
 
@@ -45,6 +93,10 @@ doc_events = {
         "after_insert": "arkspace.arkspace_integrations.billing.link_employee_to_customer",
         "on_update": "arkspace.arkspace_integrations.billing.link_employee_to_customer",
     },
+    "Day Pass": {
+        "on_submit": "arkspace.arkspace_integrations.billing.on_day_pass_submit",
+        "on_cancel": "arkspace.arkspace_integrations.billing.on_day_pass_cancel",
+    },
 }
 
 # --- Scheduled Tasks ----------------------------------------------------------
@@ -60,10 +112,16 @@ scheduler_events = {
         "arkspace.tasks.auto_renew_memberships",
         "arkspace.tasks.send_membership_expiry_reminders",
         "arkspace.tasks.generate_daily_occupancy_snapshot",
+        "arkspace.tasks.bulk_generate_booking_qr_codes",
+        "arkspace.tasks.expire_day_passes",
+        "arkspace.tasks.capture_analytics_snapshot",
     ],
     "hourly": [
         "arkspace.tasks.mark_no_show_bookings",
         "arkspace.tasks.auto_checkout_expired_bookings",
+        "arkspace.tasks.expire_stale_online_payments",
+        "arkspace.tasks.auto_checkout_day_passes",
+        "arkspace.tasks.update_community_event_statuses",
     ],
 }
 
@@ -98,7 +156,10 @@ fixtures = [
     },
     {
         "dt": "Number Card",
-        "filters": [["name", "in", ["Available Spaces", "Occupied Spaces", "Active Memberships", "Checked In Now"]]],
+        "filters": [[
+            "name", "in",
+            ["Available Spaces", "Occupied Spaces", "Active Memberships", "Checked In Now"],
+        ]],
     },
     {
         "dt": "Dashboard Chart",
@@ -124,6 +185,10 @@ jinja = {
 # before_install = "arkspace.install.before_install"
 after_install = "arkspace.install.after_install"
 
+# --- v16: App Install / Uninstall Hooks ---------------------------------------
+after_app_install = "arkspace.install.after_install"
+before_app_uninstall = "arkspace.install.before_uninstall"
+
 # --- Setup Wizard -------------------------------------------------------------
 
 setup_wizard_requires = "assets/arkspace/js/setup_wizard.js"
@@ -140,3 +205,19 @@ after_migrate = "arkspace.setup.setup_arkspace"
 # --- Override DocType Class ---------------------------------------------------
 
 # override_doctype_class = {}
+
+# --- v16: URL Redirects -------------------------------------------------------
+# Redirect legacy /app/ routes to /desk/ for v16 compatibility
+
+website_redirects = [
+    {"source": "/app/arkspace", "target": "/desk/arkspace"},
+]
+
+# --- URL Route Rules ----------------------------------------------------------
+# Clean routes for about/onboarding pages
+
+website_route_rules = [
+    {"from_route": "/arkspace-about", "to_route": "arkspace-about"},
+    {"from_route": "/arkspace-onboarding", "to_route": "ark-onboarding"},
+    {"from_route": "/عن-arkspace", "to_route": "arkspace-about"},
+]

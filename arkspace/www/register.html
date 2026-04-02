@@ -1,0 +1,196 @@
+{%- extends "templates/web.html" -%}
+
+{%- block page_content -%}
+<div class="arkspace-portal">
+	{% if logged_in %}
+	<script>window.location.href = "{{ redirect_url }}";</script>
+	{% else %}
+
+	<!-- Header -->
+	<div class="portal-header" style="justify-content:center; text-align:center;">
+		<div>
+			<img src="/assets/arkspace/images/arkspace-logo-animated.svg"
+				 alt="ARKSpace" style="width:64px; height:64px; margin-bottom:1rem;">
+			<h1>{{ _("Join ARKSpace") }}</h1>
+			<p style="color:#6B7280; max-width:500px; margin:0 auto;">
+				{{ _("Create your account and start enjoying flexible workspace solutions.") }}
+			</p>
+		</div>
+	</div>
+
+	<!-- Registration Form -->
+	<div class="ark-card" style="max-width:600px; margin:2rem auto;">
+		<form id="register-form" onsubmit="return ArkRegister.submit(event);">
+			<h3 style="margin-top:0;">
+				<i class="fa-solid fa-user-plus"></i> {{ _("Personal Information") }}
+			</h3>
+
+			<div class="form-row">
+				<div class="form-group">
+					<label for="full_name">{{ _("Full Name") }} <span class="required">*</span></label>
+					<input type="text" id="full_name" name="full_name" required
+						   placeholder="{{ _('Enter your full name') }}"
+						   class="ark-input">
+				</div>
+			</div>
+
+			<div class="form-row two-col">
+				<div class="form-group">
+					<label for="email">{{ _("Email") }} <span class="required">*</span></label>
+					<input type="email" id="email" name="email" required
+						   placeholder="{{ _('your@email.com') }}"
+						   class="ark-input">
+				</div>
+				<div class="form-group">
+					<label for="phone">{{ _("Phone") }}</label>
+					<input type="tel" id="phone" name="phone"
+						   placeholder="{{ _('+966 5xx xxx xxxx') }}"
+						   class="ark-input">
+				</div>
+			</div>
+
+			<div class="form-row">
+				<div class="form-group">
+					<label for="company_name">{{ _("Company Name") }} <small>({{ _("optional") }})</small></label>
+					<input type="text" id="company_name" name="company_name"
+						   placeholder="{{ _('Your company or organization') }}"
+						   class="ark-input">
+				</div>
+			</div>
+
+			<hr style="margin:1.5rem 0; border-color:var(--ark-border);">
+
+			<h3>
+				<i class="fa-solid fa-id-card"></i> {{ _("Choose a Plan") }}
+				<small style="font-weight:400; color:#6B7280;">({{ _("optional — you can choose later") }})</small>
+			</h3>
+
+			{% if plans %}
+			<div class="plan-select-grid">
+				<!-- No plan option -->
+				<label class="plan-select-card selected" data-plan="">
+					<input type="radio" name="plan" value="" checked>
+					<div class="plan-select-name">{{ _("No Plan (Free Account)") }}</div>
+					<div class="plan-select-price">{{ _("Browse first") }}</div>
+				</label>
+
+				{% for p in plans %}
+				<label class="plan-select-card" data-plan="{{ p.name }}">
+					<input type="radio" name="plan" value="{{ p.name }}">
+					<div class="plan-select-name">{{ p.plan_name }}</div>
+					<div class="plan-select-type">{{ p.plan_type }}</div>
+					<div class="plan-select-price">
+						{{ frappe.utils.fmt_money(p.monthly_price or 0) }} / {{ _("month") }}
+					</div>
+				</label>
+				{% endfor %}
+			</div>
+
+			<div class="form-row" id="billing-cycle-row" style="display:none; margin-top:1rem;">
+				<div class="form-group">
+					<label for="billing_cycle">{{ _("Billing Cycle") }}</label>
+					<select id="billing_cycle" name="billing_cycle" class="ark-input">
+						<option value="Monthly">{{ _("Monthly") }}</option>
+						<option value="Quarterly">{{ _("Quarterly") }}</option>
+						<option value="Yearly">{{ _("Yearly") }}</option>
+					</select>
+				</div>
+			</div>
+			{% endif %}
+
+			<div style="margin-top:2rem;">
+				<button type="submit" class="ark-btn ark-btn-gold"
+						style="width:100%; justify-content:center; padding:0.8rem;">
+					<i class="fa-solid fa-rocket"></i> {{ _("Create Account") }}
+				</button>
+			</div>
+
+			<p style="text-align:center; margin-top:1rem; font-size:0.85rem; color:#6B7280;">
+				{{ _("Already have an account?") }}
+				<a href="/login">{{ _("Login here") }}</a>
+			</p>
+		</form>
+	</div>
+
+	{% endif %}
+</div>
+{%- endblock -%}
+
+{%- block page_script -%}
+<script>
+const ArkRegister = {
+	init() {
+		// Plan selection toggle
+		document.querySelectorAll(".plan-select-card").forEach(card => {
+			card.addEventListener("click", function() {
+				document.querySelectorAll(".plan-select-card").forEach(
+					c => c.classList.remove("selected")
+				);
+				this.classList.add("selected");
+				this.querySelector("input[type=radio]").checked = true;
+
+				const billingRow = document.getElementById("billing-cycle-row");
+				if (this.dataset.plan) {
+					billingRow.style.display = "";
+				} else {
+					billingRow.style.display = "none";
+				}
+			});
+		});
+	},
+
+	submit(e) {
+		e.preventDefault();
+
+		const form = document.getElementById("register-form");
+		const fullName = form.full_name.value.trim();
+		const email = form.email.value.trim();
+		const phone = form.phone.value.trim();
+		const companyName = form.company_name.value.trim();
+		const plan = form.plan ? form.plan.value : "";
+		const billingCycle = form.billing_cycle ? form.billing_cycle.value : "Monthly";
+
+		if (!fullName || !email) {
+			frappe.msgprint(__("Please fill in the required fields."));
+			return false;
+		}
+
+		frappe.call({
+			method: "arkspace.arkspace_memberships.api.register_member",
+			args: {
+				full_name: fullName,
+				email: email,
+				phone: phone || undefined,
+				plan: plan || undefined,
+				billing_cycle: billingCycle,
+				company_name: companyName || undefined,
+			},
+			freeze: true,
+			freeze_message: __("Creating your account..."),
+			callback(r) {
+				if (r.message) {
+					frappe.msgprint({
+						title: __("Welcome to ARKSpace!"),
+						message: __("Your account has been created. A welcome email has been sent to {0}. Please check your email to set your password.", [email]),
+						indicator: "green",
+						primary_action: {
+							label: __("Go to Login"),
+							action: () => window.location.href = "/login",
+						},
+					});
+				}
+			},
+			error() {
+				frappe.msgprint(__("Registration failed. Please try again or contact support."));
+			},
+		});
+
+		return false;
+	},
+};
+
+document.addEventListener("DOMContentLoaded", function() {
+	ArkRegister.init();
+});
+</script>
+{%- endblock -%}

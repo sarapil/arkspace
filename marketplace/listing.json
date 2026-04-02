@@ -1,0 +1,77 @@
+{
+  "name": "arkspace",
+  "title": "ARKSpace",
+  "description": "Complete coworking space management with bookings, memberships, CRM, contracts, training, and billing — natively integrated with ERPNext.",
+  "long_description": "ARKSpace is a comprehensive coworking and shared-space management application built natively on the Frappe Framework with deep ERPNext integration. Manage 6 space types with interactive floor plans, smart bookings, membership plans with credit wallets, CRM pipeline, bilingual contracts, training modules with gamification, and automated billing — all in one unified platform.",
+  "version": "6.0.0",
+  "author": "ARKSpace Team",
+  "email": "dev@arkspace.io",
+  "license": "MIT",
+  "repository": "https://github.com/arkan/arkspace",
+  "homepage": "https://arkspace.io",
+  "category": "Business Tools",
+  "tags": [
+    "coworking",
+    "workspace-management",
+    "booking",
+    "membership",
+    "crm",
+    "contracts",
+    "training",
+    "billing",
+    "erpnext",
+    "arabic",
+    "rtl",
+    "bilingual"
+  ],
+  "required_apps": [
+    "erpnext"
+  ],
+  "supported_versions": [
+    "v15",
+    "v16"
+  ],
+  "pricing": "free",
+  "languages": [
+    "en",
+    "ar"
+  ],
+  "features": [
+    "Space management with 6 types and interactive floor plans",
+    "Smart booking engine with auto check-in/out and no-show detection",
+    "Membership platform with credit wallets and auto-renewal",
+    "Built-in CRM with lead pipeline and tour scheduling",
+    "Contract management with bilingual Jinja templates",
+    "Training and community with badges and gamification",
+    "Native ERPNext billing integration",
+    "3 script reports and dashboard analytics",
+    "7 custom roles with row-level security",
+    "Full Arabic and English support (700+ translations)"
+  ],
+  "screenshots": [
+    {
+      "file": "marketplace/screenshots/dashboard.png",
+      "caption": "Dashboard with number cards and analytics charts"
+    },
+    {
+      "file": "marketplace/screenshots/floor-plan.png",
+      "caption": "Interactive floor plan with color-coded space status"
+    },
+    {
+      "file": "marketplace/screenshots/booking.png",
+      "caption": "Space booking form with availability checking"
+    },
+    {
+      "file": "marketplace/screenshots/membership.png",
+      "caption": "Membership management with credit wallet"
+    },
+    {
+      "file": "marketplace/screenshots/crm.png",
+      "caption": "CRM pipeline with lead tracking and tour scheduling"
+    },
+    {
+      "file": "marketplace/screenshots/contract.png",
+      "caption": "Bilingual contract with template rendering"
+    }
+  ]
+}

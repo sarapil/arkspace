@@ -25,7 +25,7 @@ def get_setup_slides():
 			"slide_name": "arkspace_welcome",
 			"slide_title": _("Welcome to ARKSpace — مرحباً بكم"),
 			"slide_desc": _("Configure your co-working space management system."),
-			"slide_icon": "fa-solid fa-building",
+			"slide_icon": "fa-solid fa-cubes",
 			"slide_order": 30,
 			"fields": [
 				{

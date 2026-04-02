@@ -10,8 +10,7 @@ are submitted, and handles payment reconciliation.
 
 import frappe
 from frappe import _
-from frappe.utils import getdate, nowdate, flt
-
+from frappe.utils import flt, getdate, nowdate
 
 # ─────────────────── Sales Invoice from Space Booking ────────────────────
 
@@ -65,7 +64,7 @@ def on_booking_submit(doc, method):
 
 	frappe.msgprint(
 		_("Sales Invoice {0} created for booking {1}").format(
-			f'<a href="/app/sales-invoice/{si.name}">{si.name}</a>',
+			f'<a href="{_desk_route()}/sales-invoice/{si.name}">{si.name}</a>',
 			doc.name,
 		),
 		alert=True,
@@ -140,7 +139,7 @@ def on_membership_submit(doc, method):
 
 	frappe.msgprint(
 		_("Sales Invoice {0} created for membership {1}").format(
-			f'<a href="/app/sales-invoice/{si.name}">{si.name}</a>',
+			f'<a href="{_desk_route()}/sales-invoice/{si.name}">{si.name}</a>',
 			doc.name,
 		),
 		alert=True,
@@ -238,8 +237,8 @@ def _resolve_customer(member_name):
 	"""Resolve a member name to a Customer.
 
 	Tries:
-	  1. Direct Customer lookup by name
-	  2. Dynamic Link on Contact
+		1. Direct Customer lookup by name
+		2. Dynamic Link on Contact
 	"""
 	if not member_name:
 		return None
@@ -269,3 +268,67 @@ def _get_or_create_service_item(item_code, item_name):
 		item.flags.ignore_permissions = True
 		item.insert()
 	return item_code
+
+
+def _desk_route():
+	"""Return the desk route prefix — /desk for v16+, /app for v15."""
+	from arkspace.utils.compat import desk_route
+	return desk_route()
+
+
+# ─────────────────── Sales Invoice from Day Pass ─────────────────────────
+
+def on_day_pass_submit(doc, method):
+	"""Create a Sales Invoice when a Day Pass is submitted (paid passes only)."""
+	if not _erpnext_installed():
+		return
+	if doc.payment_method == "Free" or not flt(doc.net_amount):
+		return
+
+	# Try to resolve customer from guest info
+	customer = None
+	if doc.guest_email:
+		customer = frappe.db.get_value("Customer", {"email_id": doc.guest_email}, "name")
+
+	if not customer:
+		# Use walk-in customer if configured
+		customer = frappe.db.get_single_value("Selling Settings", "default_customer")
+
+	if not customer:
+		return
+
+	si = frappe.new_doc("Sales Invoice")
+	si.customer = customer
+	si.posting_date = getdate(nowdate())
+	si.due_date = getdate(nowdate())
+	si.set_posting_time = 1
+	si.remarks = _("Auto-generated from Day Pass {0}").format(doc.name)
+
+	item = _get_or_create_service_item("Day Pass Fee", _("Co-Working Day Pass Fee"))
+
+	si.append("items", {
+		"item_code": item,
+		"qty": 1,
+		"rate": flt(doc.net_amount),
+		"description": _("Day Pass {0} — {1} ({2})").format(
+			doc.name, doc.pass_type, doc.guest_name
+		),
+	})
+
+	si.flags.ignore_permissions = True
+	si.insert()
+	si.submit()
+
+	doc.db_set("sales_invoice", si.name, update_modified=False)
+
+
+def on_day_pass_cancel(doc, method):
+	"""Cancel linked Sales Invoice when a Day Pass is cancelled."""
+	if not _erpnext_installed():
+		return
+
+	if doc.sales_invoice:
+		si = frappe.get_doc("Sales Invoice", doc.sales_invoice)
+		if si.docstatus == 1:
+			si.flags.ignore_permissions = True
+			si.cancel()

@@ -1,0 +1,300 @@
+{% extends "templates/web.html" %}
+
+{% block title %}{{ _("Day Pass") }} — ARKSpace{% endblock %}
+
+{% block page_content %}
+<div class="arkspace-portal day-pass-page">
+
+	<div class="portal-header">
+		<h2>{{ _("Day Pass") }} / تصريح اليوم</h2>
+		<p class="text-muted">
+			{{ _("Get instant access to our workspace — no membership required") }}
+		</p>
+	</div>
+
+	<!-- Pass Type Selection -->
+	<div class="section-title">{{ _("Choose Your Pass") }}</div>
+	<div class="pass-type-grid">
+		{% for pt in pass_types %}
+		<div class="pass-card" data-type="{{ pt.type }}">
+			<div class="pass-card-icon">
+				{% if pt.type == "Full Day" %}🏢
+				{% elif pt.type == "Half Day" %}⏳
+				{% elif pt.type == "Hourly" %}⏱️
+				{% elif pt.type == "Evening" %}🌙
+				{% elif pt.type == "Weekend" %}📅
+				{% endif %}
+			</div>
+			<div class="pass-card-title">{{ pt.label }}</div>
+		</div>
+		{% endfor %}
+	</div>
+
+	<!-- Space Selection -->
+	{% if spaces %}
+	<div class="section-title">{{ _("Select a Space") }}</div>
+	<div class="space-grid">
+		{% for space in spaces %}
+		<div class="space-option" data-space="{{ space.name }}">
+			{% if space.main_image %}
+			<img src="{{ space.main_image }}" alt="{{ space.space_name }}" />
+			{% else %}
+			<div class="space-placeholder">🪑</div>
+			{% endif %}
+			<div class="space-info">
+				<strong>{{ space.space_name }}</strong>
+				<span class="text-muted">{{ space.space_type or "" }}</span>
+				<span class="rate-tag">
+					{{ space.daily_rate or 0 }} {{ _("/ day") }}
+				</span>
+			</div>
+		</div>
+		{% endfor %}
+	</div>
+	{% endif %}
+
+	<!-- Booking Form -->
+	<div class="section-title">{{ _("Your Details") }}</div>
+	<form id="day-pass-form" class="portal-form">
+		<div class="form-row">
+			<div class="form-group col-md-6">
+				<label>{{ _("Full Name") }} <span class="text-danger">*</span></label>
+				<input type="text" name="guest_name" class="form-control" required />
+			</div>
+			<div class="form-group col-md-6">
+				<label>{{ _("Phone") }}</label>
+				<input type="tel" name="guest_phone" class="form-control" />
+			</div>
+		</div>
+		<div class="form-row">
+			<div class="form-group col-md-6">
+				<label>{{ _("Email") }}</label>
+				<input type="email" name="guest_email" class="form-control" />
+			</div>
+			<div class="form-group col-md-6">
+				<label>{{ _("Company") }}</label>
+				<input type="text" name="guest_company" class="form-control" />
+			</div>
+		</div>
+
+		<input type="hidden" name="pass_type" id="selected_pass_type" value="Full Day" />
+		<input type="hidden" name="space" id="selected_space" value="" />
+		<input type="hidden" name="guest_type" value="Online" />
+		<input type="hidden" name="payment_method" value="Online" />
+
+		<!-- Rate Display -->
+		<div id="rate-display" class="rate-display" style="display:none;">
+			<span class="rate-label">{{ _("Total") }}:</span>
+			<span class="rate-amount" id="rate-amount">0</span>
+		</div>
+
+		<button type="submit" class="btn btn-primary btn-lg btn-block mt-4">
+			{{ _("Get Day Pass") }}
+		</button>
+	</form>
+
+	<!-- Trial Plans -->
+	{% if trial_plans %}
+	<div class="trial-section">
+		<div class="section-title">{{ _("Try Before You Join") }}</div>
+		<p class="text-muted">
+			{{ _("Start a trial membership and experience full benefits") }}
+		</p>
+		<div class="trial-grid">
+			{% for plan in trial_plans %}
+			<div class="trial-card">
+				<h4>{{ plan.plan_name }}</h4>
+				<div class="trial-days">{{ plan.trial_days }} {{ _("days") }}</div>
+				<div class="trial-price">
+					{% if plan.trial_price %}
+						{{ plan.trial_price }} {{ _("one-time") }}
+					{% else %}
+						{{ _("Free Trial") }}
+					{% endif %}
+				</div>
+				<button class="btn btn-outline-primary btn-sm btn-trial"
+						data-plan="{{ plan.name }}">
+					{{ _("Start Trial") }}
+				</button>
+			</div>
+			{% endfor %}
+		</div>
+	</div>
+	{% endif %}
+
+</div>
+
+<style>
+.day-pass-page .portal-header { text-align: center; margin-bottom: 2rem; }
+.day-pass-page .section-title {
+	font-size: 1.2rem; font-weight: 600; margin: 2rem 0 1rem;
+	color: var(--arkspace-navy, #1B365D);
+}
+.pass-type-grid {
+	display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+	gap: 12px; margin-bottom: 1.5rem;
+}
+.pass-card {
+	background: #fff; border: 2px solid #e2e8f0; border-radius: 10px;
+	padding: 20px; text-align: center; cursor: pointer; transition: all .2s;
+}
+.pass-card:hover, .pass-card.selected {
+	border-color: var(--arkspace-navy, #1B365D);
+	background: #f0f4ff; transform: translateY(-2px);
+}
+.pass-card-icon { font-size: 2rem; margin-bottom: 8px; }
+.pass-card-title { font-weight: 600; font-size: 0.9rem; }
+.space-grid {
+	display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+	gap: 12px; margin-bottom: 1.5rem;
+}
+.space-option {
+	background: #fff; border: 2px solid #e2e8f0; border-radius: 10px;
+	overflow: hidden; cursor: pointer; transition: all .2s;
+}
+.space-option:hover, .space-option.selected {
+	border-color: var(--arkspace-navy, #1B365D);
+}
+.space-option img { width: 100%; height: 120px; object-fit: cover; }
+.space-placeholder {
+	width: 100%; height: 120px; display: flex;
+	align-items: center; justify-content: center;
+	font-size: 2.5rem; background: #f1f5f9;
+}
+.space-info { padding: 10px; }
+.space-info strong { display: block; }
+.rate-tag {
+	display: inline-block; background: #e0f2fe; color: #0369a1;
+	padding: 2px 8px; border-radius: 4px; font-size: 0.85rem; margin-top: 4px;
+}
+.rate-display {
+	background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 8px;
+	padding: 16px; text-align: center; margin-top: 1rem;
+}
+.rate-label { font-weight: 600; }
+.rate-amount { font-size: 1.5rem; font-weight: 700; color: #166534; margin-left: 8px; }
+.trial-section {
+	margin-top: 3rem; padding-top: 2rem;
+	border-top: 1px solid #e2e8f0; text-align: center;
+}
+.trial-grid {
+	display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+	gap: 16px; margin-top: 1rem;
+}
+.trial-card {
+	background: #fff; border: 2px solid #e2e8f0; border-radius: 10px;
+	padding: 24px; text-align: center;
+}
+.trial-days { font-size: 2rem; font-weight: 700; color: var(--arkspace-navy, #1B365D); }
+.trial-price { color: #64748b; margin-bottom: 12px; }
+</style>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+	// Pass type selection
+	document.querySelectorAll(".pass-card").forEach(function (card) {
+		card.addEventListener("click", function () {
+			document.querySelectorAll(".pass-card").forEach(c => c.classList.remove("selected"));
+			card.classList.add("selected");
+			document.getElementById("selected_pass_type").value = card.dataset.type;
+			updateRate();
+		});
+	});
+	// Auto-select first
+	const firstCard = document.querySelector(".pass-card");
+	if (firstCard) firstCard.classList.add("selected");
+
+	// Space selection
+	document.querySelectorAll(".space-option").forEach(function (opt) {
+		opt.addEventListener("click", function () {
+			document.querySelectorAll(".space-option").forEach(o => o.classList.remove("selected"));
+			opt.classList.add("selected");
+			document.getElementById("selected_space").value = opt.dataset.space;
+			updateRate();
+		});
+	});
+
+	function updateRate() {
+		const space = document.querySelector(".space-option.selected");
+		if (!space) return;
+		const passType = document.getElementById("selected_pass_type").value;
+		const daily = parseFloat(space.querySelector(".rate-tag")?.textContent) || 0;
+		let rate = daily;
+		if (["Half Day", "Evening"].includes(passType)) rate = daily / 2;
+		if (passType === "Hourly") rate = daily / 8;
+		document.getElementById("rate-amount").textContent = rate.toFixed(0);
+		document.getElementById("rate-display").style.display = "block";
+	}
+
+	// Form submit
+	document.getElementById("day-pass-form")?.addEventListener("submit", function (e) {
+		e.preventDefault();
+		const fd = new FormData(this);
+		const args = {};
+		fd.forEach((v, k) => { if (v) args[k] = v; });
+
+		frappe.call({
+			method: "arkspace.arkspace_spaces.day_pass_api.create_day_pass",
+			args: args,
+			freeze: true,
+			freeze_message: "{{ _('Creating your day pass...') }}",
+			callback: function (r) {
+				if (r.message) {
+					frappe.msgprint({
+						title: "{{ _('Day Pass Created!') }}",
+						message: "{{ _('Your day pass is ready. Show the QR code at the front desk.') }}",
+						indicator: "green",
+					});
+					if (r.message.qr_code) {
+						document.getElementById("day-pass-form").innerHTML = `
+							<div style="text-align:center; padding:2rem;">
+								<h3>{{ _("Your Day Pass") }}</h3>
+								<img src="${r.message.qr_code}"
+									 style="max-width:250px; margin:1rem auto;" />
+								<p><strong>${r.message.day_pass}</strong></p>
+								<p class="text-muted">{{ _("Show this QR code at the front desk") }}</p>
+							</div>
+						`;
+					}
+				}
+			},
+		});
+	});
+
+	// Trial buttons
+	document.querySelectorAll(".btn-trial").forEach(function (btn) {
+		btn.addEventListener("click", function () {
+			const plan = btn.dataset.plan;
+			const guestName = document.querySelector("[name=guest_name]")?.value;
+			if (!guestName) {
+				frappe.msgprint("{{ _('Please enter your name first') }}");
+				return;
+			}
+			frappe.call({
+				method: "arkspace.arkspace_spaces.day_pass_api.create_day_pass",
+				args: {
+					guest_name: guestName,
+					guest_email: document.querySelector("[name=guest_email]")?.value,
+					guest_phone: document.querySelector("[name=guest_phone]")?.value,
+					guest_type: "Trial",
+					is_trial: 1,
+					trial_plan: plan,
+					payment_method: "Free",
+					rate: 0,
+				},
+				freeze: true,
+				callback: function (r) {
+					if (r.message) {
+						frappe.msgprint({
+							title: "{{ _('Trial Started!') }}",
+							message: "{{ _('Welcome! Your trial day pass has been created.') }}",
+							indicator: "green",
+						});
+					}
+				},
+			});
+		});
+	});
+});
+</script>
+{% endblock %}

@@ -2,10 +2,10 @@
 # For license information, please see license.txt
 
 import frappe
-from frappe.tests.utils import FrappeTestCase
+from arkspace.tests.compat import ARKSpaceTestCase
 
 
-class TestTrainingBadge(FrappeTestCase):
+class TestTrainingBadge(ARKSpaceTestCase):
 	"""Test cases for Training Badge DocType."""
 
 	def _make_badge(self, **kwargs):

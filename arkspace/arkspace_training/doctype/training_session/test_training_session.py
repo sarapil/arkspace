@@ -2,11 +2,11 @@
 # For license information, please see license.txt
 
 import frappe
-from frappe.tests.utils import FrappeTestCase
+from arkspace.tests.compat import ARKSpaceTestCase
 from frappe.utils import today
 
 
-class TestTrainingSession(FrappeTestCase):
+class TestTrainingSession(ARKSpaceTestCase):
 	"""Test cases for Training Session DocType."""
 
 	def setUp(self):

@@ -2,10 +2,10 @@
 # See license.txt
 
 import frappe
-from frappe.tests.utils import FrappeTestCase
+from arkspace.tests.compat import ARKSpaceTestCase
 
 
-class TestWorkspaceLead(FrappeTestCase):
+class TestWorkspaceLead(ARKSpaceTestCase):
 	"""Test cases for Workspace Lead DocType."""
 
 	def _make_lead(self, **kwargs):

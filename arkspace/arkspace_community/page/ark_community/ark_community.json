@@ -1,0 +1,21 @@
+{
+ "content": null,
+ "creation": "2026-03-21 00:00:00.000000",
+ "doctype": "Page",
+ "icon": "fa-solid fa-people-group",
+ "modified": "2026-03-21 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "ARKSpace Community",
+ "name": "ark-community",
+ "owner": "Administrator",
+ "page_name": "ark-community",
+ "roles": [
+  {"role": "System Manager"},
+  {"role": "ARKSpace Admin"},
+  {"role": "ARKSpace Manager"},
+  {"role": "ARKSpace Member"}
+ ],
+ "standard": "Yes",
+ "system_page": 0,
+ "title": "ARK Community Network"
+}

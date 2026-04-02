@@ -1,0 +1,377 @@
+{
+    "actions": [],
+    "allow_rename": 0,
+    "autoname": "PAY-.YYYY.-.#####",
+    "creation": "2026-03-21 12:00:00.000000",
+    "doctype": "DocType",
+    "engine": "InnoDB",
+    "field_order": [
+        "details_tab",
+        "details_section",
+        "payment_id",
+        "gateway",
+        "status",
+        "column_break_1",
+        "payment_for",
+        "reference_doctype",
+        "reference_name",
+        "member",
+        "member_name",
+        "amounts_section",
+        "amount",
+        "currency",
+        "gateway_fee",
+        "column_break_2",
+        "net_received",
+        "exchange_rate",
+        "base_amount",
+        "gateway_section",
+        "gateway_reference",
+        "gateway_status",
+        "gateway_response_json",
+        "column_break_3",
+        "checkout_url",
+        "payment_method_type",
+        "card_last_four",
+        "timestamps_section",
+        "initiated_at",
+        "completed_at",
+        "column_break_4",
+        "expires_at",
+        "cancelled_at",
+        "links_section",
+        "sales_invoice",
+        "payment_receipt",
+        "column_break_5",
+        "payment_entry",
+        "notes",
+        "amended_from"
+    ],
+    "fields": [
+        {
+            "fieldname": "details_tab",
+            "fieldtype": "Tab Break",
+            "label": "Details"
+        },
+        {
+            "fieldname": "details_section",
+            "fieldtype": "Section Break",
+            "label": "Payment Details / تفاصيل الدفع"
+        },
+        {
+            "fieldname": "payment_id",
+            "fieldtype": "Data",
+            "label": "Payment ID / معرّف الدفع",
+            "read_only": 1,
+            "in_list_view": 1,
+            "unique": 1
+        },
+        {
+            "fieldname": "gateway",
+            "fieldtype": "Select",
+            "label": "Gateway / بوابة الدفع",
+            "options": "\nStripe\nTap\nPayPal\nRazorpay\nFawry\nManual",
+            "reqd": 1,
+            "in_list_view": 1,
+            "in_standard_filter": 1
+        },
+        {
+            "fieldname": "status",
+            "fieldtype": "Select",
+            "label": "Status / الحالة",
+            "options": "Initiated\nPending\nCompleted\nFailed\nCancelled\nRefunded\nPartially Refunded\nExpired",
+            "default": "Initiated",
+            "reqd": 1,
+            "in_list_view": 1,
+            "in_standard_filter": 1
+        },
+        {
+            "fieldname": "column_break_1",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "payment_for",
+            "fieldtype": "Select",
+            "label": "Payment For / الدفع مقابل",
+            "options": "\nSpace Booking\nMembership\nDay Pass\nEvent\nDeposit\nOther",
+            "in_standard_filter": 1
+        },
+        {
+            "fieldname": "reference_doctype",
+            "fieldtype": "Link",
+            "label": "Reference Type",
+            "options": "DocType",
+            "read_only": 1
+        },
+        {
+            "fieldname": "reference_name",
+            "fieldtype": "Dynamic Link",
+            "label": "Reference / المرجع",
+            "options": "reference_doctype",
+            "read_only": 1
+        },
+        {
+            "fieldname": "member",
+            "fieldtype": "Link",
+            "label": "Member / العضو",
+            "options": "Customer",
+            "reqd": 1,
+            "in_standard_filter": 1
+        },
+        {
+            "fieldname": "member_name",
+            "fieldtype": "Data",
+            "label": "Member Name / اسم العضو",
+            "fetch_from": "member.customer_name",
+            "read_only": 1
+        },
+        {
+            "fieldname": "amounts_section",
+            "fieldtype": "Section Break",
+            "label": "Amounts / المبالغ"
+        },
+        {
+            "fieldname": "amount",
+            "fieldtype": "Currency",
+            "label": "Amount / المبلغ",
+            "reqd": 1,
+            "in_list_view": 1
+        },
+        {
+            "fieldname": "currency",
+            "fieldtype": "Link",
+            "label": "Currency / العملة",
+            "options": "Currency",
+            "reqd": 1,
+            "default": "AED"
+        },
+        {
+            "fieldname": "gateway_fee",
+            "fieldtype": "Currency",
+            "label": "Gateway Fee / رسوم البوابة",
+            "read_only": 1
+        },
+        {
+            "fieldname": "column_break_2",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "net_received",
+            "fieldtype": "Currency",
+            "label": "Net Received / صافي المستلم",
+            "read_only": 1
+        },
+        {
+            "fieldname": "exchange_rate",
+            "fieldtype": "Float",
+            "label": "Exchange Rate / سعر الصرف",
+            "default": "1",
+            "precision": 6
+        },
+        {
+            "fieldname": "base_amount",
+            "fieldtype": "Currency",
+            "label": "Base Amount / المبلغ الأساسي",
+            "read_only": 1
+        },
+        {
+            "fieldname": "gateway_section",
+            "fieldtype": "Section Break",
+            "label": "Gateway Details / تفاصيل البوابة",
+            "collapsible": 1
+        },
+        {
+            "fieldname": "gateway_reference",
+            "fieldtype": "Data",
+            "label": "Gateway Reference / مرجع البوابة",
+            "read_only": 1
+        },
+        {
+            "fieldname": "gateway_status",
+            "fieldtype": "Data",
+            "label": "Gateway Status / حالة البوابة",
+            "read_only": 1
+        },
+        {
+            "fieldname": "gateway_response_json",
+            "fieldtype": "Code",
+            "label": "Gateway Response",
+            "options": "JSON",
+            "read_only": 1,
+            "hidden": 1
+        },
+        {
+            "fieldname": "column_break_3",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "checkout_url",
+            "fieldtype": "Data",
+            "label": "Checkout URL",
+            "read_only": 1,
+            "hidden": 1
+        },
+        {
+            "fieldname": "payment_method_type",
+            "fieldtype": "Data",
+            "label": "Payment Method / طريقة الدفع",
+            "read_only": 1
+        },
+        {
+            "fieldname": "card_last_four",
+            "fieldtype": "Data",
+            "label": "Card Last 4 / آخر 4 أرقام",
+            "read_only": 1,
+            "length": 4
+        },
+        {
+            "fieldname": "timestamps_section",
+            "fieldtype": "Section Break",
+            "label": "Timestamps / التوقيتات",
+            "collapsible": 1
+        },
+        {
+            "fieldname": "initiated_at",
+            "fieldtype": "Datetime",
+            "label": "Initiated At / بدأ في",
+            "read_only": 1
+        },
+        {
+            "fieldname": "completed_at",
+            "fieldtype": "Datetime",
+            "label": "Completed At / اكتمل في",
+            "read_only": 1
+        },
+        {
+            "fieldname": "column_break_4",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "expires_at",
+            "fieldtype": "Datetime",
+            "label": "Expires At / ينتهي في",
+            "read_only": 1
+        },
+        {
+            "fieldname": "cancelled_at",
+            "fieldtype": "Datetime",
+            "label": "Cancelled At / ألغي في",
+            "read_only": 1
+        },
+        {
+            "fieldname": "links_section",
+            "fieldtype": "Section Break",
+            "label": "Linked Documents / المستندات المرتبطة"
+        },
+        {
+            "fieldname": "sales_invoice",
+            "fieldtype": "Link",
+            "label": "Sales Invoice / فاتورة المبيعات",
+            "options": "Sales Invoice",
+            "read_only": 1
+        },
+        {
+            "fieldname": "payment_receipt",
+            "fieldtype": "Link",
+            "label": "Payment Receipt / إيصال الدفع",
+            "options": "Payment Receipt",
+            "read_only": 1
+        },
+        {
+            "fieldname": "column_break_5",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "payment_entry",
+            "fieldtype": "Link",
+            "label": "Payment Entry / قيد الدفع",
+            "options": "Payment Entry",
+            "read_only": 1
+        },
+        {
+            "fieldname": "notes",
+            "fieldtype": "Small Text",
+            "label": "Notes / ملاحظات"
+        },
+        {
+            "fieldname": "amended_from",
+            "fieldtype": "Link",
+            "label": "Amended From",
+            "no_copy": 1,
+            "options": "Online Payment",
+            "print_hide": 1,
+            "read_only": 1
+        }
+    ],
+    "index_web_pages_for_search": 0,
+    "links": [
+        {
+            "link_doctype": "Sales Invoice",
+            "link_fieldname": "name",
+            "parent_doctype": "Online Payment",
+            "table_fieldname": "sales_invoice"
+        },
+        {
+            "link_doctype": "Payment Entry",
+            "link_fieldname": "name",
+            "parent_doctype": "Online Payment",
+            "table_fieldname": "payment_entry"
+        }
+    ],
+    "modified": "2026-03-21 12:00:00.000000",
+    "modified_by": "Administrator",
+    "module": "ARKSpace Integrations",
+    "name": "Online Payment",
+    "naming_rule": "Expression (old style)",
+    "owner": "Administrator",
+    "permissions": [
+        {
+            "create": 1,
+            "delete": 1,
+            "email": 1,
+            "export": 1,
+            "print": 1,
+            "read": 1,
+            "report": 1,
+            "role": "System Manager",
+            "share": 1,
+            "write": 1
+        },
+        {
+            "create": 1,
+            "delete": 1,
+            "email": 1,
+            "export": 1,
+            "print": 1,
+            "read": 1,
+            "report": 1,
+            "role": "ARKSpace Admin",
+            "share": 1,
+            "write": 1
+        },
+        {
+            "create": 1,
+            "email": 1,
+            "export": 1,
+            "print": 1,
+            "read": 1,
+            "report": 1,
+            "role": "ARKSpace Manager",
+            "share": 1,
+            "write": 1
+        },
+        {
+            "read": 1,
+            "role": "ARKSpace Front Desk"
+        },
+        {
+            "read": 1,
+            "role": "ARKSpace Member"
+        }
+    ],
+    "sort_field": "creation",
+    "sort_order": "DESC",
+    "states": [],
+    "title_field": "member_name",
+    "track_changes": 1
+}

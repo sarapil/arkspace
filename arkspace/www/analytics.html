@@ -1,0 +1,192 @@
+{% extends "templates/web.html" %}
+
+{% block title %}{{ _("Analytics Dashboard — لوحة التحليلات") }}{% endblock %}
+
+{% block page_content %}
+<div class="container py-4">
+    <h2 class="mb-4">📊 {{ _("Analytics Dashboard") }}</h2>
+
+    <!-- Filters -->
+    <div class="row mb-4">
+        <div class="col-md-3">
+            <label>{{ _("Branch / الفرع") }}</label>
+            <select class="form-control" id="analytics-branch">
+                <option value="">{{ _("All Branches / جميع الفروع") }}</option>
+                {% for b in branches %}
+                <option value="{{ b }}">{{ b }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="col-md-3">
+            <label>{{ _("Period / الفترة") }}</label>
+            <select class="form-control" id="analytics-period">
+                <option value="30">{{ _("Last 30 Days") }}</option>
+                <option value="60">{{ _("Last 60 Days") }}</option>
+                <option value="90">{{ _("Last 90 Days") }}</option>
+            </select>
+        </div>
+        <div class="col-md-3 d-flex align-items-end">
+            <button class="btn btn-primary" id="analytics-refresh">
+                {{ _("Refresh / تحديث") }}
+            </button>
+        </div>
+    </div>
+
+    <!-- KPI Summary -->
+    <div class="row mb-4" id="portal-kpis">
+        <div class="col-md-3 col-6 mb-2">
+            <div class="card text-center p-3">
+                <small class="text-muted">{{ _("Occupancy Rate") }}</small>
+                <h3 id="kpi-occupancy">--</h3>
+            </div>
+        </div>
+        <div class="col-md-3 col-6 mb-2">
+            <div class="card text-center p-3">
+                <small class="text-muted">{{ _("Today's Bookings") }}</small>
+                <h3 id="kpi-bookings">--</h3>
+            </div>
+        </div>
+        <div class="col-md-3 col-6 mb-2">
+            <div class="card text-center p-3">
+                <small class="text-muted">{{ _("Active Members") }}</small>
+                <h3 id="kpi-members">--</h3>
+            </div>
+        </div>
+        <div class="col-md-3 col-6 mb-2">
+            <div class="card text-center p-3">
+                <small class="text-muted">{{ _("Monthly Revenue") }}</small>
+                <h3 id="kpi-revenue">--</h3>
+            </div>
+        </div>
+    </div>
+
+    <!-- Charts -->
+    <div class="row">
+        <div class="col-md-6 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5>{{ _("Revenue Trends / اتجاهات الإيرادات") }}</h5>
+                    <div id="portal-revenue-chart" style="height:300px"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5>{{ _("Booking Patterns / أنماط الحجوزات") }}</h5>
+                    <div id="portal-hourly-chart" style="height:300px"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Recent Snapshots Table -->
+    <div class="card">
+        <div class="card-body">
+            <h5>{{ _("Recent Snapshots / اللقطات الأخيرة") }}</h5>
+            <div class="table-responsive">
+                <table class="table table-sm table-hover">
+                    <thead>
+                        <tr>
+                            <th>{{ _("Date") }}</th>
+                            <th>{{ _("Occupancy %") }}</th>
+                            <th>{{ _("Bookings") }}</th>
+                            <th>{{ _("Members") }}</th>
+                            <th>{{ _("Revenue") }}</th>
+                        </tr>
+                    </thead>
+                    <tbody id="snapshot-table">
+                        {% for s in recent_snapshots %}
+                        <tr>
+                            <td>{{ s.snapshot_date }}</td>
+                            <td>{{ s.occupancy_rate }}%</td>
+                            <td>{{ s.total_bookings }}</td>
+                            <td>{{ s.active_members }}</td>
+                            <td>{{ frappe.utils.fmt_money(s.total_revenue) }}</td>
+                        </tr>
+                        {% endfor %}
+                        {% if not recent_snapshots %}
+                        <tr><td colspan="5" class="text-center text-muted">
+                            {{ _("No data yet. Snapshots are captured daily.") }}
+                        </td></tr>
+                        {% endif %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+frappe.ready(function () {
+    function load_data() {
+        const branch = $("#analytics-branch").val();
+        const days = parseInt($("#analytics-period").val());
+        const from_date = frappe.datetime.add_days(frappe.datetime.nowdate(), -days);
+        const to_date = frappe.datetime.nowdate();
+
+        // KPIs
+        frappe.call({
+            method: "arkspace.arkspace_core.analytics_engine.get_dashboard_kpis",
+            args: { branch: branch || undefined },
+            callback(r) {
+                if (!r.message) return;
+                const d = r.message;
+                $("#kpi-occupancy").text(d.occupancy_rate + "%");
+                $("#kpi-bookings").text(d.todays_bookings);
+                $("#kpi-members").text(d.active_members);
+                $("#kpi-revenue").text(format_currency(d.month_revenue));
+            },
+        });
+
+        // Revenue chart
+        frappe.call({
+            method: "arkspace.arkspace_core.analytics_engine.get_revenue_trends",
+            args: { branch, period: "monthly", from_date, to_date },
+            callback(r) {
+                if (!r.message || !r.message.labels.length) return;
+                const data = r.message;
+                new frappe.Chart("#portal-revenue-chart", {
+                    data: {
+                        labels: data.labels,
+                        datasets: [
+                            { name: "{{ _('Bookings') }}", values: data.booking_revenue },
+                            { name: "{{ _('Memberships') }}", values: data.membership_revenue },
+                            { name: "{{ _('Day Passes') }}", values: data.day_pass_revenue },
+                        ],
+                    },
+                    type: "bar",
+                    height: 270,
+                    colors: ["#4299e1", "#48bb78", "#ed8936"],
+                    barOptions: { stacked: 1 },
+                });
+            },
+        });
+
+        // Hourly chart
+        frappe.call({
+            method: "arkspace.arkspace_core.analytics_engine.get_booking_patterns",
+            args: { branch, from_date, to_date },
+            callback(r) {
+                if (!r.message) return;
+                const data = r.message;
+                new frappe.Chart("#portal-hourly-chart", {
+                    data: {
+                        labels: data.hourly.labels,
+                        datasets: [{ name: "{{ _('Bookings') }}", values: data.hourly.values }],
+                    },
+                    type: "line",
+                    height: 270,
+                    colors: ["#4299e1"],
+                    lineOptions: { regionFill: 1 },
+                });
+            },
+        });
+    }
+
+    $("#analytics-refresh").on("click", load_data);
+    $("#analytics-branch, #analytics-period").on("change", load_data);
+    load_data();
+});
+</script>
+{% endblock %}

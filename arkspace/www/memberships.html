@@ -1,0 +1,360 @@
+{%- extends "templates/web.html" -%}
+
+{%- block page_content -%}
+<div class="arkspace-portal">
+	<!-- Header -->
+	<div class="portal-header">
+		<h1>
+			<i class="fa-solid fa-id-card"></i>
+			{{ _("My Memberships") }}
+		</h1>
+		<div class="portal-nav">
+			<a href="/arkspace_portal" class="ark-btn ark-btn-primary">
+				<i class="fa-solid fa-arrow-left"></i> {{ _("Dashboard") }}
+			</a>
+		</div>
+	</div>
+
+	{% if no_member %}
+	<div class="ark-card" style="text-align:center; padding:3rem;">
+		<i class="fa-solid fa-user-plus" style="font-size:3rem; color:var(--ark-gold); margin-bottom:1rem;"></i>
+		<h2>{{ _("No account found") }}</h2>
+		<p>{{ _("Please register or contact us to set up your membership.") }}</p>
+		<a href="/register" class="ark-btn ark-btn-gold" style="margin-top:1rem;">
+			{{ _("Register Now") }}
+		</a>
+	</div>
+	{% else %}
+
+	<!-- Active Memberships -->
+	<div class="ark-card" style="margin-bottom:1.5rem;">
+		<h3><i class="fa-solid fa-star"></i> {{ _("Active Memberships") }}</h3>
+		{% if active_memberships %}
+		<div class="membership-list">
+			{% for m in active_memberships %}
+			<div class="membership-item active">
+				<div class="membership-info">
+					<div class="membership-plan">{{ m.membership_plan }}</div>
+					<div class="membership-meta">
+						{{ m.plan_type }} · {{ m.billing_cycle }}
+						<br>
+						{{ frappe.utils.formatdate(m.start_date) }} → {{ frappe.utils.formatdate(m.end_date) }}
+					</div>
+					<div class="membership-amount">
+						{{ frappe.utils.fmt_money(m.net_amount or 0) }}
+					</div>
+				</div>
+				<div class="membership-actions">
+					<span class="ark-status active">{{ _("Active") }}</span>
+					{% if m.auto_renew %}
+					<span class="ark-badge auto-renew" title="{{ _('Auto-renewal enabled') }}">
+						<i class="fa-solid fa-arrows-rotate"></i>
+					</span>
+					{% endif %}
+					<div class="membership-btns" style="margin-top:0.5rem;">
+						<button class="ark-btn ark-btn-gold ark-btn-sm"
+								onclick="ArkMemberships.renew('{{ m.name }}')">
+							<i class="fa-solid fa-rotate-right"></i> {{ _("Renew") }}
+						</button>
+						<button class="ark-btn ark-btn-primary ark-btn-sm"
+								onclick="ArkMemberships.upgrade('{{ m.name }}', '{{ m.membership_plan }}')">
+							<i class="fa-solid fa-arrow-up"></i> {{ _("Upgrade") }}
+						</button>
+						<button class="ark-btn ark-btn-sm"
+								style="background:#F3F4F6; color:#374151;"
+								onclick="ArkMemberships.toggleAutoRenew('{{ m.name }}', {{ 0 if m.auto_renew else 1 }})">
+							<i class="fa-solid fa-arrows-rotate"></i>
+							{{ _("Disable Auto-Renew") if m.auto_renew else _("Enable Auto-Renew") }}
+						</button>
+					</div>
+				</div>
+			</div>
+			{% endfor %}
+		</div>
+		{% else %}
+		<p style="color:#6B7280;">{{ _("No active memberships") }}</p>
+		{% endif %}
+	</div>
+
+	<!-- Available Plans -->
+	<div class="ark-card" style="margin-bottom:1.5rem;">
+		<h3><i class="fa-solid fa-list-check"></i> {{ _("Available Plans") }}</h3>
+		{% if plans %}
+		<div class="plans-grid">
+			{% for p in plans %}
+			<div class="plan-card">
+				<div class="plan-header">
+					<div class="plan-name">{{ p.plan_name }}</div>
+					<div class="plan-type">{{ p.plan_type }}</div>
+				</div>
+				<div class="plan-price">
+					<span class="price-amount">{{ frappe.utils.fmt_money(p.monthly_price or 0) }}</span>
+					<span class="price-cycle">/ {{ _("month") }}</span>
+				</div>
+				<ul class="plan-features">
+					{% if p.included_hours %}
+					<li><i class="fa-solid fa-clock"></i> {{ p.included_hours }} {{ _("hours included") }}</li>
+					{% endif %}
+					{% if p.included_credits %}
+					<li><i class="fa-solid fa-coins"></i> {{ p.included_credits }} {{ _("credits") }}</li>
+					{% endif %}
+					{% if p.meeting_room_hours %}
+					<li><i class="fa-solid fa-users"></i> {{ p.meeting_room_hours }}h {{ _("meeting rooms") }}</li>
+					{% endif %}
+					{% if p.max_guests %}
+					<li><i class="fa-solid fa-user-group"></i> {{ _("Up to {0} guests").format(p.max_guests) }}</li>
+					{% endif %}
+					{% if p.printing_pages %}
+					<li><i class="fa-solid fa-print"></i> {{ p.printing_pages }} {{ _("pages/month") }}</li>
+					{% endif %}
+				</ul>
+				<div class="plan-cycles" style="margin-top:0.75rem;">
+					{% if p.quarterly_price %}
+					<div class="cycle-option">
+						{{ _("Quarterly") }}: {{ frappe.utils.fmt_money(p.quarterly_price) }}
+					</div>
+					{% endif %}
+					{% if p.yearly_price %}
+					<div class="cycle-option">
+						{{ _("Yearly") }}: {{ frappe.utils.fmt_money(p.yearly_price) }}
+					</div>
+					{% endif %}
+				</div>
+				<button class="ark-btn ark-btn-primary"
+						style="width:100%; margin-top:1rem;"
+						onclick="ArkMemberships.subscribe('{{ p.name }}', '{{ p.plan_name }}')">
+					{{ _("Subscribe") }}
+				</button>
+			</div>
+			{% endfor %}
+		</div>
+		{% endif %}
+	</div>
+
+	<!-- Past Memberships -->
+	{% if expired_memberships %}
+	<div class="ark-card" style="margin-bottom:1.5rem;">
+		<h3><i class="fa-solid fa-clock-rotate-left"></i> {{ _("Past Memberships") }}</h3>
+		<ul class="ark-booking-list">
+			{% for m in expired_memberships %}
+			<li>
+				<div class="ark-booking-info">
+					<div class="space-name">{{ m.membership_plan }} — {{ m.plan_type }}</div>
+					<div class="booking-time">
+						{{ frappe.utils.formatdate(m.start_date) }} → {{ frappe.utils.formatdate(m.end_date) }}
+						· {{ frappe.utils.fmt_money(m.net_amount or 0) }}
+					</div>
+				</div>
+				<span class="ark-status {{ m.status | lower }}">{{ m.status }}</span>
+			</li>
+			{% endfor %}
+		</ul>
+	</div>
+	{% endif %}
+
+	<!-- Credit Wallet -->
+	<div class="ark-card">
+		<h3><i class="fa-solid fa-coins"></i> {{ _("Credit Wallet") }}</h3>
+		<div class="ark-kpi-strip" style="margin-bottom:0;">
+			<div class="ark-kpi-card gold">
+				<div class="kpi-value">{{ wallet.available_credits or 0 }}</div>
+				<div class="kpi-label">{{ _("Available") }}</div>
+			</div>
+			<div class="ark-kpi-card">
+				<div class="kpi-value">{{ wallet.total_credits or 0 }}</div>
+				<div class="kpi-label">{{ _("Total Earned") }}</div>
+			</div>
+			<div class="ark-kpi-card">
+				<div class="kpi-value">{{ wallet.used_credits or 0 }}</div>
+				<div class="kpi-label">{{ _("Used") }}</div>
+			</div>
+		</div>
+	</div>
+
+	{% endif %}
+</div>
+{%- endblock -%}
+
+{%- block page_script -%}
+<script>
+const ArkMemberships = {
+	renew(membershipName) {
+		frappe.call({
+			method: "arkspace.arkspace_memberships.api.get_renewal_options",
+			args: { membership_name: membershipName },
+			callback: function(r) {
+				if (!r.message) return;
+				const data = r.message;
+				const options = data.options.map(
+					o => `${o.billing_cycle} — ${frappe.format(o.price, {fieldtype: "Currency"})}`
+						+ (o.is_current ? " ✓" : "")
+				);
+
+				const d = new frappe.ui.Dialog({
+					title: __("Renew Membership"),
+					fields: [
+						{
+							fieldtype: "HTML",
+							options: `<p>${__("Current plan")}: <strong>${data.current_plan}</strong>
+								(${__("Expires")}: ${data.end_date})</p>`,
+						},
+						{
+							fieldtype: "Select",
+							fieldname: "billing_cycle",
+							label: __("Billing Cycle"),
+							options: data.options.map(o => o.billing_cycle).join("\n"),
+							default: data.current_cycle,
+							reqd: 1,
+						},
+					],
+					primary_action_label: __("Renew Now"),
+					primary_action(values) {
+						frappe.call({
+							method: "arkspace.arkspace_memberships.api.renew_membership",
+							args: {
+								membership_name: membershipName,
+								billing_cycle: values.billing_cycle,
+							},
+							freeze: true,
+							freeze_message: __("Processing renewal..."),
+							callback(r) {
+								d.hide();
+								if (r.message) {
+									frappe.show_alert({
+										message: __("Membership renewed! New membership: {0}", [r.message.membership]),
+										indicator: "green",
+									});
+									setTimeout(() => location.reload(), 1500);
+								}
+							},
+						});
+					},
+				});
+				d.show();
+			},
+		});
+	},
+
+	upgrade(membershipName, currentPlan) {
+		frappe.call({
+			method: "arkspace.arkspace_memberships.api.get_membership_plans",
+			callback: function(r) {
+				const plans = (r.message || []).filter(p => p.name !== currentPlan);
+				if (!plans.length) {
+					frappe.msgprint(__("No other plans available."));
+					return;
+				}
+
+				const d = new frappe.ui.Dialog({
+					title: __("Upgrade Membership"),
+					fields: [
+						{
+							fieldtype: "Select",
+							fieldname: "new_plan",
+							label: __("New Plan"),
+							options: plans.map(p =>
+								`${p.name}`
+							).join("\n"),
+							reqd: 1,
+						},
+						{
+							fieldtype: "Select",
+							fieldname: "billing_cycle",
+							label: __("Billing Cycle"),
+							options: "Monthly\nQuarterly\nYearly",
+							default: "Monthly",
+						},
+						{
+							fieldtype: "HTML",
+							options: `<p class="text-muted">${__("Your current membership will be cancelled and a prorated credit may apply.")}</p>`,
+						},
+					],
+					primary_action_label: __("Upgrade Now"),
+					primary_action(values) {
+						frappe.call({
+							method: "arkspace.arkspace_memberships.api.upgrade_membership",
+							args: {
+								membership_name: membershipName,
+								new_plan: values.new_plan,
+								billing_cycle: values.billing_cycle,
+							},
+							freeze: true,
+							freeze_message: __("Processing upgrade..."),
+							callback(r) {
+								d.hide();
+								if (r.message) {
+									let msg = __("Upgraded to {0}!", [r.message.plan]);
+									if (r.message.prorated_credit > 0) {
+										msg += " " + __("Prorated credit: {0}",
+											[frappe.format(r.message.prorated_credit, {fieldtype: "Currency"})]);
+									}
+									frappe.show_alert({ message: msg, indicator: "green" });
+									setTimeout(() => location.reload(), 1500);
+								}
+							},
+						});
+					},
+				});
+				d.show();
+			},
+		});
+	},
+
+	subscribe(planName, planLabel) {
+		const d = new frappe.ui.Dialog({
+			title: __("Subscribe to {0}", [planLabel]),
+			fields: [
+				{
+					fieldtype: "Select",
+					fieldname: "billing_cycle",
+					label: __("Billing Cycle"),
+					options: "Monthly\nQuarterly\nYearly",
+					default: "Monthly",
+					reqd: 1,
+				},
+			],
+			primary_action_label: __("Subscribe"),
+			primary_action(values) {
+				frappe.call({
+					method: "arkspace.arkspace_memberships.api.create_membership",
+					args: {
+						member: "{{ member }}",
+						membership_plan: planName,
+						billing_cycle: values.billing_cycle,
+					},
+					freeze: true,
+					freeze_message: __("Creating membership..."),
+					callback(r) {
+						d.hide();
+						if (r.message) {
+							frappe.show_alert({
+								message: __("Membership created: {0}", [r.message.membership]),
+								indicator: "green",
+							});
+							setTimeout(() => location.reload(), 1500);
+						}
+					},
+				});
+			},
+		});
+		d.show();
+	},
+
+	toggleAutoRenew(membershipName, newValue) {
+		frappe.call({
+			method: "arkspace.arkspace_memberships.api.toggle_auto_renew",
+			args: { membership_name: membershipName, auto_renew: newValue },
+			callback() {
+				frappe.show_alert({
+					message: newValue
+						? __("Auto-renewal enabled")
+						: __("Auto-renewal disabled"),
+					indicator: "green",
+				});
+				setTimeout(() => location.reload(), 1000);
+			},
+		});
+	},
+};
+</script>
+{%- endblock -%}

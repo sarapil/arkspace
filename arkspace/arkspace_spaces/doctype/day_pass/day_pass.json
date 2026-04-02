@@ -1,0 +1,421 @@
+{
+ "actions": [],
+ "autoname": "format:DP-{YYYY}-{#####}",
+ "creation": "2026-02-09 00:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "is_submittable": 1,
+ "field_order": [
+  "guest_name",
+  "guest_email",
+  "guest_phone",
+  "column_break_guest",
+  "guest_company",
+  "guest_type",
+  "existing_member",
+  "pass_section",
+  "pass_type",
+  "pass_date",
+  "column_break_pass",
+  "start_time",
+  "end_time",
+  "duration_hours",
+  "space_section",
+  "space",
+  "branch",
+  "column_break_space",
+  "seat_number",
+  "billing_section",
+  "rate",
+  "discount_percent",
+  "column_break_billing",
+  "net_amount",
+  "payment_method",
+  "status_section",
+  "status",
+  "column_break_status",
+  "checked_in_at",
+  "checked_out_at",
+  "qr_section",
+  "qr_code",
+  "column_break_qr",
+  "qr_token",
+  "conversion_section",
+  "converted_to_membership",
+  "membership",
+  "column_break_conv",
+  "membership_credit_applied",
+  "trial_section",
+  "is_trial",
+  "trial_plan",
+  "column_break_trial",
+  "trial_days_remaining",
+  "links_section",
+  "sales_invoice",
+  "source",
+  "column_break_links",
+  "referral_code",
+  "notes",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "guest_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Guest Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "guest_email",
+   "fieldtype": "Data",
+   "label": "Email",
+   "options": "Email"
+  },
+  {
+   "fieldname": "guest_phone",
+   "fieldtype": "Data",
+   "label": "Phone",
+   "options": "Phone"
+  },
+  {
+   "fieldname": "column_break_guest",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "guest_company",
+   "fieldtype": "Data",
+   "label": "Company"
+  },
+  {
+   "default": "Walk-in",
+   "fieldname": "guest_type",
+   "fieldtype": "Select",
+   "label": "Guest Type",
+   "options": "Walk-in\nOnline\nReferred\nTrial\nCorporate\nEvent Attendee"
+  },
+  {
+   "depends_on": "eval:['Referred','Corporate'].includes(doc.guest_type)",
+   "fieldname": "existing_member",
+   "fieldtype": "Link",
+   "label": "Referred By / Corporate Account",
+   "options": "Customer"
+  },
+  {
+   "fieldname": "pass_section",
+   "fieldtype": "Section Break",
+   "label": "Pass Details"
+  },
+  {
+   "default": "Full Day",
+   "fieldname": "pass_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Pass Type",
+   "options": "Full Day\nHalf Day\nHourly\nEvening\nWeekend",
+   "reqd": 1
+  },
+  {
+   "default": "Today",
+   "fieldname": "pass_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_pass",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "start_time",
+   "fieldtype": "Time",
+   "label": "Start Time"
+  },
+  {
+   "fieldname": "end_time",
+   "fieldtype": "Time",
+   "label": "End Time"
+  },
+  {
+   "fieldname": "duration_hours",
+   "fieldtype": "Float",
+   "label": "Duration (Hours)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "space_section",
+   "fieldtype": "Section Break",
+   "label": "Space"
+  },
+  {
+   "fieldname": "space",
+   "fieldtype": "Link",
+   "label": "Space",
+   "options": "Co-working Space"
+  },
+  {
+   "fieldname": "branch",
+   "fieldtype": "Link",
+   "label": "Branch",
+   "options": "Branch"
+  },
+  {
+   "fieldname": "column_break_space",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "seat_number",
+   "fieldtype": "Data",
+   "label": "Seat / Desk Number"
+  },
+  {
+   "fieldname": "billing_section",
+   "fieldtype": "Section Break",
+   "label": "Billing"
+  },
+  {
+   "fieldname": "rate",
+   "fieldtype": "Currency",
+   "label": "Rate",
+   "reqd": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "discount_percent",
+   "fieldtype": "Percent",
+   "label": "Discount %"
+  },
+  {
+   "fieldname": "column_break_billing",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "net_amount",
+   "fieldtype": "Currency",
+   "label": "Net Amount",
+   "read_only": 1
+  },
+  {
+   "default": "Cash",
+   "fieldname": "payment_method",
+   "fieldtype": "Select",
+   "label": "Payment Method",
+   "options": "Cash\nCard\nOnline\nWallet\nFree"
+  },
+  {
+   "fieldname": "status_section",
+   "fieldtype": "Section Break",
+   "label": "Status"
+  },
+  {
+   "default": "Active",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Status",
+   "options": "\nDraft\nActive\nChecked In\nChecked Out\nExpired\nCancelled"
+  },
+  {
+   "fieldname": "column_break_status",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "checked_in_at",
+   "fieldtype": "Datetime",
+   "label": "Checked In At",
+   "read_only": 1
+  },
+  {
+   "fieldname": "checked_out_at",
+   "fieldtype": "Datetime",
+   "label": "Checked Out At",
+   "read_only": 1
+  },
+  {
+   "collapsible": 1,
+   "depends_on": "eval:doc.docstatus==1",
+   "fieldname": "qr_section",
+   "fieldtype": "Section Break",
+   "label": "QR Code"
+  },
+  {
+   "fieldname": "qr_code",
+   "fieldtype": "Attach Image",
+   "label": "QR Code",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_qr",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "qr_token",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "QR Token",
+   "read_only": 1
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "conversion_section",
+   "fieldtype": "Section Break",
+   "label": "Membership Conversion"
+  },
+  {
+   "default": "0",
+   "fieldname": "converted_to_membership",
+   "fieldtype": "Check",
+   "label": "Converted to Membership",
+   "read_only": 1
+  },
+  {
+   "depends_on": "converted_to_membership",
+   "fieldname": "membership",
+   "fieldtype": "Link",
+   "label": "Membership",
+   "options": "Membership",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_conv",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "converted_to_membership",
+   "fieldname": "membership_credit_applied",
+   "fieldtype": "Currency",
+   "label": "Credit Applied to Membership",
+   "read_only": 1
+  },
+  {
+   "collapsible": 1,
+   "depends_on": "is_trial",
+   "fieldname": "trial_section",
+   "fieldtype": "Section Break",
+   "label": "Trial"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_trial",
+   "fieldtype": "Check",
+   "label": "Is Trial Pass"
+  },
+  {
+   "depends_on": "is_trial",
+   "fieldname": "trial_plan",
+   "fieldtype": "Link",
+   "label": "Trial for Plan",
+   "options": "Membership Plan"
+  },
+  {
+   "fieldname": "column_break_trial",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "is_trial",
+   "fieldname": "trial_days_remaining",
+   "fieldtype": "Int",
+   "label": "Trial Days Remaining",
+   "read_only": 1
+  },
+  {
+   "fieldname": "links_section",
+   "fieldtype": "Section Break",
+   "label": "Links & Notes"
+  },
+  {
+   "fieldname": "sales_invoice",
+   "fieldtype": "Link",
+   "label": "Sales Invoice",
+   "options": "Sales Invoice",
+   "read_only": 1
+  },
+  {
+   "default": "Walk-in",
+   "fieldname": "source",
+   "fieldtype": "Select",
+   "label": "Source",
+   "options": "Walk-in\nWebsite\nMobile App\nPartner\nEvent\nReferral"
+  },
+  {
+   "fieldname": "column_break_links",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "referral_code",
+   "fieldtype": "Data",
+   "label": "Referral Code"
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Small Text",
+   "label": "Notes"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Day Pass",
+   "print_hide": 1,
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-02-09 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "ARKSpace Spaces",
+ "name": "Day Pass",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "cancel": 1,
+   "create": 1,
+   "read": 1,
+   "role": "ARKSpace Admin",
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "read": 1,
+   "role": "ARKSpace Manager",
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "read": 1,
+   "role": "ARKSpace Front Desk",
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "read": 1,
+   "role": "ARKSpace Operations"
+  }
+ ],
+ "quick_entry": 1,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "guest_name",
+ "track_changes": 1
+}

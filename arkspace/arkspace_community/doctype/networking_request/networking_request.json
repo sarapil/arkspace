@@ -1,0 +1,138 @@
+{
+ "actions": [],
+ "autoname": "NET-.YYYY.-.#####",
+ "creation": "2026-03-21 00:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "request_section",
+  "from_member",
+  "from_member_name",
+  "column_break_request",
+  "to_member",
+  "to_member_name",
+  "details_section",
+  "message",
+  "branch",
+  "status_section",
+  "status",
+  "column_break_status",
+  "responded_at"
+ ],
+ "fields": [
+  {
+   "fieldname": "request_section",
+   "fieldtype": "Section Break",
+   "label": "Request / الطلب"
+  },
+  {
+   "default": "__user",
+   "fieldname": "from_member",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "From / من",
+   "options": "User",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "from_member.full_name",
+   "fieldname": "from_member_name",
+   "fieldtype": "Data",
+   "label": "From Name / اسم المرسل",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_request",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "to_member",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "To / إلى",
+   "options": "User",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "to_member.full_name",
+   "fieldname": "to_member_name",
+   "fieldtype": "Data",
+   "label": "To Name / اسم المستلم",
+   "read_only": 1
+  },
+  {
+   "fieldname": "details_section",
+   "fieldtype": "Section Break",
+   "label": "Details / التفاصيل"
+  },
+  {
+   "fieldname": "message",
+   "fieldtype": "Text",
+   "label": "Message / الرسالة"
+  },
+  {
+   "fieldname": "branch",
+   "fieldtype": "Link",
+   "label": "Branch / الفرع",
+   "options": "Branch"
+  },
+  {
+   "fieldname": "status_section",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "Pending",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Status / الحالة",
+   "options": "Pending\nAccepted\nDeclined\nWithdrawn"
+  },
+  {
+   "fieldname": "column_break_status",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "responded_at",
+   "fieldtype": "Datetime",
+   "label": "Responded At / تاريخ الرد",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 0,
+ "links": [],
+ "modified": "2026-03-21 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "ARKSpace Community",
+ "name": "Networking Request",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "read": 1,
+   "role": "ARKSpace Admin",
+   "write": 1
+  },
+  {
+   "create": 1,
+   "read": 1,
+   "role": "ARKSpace Member",
+   "write": 1
+  }
+ ],
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

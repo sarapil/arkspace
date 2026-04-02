@@ -1,0 +1,107 @@
+name: Documentation Check
+
+on:
+  pull_request:
+    paths:
+      - 'docs/**'
+      - 'arkspace/translations/**'
+      - 'arkspace/help/**'
+      - 'README.md'
+      - 'README_AR.md'
+
+jobs:
+  docs-check:
+    name: Documentation Validation
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Check documentation files exist
+        run: |
+          echo "=== Checking required documentation files ==="
+          required_files=(
+            "README.md"
+            "README_AR.md"
+            "LICENSE"
+            "CHANGELOG.md"
+            "CONTRIBUTING.md"
+            "SECURITY.md"
+            "docs/ARCHITECTURE.md"
+            "docs/DEVELOPER_GUIDE.md"
+            "docs/SECURITY.md"
+            "docs/TECHNICAL_SPECS.md"
+            "docs/API_REFERENCE.md"
+            "docs/en/README.md"
+            "docs/en/USER_GUIDE.md"
+            "docs/en/ADMIN_GUIDE.md"
+            "docs/en/FEATURES.md"
+            "docs/ar/README.md"
+            "docs/ar/USER_GUIDE.md"
+            "docs/ar/ADMIN_GUIDE.md"
+            "docs/ar/FEATURES.md"
+          )
+          missing=0
+          for f in "${required_files[@]}"; do
+            if [ ! -f "$f" ]; then
+              echo "❌ Missing: $f"
+              missing=$((missing + 1))
+            else
+              echo "✅ Found: $f"
+            fi
+          done
+          if [ $missing -gt 0 ]; then
+            echo "::error::$missing required documentation files are missing"
+            exit 1
+          fi
+          echo "All required documentation files present ✅"
+
+      - name: Check translation files
+        run: |
+          echo "=== Checking translation files ==="
+          ar_lines=$(wc -l < arkspace/translations/ar.csv)
+          en_lines=$(wc -l < arkspace/translations/en.csv)
+          echo "ar.csv: $ar_lines lines"
+          echo "en.csv: $en_lines lines"
+          if [ "$ar_lines" -ne "$en_lines" ]; then
+            echo "::error::Translation files have different line counts (ar: $ar_lines, en: $en_lines)"
+            exit 1
+          fi
+          if [ "$ar_lines" -lt 100 ]; then
+            echo "::error::Translation files seem too small ($ar_lines lines)"
+            exit 1
+          fi
+          echo "Translation files OK ✅ ($ar_lines lines each)"
+
+      - name: Check in-app help files
+        run: |
+          echo "=== Checking in-app help files ==="
+          for lang in en ar; do
+            if [ ! -f "arkspace/help/$lang/_index.md" ]; then
+              echo "::error::Missing help index: arkspace/help/$lang/_index.md"
+              exit 1
+            fi
+            echo "✅ Found: arkspace/help/$lang/_index.md"
+          done
+          echo "In-app help files OK ✅"
+
+      - name: Check for broken internal links
+        run: |
+          echo "=== Checking for potential broken links in docs/ ==="
+          broken=0
+          for md in docs/*.md docs/en/*.md docs/ar/*.md; do
+            [ -f "$md" ] || continue
+            # Extract markdown links to local files
+            grep -oP '\]\((?!http|#|mailto)([^)]+)\)' "$md" | sed 's/\](\(.*\))/\1/' | while read -r link; do
+              # Resolve relative to the md file's directory
+              dir=$(dirname "$md")
+              target="$dir/$link"
+              # Strip anchor
+              target=$(echo "$target" | sed 's/#.*//')
+              if [ -n "$target" ] && [ ! -f "$target" ]; then
+                echo "⚠️  Potential broken link in $md: $link"
+              fi
+            done
+          done
+          echo "Link check complete"

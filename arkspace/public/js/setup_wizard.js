@@ -11,7 +11,7 @@ frappe.setup.on("before_load", function () {
 		{
 			name: "arkspace_welcome",
 			title: __("Welcome to ARKSpace — مرحباً بكم"),
-			icon: "fa-solid fa-building",
+			icon: "fa-solid fa-cubes",
 			fields: [
 				{
 					fieldtype: "Data",
@@ -43,8 +43,8 @@ frappe.setup.on("before_load", function () {
 			onload: function (slide) {
 				slide.$body.find(".section-description").html(`
 					<div style="text-align:center; margin-bottom:20px;">
-						<div style="font-size:48px; color:var(--ark-gold, #C4A962);">
-							<i class="fa-solid fa-building"></i>
+					<div style="text-align:center;">
+						<img src="/assets/arkspace/images/arkspace-logo-animated.svg" alt="ARKSpace" style="width:80px; height:80px;">
 						</div>
 						<p style="color:var(--ark-text-secondary, #6B7280); margin-top:8px;">
 							${__("Let's set up your co-working space in a few easy steps.")}

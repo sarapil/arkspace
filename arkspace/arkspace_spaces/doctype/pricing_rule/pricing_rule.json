@@ -1,0 +1,347 @@
+{
+    "actions": [],
+    "allow_rename": 1,
+    "autoname": "field:rule_name",
+    "creation": "2026-03-21 12:00:00.000000",
+    "doctype": "DocType",
+    "engine": "InnoDB",
+    "field_order": [
+        "details_section",
+        "rule_name",
+        "rule_type",
+        "enabled",
+        "priority",
+        "column_break_1",
+        "description",
+        "applies_to_section",
+        "apply_to_all_spaces",
+        "space_type",
+        "specific_space",
+        "column_break_2",
+        "apply_to_all_booking_types",
+        "booking_type",
+        "membership_plan",
+        "conditions_section",
+        "condition_type",
+        "column_break_3",
+        "time_start",
+        "time_end",
+        "day_of_week",
+        "date_start",
+        "date_end",
+        "min_hours",
+        "max_hours",
+        "member_tier",
+        "adjustment_section",
+        "adjustment_type",
+        "adjustment_value",
+        "column_break_4",
+        "max_adjustment_amount",
+        "min_rate",
+        "stacking_section",
+        "stackable",
+        "stacking_group",
+        "schedule_section",
+        "valid_from",
+        "valid_to",
+        "amended_from"
+    ],
+    "fields": [
+        {
+            "fieldname": "details_section",
+            "fieldtype": "Section Break",
+            "label": "Rule Details / تفاصيل القاعدة"
+        },
+        {
+            "fieldname": "rule_name",
+            "fieldtype": "Data",
+            "label": "Rule Name / اسم القاعدة",
+            "reqd": 1,
+            "unique": 1,
+            "in_list_view": 1
+        },
+        {
+            "fieldname": "rule_type",
+            "fieldtype": "Select",
+            "label": "Rule Type / نوع القاعدة",
+            "options": "Peak Hours\nOff-Peak Discount\nWeekend\nSeasonal\nEarly Bird\nLong Booking\nMember Tier\nPromotion\nCustom",
+            "reqd": 1,
+            "in_list_view": 1,
+            "in_standard_filter": 1
+        },
+        {
+            "fieldname": "enabled",
+            "fieldtype": "Check",
+            "label": "Enabled / مفعّل",
+            "default": "1",
+            "in_list_view": 1
+        },
+        {
+            "fieldname": "priority",
+            "fieldtype": "Int",
+            "label": "Priority / الأولوية",
+            "default": "10",
+            "description": "Lower number = higher priority. Rules with same priority stack."
+        },
+        {
+            "fieldname": "column_break_1",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "description",
+            "fieldtype": "Small Text",
+            "label": "Description / الوصف"
+        },
+        {
+            "fieldname": "applies_to_section",
+            "fieldtype": "Section Break",
+            "label": "Applies To / ينطبق على"
+        },
+        {
+            "fieldname": "apply_to_all_spaces",
+            "fieldtype": "Check",
+            "label": "All Spaces / جميع المساحات",
+            "default": "1"
+        },
+        {
+            "fieldname": "space_type",
+            "fieldtype": "Link",
+            "label": "Space Type / نوع المساحة",
+            "options": "Space Type",
+            "depends_on": "eval:!doc.apply_to_all_spaces"
+        },
+        {
+            "fieldname": "specific_space",
+            "fieldtype": "Link",
+            "label": "Specific Space / مساحة محددة",
+            "options": "Co-working Space",
+            "depends_on": "eval:!doc.apply_to_all_spaces"
+        },
+        {
+            "fieldname": "column_break_2",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "apply_to_all_booking_types",
+            "fieldtype": "Check",
+            "label": "All Booking Types / جميع أنواع الحجز",
+            "default": "1"
+        },
+        {
+            "fieldname": "booking_type",
+            "fieldtype": "Select",
+            "label": "Booking Type / نوع الحجز",
+            "options": "\nHourly\nDaily\nMonthly",
+            "depends_on": "eval:!doc.apply_to_all_booking_types"
+        },
+        {
+            "fieldname": "membership_plan",
+            "fieldtype": "Link",
+            "label": "Membership Plan / خطة العضوية",
+            "options": "Membership Plan",
+            "depends_on": "eval:doc.rule_type=='Member Tier'"
+        },
+        {
+            "fieldname": "conditions_section",
+            "fieldtype": "Section Break",
+            "label": "Conditions / الشروط"
+        },
+        {
+            "fieldname": "condition_type",
+            "fieldtype": "Select",
+            "label": "Condition / الشرط",
+            "options": "Always\nTime Range\nDay of Week\nDate Range\nBooking Duration\nMember Tier",
+            "default": "Always"
+        },
+        {
+            "fieldname": "column_break_3",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "time_start",
+            "fieldtype": "Time",
+            "label": "Start Time / وقت البداية",
+            "depends_on": "eval:doc.condition_type=='Time Range'"
+        },
+        {
+            "fieldname": "time_end",
+            "fieldtype": "Time",
+            "label": "End Time / وقت النهاية",
+            "depends_on": "eval:doc.condition_type=='Time Range'"
+        },
+        {
+            "fieldname": "day_of_week",
+            "fieldtype": "Select",
+            "label": "Day of Week / يوم الأسبوع",
+            "options": "\nMonday\nTuesday\nWednesday\nThursday\nFriday\nSaturday\nSunday",
+            "depends_on": "eval:doc.condition_type=='Day of Week'"
+        },
+        {
+            "fieldname": "date_start",
+            "fieldtype": "Date",
+            "label": "Date From / من تاريخ",
+            "depends_on": "eval:['Date Range','Seasonal'].includes(doc.condition_type) || doc.rule_type=='Seasonal'"
+        },
+        {
+            "fieldname": "date_end",
+            "fieldtype": "Date",
+            "label": "Date To / إلى تاريخ",
+            "depends_on": "eval:['Date Range','Seasonal'].includes(doc.condition_type) || doc.rule_type=='Seasonal'"
+        },
+        {
+            "fieldname": "min_hours",
+            "fieldtype": "Float",
+            "label": "Min Hours / الحد الأدنى (ساعات)",
+            "depends_on": "eval:doc.condition_type=='Booking Duration' || doc.rule_type=='Long Booking'"
+        },
+        {
+            "fieldname": "max_hours",
+            "fieldtype": "Float",
+            "label": "Max Hours / الحد الأقصى (ساعات)",
+            "depends_on": "eval:doc.condition_type=='Booking Duration' || doc.rule_type=='Long Booking'"
+        },
+        {
+            "fieldname": "member_tier",
+            "fieldtype": "Select",
+            "label": "Member Tier / مستوى العضوية",
+            "options": "\nBronze\nSilver\nGold\nPlatinum\nEnterprise",
+            "depends_on": "eval:doc.condition_type=='Member Tier' || doc.rule_type=='Member Tier'"
+        },
+        {
+            "fieldname": "adjustment_section",
+            "fieldtype": "Section Break",
+            "label": "Price Adjustment / تعديل السعر"
+        },
+        {
+            "fieldname": "adjustment_type",
+            "fieldtype": "Select",
+            "label": "Adjustment Type / نوع التعديل",
+            "options": "Percentage\nFixed Amount\nOverride Rate\nMultiplier",
+            "reqd": 1,
+            "in_list_view": 1
+        },
+        {
+            "fieldname": "adjustment_value",
+            "fieldtype": "Float",
+            "label": "Value / القيمة",
+            "reqd": 1,
+            "in_list_view": 1,
+            "precision": 4,
+            "description": "Percentage: +20 = 20% surcharge, -15 = 15% discount. Multiplier: 1.5 = 50% more. Override: the exact rate."
+        },
+        {
+            "fieldname": "column_break_4",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "max_adjustment_amount",
+            "fieldtype": "Currency",
+            "label": "Max Adjustment Cap / حد أقصى للتعديل",
+            "description": "Maximum absolute change from base rate. Leave blank for no cap."
+        },
+        {
+            "fieldname": "min_rate",
+            "fieldtype": "Currency",
+            "label": "Minimum Rate / الحد الأدنى للسعر",
+            "description": "Rate will never go below this value."
+        },
+        {
+            "fieldname": "stacking_section",
+            "fieldtype": "Section Break",
+            "label": "Stacking / التراكم",
+            "collapsible": 1
+        },
+        {
+            "fieldname": "stackable",
+            "fieldtype": "Check",
+            "label": "Stackable / قابل للتراكم",
+            "default": "0",
+            "description": "If enabled, this rule can combine with other rules of the same stacking group."
+        },
+        {
+            "fieldname": "stacking_group",
+            "fieldtype": "Data",
+            "label": "Stacking Group / مجموعة التراكم",
+            "depends_on": "eval:doc.stackable"
+        },
+        {
+            "fieldname": "schedule_section",
+            "fieldtype": "Section Break",
+            "label": "Validity / الصلاحية",
+            "collapsible": 1
+        },
+        {
+            "fieldname": "valid_from",
+            "fieldtype": "Datetime",
+            "label": "Valid From / صالح من"
+        },
+        {
+            "fieldname": "valid_to",
+            "fieldtype": "Datetime",
+            "label": "Valid To / صالح حتى"
+        },
+        {
+            "fieldname": "amended_from",
+            "fieldtype": "Link",
+            "label": "Amended From",
+            "no_copy": 1,
+            "options": "Pricing Rule",
+            "print_hide": 1,
+            "read_only": 1
+        }
+    ],
+    "index_web_pages_for_search": 0,
+    "links": [],
+    "modified": "2026-03-21 12:00:00.000000",
+    "modified_by": "Administrator",
+    "module": "ARKSpace Spaces",
+    "name": "Pricing Rule",
+    "naming_rule": "By fieldname",
+    "owner": "Administrator",
+    "permissions": [
+        {
+            "create": 1,
+            "delete": 1,
+            "email": 1,
+            "export": 1,
+            "print": 1,
+            "read": 1,
+            "report": 1,
+            "role": "System Manager",
+            "share": 1,
+            "write": 1
+        },
+        {
+            "create": 1,
+            "delete": 1,
+            "email": 1,
+            "export": 1,
+            "print": 1,
+            "read": 1,
+            "report": 1,
+            "role": "ARKSpace Admin",
+            "share": 1,
+            "write": 1
+        },
+        {
+            "create": 1,
+            "email": 1,
+            "export": 1,
+            "print": 1,
+            "read": 1,
+            "report": 1,
+            "role": "ARKSpace Manager",
+            "share": 1,
+            "write": 1
+        },
+        {
+            "read": 1,
+            "role": "ARKSpace Front Desk"
+        }
+    ],
+    "sort_field": "priority",
+    "sort_order": "ASC",
+    "states": [],
+    "title_field": "rule_name",
+    "track_changes": 1
+}

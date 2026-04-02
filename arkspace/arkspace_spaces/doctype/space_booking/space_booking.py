@@ -11,12 +11,14 @@ class SpaceBooking(Document):
 	def validate(self):
 		self.calculate_duration()
 		self.calculate_amenity_costs()
+		self._apply_dynamic_pricing()
 		self.calculate_amounts()
 		self.check_availability()
 
 	def on_submit(self):
 		self.status = "Confirmed"
 		self.db_set("status", "Confirmed")
+		self._generate_qr_code()
 
 	def on_cancel(self):
 		self.status = "Cancelled"
@@ -39,6 +41,53 @@ class SpaceBooking(Document):
 			)
 			if self.duration_hours <= 0:
 				frappe.throw(_("End time must be after start time"))
+
+	def _apply_dynamic_pricing(self):
+		"""تطبيق التسعير الديناميكي — Apply dynamic pricing rules to the rate.
+
+		Adjusts self.rate based on active Pricing Rules. Skips if the user
+		has manually set a rate and flagged skip_dynamic_pricing.
+		"""
+		if self.flags.get("skip_dynamic_pricing"):
+			return
+		if not self.space or not self.rate:
+			return
+
+		try:
+			from arkspace.arkspace_spaces.pricing_engine import (
+				calculate_dynamic_rate,
+			)
+		except ImportError:
+			return
+
+		space_doc = frappe.get_cached_doc("Co-working Space", self.space)
+
+		context = {
+			"base_rate": flt(self.rate),
+			"booking_type": self.booking_type,
+			"start_datetime": self.start_datetime,
+			"end_datetime": self.end_datetime,
+			"duration_hours": flt(self.duration_hours),
+			"space": self.space,
+			"space_type": space_doc.space_type if space_doc else "",
+			"member": self.member,
+		}
+
+		result = calculate_dynamic_rate(context)
+
+		if result.get("adjustments"):
+			self.rate = flt(result["final_rate"], 2)
+			# Store adjustment details as a comment for audit trail
+			adj_summary = ", ".join(
+				f"{a['rule_name']} ({a['change_pct']:+.1f}%)"
+				for a in result["adjustments"]
+				if "change_pct" in a
+			)
+			if adj_summary:
+				self.add_comment(
+					"Info",
+					_("Dynamic pricing applied: {0}").format(adj_summary),
+				)
 
 	def calculate_amounts(self):
 		"""حساب المبالغ — Calculate total and net amounts."""
@@ -111,4 +160,15 @@ class SpaceBooking(Document):
 				_("Space {0} is already booked for this time period (Booking: {1})").format(
 					self.space, conflicting
 				)
+			)
+
+	def _generate_qr_code(self):
+		"""توليد QR تلقائي عند تأكيد الحجز — Auto-generate QR on submit."""
+		try:
+			from arkspace.arkspace_spaces.qr_checkin import generate_booking_qr
+			generate_booking_qr(self.name)
+		except Exception:
+			frappe.log_error(
+				title=_("QR Generation Error"),
+				message=_("Failed to generate QR for booking {0}").format(self.name),
 			)

@@ -1,0 +1,126 @@
+{% extends "templates/web.html" %}
+
+{% block title %}{{ _("Events — الفعاليات") }}{% endblock %}
+
+{% block page_content %}
+<div class="container py-4">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2>📅 {{ _("Community Events") }}</h2>
+        {% if frappe.session.user != "Guest" %}
+        <a href="/app/community-event/new" class="btn btn-primary">
+            ➕ {{ _("Create Event / إنشاء فعالية") }}
+        </a>
+        {% endif %}
+    </div>
+
+    <!-- Upcoming Events -->
+    {% if upcoming_events %}
+    <h5 class="mb-3">{{ _("Upcoming Events / الفعاليات القادمة") }}</h5>
+    <div class="row">
+        {% for e in upcoming_events %}
+        <div class="col-md-4 mb-4">
+            <div class="card h-100 {% if e.is_featured %}border-primary{% endif %}">
+                {% if e.image %}
+                <img src="{{ e.image }}" class="card-img-top" style="height:180px;object-fit:cover">
+                {% endif %}
+                <div class="card-body">
+                    {% if e.is_featured %}
+                    <span class="badge badge-primary mb-2">⭐ {{ _("Featured") }}</span>
+                    {% endif %}
+                    <h5 class="card-title">{{ e.event_name }}</h5>
+                    <span class="badge badge-light">{{ e.event_type }}</span>
+                    {% if e.is_free %}
+                    <span class="badge badge-success">{{ _("Free") }}</span>
+                    {% else %}
+                    <span class="badge badge-warning">{{ frappe.utils.fmt_money(e.fee) }}</span>
+                    {% endif %}
+
+                    <p class="mt-2 mb-1">
+                        <strong>📅</strong> {{ frappe.utils.format_datetime(e.start_datetime, "d MMM YYYY, h:mm a") }}
+                    </p>
+                    {% if e.branch %}
+                    <p class="mb-1"><strong>📍</strong> {{ e.branch }}</p>
+                    {% endif %}
+                    <p class="mb-2">
+                        <strong>👥</strong> {{ e.current_attendees }}/{{ e.max_attendees }}
+                        {{ _("registered") }}
+                    </p>
+
+                    {% if e.description %}
+                    <p class="text-muted" style="max-height:60px;overflow:hidden">
+                        {{ e.description | striptags | truncate(100) }}
+                    </p>
+                    {% endif %}
+                </div>
+                <div class="card-footer">
+                    {% if frappe.session.user != "Guest" and e.status not in ["Full", "In Progress"] %}
+                    <button class="btn btn-primary btn-sm register-btn"
+                            data-event="{{ e.name }}"
+                            {% if e.current_attendees >= e.max_attendees %}disabled{% endif %}>
+                        {{ _("Register / تسجيل") }}
+                    </button>
+                    {% endif %}
+                    <small class="float-right text-muted">{{ e.organizer_name }}</small>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    {% else %}
+    <div class="text-center text-muted py-5">
+        <h4>{{ _("No upcoming events") }}</h4>
+        <p>{{ _("Check back later or create your own event!") }}</p>
+    </div>
+    {% endif %}
+
+    <!-- Past Events -->
+    {% if past_events %}
+    <h5 class="mt-4 mb-3">{{ _("Past Events / الفعاليات السابقة") }}</h5>
+    <div class="table-responsive">
+        <table class="table table-sm table-hover">
+            <thead>
+                <tr>
+                    <th>{{ _("Event") }}</th>
+                    <th>{{ _("Type") }}</th>
+                    <th>{{ _("Date") }}</th>
+                    <th>{{ _("Attendees") }}</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for e in past_events %}
+                <tr>
+                    <td>{{ e.event_name }}</td>
+                    <td>{{ e.event_type }}</td>
+                    <td>{{ frappe.utils.format_datetime(e.start_datetime, "d MMM YYYY") }}</td>
+                    <td>{{ e.current_attendees }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    {% endif %}
+</div>
+
+<script>
+frappe.ready(function () {
+    $(".register-btn").on("click", function () {
+        const event = $(this).data("event");
+        const btn = $(this);
+        frappe.call({
+            method: "arkspace.arkspace_community.community.register_for_event",
+            args: { event: event },
+            btn: btn,
+            callback(r) {
+                if (r.message && r.message.status === "registered") {
+                    frappe.show_alert({
+                        message: "{{ _('Registered successfully! / تم التسجيل بنجاح') }}",
+                        indicator: "green",
+                    });
+                    btn.prop("disabled", true).text("{{ _('Registered ✓') }}");
+                }
+            },
+        });
+    });
+});
+</script>
+{% endblock %}

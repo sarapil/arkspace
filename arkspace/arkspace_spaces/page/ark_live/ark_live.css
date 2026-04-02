@@ -1,0 +1,556 @@
+/* ═══════════════════════════════════════════════════
+   ARK Live — Interactive 2D Floor Plan Styles
+   عرض المخطط التفاعلي لمساحة العمل
+   ═══════════════════════════════════════════════════ */
+
+:root {
+	--ark-navy: #1B365D;
+	--ark-gold: #C4A962;
+	--ark-available: #10B981;
+	--ark-occupied: #EF4444;
+	--ark-confirmed: #F59E0B;
+	--ark-membership: #8B5CF6;
+	--ark-maintenance: #6B7280;
+	--ark-unmapped: rgba(150, 150, 150, 0.2);
+}
+
+/* ── Summary Bar ── */
+.ark-live-summary {
+	display: flex;
+	gap: 12px;
+	padding: 16px 0;
+	flex-wrap: wrap;
+}
+
+.ark-summary-card {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	padding: 14px 20px;
+	border-radius: 12px;
+	background: var(--card-bg, #fff);
+	border: 1px solid var(--border-color, #e2e8f0);
+	flex: 1;
+	min-width: 160px;
+	transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.ark-summary-card:hover {
+	transform: translateY(-2px);
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.ark-summary-card i {
+	font-size: 1.5rem;
+	opacity: 0.8;
+}
+
+.ark-summary-card.total i { color: var(--ark-navy); }
+.ark-summary-card.available i { color: var(--ark-available); }
+.ark-summary-card.occupied i { color: var(--ark-occupied); }
+.ark-summary-card.maintenance i { color: var(--ark-maintenance); }
+
+.ark-summary-info {
+	display: flex;
+	flex-direction: column;
+}
+
+.ark-summary-value {
+	font-size: 1.5rem;
+	font-weight: 700;
+	line-height: 1;
+	color: var(--text-color, #1a202c);
+}
+
+.ark-summary-label {
+	font-size: 0.75rem;
+	color: var(--text-muted, #718096);
+	margin-top: 2px;
+}
+
+/* ── Legend ── */
+.ark-live-legend {
+	display: flex;
+	align-items: center;
+	gap: 18px;
+	padding: 10px 16px;
+	background: var(--card-bg, #fff);
+	border-radius: 10px;
+	border: 1px solid var(--border-color, #e2e8f0);
+	margin-bottom: 16px;
+	flex-wrap: wrap;
+}
+
+.ark-legend-item {
+	display: flex;
+	align-items: center;
+	gap: 6px;
+	font-size: 0.8rem;
+	color: var(--text-muted, #718096);
+	white-space: nowrap;
+}
+
+.ark-dot {
+	width: 12px;
+	height: 12px;
+	border-radius: 50%;
+	display: inline-block;
+}
+
+.ark-dot.available { background: var(--ark-available); }
+.ark-dot.occupied { background: var(--ark-occupied); }
+.ark-dot.confirmed { background: var(--ark-confirmed); }
+.ark-dot.membership { background: var(--ark-membership); }
+.ark-dot.maintenance { background: var(--ark-maintenance); }
+
+.ark-legend-tip {
+	margin-left: auto;
+	font-size: 0.75rem;
+	color: var(--ark-gold);
+	display: flex;
+	align-items: center;
+	gap: 5px;
+}
+
+/* ── Floor Plan Container ── */
+.ark-live-plan-container {
+	position: relative;
+	background: var(--card-bg, #fff);
+	border-radius: 16px;
+	border: 2px solid var(--ark-navy);
+	overflow: hidden;
+	box-shadow: 0 8px 32px rgba(27, 54, 93, 0.12);
+	cursor: crosshair;
+}
+
+.ark-live-plan-container:fullscreen {
+	background: #0a0e1a;
+	border: none;
+	border-radius: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.ark-live-plan-img {
+	display: block;
+	width: 100%;
+	height: auto;
+	user-select: none;
+	-webkit-user-drag: none;
+}
+
+.ark-live-svg-overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	pointer-events: none;
+}
+
+/* ── SVG Zones ── */
+.ark-zone {
+	pointer-events: all;
+	cursor: pointer;
+	transition: opacity 0.2s;
+}
+
+.ark-zone polygon {
+	stroke-width: 0.15;
+	transition: fill 0.3s, stroke 0.3s, filter 0.3s;
+}
+
+.ark-zone:hover polygon {
+	filter: brightness(1.2);
+	stroke-width: 0.25;
+}
+
+.ark-zone.available polygon {
+	fill: rgba(16, 185, 129, 0.25);
+	stroke: var(--ark-available);
+}
+.ark-zone.available:hover polygon {
+	fill: rgba(16, 185, 129, 0.45);
+}
+
+.ark-zone.occupied polygon {
+	fill: rgba(239, 68, 68, 0.3);
+	stroke: var(--ark-occupied);
+}
+.ark-zone.occupied:hover polygon {
+	fill: rgba(239, 68, 68, 0.5);
+}
+
+.ark-zone.confirmed polygon {
+	fill: rgba(245, 158, 11, 0.3);
+	stroke: var(--ark-confirmed);
+}
+.ark-zone.confirmed:hover polygon {
+	fill: rgba(245, 158, 11, 0.5);
+}
+
+.ark-zone.membership polygon {
+	fill: rgba(139, 92, 246, 0.3);
+	stroke: var(--ark-membership);
+}
+.ark-zone.membership:hover polygon {
+	fill: rgba(139, 92, 246, 0.5);
+}
+
+.ark-zone.maintenance polygon {
+	fill: rgba(107, 114, 128, 0.3);
+	stroke: var(--ark-maintenance);
+	stroke-dasharray: 0.5, 0.3;
+}
+
+.ark-zone.unmapped polygon {
+	fill: var(--ark-unmapped);
+	stroke: rgba(150, 150, 150, 0.3);
+}
+.ark-zone.unmapped:hover polygon {
+	fill: rgba(150, 150, 150, 0.35);
+}
+
+/* Zone text */
+.ark-zone-label {
+	fill: var(--ark-navy);
+	font-weight: 700;
+	font-family: 'Inter', -apple-system, sans-serif;
+	pointer-events: none;
+	text-shadow: 0 0 3px rgba(255,255,255,0.9);
+	paint-order: stroke;
+	stroke: rgba(255,255,255,0.7);
+	stroke-width: 0.15;
+}
+
+.ark-zone-status {
+	fill: var(--text-muted, #555);
+	font-family: 'Inter', -apple-system, sans-serif;
+	pointer-events: none;
+}
+
+.ark-zone-member {
+	fill: var(--ark-navy);
+	font-family: 'Inter', -apple-system, sans-serif;
+	font-weight: 600;
+	pointer-events: none;
+}
+
+/* Pulsing animation for occupied zones */
+.ark-zone.occupied polygon,
+.ark-zone.confirmed polygon {
+	animation: ark-pulse 2s ease-in-out infinite;
+}
+
+@keyframes ark-pulse {
+	0%, 100% { opacity: 1; }
+	50% { opacity: 0.7; }
+}
+
+/* ── Tooltip ── */
+.ark-live-tooltip {
+	position: fixed;
+	z-index: 10000;
+	background: var(--ark-navy);
+	color: #fff;
+	padding: 12px 16px;
+	border-radius: 10px;
+	min-width: 200px;
+	max-width: 320px;
+	box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+	pointer-events: none;
+	animation: ark-tt-in 0.15s ease-out;
+	font-size: 0.85rem;
+	border: 1px solid var(--ark-gold);
+}
+
+@keyframes ark-tt-in {
+	from { opacity: 0; transform: translateY(5px); }
+	to { opacity: 1; transform: translateY(0); }
+}
+
+.ark-tt-title {
+	font-size: 1rem;
+	font-weight: 700;
+	margin-bottom: 4px;
+	color: var(--ark-gold);
+}
+
+.ark-tt-type {
+	font-size: 0.75rem;
+	opacity: 0.8;
+	margin-bottom: 6px;
+}
+
+.ark-tt-status {
+	display: inline-block;
+	padding: 2px 10px;
+	border-radius: 20px;
+	font-size: 0.7rem;
+	font-weight: 600;
+	margin-bottom: 6px;
+}
+
+.ark-tt-status.status-available { background: var(--ark-available); }
+.ark-tt-status.status-occupied { background: var(--ark-occupied); }
+.ark-tt-status.status-confirmed { background: var(--ark-confirmed); }
+.ark-tt-status.status-membership { background: var(--ark-membership); }
+.ark-tt-status.status-maintenance { background: var(--ark-maintenance); }
+
+.ark-tt-member, .ark-tt-dates {
+	font-size: 0.75rem;
+	margin-top: 4px;
+	opacity: 0.9;
+}
+
+.ark-tt-member i, .ark-tt-dates i {
+	width: 14px;
+	margin-right: 4px;
+	opacity: 0.7;
+}
+
+/* ── Detail Panel ── */
+.ark-live-detail-panel {
+	position: fixed;
+	top: var(--navbar-height, 60px);
+	right: -420px;
+	width: 400px;
+	height: calc(100vh - var(--navbar-height, 60px));
+	background: var(--card-bg, #fff);
+	border-left: 2px solid var(--ark-navy);
+	box-shadow: -8px 0 32px rgba(0, 0, 0, 0.12);
+	z-index: 1050;
+	overflow-y: auto;
+	transition: right 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.ark-live-detail-panel.open {
+	right: 0;
+}
+
+.ark-detail-header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 16px 20px;
+	background: var(--ark-navy);
+	color: #fff;
+	position: sticky;
+	top: 0;
+	z-index: 1;
+}
+
+.ark-detail-header h3 {
+	margin: 0;
+	font-size: 1.1rem;
+	font-weight: 700;
+	color: var(--ark-gold);
+}
+
+.ark-detail-close {
+	background: none;
+	border: none;
+	color: #fff;
+	font-size: 1.2rem;
+	cursor: pointer;
+	padding: 4px 8px;
+	border-radius: 6px;
+	transition: background 0.2s;
+}
+
+.ark-detail-close:hover {
+	background: rgba(255, 255, 255, 0.15);
+}
+
+.ark-detail-body {
+	padding: 20px;
+}
+
+.ark-detail-status {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	padding: 12px 16px;
+	border-radius: 10px;
+	font-weight: 600;
+	font-size: 0.9rem;
+	margin-bottom: 16px;
+}
+
+.ark-detail-status.available {
+	background: rgba(16, 185, 129, 0.1);
+	color: var(--ark-available);
+	border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.ark-detail-status.occupied {
+	background: rgba(239, 68, 68, 0.1);
+	color: var(--ark-occupied);
+	border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.ark-detail-status.confirmed {
+	background: rgba(245, 158, 11, 0.1);
+	color: var(--ark-confirmed);
+	border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+.ark-detail-status.membership {
+	background: rgba(139, 92, 246, 0.1);
+	color: var(--ark-membership);
+	border: 1px solid rgba(139, 92, 246, 0.3);
+}
+
+.ark-detail-status.maintenance {
+	background: rgba(107, 114, 128, 0.1);
+	color: var(--ark-maintenance);
+	border: 1px solid rgba(107, 114, 128, 0.3);
+}
+
+.ark-detail-info {
+	margin-bottom: 16px;
+}
+
+.ark-detail-row {
+	display: flex;
+	justify-content: space-between;
+	padding: 8px 0;
+	border-bottom: 1px solid var(--border-color, #e2e8f0);
+	font-size: 0.85rem;
+}
+
+.ark-detail-key {
+	color: var(--text-muted, #718096);
+}
+
+.ark-detail-val {
+	font-weight: 600;
+	color: var(--text-color, #1a202c);
+}
+
+.ark-detail-section {
+	margin-top: 20px;
+}
+
+.ark-detail-section h4 {
+	font-size: 0.9rem;
+	font-weight: 700;
+	color: var(--ark-navy);
+	margin-bottom: 12px;
+	display: flex;
+	align-items: center;
+	gap: 8px;
+}
+
+.ark-detail-occupant {
+	background: rgba(27, 54, 93, 0.04);
+	padding: 12px;
+	border-radius: 10px;
+	border: 1px solid rgba(27, 54, 93, 0.1);
+}
+
+.ark-detail-booking-card {
+	padding: 10px 12px;
+	background: var(--control-bg, #f7f8f9);
+	border-radius: 8px;
+	margin-bottom: 8px;
+	border-left: 3px solid var(--ark-gold);
+}
+
+.ark-booking-member {
+	font-weight: 600;
+	font-size: 0.85rem;
+	color: var(--text-color);
+}
+
+.ark-booking-time {
+	font-size: 0.75rem;
+	color: var(--text-muted);
+	margin-top: 2px;
+}
+
+.ark-booking-status {
+	display: inline-block;
+	padding: 1px 8px;
+	border-radius: 10px;
+	font-size: 0.65rem;
+	font-weight: 600;
+	color: #fff;
+	margin-top: 4px;
+}
+
+.ark-booking-status.confirmed { background: var(--ark-confirmed); }
+.ark-booking-status.pending { background: var(--ark-maintenance); }
+
+.ark-detail-actions {
+	margin-top: 24px;
+	display: flex;
+	gap: 10px;
+}
+
+.ark-detail-actions .btn {
+	flex: 1;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 6px;
+	border-radius: 8px;
+	font-weight: 600;
+}
+
+.ark-btn-book {
+	background: var(--ark-navy) !important;
+	border-color: var(--ark-navy) !important;
+}
+
+.ark-btn-book:hover {
+	background: #14284a !important;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+	.ark-live-summary {
+		gap: 8px;
+	}
+
+	.ark-summary-card {
+		min-width: 130px;
+		padding: 10px 14px;
+	}
+
+	.ark-live-detail-panel {
+		width: 100%;
+		right: -100%;
+	}
+
+	.ark-live-legend {
+		gap: 10px;
+	}
+
+	.ark-legend-tip {
+		display: none;
+	}
+}
+
+/* ── Dark Mode Support ── */
+[data-theme="dark"] .ark-live-plan-container {
+	border-color: var(--ark-gold);
+}
+
+[data-theme="dark"] .ark-zone-label {
+	fill: #fff;
+	stroke: rgba(0,0,0,0.7);
+}
+
+[data-theme="dark"] .ark-zone-status {
+	fill: #ccc;
+}
+
+[data-theme="dark"] .ark-zone-member {
+	fill: var(--ark-gold);
+}
+
+[data-theme="dark"] .ark-live-tooltip {
+	background: #1a1a2e;
+}

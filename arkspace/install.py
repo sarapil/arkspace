@@ -7,7 +7,7 @@ import frappe
 from frappe import _
 
 
-def after_install():
+def after_install(app_name=None):
     """Post-installation setup."""
     _create_roles()
     _create_default_space_types()
@@ -26,6 +26,32 @@ def after_install():
         except Exception as e:
             frappe.log_error(f"ARKSpace seed data error: {e}", "ARKSpace Install")
             print(f"⚠️  Sample data seeding skipped: {e}")
+
+
+def before_uninstall(app_name=None):
+    """v16: Cleanup before app uninstall — remove custom fields and fixtures."""
+    _remove_custom_fields()
+    _remove_fixtures()
+
+
+def _remove_custom_fields():
+    """Remove Custom Fields added by ARKSpace on Sales Invoice."""
+    for fieldname in ("arkspace_section", "arkspace_booking", "arkspace_membership"):
+        if frappe.db.exists("Custom Field", {"dt": "Sales Invoice", "fieldname": fieldname}):
+            frappe.delete_doc("Custom Field", f"Sales Invoice-{fieldname}", force=True)
+
+
+def _remove_fixtures():
+    """Remove workflows, notifications, charts created by ARKSpace."""
+    for wf in ("Space Booking Approval", "Membership Lifecycle", "Lead Pipeline"):
+        if frappe.db.exists("Workflow", wf):
+            frappe.delete_doc("Workflow", wf, force=True)
+
+    for chart in frappe.get_all("Dashboard Chart", filters={"name": ["like", "ARKSpace%"]}, pluck="name"):
+        frappe.delete_doc("Dashboard Chart", chart, force=True)
+
+    for notif in frappe.get_all("Notification", filters={"name": ["like", "ARKSpace%"]}, pluck="name"):
+        frappe.delete_doc("Notification", notif, force=True)
 
 
 def _create_roles():

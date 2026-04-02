@@ -2,11 +2,11 @@
 # For license information, please see license.txt
 
 import frappe
-from frappe.tests.utils import FrappeTestCase
+from arkspace.tests.compat import ARKSpaceTestCase
 from frappe.utils import add_days, today
 
 
-class TestPaymentReceipt(FrappeTestCase):
+class TestPaymentReceipt(ARKSpaceTestCase):
     """Test cases for Payment Receipt DocType."""
 
     def _get_customer(self):

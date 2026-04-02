@@ -1,0 +1,152 @@
+{
+    "pack_name": "arkspace_core",
+    "pack_label": "ARKSpace — Co-Working Space Management",
+    "version": "1.0.0",
+    "app": "arkspace",
+
+    "capabilities": [
+        {"name": "AS:module:dashboard",        "label": "View Dashboard",          "category": "Module"},
+        {"name": "AS:module:spaces",           "label": "Manage Spaces",           "category": "Module"},
+        {"name": "AS:module:bookings",         "label": "Manage Bookings",         "category": "Module"},
+        {"name": "AS:module:memberships",      "label": "Manage Memberships",      "category": "Module"},
+        {"name": "AS:module:billing",          "label": "View Billing",            "category": "Module"},
+        {"name": "AS:module:crm",             "label": "CRM & Leads",             "category": "Module"},
+        {"name": "AS:module:community",        "label": "Community Module",         "category": "Module"},
+        {"name": "AS:module:marketplace",      "label": "ARKANOOR Marketplace",    "category": "Module"},
+        {"name": "AS:module:analytics",        "label": "Analytics & Reports",     "category": "Module"},
+        {"name": "AS:module:settings",         "label": "App Settings",            "category": "Module"},
+
+        {"name": "AS:action:create_booking",   "label": "Create Booking",          "category": "Action"},
+        {"name": "AS:action:approve_booking",  "label": "Approve/Reject Booking",  "category": "Action"},
+        {"name": "AS:action:checkin_member",   "label": "Check In Member",         "category": "Action"},
+        {"name": "AS:action:checkout_member",  "label": "Check Out Member",        "category": "Action"},
+        {"name": "AS:action:cancel_booking",   "label": "Cancel Booking",          "category": "Action"},
+        {"name": "AS:action:create_membership","label": "Create Membership",       "category": "Action"},
+        {"name": "AS:action:renew_membership", "label": "Renew Membership",        "category": "Action"},
+        {"name": "AS:action:issue_day_pass",   "label": "Issue Day Pass",          "category": "Action"},
+        {"name": "AS:action:manage_visitors",  "label": "Manage Visitors",         "category": "Action"},
+        {"name": "AS:action:manage_spaces",    "label": "Create/Edit Spaces",      "category": "Action"},
+        {"name": "AS:action:manage_pricing",   "label": "Manage Pricing Rules",    "category": "Action"},
+        {"name": "AS:action:manage_events",    "label": "Create Community Events",  "category": "Action"},
+        {"name": "AS:action:export_reports",   "label": "Export Reports",          "category": "Action"},
+        {"name": "AS:action:manage_contracts", "label": "Manage Contracts",        "category": "Action"},
+        {"name": "AS:action:manage_leads",     "label": "Manage Workspace Leads",  "category": "Action"},
+
+        {"name": "AS:field:view_cost_data",    "label": "View Cost Data",          "category": "Field"},
+        {"name": "AS:field:view_revenue",      "label": "View Revenue Data",       "category": "Field"},
+        {"name": "AS:field:view_member_contact","label": "View Member Contact Info","category": "Field"},
+        {"name": "AS:field:view_pricing",      "label": "View Internal Pricing",   "category": "Field"},
+
+        {"name": "AS:report:revenue_summary",  "label": "Revenue Summary Report",  "category": "Report"},
+        {"name": "AS:report:occupancy",        "label": "Occupancy Report",        "category": "Report"},
+        {"name": "AS:report:member_activity",  "label": "Member Activity Report",  "category": "Report"},
+        {"name": "AS:report:booking_analytics","label": "Booking Analytics",       "category": "Report"}
+    ],
+
+    "bundles": [
+        {
+            "name": "AS:bundle:admin",
+            "bundle_label": "ARKSpace Full Admin",
+            "items": [
+                "AS:module:dashboard", "AS:module:spaces", "AS:module:bookings",
+                "AS:module:memberships", "AS:module:billing", "AS:module:crm",
+                "AS:module:community", "AS:module:marketplace", "AS:module:analytics",
+                "AS:module:settings",
+                "AS:action:create_booking", "AS:action:approve_booking",
+                "AS:action:checkin_member", "AS:action:checkout_member",
+                "AS:action:cancel_booking", "AS:action:create_membership",
+                "AS:action:renew_membership", "AS:action:issue_day_pass",
+                "AS:action:manage_visitors", "AS:action:manage_spaces",
+                "AS:action:manage_pricing", "AS:action:manage_events",
+                "AS:action:export_reports", "AS:action:manage_contracts",
+                "AS:action:manage_leads",
+                "AS:field:view_cost_data", "AS:field:view_revenue",
+                "AS:field:view_member_contact", "AS:field:view_pricing",
+                "AS:report:revenue_summary", "AS:report:occupancy",
+                "AS:report:member_activity", "AS:report:booking_analytics"
+            ]
+        },
+        {
+            "name": "AS:bundle:manager",
+            "bundle_label": "ARKSpace Branch Manager",
+            "items": [
+                "AS:module:dashboard", "AS:module:spaces", "AS:module:bookings",
+                "AS:module:memberships", "AS:module:billing", "AS:module:crm",
+                "AS:module:community", "AS:module:analytics",
+                "AS:action:create_booking", "AS:action:approve_booking",
+                "AS:action:checkin_member", "AS:action:checkout_member",
+                "AS:action:cancel_booking", "AS:action:create_membership",
+                "AS:action:renew_membership", "AS:action:issue_day_pass",
+                "AS:action:manage_visitors", "AS:action:manage_events",
+                "AS:action:export_reports", "AS:action:manage_leads",
+                "AS:field:view_revenue", "AS:field:view_member_contact",
+                "AS:report:revenue_summary", "AS:report:occupancy",
+                "AS:report:member_activity", "AS:report:booking_analytics"
+            ]
+        },
+        {
+            "name": "AS:bundle:front_desk",
+            "bundle_label": "ARKSpace Front Desk",
+            "items": [
+                "AS:module:dashboard", "AS:module:spaces", "AS:module:bookings",
+                "AS:module:memberships",
+                "AS:action:create_booking", "AS:action:checkin_member",
+                "AS:action:checkout_member", "AS:action:issue_day_pass",
+                "AS:action:manage_visitors",
+                "AS:field:view_member_contact",
+                "AS:report:occupancy"
+            ]
+        },
+        {
+            "name": "AS:bundle:operations",
+            "bundle_label": "ARKSpace Operations",
+            "items": [
+                "AS:module:dashboard", "AS:module:spaces", "AS:module:bookings",
+                "AS:module:community",
+                "AS:action:create_booking", "AS:action:checkin_member",
+                "AS:action:checkout_member", "AS:action:issue_day_pass",
+                "AS:action:manage_visitors", "AS:action:manage_events",
+                "AS:field:view_member_contact",
+                "AS:report:occupancy", "AS:report:member_activity"
+            ]
+        },
+        {
+            "name": "AS:bundle:member",
+            "bundle_label": "ARKSpace Member (Self-Service)",
+            "items": [
+                "AS:module:dashboard", "AS:module:bookings",
+                "AS:module:memberships", "AS:module:community",
+                "AS:module:marketplace",
+                "AS:action:create_booking"
+            ]
+        }
+    ],
+
+    "field_maps": [
+        {"doctype_name": "Space Booking",   "fieldname": "total_amount",    "capability": "AS:field:view_cost_data",     "behavior": "mask"},
+        {"doctype_name": "Space Booking",   "fieldname": "discount_amount", "capability": "AS:field:view_cost_data",     "behavior": "mask"},
+        {"doctype_name": "Membership",      "fieldname": "total_amount",    "capability": "AS:field:view_revenue",       "behavior": "mask"},
+        {"doctype_name": "Membership",      "fieldname": "monthly_amount",  "capability": "AS:field:view_revenue",       "behavior": "mask"},
+        {"doctype_name": "Co-working Space","fieldname": "hourly_rate",     "capability": "AS:field:view_pricing",       "behavior": "hide"},
+        {"doctype_name": "Co-working Space","fieldname": "daily_rate",      "capability": "AS:field:view_pricing",       "behavior": "hide"},
+        {"doctype_name": "Co-working Space","fieldname": "monthly_rate",    "capability": "AS:field:view_pricing",       "behavior": "hide"},
+        {"doctype_name": "Analytics Snapshot","fieldname": "revenue_amount", "capability": "AS:field:view_revenue",      "behavior": "mask"}
+    ],
+
+    "action_maps": [
+        {"doctype_name": "Space Booking", "action_id": "approve_booking",  "capability": "AS:action:approve_booking",  "action_type": "workflow", "fallback_behavior": "hide"},
+        {"doctype_name": "Space Booking", "action_id": "cancel_booking",   "capability": "AS:action:cancel_booking",   "action_type": "button",   "fallback_behavior": "hide"},
+        {"doctype_name": "Space Booking", "action_id": "checkin",          "capability": "AS:action:checkin_member",   "action_type": "button",   "fallback_behavior": "hide"},
+        {"doctype_name": "Space Booking", "action_id": "checkout",         "capability": "AS:action:checkout_member",  "action_type": "button",   "fallback_behavior": "hide"},
+        {"doctype_name": "Membership",    "action_id": "renew",            "capability": "AS:action:renew_membership", "action_type": "button",   "fallback_behavior": "hide"},
+        {"doctype_name": "Co-working Space","action_id": "manage_pricing", "capability": "AS:action:manage_pricing",   "action_type": "button",   "fallback_behavior": "hide"}
+    ],
+
+    "role_maps": [
+        {"role": "ARKSpace Admin",      "bundle": "AS:bundle:admin"},
+        {"role": "ARKSpace Manager",    "bundle": "AS:bundle:manager"},
+        {"role": "ARKSpace Front Desk", "bundle": "AS:bundle:front_desk"},
+        {"role": "ARKSpace Operations", "bundle": "AS:bundle:operations"},
+        {"role": "ARKSpace Member",     "bundle": "AS:bundle:member"}
+    ]
+}

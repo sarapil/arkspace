@@ -2,11 +2,11 @@
 # See license.txt
 
 import frappe
-from frappe.tests.utils import FrappeTestCase
+from arkspace.tests.compat import ARKSpaceTestCase
 from frappe.utils import today, add_months, flt, getdate
 
 
-class TestMembership(FrappeTestCase):
+class TestMembership(ARKSpaceTestCase):
 	"""Test cases for Membership DocType."""
 
 	def setUp(self):

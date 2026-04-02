@@ -28,6 +28,8 @@ No description provided.
 | status | Select | Status |
 | checked_in_at | Datetime | Checked In At |
 | checked_out_at | Datetime | Checked Out At |
+| qr_code | Attach Image | QR Code |
+| qr_token | Data | QR Token |
 | sales_invoice | Link | Sales Invoice |
 | amended_from | Link | Amended From |
 
@@ -48,4 +50,4 @@ records = frappe.get_all("Space Booking")
 _Add related DocTypes here_
 
 ---
-*Last updated: 2026-02-15 16:25:09.024826*
+*Last updated: 2026-03-21 11:34:33.681188*

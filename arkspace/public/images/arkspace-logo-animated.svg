@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="ng" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1B365D"/>
+      <stop offset="100%" stop-color="#2A4A7F"/>
+    </linearGradient>
+    <linearGradient id="gg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#C4A962"/>
+      <stop offset="100%" stop-color="#A38B4C"/>
+    </linearGradient>
+    <linearGradient id="gs" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#D4BC78"/>
+      <stop offset="50%" stop-color="#C4A962"/>
+      <stop offset="100%" stop-color="#A38B4C"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background circle with subtle pulse -->
+  <circle cx="256" cy="256" r="240" fill="url(#ng)">
+    <animate attributeName="r" values="238;240;238" dur="3s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- Outer ring with rotating dash effect -->
+  <circle cx="256" cy="256" r="240" fill="none" stroke="url(#gg)" stroke-width="6"
+          stroke-dasharray="40 20" stroke-dashoffset="0">
+    <animate attributeName="stroke-dashoffset" from="0" to="-60" dur="4s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- Main arch — draws in on load -->
+  <path d="M 256 88 L 152 340 L 180 340 L 224 220 L 288 220 L 332 340 L 360 340 Z"
+        fill="url(#gs)" opacity="0">
+    <animate attributeName="opacity" from="0" to="0.95" dur="0.8s" begin="0.2s" fill="freeze"/>
+  </path>
+
+  <!-- Crossbar -->
+  <rect x="208" y="260" width="96" height="20" rx="4" fill="#1B365D" opacity="0">
+    <animate attributeName="opacity" from="0" to="0.9" dur="0.5s" begin="0.7s" fill="freeze"/>
+  </rect>
+
+  <!-- Building windows — appear one by one -->
+  <!-- Row 1 -->
+  <rect x="160" y="340" width="36" height="44" rx="4" fill="url(#gs)" opacity="0">
+    <animate attributeName="opacity" from="0" to="0.85" dur="0.3s" begin="1.0s" fill="freeze"/>
+  </rect>
+  <rect x="206" y="340" width="36" height="44" rx="4" fill="url(#gs)" opacity="0">
+    <animate attributeName="opacity" from="0" to="0.90" dur="0.3s" begin="1.15s" fill="freeze"/>
+  </rect>
+  <rect x="270" y="340" width="36" height="44" rx="4" fill="url(#gs)" opacity="0">
+    <animate attributeName="opacity" from="0" to="0.90" dur="0.3s" begin="1.3s" fill="freeze"/>
+  </rect>
+  <rect x="316" y="340" width="36" height="44" rx="4" fill="url(#gs)" opacity="0">
+    <animate attributeName="opacity" from="0" to="0.85" dur="0.3s" begin="1.45s" fill="freeze"/>
+  </rect>
+
+  <!-- Row 2 -->
+  <rect x="160" y="394" width="36" height="44" rx="4" fill="url(#gs)" opacity="0">
+    <animate attributeName="opacity" from="0" to="0.75" dur="0.3s" begin="1.6s" fill="freeze"/>
+  </rect>
+  <rect x="206" y="394" width="36" height="44" rx="4" fill="url(#gs)" opacity="0">
+    <animate attributeName="opacity" from="0" to="0.80" dur="0.3s" begin="1.75s" fill="freeze"/>
+  </rect>
+  <rect x="270" y="394" width="36" height="44" rx="4" fill="url(#gs)" opacity="0">
+    <animate attributeName="opacity" from="0" to="0.80" dur="0.3s" begin="1.9s" fill="freeze"/>
+  </rect>
+  <rect x="316" y="394" width="36" height="44" rx="4" fill="url(#gs)" opacity="0">
+    <animate attributeName="opacity" from="0" to="0.75" dur="0.3s" begin="2.05s" fill="freeze"/>
+  </rect>
+
+  <!-- Window glow effect — lights turning on -->
+  <rect x="206" y="340" width="36" height="44" rx="4" fill="#FFD700" opacity="0">
+    <animate attributeName="opacity" values="0;0.3;0" dur="2s" begin="3s" repeatCount="indefinite"/>
+  </rect>
+  <rect x="316" y="394" width="36" height="44" rx="4" fill="#FFD700" opacity="0">
+    <animate attributeName="opacity" values="0;0.25;0" dur="2.5s" begin="3.5s" repeatCount="indefinite"/>
+  </rect>
+  <rect x="160" y="394" width="36" height="44" rx="4" fill="#FFD700" opacity="0">
+    <animate attributeName="opacity" values="0;0.2;0" dur="3s" begin="4s" repeatCount="indefinite"/>
+  </rect>
+
+  <!-- Base line -->
+  <rect x="144" y="444" width="224" height="8" rx="4" fill="url(#gg)" opacity="0">
+    <animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="2.2s" fill="freeze"/>
+    <animate attributeName="width" from="0" to="224" dur="0.6s" begin="2.2s" fill="freeze"/>
+  </rect>
+
+  <!-- Diamond at peak — sparkle -->
+  <polygon points="256,72 264,84 256,96 248,84" fill="#C4A962" opacity="0">
+    <animate attributeName="opacity" values="0;0.9;0.5;0.9" dur="2s" begin="0.1s" repeatCount="indefinite"/>
+  </polygon>
+</svg>

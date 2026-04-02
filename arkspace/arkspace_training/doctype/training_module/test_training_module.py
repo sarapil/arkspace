@@ -2,10 +2,10 @@
 # For license information, please see license.txt
 
 import frappe
-from frappe.tests.utils import FrappeTestCase
+from arkspace.tests.compat import ARKSpaceTestCase
 
 
-class TestTrainingModule(FrappeTestCase):
+class TestTrainingModule(ARKSpaceTestCase):
 	"""Test cases for Training Module DocType."""
 
 	def _make_module(self, **kwargs):
@@ -39,7 +39,7 @@ class TestTrainingModule(FrappeTestCase):
 		mod.insert()
 
 		# Create a session linked to this module
-		session = frappe.get_doc({
+		frappe.get_doc({
 			"doctype": "Training Session",
 			"title": f"Session {frappe.generate_hash(length=6)}",
 			"training_module": mod.name,

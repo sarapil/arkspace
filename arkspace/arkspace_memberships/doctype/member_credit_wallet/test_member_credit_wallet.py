@@ -2,11 +2,11 @@
 # See license.txt
 
 import frappe
-from frappe.tests.utils import FrappeTestCase
+from arkspace.tests.compat import ARKSpaceTestCase
 from frappe.utils import flt
 
 
-class TestMemberCreditWallet(FrappeTestCase):
+class TestMemberCreditWallet(ARKSpaceTestCase):
 	"""Test cases for Member Credit Wallet DocType."""
 
 	def _get_or_create_customer(self, suffix=""):

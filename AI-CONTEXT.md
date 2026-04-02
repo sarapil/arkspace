@@ -1,17 +1,34 @@
 # 🤖 AI Context — ARKSpace v5.0
 
-> Auto-generated: 2026-02-15 02:01:00.013403
+> Auto-generated: 2026-04-02 02:01:03.901150
 
 ## Quick Stats
-- DocTypes: 22
-- APIs: 25
+- DocTypes: 37
+- APIs: 112
 
 
 ## DocTypes Overview
 
 
+### ARKSpace Community
+
+- `Community Event`
+- `Community Post`
+- `Member Skill`
+- `Networking Request`
+
+### ARKSpace Contracts
+
+- `Contract Legal Document`
+- `Contract Template`
+- `Legal Document`
+- `Member Contract`
+- `Payment Receipt`
+
 ### ARKSpace Core
 
+- `Analytics Snapshot`
+- `ARKSpace Branch`
 - `ARKSpace Settings`
 
 ### ARKSpace CRM
@@ -30,6 +47,10 @@
 - `Documentation Prerequisite`
 - `Documentation Relation`
 
+### ARKSpace Integrations
+
+- `Online Payment`
+
 ### ARKSpace Memberships
 
 - `Credit Transaction`
@@ -41,10 +62,13 @@
 
 - `Amenity`
 - `Co-working Space`
+- `Day Pass`
+- `Pricing Rule`
 - `Space Amenity`
 - `Space Booking`
 - `Space Image`
 - `Space Type`
+- `Visitor Log`
 
 ### ARKSpace Training
 

@@ -2,11 +2,11 @@
 # For license information, please see license.txt
 
 import frappe
-from frappe.tests.utils import FrappeTestCase
+from arkspace.tests.compat import ARKSpaceTestCase
 from frappe.utils import today, getdate
 
 
-class TestUserTrainingProgress(FrappeTestCase):
+class TestUserTrainingProgress(ARKSpaceTestCase):
 	"""Test cases for User Training Progress DocType."""
 
 	def setUp(self):
@@ -18,7 +18,7 @@ class TestUserTrainingProgress(FrappeTestCase):
 		"""Create a real User record for link validation."""
 		email = f"{prefix}_{frappe.generate_hash(length=4)}@test.com"
 		if not frappe.db.exists("User", email):
-			user = frappe.get_doc({
+			frappe.get_doc({
 				"doctype": "User",
 				"email": email,
 				"first_name": f"Test {prefix}",

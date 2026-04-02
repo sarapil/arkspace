@@ -1,0 +1,22 @@
+{
+ "content": null,
+ "creation": "2026-03-21 00:00:00.000000",
+ "doctype": "Page",
+ "icon": "fa-solid fa-compass",
+ "modified": "2026-03-21 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "ARKSpace Core",
+ "name": "ark-command",
+ "owner": "Administrator",
+ "page_name": "ark-command",
+ "roles": [
+  {"role": "System Manager"},
+  {"role": "ARKSpace Admin"},
+  {"role": "ARKSpace Manager"},
+  {"role": "ARKSpace Operations"},
+  {"role": "ARKSpace Front Desk"}
+ ],
+ "standard": "Yes",
+ "system_page": 0,
+ "title": "ARK Command Center"
+}

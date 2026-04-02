@@ -2,10 +2,10 @@
 # See license.txt
 
 import frappe
-from frappe.tests.utils import FrappeTestCase
+from arkspace.tests.compat import ARKSpaceTestCase
 
 
-class TestArkspaceAPI(FrappeTestCase):
+class TestArkspaceAPI(ARKSpaceTestCase):
 	"""Test cases for ARKSpace API endpoints."""
 
 	def test_ping(self):
@@ -13,7 +13,7 @@ class TestArkspaceAPI(FrappeTestCase):
 		from arkspace.api import ping
 		result = ping()
 		self.assertEqual(result["app"], "arkspace")
-		self.assertEqual(result["version"], "5.0.0")
+		self.assertEqual(result["version"], "6.0.0")
 		self.assertEqual(result["status"], "ok")
 
 	def test_get_dashboard_stats(self):

@@ -9,7 +9,7 @@ Wired via hooks.py scheduler_events.
 
 import frappe
 from frappe import _
-from frappe.utils import add_days, getdate, now_datetime, nowdate
+from frappe.utils import add_days, add_to_date, getdate, now_datetime, nowdate
 
 
 def check_membership_expiry():
@@ -254,3 +254,156 @@ def generate_daily_occupancy_snapshot():
 
 	# Publish for any connected dashboards
 	frappe.publish_realtime("occupancy_snapshot", snapshot)
+
+
+# ─────────────────── Online Payments ─────────────────────────────────────
+
+def expire_stale_online_payments():
+	"""Mark old Initiated/Pending payments as Expired.
+
+	Runs hourly. Uses the payment_link_expiry_hours from ARKSpace Settings
+	(default 24 hours).
+	"""
+	try:
+		settings = frappe.get_cached_doc("ARKSpace Settings")
+		expiry_hours = int(getattr(settings, "payment_link_expiry_hours", 24) or 24)
+	except Exception:
+		expiry_hours = 24
+
+	cutoff = add_to_date(now_datetime(), hours=-expiry_hours)
+
+	stale = frappe.get_all(
+		"Online Payment",
+		filters={
+			"status": ["in", ["Initiated", "Pending"]],
+			"initiated_at": ["<", cutoff],
+		},
+		pluck="name",
+	)
+
+	for name in stale:
+		frappe.db.set_value("Online Payment", name, {
+			"status": "Expired",
+			"expires_at": now_datetime(),
+		})
+
+	if stale:
+		frappe.db.commit()
+		frappe.logger("arkspace").info(f"Expired {len(stale)} stale online payments")
+
+
+def bulk_generate_booking_qr_codes():
+	"""توليد QR لجميع حجوزات اليوم — Generate QR codes for today's bookings.
+
+	Runs daily to ensure all confirmed bookings have QR codes
+	ready for check-in.
+	"""
+	try:
+		from arkspace.arkspace_spaces.qr_checkin import bulk_generate_qr
+		result = bulk_generate_qr()
+		if result and result.get("generated"):
+			frappe.logger("arkspace").info(
+				f"Bulk QR: generated {result['generated']} QR codes"
+			)
+	except Exception:
+		frappe.log_error(
+			title="Bulk QR Generation Error",
+			message=frappe.get_traceback(),
+		)
+
+
+def expire_day_passes():
+	"""انتهاء تصاريح الأيام السابقة — Expire past-date day passes.
+
+	Runs daily. Marks Active day passes from previous days as Expired.
+	"""
+	settings = frappe.get_cached_doc("ARKSpace Settings")
+	if not settings.get("day_pass_auto_expire"):
+		return
+
+	today = nowdate()
+	stale = frappe.get_all(
+		"Day Pass",
+		filters={
+			"docstatus": 1,
+			"status": "Active",
+			"pass_date": ["<", today],
+		},
+		pluck="name",
+	)
+
+	for name in stale:
+		frappe.db.set_value("Day Pass", name, "status", "Expired")
+
+	if stale:
+		frappe.db.commit()
+		frappe.logger("arkspace").info(f"Expired {len(stale)} day passes")
+
+
+def auto_checkout_day_passes():
+	"""خروج تلقائي لتصاريح اليوم — Auto-checkout checked-in day passes past end time.
+
+	Runs hourly. If a day pass is still Checked In and the current time
+	is past the end_time (or 20:00 default), auto check-out.
+	"""
+	from frappe.utils import get_time
+
+	now = now_datetime()
+	today = nowdate()
+	current_time = now.time()
+	default_end = get_time("20:00:00")
+
+	checked_in = frappe.get_all(
+		"Day Pass",
+		filters={
+			"docstatus": 1,
+			"status": "Checked In",
+			"pass_date": today,
+		},
+		fields=["name", "end_time"],
+	)
+
+	count = 0
+	for dp in checked_in:
+		end = get_time(dp.end_time) if dp.end_time else default_end
+		if current_time > end:
+			try:
+				doc = frappe.get_doc("Day Pass", dp.name)
+				doc.check_out()
+				count += 1
+			except Exception:
+				frappe.log_error(
+					title="Day Pass Auto-Checkout Error",
+					message=f"Failed to auto-checkout {dp.name}",
+				)
+
+	if count:
+		frappe.logger("arkspace").info(f"Auto-checked-out {count} day passes")
+
+
+def capture_analytics_snapshot():
+	"""يومياً — التقاط لقطة تحليلية
+	Daily: Capture analytics snapshots for each branch + overall.
+	"""
+	try:
+		from arkspace.arkspace_core.analytics_engine import capture_daily_snapshot
+		capture_daily_snapshot()
+	except Exception:
+		frappe.log_error(
+			title="Analytics Snapshot Error",
+			message=frappe.get_traceback(),
+		)
+
+
+def update_community_event_statuses():
+	"""كل ساعة — تحديث حالات الفعاليات
+	Hourly: Update community event statuses based on current time.
+	"""
+	try:
+		from arkspace.arkspace_community.community import update_event_statuses
+		update_event_statuses()
+	except Exception:
+		frappe.log_error(
+			title="Community Event Status Update Error",
+			message=frappe.get_traceback(),
+		)

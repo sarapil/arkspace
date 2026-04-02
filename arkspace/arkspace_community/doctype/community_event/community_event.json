@@ -1,0 +1,242 @@
+{
+ "actions": [],
+ "autoname": "EVT-.YYYY.-.#####",
+ "creation": "2026-03-21 00:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "event_section",
+  "event_name",
+  "event_name_ar",
+  "event_type",
+  "column_break_event",
+  "organizer",
+  "organizer_name",
+  "branch",
+  "space",
+  "schedule_section",
+  "start_datetime",
+  "end_datetime",
+  "column_break_schedule",
+  "registration_deadline",
+  "details_section",
+  "description",
+  "image",
+  "attendance_section",
+  "max_attendees",
+  "current_attendees",
+  "column_break_attendance",
+  "registration_required",
+  "is_free",
+  "fee",
+  "status_section",
+  "status",
+  "column_break_status",
+  "is_featured"
+ ],
+ "fields": [
+  {
+   "fieldname": "event_section",
+   "fieldtype": "Section Break",
+   "label": "Event / الفعالية"
+  },
+  {
+   "fieldname": "event_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Event Name / اسم الفعالية",
+   "reqd": 1
+  },
+  {
+   "fieldname": "event_name_ar",
+   "fieldtype": "Data",
+   "label": "Event Name (Arabic) / الاسم بالعربية"
+  },
+  {
+   "default": "Meetup",
+   "fieldname": "event_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Type / النوع",
+   "options": "Meetup\nWorkshop\nSocial\nNetworking\nLunch & Learn\nHackathon\nDemo Day\nPanel\nOther"
+  },
+  {
+   "fieldname": "column_break_event",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "__user",
+   "fieldname": "organizer",
+   "fieldtype": "Link",
+   "label": "Organizer / المنظم",
+   "options": "User"
+  },
+  {
+   "fetch_from": "organizer.full_name",
+   "fieldname": "organizer_name",
+   "fieldtype": "Data",
+   "label": "Organizer Name / اسم المنظم",
+   "read_only": 1
+  },
+  {
+   "fieldname": "branch",
+   "fieldtype": "Link",
+   "label": "Branch / الفرع",
+   "options": "Branch"
+  },
+  {
+   "fieldname": "space",
+   "fieldtype": "Link",
+   "label": "Space / المساحة",
+   "options": "Co-working Space"
+  },
+  {
+   "fieldname": "schedule_section",
+   "fieldtype": "Section Break",
+   "label": "Schedule / الجدول"
+  },
+  {
+   "fieldname": "start_datetime",
+   "fieldtype": "Datetime",
+   "in_list_view": 1,
+   "label": "Start / البداية",
+   "reqd": 1
+  },
+  {
+   "fieldname": "end_datetime",
+   "fieldtype": "Datetime",
+   "label": "End / النهاية",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_schedule",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "registration_deadline",
+   "fieldtype": "Datetime",
+   "label": "Registration Deadline / آخر موعد للتسجيل"
+  },
+  {
+   "fieldname": "details_section",
+   "fieldtype": "Section Break",
+   "label": "Details / التفاصيل"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Text Editor",
+   "label": "Description / الوصف"
+  },
+  {
+   "fieldname": "image",
+   "fieldtype": "Attach Image",
+   "label": "Image / الصورة"
+  },
+  {
+   "fieldname": "attendance_section",
+   "fieldtype": "Section Break",
+   "label": "Attendance / الحضور"
+  },
+  {
+   "default": "50",
+   "fieldname": "max_attendees",
+   "fieldtype": "Int",
+   "label": "Max Attendees / أقصى عدد حضور"
+  },
+  {
+   "default": "0",
+   "fieldname": "current_attendees",
+   "fieldtype": "Int",
+   "label": "Registered / المسجلون",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_attendance",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "1",
+   "fieldname": "registration_required",
+   "fieldtype": "Check",
+   "label": "Registration Required / التسجيل مطلوب"
+  },
+  {
+   "default": "1",
+   "fieldname": "is_free",
+   "fieldtype": "Check",
+   "label": "Free Event / فعالية مجانية"
+  },
+  {
+   "depends_on": "eval:!doc.is_free",
+   "fieldname": "fee",
+   "fieldtype": "Currency",
+   "label": "Fee / الرسوم"
+  },
+  {
+   "fieldname": "status_section",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "Upcoming",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Status / الحالة",
+   "options": "Draft\nUpcoming\nOpen for Registration\nFull\nIn Progress\nCompleted\nCancelled"
+  },
+  {
+   "fieldname": "column_break_status",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_featured",
+   "fieldtype": "Check",
+   "label": "Featured / مميز"
+  }
+ ],
+ "image_field": "image",
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-03-21 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "ARKSpace Community",
+ "name": "Community Event",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "read": 1,
+   "role": "ARKSpace Admin",
+   "write": 1
+  },
+  {
+   "create": 1,
+   "read": 1,
+   "role": "ARKSpace Member",
+   "write": 1
+  },
+  {
+   "read": 1,
+   "role": "Guest"
+  }
+ ],
+ "sort_field": "start_datetime",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "event_name",
+ "track_changes": 1
+}

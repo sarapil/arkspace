@@ -138,11 +138,11 @@ arkspace.components.StatusBadge = class {
 
 	getDefaultLabel(status) {
 		const labels = {
-			active: __("نشط"),
-			pending: __("قيد الانتظار"),
-			cancelled: __("ملغي"),
-			draft: __("مسودة"),
-			completed: __("مكتمل"),
+			active: __("Active"),
+			pending: __("Pending"),
+			cancelled: __("Cancelled"),
+			draft: __("Draft"),
+			completed: __("Completed"),
 		};
 		return labels[status] || status;
 	}

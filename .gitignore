@@ -1,0 +1,121 @@
+# ==============================================================================
+# ARKSpace — .gitignore
+# Works for both development and production environments
+# يعمل فى كل من بيئة التطوير وبيئة الانتاج
+# ==============================================================================
+
+# ─── Python ──────────────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+eggs/
+*.whl
+.eggs/
+sdist/
+develop-eggs/
+.installed.cfg
+
+# ─── Virtual Environment ─────────────────────────────────────────────────────
+env/
+venv/
+.venv/
+ENV/
+
+# ─── Node / Frontend ─────────────────────────────────────────────────────────
+node_modules/
+package-lock.json
+yarn.lock
+.yarn/
+
+# ─── IDE / Editor ────────────────────────────────────────────────────────────
+.vscode/
+!.vscode/settings.json.example
+.idea/
+*.swp
+*.swo
+*~
+.project
+.pydevproject
+.settings/
+
+# ─── OS Files ────────────────────────────────────────────────────────────────
+.DS_Store
+.DS_Store?
+._*
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+*.lnk
+
+# ─── Frappe / Bench Specific ─────────────────────────────────────────────────
+# Site-specific data (never commit — differs between dev and production)
+sites/*/site_config.json
+sites/*/private/
+sites/*/public/files/
+sites/*/error-snapshots/
+sites/*/locks/
+
+# Compiled assets are rebuilt on each environment
+*.pyc
+*.css.map
+*.js.map
+
+# Bench-generated files
+*.pid
+*.log
+logs/
+
+# ─── Testing ─────────────────────────────────────────────────────────────────
+.pytest_cache/
+.coverage
+htmlcov/
+*.cover
+.tox/
+.nox/
+
+# ─── Environment / Secrets ──────────────────────────────────────────────────
+# NEVER commit secrets — these are environment-specific
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+*.cert
+
+# ─── Build Artifacts ─────────────────────────────────────────────────────────
+*.tar.gz
+*.zip
+*.bak
+*.tmp
+*.temp
+
+# ─── Documentation Build ────────────────────────────────────────────────────
+_build/
+site/
+
+# ─── Archived Legacy Docs ───────────────────────────────────────────────────
+archived_docs/
+
+# ─── Docker (if using local docker-compose overrides) ────────────────────────
+docker-compose.override.yml
+
+# ==============================================================================
+# WHAT TO COMMIT (ensure these are NOT ignored):
+# ==============================================================================
+# ✅ All Python source code (*.py)
+# ✅ DocType JSON definitions (*.json in doctype folders)
+# ✅ Fixtures (exported via bench export-fixtures)
+# ✅ Public JS/CSS (arkspace/public/js/*.js, arkspace/public/css/*.css)
+# ✅ Print Formats, Workspace JSON
+# ✅ hooks.py, pyproject.toml, setup.py, install.py
+# ✅ Documentation (*.md)
+# ✅ Translation files (*.csv in translations/)
+# ✅ Templates (*.html in templates/)
+# ✅ Images/logos in arkspace/public/images/
+# ✅ .github/ directory (CI, copilot instructions)
+# ==============================================================================

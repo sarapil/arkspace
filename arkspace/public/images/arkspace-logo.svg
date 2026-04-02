@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="navy-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1B365D"/>
+      <stop offset="100%" stop-color="#2A4A7F"/>
+    </linearGradient>
+    <linearGradient id="gold-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#C4A962"/>
+      <stop offset="100%" stop-color="#A38B4C"/>
+    </linearGradient>
+    <linearGradient id="gold-shine" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#D4BC78"/>
+      <stop offset="50%" stop-color="#C4A962"/>
+      <stop offset="100%" stop-color="#A38B4C"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background circle -->
+  <circle cx="256" cy="256" r="240" fill="url(#navy-grad)"/>
+
+  <!-- Outer ring accent -->
+  <circle cx="256" cy="256" r="240" fill="none" stroke="url(#gold-grad)" stroke-width="6"/>
+
+  <!-- ARK structure — stylized arch/building representing co-working space -->
+  <!-- Main arch (the A / Ark shape) -->
+  <path d="M 256 88 L 152 340 L 180 340 L 224 220 L 288 220 L 332 340 L 360 340 Z"
+        fill="url(#gold-shine)" opacity="0.95"/>
+
+  <!-- Horizontal bar in the A (crossbar represents connection/collaboration) -->
+  <rect x="208" y="260" width="96" height="20" rx="4" fill="#1B365D" opacity="0.9"/>
+
+  <!-- Building windows/spaces grid (representing co-working spaces) -->
+  <!-- Left column -->
+  <rect x="160" y="340" width="36" height="44" rx="4" fill="url(#gold-shine)" opacity="0.85"/>
+  <rect x="160" y="394" width="36" height="44" rx="4" fill="url(#gold-shine)" opacity="0.75"/>
+
+  <!-- Center-left column -->
+  <rect x="206" y="340" width="36" height="44" rx="4" fill="url(#gold-shine)" opacity="0.90"/>
+  <rect x="206" y="394" width="36" height="44" rx="4" fill="url(#gold-shine)" opacity="0.80"/>
+
+  <!-- Center-right column -->
+  <rect x="270" y="340" width="36" height="44" rx="4" fill="url(#gold-shine)" opacity="0.90"/>
+  <rect x="270" y="394" width="36" height="44" rx="4" fill="url(#gold-shine)" opacity="0.80"/>
+
+  <!-- Right column -->
+  <rect x="316" y="340" width="36" height="44" rx="4" fill="url(#gold-shine)" opacity="0.85"/>
+  <rect x="316" y="394" width="36" height="44" rx="4" fill="url(#gold-shine)" opacity="0.75"/>
+
+  <!-- Base line (foundation) -->
+  <rect x="144" y="444" width="224" height="8" rx="4" fill="url(#gold-grad)"/>
+
+  <!-- Small diamond accent at the peak (star/compass point) -->
+  <polygon points="256,72 264,84 256,96 248,84" fill="#C4A962" opacity="0.9"/>
+</svg>

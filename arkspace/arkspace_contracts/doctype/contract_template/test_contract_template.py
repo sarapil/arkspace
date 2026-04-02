@@ -2,10 +2,10 @@
 # For license information, please see license.txt
 
 import frappe
-from frappe.tests.utils import FrappeTestCase
+from arkspace.tests.compat import ARKSpaceTestCase
 
 
-class TestContractTemplate(FrappeTestCase):
+class TestContractTemplate(ARKSpaceTestCase):
     """Test cases for Contract Template DocType."""
 
     def _make_template(self, **kwargs):

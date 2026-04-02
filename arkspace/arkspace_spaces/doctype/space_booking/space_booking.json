@@ -32,6 +32,10 @@
   "column_break_status",
   "checked_in_at",
   "checked_out_at",
+  "qr_section",
+  "qr_code",
+  "column_break_qr",
+  "qr_token",
   "links_section",
   "sales_invoice",
   "amended_from"
@@ -192,6 +196,30 @@
    "fieldname": "checked_out_at",
    "fieldtype": "Datetime",
    "label": "Checked Out At",
+   "read_only": 1
+  },
+  {
+   "fieldname": "qr_section",
+   "fieldtype": "Section Break",
+   "label": "QR Check-in",
+   "collapsible": 1,
+   "depends_on": "eval:doc.docstatus==1"
+  },
+  {
+   "fieldname": "qr_code",
+   "fieldtype": "Attach Image",
+   "label": "QR Code",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_qr",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "qr_token",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "QR Token",
    "read_only": 1
   },
   {

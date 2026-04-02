@@ -1,0 +1,1878 @@
+% of Total,% of Total,Report
+", {0} failed",", {0} failed",Bulk Operation
+2D Plan — المخطط,2D Plan — المخطط
+"A co-working space is a bookable resource — desks, rooms, studios, or any physical area.","A co-working space is a bookable resource — desks, rooms, studios, or any physical area."
+A pending request already exists,A pending request already exists
+A pending request already exists between these members,A pending request already exists between these members
+About ARKSpace,About ARKSpace
+About ARKSpace — عن أرك سبيس,About ARKSpace — عن أرك سبيس
+Accent Color,Accent Color,Design
+Accept,Accept
+Accept or Decline,Accept or Decline
+"Accept payments via Stripe, Tap, or other gateways configured in ARKSpace Settings.","Accept payments via Stripe, Tap, or other gateways configured in ARKSpace Settings."
+Accepted,Accepted
+Achievement Badges,Achievement Badges
+Action,Action
+Action Controls,Action Controls
+Actions,Actions,Button
+Active,Active,Status
+Active / ساري,Active / ساري,Member Contract Status
+Active Members,Active Members,Report
+Active Members / الأعضاء النشطون,Active Members / الأعضاء النشطون
+Active Membership,Active Membership,ARK Live
+Active Memberships,Active Memberships,Portal
+Active subscriptions,Active subscriptions
+Activity based on bookings,Activity based on bookings,Dashboard
+Actual,Actual
+Add,Add,Button
+Add Co-working Spaces to see them on the floor plan.,Add Co-working Spaces to see them on the floor plan.,Floor Plan
+Add Credits,Add Credits,Button
+Add your co-working space locations. You can add more later.,Add your co-working space locations. You can add more later.,Setup Wizard
+Add-on Amenities,Add-on Amenities,Space Booking Section
+Address / العنوان,Address / العنوان,Member Contract
+Adjustment Type,Adjustment Type
+Admin,Admin
+"Admin, Manager, Front Desk, Ops, Member","Admin, Manager, Front Desk, Ops, Member"
+Advanced,Advanced,Training Level
+All Booking Types,All Booking Types
+All Branches,All Branches,Portal
+All Floors,All Floors,Floor Plan Filter
+All Floors — كل الطوابق,All Floors — كل الطوابق
+All Skills,All Skills
+All Spaces,All Spaces
+All Types,All Types,Portal
+Allow Anonymous Posts / السماح بالمنشورات المجهولة,Allow Anonymous Posts / السماح بالمنشورات المجهولة
+Allow Cross-Location Booking / السماح بالحجز بين الفروع,Allow Cross-Location Booking / السماح بالحجز بين الفروع
+Allow Day Passes / السماح بالتصاريح اليومية,Allow Day Passes / السماح بالتصاريح اليومية
+Allow Walk-in / السماح بالحضور المباشر,Allow Walk-in / السماح بالحضور المباشر
+Already checked in at {0},Already checked in at {0}
+Already have an account?,Already have an account?
+Always,Always
+Amended From,Amended From,Field
+Amenities,Amenities,Section
+"Amenities are linked to spaces via Space Amenity child entries, enabling filter-by-amenity bookings.","Amenities are linked to spaces via Space Amenity child entries, enabling filter-by-amenity bookings."
+"Amenities are the features available in a space — WiFi, projector, whiteboard, coffee machine, etc.","Amenities are the features available in a space — WiFi, projector, whiteboard, coffee machine, etc."
+Amenities — المرافق,Amenities — المرافق
+Amenity,Amenity,DocType
+Amenity Catalog,Amenity Catalog
+Amenity Fee / رسوم خدمات,Amenity Fee / رسوم خدمات,Receipt Type
+Amenity Name,Amenity Name,Amenity
+Amenity Total,Amenity Total,Space Booking
+Amount,Amount,Field
+Amount / المبلغ,Amount / المبلغ,Payment Receipt
+Amount must be greater than zero,Amount must be greater than zero,Validation
+Amounts,Amounts
+An account with this email already exists. Please login.,An account with this email already exists. Please login.
+Analytics,Analytics
+Analytics & Reports,Analytics & Reports
+Analytics & reports,Analytics & reports
+Analytics / التحليلات,Analytics / التحليلات
+Analytics Dashboard,Analytics Dashboard
+Analytics Overview,Analytics Overview
+Analytics Snapshot,Analytics Snapshot
+Analytics snapshot captured successfully,Analytics snapshot captured successfully
+Analytics — التحليلات,Analytics — التحليلات
+Announcement,Announcement
+Anonymous Member,Anonymous Member
+App Configuration,App Configuration
+Applies To,Applies To
+Approval,Approval
+Approval Status,Approval Status
+Approve,Approve,Workflow
+"Approve, cancel, check-in gated","Approve, cancel, check-in gated"
+Approved,Approved
+Approved By,Approved By
+Arabic,Arabic,Language
+Arabic + RTL Support,Arabic + RTL Support
+Arabic Font,Arabic Font,Design
+Arabic terms are required,Arabic terms are required,Validation
+Archived,Archived,Training Status
+Are you sure you want to cancel this booking?,Are you sure you want to cancel this booking?,Portal
+Are you sure you want to refund this payment?,Are you sure you want to refund this payment?
+Are you sure you want to suspend this membership?,Are you sure you want to suspend this membership?,Dialog
+Area,Area,ARK Live
+Area (sqm),Area (sqm),Co-working Space
+ARK Booking Flow,ARK Booking Flow
+ARK Command Center,ARK Command Center
+ARK Command Center — مركز القيادة,ARK Command Center — مركز القيادة
+ARK Community Network,ARK Community Network
+ARK Community — شبكة المجتمع,ARK Community — شبكة المجتمع
+ARK Explorer,ARK Explorer
+ARK Explorer — المستكشف,ARK Explorer — المستكشف
+ARK Live — المخطط التفاعلي,ARK Live — المخطط التفاعلي,Page Title
+ARK Live — عرض المساحات التفاعلي,ARK Live — عرض المساحات التفاعلي
+ARK Onboarding,ARK Onboarding
+ARK Onboarding — جولة تعريفية,ARK Onboarding — جولة تعريفية
+ARKANOOR Marketplace,ARKANOOR Marketplace
+ARKSpace,ARKSpace,App Name
+ARKSpace Admin,ARKSpace Admin,Role
+ARKSpace Analytics Dashboard,ARKSpace Analytics Dashboard
+ARKSpace Branch,ARKSpace Branch
+ARKSpace Check-in,ARKSpace Check-in
+ARKSpace Community,ARKSpace Community
+ARKSpace Configuration,ARKSpace Configuration,Setup Wizard
+"ARKSpace delivers enterprise-grade co-working management with full ERPNext integration — at zero licensing cost, fully open source.","ARKSpace delivers enterprise-grade co-working management with full ERPNext integration — at zero licensing cost, fully open source."
+ARKSpace Front Desk,ARKSpace Front Desk,Role
+ARKSpace Help,ARKSpace Help
+ARKSpace Help — مساعدة أرك سبيس,ARKSpace Help — مساعدة أرك سبيس
+ARKSpace is a complete co-working space management system. This guided tour will show you how everything connects together.,ARKSpace is a complete co-working space management system. This guided tour will show you how everything connects together.
+ARKSpace is a comprehensive co-working space management platform.,ARKSpace is a comprehensive co-working space management platform.
+ARKSpace Management,ARKSpace Management,Workspace
+ARKSpace Manager,ARKSpace Manager,Role
+ARKSpace Member,ARKSpace Member,Role
+ARKSpace Onboarding,ARKSpace Onboarding
+ARKSpace Operations,ARKSpace Operations,Role
+ARKSpace provides comprehensive analytics across all operations:,ARKSpace provides comprehensive analytics across all operations:
+ARKSpace Sales,ARKSpace Sales,Role
+ARKSpace Settings,ARKSpace Settings,DocType
+ARKSpace Settings not found. Please configure ARKSpace first.,ARKSpace Settings not found. Please configure ARKSpace first.
+"ARKSpace tracks occupancy, revenue, member growth, bookings, and forecasts — all in one place.","ARKSpace tracks occupancy, revenue, member growth, bookings, and forecasts — all in one place."
+ARKSpace uses CAPS (Capability-Based Access Control) for fine-grained security.,ARKSpace uses CAPS (Capability-Based Access Control) for fine-grained security.
+ARKSpace Viewer,ARKSpace Viewer,Role
+ARKSpace — Enterprise Co-Working Management,ARKSpace — Enterprise Co-Working Management
+ARKSpace — Member Portal,ARKSpace — Member Portal,Portal
+Assign amenities to spaces so members can filter bookings by required facilities.,Assign amenities to spaces so members can filter bookings by required facilities.
+Assigned Space,Assigned Space,Membership
+Assigned To,Assigned To,Workspace Lead
+Assignment,Assignment,Section
+"Attach code examples to documentation entries for API usage, integrations, and automation recipes.","Attach code examples to documentation entries for API usage, integrations, and automation recipes."
+Attach legal documents and templates to contracts for compliance tracking.,Attach legal documents and templates to contracts for compliance tracking.
+Attached Legal Documents / المستندات المرفقة,Attached Legal Documents / المستندات المرفقة,Member Contract
+Attached Legals,Attached Legals
+Attachments / المرفقات,Attachments / المرفقات,Legal Document
+Attendees,Attendees
+Attendees for {0},Attendees for {0}
+attends,attends
+Author / الكاتب,Author / الكاتب
+Author Name / اسم الكاتب,Author Name / اسم الكاتب
+Auto Generated,Auto Generated,Documentation Entry
+Auto Renew,Auto Renew,Membership
+Auto Renew / تجديد تلقائي,Auto Renew / تجديد تلقائي,Member Contract
+Auto-Capture Snapshots / التقاط تلقائي للقطات,Auto-Capture Snapshots / التقاط تلقائي للقطات
+Auto-created from Online Payment {0},Auto-created from Online Payment {0}
+Auto-Expire Day Passes / انتهاء التصاريح تلقائياً,Auto-Expire Day Passes / انتهاء التصاريح تلقائياً
+Auto-Expiry,Auto-Expiry
+Auto-generated from Day Pass {0},Auto-generated from Day Pass {0}
+Auto-generated from Membership {0},Auto-generated from Membership {0},Billing
+Auto-generated from Space Booking {0},Auto-generated from Space Booking {0},Billing
+Auto-generated receipts for every payment — linked to invoices and credit transactions.,Auto-generated receipts for every payment — linked to invoices and credit transactions.
+Auto-Reconcile Payments,Auto-Reconcile Payments
+Auto-refresh in {0}s,Auto-refresh in {0}s
+Auto-renewal disabled,Auto-renewal disabled
+Auto-renewal enabled,Auto-renewal enabled
+"Automatic daily captures of occupancy, revenue, and membership metrics.","Automatic daily captures of occupancy, revenue, and membership metrics."
+Available,Available,Status
+available,available,Floor Plan
+Available Credits,Available Credits,Credit Wallet
+Available for Booking,Available for Booking,ARK Live
+Available Placeholders,Available Placeholders,Contract Template
+Available Plans,Available Plans
+Available Spaces / المساحات المتاحة,Available Spaces / المساحات المتاحة
+Available — متاح,Available — متاح,Legend
+Average Booking Duration / متوسط مدة الحجز,Average Booking Duration / متوسط مدة الحجز
+Average Revenue Per Booking / متوسط الإيراد لكل حجز,Average Revenue Per Booking / متوسط الإيراد لكل حجز
+Avg Occupancy %,Avg Occupancy %,Report
+Avg Revenue,Avg Revenue,Report
+Award badges upon completing training modules or achieving milestones.,Award badges upon completing training modules or achieving milestones.
+Award Criteria,Award Criteria,Training Badge
+Awarded Badge,Awarded Badge,User Training Progress
+Back to Portal,Back to Portal,Portal
+Badge,Badge,Section
+Badge #,Badge #
+Badge Awarded On,Badge Awarded On,User Training Progress
+Badge Code,Badge Code,Training Badge
+Badge Display,Badge Display
+Badge Image,Badge Image,Training Badge
+Badge Name,Badge Name,Training Badge
+Badge Number,Badge Number
+Badge Printed,Badge Printed
+Badges,Badges,Training
+Badges appear on member profiles in the directory and community pages.,Badges appear on member profiles in the directory and community pages.
+Bank Transfer / تحويل بنكي,Bank Transfer / تحويل بنكي,Payment Method
+Base Amount,Base Amount
+Base: {0} → Final: {1},Base: {0} → Final: {1}
+Basic Hot Desk,Basic Hot Desk,Setup Wizard
+Beginner,Beginner,Training Level
+Benefits,Benefits
+Bilingual,Bilingual,Language
+Bilingual template requires both Arabic and English terms,Bilingual template requires both Arabic and English terms,Validation
+Billing,Billing,Section
+Billing & Invoicing,Billing & Invoicing
+Billing Cycle,Billing Cycle,Membership
+Billing Cycle / دورة الفوترة,Billing Cycle / دورة الفوترة,Member Contract
+Book,Book,Button
+Book a Space,Book a Space,Portal
+Book a Space — ARKSpace,Book a Space — ARKSpace,Portal
+Book Now,Book Now,Button
+Book Now — احجز الآن,Book Now — احجز الآن,ARK Live
+Book Space — حجز المساحة,Book Space — حجز المساحة,ARK Live Dialog
+booked,booked
+Booking,Booking
+Booking / الحجز,Booking / الحجز,Payment Receipt
+Booking Analytics,Booking Analytics
+Booking approvals,Booking approvals
+Booking Cancelled,Booking Cancelled,Notification
+Booking cancelled successfully,Booking cancelled successfully,Portal
+Booking Cancelled — {{ doc.booking_id or doc.name }},Booking Cancelled — {{ doc.booking_id or doc.name }},Notification Subject
+Booking Confirmation,Booking Confirmation,Notification
+Booking Confirmed,Booking Confirmed,Notification Subject
+Booking Confirmed — {{ doc.booking_id or doc.name }},Booking Confirmed — {{ doc.booking_id or doc.name }},Notification Subject
+Booking created: {0},Booking created: {0},Portal
+Booking Duration,Booking Duration
+Booking failed. Please check availability.,Booking failed. Please check availability.,Portal
+Booking Flow,Booking Flow
+Booking Flow Monitor,Booking Flow Monitor
+Booking ID,Booking ID,Space Booking
+Booking Lifecycle,Booking Lifecycle
+Booking must be submitted,Booking must be submitted,Validation
+Booking must be submitted before check-in,Booking must be submitted before check-in,Validation
+Booking Patterns,Booking Patterns
+Booking Patterns by Hour,Booking Patterns by Hour
+Booking Payment / دفعة حجز,Booking Payment / دفعة حجز,Receipt Type
+Booking Prefix,Booking Prefix,Settings
+Booking Revenue,Booking Revenue,Report
+Booking Revenue / إيرادات الحجوزات,Booking Revenue / إيرادات الحجوزات
+Booking status is {0} — cannot check in,Booking status is {0} — cannot check in
+Booking Type,Booking Type,Space Booking
+Booking Type — نوع الحجز,Booking Type — نوع الحجز,ARK Live Dialog
+Booking Types,Booking Types
+Booking {0} created for {1}!,Booking {0} created for {1}!,Floor Plan
+Booking {0} created!,Booking {0} created!,Floor Plan
+Booking {0} is already {1},Booking {0} is already {1},Validation
+Booking {0} is not submitted,Booking {0} is not submitted,Validation
+Booking {0} not found,Booking {0} not found
+"Booking {0} status is {1}, expected Checked In","Booking {0} status is {1}, expected Checked In",Validation
+"Booking {0} status is {1}, expected Confirmed","Booking {0} status is {1}, expected Confirmed",Validation
+Bookings,Bookings,Report
+Bookings & CRM,Bookings & CRM
+Bookings & Members,Bookings & Members,Module
+Bookings (Period),Bookings (Period),Report
+Bookings / الحجوزات,Bookings / الحجوزات
+Bookings by Hour,Bookings by Hour
+Bookings — الحجوزات,Bookings — الحجوزات
+Branch,Branch,Co-working Space
+Branch / الفرع,Branch / الفرع,Member Contract
+Branch 2 (Optional),Branch 2 (Optional),Setup Wizard
+Branch 3 (Optional),Branch 3 (Optional),Setup Wizard
+Branch Code / رمز الفرع,Branch Code / رمز الفرع
+Branch Comparison,Branch Comparison
+Branch management,Branch management
+Branch Manager / مدير الفرع,Branch Manager / مدير الفرع
+Branch Name (Arabic) / اسم الفرع بالعربية,Branch Name (Arabic) / اسم الفرع بالعربية
+Branch Name / اسم الفرع,Branch Name / اسم الفرع
+Branch operations oversight,Branch operations oversight
+Branch Transfers,Branch Transfers
+Branch — الفرع,Branch — الفرع,ARK Live
+Branches,Branches
+Branches — الفروع,Branches — الفروع,Setup Wizard
+Brand Consistency,Brand Consistency
+Bronze,Bronze,Badge Level
+Browse,Browse
+Browse first,Browse first
+Browse our plans and start your membership today!,Browse our plans and start your membership today!
+Browse Spaces,Browse Spaces
+Budget,Budget
+Budget Monthly,Budget Monthly,Workspace Lead
+"Build connections, share knowledge, and attend events:","Build connections, share knowledge, and attend events:"
+Build your community,Build your community
+Built-in CRM & Lead Pipeline,Built-in CRM & Lead Pipeline
+Bulk Cancel,Bulk Cancel,Bulk Operation
+Bulk Check In,Bulk Check In,Bulk Operation
+Bulk Check Out,Bulk Check Out,Bulk Operation
+Bulk Generate QR,Bulk Generate QR
+Bulk No Show,Bulk No Show,Bulk Operation
+Bulk {0} Result,Bulk {0} Result,Bulk Operation
+Bundles,Bundles
+Busiest Day / أكثر يوم ازدحاماً,Busiest Day / أكثر يوم ازدحاماً
+Business,Business,Training Category
+Business Incubators,Business Incubators
+Button Border Radius (px),Button Border Radius (px),Design
+Button Font Weight,Button Font Weight,Design
+Buttons,Buttons,Section
+Cancel,Cancel,Button
+Cancel before check-in. Refund policies apply per space type.,Cancel before check-in. Refund policies apply per space type.
+Cancel Registration,Cancel Registration
+Cancel {0} booking(s)? This cannot be undone.,Cancel {0} booking(s)? This cannot be undone.,Bulk Operation
+Cancellation,Cancellation
+Cancelled,Cancelled,Status
+Cancelled / ملغي,Cancelled / ملغي,Member Contract Status
+Cancelled At,Cancelled At
+Cancelled Bookings / حجوزات ملغاة,Cancelled Bookings / حجوزات ملغاة
+Cannot cancel before submitting,Cannot cancel before submitting,Validation
+Cannot check in a visitor with status {0},Cannot check in a visitor with status {0}
+Cannot determine payment amount from {0},Cannot determine payment amount from {0}
+Cannot send a networking request to yourself,Cannot send a networking request to yourself
+Cannot send a request to yourself,Cannot send a request to yourself
+Capabilities,Capabilities
+Capacity,Capacity,Co-working Space
+Capacity & Pricing,Capacity & Pricing
+Capacity & Size,Capacity & Size,Co-working Space
+Capacity / السعة,Capacity / السعة
+Capacity must be at least 1,Capacity must be at least 1,Validation
+"Capacity recalculated: {0} desks, {1} offices, {2} meeting rooms","Capacity recalculated: {0} desks, {1} offices, {2} meeting rooms"
+CAPS Field-Level Security,CAPS Field-Level Security
+Card,Card
+Card / بطاقة,Card / بطاقة,Payment Method
+Card Last 4,Card Last 4
+Cash,Cash
+Cash / نقدي,Cash / نقدي,Payment Method
+Category,Category,Training Badge
+Category / الفئة,Category / الفئة
+Change Password,Change Password,Portal
+Check / شيك,Check / شيك,Payment Method
+Check In,Check In,Button
+Check In Now,Check In Now
+Check in {0} booking(s)?,Check in {0} booking(s)?,Bulk Operation
+Check Out,Check Out,Button
+Check out {0} booking(s)?,Check out {0} booking(s)?,Bulk Operation
+Check-in,Check-in
+"Check-in frequency, booking patterns, membership utilization per member.","Check-in frequency, booking patterns, membership utilization per member."
+Checked In,Checked In,Status
+Checked In / تم تسجيل الدخول,Checked In / تم تسجيل الدخول
+Checked In At,Checked In At,Space Booking
+Checked in successfully,Checked in successfully
+Checked Out,Checked Out,Status
+Checked Out At,Checked Out At,Space Booking
+Checked out — Duration: {0}h,Checked out — Duration: {0}h
+Checking in visitor...,Checking in visitor...
+Checking in...,Checking in...
+Checking out...,Checking out...
+Checkout URL,Checkout URL
+Choose a Plan,Choose a Plan
+Choose a topic to explore. Each path includes visual explanations.,Choose a topic to explore. Each path includes visual explanations.
+Choose a topic to learn about:,Choose a topic to learn about:
+Choose Plan,Choose Plan
+Choose Your Pass,Choose Your Pass
+Churned,Churned
+Churned Members / أعضاء مغادرون,Churned Members / أعضاء مغادرون
+City / المدينة,City / المدينة
+"Classroom booking, study halls, lab scheduling. Day pass for visitors, membership for enrolled students.","Classroom booking, study halls, lab scheduling. Day pass for visitors, membership for enrolled students."
+Click on a space to view details or book,Click on a space to view details or book,Hint
+Closing Time / وقت الإغلاق,Closing Time / وقت الإغلاق
+Cloud Storage (GB),Cloud Storage (GB),Membership Plan
+Co-Working Day Pass Fee,Co-Working Day Pass Fee
+Co-Working Membership Fee,Co-Working Membership Fee,Billing
+Co-working Space,Co-working Space,DocType
+Co-Working Space Booking,Co-Working Space Booking,Billing
+Co-working Space Management,Co-working Space Management,Notification Footer
+Code Examples,Code Examples,Section
+Code Examples — أمثلة البرمجة,Code Examples — أمثلة البرمجة
+Code Snippets,Code Snippets
+Color,Color,Amenity
+Colors,Colors,Section
+Command Center,Command Center
+Comments Count / عدد التعليقات,Comments Count / عدد التعليقات
+Commercial Register / السجل التجاري,Commercial Register / السجل التجاري,Legal Document Type
+Community,Community,Badge Category
+Community & Events,Community & Events
+Community / المجتمع,Community / المجتمع
+Community Board,Community Board
+Community Board & Networking,Community Board & Networking
+Community Board — لوحة المجتمع,Community Board — لوحة المجتمع
+Community Event,Community Event
+Community Events,Community Events
+Community events,Community events
+Community Features,Community Features
+Community Feed,Community Feed
+Community management,Community management
+Community Network,Community Network
+Community Post,Community Post
+Community Posts,Community Posts
+Company,Company,Field
+Company / الشركة,Company / الشركة
+Company License / ترخيص الشركة,Company License / ترخيص الشركة,Legal Document Type
+Company Name,Company Name
+Company Representative / ممثل الشركة,Company Representative / ممثل الشركة,Member Contract
+Compare snapshots over time to identify trends and optimize operations.,Compare snapshots over time to identify trends and optimize operations.
+Comparison Report,Comparison Report
+Complete,Complete,Button
+Complete Tour,Complete Tour,Button
+Completed,Completed,Status
+Completed At,Completed At
+Completion,Completion,Badge Category
+Completion Date,Completion Date,User Training Progress
+Completion Status,Completion Status
+Compliance Tracking,Compliance Tracking
+Complimentary,Complimentary,Amenity
+Condition,Condition
+Conditions,Conditions
+Configure brand colors and assets that apply across all ARKSpace pages.,Configure brand colors and assets that apply across all ARKSpace pages.
+"Configure payment gateways, notification preferences, QR settings, and branch defaults.","Configure payment gateways, notification preferences, QR settings, and branch defaults."
+Configure your co-working space management system.,Configure your co-working space management system.,Setup Wizard
+Confirm,Confirm
+Confirm Booking — تأكيد الحجز,Confirm Booking — تأكيد الحجز,ARK Live Dialog
+Confirmed,Confirmed,Status
+Confirmed Booking,Confirmed Booking,ARK Live
+Confirmed — مؤكد,Confirmed — مؤكد,Legend
+Connect,Connect
+"Connect ERPNext billing, WhatsApp notifications, and CAPS security from one place.","Connect ERPNext billing, WhatsApp notifications, and CAPS security from one place."
+Connect with Members,Connect with Members
+connected,connected
+Connection,Connection
+Connection accepted!,Connection accepted!
+Connection request accepted,Connection request accepted
+Connection request declined,Connection request declined
+Connection request sent to {0},Connection request sent to {0}
+Connections,Connections
+Consider adding feedback for completed tours,Consider adding feedback for completed tours,Validation
+"Consider setting at least one pricing tier (hourly, daily, or monthly)","Consider setting at least one pricing tier (hourly, daily, or monthly)",Validation
+Contact / التواصل,Contact / التواصل
+Contact us to set up your membership and start using ARKSpace.,Contact us to set up your membership and start using ARKSpace.,Portal
+Contacted,Contacted,Status
+Content,Content,Section
+Content / المحتوى,Content / المحتوى
+Contract / العقد,Contract / العقد,Payment Receipt
+Contract Date / تاريخ العقد,Contract Date / تاريخ العقد,Member Contract
+Contract Management,Contract Management
+Contract Period / مدة العقد,Contract Period / مدة العقد,Member Contract
+Contract Template,Contract Template,DocType
+Contract Template / نموذج العقد,Contract Template / نموذج العقد,Member Contract
+Contract Templates — قوالب العقود,Contract Templates — قوالب العقود
+Contract terms (Arabic or English) are required before submission,Contract terms (Arabic or English) are required before submission,Validation
+Contract Terms / شروط العقد,Contract Terms / شروط العقد,Contract Template
+Contract Title / عنوان العقد,Contract Title / عنوان العقد,Member Contract
+Contract Type,Contract Type,Contract Template
+Contracts — العقود,Contracts — العقود
+Conversion,Conversion,Section
+Convert,Convert
+Convert leads to members or booking customers.,Convert leads to members or booking customers.
+Convert to Customer,Convert to Customer,Button
+Convert to Membership,Convert to Membership
+Convert tour visitors into members or booking customers directly from the tour record.,Convert tour visitors into members or booking customers directly from the tour record.
+Convert {0} to a Customer?,Convert {0} to a Customer?,Dialog
+Converted,Converted,Status
+Converted Customer,Converted Customer,Workspace Lead
+Converted Membership,Converted Membership,Workspace Lead
+Converted to Membership,Converted to Membership
+Converting to membership...,Converting to membership...
+Coordinates / الإحداثيات,Coordinates / الإحداثيات
+Corporate,Corporate
+Cost,Cost
+"Cost, revenue, pricing masked per role","Cost, revenue, pricing masked per role"
+Could not generate payment link. Please try again.,Could not generate payment link. Please try again.
+Count,Count,Report
+Country / البلد,Country / البلد
+Cover Image,Cover Image,Training Module
+Create & Check In,Create & Check In
+Create Account,Create Account
+"Create and manage contracts for memberships, space rentals, and services.","Create and manage contracts for memberships, space rentals, and services."
+Create and manage training sessions for member skill development.,Create and manage training sessions for member skill development.
+Create Booking,Create Booking,Button
+"Create contract templates with standard terms for memberships, space rental, and services.","Create contract templates with standard terms for memberships, space rental, and services."
+"Create events with capacity limits, RSVP, and space allocation.","Create events with capacity limits, RSVP, and space allocation."
+"Create internal documentation for space policies, procedures, and member guidelines.","Create internal documentation for space policies, procedures, and member guidelines."
+"Create membership plans with different access levels, amenities, and pricing.","Create membership plans with different access levels, amenities, and pricing."
+"Create rules that adjust pricing based on peak hours, membership tier, duration, or advance booking.","Create rules that adjust pricing based on peak hours, membership tier, duration, or advance booking."
+Create your first membership plan to get started.,Create your first membership plan to get started.,Setup Wizard
+Creating a Booking,Creating a Booking
+Creating day pass...,Creating day pass...
+Creating membership...,Creating membership...
+Creating your account...,Creating your account...
+Creating your day pass...,Creating your day pass...
+Creative,Creative,Training Category
+Credit,Credit,Transaction Type
+Credit Flow,Credit Flow
+Credit Transaction,Credit Transaction,DocType
+Credit Transactions — معاملات الرصيد,Credit Transactions — معاملات الرصيد
+Credit Wallet,Credit Wallet,Membership
+Credit Wallet — محفظة الرصيد,Credit Wallet — محفظة الرصيد
+Credits,Credits,Field
+credits,credits
+"Credits can be added via online payment, manual adjustment, or membership plan allocation.","Credits can be added via online payment, manual adjustment, or membership plan allocation."
+CRM & Leads,CRM & Leads
+CRM & Sales,CRM & Sales,Module
+CRM Pipeline,CRM Pipeline
+CRM pipeline management,CRM pipeline management
+CRM — إدارة العملاء,CRM — إدارة العملاء
+CRM — العملاء,CRM — العملاء
+Cross-Location Search,Cross-Location Search
+Cross-Location Space Search,Cross-Location Space Search
+Cross-references,Cross-references
+Currency,Currency,Field
+Currency / العملة,Currency / العملة,Member Contract
+Current Attendees / الحضور الحالي,Current Attendees / الحضور الحالي
+Current Member,Current Member,Co-working Space
+Current Occupancy / الإشغال الحالي,Current Occupancy / الإشغال الحالي
+Current Occupant,Current Occupant,ARK Live
+Current plan,Current plan
+Currently Occupied,Currently Occupied,ARK Live
+Custom,Custom
+Customer Group,Customer Group,Portal
+Customer ID,Customer ID,Portal
+Customer Name,Customer Name,Portal
+Customer Type,Customer Type
+"Customize colors, logo, and layout for the member-facing portal.","Customize colors, logo, and layout for the member-facing portal."
+Daily,Daily,Booking Type
+Daily Price,Daily Price,Amenity
+Daily Rate,Daily Rate,Co-working Space
+Daily Snapshots,Daily Snapshots
+"Daily/weekly/monthly revenue breakdown by branch, space type, and payment method.","Daily/weekly/monthly revenue breakdown by branch, space type, and payment method."
+Danger Color,Danger Color,Design
+Dashboard,Dashboard,Portal
+Dashboard KPIs,Dashboard KPIs
+Date,Date,Workspace Tour
+Date Format,Date Format,Settings
+Date From,Date From
+Date Range,Date Range
+Date Range condition requires both start and end dates,Date Range condition requires both start and end dates
+Date start must be before date end,Date start must be before date end
+Date To,Date To
+Date — التاريخ,Date — التاريخ
+Date:,Date:
+day,day,Unit
+Day of Week,Day of Week
+Day of Week condition requires a day selection,Day of Week condition requires a day selection
+Day Pass,Day Pass
+Day Pass & Trials / تصريح اليوم والتجربة,Day Pass & Trials / تصريح اليوم والتجربة
+Day Pass Count / عدد التصاريح اليومية,Day Pass Count / عدد التصاريح اليومية
+Day Pass Created!,Day Pass Created!
+Day pass date cannot be in the past,Day pass date cannot be in the past
+Day pass is not checked in,Day pass is not checked in
+Day pass issuance,Day pass issuance
+Day pass must be Active to check in (current: {0}),Day pass must be Active to check in (current: {0})
+Day Pass QR,Day Pass QR
+Day Pass Revenue / إيرادات التصاريح اليومية,Day Pass Revenue / إيرادات التصاريح اليومية
+Day pass status is {0} — cannot check in,Day pass status is {0} — cannot check in
+Day Pass System,Day Pass System
+Day Pass {0} created for {1},Day Pass {0} created for {1}
+Day Pass {0} not found,Day Pass {0} not found
+Day Pass {0} — {1} ({2}),Day Pass {0} — {1} ({2})
+Day Pass — تصاريح اليوم,Day Pass — تصاريح اليوم
+Day Passes,Day Passes
+Day passes provide single-day access without a full membership.,Day passes provide single-day access without a full membership.
+days,days
+Dear,Dear,Notification
+Debit,Debit,Transaction Type
+Decline,Decline
+Declined,Declined
+Dedicated Desk,Dedicated Desk,Plan Type
+Dedicated Desk — مكتب مخصص,Dedicated Desk — مكتب مخصص,Setup Wizard
+Default Branch / الفرع الافتراضي,Default Branch / الفرع الافتراضي
+Default Currency,Default Currency,Settings
+Default Day Pass Rate / سعر التصريح الافتراضي,Default Day Pass Rate / سعر التصريح الافتراضي
+Default Gateway,Default Gateway
+Default Icon Size,Default Icon Size,Design
+Default Instructor,Default Instructor,Training Module
+"Define all available amenities — WiFi, projector, printer, coffee, parking, lockers, etc.","Define all available amenities — WiFi, projector, printer, coffee, parking, lockers, etc."
+"Define membership tiers with different access levels, credit allowances, and amenity bundles.","Define membership tiers with different access levels, credit allowances, and amenity bundles."
+"Define which documentation entries must be read before this one, creating a structured learning path.","Define which documentation entries must be read before this one, creating a structured learning path."
+Delivery,Delivery
+Demo Day,Demo Day
+Depends On,Depends On,Relation Type
+Deposit,Deposit
+Deposit / تأمين,Deposit / تأمين,Receipt Type
+Depth,Depth
+Depth — العمق,Depth — العمق
+Description,Description,Field
+Description (Arabic) / الوصف بالعربية,Description (Arabic) / الوصف بالعربية
+Description / الوصف,Description / الوصف
+Design Config — إعدادات التصميم,Design Config — إعدادات التصميم
+Design Configuration,Design Configuration,DocType
+Details,Details,Section
+Details / التفاصيل,Details / التفاصيل,Legal Document
+Directory,Directory
+Disable Auto-Renew,Disable Auto-Renew
+Discount %,Discount %,Space Booking
+Discount % / نسبة الخصم,Discount % / نسبة الخصم,Member Contract
+Discussion,Discussion
+Display / العرض,Display / العرض
+Document (Back) / المستند (وجه خلفي),Document (Back) / المستند (وجه خلفي),Legal Document
+Document (Front) / المستند (وجه أمامي),Document (Front) / المستند (وجه أمامي),Legal Document
+Document Number / رقم المستند,Document Number / رقم المستند,Legal Document
+Document Type / نوع المستند,Document Type / نوع المستند,Legal Document
+Documentation Entry,Documentation Entry,DocType
+Documentation Type,Documentation Type,Documentation Entry
+Documentation — التوثيق,Documentation — التوثيق
+Download QR Code,Download QR Code
+Draft,Draft,Status
+Draft / مسودة,Draft / مسودة,Member Contract Status
+Draft → Submitted → Confirmed → Checked In → Checked Out → Invoiced,Draft → Submitted → Confirmed → Checked In → Checked Out → Invoiced
+Driver License / رخصة القيادة,Driver License / رخصة القيادة,Legal Document Type
+Driving License,Driving License
+Dropped,Dropped,Training Progress Status
+Duration (hours),Duration (hours),Space Booking
+Duration (min),Duration (min),Workspace Tour
+Dynamic Pricing,Dynamic Pricing
+Dynamic pricing applied: {0},Dynamic pricing applied: {0}
+"Each booking, day pass, or amenity usage deducts credits. Top-ups and plan renewals add credits.","Each booking, day pass, or amenity usage deducts credits. Top-ups and plan renewals add credits."
+Each confirmed booking generates a QR code for self-service check-in.,Each confirmed booking generates a QR code for self-service check-in.
+"Each member has a credit wallet showing current balance, total earned, and total spent.","Each member has a credit wallet showing current balance, total earned, and total spent."
+"Each plan includes benefits: booking credits, locker access, event invites, etc.","Each plan includes benefits: booking credits, locker access, event invites, etc."
+"Each type can have its own default pricing structure: hourly, daily, or monthly rates.","Each type can have its own default pricing structure: hourly, daily, or monthly rates."
+Early Bird,Early Bird
+Edit Profile,Edit Profile,Portal
+EGP,EGP,Currency
+Email,Email,Field
+Email / البريد الإلكتروني,Email / البريد الإلكتروني,Member Contract
+Employee ↔ Member,Employee ↔ Member
+Enable AI Features,Enable AI Features,Settings
+Enable Analytics / تفعيل التحليلات,Enable Analytics / تفعيل التحليلات
+Enable ARKAMOR IoT,Enable ARKAMOR IoT,Settings
+Enable ARKANOOR Hub,Enable ARKANOOR Hub,Settings
+Enable Auto-Renew,Enable Auto-Renew
+Enable Community / تفعيل المجتمع,Enable Community / تفعيل المجتمع
+Enable Day Pass / تفعيل تصريح اليوم,Enable Day Pass / تفعيل تصريح اليوم
+Enable Events / تفعيل الفعاليات,Enable Events / تفعيل الفعاليات
+Enable Member Directory / تفعيل دليل الأعضاء,Enable Member Directory / تفعيل دليل الأعضاء
+Enable Multi-Location / تفعيل تعدد الفروع,Enable Multi-Location / تفعيل تعدد الفروع
+Enable Online Payments,Enable Online Payments
+Enable RTL,Enable RTL,Design
+Enable Trial / تفعيل التجربة,Enable Trial / تفعيل التجربة
+Enable VoIP,Enable VoIP,Settings
+End,End,Space Booking
+End Date,End Date,Field
+End Date & Time / تاريخ ووقت الانتهاء,End Date & Time / تاريخ ووقت الانتهاء
+End Date / تاريخ النهاية,End Date / تاريخ النهاية,Member Contract
+End date must be after start date,End date must be after start date,Validation
+End Time,End Time,Training Session
+End time must be after start time,End time must be after start time,Validation
+End Time must be after Start Time,End Time must be after Start Time,Validation
+End — النهاية,End — النهاية,ARK Live Dialog
+"End-to-end platform for managing shared workspaces — from booking and membership to billing, community, and marketplace. Built on ERPNext for seamless financial integration.","End-to-end platform for managing shared workspaces — from booking and membership to billing, community, and marketplace. Built on ERPNext for seamless financial integration."
+Engagement,Engagement
+English,English,Language
+English Font,English Font,Design
+English terms are required,English terms are required,Validation
+Enroll,Enroll,Button
+Enrolled,Enrolled,Training Progress Status
+Enrollment Date,Enrollment Date,User Training Progress
+Enter your full name,Enter your full name
+Enterprise,Enterprise
+Enterprise Co-Working Space Management,Enterprise Co-Working Space Management,App Description
+Entity,Entity
+Entity Relationships — علاقات البيانات,Entity Relationships — علاقات البيانات
+Entity Type,Entity Type
+Entity Type — نوع الكيان,Entity Type — نوع الكيان
+Entity — الكيان,Entity — الكيان
+"Entries support Markdown, images, and code examples for technical documentation.","Entries support Markdown, images, and code examples for technical documentation."
+ERPNext Branch / فرع ERPNext,ERPNext Branch / فرع ERPNext
+Evening,Evening
+Event,Event,Source
+Event Attendee,Event Attendee
+Event coordination,Event coordination
+Event is full,Event is full
+Event Management,Event Management
+Event Management & RSVP,Event Management & RSVP
+Event Name (Arabic) / اسم الفعالية بالعربية,Event Name (Arabic) / اسم الفعالية بالعربية
+Event Name / اسم الفعالية,Event Name / اسم الفعالية
+Event Registration,Event Registration
+Event Registration Update,Event Registration Update
+Event Space,Event Space,Plan Type
+Event Space — قاعة فعاليات,Event Space — قاعة فعاليات,Setup Wizard
+Event Type / نوع الفعالية,Event Type / نوع الفعالية
+Events,Events
+Events can be open to all or restricted to membership tiers.,Events can be open to all or restricted to membership tiers.
+Events — الفعاليات,Events — الفعاليات
+"Every credit movement is logged with type, amount, reference document, and timestamp.","Every credit movement is logged with type, amount, reference document, and timestamp."
+"Exam room scheduling, specialist time-slots. Patient check-in via QR, billing integration with insurance.","Exam room scheduling, specialist time-slots. Patient check-in via QR, billing integration with insurance."
+Exchange Rate,Exchange Rate
+Expected,Expected
+Expected & checked in,Expected & checked in
+Expected Arrival,Expected Arrival
+Expected Departure,Expected Departure
+Expected departure must be after expected arrival,Expected departure must be after expected arrival
+Expected Start,Expected Start,Workspace Lead
+Expert,Expert
+Expire,Expire
+Expired,Expired,Status
+expired,expired
+Expired / منتهي,Expired / منتهي,Member Contract Status
+Expires,Expires
+Expires At,Expires At
+Expiry / الانتهاء,Expiry / الانتهاء,Contract Legal Document
+Expiry Date / تاريخ الانتهاء,Expiry Date / تاريخ الانتهاء,Legal Document
+Explore,Explore
+Explore Connections,Explore Connections
+Explore Relationships,Explore Relationships
+Explore your ARKSpace tools:,Explore your ARKSpace tools:
+Explorer,Explorer
+Failed,Failed
+Failed to cancel booking,Failed to cancel booking,Portal
+Failed to generate QR for booking {0},Failed to generate QR for booking {0}
+Failed to initiate payment. Please check your payment gateway configuration.,Failed to initiate payment. Please check your payment gateway configuration.
+FAQ,FAQ,Documentation Type
+Fawry,Fawry
+Feature,Feature
+Features,Features,Settings Section
+Fee,Fee
+Fee / الرسوم,Fee / الرسوم
+Fee Amount,Fee Amount,Training Session
+Feed,Feed
+Feedback,Feedback,Field
+Feedback & Notes,Feedback & Notes,Section
+Field Restrictions,Field Restrictions
+"Fill in visitor details and save, or use Quick Walk-in for immediate check-in.","Fill in visitor details and save, or use Quick Walk-in for immediate check-in."
+Filter,Filter,Portal
+Filter by branch,Filter by branch
+Financial / البيانات المالية,Financial / البيانات المالية,Member Contract
+First Membership Plan — خطة العضوية الأولى,First Membership Plan — خطة العضوية الأولى,Setup Wizard
+Fiscal Year Start,Fiscal Year Start,Settings
+Fitness & Wellness,Fitness & Wellness
+Fixed Amount,Fixed Amount
+Floor,Floor,Co-working Space
+Floor / الطابق,Floor / الطابق,Member Contract
+Floor Plan,Floor Plan
+Floor plan monitoring,Floor plan monitoring
+Floor Plan — مخطط الطابق,Floor Plan — مخطط الطابق,Floor Plan Page
+Floor — الطابق,Floor — الطابق
+Flow,Flow
+"Follow the onboarding wizard to learn how ARKSpace works, or jump directly to any section.","Follow the onboarding wizard to learn how ARKSpace works, or jump directly to any section."
+Follow Up,Follow Up,Section
+Follow Up Date,Follow Up Date,Workspace Tour
+Forecast,Forecast
+Forecast Start,Forecast Start
+Foreign Company Docs / مستندات شركة أجنبية,Foreign Company Docs / مستندات شركة أجنبية,Legal Document Type
+frappe_visual is required. Please install it first.,frappe_visual is required. Please install it first.
+Free,Free
+Free Session,Free Session,Training Session
+Free Trial,Free Trial
+Fri,Fri
+Friday,Friday
+From,From,Field
+From / من,From / من,Payment Receipt
+From Date,From Date,Field
+From Member / من العضو,From Member / من العضو
+From Member Name / اسم العضو المرسل,From Member Name / اسم العضو المرسل
+Front Desk,Front Desk
+Front Desk Bundle,Front Desk Bundle
+Full Admin Bundle,Full Admin Bundle
+Full Day,Full Day
+Full Documentation,Full Documentation,Documentation Entry
+Full ERP Integration (ERPNext),Full ERP Integration (ERPNext)
+Full Interactive Tour,Full Interactive Tour
+Full Name,Full Name
+Full system configuration,Full system configuration
+Fullscreen,Fullscreen,Button
+Gallery,Gallery,Co-working Space
+Gallery Images,Gallery Images
+Gateway,Gateway
+Gateway Details,Gateway Details
+Gateway Fee,Gateway Fee
+Gateway Reference,Gateway Reference
+Gateway Response,Gateway Response
+Gateway Status,Gateway Status
+General,General,Settings Section
+Generate QR Code,Generate QR Code
+Generating QR Code...,Generating QR Code...
+Generating QR codes for today's bookings...,Generating QR codes for today's bookings...
+Get Day Pass,Get Day Pass
+Get instant access to our workspace — no membership required,Get instant access to our workspace — no membership required
+Get Started,Get Started
+Getting Started — ابدأ الآن,Getting Started — ابدأ الآن
+Go to Login,Go to Login
+Gold,Gold,Badge Level
+Grand Total,Grand Total,Report
+Grid View — عرض الشبكة,Grid View — عرض الشبكة
+Group By,Group By,Filter
+Guest,Guest
+Guest Name,Guest Name
+Guest Type,Guest Type
+Hackathon,Hackathon
+Half Day,Half Day
+Handle membership lifecycle,Handle membership lifecycle
+Help,Help
+Here are the visual tools available to you:,Here are the visual tools available to you:
+Here's how the booking flow works:,Here's how the booking flow works:
+Host,Host
+Host (Member),Host (Member)
+Host Department,Host Department
+Host Name,Host Name
+Host Notification,Host Notification
+Host:,Host:
+Hot Desk,Hot Desk,Plan Type
+Hot Desk — مكتب مشترك,Hot Desk — مكتب مشترك,Setup Wizard
+"Hot Desk, Private Office, Meeting Room…","Hot Desk, Private Office, Meeting Room…"
+Hourly,Hourly,Booking Type
+Hourly Price,Hourly Price,Amenity
+Hourly Rate,Hourly Rate,Co-working Space
+Hourly · Daily · Monthly,Hourly · Daily · Monthly
+Hours Booked,Hours Booked,Report
+hours included,hours included
+How Spaces & Bookings Work,How Spaces & Bookings Work
+hr,hr,Unit
+Icon,Icon,Amenity
+Icon Class,Icon Class,Training Badge
+Icon Library,Icon Library,Design
+Icons,Icons,Section
+ID Number,ID Number
+ID Type,ID Type
+ID Verification,ID Verification
+Idea,Idea
+"If you have any questions, please contact our front desk.","If you have any questions, please contact our front desk.",Notification
+Image / الصورة,Image / الصورة
+In Progress,In Progress,Training Session Status
+Included Credits,Included Credits,Membership Plan
+Included Hours,Included Hours,Membership Plan
+Included Hours / Month,Included Hours / Month,Membership Plan
+Industry Use-Cases — حالات الاستخدام,Industry Use-Cases — حالات الاستخدام
+Initial Credits,Initial Credits,Membership
+Initiated,Initiated
+Initiated At,Initiated At
+Initiating payment...,Initiating payment...
+Instructor,Instructor,Training Session
+Insufficient credits,Insufficient credits,Validation
+"Insufficient credits. Available: {0}, Requested: {1}","Insufficient credits. Available: {0}, Requested: {1}",Validation
+Integration Setup,Integration Setup
+Integrations,Integrations,Settings Section
+Integrations — التكاملات,Integrations — التكاملات
+Interactive 2D Floor Plan,Interactive 2D Floor Plan
+Interest,Interest,Section
+Interest Level,Interest Level,Workspace Tour
+Interested,Interested,Tour Outcome
+Interested Plan,Interested Plan,Workspace Lead
+Interested Space Type,Interested Space Type,Workspace Lead
+Intermediate,Intermediate,Training Level
+Internal Notes,Internal Notes,User Training Progress
+Interview,Interview
+Invalid action. Use 'accept' or 'decline'.,Invalid action. Use 'accept' or 'decline'.
+Invalid QR code — authentication failed,Invalid QR code — authentication failed
+Invalid QR code — missing parameters,Invalid QR code — missing parameters
+Invalid webhook signature,Invalid webhook signature
+Invoice,Invoice
+Invoice Prefix,Invoice Prefix,Settings
+Invoices,Invoices
+Iqama,Iqama
+Is Active / نشط,Is Active / نشط
+Is Anonymous / مجهول,Is Anonymous / مجهول
+Is Featured / مميز,Is Featured / مميز
+Is Free / مجاني,Is Free / مجاني
+Is Mandatory,Is Mandatory,Documentation Prerequisite
+Is Pinned / مثبت,Is Pinned / مثبت
+Is Trial,Is Trial
+Issue at front desk or online. QR code generated for entry.,Issue at front desk or online. QR code generated for entry.
+Issue Date / تاريخ الإصدار,Issue Date / تاريخ الإصدار,Legal Document
+Issuing Authority / جهة الإصدار,Issuing Authority / جهة الإصدار,Legal Document
+It will be auto-renewed.,It will be auto-renewed.,Notification
+Job Posting,Job Posting
+Join ARKSpace,Join ARKSpace
+Key business workflows in ARKSpace,Key business workflows in ARKSpace
+Knowledge Base,Knowledge Base
+Language,Language,Contract Template
+Last 30 Days,Last 30 Days
+Last 6 Months,Last 6 Months
+Last 60 Days,Last 60 Days
+Last 90 Days,Last 90 Days
+Last Reviewed,Last Reviewed,Documentation Entry
+Last Year,Last Year
+Latitude / خط العرض,Latitude / خط العرض
+Lead,Lead,Workspace Tour
+Lead already converted,Lead already converted,Validation
+Lead Conversion,Lead Conversion
+"Lead conversion funnel, tour scheduling, follow-up tracking.","Lead conversion funnel, tour scheduling, follow-up tracking."
+Lead Name,Lead Name,Workspace Lead
+Lead Pipeline,Lead Pipeline,Dashboard Chart
+Lead Prefix,Lead Prefix,Settings
+Leave 0 for free trial / اترك 0 للتجربة المجانية,Leave 0 for free trial / اترك 0 للتجربة المجانية
+Legal Document,Legal Document,DocType
+Legal Document / المستند القانوني,Legal Document / المستند القانوني,Contract Legal Document
+Legal Documents,Legal Documents
+Legal Documents / المستندات القانونية,Legal Documents / المستندات القانونية,Member Contract
+Legal Documents — المستندات القانونية,Legal Documents — المستندات القانونية
+Legal Documents — المستندات القانونية للعقود,Legal Documents — المستندات القانونية للعقود
+Legend,Legend
+Let's set up your co-working space in a few easy steps.,Let's set up your co-working space in a few easy steps.,Setup Wizard
+Level,Level,Training Badge
+Like,Like
+Like ♡,Like ♡
+Liked,Liked
+Liked!,Liked!
+Likes Count / عدد الإعجابات,Likes Count / عدد الإعجابات
+Link Color,Link Color,Design
+Link Hover Color,Link Hover Color,Design
+"Link legal documents (NDAs, terms of service, waivers) to specific contracts.","Link legal documents (NDAs, terms of service, waivers) to specific contracts."
+Link related documentation entries to help readers discover connected topics and guides.,Link related documentation entries to help readers discover connected topics and guides.
+Link spaces to floor zones for the Live Floor Plan view.,Link spaces to floor zones for the Live Floor Plan view.
+Link to Spaces,Link to Spaces
+Linked Documents,Linked Documents
+Links,Links,Section
+Live,Live,Floor Plan
+Live Floor Plan,Live Floor Plan
+Live Plan,Live Plan
+Load More,Load More
+Loading command center...,Loading command center...
+Loading community...,Loading community...
+Loading exploration…,Loading exploration…
+Loading explorer...,Loading explorer...
+Loading flow...,Loading flow...
+Loading graph...,Loading graph...
+Localization,Localization,Settings Section
+Location / الموقع,Location / الموقع
+Login here,Login here
+Long Booking,Long Booking
+Longitude / خط الطول,Longitude / خط الطول
+Lost,Lost,Status
+lost,lost
+Lunch & Learn,Lunch & Learn
+Main Branch,Main Branch,Setup Wizard
+Main Image,Main Image,Co-working Space
+"Maintain a library of legal documents — terms of service, NDAs, waivers, and policies.","Maintain a library of legal documents — terms of service, NDAs, waivers, and policies."
+Maintenance,Maintenance,Status
+Maintenance Spaces / مساحات الصيانة,Maintenance Spaces / مساحات الصيانة
+Maintenance — صيانة,Maintenance — صيانة,Legend
+Manage multiple locations with independent settings but centralized reporting.,Manage multiple locations with independent settings but centralized reporting.
+Manage spaces and process bookings,Manage spaces and process bookings
+Manager,Manager
+Manager Bundle,Manager Bundle
+Manual,Manual
+Mark one image as the primary thumbnail that appears in listings and cards.,Mark one image as the primary thumbnail that appears in listings and cards.
+Mark {0} booking(s) as No Show?,Mark {0} booking(s) as No Show?,Bulk Operation
+Marketplace,Marketplace
+Marketplace access,Marketplace access
+Master Legal Library,Master Legal Library
+Mastery,Mastery,Badge Category
+Max Adjustment Cap,Max Adjustment Cap
+Max Attendees / الحد الأقصى للحضور,Max Attendees / الحد الأقصى للحضور
+Max Capacity / السعة القصوى,Max Capacity / السعة القصوى
+Max Guests,Max Guests,Membership Plan
+Max Hours,Max Hours
+Max Participants,Max Participants,Training Session
+Max Trial Days / أقصى أيام التجربة,Max Trial Days / أقصى أيام التجربة
+Media,Media,Section
+Medical Clinics,Medical Clinics
+Meeting,Meeting
+Meeting Room,Meeting Room,Plan Type
+Meeting Room Hours / Month,Meeting Room Hours / Month,Membership Plan
+Meeting Room — غرفة اجتماعات,Meeting Room — غرفة اجتماعات,Setup Wizard
+meeting rooms,meeting rooms
+Meeting URL,Meeting URL,Training Session
+Meetup,Meetup
+Member,Member,Space Booking
+Member (Customer),Member (Customer),User Training Progress
+Member / العميل,Member / العميل,Member Contract
+Member Activity,Member Activity
+Member Analytics,Member Analytics
+Member Bundle,Member Bundle
+Member check-in/check-out,Member check-in/check-out
+Member Contract,Member Contract,DocType
+Member Credit Wallet,Member Credit Wallet,DocType
+Member Details / بيانات العميل,Member Details / بيانات العميل,Member Contract
+Member Directory,Member Directory
+Member Email,Member Email,Field
+Member Events,Member Events
+Member Growth,Member Growth
+Member Name,Member Name,Field
+Member Name / اسم العميل,Member Name / اسم العميل,Member Contract
+Member not found,Member not found
+Member Signature / توقيع العميل,Member Signature / توقيع العميل,Member Contract
+Member Skill,Member Skill
+Member Skills — مهارات العضو,Member Skills — مهارات العضو
+Member Tier,Member Tier
+Member — العضو,Member — العضو,ARK Live Dialog
+Members,Members
+Members / الأعضاء,Members / الأعضاء
+"Members browse available spaces, create bookings, and go through the confirmation and check-in flow.","Members browse available spaces, create bookings, and go through the confirmation and check-in flow."
+Members can list their skills and expertise for the community directory and networking.,Members can list their skills and expertise for the community directory and networking.
+"Members can share knowledge, ask questions, and post announcements on the community board.","Members can share knowledge, ask questions, and post announcements on the community board."
+"Members choose a plan, register, and enjoy active membership with renewal and upgrade options.","Members choose a plan, register, and enjoy active membership with renewal and upgrade options."
+"Members connect, share events, and build a vibrant co-working community.","Members connect, share events, and build a vibrant co-working community."
+Members will appear here when they connect with each other,Members will appear here when they connect with each other
+Membership,Membership,DocType
+Membership / العضوية,Membership / العضوية,Member Contract
+Membership Analytics,Membership Analytics,Report
+Membership Card,Membership Card,Print Format
+Membership created: {0},Membership created: {0}
+Membership Credit Applied,Membership Credit Applied
+Membership dashboard,Membership dashboard
+Membership Details,Membership Details,Portal
+Membership Distribution,Membership Distribution,Dashboard Chart
+Membership Expiring Soon,Membership Expiring Soon,Notification
+Membership Expiring Soon — {{ doc.membership_plan }},Membership Expiring Soon — {{ doc.membership_plan }},Notification Subject
+Membership Expiry Reminder,Membership Expiry Reminder,Notification
+Membership Expiry Reminder — {0} days,Membership Expiry Reminder — {0} days,Notification
+Membership Lifecycle,Membership Lifecycle
+Membership lifecycle: from plan selection to renewal.,Membership lifecycle: from plan selection to renewal.
+Membership Payment / دفعة عضوية,Membership Payment / دفعة عضوية,Receipt Type
+Membership Plan,Membership Plan,DocType
+Membership plan {0} — {1},Membership plan {0} — {1},Info
+Membership Plans — خطط العضوية,Membership Plans — خطط العضوية
+Membership Prefix,Membership Prefix,Settings
+Membership Receipt,Membership Receipt,Print Format
+Membership renewed! New membership: {0},Membership renewed! New membership: {0}
+Membership Revenue,Membership Revenue,Report
+Membership Revenue / إيرادات العضويات,Membership Revenue / إيرادات العضويات
+Membership transferred from {0} to {1},Membership transferred from {0} to {1}
+Membership transferred to {0},Membership transferred to {0}
+Membership Welcome,Membership Welcome,Notification
+Membership {0} created! Credit: {1},Membership {0} created! Credit: {1}
+Membership {0} — Plan: {1} ({2}),Membership {0} — Plan: {1} ({2}),Billing
+Membership — عضوية,Membership — عضوية,Legend
+Memberships,Memberships,Report
+Memberships — العضويات,Memberships — العضويات
+Message / الرسالة,Message / الرسالة
+Messaging,Messaging
+Meta,Meta,Section
+Method,Method
+Min Hours,Min Hours
+Minimum Rate,Minimum Rate
+Minimum Rate Floor,Minimum Rate Floor
+Mode,Mode
+Module Map — خريطة الوحدات,Module Map — خريطة الوحدات
+Module Name,Module Name,Training Module
+Module Structure,Module Structure
+"Module, Action, Field, Report","Module, Action, Field, Report"
+Mon,Mon
+Monday,Monday
+Month,Month,Report
+month,month
+Month Revenue,Month Revenue
+Monthly,Monthly,Booking Type
+Monthly / شهري,Monthly / شهري,Payment Billing Cycle
+Monthly Bookings,Monthly Bookings,Dashboard Chart
+Monthly Budget,Monthly Budget,Workspace Lead
+Monthly Price,Monthly Price,Amenity
+Monthly price must be greater than zero,Monthly price must be greater than zero,Validation
+Monthly Rate,Monthly Rate,Co-working Space
+Monthly Revenue,Monthly Revenue,Number Card
+Multi-Branch Centralized,Multi-Branch Centralized
+Multi-Branch Management,Multi-Branch Management
+Multi-Location / تعدد الفروع,Multi-Location / تعدد الفروع
+Multi-Vendor Marketplace,Multi-Vendor Marketplace
+"Multi-vendor marketplace for co-working services, supplies, equipment rental. Cross-branch inventory and fulfillment.","Multi-vendor marketplace for co-working services, supplies, equipment rental. Cross-branch inventory and fulfillment."
+"Multiple print formats available: bilingual (AR/EN), Arabic-only, and English-only.","Multiple print formats available: bilingual (AR/EN), Arabic-only, and English-only."
+Multiplier,Multiplier
+Multiplier must be greater than zero,Multiplier must be greater than zero
+My Connections,My Connections
+My Memberships,My Memberships
+My Payments,My Payments
+My Profile,My Profile,Portal
+My Profile — ARKSpace,My Profile — ARKSpace,Portal
+m²,m²,Unit
+National ID,National ID
+National ID / البطاقة الشخصية,National ID / البطاقة الشخصية,Legal Document Type
+Navigation History,Navigation History
+Need at least 3 months of data,Need at least 3 months of data
+Need Follow Up,Need Follow Up,Tour Outcome
+Need more help?,Need more help?
+Negotiating,Negotiating,Status
+Net Amount,Net Amount,Space Booking
+Net Amount / الصافي,Net Amount / الصافي,Member Contract
+Net Growth,Net Growth,Report
+Net Received,Net Received
+Networking,Networking
+Networking Request,Networking Request
+Networking Request Accepted,Networking Request Accepted
+Networking — التواصل,Networking — التواصل
+New,New,Status
+New Booking,New Booking,Button
+New Bookings / حجوزات جديدة,New Bookings / حجوزات جديدة
+New Community Post,New Community Post
+New Members,New Members
+New Members / أعضاء جدد,New Members / أعضاء جدد
+New Networking Request,New Networking Request
+New Plan,New Plan
+New Post,New Post
+New → Active → Expiring → Expired. Auto-renewal and manual renewal supported.,New → Active → Expiring → Expired. Auto-renewal and manual renewal supported.
+Next,Next
+Next Follow Up,Next Follow Up,Workspace Lead
+No,No,Field
+No account found,No account found
+No active memberships,No active memberships,Portal
+No analytics data available for the selected period.,No analytics data available for the selected period.
+No attendees registered yet,No attendees registered yet
+No available spaces found,No available spaces found
+No Branch,No Branch
+No branch data available,No branch data available
+No community data yet,No community data yet
+No invoices found,No invoices found
+No linked customer account found. Contact support to link your account.,No linked customer account found. Contact support to link your account.,Portal
+No linked Customer for {0}. Invoice not created.,No linked Customer for {0}. Invoice not created.,Billing
+No linked Customer found for {0}. Sales Invoice was not created.,No linked Customer found for {0}. Sales Invoice was not created.,Billing
+No members found,No members found
+No membership found,No membership found,Portal
+No online payments,No online payments
+No other plans available.,No other plans available.
+No Plan (Free Account),No Plan (Free Account)
+No posts yet,No posts yet
+No posts yet. Be the first to share!,No posts yet. Be the first to share!
+No profile data,No profile data
+No recent bookings,No recent bookings,Portal
+No relationships found,No relationships found
+No Show,No Show,Status
+No Shows / عدم الحضور,No Shows / عدم الحضور
+No spaces available,No spaces available,Portal
+No spaces available at the moment.,No spaces available at the moment.,Portal
+No spaces found,No spaces found,Floor Plan
+No upcoming bookings,No upcoming bookings,Portal
+No upcoming events,No upcoming events
+No {0} rate configured for space {1},No {0} rate configured for space {1},Validation
+Not enough data for forecasting (need 14+ days),Not enough data for forecasting (need 14+ days)
+Not Interested,Not Interested,Tour Outcome
+Notarized Document / مستند موثق,Notarized Document / مستند موثق,Legal Document Type
+Notes,Notes,Field
+Notes / ملاحظات,Notes / ملاحظات,Member Contract
+Notes — ملاحظات,Notes — ملاحظات,ARK Live Dialog
+Notifications,Notifications
+Number / الرقم,Number / الرقم,Contract Legal Document
+Numbering,Numbering,Settings Section
+Occupancy,Occupancy
+Occupancy %,Occupancy %,Report
+Occupancy Heatmap,Occupancy Heatmap
+Occupancy Rate,Occupancy Rate
+Occupancy Rate / نسبة الإشغال,Occupancy Rate / نسبة الإشغال
+Occupancy Report,Occupancy Report
+Occupied,Occupied,Status
+Occupied Spaces / المساحات المشغولة,Occupied Spaces / المساحات المشغولة
+Occupied — مشغول,Occupied — مشغول,Legend
+Off-Peak Discount,Off-Peak Discount
+Office Rental,Office Rental,Contract Type
+Onboarding,Onboarding,Training Category
+one-time,one-time
+One-time / مرة واحدة,One-time / مرة واحدة,Payment Billing Cycle
+Online,Online
+Online / إلكتروني,Online / إلكتروني,Payment Method
+Online Pay,Online Pay
+Online Payment,Online Payment
+Online payment via {0} — {1},Online payment via {0} — {1}
+Online payment {0} failed — {1},Online payment {0} failed — {1}
+Online Payments,Online Payments
+Online payments are not enabled. Please contact the administrator.,Online payments are not enabled. Please contact the administrator.
+Online Payments — الدفع الإلكتروني,Online Payments — الدفع الإلكتروني
+Online Session,Online Session,Training Session
+Only active memberships can be transferred,Only active memberships can be transferred
+Only active memberships can be upgraded,Only active memberships can be upgraded
+Only Checked In bookings can be checked out. Current status: {0},Only Checked In bookings can be checked out. Current status: {0},Validation
+Only completed payments can be refunded,Only completed payments can be refunded
+Only Confirmed bookings can be checked in. Current status: {0},Only Confirmed bookings can be checked in. Current status: {0},Validation
+Only submitted memberships can be renewed,Only submitted memberships can be renewed
+Only the recipient can accept this request,Only the recipient can accept this request
+Only the recipient can decline this request,Only the recipient can decline this request
+Open for Registration,Open for Registration
+Open in Form,Open in Form
+Open Source,Open Source
+Open Space,Open Space,Button
+Opening Time / وقت الافتتاح,Opening Time / وقت الافتتاح
+Opening time must be before closing time,Opening time must be before closing time
+Operations,Operations
+Operations / العمليات,Operations / العمليات
+Operations Bundle,Operations Bundle
+optional — you can choose later,optional — you can choose later
+"Organize spaces by type: Hot Desk, Private Office, Meeting Room, Event Hall, Studio, etc.","Organize spaces by type: Hot Desk, Private Office, Meeting Room, Event Hall, Studio, etc."
+"Organize training content into modules — each module contains sessions, resources, and assessments.","Organize training content into modules — each module contains sessions, resources, and assessments."
+Organizer / المنظم,Organizer / المنظم
+organizes,organizes
+Other,Other,Source
+Other / أخرى,Other / أخرى,Legal Document Type
+Other Revenue / إيرادات أخرى,Other Revenue / إيرادات أخرى
+Outcome,Outcome,Workspace Tour
+Outstanding,Outstanding
+Override Rate,Override Rate
+Override rate cannot be negative,Override rate cannot be negative
+Overview — نظرة عامة,Overview — نظرة عامة
+pages/month,pages/month
+Paid,Paid
+Panel,Panel
+Parent,Parent,Relation Type
+Partially Refunded,Partially Refunded
+Partner,Partner,Source
+Pass,Pass
+Pass Date,Pass Date
+Pass Type,Pass Type
+Passes & Visitors / التصاريح والزوار,Passes & Visitors / التصاريح والزوار
+Passes expire at end of business day automatically.,Passes expire at end of business day automatically.
+Passport,Passport
+Passport / جواز السفر,Passport / جواز السفر,Legal Document Type
+Past Events,Past Events
+Past Memberships,Past Memberships
+Patterns / الأنماط,Patterns / الأنماط
+Pay,Pay
+Pay Online,Pay Online
+Payment,Payment
+Payment amount must be greater than zero,Payment amount must be greater than zero
+Payment completed successfully!,Payment completed successfully!
+Payment Date / تاريخ الدفع,Payment Date / تاريخ الدفع,Payment Receipt
+Payment Details,Payment Details
+Payment Details / بيانات الدفع,Payment Details / بيانات الدفع,Payment Receipt
+Payment Entry,Payment Entry
+Payment failed. Please try again.,Payment failed. Please try again.
+Payment For,Payment For
+Payment Gateways,Payment Gateways
+Payment ID,Payment ID
+Payment initiation failed. Please try again.,Payment initiation failed. Please try again.
+Payment Link Expiry (hours),Payment Link Expiry (hours)
+Payment Method,Payment Method
+Payment Method / طريقة الدفع,Payment Method / طريقة الدفع,Payment Receipt
+Payment Period / فترة الدفع,Payment Period / فترة الدفع,Payment Receipt
+Payment Receipt,Payment Receipt,DocType
+Payment Receipts — إيصالات الدفع,Payment Receipts — إيصالات الدفع
+Payment received successfully! Thank you.,Payment received successfully! Thank you.
+Payment Reconciliation,Payment Reconciliation
+Payment Reconciliation Error,Payment Reconciliation Error
+Payment status: {0},Payment status: {0}
+Payment Success Message,Payment Success Message
+Payment Webhook Error,Payment Webhook Error
+Payment window opened. Complete the payment in the new tab.,Payment window opened. Complete the payment in the new tab.
+Payment {0} completed!,Payment {0} completed!
+Payments,Payments
+PayPal,PayPal
+Peak Hour / ساعة الذروة,Peak Hour / ساعة الذروة
+Peak Hours,Peak Hours
+"Peak hours, cancellation rates, no-show tracking, average booking duration.","Peak hours, cancellation rates, no-show tracking, average booking duration."
+Pending,Pending,Status
+Pending / قيد المراجعة,Pending / قيد المراجعة,Legal Document Status
+Pending Requests,Pending Requests
+Percentage,Percentage
+Period,Period,Field
+Period To must be after Period From,Period To must be after Period From,Validation
+Period Type / نوع الفترة,Period Type / نوع الفترة
+Permissions,Permissions
+Personal Information,Personal Information,Portal
+persons,persons,Unit
+Phone,Phone,Field
+Phone / الهاتف,Phone / الهاتف,Member Contract
+Pin,Pin
+Pin Post,Pin Post
+Pinned Posts,Pinned Posts
+Placeholders,Placeholders,Contract Template
+Plan,Plan,Field
+Plan / الخطة,Plan / الخطة,Member Contract
+Plan Benefits,Plan Benefits
+Plan Name,Plan Name,Membership Plan
+Plan Name (Arabic),Plan Name (Arabic),Membership Plan
+Plan Pricing,Plan Pricing
+Plan Setup,Plan Setup
+Plan Type,Plan Type,Membership Plan
+Plans,Plans
+Plans & Tiers,Plans & Tiers
+Platinum,Platinum,Badge Level
+Please contact us to renew your membership and continue enjoying our services.,Please contact us to renew your membership and continue enjoying our services.,Notification
+Please enter your name first,Please enter your name first
+Please fill in the required fields.,Please fill in the required fields.
+Please link a Customer before marking as Converted,Please link a Customer before marking as Converted,Validation
+Please login to access the member portal,Please login to access the member portal,Validation
+Please login to access your memberships,Please login to access your memberships
+Please login to book a space,Please login to book a space,Validation
+Please login to view your payments,Please login to view your payments
+Please login to view your profile,Please login to view your profile,Validation
+Please register or contact us to set up your membership.,Please register or contact us to set up your membership.
+Please renew your membership to continue enjoying our services.,Please renew your membership to continue enjoying our services.,Notification
+Please select a Contract Template first,Please select a Contract Template first,Validation
+Please select a different plan or billing cycle,Please select a different plan or billing cycle
+Please select bookings first,Please select bookings first,Bulk Operation
+Points,Points,Training Badge
+Popular,Popular
+Popular (10+ likes),Popular (10+ likes)
+Popular Booking Type / نوع الحجز الأكثر شعبية,Popular Booking Type / نوع الحجز الأكثر شعبية
+Popular Space Type / نوع المساحة الأكثر شعبية,Popular Space Type / نوع المساحة الأكثر شعبية
+Populate from Template,Populate from Template,Button
+Portal Appearance,Portal Appearance
+Post,Post
+Post created successfully,Post created successfully
+Post Type / نوع المنشور,Post Type / نوع المنشور
+Postal Code / الرمز البريدي,Postal Code / الرمز البريدي
+posted,posted
+Postponed,Postponed
+Posts,Posts
+"Posts support likes, pinning, and comment threads to foster engagement.","Posts support likes, pinning, and comment threads to foster engagement."
+Power of Attorney / توكيل رسمي,Power of Attorney / توكيل رسمي,Legal Document Type
+Powered by ARKSpace,Powered by ARKSpace
+"Pre-register visitors, track walk-ins, and generate entry badges with QR codes.","Pre-register visitors, track walk-ins, and generate entry badges with QR codes."
+Pre-registered,Pre-registered
+Pre-registered By,Pre-registered By
+Preparing payment link...,Preparing payment link...
+Prerequisite,Prerequisite,Documentation Prerequisite
+Prerequisites,Prerequisites,Training Module
+Prerequisites — المتطلبات المسبقة,Prerequisites — المتطلبات المسبقة
+Previous,Previous
+Price Adjustment,Price Adjustment
+Pricing,Pricing,Section
+Pricing by Type,Pricing by Type
+Pricing Rule,Pricing Rule
+Pricing rules & contracts,Pricing rules & contracts
+Pricing Rules — قواعد التسعير,Pricing Rules — قواعد التسعير
+Primary Color,Primary Color,Design
+Primary Image,Primary Image
+Primary Language,Primary Language,Settings
+Print,Print,Button
+Print Arabic Contract,Print Arabic Contract,Button
+Print Badge,Print Badge
+Print Bilingual,Print Bilingual,Button
+Print English Contract,Print English Contract,Button
+Print Formats,Print Formats
+Print QR,Print QR
+Print QR Code,Print QR Code
+Printing Pages / Month,Printing Pages / Month,Membership Plan
+Private Office,Private Office,Plan Type
+Private Office — مكتب خاص,Private Office — مكتب خاص,Setup Wizard
+Processing refund...,Processing refund...
+Processing renewal...,Processing renewal...
+Processing upgrade...,Processing upgrade...
+Proficiency Level / مستوى الإتقان,Proficiency Level / مستوى الإتقان
+Profile,Profile
+Progress,Progress,User Training Progress
+Progress %,Progress %,User Training Progress
+Progress Tracking,Progress Tracking
+Projected,Projected
+Promotion,Promotion
+Prorated credit: {0},Prorated credit: {0}
+Published,Published,Training Status
+Purpose,Purpose
+Purpose Details,Purpose Details
+Purpose of Visit,Purpose of Visit
+Purpose:,Purpose:
+QR Check-in,QR Check-in
+QR Code,QR Code
+QR code check-in,QR code check-in
+QR Code generated successfully,QR Code generated successfully
+QR code generation requires 'segno' or 'qrcode' package. Install with: pip install segno,QR code generation requires 'segno' or 'qrcode' package. Install with: pip install segno
+QR Code Self Check-in,QR Code Self Check-in
+QR Generation Error,QR Generation Error
+QR Token,QR Token
+Qty,Qty,Field
+Quarterly,Quarterly,Billing Cycle
+Quarterly / ربع سنوي,Quarterly / ربع سنوي,Payment Billing Cycle
+Question,Question
+Quick Access,Quick Access
+Quick Book — {0},Quick Book — {0},Floor Plan
+Quick booking,Quick booking
+Quick Links,Quick Links,Portal
+Quick Walk-in,Quick Walk-in
+Quick Walk-in Day Pass,Quick Walk-in Day Pass
+Rate,Rate,Space Booking
+Rate / القيمة,Rate / القيمة,Member Contract
+Rate Multiplier / مضاعف السعر,Rate Multiplier / مضاعف السعر
+Rating,Rating,User Training Progress
+Razorpay,Razorpay
+Reactivate,Reactivate,Workflow
+Reading Order,Reading Order
+Ready to explore ARKSpace?,Ready to explore ARKSpace?
+Real-time 2D floor plan with SVG overlay showing space status and occupancy.,Real-time 2D floor plan with SVG overlay showing space status and occupancy.
+Real-time and historical occupancy rates with heatmaps per branch and floor.,Real-time and historical occupancy rates with heatmaps per branch and floor.
+Reason,Reason
+Recalculate Capacity,Recalculate Capacity
+Receipt Date / تاريخ الإيصال,Receipt Date / تاريخ الإيصال,Payment Receipt
+Receipt Generation,Receipt Generation
+Receipt Type / نوع الإيصال,Receipt Type / نوع الإيصال,Payment Receipt
+Recent Bookings,Recent Bookings,Portal
+Recent Posts,Recent Posts
+Recipients can accept or decline requests. Accepted connections appear in your network.,Recipients can accept or decline requests. Accepted connections appear in your network.
+Reference,Reference
+Reference Number / رقم المرجع,Reference Number / رقم المرجع,Payment Receipt
+Referral,Referral,Source
+Referral Code,Referral Code
+Referred,Referred
+Refresh,Refresh,Button
+Refund,Refund,Transaction Type
+Refund Amount,Refund Amount
+Refund Payment,Refund Payment
+Refund processed via {0} for {1},Refund processed via {0} for {1}
+Refund processed: {0},Refund processed: {0}
+Refunded,Refunded
+Regenerate,Regenerate,Button
+Regenerate QR,Regenerate QR
+Regenerate QR Code,Regenerate QR Code
+Register,Register
+Register for Event,Register for Event
+Register Now,Register Now
+Registered,Registered,Training Session
+Registered successfully!,Registered successfully!
+Registering and checking in visitor...,Registering and checking in visitor...
+Registration cancelled for {0},Registration cancelled for {0}
+Registration Closed,Registration Closed
+Registration Deadline / آخر موعد للتسجيل,Registration Deadline / آخر موعد للتسجيل
+Registration deadline has passed,Registration deadline has passed
+Registration deadline must be before event start,Registration deadline must be before event start
+Registration failed. Please try again or contact support.,Registration failed. Please try again or contact support.
+Registration Required / التسجيل مطلوب,Registration Required / التسجيل مطلوب
+Reject,Reject,Workflow
+Reject Visitor,Reject Visitor
+Rejected,Rejected
+Rejected / مرفوض,Rejected / مرفوض,Legal Document Status
+Rejected: {0},Rejected: {0}
+Related,Related,Relation Type
+Related Docs — مستندات ذات صلة,Related Docs — مستندات ذات صلة
+Related DocType,Related DocType,Documentation Entry
+Related Documents,Related Documents,Section
+Related Documents / المستندات المرتبطة,Related Documents / المستندات المرتبطة,Payment Receipt
+Related Entry,Related Entry,Documentation Relation
+Relation Type,Relation Type,Documentation Relation
+Relations,Relations,Section
+Renew,Renew,Workflow
+Renew Membership,Renew Membership
+Renew Now,Renew Now
+Renewal,Renewal
+Renewed,Renewed,Report
+renewed,renewed
+Reported,Reported
+Reports & Analytics,Reports & Analytics,Module
+Reports & Analytics — التقارير والتحليلات,Reports & Analytics — التقارير والتحليلات
+Request declined,Request declined
+Rescheduled,Rescheduled,Workspace Tour Status
+Reserved,Reserved,Status
+Reserved Spaces / المساحات المحجوزة,Reserved Spaces / المساحات المحجوزة
+Respond,Respond
+Responded At / تاريخ الرد,Responded At / تاريخ الرد
+Results,Results
+Retention %,Retention %,Report
+Retention Days / أيام الاحتفاظ بالبيانات,Retention Days / أيام الاحتفاظ بالبيانات
+Retention Rate / نسبة الاحتفاظ,Retention Rate / نسبة الاحتفاظ
+Reusable Templates,Reusable Templates
+Revenue,Revenue,Report
+Revenue / الإيرادات,Revenue / الإيرادات
+Revenue by Type,Revenue by Type
+Revenue Forecast,Revenue Forecast
+Revenue Forecasting & Analytics,Revenue Forecasting & Analytics
+Revenue Summary,Revenue Summary,Report
+Revenue tracking,Revenue tracking
+Revenue Trend,Revenue Trend,Dashboard Chart
+Revenue Trends,Revenue Trends
+Reviewed By,Reviewed By,Documentation Entry
+Rich Content,Rich Content
+RTL Support,RTL Support,Section
+Rule Details,Rule Details
+Rule Name,Rule Name
+Rule Priority,Rule Priority
+Rule Type,Rule Type
+Rules are evaluated by priority. The first matching rule determines the final price.,Rules are evaluated by priority. The first matching rule determines the final price.
+Sales Invoice,Sales Invoice,Space Booking
+Sales Invoice {0} cancelled,Sales Invoice {0} cancelled,Billing
+Sales Invoice {0} created for booking {1},Sales Invoice {0} created for booking {1},Billing
+Sales Invoice {0} created for membership {1},Sales Invoice {0} created for membership {1},Billing
+Sat,Sat
+Saturday,Saturday
+Save,Save,Button
+Scan for check-in,Scan for check-in
+Scan to check in,Scan to check in
+Schedule,Schedule,Section
+Schedule and track space tours for leads.,Schedule and track space tours for leads.
+Schedule guided tours for prospective members. Track attendance and follow-up.,Schedule guided tours for prospective members. Track attendance and follow-up.
+Schedule Tour,Schedule Tour,Button
+Scheduled,Scheduled,Workspace Tour Status
+Score,Score,User Training Progress
+Search,Search
+Search across all branches for available spaces,Search across all branches for available spaces
+Search members...,Search members...
+Seasonal,Seasonal
+Seat Number,Seat Number
+Secondary Color,Secondary Color,Design
+Secondary Language,Secondary Language,Settings
+Security & Permissions — الأمان والصلاحيات,Security & Permissions — الأمان والصلاحيات
+Security Deposit / التأمين,Security Deposit / التأمين,Member Contract
+See Also,See Also,Relation Type
+See how ARKSpace compares to the leading co-working management platforms.,See how ARKSpace compares to the leading co-working management platforms.
+Select a DocType,Select a DocType
+Select a record,Select a record
+Select a Space,Select a Space
+Select an entity and click Explore,Select an entity and click Explore
+Select an entity to explore,Select an entity to explore
+Select an entity type and record to explore its connections,Select an entity type and record to explore its connections
+"Select space, date/time range, and member. Pricing is auto-calculated.","Select space, date/time range, and member. Pricing is auto-calculated."
+Select Target Branch,Select Target Branch
+Select the types of spaces you offer.,Select the types of spaces you offer.,Setup Wizard
+Self-service booking,Self-service booking
+Send Connection Request,Send Connection Request
+Send networking requests to other members based on skills and interests.,Send networking requests to other members based on skills and interests.
+Session Date,Session Date,Training Session
+Session Notes,Session Notes,Training Session
+Session Title,Session Title,Training Session
+Session {0} is full ({1}/{2}),Session {0} is full ({1}/{2}),Validation
+Sessions,Sessions,Training
+"Set capacity, hourly/daily/monthly rates, and dynamic pricing rules.","Set capacity, hourly/daily/monthly rates, and dynamic pricing rules."
+Set module prerequisites so members progress through a structured learning path.,Set module prerequisites so members progress through a structured learning path.
+"Set monthly, quarterly, or annual pricing. Link to ERPNext Item for invoicing.","Set monthly, quarterly, or annual pricing. Link to ERPNext Item for invoicing."
+Settings,Settings,Section
+Settings & Configuration,Settings & Configuration,Module
+Settings / الإعدادات,Settings / الإعدادات
+Settings — الإعدادات,Settings — الإعدادات
+Setup Fee,Setup Fee,Membership Plan
+Setup Fee / رسوم تأسيس,Setup Fee / رسوم تأسيس,Receipt Type
+Setup Fee Charged,Setup Fee Charged,Membership
+"Shared desks, private offices, meeting rooms. Hourly/daily/monthly booking with membership tiers and community events.","Shared desks, private offices, meeting rooms. Hourly/daily/monthly booking with membership tiers and community events."
+Show this QR code at the front desk,Show this QR code at the front desk
+Showcase,Showcase
+Signatures / التوقيعات,Signatures / التوقيعات,Member Contract
+Signed Date / تاريخ التوقيع,Signed Date / تاريخ التوقيع,Member Contract
+Silver,Silver,Badge Level
+Skill Matching,Skill Matching
+Skill Name / اسم المهارة,Skill Name / اسم المهارة
+Skill Profiles,Skill Profiles
+Skills,Skills
+"Skills appear in the member directory, enabling networking requests based on complementary expertise.","Skills appear in the member directory, enabling networking requests based on complementary expertise."
+Smart Booking (Hourly/Daily/Monthly),Smart Booking (Hourly/Daily/Monthly)
+Smart Co-Working Space Management,Smart Co-Working Space Management
+Snapshot already exists for {0} - {1},Snapshot already exists for {0} - {1}
+Snapshot Date / تاريخ اللقطة,Snapshot Date / تاريخ اللقطة
+Snapshot ID / معرف اللقطة,Snapshot ID / معرف اللقطة
+Social,Social
+Social Media,Social Media,Source
+Source,Source,Workspace Lead
+source_text,translated_text,context
+Space,Space,Space Booking
+Space / المساحة,Space / المساحة
+Space / الوحدة,Space / الوحدة,Member Contract
+Space Amenities — مرافق المساحة,Space Amenities — مرافق المساحة
+Space Booking,Space Booking,DocType
+Space Explorer,Space Explorer
+Space Images — صور المساحة,Space Images — صور المساحة
+Space maintenance,Space maintenance
+Space Name,Space Name,Co-working Space
+Space Number,Space Number,Co-working Space
+Space Occupancy,Space Occupancy,Report
+Space status monitoring,Space status monitoring
+Space Type,Space Type,DocType
+Space Type / نوع الوحدة,Space Type / نوع الوحدة,Member Contract
+Space Types,Space Types
+"Space Types categorize your physical resources — Hot Desk, Private Office, Meeting Room, Event Hall, Studio, etc.","Space Types categorize your physical resources — Hot Desk, Private Office, Meeting Room, Event Hall, Studio, etc."
+Space Types — أنواع المساحات,Space Types — أنواع المساحات,Setup Wizard
+Space Utilization,Space Utilization,Dashboard Chart
+Space {0} is already booked for this time period (Booking: {1}),Space {0} is already booked for this time period (Booking: {1}),Validation
+Spaces,Spaces,Module
+Spaces & Bookings,Spaces & Bookings
+Spaces Overview / نظرة عامة على المساحات,Spaces Overview / نظرة عامة على المساحات
+Spaces to Show,Spaces to Show,Workspace Tour
+Spaces to Show (comma-separated names),Spaces to Show (comma-separated names),Workspace Tour
+Spaces — المساحات,Spaces — المساحات
+Special,Special,Badge Category
+Specific Space,Specific Space
+"Specify included booking hours, locker access, event invites, and printing credits per plan.","Specify included booking hours, locker access, event invites, and printing credits per plan."
+Stackable,Stackable
+Stacking,Stacking
+Stacking Group,Stacking Group
+Staff scheduling,Staff scheduling
+Stakeholders — أصحاب المصلحة,Stakeholders — أصحاب المصلحة
+Start,Start,Space Booking
+Start a trial membership and experience full benefits,Start a trial membership and experience full benefits
+Start by creating events and encouraging members to connect!,Start by creating events and encouraging members to connect!
+Start Date,Start Date,Field
+Start Date & Time / تاريخ ووقت البدء,Start Date & Time / تاريخ ووقت البدء
+Start Date / تاريخ البداية,Start Date / تاريخ البداية,Member Contract
+Start Onboarding,Start Onboarding
+Start Time,Start Time,Training Session
+Start Trial,Start Trial
+Start — البداية,Start — البداية,ARK Live Dialog
+"Startup desks, mentoring rooms, pitch halls. Milestone-based memberships, investor events, CRM pipeline for startups.","Startup desks, mentoring rooms, pitch halls. Milestone-based memberships, investor events, CRM pipeline for startups."
+State / المنطقة,State / المنطقة
+Statistics,Statistics,Section
+Status,Status,Field
+Status / الحالة,Status / الحالة,Member Contract
+Status is Converted but no customer linked,Status is Converted but no customer linked,Validation
+Streak,Streak,Badge Category
+Stripe,Stripe
+Stripe Configuration,Stripe Configuration
+Stripe Publishable Key,Stripe Publishable Key
+Stripe Python library is not installed. Run: pip install stripe,Stripe Python library is not installed. Run: pip install stripe
+Stripe Secret Key,Stripe Secret Key
+Stripe Webhook Secret,Stripe Webhook Secret
+"Studio bookings, class scheduling, personal training rooms. Membership + day-pass model with automated renewals.","Studio bookings, class scheduling, personal training rooms. Membership + day-pass model with automated renewals."
+Submit,Submit,Button
+Subscribe,Subscribe
+Subscribe to {0},Subscribe to {0}
+Success Color,Success Color,Design
+Successfully checked in!,Successfully checked in!
+Successfully registered for {0},Successfully registered for {0}
+Summary (max 200 chars),Summary (max 200 chars),Documentation Entry
+Summary must be 200 characters or less,Summary must be 200 characters or less,Validation
+Sun,Sun
+Sunday,Sunday
+Suspend,Suspend,Button
+Suspended,Suspended,Status
+Syllabus,Syllabus,Section
+Syllabus / Content Outline,Syllabus / Content Outline,Training Module
+Tags / الوسوم,Tags / الوسوم
+Tap,Tap
+Tap Configuration,Tap Configuration
+Tap Publishable Key,Tap Publishable Key
+Tap Secret Key,Tap Secret Key
+Tap secret key is not configured in ARKSpace Settings,Tap secret key is not configured in ARKSpace Settings
+Tap Webhook Secret,Tap Webhook Secret
+Target Branch,Target Branch
+Target branch {0} not found,Target branch {0} not found
+Tax Card / البطاقة الضريبية,Tax Card / البطاقة الضريبية,Legal Document Type
+Team Size,Team Size,Workspace Lead
+Technical,Technical,Training Category
+Template Name,Template Name,Contract Template
+Template Variables,Template Variables
+Terminated / منهي,Terminated / منهي,Member Contract Status
+Terms (Arabic) / الشروط بالعربية,Terms (Arabic) / الشروط بالعربية,Contract Template
+Terms (English),Terms (English),Contract Template
+Terms (English) / الشروط بالإنجليزية,Terms (English) / الشروط بالإنجليزية,Member Contract
+Terms populated from template,Terms populated from template,Message
+Territory,Territory,Portal
+The day pass amount ({0}) will be applied as credit.,The day pass amount ({0}) will be applied as credit.
+The name of your co-working space brand,The name of your co-working space brand,Setup Wizard
+This booking has already ended,This booking has already ended
+This booking has been cancelled,This booking has been cancelled
+This day pass has already been converted,This day pass has already been converted
+This day pass is not valid today,This day pass is not valid today
+This event is full,This event is full
+This will overwrite current contract terms. Continue?,This will overwrite current contract terms. Continue?,Dialog
+Thu,Thu
+Thursday,Thursday
+Tiered Memberships & Auto-Renewal,Tiered Memberships & Auto-Renewal
+Time,Time,Section
+Time Range,Time Range
+Time Range condition requires both start and end times,Time Range condition requires both start and end times
+Timestamps,Timestamps
+Timezone,Timezone,Settings
+Timezone / المنطقة الزمنية,Timezone / المنطقة الزمنية
+Title / العنوان,Title / العنوان,Documentation Entry
+Title / المسمى الوظيفي,Title / المسمى الوظيفي,Member Contract
+To,To,Field
+To / إلى,To / إلى,Payment Receipt
+To Date,To Date,Field
+To Member / إلى العضو,To Member / إلى العضو
+To Member Name / اسم العضو المستقبل,To Member Name / اسم العضو المستقبل
+Today's Bookings,Today's Bookings,Number Card
+Today's Visitors,Today's Visitors
+"Today: {0} passes, {1} checked in, {2} checked out, Revenue: {3}","Today: {0} passes, {1} checked in, {2} checked out, Revenue: {3}"
+Too early to check in. Your booking starts at {0},Too early to check in. Your booking starts at {0}
+Top-up Methods,Top-up Methods
+Total,Total,Floor Plan
+total,total,Floor Plan
+Total Amount,Total Amount,Space Booking
+Total Awarded,Total Awarded,Training Badge
+Total Bookings,Total Bookings,Portal
+Total Bookings / إجمالي الحجوزات,Total Bookings / إجمالي الحجوزات
+Total Credits,Total Credits,Credit Wallet
+Total Desks / إجمالي المكاتب,Total Desks / إجمالي المكاتب
+Total Earned,Total Earned
+Total Enrollments,Total Enrollments,Training Module
+Total Invoices,Total Invoices
+Total Meeting Rooms / إجمالي غرف الاجتماعات,Total Meeting Rooms / إجمالي غرف الاجتماعات
+Total Offices / إجمالي المكاتب الخاصة,Total Offices / إجمالي المكاتب الخاصة
+Total Paid,Total Paid
+Total Revenue,Total Revenue,Report
+Total Revenue / إجمالي الإيرادات,Total Revenue / إجمالي الإيرادات
+Total Sessions,Total Sessions,Training Module
+Total Spaces,Total Spaces,ARK Live
+Total Spaces / إجمالي المساحات,Total Spaces / إجمالي المساحات
+Total Spent,Total Spent,Portal
+Tour,Tour
+Tour / Visit,Tour / Visit
+Tour Feedback,Tour Feedback,Workspace Tour
+Tour Scheduled,Tour Scheduled,Status
+Tour Scheduling,Tour Scheduling
+Tours,Tours,Dashboard
+Tours — الجولات,Tours — الجولات
+Track attendance and completion status for each participant.,Track attendance and completion status for each participant.
+Track document versions to ensure members always agree to the latest terms.,Track document versions to ensure members always agree to the latest terms.
+Track each member's progress through training modules and sessions.,Track each member's progress through training modules and sessions.
+Track performance metrics,Track performance metrics
+Track prospective members from inquiry to tour to conversion.,Track prospective members from inquiry to tour to conversion.
+Track which legal documents each member has acknowledged and signed.,Track which legal documents each member has acknowledged and signed.
+Traditional Co-Working,Traditional Co-Working
+Training Badge,Training Badge,DocType
+Training Badges — شارات التدريب,Training Badges — شارات التدريب
+Training Catalog,Training Catalog,Training
+Training Module,Training Module,DocType
+Training Modules — وحدات التدريب,Training Modules — وحدات التدريب
+Training Progress — تقدم التدريب,Training Progress — تقدم التدريب
+Training Session,Training Session,DocType
+Training Sessions,Training Sessions
+Training — التدريب,Training — التدريب
+Transaction Log,Transaction Log
+Transactions,Transactions,Credit Wallet
+Transfer,Transfer
+Transfer Branch,Transfer Branch
+Transfer members and bookings between branches seamlessly.,Transfer members and bookings between branches seamlessly.
+Transfer Membership,Transfer Membership
+Trend Analysis,Trend Analysis
+Trial,Trial
+Trial / تجربة,Trial / تجربة
+Trial Conversions / تحويلات التجربة,Trial Conversions / تحويلات التجربة
+Trial Days / أيام التجربة,Trial Days / أيام التجربة
+Trial Days Remaining,Trial Days Remaining
+Trial Includes Benefits / التجربة تشمل المزايا,Trial Includes Benefits / التجربة تشمل المزايا
+Trial Plan,Trial Plan
+Trial Price / سعر التجربة,Trial Price / سعر التجربة
+Trial Started!,Trial Started!
+Try Before You Join,Try Before You Join
+Try changing your filters or check back later.,Try changing your filters or check back later.,Portal
+Tue,Tue
+Tuesday,Tuesday
+Tutorial,Tutorial,Documentation Type
+Type,Type,Field
+Type / النوع,Type / النوع,Contract Legal Document
+Unassigned,Unassigned,Floor Plan
+Under Maintenance,Under Maintenance,ARK Live
+Underline Links,Underline Links,Design
+Unit / Space Details / بيانات الوحدة,Unit / Space Details / بيانات الوحدة,Member Contract
+Unit Description / وصف الوحدة,Unit Description / وصف الوحدة,Member Contract
+University / Training Centers,University / Training Centers
+Unknown error,Unknown error
+Unlike,Unlike
+Unlike ❤️,Unlike ❤️
+Unliked,Unliked
+Unpin,Unpin
+Unpin Post,Unpin Post
+Unsupported payment gateway: {0},Unsupported payment gateway: {0}
+Up to {0} guests,Up to {0} guests
+Upcoming,Upcoming
+Upcoming Bookings,Upcoming Bookings,ARK Live
+Upcoming Events,Upcoming Events
+Upgrade,Upgrade
+Upgrade Membership,Upgrade Membership
+Upgrade Now,Upgrade Now
+upgraded,upgraded
+Upgraded to {0}!,Upgraded to {0}!
+Upload multiple images for each space to showcase in the portal and booking screen.,Upload multiple images for each space to showcase in the portal and booking screen.
+"Use Jinja variables for member name, dates, pricing, and space details — auto-filled at contract creation.","Use Jinja variables for member name, dates, pricing, and space details — auto-filled at contract creation."
+Used,Used
+Used Credits,Used Credits,Credit Wallet
+User,User,User Training Progress
+User & role management,User & role management
+User Training Progress,User Training Progress,DocType
+User {0} is already enrolled in {1},User {0} is already enrolled in {1},Validation
+Utilization %,Utilization %
+Valid / ساري,Valid / ساري,Legal Document Status
+Valid From,Valid From
+Valid To,Valid To
+Valid Today Only,Valid Today Only
+Validity,Validity
+Venue,Venue,Section
+Venue Name,Venue Name,Training Session
+Verify with Gateway,Verify with Gateway
+Verifying payment with gateway...,Verifying payment with gateway...
+Version,Version,Documentation Entry
+Version Control,Version Control
+View,View,Button
+View Analytics,View Analytics
+View Attendees,View Attendees
+View Bookings,View Bookings
+"View completion percentage, time spent, and badges earned per member.","View completion percentage, time spent, and badges earned per member."
+View Details,View Details
+View Members,View Members
+View Memberships,View Memberships,Button
+View Plans,View Plans
+View Spaces,View Spaces
+View Wallet,View Wallet,Button
+Views Count / عدد المشاهدات,Views Count / عدد المشاهدات
+Virtual Office,Virtual Office,Plan Type
+Virtual Office — مكتب افتراضي,Virtual Office — مكتب افتراضي,Setup Wizard
+"Visit the About page for a full app overview, or start the Onboarding wizard.","Visit the About page for a full app overview, or start the Onboarding wizard."
+Visiting Branch,Visiting Branch
+Visiting Space,Visiting Space
+VISITOR,VISITOR
+Visitor,Visitor
+Visitor approved,Visitor approved
+Visitor arrival notification error,Visitor arrival notification error
+VISITOR BADGE,VISITOR BADGE
+Visitor Company,Visitor Company
+Visitor Count / عدد الزوار,Visitor Count / عدد الزوار
+Visitor Email,Visitor Email
+Visitor has been approved,Visitor has been approved
+Visitor has been rejected,Visitor has been rejected
+Visitor Image,Visitor Image
+Visitor is already approved,Visitor is already approved
+Visitor is already checked in,Visitor is already checked in
+Visitor is not checked in,Visitor is not checked in
+Visitor is not in a state that allows check-in,Visitor is not in a state that allows check-in
+Visitor Log,Visitor Log
+Visitor Management,Visitor Management
+Visitor management,Visitor management
+Visitor must be checked in before checking out,Visitor must be checked in before checking out
+Visitor Name,Visitor Name
+Visitor notification error,Visitor notification error
+Visitor Phone,Visitor Phone
+Visitor Pre-registered: {0},Visitor Pre-registered: {0}
+Visitor rejected,Visitor rejected
+Visitor {0} is already checked in,Visitor {0} is already checked in
+Visitors,Visitors
+Visitors Today,Visitors Today
+Visitors — الزوار,Visitors — الزوار
+vs Last Week,vs Last Week
+Walk In,Walk In,Source
+Walk-in,Walk-in,Source
+Wallet,Wallet
+Wallet Balance,Wallet Balance
+Webhook-based automatic reconciliation keeps your invoices and payments in sync.,Webhook-based automatic reconciliation keeps your invoices and payments in sync.
+Webhook: No payment reference,Webhook: No payment reference
+Webhook: Payment not found,Webhook: Payment not found
+Website,Website,Source
+Website / الموقع الإلكتروني,Website / الموقع الإلكتروني
+Wed,Wed
+Wednesday,Wednesday
+Weekend,Weekend
+Weekly,Weekly
+Welcome,Welcome,Portal
+Welcome aboard! 🎉 مرحباً بك!,Welcome aboard! 🎉 مرحباً بك!
+Welcome to ARKSpace,Welcome to ARKSpace
+Welcome to ARKSpace — {{ doc.membership_plan }},Welcome to ARKSpace — {{ doc.membership_plan }},Notification Subject
+Welcome to ARKSpace — مرحباً بكم,Welcome to ARKSpace — مرحباً بكم,Setup Wizard
+Welcome to ARKSpace!,Welcome to ARKSpace!,Notification
+Welcome! Your trial day pass has been created.,Welcome! Your trial day pass has been created.
+Wellness,Wellness,Training Category
+What are Space Amenities?,What are Space Amenities?
+What are Space Types?,What are Space Types?
+What is a Space?,What is a Space?
+What would you like to explore?,What would you like to explore?
+WhatsApp Notifications,WhatsApp Notifications
+"When a visitor checks in, the host member is automatically notified.","When a visitor checks in, the host member is automatically notified."
+Why ARKSpace? — لماذا أرك سبيس؟,Why ARKSpace? — لماذا أرك سبيس؟
+Withdrawn,Withdrawn
+Witness / الشاهد,Witness / الشاهد,Member Contract
+Witness ID / رقم هوية الشاهد,Witness ID / رقم هوية الشاهد,Member Contract
+Witness Name / اسم الشاهد,Witness Name / اسم الشاهد,Member Contract
+Workflow,Workflow,Documentation Type
+Workflows — سير العمل,Workflows — سير العمل
+Working Days / أيام العمل,Working Days / أيام العمل
+Workshop,Workshop
+Workspace Lead,Workspace Lead,DocType
+Workspace Name,Workspace Name,Setup Wizard
+Workspace Tour,Workspace Tour,DocType
+WoW Change,WoW Change
+Write something...,Write something...
+Yearly,Yearly,Billing Cycle
+Yearly / سنوي,Yearly / سنوي,Payment Billing Cycle
+Yes,Yes,Field
+You are already registered for this event,You are already registered for this event
+You are not registered for this event,You are not registered for this event
+You cannot send a networking request to yourself,You cannot send a networking request to yourself
+You do not have permission to access this data,You do not have permission to access this data
+You're All Set!,You're All Set!
+You're all set!,You're all set!
+Your account has been created. A welcome email has been sent to {0}. Please check your email to set your password.,Your account has been created. A welcome email has been sent to {0}. Please check your email to set your password.
+Your booking has been cancelled,Your booking has been cancelled,Notification
+Your booking has been confirmed with the following details,Your booking has been confirmed with the following details,Notification
+Your co-working space management hub,Your co-working space management hub
+Your company or organization,Your company or organization
+Your current membership will be cancelled and a prorated credit may apply.,Your current membership will be cancelled and a prorated credit may apply.
+Your Day Pass,Your Day Pass
+Your day pass is ready. Show the QR code at the front desk.,Your day pass is ready. Show the QR code at the front desk.
+Your Details,Your Details
+Your membership has been activated successfully,Your membership has been activated successfully,Notification
+Your membership is expiring on,Your membership is expiring on,Notification
+Your membership is now active,Your membership is now active,Notification
+Your membership will be automatically renewed. No action is needed.,Your membership will be automatically renewed. No action is needed.,Notification
+Your networking request was accepted!,Your networking request was accepted!
+Your role,Your role
+Your visitor <b>{0}</b> has checked in and is waiting for you.,Your visitor <b>{0}</b> has checked in and is waiting for you.
+Your visitor {0} from {1} has arrived,Your visitor {0} from {1} has arrived
+Your visitor {0} has arrived,Your visitor {0} has arrived
+{0} capacity,{0} capacity
+{0} checked in (Day Pass),{0} checked in (Day Pass)
+{0} checked in to {1},{0} checked in to {1}
+{0} checked in — Badge #{1},{0} checked in — Badge #{1}
+{0} checked out,{0} checked out
+{0} checked out (Day Pass),{0} checked out (Day Pass)
+{0} has arrived,{0} has arrived
+{0} has left,{0} has left
+{0} legal document(s) found,{0} legal document(s) found,Info
+{0} QR codes generated,{0} QR codes generated
+{0} — {1} ({2}),{0} — {1} ({2}),Billing
+{0}: {1},{0}: {1}
+{0}: {1} succeeded,{0}: {1} succeeded,Bulk Operation
+اختر كياناً واضغط استكشاف,اختر كياناً واضغط استكشاف
+التوثيق بالعربية,التوثيق بالعربية,Documentation Entry
+الحجوزات والعملاء,الحجوزات والعملاء
+العنوان بالعربية,العنوان بالعربية,Documentation Entry
+المخطط التفاعلي,المخطط التفاعلي
+المستكشف,المستكشف
+الملخص بالعربية,الملخص بالعربية,Documentation Entry
+حيوي وعصري — إدارة مساحتك بالكامل من نظام واحد,حيوي وعصري — إدارة مساحتك بالكامل من نظام واحد
+شبكة المجتمع,شبكة المجتمع
+عضو/مستأجر,عضو/مستأجر
+ماذا تريد أن تتعلم؟,ماذا تريد أن تتعلم؟
+مالك مساحة مشتركة,مالك مساحة مشتركة
+محاسب,محاسب
+مدير عمليات,مدير عمليات
+مرحباً بك في أرك سبيس! 🚀,مرحباً بك في أرك سبيس! 🚀
+مركز القيادة,مركز القيادة
+🎫 Memberships,🎫 Memberships
+🎫 العضويات,🎫 العضويات
+🎯 ابدأ الآن!,🎯 ابدأ الآن!
+🏢 Spaces & Bookings,🏢 Spaces & Bookings
+🏢 المساحات والحجوزات,🏢 المساحات والحجوزات
+👥 Community,👥 Community
+👥 المجتمع والتواصل,👥 المجتمع والتواصل
+📊 Analytics & Reports,📊 Analytics & Reports
+📊 التحليلات والتقارير,📊 التحليلات والتقارير

@@ -27,6 +27,45 @@
   "column_break_features",
   "enable_arkanoor",
   "enable_ai",
+  "online_payments_section",
+  "enable_online_payments",
+  "default_payment_gateway",
+  "payment_success_message",
+  "column_break_payments",
+  "auto_reconcile_payments",
+  "payment_link_expiry_hours",
+  "stripe_section",
+  "stripe_publishable_key",
+  "stripe_secret_key",
+  "column_break_stripe",
+  "stripe_webhook_secret",
+  "tap_section",
+  "tap_publishable_key",
+  "tap_secret_key",
+  "column_break_tap",
+  "tap_webhook_secret",
+  "day_pass_section",
+  "enable_day_pass",
+  "default_day_pass_rate",
+  "column_break_day_pass",
+  "day_pass_auto_expire",
+  "max_trial_days",
+  "analytics_section",
+  "enable_analytics",
+  "analytics_retention_days",
+  "column_break_analytics",
+  "auto_capture_snapshots",
+  "multi_location_section",
+  "enable_multi_location",
+  "default_branch",
+  "column_break_multi_location",
+  "allow_cross_location_booking",
+  "community_section",
+  "enable_community",
+  "allow_anonymous_posts",
+  "column_break_community",
+  "enable_member_directory",
+  "enable_events",
   "integration_section",
   "arkanoor_api_key",
   "column_break_integration",
@@ -168,6 +207,236 @@
    "fieldname": "enable_ai",
    "fieldtype": "Check",
    "label": "Enable AI Features"
+  },
+  {
+   "fieldname": "online_payments_section",
+   "fieldtype": "Section Break",
+   "label": "Online Payments / الدفع الإلكتروني"
+  },
+  {
+   "default": "0",
+   "fieldname": "enable_online_payments",
+   "fieldtype": "Check",
+   "label": "Enable Online Payments / تفعيل الدفع الإلكتروني"
+  },
+  {
+   "default": "Stripe",
+   "depends_on": "eval:doc.enable_online_payments",
+   "fieldname": "default_payment_gateway",
+   "fieldtype": "Select",
+   "label": "Default Gateway / البوابة الافتراضية",
+   "options": "Stripe\nTap"
+  },
+  {
+   "depends_on": "eval:doc.enable_online_payments",
+   "fieldname": "payment_success_message",
+   "fieldtype": "Small Text",
+   "label": "Payment Success Message / رسالة نجاح الدفع",
+   "default": "Payment received successfully! Thank you."
+  },
+  {
+   "fieldname": "column_break_payments",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "1",
+   "depends_on": "eval:doc.enable_online_payments",
+   "fieldname": "auto_reconcile_payments",
+   "fieldtype": "Check",
+   "label": "Auto-Reconcile Payments / مطابقة المدفوعات تلقائياً"
+  },
+  {
+   "default": "24",
+   "depends_on": "eval:doc.enable_online_payments",
+   "fieldname": "payment_link_expiry_hours",
+   "fieldtype": "Int",
+   "label": "Payment Link Expiry (hours) / انتهاء رابط الدفع (ساعات)"
+  },
+  {
+   "depends_on": "eval:doc.enable_online_payments && doc.default_payment_gateway=='Stripe'",
+   "fieldname": "stripe_section",
+   "fieldtype": "Section Break",
+   "label": "Stripe Configuration"
+  },
+  {
+   "depends_on": "eval:doc.enable_online_payments",
+   "fieldname": "stripe_publishable_key",
+   "fieldtype": "Data",
+   "label": "Stripe Publishable Key"
+  },
+  {
+   "depends_on": "eval:doc.enable_online_payments",
+   "fieldname": "stripe_secret_key",
+   "fieldtype": "Password",
+   "label": "Stripe Secret Key"
+  },
+  {
+   "fieldname": "column_break_stripe",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.enable_online_payments",
+   "fieldname": "stripe_webhook_secret",
+   "fieldtype": "Password",
+   "label": "Stripe Webhook Secret"
+  },
+  {
+   "depends_on": "eval:doc.enable_online_payments && doc.default_payment_gateway=='Tap'",
+   "fieldname": "tap_section",
+   "fieldtype": "Section Break",
+   "label": "Tap Configuration"
+  },
+  {
+   "depends_on": "eval:doc.enable_online_payments",
+   "fieldname": "tap_publishable_key",
+   "fieldtype": "Data",
+   "label": "Tap Publishable Key"
+  },
+  {
+   "depends_on": "eval:doc.enable_online_payments",
+   "fieldname": "tap_secret_key",
+   "fieldtype": "Password",
+   "label": "Tap Secret Key"
+  },
+  {
+   "fieldname": "column_break_tap",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.enable_online_payments",
+   "fieldname": "tap_webhook_secret",
+   "fieldtype": "Password",
+   "label": "Tap Webhook Secret"
+  },
+  {
+   "fieldname": "day_pass_section",
+   "fieldtype": "Section Break",
+   "label": "Day Pass & Trials / تصريح اليوم والتجربة"
+  },
+  {
+   "default": "1",
+   "fieldname": "enable_day_pass",
+   "fieldtype": "Check",
+   "label": "Enable Day Pass / تفعيل تصريح اليوم"
+  },
+  {
+   "default": "50",
+   "depends_on": "eval:doc.enable_day_pass",
+   "fieldname": "default_day_pass_rate",
+   "fieldtype": "Currency",
+   "label": "Default Day Pass Rate / سعر التصريح الافتراضي"
+  },
+  {
+   "fieldname": "column_break_day_pass",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "1",
+   "depends_on": "eval:doc.enable_day_pass",
+   "fieldname": "day_pass_auto_expire",
+   "fieldtype": "Check",
+   "label": "Auto-Expire Day Passes / انتهاء التصاريح تلقائياً"
+  },
+  {
+   "default": "3",
+   "depends_on": "eval:doc.enable_day_pass",
+   "fieldname": "max_trial_days",
+   "fieldtype": "Int",
+   "label": "Max Trial Days / أقصى أيام التجربة"
+  },
+  {
+   "fieldname": "analytics_section",
+   "fieldtype": "Section Break",
+   "label": "Analytics / التحليلات"
+  },
+  {
+   "default": "1",
+   "fieldname": "enable_analytics",
+   "fieldtype": "Check",
+   "label": "Enable Analytics / تفعيل التحليلات"
+  },
+  {
+   "default": "365",
+   "depends_on": "eval:doc.enable_analytics",
+   "fieldname": "analytics_retention_days",
+   "fieldtype": "Int",
+   "label": "Retention Days / أيام الاحتفاظ بالبيانات"
+  },
+  {
+   "fieldname": "column_break_analytics",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "1",
+   "depends_on": "eval:doc.enable_analytics",
+   "fieldname": "auto_capture_snapshots",
+   "fieldtype": "Check",
+   "label": "Auto-Capture Snapshots / التقاط تلقائي للقطات"
+  },
+  {
+   "fieldname": "multi_location_section",
+   "fieldtype": "Section Break",
+   "label": "Multi-Location / تعدد الفروع"
+  },
+  {
+   "default": "0",
+   "fieldname": "enable_multi_location",
+   "fieldtype": "Check",
+   "label": "Enable Multi-Location / تفعيل تعدد الفروع"
+  },
+  {
+   "depends_on": "eval:doc.enable_multi_location",
+   "fieldname": "default_branch",
+   "fieldtype": "Link",
+   "label": "Default Branch / الفرع الافتراضي",
+   "options": "ARKSpace Branch"
+  },
+  {
+   "fieldname": "column_break_multi_location",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "1",
+   "depends_on": "eval:doc.enable_multi_location",
+   "fieldname": "allow_cross_location_booking",
+   "fieldtype": "Check",
+   "label": "Allow Cross-Location Booking / السماح بالحجز بين الفروع"
+  },
+  {
+   "fieldname": "community_section",
+   "fieldtype": "Section Break",
+   "label": "Community / المجتمع"
+  },
+  {
+   "default": "1",
+   "fieldname": "enable_community",
+   "fieldtype": "Check",
+   "label": "Enable Community / تفعيل المجتمع"
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:doc.enable_community",
+   "fieldname": "allow_anonymous_posts",
+   "fieldtype": "Check",
+   "label": "Allow Anonymous Posts / السماح بالمنشورات المجهولة"
+  },
+  {
+   "fieldname": "column_break_community",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "1",
+   "depends_on": "eval:doc.enable_community",
+   "fieldname": "enable_member_directory",
+   "fieldtype": "Check",
+   "label": "Enable Member Directory / تفعيل دليل الأعضاء"
+  },
+  {
+   "default": "1",
+   "depends_on": "eval:doc.enable_community",
+   "fieldname": "enable_events",
+   "fieldtype": "Check",
+   "label": "Enable Events / تفعيل الفعاليات"
   },
   {
    "fieldname": "integration_section",

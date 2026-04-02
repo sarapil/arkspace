@@ -2,10 +2,10 @@
 # See license.txt
 
 import frappe
-from frappe.tests.utils import FrappeTestCase
+from arkspace.tests.compat import ARKSpaceTestCase
 
 
-class TestCoworkingSpace(FrappeTestCase):
+class TestCoworkingSpace(ARKSpaceTestCase):
 	"""Test cases for Co-working Space DocType."""
 
 	def setUp(self):

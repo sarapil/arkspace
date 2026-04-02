@@ -1,0 +1,360 @@
+{
+ "actions": [],
+ "autoname": "SNAP-.YYYY.-.#####",
+ "creation": "2026-03-21 00:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "overview_section",
+  "snapshot_date",
+  "branch",
+  "column_break_overview",
+  "period_type",
+  "snapshot_id",
+  "spaces_section",
+  "total_spaces",
+  "occupied_spaces",
+  "available_spaces",
+  "column_break_spaces",
+  "occupancy_rate",
+  "maintenance_spaces",
+  "reserved_spaces",
+  "bookings_section",
+  "total_bookings",
+  "new_bookings",
+  "cancelled_bookings",
+  "column_break_bookings",
+  "no_shows",
+  "checked_in_count",
+  "avg_booking_duration",
+  "members_section",
+  "active_members",
+  "new_members",
+  "column_break_members",
+  "churned_members",
+  "retention_rate",
+  "revenue_section",
+  "total_revenue",
+  "booking_revenue",
+  "membership_revenue",
+  "column_break_revenue",
+  "day_pass_revenue",
+  "other_revenue",
+  "avg_revenue_per_booking",
+  "passes_visitors_section",
+  "day_pass_count",
+  "visitor_count",
+  "column_break_passes",
+  "trial_conversions",
+  "patterns_section",
+  "peak_hour",
+  "popular_space_type",
+  "column_break_patterns",
+  "popular_booking_type",
+  "busiest_day"
+ ],
+ "fields": [
+  {
+   "fieldname": "overview_section",
+   "fieldtype": "Section Break",
+   "label": "Overview / نظرة عامة"
+  },
+  {
+   "fieldname": "snapshot_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Date / التاريخ",
+   "reqd": 1
+  },
+  {
+   "fieldname": "branch",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Branch / الفرع",
+   "options": "Branch"
+  },
+  {
+   "fieldname": "column_break_overview",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Daily",
+   "fieldname": "period_type",
+   "fieldtype": "Select",
+   "label": "Period / الفترة",
+   "options": "Daily\nWeekly\nMonthly"
+  },
+  {
+   "fieldname": "snapshot_id",
+   "fieldtype": "Data",
+   "label": "Snapshot ID",
+   "read_only": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "spaces_section",
+   "fieldtype": "Section Break",
+   "label": "Spaces / المساحات"
+  },
+  {
+   "default": "0",
+   "fieldname": "total_spaces",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Total Spaces / إجمالي المساحات"
+  },
+  {
+   "default": "0",
+   "fieldname": "occupied_spaces",
+   "fieldtype": "Int",
+   "label": "Occupied / مشغولة"
+  },
+  {
+   "default": "0",
+   "fieldname": "available_spaces",
+   "fieldtype": "Int",
+   "label": "Available / متاحة"
+  },
+  {
+   "fieldname": "column_break_spaces",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "occupancy_rate",
+   "fieldtype": "Percent",
+   "in_list_view": 1,
+   "label": "Occupancy Rate / نسبة الإشغال"
+  },
+  {
+   "default": "0",
+   "fieldname": "maintenance_spaces",
+   "fieldtype": "Int",
+   "label": "Maintenance / صيانة"
+  },
+  {
+   "default": "0",
+   "fieldname": "reserved_spaces",
+   "fieldtype": "Int",
+   "label": "Reserved / محجوزة"
+  },
+  {
+   "fieldname": "bookings_section",
+   "fieldtype": "Section Break",
+   "label": "Bookings / الحجوزات"
+  },
+  {
+   "default": "0",
+   "fieldname": "total_bookings",
+   "fieldtype": "Int",
+   "label": "Total Bookings / إجمالي الحجوزات"
+  },
+  {
+   "default": "0",
+   "fieldname": "new_bookings",
+   "fieldtype": "Int",
+   "label": "New Bookings / حجوزات جديدة"
+  },
+  {
+   "default": "0",
+   "fieldname": "cancelled_bookings",
+   "fieldtype": "Int",
+   "label": "Cancelled / ملغاة"
+  },
+  {
+   "fieldname": "column_break_bookings",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "no_shows",
+   "fieldtype": "Int",
+   "label": "No Shows / لم يحضر"
+  },
+  {
+   "default": "0",
+   "fieldname": "checked_in_count",
+   "fieldtype": "Int",
+   "label": "Checked In / تسجيل دخول"
+  },
+  {
+   "default": "0",
+   "fieldname": "avg_booking_duration",
+   "fieldtype": "Float",
+   "label": "Avg Duration (hrs) / متوسط المدة",
+   "precision": "1"
+  },
+  {
+   "fieldname": "members_section",
+   "fieldtype": "Section Break",
+   "label": "Members / الأعضاء"
+  },
+  {
+   "default": "0",
+   "fieldname": "active_members",
+   "fieldtype": "Int",
+   "label": "Active Members / أعضاء نشطون"
+  },
+  {
+   "default": "0",
+   "fieldname": "new_members",
+   "fieldtype": "Int",
+   "label": "New Members / أعضاء جدد"
+  },
+  {
+   "fieldname": "column_break_members",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "churned_members",
+   "fieldtype": "Int",
+   "label": "Churned / مغادرون"
+  },
+  {
+   "default": "0",
+   "fieldname": "retention_rate",
+   "fieldtype": "Percent",
+   "label": "Retention Rate / معدل الاحتفاظ"
+  },
+  {
+   "fieldname": "revenue_section",
+   "fieldtype": "Section Break",
+   "label": "Revenue / الإيرادات"
+  },
+  {
+   "default": "0",
+   "fieldname": "total_revenue",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Total Revenue / إجمالي الإيرادات"
+  },
+  {
+   "default": "0",
+   "fieldname": "booking_revenue",
+   "fieldtype": "Currency",
+   "label": "Booking Revenue / إيرادات الحجوزات"
+  },
+  {
+   "default": "0",
+   "fieldname": "membership_revenue",
+   "fieldtype": "Currency",
+   "label": "Membership Revenue / إيرادات العضويات"
+  },
+  {
+   "fieldname": "column_break_revenue",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "day_pass_revenue",
+   "fieldtype": "Currency",
+   "label": "Day Pass Revenue / إيرادات التصاريح"
+  },
+  {
+   "default": "0",
+   "fieldname": "other_revenue",
+   "fieldtype": "Currency",
+   "label": "Other Revenue / إيرادات أخرى"
+  },
+  {
+   "default": "0",
+   "fieldname": "avg_revenue_per_booking",
+   "fieldtype": "Currency",
+   "label": "Avg Revenue/Booking / متوسط الإيرادات لكل حجز"
+  },
+  {
+   "fieldname": "passes_visitors_section",
+   "fieldtype": "Section Break",
+   "label": "Day Passes & Visitors / التصاريح والزوار"
+  },
+  {
+   "default": "0",
+   "fieldname": "day_pass_count",
+   "fieldtype": "Int",
+   "label": "Day Passes / تصاريح اليوم"
+  },
+  {
+   "default": "0",
+   "fieldname": "visitor_count",
+   "fieldtype": "Int",
+   "label": "Visitors / الزوار"
+  },
+  {
+   "fieldname": "column_break_passes",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "trial_conversions",
+   "fieldtype": "Int",
+   "label": "Trial Conversions / تحويلات التجربة"
+  },
+  {
+   "fieldname": "patterns_section",
+   "fieldtype": "Section Break",
+   "label": "Patterns / الأنماط"
+  },
+  {
+   "fieldname": "peak_hour",
+   "fieldtype": "Int",
+   "label": "Peak Hour / ساعة الذروة"
+  },
+  {
+   "fieldname": "popular_space_type",
+   "fieldtype": "Data",
+   "label": "Popular Space Type / نوع المساحة الأكثر طلباً"
+  },
+  {
+   "fieldname": "column_break_patterns",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "popular_booking_type",
+   "fieldtype": "Data",
+   "label": "Popular Booking Type / نوع الحجز الأكثر شيوعاً"
+  },
+  {
+   "fieldname": "busiest_day",
+   "fieldtype": "Data",
+   "label": "Busiest Day / أكثر الأيام ازدحاماً"
+  }
+ ],
+ "index_web_pages_for_search": 0,
+ "links": [],
+ "modified": "2026-03-21 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "ARKSpace Core",
+ "name": "Analytics Snapshot",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "export": 1,
+   "read": 1,
+   "report": 1,
+   "role": "ARKSpace Admin"
+  },
+  {
+   "read": 1,
+   "report": 1,
+   "role": "ARKSpace Manager"
+  }
+ ],
+ "sort_field": "snapshot_date",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 0
+}
