@@ -1,4 +1,5 @@
 app_name = "arkspace"
+app_logo_url = "/assets/arkspace/images/arkspace-logo.svg"
 app_title = "ARKSpace"
 app_publisher = "Arkan Lab"
 app_description = "Enterprise Co-Working Space Management + ARKANOOR Marketplace"
@@ -36,6 +37,7 @@ website_context = {
 # --- Static Assets -----------------------------------------------------------
 
 app_include_css = [
+    "/assets/arkspace/css/arkspace-theme.css",
     "/assets/arkspace/css/arkspace-variables.css",
     "/assets/arkspace/css/design-system.css",
     "/assets/arkspace/css/arkspace.css",

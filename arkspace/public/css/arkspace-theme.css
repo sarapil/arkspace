@@ -1,0 +1,120 @@
+/* ARKSpace — Theme CSS Variables
+ * Brand colors and design tokens for ARKSpace
+ * Domain: Coworking Space Management
+ */
+
+:root {
+  /* Primary Colors */
+  --arkspace-primary: #14B8A6;
+  --arkspace-primary-dark: #0D9488;
+  --arkspace-primary-light: #14B8A633;
+  --arkspace-primary-subtle: #14B8A60D;
+
+  /* Neutral Colors */
+  --arkspace-bg: #FFFFFF;
+  --arkspace-bg-subtle: #F8FAFC;
+  --arkspace-text: #1E293B;
+  --arkspace-text-muted: #64748B;
+  --arkspace-border: #E2E8F0;
+
+  /* Status Colors */
+  --arkspace-success: #10B981;
+  --arkspace-warning: #F59E0B;
+  --arkspace-danger: #EF4444;
+  --arkspace-info: #3B82F6;
+
+  /* Spacing */
+  --arkspace-radius-sm: 6px;
+  --arkspace-radius-md: 10px;
+  --arkspace-radius-lg: 16px;
+
+  /* Shadows */
+  --arkspace-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --arkspace-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  --arkspace-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+
+  /* Typography */
+  --arkspace-font-family: 'Inter', 'Noto Sans Arabic', sans-serif;
+  --arkspace-font-size-xs: 0.75rem;
+  --arkspace-font-size-sm: 0.875rem;
+  --arkspace-font-size-base: 1rem;
+  --arkspace-font-size-lg: 1.125rem;
+  --arkspace-font-size-xl: 1.25rem;
+}
+
+/* Dark Mode */
+[data-theme="dark"] {
+  --arkspace-bg: #0F172A;
+  --arkspace-bg-subtle: #1E293B;
+  --arkspace-text: #F1F5F9;
+  --arkspace-text-muted: #94A3B8;
+  --arkspace-border: #334155;
+  --arkspace-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --arkspace-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4);
+  --arkspace-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+}
+
+/* RTL Support */
+[dir="rtl"] .arkspace-sidebar {
+  border-inline-start: 2px solid var(--arkspace-primary);
+  margin-inline-start: 0;
+  margin-inline-end: 1rem;
+}
+
+/* Glassmorphism Card */
+.arkspace-glass-card {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--arkspace-border);
+  border-radius: var(--arkspace-radius-lg);
+  box-shadow: var(--arkspace-shadow-md);
+  padding: 1.5rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.arkspace-glass-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--arkspace-shadow-lg);
+}
+
+[data-theme="dark"] .arkspace-glass-card {
+  background: rgba(30, 41, 59, 0.7);
+}
+
+/* Status Badge */
+.arkspace-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: var(--arkspace-font-size-xs);
+  font-weight: 600;
+}
+
+.arkspace-badge--success { background: var(--arkspace-success)1A; color: var(--arkspace-success); }
+.arkspace-badge--warning { background: var(--arkspace-warning)1A; color: var(--arkspace-warning); }
+.arkspace-badge--danger { background: var(--arkspace-danger)1A; color: var(--arkspace-danger); }
+.arkspace-badge--info { background: var(--arkspace-info)1A; color: var(--arkspace-info); }
+
+/* Workspace Header */
+.arkspace-ws-header {
+  background: linear-gradient(135deg, var(--arkspace-primary), var(--arkspace-primary-dark));
+  color: white;
+  padding: 2rem;
+  border-radius: var(--arkspace-radius-lg);
+  margin-bottom: 1.5rem;
+}
+
+.arkspace-ws-header h1 {
+  margin: 0;
+  font-size: 1.75rem;
+  font-weight: 700;
+}
+
+.arkspace-ws-header p {
+  margin: 0.5rem 0 0;
+  opacity: 0.85;
+  font-size: var(--arkspace-font-size-sm);
+}
