@@ -35,6 +35,8 @@ def get_data(filters):
 	from_date = getdate(filters.get("from_date") or add_months(nowdate(), -12))
 	to_date = getdate(filters.get("to_date") or nowdate())
 	group_by = filters.get("group_by", "Month")
+	if group_by not in ("Day", "Week", "Month", "Quarter", "Year"):
+		group_by = "Month"
 
 	# Use %% to escape percent signs for PyMySQL parameterized queries
 	date_format = {

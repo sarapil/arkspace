@@ -214,6 +214,8 @@ def get_occupancy_heatmap(branch=None, from_date=None, to_date=None):
 
     Each cell = average number of active bookings at that hour on that weekday.
     """
+    frappe.only_for(["ARKSpace User", "ARKSpace Manager", "System Manager"])
+
     from_date = getdate(from_date or add_days(nowdate(), -30))
     to_date = getdate(to_date or nowdate())
 
@@ -282,6 +284,11 @@ def get_revenue_trends(branch=None, period="monthly", from_date=None, to_date=No
     Args:
         period: 'daily', 'weekly', or 'monthly'
     """
+    frappe.only_for(["ARKSpace User", "ARKSpace Manager", "System Manager"])
+
+    if period not in ("daily", "weekly", "monthly"):
+        period = "monthly"
+
     from_date = getdate(from_date or add_days(nowdate(), -90))
     to_date = getdate(to_date or nowdate())
 
@@ -346,6 +353,8 @@ def get_revenue_forecast(branch=None, months_ahead=3):
 
     Uses last 12 months of Analytics Snapshot data to project future revenue.
     """
+    frappe.only_for(["ARKSpace User", "ARKSpace Manager", "System Manager"])
+
     months_ahead = cint(months_ahead) or 3
     from_date = add_days(get_first_day(nowdate()), -365)
 
@@ -415,6 +424,8 @@ def get_revenue_forecast(branch=None, months_ahead=3):
 @frappe.whitelist()
 def get_member_analytics(branch=None, from_date=None, to_date=None):
     """Member growth, churn, retention, and composition analytics."""
+    frappe.only_for(["ARKSpace User", "ARKSpace Manager", "System Manager"])
+
     from_date = getdate(from_date or add_days(nowdate(), -90))
     to_date = getdate(to_date or nowdate())
 
@@ -493,6 +504,8 @@ def get_member_analytics(branch=None, from_date=None, to_date=None):
 @frappe.whitelist()
 def get_space_utilization(branch=None, from_date=None, to_date=None):
     """Per-space utilization stats over a period."""
+    frappe.only_for(["ARKSpace User", "ARKSpace Manager", "System Manager"])
+
     from_date = getdate(from_date or add_days(nowdate(), -30))
     to_date = getdate(to_date or nowdate())
 
@@ -546,6 +559,8 @@ def get_space_utilization(branch=None, from_date=None, to_date=None):
 @frappe.whitelist()
 def get_dashboard_kpis(branch=None):
     """Real-time KPI summary for dashboard cards."""
+    frappe.only_for(["ARKSpace User", "ARKSpace Manager", "System Manager"])
+
     today = getdate(nowdate())
     bf = {"branch": branch} if branch else {}
 
@@ -636,6 +651,8 @@ def get_dashboard_kpis(branch=None):
 @frappe.whitelist()
 def get_booking_patterns(branch=None, from_date=None, to_date=None):
     """Booking patterns: peak hours, popular spaces, duration distribution."""
+    frappe.only_for(["ARKSpace User", "ARKSpace Manager", "System Manager"])
+
     from_date = getdate(from_date or add_days(nowdate(), -30))
     to_date = getdate(to_date or nowdate())
 
@@ -720,6 +737,8 @@ def get_comparison_report(
     period1_start, period1_end, period2_start, period2_end, branch=None,
 ):
     """Compare two periods side-by-side."""
+    frappe.only_for(["ARKSpace User", "ARKSpace Manager", "System Manager"])
+
     def _period_stats(start, end):
         start = getdate(start)
         end = getdate(end)

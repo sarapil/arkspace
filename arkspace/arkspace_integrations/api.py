@@ -15,6 +15,7 @@ from frappe.utils import flt
 @frappe.whitelist()
 def get_unpaid_invoices(member=None):
 	"""Proxy to billing.get_unpaid_invoices."""
+	frappe.only_for(["System Manager", "ARK Admin", "ARK User"])
 	from arkspace.arkspace_integrations.billing import get_unpaid_invoices as _get
 	return _get(member)
 
@@ -22,6 +23,7 @@ def get_unpaid_invoices(member=None):
 @frappe.whitelist()
 def get_integration_status():
 	"""Return which integrations are available on this site."""
+	frappe.only_for(["System Manager", "ARK Admin", "ARK User"])
 	installed = frappe.get_installed_apps()
 	return {
 		"erpnext": "erpnext" in installed,
@@ -59,6 +61,7 @@ def initiate_payment(
 	Returns:
 		dict with checkout_url, payment_name, gateway
 	"""
+	frappe.only_for(["System Manager", "ARK Admin", "ARK User"])
 	from arkspace.arkspace_integrations.payment_gateway import (
 		initiate_payment as _initiate,
 	)
@@ -84,6 +87,7 @@ def verify_payment(payment_name):
 	Returns:
 		dict with status, gateway_status
 	"""
+	frappe.only_for(["System Manager", "ARK Admin", "ARK User"])
 	from arkspace.arkspace_integrations.payment_gateway import (
 		confirm_payment,
 	)
@@ -160,6 +164,7 @@ def get_payment_status(reference_doctype, reference_name):
 	Returns:
 		dict with has_payment, latest_status, payments list
 	"""
+	frappe.only_for(["System Manager", "ARK Admin", "ARK User"])
 	payments = frappe.get_all(
 		"Online Payment",
 		filters={
@@ -184,6 +189,7 @@ def get_checkout_url(reference_doctype, reference_name):
 	If an active (Initiated/Pending) payment exists, returns its URL.
 	Otherwise, creates a new payment and returns the checkout URL.
 	"""
+	frappe.only_for(["System Manager", "ARK Admin", "ARK User"])
 	# Check for existing active payment
 	existing = frappe.db.get_value(
 		"Online Payment",

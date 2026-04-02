@@ -17,6 +17,8 @@ def get_floor_plan_data(branch=None, floor=None):
 	Returns:
 		dict with floors list, each containing spaces with status
 	"""
+	frappe.only_for(["ARKSpace User", "ARKSpace Manager", "System Manager"])
+
 	filters = {}
 	if branch:
 		filters["branch"] = branch

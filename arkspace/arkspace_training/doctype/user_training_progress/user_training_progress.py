@@ -45,6 +45,10 @@ def enroll_user(user, training_module, training_session=None):
 	Returns:
 		dict with the new User Training Progress record
 	"""
+	frappe.only_for(["System Manager", "ARK Admin", "ARK User"])
+	frappe.only_for(["System Manager", "ARK Admin", "ARK User"])
+	frappe.only_for(["ARKSpace User", "ARKSpace Manager", "System Manager"])
+
 	# Check if already enrolled
 	existing = frappe.db.exists(
 		"User Training Progress",
@@ -87,6 +91,10 @@ def update_progress(name, status=None, progress_percent=None, score=None, badge=
 	Returns:
 		updated dict
 	"""
+	frappe.only_for(["System Manager", "ARK Admin", "ARK User"])
+	frappe.only_for(["System Manager", "ARK Admin", "ARK User"])
+	frappe.only_for(["ARKSpace Manager", "System Manager"])
+
 	doc = frappe.get_doc("User Training Progress", name)
 
 	if status:
@@ -116,6 +124,8 @@ def get_user_progress(user, training_module=None):
 	Returns:
 		list of progress records
 	"""
+	frappe.only_for(["ARKSpace User", "ARKSpace Manager", "System Manager"])
+
 	filters = {"user": user}
 	if training_module:
 		filters["training_module"] = training_module

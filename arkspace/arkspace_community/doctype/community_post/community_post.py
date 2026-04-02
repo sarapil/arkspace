@@ -29,6 +29,8 @@ class CommunityPost(Document):
     @frappe.whitelist()
     def toggle_like(self):
         """Toggle like for the current user."""
+        frappe.only_for(["ARKSpace Manager", "System Manager"])
+
         user = frappe.session.user
         existing = frappe.db.exists("Comment", {
             "reference_doctype": "Community Post",
@@ -56,4 +58,6 @@ class CommunityPost(Document):
     @frappe.whitelist()
     def increment_views(self):
         """Increment view count."""
+        frappe.only_for(["ARKSpace User", "ARKSpace Manager", "System Manager"])
+
         self.db_set("views_count", cint(self.views_count) + 1)

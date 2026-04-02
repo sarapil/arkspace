@@ -57,6 +57,7 @@ def create_day_pass(
     Returns:
         dict with day_pass name and details
     """
+    frappe.only_for(["System Manager", "ARK Admin", "ARK User"])
     # Auto-set rate from settings if not provided
     if not rate:
         rate = _get_default_rate(pass_type, space)
@@ -101,6 +102,7 @@ def get_day_pass(name):
     Returns:
         dict with day pass details
     """
+    frappe.only_for(["System Manager", "ARK Admin", "ARK User"])
     doc = frappe.get_doc("Day Pass", name)
     doc.check_permission("read")
 
@@ -145,6 +147,7 @@ def day_pass_check_in(name):
     Returns:
         dict with updated status
     """
+    frappe.only_for(["System Manager", "ARK Admin", "ARK User"])
     doc = frappe.get_doc("Day Pass", name)
     doc.check_in()
     return {"day_pass": doc.name, "status": doc.status, "checked_in_at": str(doc.checked_in_at)}
@@ -160,6 +163,7 @@ def day_pass_check_out(name):
     Returns:
         dict with updated status
     """
+    frappe.only_for(["System Manager", "ARK Admin", "ARK User"])
     doc = frappe.get_doc("Day Pass", name)
     doc.check_out()
     return {
@@ -189,6 +193,7 @@ def convert_day_pass_to_membership(name, plan, billing_cycle="Monthly"):
     Returns:
         dict with membership name and credit applied
     """
+    frappe.only_for(["System Manager", "ARK Admin", "ARK User"])
     doc = frappe.get_doc("Day Pass", name)
     membership_name = doc.convert_to_membership(plan, billing_cycle)
 
@@ -269,6 +274,7 @@ def get_todays_day_passes():
     Returns:
         list of day pass summary dicts
     """
+    frappe.only_for(["System Manager", "ARK Admin", "ARK User"])
     passes = frappe.get_all(
         "Day Pass",
         filters={
@@ -292,6 +298,7 @@ def get_day_pass_stats():
     Returns:
         dict with total, checked_in, checked_out, revenue, trials
     """
+    frappe.only_for(["System Manager", "ARK Admin", "ARK User"])
     today = nowdate()
 
     total = frappe.db.count("Day Pass", {
@@ -332,6 +339,7 @@ def get_available_trial_plans():
     Returns:
         list of plan dicts with trial info
     """
+    frappe.only_for(["System Manager", "ARK Admin", "ARK User"])
     plans = frappe.get_all(
         "Membership Plan",
         filters={"enable_trial": 1},

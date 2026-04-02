@@ -14,6 +14,8 @@ class WorkspaceTour(Document):
 	@frappe.whitelist()
 	def mark_completed(self, interest_level=None, feedback=None, outcome=None):
 		"""Mark the tour as completed with feedback."""
+		frappe.only_for(["ARKSpace Manager", "System Manager"])
+
 		self.status = "Completed"
 		if interest_level:
 			self.interest_level = interest_level

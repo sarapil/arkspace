@@ -118,6 +118,8 @@ def get_dynamic_rate(
 
 	Used by the Space Booking form to preview adjusted pricing.
 	"""
+	frappe.only_for(["ARKSpace User", "ARKSpace Manager", "System Manager"])
+
 	space_doc = frappe.get_cached_doc("Co-working Space", space)
 
 	rate_map = {

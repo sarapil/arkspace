@@ -119,3 +119,8 @@ docker-compose.override.yml
 # ✅ Images/logos in arkspace/public/images/
 # ✅ .github/ directory (CI, copilot instructions)
 # ==============================================================================
+
+# AI Tools
+.aider*
+.copilot/
+.cursor/

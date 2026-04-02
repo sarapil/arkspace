@@ -143,6 +143,8 @@ def get_dashboard_stats():
 	Returns:
 		dict with total_spaces, occupied, available, bookings_today, active_members
 	"""
+	frappe.only_for(["ARKSpace User", "ARKSpace Manager", "System Manager"])
+
 	from frappe.utils import getdate, nowdate
 
 	today = getdate(nowdate())

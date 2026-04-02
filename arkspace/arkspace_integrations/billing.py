@@ -174,6 +174,8 @@ def get_unpaid_invoices(member=None):
 	Returns:
 		list of dicts with invoice details
 	"""
+	frappe.only_for(["ARKSpace User", "ARKSpace Manager", "System Manager"])
+
 	filters = {
 		"docstatus": 1,
 		"outstanding_amount": [">", 0],

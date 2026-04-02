@@ -137,6 +137,7 @@ class DocumentationGenerator:
 
     def _create_api_doc(self, func_node: ast.FunctionDef, filepath: str):
         """Create API documentation entry."""
+        frappe.only_for(["System Manager", "ARK Admin", "ARK User"])
         # Skip if already documented manually
         existing = frappe.db.exists(
             "Documentation Entry",
@@ -327,6 +328,8 @@ def regenerate_documentation():
     مهمة مجدولة لتحديث التوثيق
     Scheduled task to regenerate documentation.
     """
+    frappe.only_for(["ARKSpace Manager", "System Manager"])
+
     generator = DocumentationGenerator()
     generator.generate_all()
     frappe.db.commit()
@@ -335,6 +338,8 @@ def regenerate_documentation():
 @frappe.whitelist()
 def regenerate_single(doc_name: Optional[str] = None):
     """Regenerate a single documentation entry."""
+    frappe.only_for(["ARKSpace Manager", "System Manager"])
+
     if doc_name:
         doc = frappe.get_doc("Documentation Entry", doc_name)
         if doc.related_doctype and doc.auto_generated:

@@ -20,6 +20,8 @@ def get_training_catalog(category=None, level=None):
 	Returns:
 		list of training module dicts
 	"""
+	frappe.only_for(["ARKSpace User", "ARKSpace Manager", "System Manager"])
+
 	filters = {"status": "Published"}
 	if category:
 		filters["category"] = category
@@ -50,6 +52,10 @@ def get_upcoming_sessions(training_module=None, branch=None, limit=20):
 	Returns:
 		list of session dicts
 	"""
+	frappe.only_for(["System Manager", "ARK Admin", "ARK User"])
+	frappe.only_for(["System Manager", "ARK Admin", "ARK User"])
+	frappe.only_for(["ARKSpace User", "ARKSpace Manager", "System Manager"])
+
 	from frappe.utils import nowdate
 
 	filters = {
@@ -79,6 +85,8 @@ def get_upcoming_sessions(training_module=None, branch=None, limit=20):
 @frappe.whitelist()
 def get_available_badges():
 	"""Return all active badges."""
+	frappe.only_for(["ARKSpace User", "ARKSpace Manager", "System Manager"])
+
 	return frappe.get_all(
 		"Training Badge",
 		filters={"is_active": 1},
@@ -101,6 +109,8 @@ def get_user_badges(user=None):
 	Returns:
 		list of badge dicts with award date
 	"""
+	frappe.only_for(["ARKSpace User", "ARKSpace Manager", "System Manager"])
+
 	if not user:
 		user = frappe.session.user
 

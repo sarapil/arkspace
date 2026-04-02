@@ -24,6 +24,10 @@ def get_available_spaces(space_type=None, branch=None, booking_type=None, start=
 	Returns:
 		list of dicts with space details and availability
 	"""
+	frappe.only_for(["System Manager", "ARK Admin", "ARK User"])
+	frappe.only_for(["System Manager", "ARK Admin", "ARK User"])
+	frappe.only_for(["ARKSpace User", "ARKSpace Manager", "System Manager"])
+
 	filters = {"status": ["in", ["Available", "Reserved"]]}
 
 	if space_type:
@@ -91,6 +95,10 @@ def create_booking(space, member, booking_type, start_datetime, end_datetime, di
 	Returns:
 		dict with booking name and status
 	"""
+	frappe.only_for(["System Manager", "ARK Admin", "ARK User"])
+	frappe.only_for(["System Manager", "ARK Admin", "ARK User"])
+	frappe.only_for(["ARKSpace Manager", "System Manager"])
+
 	space_doc = frappe.get_doc("Co-working Space", space)
 
 	rate_map = {
@@ -128,6 +136,8 @@ def check_in(booking):
 	Returns:
 		dict with updated status
 	"""
+	frappe.only_for(["ARKSpace User", "ARKSpace Manager", "System Manager"])
+
 	doc = frappe.get_doc("Space Booking", booking)
 	if doc.docstatus != 1:
 		frappe.throw(_("Booking must be submitted before check-in"))
@@ -163,6 +173,8 @@ def check_out(booking):
 	Returns:
 		dict with updated status
 	"""
+	frappe.only_for(["ARKSpace User", "ARKSpace Manager", "System Manager"])
+
 	doc = frappe.get_doc("Space Booking", booking)
 	if doc.docstatus != 1:
 		frappe.throw(_("Booking must be submitted"))

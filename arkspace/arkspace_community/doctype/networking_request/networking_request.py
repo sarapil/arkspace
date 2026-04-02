@@ -29,6 +29,8 @@ class NetworkingRequest(Document):
     @frappe.whitelist()
     def accept(self):
         """Accept the networking request."""
+        frappe.only_for(["ARKSpace User", "ARKSpace Manager", "System Manager"])
+
         if frappe.session.user != self.to_member:
             frappe.throw(_("Only the recipient can accept this request"))
         self.status = "Accepted"
@@ -46,6 +48,8 @@ class NetworkingRequest(Document):
     @frappe.whitelist()
     def decline(self):
         """Decline the networking request."""
+        frappe.only_for(["ARKSpace User", "ARKSpace Manager", "System Manager"])
+
         if frappe.session.user != self.to_member:
             frappe.throw(_("Only the recipient can decline this request"))
         self.status = "Declined"

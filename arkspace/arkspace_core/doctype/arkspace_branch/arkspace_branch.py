@@ -49,6 +49,8 @@ class ARKSpaceBranch(Document):
     @frappe.whitelist()
     def recalculate_capacity(self):
         """Recalculate capacity from linked spaces."""
+        frappe.only_for(["ARKSpace Manager", "System Manager"])
+
         self._calculate_capacity()
         self.save()
         return {

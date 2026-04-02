@@ -14,6 +14,8 @@ def get_live_plan_data(branch=None):
     Returns:
         dict with spaces list, each containing status, current occupant, dates, etc.
     """
+    frappe.only_for(["ARKSpace User", "ARKSpace Manager", "System Manager"])
+
     filters = {}
     if branch:
         filters["branch"] = branch
@@ -167,6 +169,10 @@ def quick_book_space(space, member, booking_type, start_datetime, end_datetime, 
     Returns:
         dict with booking name and details
     """
+    frappe.only_for(["System Manager", "ARK Admin", "ARK User"])
+    frappe.only_for(["System Manager", "ARK Admin", "ARK User"])
+    frappe.only_for(["ARKSpace User", "ARKSpace Manager", "System Manager"])
+
     space_doc = frappe.get_doc("Co-working Space", space)
 
     # Get rate based on booking type

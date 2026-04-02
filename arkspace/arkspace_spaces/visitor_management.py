@@ -33,6 +33,7 @@ def preregister_visitor(
 	Returns:
 		dict with visitor log details
 	"""
+	frappe.only_for(["System Manager", "ARK Admin", "ARK User"])
 	visitor = frappe.get_doc({
 		"doctype": "Visitor Log",
 		"visitor_name": visitor_name,
@@ -76,6 +77,7 @@ def walk_in_visitor(
 
 	For front desk use when a visitor arrives without pre-registration.
 	"""
+	frappe.only_for(["System Manager", "ARK Admin", "ARK User"])
 	visitor = frappe.get_doc({
 		"doctype": "Visitor Log",
 		"visitor_name": visitor_name,
@@ -111,6 +113,7 @@ def walk_in_visitor(
 @frappe.whitelist()
 def visitor_check_in(visitor_name):
 	"""تسجيل دخول الزائر — Check in a pre-registered visitor."""
+	frappe.only_for(["System Manager", "ARK Admin", "ARK User"])
 	visitor = frappe.get_doc("Visitor Log", visitor_name)
 	visitor.check_in()
 
@@ -127,6 +130,7 @@ def visitor_check_in(visitor_name):
 @frappe.whitelist()
 def visitor_check_out(visitor_name):
 	"""تسجيل خروج الزائر — Check out a visitor."""
+	frappe.only_for(["System Manager", "ARK Admin", "ARK User"])
 	visitor = frappe.get_doc("Visitor Log", visitor_name)
 	visitor.check_out()
 
@@ -144,6 +148,7 @@ def visitor_check_out(visitor_name):
 @frappe.whitelist()
 def get_todays_visitors(status=None, branch=None):
 	"""زوار اليوم — Get all visitors expected or checked-in today."""
+	frappe.only_for(["System Manager", "ARK Admin", "ARK User"])
 	today = nowdate()
 
 	filters = {
@@ -170,6 +175,7 @@ def get_todays_visitors(status=None, branch=None):
 @frappe.whitelist()
 def get_active_visitors():
 	"""الزوار الحاليون — Get currently checked-in visitors."""
+	frappe.only_for(["System Manager", "ARK Admin", "ARK User"])
 	return frappe.get_all(
 		"Visitor Log",
 		filters={"status": "Checked In"},
@@ -200,6 +206,7 @@ def approve_visitor(visitor_name):
 @frappe.whitelist()
 def reject_visitor(visitor_name, reason=None):
 	"""رفض الزائر — Reject a visitor pre-registration."""
+	frappe.only_for(["System Manager", "ARK Admin", "ARK User"])
 	visitor = frappe.get_doc("Visitor Log", visitor_name)
 	visitor.db_set({
 		"approval_status": "Rejected",
@@ -215,6 +222,7 @@ def reject_visitor(visitor_name, reason=None):
 @frappe.whitelist()
 def get_visitor_badge_html(visitor_name):
 	"""طباعة شارة الزائر — Generate printable badge HTML for a visitor."""
+	frappe.only_for(["System Manager", "ARK Admin", "ARK User"])
 	v = frappe.get_doc("Visitor Log", visitor_name)
 
 	html = f"""<!DOCTYPE html>
@@ -289,6 +297,7 @@ def get_visitor_badge_html(visitor_name):
 @frappe.whitelist()
 def get_visitor_stats(days=30):
 	"""إحصائيات الزوار — Visitor analytics."""
+	frappe.only_for(["System Manager", "ARK Admin", "ARK User"])
 	from frappe.utils import add_days
 
 	cutoff = add_days(nowdate(), -days)

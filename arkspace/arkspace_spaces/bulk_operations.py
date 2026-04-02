@@ -15,6 +15,8 @@ def bulk_check_in(bookings):
 	Args:
 		bookings: JSON list of booking names or comma-separated string
 	"""
+	frappe.only_for(["ARKSpace Manager", "System Manager"])
+
 	bookings = _parse_list(bookings)
 	results = {"success": [], "failed": []}
 
@@ -58,6 +60,8 @@ def bulk_check_out(bookings):
 	Args:
 		bookings: JSON list of booking names or comma-separated string
 	"""
+	frappe.only_for(["ARKSpace Manager", "System Manager"])
+
 	bookings = _parse_list(bookings)
 	results = {"success": [], "failed": []}
 
@@ -101,6 +105,8 @@ def bulk_cancel(bookings):
 	Args:
 		bookings: JSON list of booking names or comma-separated string
 	"""
+	frappe.only_for(["ARKSpace Manager", "System Manager"])
+
 	bookings = _parse_list(bookings)
 	results = {"success": [], "failed": []}
 
@@ -136,6 +142,8 @@ def bulk_mark_no_show(bookings):
 	Args:
 		bookings: JSON list of booking names or comma-separated string
 	"""
+	frappe.only_for(["ARKSpace Manager", "System Manager"])
+
 	bookings = _parse_list(bookings)
 	results = {"success": [], "failed": []}
 

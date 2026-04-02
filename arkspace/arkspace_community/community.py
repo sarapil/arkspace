@@ -72,6 +72,8 @@ def get_community_feed(branch=None, post_type=None, page=0, page_size=20):
 @frappe.whitelist()
 def create_post(title, content, post_type="Discussion", tags=None, branch=None, is_anonymous=False):
     """Create a new community post."""
+    frappe.only_for(["ARKSpace Manager", "System Manager"])
+
     post = frappe.get_doc({
         "doctype": "Community Post",
         "title": title,
@@ -98,6 +100,8 @@ def create_post(title, content, post_type="Discussion", tags=None, branch=None, 
 @frappe.whitelist()
 def like_post(post):
     """Toggle like on a community post."""
+    frappe.only_for(["ARKSpace User", "ARKSpace Manager", "System Manager"])
+
     doc = frappe.get_doc("Community Post", post)
     return doc.toggle_like()
 
@@ -115,6 +119,8 @@ def get_member_directory(branch=None, skills=None, search=None, page=0, page_siz
         page: Page number
         page_size: Items per page
     """
+    frappe.only_for(["ARKSpace User", "ARKSpace Manager", "System Manager"])
+
     # Get members with active memberships
     filters = {"docstatus": 1, "status": "Active"}
     if branch:
@@ -167,6 +173,8 @@ def get_member_directory(branch=None, skills=None, search=None, page=0, page_siz
 @frappe.whitelist()
 def get_member_profile(member):
     """Get public profile for a specific member."""
+    frappe.only_for(["ARKSpace User", "ARKSpace Manager", "System Manager"])
+
     user_info = frappe.db.get_value("User", member, [
         "full_name", "user_image", "bio", "location",
     ], as_dict=True)
@@ -226,6 +234,8 @@ def get_member_profile(member):
 @frappe.whitelist()
 def send_networking_request(to_member, message=None):
     """Send a networking/connection request to another member."""
+    frappe.only_for(["ARKSpace Manager", "System Manager"])
+
     if frappe.session.user == to_member:
         frappe.throw(_("Cannot send a request to yourself"))
 
@@ -256,6 +266,8 @@ def respond_to_request(request, action):
         request: Networking Request name
         action: 'accept' or 'decline'
     """
+    frappe.only_for(["ARKSpace User", "ARKSpace Manager", "System Manager"])
+
     doc = frappe.get_doc("Networking Request", request)
 
     if action == "accept":
@@ -269,6 +281,8 @@ def respond_to_request(request, action):
 @frappe.whitelist()
 def get_my_connections():
     """Get current user's accepted connections."""
+    frappe.only_for(["ARKSpace User", "ARKSpace Manager", "System Manager"])
+
     user = frappe.session.user
 
     # Connections where user is from_member
@@ -301,6 +315,8 @@ def get_my_connections():
 @frappe.whitelist()
 def get_pending_requests():
     """Get networking requests pending for current user."""
+    frappe.only_for(["ARKSpace User", "ARKSpace Manager", "System Manager"])
+
     user = frappe.session.user
 
     incoming = frappe.get_all("Networking Request", {
@@ -366,6 +382,8 @@ def get_events(branch=None, event_type=None, from_date=None, upcoming_only=True)
 @frappe.whitelist()
 def register_for_event(event):
     """Register current user for an event."""
+    frappe.only_for(["ARKSpace User", "ARKSpace Manager", "System Manager"])
+
     doc = frappe.get_doc("Community Event", event)
     return doc.register_attendee()
 
@@ -373,6 +391,8 @@ def register_for_event(event):
 @frappe.whitelist()
 def cancel_event_registration(event):
     """Cancel current user's event registration."""
+    frappe.only_for(["ARKSpace Manager", "System Manager"])
+
     doc = frappe.get_doc("Community Event", event)
     return doc.cancel_registration()
 
@@ -380,6 +400,8 @@ def cancel_event_registration(event):
 @frappe.whitelist()
 def get_event_attendees(event):
     """Get list of registered attendees for an event."""
+    frappe.only_for(["ARKSpace User", "ARKSpace Manager", "System Manager"])
+
     regs = frappe.get_all("Comment", {
         "reference_doctype": "Community Event",
         "reference_name": event,

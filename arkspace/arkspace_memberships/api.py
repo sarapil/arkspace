@@ -20,6 +20,7 @@ def get_active_memberships(member=None):
 	Returns:
 		list of active membership dicts
 	"""
+	frappe.only_for(["System Manager", "ARK Admin", "ARK User"])
 	filters = {"docstatus": 1, "status": "Active"}
 	if member:
 		filters["member"] = member
@@ -44,6 +45,7 @@ def get_membership_plans(plan_type=None, is_active=True):
 		plan_type: filter by plan type
 		is_active: only active plans (default True)
 	"""
+	frappe.only_for(["System Manager", "ARK Admin", "ARK User"])
 	filters = {}
 	if is_active:
 		filters["is_active"] = 1
@@ -82,6 +84,7 @@ def create_membership(
 	Returns:
 		dict with membership details
 	"""
+	frappe.only_for(["System Manager", "ARK Admin", "ARK User"])
 	if not start_date:
 		start_date = nowdate()
 
@@ -117,6 +120,7 @@ def get_wallet_balance(member):
 	Returns:
 		dict with wallet details or None
 	"""
+	frappe.only_for(["System Manager", "ARK Admin", "ARK User"])
 	wallet_name = frappe.db.exists("Member Credit Wallet", {"member": member})
 	if not wallet_name:
 		return {"member": member, "available_credits": 0, "total_credits": 0, "used_credits": 0}
@@ -141,6 +145,7 @@ def get_member_dashboard(member):
 	Returns:
 		dict with memberships, bookings, wallet, stats
 	"""
+	frappe.only_for(["System Manager", "ARK Admin", "ARK User"])
 	today = getdate(nowdate())
 
 	# Active memberships
@@ -230,6 +235,7 @@ def renew_membership(membership_name, billing_cycle=None):
 	Returns:
 		dict with new membership details
 	"""
+	frappe.only_for(["System Manager", "ARK Admin", "ARK User"])
 	old = frappe.get_doc("Membership", membership_name)
 
 	# Validate ownership
@@ -278,6 +284,7 @@ def upgrade_membership(membership_name, new_plan, billing_cycle=None):
 	Returns:
 		dict with new membership details
 	"""
+	frappe.only_for(["System Manager", "ARK Admin", "ARK User"])
 	old = frappe.get_doc("Membership", membership_name)
 
 	_validate_member_access(old.member)
@@ -334,6 +341,7 @@ def get_renewal_options(membership_name):
 
 	Returns pricing for different billing cycles based on current plan.
 	"""
+	frappe.only_for(["System Manager", "ARK Admin", "ARK User"])
 	mem = frappe.get_doc("Membership", membership_name)
 	_validate_member_access(mem.member)
 
@@ -455,6 +463,7 @@ def get_payment_history(member=None, limit=20):
 
 	Returns invoices and online payments.
 	"""
+	frappe.only_for(["System Manager", "ARK Admin", "ARK User"])
 	if not member:
 		member = _get_current_member()
 
@@ -517,6 +526,7 @@ def get_payment_history(member=None, limit=20):
 @frappe.whitelist()
 def toggle_auto_renew(membership_name, auto_renew):
 	"""تبديل التجديد التلقائي — Toggle auto-renewal for a membership."""
+	frappe.only_for(["System Manager", "ARK Admin", "ARK User"])
 	mem = frappe.get_doc("Membership", membership_name)
 	_validate_member_access(mem.member)
 

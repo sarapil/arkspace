@@ -264,12 +264,16 @@ def scan_checkin(booking=None, token=None):
 @frappe.whitelist()
 def generate_qr(booking_name):
 	"""API endpoint to generate/regenerate QR code for a booking."""
+	frappe.only_for(["ARKSpace Manager", "System Manager"])
+
 	return generate_booking_qr(booking_name, force=True)
 
 
 @frappe.whitelist()
 def bulk_generate_qr():
 	"""Generate QR codes for all confirmed bookings today that lack one."""
+	frappe.only_for(["ARKSpace Manager", "System Manager"])
+
 	today = nowdate()
 	bookings = frappe.get_all(
 		"Space Booking",

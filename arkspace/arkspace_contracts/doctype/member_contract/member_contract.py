@@ -46,6 +46,8 @@ class MemberContract(Document):
     @frappe.whitelist()
     def populate_from_template(self):
         """Fill contract terms from selected template."""
+        frappe.only_for(["ARKSpace User", "ARKSpace Manager", "System Manager"])
+
         if not self.contract_template:
             frappe.throw(_("Please select a Contract Template first"))
 

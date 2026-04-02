@@ -60,6 +60,7 @@ def get_branches(active_only=True):
 @frappe.whitelist()
 def get_branch_details(branch):
     """Get full branch details including spaces breakdown and stats."""
+    frappe.only_for(["System Manager", "ARK Admin", "ARK User"])
     doc = frappe.get_doc("ARKSpace Branch", branch)
     doc.check_permission("read")
 
@@ -126,6 +127,8 @@ def get_branch_spaces(branch, space_type=None, status=None):
 @frappe.whitelist()
 def get_branch_stats(branch, from_date=None, to_date=None):
     """Get comprehensive statistics for a branch."""
+    frappe.only_for(["ARKSpace User", "ARKSpace Manager", "System Manager"])
+
     from_date = getdate(from_date or get_first_day(nowdate()))
     to_date = getdate(to_date or nowdate())
 
@@ -291,6 +294,8 @@ def get_branch_comparison(branches=None, from_date=None, to_date=None):
     Args:
         branches: JSON list of branch names, or None for all
     """
+    frappe.only_for(["ARKSpace User", "ARKSpace Manager", "System Manager"])
+
     import json
 
     from_date = getdate(from_date or get_first_day(nowdate()))

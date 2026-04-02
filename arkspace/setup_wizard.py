@@ -169,6 +169,8 @@ def setup_arkspace_config(args):
 
 	Called by the setup wizard framework with collected slide data.
 	"""
+	frappe.only_for(["System Manager"])
+
 	if isinstance(args, str):
 		import json
 		args = json.loads(args)

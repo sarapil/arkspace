@@ -18,6 +18,8 @@ class WorkspaceLead(Document):
 	@frappe.whitelist()
 	def convert_to_customer(self):
 		"""Convert this lead to a Customer and optionally create a Membership."""
+		frappe.only_for(["ARKSpace User", "ARKSpace Manager", "System Manager"])
+
 		if self.status == "Converted":
 			frappe.throw(_("Lead already converted"))
 
@@ -40,6 +42,8 @@ class WorkspaceLead(Document):
 	@frappe.whitelist()
 	def schedule_tour(self):
 		"""Create a Workspace Tour for this lead."""
+		frappe.only_for(["ARKSpace Manager", "System Manager"])
+
 		tour = frappe.get_doc({
 			"doctype": "Workspace Tour",
 			"lead": self.name,

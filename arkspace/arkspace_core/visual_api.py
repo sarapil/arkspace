@@ -78,6 +78,8 @@ def _sc(status: str) -> str:
 @frappe.whitelist()
 def get_command_center_kpis(branch=None):
     """Return top-level KPI cards for the Command Center dashboard."""
+    frappe.only_for(["ARKSpace User", "ARKSpace Manager", "System Manager"])
+
     filters_space = {}
     if branch:
         filters_space["branch"] = branch
@@ -158,6 +160,8 @@ def get_command_center_kpis(branch=None):
 @frappe.whitelist()
 def get_command_center_graph(branch=None):
     """Build the main overview graph: branches → spaces grouped by type → active bookings."""
+    frappe.only_for(["ARKSpace User", "ARKSpace Manager", "System Manager"])
+
     nodes = []
     edges = []
 
@@ -332,6 +336,8 @@ def get_command_center_graph(branch=None):
 @frappe.whitelist()
 def get_space_explorer(doctype, docname, depth=1):
     """Build a radial exploration graph centered on any ARKSpace entity."""
+    frappe.only_for(["ARKSpace User", "ARKSpace Manager", "System Manager"])
+
     depth = cint(depth) or 1
     nodes = []
     edges = []
@@ -449,6 +455,8 @@ def get_space_explorer(doctype, docname, depth=1):
 @frappe.whitelist()
 def get_booking_flow(branch=None, date=None):
     """Pipeline graph: booking statuses as columns, individual bookings as nodes."""
+    frappe.only_for(["ARKSpace User", "ARKSpace Manager", "System Manager"])
+
     date = date or nowdate()
     nodes = []
     edges = []
@@ -554,6 +562,8 @@ def get_booking_flow(branch=None, date=None):
 @frappe.whitelist()
 def get_community_graph(branch=None, limit=50):
     """Social graph: members, networking connections, events, popular posts."""
+    frappe.only_for(["ARKSpace User", "ARKSpace Manager", "System Manager"])
+
     limit = cint(limit) or 50
     nodes = []
     edges = []
@@ -666,6 +676,8 @@ def get_community_graph(branch=None, limit=50):
 @frappe.whitelist()
 def get_crm_pipeline(branch=None):
     """Visualize lead → tour → membership conversion funnel."""
+    frappe.only_for(["ARKSpace User", "ARKSpace Manager", "System Manager"])
+
     nodes = []
     edges = []
 
@@ -754,6 +766,8 @@ def get_crm_pipeline(branch=None):
 @frappe.whitelist()
 def get_onboarding_data():
     """Summary data for the interactive onboarding storyboard."""
+    frappe.only_for(["ARKSpace User", "ARKSpace Manager", "System Manager"])
+
     return {
         "total_spaces": frappe.db.count("Co-working Space") or 0,
         "total_members": frappe.db.count("Membership", {"docstatus": 1, "status": "Active"}) or 0,

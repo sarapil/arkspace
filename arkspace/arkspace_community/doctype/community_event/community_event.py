@@ -38,6 +38,8 @@ class CommunityEvent(Document):
     @frappe.whitelist()
     def register_attendee(self, user=None):
         """Register a user for this event."""
+        frappe.only_for(["ARKSpace User", "ARKSpace Manager", "System Manager"])
+
         user = user or frappe.session.user
 
         if cint(self.current_attendees) >= cint(self.max_attendees) and cint(self.max_attendees) > 0:
@@ -75,6 +77,8 @@ class CommunityEvent(Document):
     @frappe.whitelist()
     def cancel_registration(self, user=None):
         """Cancel a user's registration."""
+        frappe.only_for(["ARKSpace Manager", "System Manager"])
+
         user = user or frappe.session.user
 
         existing = frappe.db.get_value("Comment", {
