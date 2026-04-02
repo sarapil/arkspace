@@ -1,0 +1,10 @@
+{
+  "_comment": "Test users for ARKSpace",
+  "users": [
+    {
+      "email": "test_arkspace@example.com",
+      "first_name": "Test",
+      "roles": []
+    }
+  ]
+}

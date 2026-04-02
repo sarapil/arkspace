@@ -1,0 +1,15 @@
+[
+  {
+    "role": "System Manager",
+    "capabilities": [
+      "ARK_manage_spaces",
+      "ARK_manage_members",
+      "ARK_manage_bookings",
+      "ARK_manage_events",
+      "ARK_manage_billing",
+      "ARK_view_analytics",
+      "ARK_manage_visitors",
+      "ARK_admin_settings"
+    ]
+  }
+]

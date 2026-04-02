@@ -1,0 +1,42 @@
+[
+  {
+    "name": "ARK_manage_spaces",
+    "category": "Module",
+    "description": "Manage coworking spaces"
+  },
+  {
+    "name": "ARK_manage_members",
+    "category": "Module",
+    "description": "Manage memberships"
+  },
+  {
+    "name": "ARK_manage_bookings",
+    "category": "Module",
+    "description": "Manage room bookings"
+  },
+  {
+    "name": "ARK_manage_events",
+    "category": "Module",
+    "description": "Manage events and programs"
+  },
+  {
+    "name": "ARK_manage_billing",
+    "category": "Module",
+    "description": "Manage billing and invoices"
+  },
+  {
+    "name": "ARK_view_analytics",
+    "category": "Report",
+    "description": "View occupancy and revenue reports"
+  },
+  {
+    "name": "ARK_manage_visitors",
+    "category": "Action",
+    "description": "Manage day passes and visitors"
+  },
+  {
+    "name": "ARK_admin_settings",
+    "category": "Module",
+    "description": "Configure ARKSpace settings"
+  }
+]
