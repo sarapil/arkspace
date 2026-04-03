@@ -191,6 +191,7 @@ def get_active_visitors():
 @frappe.whitelist()
 def approve_visitor(visitor_name):
 	"""الموافقة على الزائر — Approve a pre-registered visitor."""
+	frappe.only_for(["System Manager", "ARK Admin", "ARK User"])
 	visitor = frappe.get_doc("Visitor Log", visitor_name)
 	if visitor.approval_status == "Approved":
 		frappe.throw(_("Visitor is already approved"))

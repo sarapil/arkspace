@@ -79,6 +79,7 @@ def _booking_card(b, card_type="booking"):
 @frappe.whitelist()
 def get_space_types():
     """Return all space types with their space counts and colors."""
+    frappe.has_permission("Space Type", "read", throw=True)
     types = frappe.get_all(
         "Space Type",
         fields=["name", "type_name", "type_name_ar", "icon", "color",
@@ -115,6 +116,7 @@ def get_schedule_data(space_type, date=None, branch=None, business_hours_only=0)
             "hours": { "start": 0, "end": 24, "step": 1 },
         }
     """
+    frappe.has_permission("Co-working Space", "read", throw=True)
     date = getdate(date or nowdate())
     day_start = datetime.combine(date, dt_time(0, 0))
     day_end = datetime.combine(date, dt_time(23, 59, 59))
@@ -255,6 +257,7 @@ def check_conflicts(space, start_time, end_time, exclude_booking=None):
             "space_status": "Available"
         }
     """
+    frappe.has_permission("Space Booking", "read", throw=True)
     start = get_datetime(start_time)
     end = get_datetime(end_time)
 
@@ -719,6 +722,7 @@ def get_available_spaces(space_type, start_time, end_time, branch=None):
     Find all spaces of a type that are free during a time slot.
     Used by the "find empty room" feature.
     """
+    frappe.has_permission("Co-working Space", "read", throw=True)
     start = get_datetime(start_time)
     end = get_datetime(end_time)
 
