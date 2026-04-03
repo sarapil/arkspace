@@ -1,0 +1,20 @@
+{
+ "app": "arkspace",
+ "creation": "2026-04-03 08:34:44.210364",
+ "docstatus": 0,
+ "doctype": "Desktop Icon",
+ "hidden": 0,
+ "icon_type": "App",
+ "idx": 1,
+ "label": "ARKSpace",
+ "link": "/desk/arkspace",
+ "link_type": "External",
+ "logo_url": "/assets/arkspace/images/arkspace_icon.svg",
+ "modified": "2026-04-03 08:34:44.210364",
+ "modified_by": "Administrator",
+ "name": "ARKSpace",
+ "owner": "Administrator",
+ "restrict_removal": 0,
+ "roles": [],
+ "standard": 1
+}

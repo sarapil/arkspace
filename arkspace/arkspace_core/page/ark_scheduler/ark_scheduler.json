@@ -1,0 +1,22 @@
+{
+ "content": null,
+ "creation": "2026-04-03 00:00:00",
+ "docstatus": 0,
+ "doctype": "Page",
+ "modified": "2026-04-03 00:00:00",
+ "modified_by": "Administrator",
+ "module": "ARKSpace Core",
+ "name": "ark-scheduler",
+ "owner": "Administrator",
+ "page_name": "ark-scheduler",
+ "roles": [
+  {"role": "System Manager"},
+  {"role": "ARKSpace Admin"},
+  {"role": "ARKSpace Manager"},
+  {"role": "ARKSpace Front Desk"},
+  {"role": "ARKSpace Operations"}
+ ],
+ "standard": "Yes",
+ "system_page": 0,
+ "title": "ARK Scheduler"
+}

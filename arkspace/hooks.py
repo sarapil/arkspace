@@ -171,6 +171,14 @@ fixtures = [
         "dt": "Print Format",
         "filters": [["name", "in", ["Booking Confirmation", "Membership Card", "Membership Receipt"]]],
     },
+    {
+        "dt": "Workspace",
+        "filters": [["module", "like", "ARKSpace%"]],
+    },
+    {
+        "dt": "Desktop Icon",
+        "filters": [["app", "=", "arkspace"]],
+    },
 ]
 
 # --- Jinja Customization -----------------------------------------------------

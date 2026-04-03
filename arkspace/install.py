@@ -11,6 +11,15 @@ def after_install(app_name=None):
     """Post-installation setup."""
     _create_roles()
     _create_default_space_types()
+    # ── Desktop Icon injection (Frappe v16 /desk) ──
+    from arkspace.desktop_utils import inject_app_desktop_icon
+    inject_app_desktop_icon(
+        app="arkspace",
+        label="ARKSpace",
+        route="/desk/arkspace",
+        logo_url="/assets/arkspace/images/arkspace-logo.svg",
+        bg_color="#1B365D",
+    )
     frappe.db.commit()
 
     # Run full setup (workflows, notifications, charts)
