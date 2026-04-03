@@ -52,8 +52,6 @@ def get_upcoming_sessions(training_module=None, branch=None, limit=20):
 	Returns:
 		list of session dicts
 	"""
-	frappe.only_for(["System Manager", "ARK Admin", "ARK User"])
-	frappe.only_for(["System Manager", "ARK Admin", "ARK User"])
 	frappe.only_for(["ARKSpace User", "ARKSpace Manager", "System Manager"])
 
 	from frappe.utils import nowdate

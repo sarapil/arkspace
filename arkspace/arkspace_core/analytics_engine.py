@@ -437,6 +437,12 @@ def get_member_analytics(branch=None, from_date=None, to_date=None):
     expired = frappe.db.count("Membership", {"docstatus": 1, "status": "Expired", **bf}) or 0
 
     # Growth over period
+    growth_params = [from_date, to_date]
+    branch_filter = ""
+    if branch:
+        branch_filter = "AND branch = %s"
+        growth_params.append(branch)
+
     growth_data = frappe.db.sql("""
         SELECT DATE_FORMAT(creation, '%%Y-%%m') AS month,
                COUNT(*) AS new_members
@@ -445,11 +451,13 @@ def get_member_analytics(branch=None, from_date=None, to_date=None):
           {branch_filter}
         GROUP BY DATE_FORMAT(creation, '%%Y-%%m')
         ORDER BY month
-    """.format(
-        branch_filter=f"AND branch = '{frappe.db.escape(branch)}'" if branch else "",
-    ), (from_date, to_date), as_dict=True)
+    """.format(branch_filter=branch_filter), growth_params, as_dict=True)
 
     # Churn over period
+    churn_params = [from_date, to_date]
+    if branch:
+        churn_params.append(branch)
+
     churn_data = frappe.db.sql("""
         SELECT DATE_FORMAT(end_date, '%%Y-%%m') AS month,
                COUNT(*) AS churned
@@ -459,11 +467,10 @@ def get_member_analytics(branch=None, from_date=None, to_date=None):
           {branch_filter}
         GROUP BY DATE_FORMAT(end_date, '%%Y-%%m')
         ORDER BY month
-    """.format(
-        branch_filter=f"AND branch = '{frappe.db.escape(branch)}'" if branch else "",
-    ), (from_date, to_date), as_dict=True)
+    """.format(branch_filter=branch_filter), churn_params, as_dict=True)
 
     # Plan distribution
+    plan_params = [branch] if branch else []
     plan_dist = frappe.db.sql("""
         SELECT membership_plan, COUNT(*) AS count
         FROM `tabMembership`
@@ -471,11 +478,10 @@ def get_member_analytics(branch=None, from_date=None, to_date=None):
           {branch_filter}
         GROUP BY membership_plan
         ORDER BY count DESC
-    """.format(
-        branch_filter=f"AND branch = '{frappe.db.escape(branch)}'" if branch else "",
-    ), as_dict=True)
+    """.format(branch_filter=branch_filter), plan_params, as_dict=True)
 
     # Billing cycle distribution
+    cycle_params = [branch] if branch else []
     cycle_dist = frappe.db.sql("""
         SELECT billing_cycle, COUNT(*) AS count
         FROM `tabMembership`
@@ -483,9 +489,7 @@ def get_member_analytics(branch=None, from_date=None, to_date=None):
           {branch_filter}
         GROUP BY billing_cycle
         ORDER BY count DESC
-    """.format(
-        branch_filter=f"AND branch = '{frappe.db.escape(branch)}'" if branch else "",
-    ), as_dict=True)
+    """.format(branch_filter=branch_filter), cycle_params, as_dict=True)
 
     retention_rate = round(((total_ever - expired) / total_ever * 100) if total_ever else 100, 1)
 

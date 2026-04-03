@@ -11,7 +11,7 @@ app_color = "#1B365D"
 app_home = "/desk"
 
 # Required Apps
-required_apps = ["erpnext"]
+required_apps = ["erpnext", "frappe_visual"]
 
 # --- v16: App Screen Integration ---------------------------------------------
 # Shows ARKSpace on the Frappe v16 desktop apps screen

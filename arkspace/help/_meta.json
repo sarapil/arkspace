@@ -1,0 +1,12 @@
+{
+  "app": "arkspace",
+  "name": "ARKSpace",
+  "icon": "layout",
+  "color": "#1ABC9C",
+  "languages": [
+    "en",
+    "ar"
+  ],
+  "default_language": "en",
+  "fallback_language": "en"
+}
