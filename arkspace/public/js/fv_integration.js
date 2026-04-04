@@ -1,0 +1,60 @@
+// Copyright (c) 2024, Arkan Lab — https://arkan.it.com
+// License: MIT
+// frappe_visual Integration for ARKSpace
+
+(function() {
+    "use strict";
+
+    // App branding registration
+    const APP_CONFIG = {
+        name: "arkspace",
+        title: __("ARKSpace"),
+        color: "#1B365D",
+        module: "ARKSpace Core",
+    };
+
+    // Initialize visual enhancements when ready
+    $(document).on("app_ready", function() {
+        // Register app color with visual theme system
+        if (frappe.visual && frappe.visual.ThemeManager) {
+            try {
+                document.documentElement.style.setProperty(
+                    "--arkspace-primary",
+                    APP_CONFIG.color
+                );
+            } catch(e) {}
+        }
+
+        // Initialize bilingual tooltips for Arabic support
+        if (frappe.visual && frappe.visual.bilingualTooltip) {
+            // bilingualTooltip auto-initializes — just ensure it's active
+        }
+    });
+
+    // Route-based visual page rendering
+    $(document).on("page-change", function() {
+        if (!frappe.visual || !frappe.visual.generator) return;
+
+    // Visual Settings Page
+    if (frappe.get_route_str() === 'arkspace-settings') {
+        const page = frappe.container.page;
+        if (page && page.main && frappe.visual.generator) {
+            frappe.visual.generator.settingsPage(
+                page.main[0] || page.main,
+                "ARKSpace Settings"
+            );
+        }
+    }
+
+    // Visual Reports Hub
+    if (frappe.get_route_str() === 'arkspace-reports') {
+        const page = frappe.container.page;
+        if (page && page.main && frappe.visual.generator) {
+            frappe.visual.generator.reportsHub(
+                page.main[0] || page.main,
+                "ARKSpace Core"
+            );
+        }
+    }
+    });
+})();

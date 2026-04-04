@@ -1,4 +1,6 @@
-# Copyright (c) 2026, ARKSpace Team and contributors
+# Copyright (c) 2024, Moataz M Hassan (Arkan Lab)
+# Developer Website: https://arkan.it.com
+# License: MIT
 # For license information, please see license.txt
 
 import frappe
@@ -150,4 +152,3 @@ class TestUserTrainingProgress(ARKSpaceTestCase):
 		records = get_user_progress(user_email)
 		self.assertGreaterEqual(len(records), 1)
 		self.assertEqual(records[0]["user"], user_email)
-

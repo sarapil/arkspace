@@ -1,3 +1,8 @@
+// Copyright (c) 2024, Moataz M Hassan (Arkan Lab)
+// Developer Website: https://arkan.it.com
+// License: MIT
+// For license information, please see license.txt
+
 frappe.listview_settings["Space Booking"] = {
 	add_fields: ["status", "space", "member", "start_datetime", "end_datetime", "net_amount"],
 

@@ -1,3 +1,8 @@
+# Copyright (c) 2024, Moataz M Hassan (Arkan Lab)
+# Developer Website: https://arkan.it.com
+# License: MIT
+# For license information, please see license.txt
+
 app_name = "arkspace"
 app_logo_url = "/assets/arkspace/images/arkspace-logo.svg"
 app_title = "ARKSpace"
@@ -54,6 +59,7 @@ app_include_js = [
     "/assets/arkspace/js/analytics.js",
     "/assets/arkspace/js/multi_location.js",
     "/assets/arkspace/js/community.js",
+    "/assets/arkspace/js/fv_integration.js",
 ]
 
 # --- Website Assets -----------------------------------------------------------

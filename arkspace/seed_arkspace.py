@@ -1,3 +1,8 @@
+# Copyright (c) 2024, Moataz M Hassan (Arkan Lab)
+# Developer Website: https://arkan.it.com
+# License: MIT
+# For license information, please see license.txt
+
 """ARKSpace Sample Data Seeder — Complete"""
 import frappe
 from datetime import datetime, timedelta, date
