@@ -1,0 +1,57 @@
+{% extends "templates/web.html" %}
+
+{% block title %}{{ _("ARKSpace Onboarding") }}{% endblock %}
+
+{% block page_content %}
+<div id="arkspace-onboarding-container" data-page="arkspace-onboarding"></div>
+
+<style>
+  #arkspace-onboarding-container { min-height: 80vh; padding: 24px 0; }
+  .as-onboard-hero { text-align: center; padding: 60px 20px; }
+  .as-onboard-hero h1 { font-size: 2rem; font-weight: 700; color: var(--text-color); margin-bottom: 16px; }
+  .as-onboard-hero p { color: var(--text-muted); font-size: 1.1rem; max-width: 500px; margin: 0 auto 32px; }
+  .as-onboard-steps { max-width: 700px; margin: 0 auto; padding: 0 20px; }
+  .as-step { display: flex; gap: 16px; padding: 20px 0; border-bottom: 1px solid var(--border-color); }
+  .as-step-num { width: 40px; height: 40px; border-radius: 50%; background: rgba(27, 54, 93, 0.1); color: #1B365D; display: flex; align-items: center; justify-content: center; font-weight: 700; flex-shrink: 0; }
+  .as-step h3 { font-size: 1rem; font-weight: 600; margin-bottom: 4px; }
+  .as-step p { font-size: 0.9rem; color: var(--text-muted); }
+  .as-onboard-footer { text-align: center; padding: 40px 20px; }
+  .as-onboard-footer a { display: inline-block; padding: 12px 32px; border-radius: 8px; background: #1B365D; color: white; text-decoration: none; font-weight: 600; transition: opacity 0.2s; }
+  .as-onboard-footer a:hover { opacity: 0.9; }
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const container = document.getElementById('arkspace-onboarding-container');
+  const steps = [
+    { title: __("Space Configuration"), desc: __("Set up your physical spaces — floors, zones, desks, offices, meeting rooms with capacity and amenities.") },
+    { title: __("Membership Plans"), desc: __("Create membership tiers with pricing, included credits, and add-on packages.") },
+    { title: __("Booking Rules"), desc: __("Configure booking policies — advance notice, cancellation, max duration, and access hours per plan.") },
+    { title: __("Payment Setup"), desc: __("Connect payment gateways, set billing cycles, and configure invoice templates.") },
+    { title: __("Member Onboarding"), desc: __("Set up the member registration flow, welcome sequence, and access provisioning.") },
+    { title: __("Community Features"), desc: __("Enable noticeboard, events, marketplace, and member directory features.") },
+    { title: __("Reports & KPIs"), desc: __("Configure occupancy dashboards, revenue tracking, and utilization reports.") }
+  ];
+  container.innerHTML = `
+    <div class="as-onboard-hero">
+      <h1>🚀 ${__("Get Started with ARKSpace")}</h1>
+      <p>${__("Follow these steps to set up and start using ARKSpace.")}</p>
+    </div>
+    <div class="as-onboard-steps">
+      ${steps.map((s, i) => `
+        <div class="as-step">
+          <div class="as-step-num">${i + 1}</div>
+          <div>
+            <h3>${s.title}</h3>
+            <p>${s.desc}</p>
+          </div>
+        </div>
+      `).join('')}
+    </div>
+    <div class="as-onboard-footer">
+      <a href="/app">${__("Go to Dashboard →")}</a>
+    </div>
+  `;
+});
+</script>
+{% endblock %}

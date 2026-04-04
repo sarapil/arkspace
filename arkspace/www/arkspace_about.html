@@ -1,0 +1,80 @@
+{% extends "templates/web.html" %}
+
+{% block title %}{{ _("About ARKSpace") }}{% endblock %}
+
+{% block page_content %}
+<div id="arkspace-about-container" data-page="arkspace-about"></div>
+
+<style>
+  :root { --as-primary: #1B365D; --as-primary-dark: #0F2440; --as-gradient: linear-gradient(135deg, #1B365D, #0F2440); }
+  #arkspace-about-container { min-height: 80vh; padding: 24px 0; }
+  .as-about-hero { text-align: center; padding: 60px 20px; }
+  .as-about-hero img { width: 160px; height: 160px; margin-bottom: 24px; }
+  .as-about-hero h1 { font-size: 2.5rem; font-weight: 800; background: var(--as-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 12px; }
+  .as-about-hero p { font-size: 1.15rem; color: var(--text-muted); max-width: 640px; margin: 0 auto 32px; }
+  .as-features { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px; padding: 40px 20px; max-width: 1100px; margin: 0 auto; }
+  .as-feature-card { padding: 28px; border-radius: 16px; background: var(--card-bg); border: 1px solid var(--border-color); transition: transform 0.2s, box-shadow 0.2s; }
+  .as-feature-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(99, 102, 241, 0.12); }
+  .as-feature-card h3 { font-size: 1.1rem; font-weight: 700; color: var(--text-color); margin-bottom: 8px; }
+  .as-feature-card p { font-size: 0.9rem; color: var(--text-muted); line-height: 1.6; }
+  .as-stat-badge { display: inline-flex; align-items: center; gap: 8px; padding: 8px 18px; border-radius: 20px; background: rgba(99, 102, 241, 0.08); color: var(--as-primary); font-weight: 600; font-size: 0.9rem; }
+  .as-stats-row { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; margin: 32px 0; }
+  .as-footer { text-align: center; padding: 40px 20px; color: var(--text-muted); font-size: 0.85rem; }
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const container = document.getElementById('arkspace-about-container');
+  container.innerHTML = `
+    <div class="as-about-hero">
+      <img src="/assets/arkspace/images/arkspace-logo.svg" alt="ARKSpace" onerror="this.style.display='none'">
+      <h1>${__("ARKSpace")}</h1>
+      <p>${__("Enterprise Co-Working Space Management + ARKANOOR Marketplace — Spaces, Memberships, Bookings, Billing, Community, Events.")}</p>
+      <div class="as-stats-row">
+        <span class="as-stat-badge">🏢 ${__("Space Management")}</span>
+        <span class="as-stat-badge">🎫 ${__("Memberships")}</span>
+        <span class="as-stat-badge">📅 ${__("Bookings")}</span>
+        <span class="as-stat-badge">💳 ${__("Billing")}</span>
+      </div>
+    </div>
+    <div class="as-features">
+      <div class="as-feature-card">
+        <h3>🏢 ${__("Space & Desk Management")}</h3>
+        <p>${__("Manage hot desks, dedicated desks, private offices, meeting rooms, and event spaces with real-time availability maps.")}</p>
+      </div>
+      <div class="as-feature-card">
+        <h3>🎫 ${__("Membership Plans")}</h3>
+        <p>${__("Flexible membership tiers — daily, weekly, monthly, annual — with credits, add-ons, and automatic renewals.")}</p>
+      </div>
+      <div class="as-feature-card">
+        <h3>📅 ${__("Room & Desk Booking")}</h3>
+        <p>${__("Online self-service booking with calendar view, conflict detection, check-in/out tracking, and recurring reservations.")}</p>
+      </div>
+      <div class="as-feature-card">
+        <h3>💳 ${__("Billing & Invoicing")}</h3>
+        <p>${__("Automated billing cycles, proration, add-on charges, payment gateway integration, and revenue reporting.")}</p>
+      </div>
+      <div class="as-feature-card">
+        <h3>👥 ${__("Community Hub")}</h3>
+        <p>${__("Member directory, community noticeboard, networking events, skill matching, and collaboration opportunities.")}</p>
+      </div>
+      <div class="as-feature-card">
+        <h3>📊 ${__("Analytics Dashboard")}</h3>
+        <p>${__("Occupancy rates, revenue per seat, member retention, peak usage times, and capacity planning reports.")}</p>
+      </div>
+      <div class="as-feature-card">
+        <h3>🎪 ${__("Event Management")}</h3>
+        <p>${__("Plan and manage community events, workshops, networking sessions — with RSVPs, check-ins, and feedback.")}</p>
+      </div>
+      <div class="as-feature-card">
+        <h3>🏪 ${__("ARKANOOR Marketplace")}</h3>
+        <p>${__("Member marketplace for services, products, and collaboration — built-in reputation and review system.")}</p>
+      </div>
+    </div>
+    <div class="as-footer">
+      <p>${__("Built by")} <strong>Arkan Lab</strong> &bull; ${__("Powered by")} <strong>Frappe + ERPNext</strong></p>
+    </div>
+  `;
+});
+</script>
+{% endblock %}
