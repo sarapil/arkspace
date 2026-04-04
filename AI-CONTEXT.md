@@ -1,10 +1,10 @@
 # 🤖 AI Context — ARKSpace v5.0
 
-> Auto-generated: 2026-04-02 02:01:03.901150
+> Auto-generated: 2026-04-04 02:11:10.044487
 
 ## Quick Stats
 - DocTypes: 37
-- APIs: 112
+- APIs: 124
 
 
 ## DocTypes Overview
