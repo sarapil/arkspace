@@ -53,6 +53,22 @@ class ARKSpace3DMap {
 		this.page.add_inner_button(__("Fullscreen"), () => this.toggle_fullscreen());
 
 		this.page.add_action_item(__("Toggle Auto-Refresh"), () => this.toggle_auto_refresh());
+
+		// XR integration — VR space tour + AR desk planning
+		frappe.base_base?.xr_mixin?.attach(this, {
+			get_engine: () => this.engine,
+			get_spatial_data: () => this.getXRPanels(),
+			vr_options: { startPosition: [0, 1.7, 6] },
+		});
+	}
+
+	getXRPanels() {
+		if (!this.current_space) return [];
+		const total = this.page.main.find(".total-desks").text();
+		const avail = this.page.main.find(".available-desks").text();
+		return [
+			{ content: `<h3>${this.current_space}</h3><p>${__("Desks")}: ${total} | ${__("Available")}: ${avail}</p>`, position: [0, 2.5, -4], billboard: true },
+		];
 	}
 
 	render_layout() {
