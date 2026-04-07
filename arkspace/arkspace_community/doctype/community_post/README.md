@@ -10,19 +10,19 @@ No description provided.
 
 | Field | Type | Description |
 |-------|------|-------------|
-| title | Data | Title / العنوان |
-| post_type | Select | Type / النوع |
-| author | Link | Author / الكاتب |
-| author_name | Data | Author Name / اسم الكاتب |
-| branch | Link | Branch / الفرع |
-| content | Text Editor | Content / المحتوى |
-| tags | Small Text | Tags / الوسوم |
-| likes_count | Int | Likes / إعجابات |
-| comments_count | Int | Comments / تعليقات |
-| views_count | Int | Views / مشاهدات |
-| is_pinned | Check | Pinned / مثبت |
-| is_anonymous | Check | Anonymous / مجهول |
-| status | Select | Status / الحالة |
+| title | Data | Title |
+| post_type | Select | Type |
+| author | Link | Author |
+| author_name | Data | Author Name |
+| branch | Link | Branch |
+| content | Text Editor | Content |
+| tags | Small Text | Tags |
+| likes_count | Int | Likes |
+| comments_count | Int | Comments |
+| views_count | Int | Views |
+| is_pinned | Check | Pinned |
+| is_anonymous | Check | Anonymous |
+| status | Select | Status |
 
 
 ## Usage
@@ -41,4 +41,4 @@ records = frappe.get_all("Community Post")
 _Add related DocTypes here_
 
 ---
-*Last updated: 2026-03-21 12:53:07.651562*
+*Last updated: 2026-04-07 22:22:35.208865*

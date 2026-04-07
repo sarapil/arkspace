@@ -10,15 +10,15 @@ No description provided.
 
 | Field | Type | Description |
 |-------|------|-------------|
-| title | Data | Title / العنوان |
-| title_ar | Data | العنوان بالعربية |
+| title | Data | Title |
+| title_ar | Data | Title (Arabic) |
 | doc_type | Select | Documentation Type |
 | module_name | Link | Module |
 | related_doctype | Link | Related DocType |
 | summary | Small Text | Summary (max 200 chars) |
-| summary_ar | Small Text | الملخص بالعربية |
+| summary_ar | Small Text | Summary (Arabic) |
 | content | Markdown Editor | Full Documentation |
-| content_ar | Markdown Editor | التوثيق بالعربية |
+| content_ar | Markdown Editor | Documentation (Arabic) |
 | code_examples | Table | Code Examples |
 | related_docs | Table | Related Documents |
 | prerequisites | Table | Prerequisites |
@@ -44,4 +44,4 @@ records = frappe.get_all("Documentation Entry")
 _Add related DocTypes here_
 
 ---
-*Last updated: 2026-02-09 20:26:50.208770*
+*Last updated: 2026-04-07 22:22:33.494509*

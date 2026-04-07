@@ -28,10 +28,10 @@ No description provided.
 | storage_gb | Float | Cloud Storage (GB) |
 | description | Text Editor | Description |
 | description_ar | Text Editor | Description (Arabic) |
-| enable_trial | Check | Enable Trial / تفعيل التجربة |
-| trial_days | Int | Trial Days / أيام التجربة |
-| trial_price | Currency | Trial Price / سعر التجربة |
-| trial_includes_benefits | Check | Trial Includes Benefits / التجربة تشمل المزايا |
+| enable_trial | Check | Enable Trial |
+| trial_days | Int | Trial Days |
+| trial_price | Currency | Trial Price |
+| trial_includes_benefits | Check | Trial Includes Benefits |
 
 
 ## Usage
@@ -50,4 +50,4 @@ records = frappe.get_all("Membership Plan")
 _Add related DocTypes here_
 
 ---
-*Last updated: 2026-03-21 11:34:35.556811*
+*Last updated: 2026-04-07 22:22:33.922974*

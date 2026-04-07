@@ -14,7 +14,7 @@ No description provided.
 | language | Select | Language |
 | contract_type | Select | Contract Type |
 | is_active | Check | Active |
-| terms_ar | Text Editor | Terms (Arabic) / الشروط بالعربية |
+| terms_ar | Text Editor | Terms (Arabic) |
 | terms_en | Text Editor | Terms (English) |
 | available_placeholders | Small Text | Placeholders |
 | amended_from | Link | Amended From |
@@ -36,4 +36,4 @@ records = frappe.get_all("Contract Template")
 _Add related DocTypes here_
 
 ---
-*Last updated: 2026-04-07 16:37:37.510186*
+*Last updated: 2026-04-07 22:22:34.568708*

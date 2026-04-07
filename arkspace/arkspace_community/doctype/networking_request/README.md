@@ -10,14 +10,14 @@ No description provided.
 
 | Field | Type | Description |
 |-------|------|-------------|
-| from_member | Link | From / من |
-| from_member_name | Data | From Name / اسم المرسل |
-| to_member | Link | To / إلى |
-| to_member_name | Data | To Name / اسم المستلم |
-| message | Text | Message / الرسالة |
-| branch | Link | Branch / الفرع |
-| status | Select | Status / الحالة |
-| responded_at | Datetime | Responded At / تاريخ الرد |
+| from_member | Link | From |
+| from_member_name | Data | From Name |
+| to_member | Link | To |
+| to_member_name | Data | To Name |
+| message | Text | Message |
+| branch | Link | Branch |
+| status | Select | Status |
+| responded_at | Datetime | Responded At |
 
 
 ## Usage
@@ -36,4 +36,4 @@ records = frappe.get_all("Networking Request")
 _Add related DocTypes here_
 
 ---
-*Last updated: 2026-03-21 12:53:07.070791*
+*Last updated: 2026-04-07 22:22:35.028812*

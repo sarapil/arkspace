@@ -10,9 +10,9 @@ No description provided.
 
 | Field | Type | Description |
 |-------|------|-------------|
-| skill_name | Data | Skill / المهارة |
-| proficiency_level | Select | Level / المستوى |
-| category | Data | Category / الفئة |
+| skill_name | Data | Skill |
+| proficiency_level | Select | Level |
+| category | Data | Category |
 
 
 ## Usage
@@ -31,4 +31,4 @@ records = frappe.get_all("Member Skill")
 _Add related DocTypes here_
 
 ---
-*Last updated: 2026-03-21 12:53:07.785884*
+*Last updated: 2026-04-07 22:22:35.106052*

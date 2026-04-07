@@ -10,17 +10,17 @@ No description provided.
 
 | Field | Type | Description |
 |-------|------|-------------|
-| member | Link | Member / العميل |
-| member_name | Data | Member Name / اسم العميل |
-| document_type | Select | Document Type / نوع المستند |
-| document_number | Data | Document Number / رقم المستند |
-| issue_date | Date | Issue Date / تاريخ الإصدار |
-| expiry_date | Date | Expiry Date / تاريخ الانتهاء |
-| issuing_authority | Data | Issuing Authority / جهة الإصدار |
-| status | Select | Status / الحالة |
-| document_file | Attach Image | Document (Front) / المستند (وجه أمامي) |
-| document_file_back | Attach Image | Document (Back) / المستند (وجه خلفي) |
-| notes | Small Text | Notes / ملاحظات |
+| member | Link | Member |
+| member_name | Data | Member Name |
+| document_type | Select | Document Type |
+| document_number | Data | Document Number |
+| issue_date | Date | Issue Date |
+| expiry_date | Date | Expiry Date |
+| issuing_authority | Data | Issuing Authority |
+| status | Select | Status |
+| document_file | Attach Image | Document (Front) |
+| document_file_back | Attach Image | Document (Back) |
+| notes | Small Text | Notes |
 
 
 ## Usage
@@ -39,4 +39,4 @@ records = frappe.get_all("Legal Document")
 _Add related DocTypes here_
 
 ---
-*Last updated: 2026-02-15 16:48:51.309413*
+*Last updated: 2026-04-07 22:22:34.692136*
