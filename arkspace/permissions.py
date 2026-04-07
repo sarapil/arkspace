@@ -4,7 +4,6 @@
 # For license information, please see license.txt
 
 """ARKSpace — Permission Controllers
-التحكم في الصلاحيات
 
 Controls row-level security for ARKSpace DocTypes based on user roles.
 """

@@ -4,7 +4,6 @@
 # For license information, please see license.txt
 
 """ARKSpace Dynamic Pricing Engine
-محرك التسعير الديناميكي
 
 Evaluates Pricing Rules against a booking context and returns the
 adjusted rate. Supports percentage, fixed, multiplier, and override

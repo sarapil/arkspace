@@ -15,4 +15,4 @@ class LegalDocument(Document):
     def _check_expiry(self):
         """Auto-set status to Expired if expiry_date has passed."""
         if self.expiry_date and getdate(self.expiry_date) < getdate(today()):
-            self.status = "Expired / منتهي"
+            self.status = "Expired"

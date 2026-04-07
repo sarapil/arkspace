@@ -4,7 +4,6 @@
 # For license information, please see license.txt
 
 """ARKSpace — Scheduled Background Tasks
-المهام المجدولة في الخلفية
 
 Wired via hooks.py scheduler_events.
 """
@@ -13,10 +12,8 @@ import frappe
 from frappe import _
 from frappe.utils import add_days, add_to_date, getdate, now_datetime, nowdate
 
-
 def check_membership_expiry():
-	"""يومياً — التحقق من انتهاء العضويات
-	Daily: Mark memberships as Expired when end_date has passed.
+	"""	Daily: Mark memberships as Expired when end_date has passed.
 	"""
 	today = getdate(nowdate())
 
@@ -41,10 +38,8 @@ def check_membership_expiry():
 		frappe.db.commit()
 		frappe.logger("arkspace").info(f"Expired {len(expired)} membership(s)")
 
-
 def auto_renew_memberships():
-	"""يومياً — تجديد العضويات التلقائي
-	Daily: Auto-renew memberships that have auto_renew=1 and expire today.
+	"""	Daily: Auto-renew memberships that have auto_renew=1 and expire today.
 	"""
 	today = getdate(nowdate())
 
@@ -91,10 +86,8 @@ def auto_renew_memberships():
 	if to_renew:
 		frappe.db.commit()
 
-
 def mark_no_show_bookings():
-	"""كل ساعة — تحديد حالة عدم الحضور
-	Hourly: Mark Confirmed bookings as No Show if start_datetime passed > 2 hours ago.
+	"""	Hourly: Mark Confirmed bookings as No Show if start_datetime passed > 2 hours ago.
 	"""
 	now = now_datetime()
 
@@ -119,10 +112,8 @@ def mark_no_show_bookings():
 		frappe.db.commit()
 		frappe.logger("arkspace").info(f"Marked {len(no_shows)} booking(s) as No Show")
 
-
 def auto_checkout_expired_bookings():
-	"""كل ساعة — تسجيل خروج تلقائي
-	Hourly: Auto check-out bookings where end_datetime has passed.
+	"""	Hourly: Auto check-out bookings where end_datetime has passed.
 	"""
 	now = now_datetime()
 
@@ -163,10 +154,8 @@ def auto_checkout_expired_bookings():
 	if overdue:
 		frappe.db.commit()
 
-
 def send_membership_expiry_reminders():
-	"""يومياً — إرسال تذكيرات انتهاء العضوية
-	Daily: Send reminders for memberships expiring in 7 days or 1 day.
+	"""	Daily: Send reminders for memberships expiring in 7 days or 1 day.
 	"""
 	today = getdate(nowdate())
 
@@ -213,10 +202,8 @@ def send_membership_expiry_reminders():
 			except Exception:
 				frappe.log_error(f"Error sending expiry reminder for {mem.name}")
 
-
 def generate_daily_occupancy_snapshot():
-	"""يومياً — لقطة يومية للإشغال
-	Daily: Record occupancy stats for historical reporting.
+	"""	Daily: Record occupancy stats for historical reporting.
 	"""
 	today = getdate(nowdate())
 
@@ -257,7 +244,6 @@ def generate_daily_occupancy_snapshot():
 	# Publish for any connected dashboards
 	frappe.publish_realtime("occupancy_snapshot", snapshot)
 
-
 # ─────────────────── Online Payments ─────────────────────────────────────
 
 def expire_stale_online_payments():
@@ -293,9 +279,8 @@ def expire_stale_online_payments():
 		frappe.db.commit()
 		frappe.logger("arkspace").info(f"Expired {len(stale)} stale online payments")
 
-
 def bulk_generate_booking_qr_codes():
-	"""توليد QR لجميع حجوزات اليوم — Generate QR codes for today's bookings.
+	"""Generate QR codes for today's bookings.
 
 	Runs daily to ensure all confirmed bookings have QR codes
 	ready for check-in.
@@ -313,9 +298,8 @@ def bulk_generate_booking_qr_codes():
 			message=frappe.get_traceback(),
 		)
 
-
 def expire_day_passes():
-	"""انتهاء تصاريح الأيام السابقة — Expire past-date day passes.
+	"""Expire past-date day passes.
 
 	Runs daily. Marks Active day passes from previous days as Expired.
 	"""
@@ -341,9 +325,8 @@ def expire_day_passes():
 		frappe.db.commit()
 		frappe.logger("arkspace").info(f"Expired {len(stale)} day passes")
 
-
 def auto_checkout_day_passes():
-	"""خروج تلقائي لتصاريح اليوم — Auto-checkout checked-in day passes past end time.
+	"""Auto-checkout checked-in day passes past end time.
 
 	Runs hourly. If a day pass is still Checked In and the current time
 	is past the end_time (or 20:00 default), auto check-out.
@@ -382,10 +365,8 @@ def auto_checkout_day_passes():
 	if count:
 		frappe.logger("arkspace").info(f"Auto-checked-out {count} day passes")
 
-
 def capture_analytics_snapshot():
-	"""يومياً — التقاط لقطة تحليلية
-	Daily: Capture analytics snapshots for each branch + overall.
+	"""	Daily: Capture analytics snapshots for each branch + overall.
 	"""
 	try:
 		from arkspace.arkspace_core.analytics_engine import capture_daily_snapshot
@@ -396,10 +377,8 @@ def capture_analytics_snapshot():
 			message=frappe.get_traceback(),
 		)
 
-
 def update_community_event_statuses():
-	"""كل ساعة — تحديث حالات الفعاليات
-	Hourly: Update community event statuses based on current time.
+	"""	Hourly: Update community event statuses based on current time.
 	"""
 	try:
 		from arkspace.arkspace_community.community import update_event_statuses

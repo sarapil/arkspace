@@ -4,7 +4,6 @@
 # For license information, please see license.txt
 
 """Day Pass — Public API Endpoints
-تصريح اليوم — واجهة برمجة التطبيقات
 
 Provides endpoints for creating walk-in day passes, checking in/out,
 converting to memberships, and QR scan check-in.

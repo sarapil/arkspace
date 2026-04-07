@@ -4,7 +4,7 @@
 # For license information, please see license.txt
 
 """
-ARKSpace Schedule API — واجهة برمجة الجدول الزمني
+ARKSpace Schedule API
 =================================================
 
 Provides backend endpoints for the ark-scheduler resource-timeline page.

@@ -5,7 +5,6 @@
 
 /**
  * ARKSpace Setup Wizard Slides
- * شرائح معالج الإعداد
  */
 frappe.provide("frappe.setup");
 
@@ -15,7 +14,7 @@ frappe.setup.on("before_load", function () {
 		// Slide 1: Welcome & Basics
 		{
 			name: "arkspace_welcome",
-			title: __("Welcome to ARKSpace — مرحباً بكم"),
+			title: __("Welcome to ARKSpace"),
 			icon: "fa-solid fa-cubes",
 			fields: [
 				{
@@ -62,7 +61,7 @@ frappe.setup.on("before_load", function () {
 		// Slide 2: Branches
 		{
 			name: "arkspace_branches",
-			title: __("Branches — الفروع"),
+			title: __("Branches"),
 			icon: "fa-solid fa-map-marker-alt",
 			fields: [
 				{
@@ -88,43 +87,43 @@ frappe.setup.on("before_load", function () {
 		// Slide 3: Space Types
 		{
 			name: "arkspace_spaces",
-			title: __("Space Types — أنواع المساحات"),
+			title: __("Space Types"),
 			icon: "fa-solid fa-th-large",
 			fields: [
 				{
 					fieldtype: "Check",
 					fieldname: "type_hot_desk",
-					label: __("Hot Desk — مكتب مشترك"),
+					label: __("Hot Desk"),
 					default: 1,
 				},
 				{
 					fieldtype: "Check",
 					fieldname: "type_dedicated_desk",
-					label: __("Dedicated Desk — مكتب مخصص"),
+					label: __("Dedicated Desk"),
 					default: 1,
 				},
 				{
 					fieldtype: "Check",
 					fieldname: "type_private_office",
-					label: __("Private Office — مكتب خاص"),
+					label: __("Private Office"),
 					default: 1,
 				},
 				{ fieldtype: "Column Break" },
 				{
 					fieldtype: "Check",
 					fieldname: "type_meeting_room",
-					label: __("Meeting Room — غرفة اجتماعات"),
+					label: __("Meeting Room"),
 					default: 1,
 				},
 				{
 					fieldtype: "Check",
 					fieldname: "type_event_space",
-					label: __("Event Space — قاعة فعاليات"),
+					label: __("Event Space"),
 				},
 				{
 					fieldtype: "Check",
 					fieldname: "type_virtual_office",
-					label: __("Virtual Office — مكتب افتراضي"),
+					label: __("Virtual Office"),
 				},
 			],
 		},
@@ -132,7 +131,7 @@ frappe.setup.on("before_load", function () {
 		// Slide 4: First Membership Plan
 		{
 			name: "arkspace_plan",
-			title: __("First Membership Plan — خطة العضوية الأولى"),
+			title: __("First Membership Plan"),
 			icon: "fa-solid fa-id-card",
 			fields: [
 				{

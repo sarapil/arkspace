@@ -4,7 +4,6 @@
 # For license information, please see license.txt
 
 """ARKSpace Training — API Endpoints
-واجهة برمجة وحدة التدريب
 """
 
 import frappe

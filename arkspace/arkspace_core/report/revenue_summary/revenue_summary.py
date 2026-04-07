@@ -3,14 +3,13 @@
 # License: MIT
 # For license information, please see license.txt
 
-"""ملخص الإيرادات — Revenue Summary Report
+"""Revenue Summary Report
 Aggregates revenue from bookings and memberships by period.
 """
 
 import frappe
 from frappe import _
 from frappe.utils import getdate, nowdate, add_days, add_months, flt
-
 
 def execute(filters=None):
 	filters = filters or {}
@@ -19,7 +18,6 @@ def execute(filters=None):
 	chart = get_chart(data, filters)
 	summary = get_summary(data)
 	return columns, data, None, chart, summary
-
 
 def get_columns(filters):
 	group_by = filters.get("group_by", "Month")
@@ -31,7 +29,6 @@ def get_columns(filters):
 		{"fieldname": "membership_count", "label": _("Memberships"), "fieldtype": "Int", "width": 110},
 		{"fieldname": "total_revenue", "label": _("Total Revenue"), "fieldtype": "Currency", "width": 160},
 	]
-
 
 def get_data(filters):
 	from_date = getdate(filters.get("from_date") or add_months(nowdate(), -12))
@@ -112,7 +109,6 @@ def get_data(filters):
 
 	return data
 
-
 def get_chart(data, filters):
 	if not data:
 		return None
@@ -130,7 +126,6 @@ def get_chart(data, filters):
 		"colors": ["#2563EB", "#C4A962"],
 		"barOptions": {"stacked": 1},
 	}
-
 
 def get_summary(data):
 	if not data:

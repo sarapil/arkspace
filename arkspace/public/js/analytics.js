@@ -3,7 +3,7 @@
 // License: MIT
 // For license information, please see license.txt
 
-// Analytics Dashboard — لوحة التحليلات الذكية
+// Analytics Dashboard
 // Desk-side analytics dashboard with charts and KPIs
 
 frappe.provide("arkspace.analytics");

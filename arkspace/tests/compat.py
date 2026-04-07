@@ -4,7 +4,6 @@
 # For license information, please see license.txt
 
 """ARKSpace — Test Compatibility Layer
-طبقة التوافق للاختبارات
 
 Provides a single import for test base class that works on both
 Frappe v15 (FrappeTestCase) and v16+ (IntegrationTestCase).

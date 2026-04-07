@@ -7,7 +7,6 @@ import frappe
 from arkspace.tests.compat import ARKSpaceTestCase
 from frappe.utils import add_days, today, getdate
 
-
 class TestMemberContract(ARKSpaceTestCase):
     """Test cases for Member Contract DocType."""
 
@@ -68,7 +67,7 @@ class TestMemberContract(ARKSpaceTestCase):
         """Test default status is Draft."""
         contract = self._make_contract()
         contract.insert()
-        self.assertEqual(contract.status, "Draft / مسودة")
+        self.assertEqual(contract.status, "Draft")
 
     def test_net_amount_no_discount(self):
         """Test net_amount equals rate when no discount."""
@@ -109,7 +108,7 @@ class TestMemberContract(ARKSpaceTestCase):
         contract = self._make_contract()
         contract.insert()
         contract.submit()
-        self.assertEqual(contract.status, "Active / ساري")
+        self.assertEqual(contract.status, "Active")
 
     def test_cancel_sets_cancelled(self):
         """Test that cancelling sets status to Cancelled."""
@@ -117,7 +116,7 @@ class TestMemberContract(ARKSpaceTestCase):
         contract.insert()
         contract.submit()
         contract.cancel()
-        self.assertEqual(contract.status, "Cancelled / ملغي")
+        self.assertEqual(contract.status, "Cancelled")
 
     def test_submit_without_terms_fails(self):
         """Test that submitting without any terms raises error."""

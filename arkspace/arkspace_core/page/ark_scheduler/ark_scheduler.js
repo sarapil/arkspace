@@ -4,7 +4,7 @@
 // For license information, please see license.txt
 
 /**
- * ARK Scheduler — لوحة الجدول الزمني للموارد
+ * ARK Scheduler
  * =============================================
  *
  * A resource-timeline Kanban board:
@@ -25,7 +25,7 @@
 frappe.pages["ark-scheduler"].on_page_load = function (wrapper) {
 	const page = frappe.ui.make_app_page({
 		parent: wrapper,
-		title: __("ARK Scheduler — الجدول الزمني"),
+		title: __("ARK Scheduler"),
 		single_column: true,
 	});
 
@@ -735,7 +735,7 @@ class ArkScheduler {
 		const endTime = this._hourToDatetime(this.date, endHour);
 
 		const d = new frappe.ui.Dialog({
-			title: __("Quick Book — حجز سريع"),
+			title: __("Quick Book"),
 			fields: [
 				{ fieldtype: "Link", fieldname: "member", label: __("Member / Customer"), options: "Customer", reqd: 1 },
 				{ fieldtype: "Column Break" },
@@ -772,7 +772,7 @@ class ArkScheduler {
 
 	showMoveDialog(card) {
 		const d = new frappe.ui.Dialog({
-			title: __("Move Booking — نقل الحجز"),
+			title: __("Move Booking"),
 			fields: [
 				{
 					fieldtype: "HTML",
@@ -806,7 +806,7 @@ class ArkScheduler {
 		const splitDefault = this._hourToDatetime(this.date, Math.round(midHour * 2) / 2);
 
 		const d = new frappe.ui.Dialog({
-			title: __("Split Booking — تقسيم الحجز"),
+			title: __("Split Booking"),
 			fields: [
 				{
 					fieldtype: "HTML",
@@ -845,7 +845,7 @@ class ArkScheduler {
 
 	showSwapDialog(card) {
 		const d = new frappe.ui.Dialog({
-			title: __("Swap Bookings — تبديل الحجوزات"),
+			title: __("Swap Bookings"),
 			fields: [
 				{
 					fieldtype: "HTML",
@@ -886,7 +886,7 @@ class ArkScheduler {
 
 	showExtendDialog(card) {
 		const d = new frappe.ui.Dialog({
-			title: __("Extend / Shorten — تمديد أو تقصير"),
+			title: __("Extend / Shorten"),
 			fields: [
 				{
 					fieldtype: "HTML",
@@ -912,7 +912,7 @@ class ArkScheduler {
 		const endTime = this._hourToDatetime(this.date, hour + 1);
 
 		const d = new frappe.ui.Dialog({
-			title: __("Block Slot — حجب فترة"),
+			title: __("Block Slot"),
 			fields: [
 				{ fieldtype: "Select", fieldname: "reason", label: __("Reason"), options: "Maintenance\nCleaning\nReserved\nOther", default: "Maintenance" },
 				{ fieldtype: "Section Break" },
@@ -945,7 +945,7 @@ class ArkScheduler {
 		const endTime = this._hourToDatetime(this.date, h + 1);
 
 		const d = new frappe.ui.Dialog({
-			title: __("Find Free Spaces — ابحث عن مساحة فارغة"),
+			title: __("Find Free Spaces"),
 			fields: [
 				{ fieldtype: "Link", fieldname: "space_type", label: __("Space Type"), options: "Space Type",
 					default: this.activeType, reqd: 1 },

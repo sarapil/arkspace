@@ -4,7 +4,6 @@
 # For license information, please see license.txt
 
 """ARKSpace Integrations — API Endpoints
-واجهة برمجة التكاملات
 
 Public-facing endpoints for billing, payments, and integration status.
 """
@@ -35,7 +34,7 @@ def get_integration_status():
 
 
 # ═══════════════════════════════════════════════════════════════════════════
-# Online Payments API — بوابة الدفع الإلكتروني
+# Online Payments API
 # ═══════════════════════════════════════════════════════════════════════════
 
 

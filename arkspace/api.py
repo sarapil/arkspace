@@ -4,7 +4,6 @@
 # For license information, please see license.txt
 
 """ARKSpace — Top-level API Hub
-واجهة برمجة التطبيقات الرئيسية
 
 Re-exports key endpoints so they are accessible at:
     /api/method/arkspace.api.<function_name>

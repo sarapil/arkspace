@@ -4,7 +4,6 @@
 # For license information, please see license.txt
 
 """ARKSpace — Community & Networking API
-المجتمع والتواصل
 
 Provides community feed, member directory, skill matching,
 events, and networking request management.

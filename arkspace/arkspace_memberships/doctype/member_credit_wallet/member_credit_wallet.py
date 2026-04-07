@@ -8,13 +8,12 @@ from frappe import _
 from frappe.model.document import Document
 from frappe.utils import flt, now_datetime
 
-
 class MemberCreditWallet(Document):
 	def validate(self):
 		self.recalculate()
 
 	def recalculate(self):
-		"""إعادة حساب الأرصدة — Recalculate credit totals from transactions."""
+		"""Recalculate credit totals from transactions."""
 		total = 0
 		used = 0
 		for txn in self.transactions:

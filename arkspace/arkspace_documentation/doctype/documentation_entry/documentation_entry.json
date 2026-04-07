@@ -40,7 +40,7 @@
   {
    "fieldname": "title_ar",
    "fieldtype": "Data",
-   "label": "العنوان بالعربية"
+   "label": "Title (Arabic)"
   },
   {
    "fieldname": "column_break_basic",
@@ -79,7 +79,7 @@
   {
    "fieldname": "summary_ar",
    "fieldtype": "Small Text",
-   "label": "الملخص بالعربية"
+   "label": "Summary (Arabic)"
   },
   {
    "fieldname": "content",
@@ -89,7 +89,7 @@
   {
    "fieldname": "content_ar",
    "fieldtype": "Markdown Editor",
-   "label": "التوثيق بالعربية"
+   "label": "Documentation (Arabic)"
   },
   {
    "fieldname": "code_section",

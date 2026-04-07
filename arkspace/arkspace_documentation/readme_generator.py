@@ -4,7 +4,6 @@
 # For license information, please see license.txt
 
 """
-مولد README التلقائي — Auto README Generator
 Generates README.md files for DocType directories.
 """
 
@@ -12,10 +11,8 @@ import os
 
 import frappe
 
-
 def create_doctype_readme(doc, method):
     """
-    إنشاء README.md لـ DocType جديد
     Create README.md for new DocType.
     Called via doc_events hook on DocType after_insert.
     """
@@ -24,10 +21,8 @@ def create_doctype_readme(doc, method):
 
     _write_readme(doc)
 
-
 def update_doctype_readme(doc, method):
     """
-    تحديث README.md عند تعديل DocType
     Update README.md when DocType changes.
     Called via doc_events hook on DocType on_update.
     """
@@ -35,7 +30,6 @@ def update_doctype_readme(doc, method):
         return
 
     _write_readme(doc)
-
 
 def _write_readme(doc):
     """Write or overwrite README for a DocType directory."""

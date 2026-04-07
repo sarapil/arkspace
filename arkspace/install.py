@@ -5,7 +5,6 @@
 
 """
 ARKSpace Installation Hooks
-تثبيت التطبيق — إنشاء الأدوار والإعدادات الأولية
 """
 
 import frappe

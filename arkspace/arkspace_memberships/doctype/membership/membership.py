@@ -8,7 +8,6 @@ from frappe import _
 from frappe.model.document import Document
 from frappe.utils import add_months, flt, getdate
 
-
 class Membership(Document):
 	def validate(self):
 		self.set_rate_from_plan()
@@ -43,7 +42,7 @@ class Membership(Document):
 		self.initial_credits = plan.included_credits or 0
 
 	def calculate_end_date(self):
-		"""حساب تاريخ الانتهاء — Auto-calculate end date from start + cycle."""
+		"""Auto-calculate end date from start + cycle."""
 		if not self.start_date:
 			return
 		months_map = {"Monthly": 1, "Quarterly": 3, "Yearly": 12}

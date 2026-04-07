@@ -3,7 +3,7 @@
 # License: MIT
 # For license information, please see license.txt
 
-"""Pricing Rule — قاعدة التسعير
+"""Pricing Rule
 
 Defines a dynamic pricing adjustment that can be applied to bookings.
 """

@@ -5,7 +5,7 @@
 
 /**
  * ARKSpace Visitor Management Frontend
- * إدارة الزوار — Visitor check-in/out, badge printing, real-time updates
+ * Visitor check-in/out, badge printing, real-time updates
  */
 
 // Namespace

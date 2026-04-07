@@ -4,7 +4,6 @@
 # For license information, please see license.txt
 
 """ARK Live — Interactive 2D Floor Plan API
-عرض المخطط التفاعلي — واجهة برمجة التطبيقات
 """
 
 import frappe

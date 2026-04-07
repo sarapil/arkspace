@@ -5,7 +5,6 @@
 
 /**
  * ARKSpace Day Pass — Frontend
- * تصريح اليوم — واجهة المستخدم
  *
  * Form buttons for check-in/out, convert to membership,
  * QR preview, walk-in quick create, and day-pass dashboard stats.

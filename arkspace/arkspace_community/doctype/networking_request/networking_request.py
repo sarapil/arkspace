@@ -3,7 +3,7 @@
 # License: MIT
 # For license information, please see license.txt
 
-"""Networking Request — طلب تواصل
+"""Networking Request
 Connection requests between workspace members.
 """
 

@@ -5,7 +5,7 @@
 
 {% extends "templates/web.html" %}
 
-{% block title %}{{ _("Analytics Dashboard — لوحة التحليلات") }}{% endblock %}
+{% block title %}{{ _("Analytics Dashboard") }}{% endblock %}
 
 {% block page_content %}
 <div class="container py-4">
@@ -14,16 +14,16 @@
     <!-- Filters -->
     <div class="row mb-4">
         <div class="col-md-3">
-            <label>{{ _("Branch / الفرع") }}</label>
+            <label>{{ _("Branch") }}</label>
             <select class="form-control" id="analytics-branch">
-                <option value="">{{ _("All Branches / جميع الفروع") }}</option>
+                <option value="">{{ _("All Branches") }}</option>
                 {% for b in branches %}
                 <option value="{{ b }}">{{ b }}</option>
                 {% endfor %}
             </select>
         </div>
         <div class="col-md-3">
-            <label>{{ _("Period / الفترة") }}</label>
+            <label>{{ _("Period") }}</label>
             <select class="form-control" id="analytics-period">
                 <option value="30">{{ _("Last 30 Days") }}</option>
                 <option value="60">{{ _("Last 60 Days") }}</option>
@@ -32,7 +32,7 @@
         </div>
         <div class="col-md-3 d-flex align-items-end">
             <button class="btn btn-primary" id="analytics-refresh">
-                {{ _("Refresh / تحديث") }}
+                {{ _("Refresh") }}
             </button>
         </div>
     </div>
@@ -70,7 +70,7 @@
         <div class="col-md-6 mb-4">
             <div class="card">
                 <div class="card-body">
-                    <h5>{{ _("Revenue Trends / اتجاهات الإيرادات") }}</h5>
+                    <h5>{{ _("Revenue Trends") }}</h5>
                     <div id="portal-revenue-chart" style="height:300px"></div>
                 </div>
             </div>
@@ -78,7 +78,7 @@
         <div class="col-md-6 mb-4">
             <div class="card">
                 <div class="card-body">
-                    <h5>{{ _("Booking Patterns / أنماط الحجوزات") }}</h5>
+                    <h5>{{ _("Booking Patterns") }}</h5>
                     <div id="portal-hourly-chart" style="height:300px"></div>
                 </div>
             </div>
@@ -88,7 +88,7 @@
     <!-- Recent Snapshots Table -->
     <div class="card">
         <div class="card-body">
-            <h5>{{ _("Recent Snapshots / اللقطات الأخيرة") }}</h5>
+            <h5>{{ _("Recent Snapshots") }}</h5>
             <div class="table-responsive">
                 <table class="table table-sm table-hover">
                     <thead>

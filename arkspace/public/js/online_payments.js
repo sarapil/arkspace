@@ -5,7 +5,6 @@
 
 /**
  * ARKSpace Online Payments — Client-side Integration
- * أرك سبيس — بوابة الدفع الإلكتروني
  *
  * Adds "Pay Online" buttons to Space Booking and Membership forms,
  * and provides utilities for payment flow management.

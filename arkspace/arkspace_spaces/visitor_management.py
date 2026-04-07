@@ -4,7 +4,6 @@
 # For license information, please see license.txt
 
 """ARKSpace Visitor Management API
-إدارة الزوار — واجهة برمجة التطبيقات
 
 Provides endpoints for visitor pre-registration, check-in/out,
 badge generation, and visitor analytics.
@@ -16,7 +15,6 @@ import frappe
 from frappe import _
 from frappe.utils import now_datetime, nowdate
 
-
 @frappe.whitelist()
 def preregister_visitor(
 	visitor_name, purpose="Meeting", host=None,
@@ -24,7 +22,7 @@ def preregister_visitor(
 	expected_arrival=None, expected_departure=None,
 	visiting_space=None, visiting_branch=None, notes=None,
 ):
-	"""تسجيل زائر مسبقاً — Pre-register an expected visitor.
+	"""Pre-register an expected visitor.
 
 	Args:
 		visitor_name: Visitor full name
@@ -68,14 +66,13 @@ def preregister_visitor(
 		"qr_token": visitor.qr_token,
 	}
 
-
 @frappe.whitelist()
 def walk_in_visitor(
 	visitor_name, purpose="Meeting", host=None,
 	visitor_email=None, visitor_phone=None, visitor_company=None,
 	id_type=None, id_number=None, visiting_space=None,
 ):
-	"""تسجيل زائر حضوري — Register a walk-in visitor and immediately check in.
+	"""Register a walk-in visitor and immediately check in.
 
 	For front desk use when a visitor arrives without pre-registration.
 	"""
@@ -111,10 +108,9 @@ def walk_in_visitor(
 		"badge_number": badge_no,
 	}
 
-
 @frappe.whitelist()
 def visitor_check_in(visitor_name):
-	"""تسجيل دخول الزائر — Check in a pre-registered visitor."""
+	"""Check in a pre-registered visitor."""
 	frappe.only_for(["System Manager", "ARK Admin", "ARK User"])
 	visitor = frappe.get_doc("Visitor Log", visitor_name)
 	visitor.check_in()
@@ -128,10 +124,9 @@ def visitor_check_in(visitor_name):
 		"badge_number": badge_no,
 	}
 
-
 @frappe.whitelist()
 def visitor_check_out(visitor_name):
-	"""تسجيل خروج الزائر — Check out a visitor."""
+	"""Check out a visitor."""
 	frappe.only_for(["System Manager", "ARK Admin", "ARK User"])
 	visitor = frappe.get_doc("Visitor Log", visitor_name)
 	visitor.check_out()
@@ -146,10 +141,9 @@ def visitor_check_out(visitor_name):
 		"checked_out_at": str(now_datetime()),
 	}
 
-
 @frappe.whitelist()
 def get_todays_visitors(status=None, branch=None):
-	"""زوار اليوم — Get all visitors expected or checked-in today."""
+	"""Get all visitors expected or checked-in today."""
 	frappe.only_for(["System Manager", "ARK Admin", "ARK User"])
 	today = nowdate()
 
@@ -173,10 +167,9 @@ def get_todays_visitors(status=None, branch=None):
 		order_by="creation desc",
 	)
 
-
 @frappe.whitelist()
 def get_active_visitors():
-	"""الزوار الحاليون — Get currently checked-in visitors."""
+	"""Get currently checked-in visitors."""
 	frappe.only_for(["System Manager", "ARK Admin", "ARK User"])
 	return frappe.get_all(
 		"Visitor Log",
@@ -189,10 +182,9 @@ def get_active_visitors():
 		order_by="checked_in_at desc",
 	)
 
-
 @frappe.whitelist()
 def approve_visitor(visitor_name):
-	"""الموافقة على الزائر — Approve a pre-registered visitor."""
+	"""Approve a pre-registered visitor."""
 	frappe.only_for(["System Manager", "ARK Admin", "ARK User"])
 	visitor = frappe.get_doc("Visitor Log", visitor_name)
 	if visitor.approval_status == "Approved":
@@ -205,10 +197,9 @@ def approve_visitor(visitor_name):
 
 	return {"visitor": visitor.name, "approval_status": "Approved"}
 
-
 @frappe.whitelist()
 def reject_visitor(visitor_name, reason=None):
-	"""رفض الزائر — Reject a visitor pre-registration."""
+	"""Reject a visitor pre-registration."""
 	frappe.only_for(["System Manager", "ARK Admin", "ARK User"])
 	visitor = frappe.get_doc("Visitor Log", visitor_name)
 	visitor.db_set({
@@ -221,10 +212,9 @@ def reject_visitor(visitor_name, reason=None):
 
 	return {"visitor": visitor.name, "approval_status": "Rejected"}
 
-
 @frappe.whitelist()
 def get_visitor_badge_html(visitor_name):
-	"""طباعة شارة الزائر — Generate printable badge HTML for a visitor."""
+	"""Generate printable badge HTML for a visitor."""
 	frappe.only_for(["System Manager", "ARK Admin", "ARK User"])
 	v = frappe.get_doc("Visitor Log", visitor_name)
 
@@ -296,10 +286,9 @@ def get_visitor_badge_html(visitor_name):
 	v.db_set("badge_printed", 1)
 	return html
 
-
 @frappe.whitelist()
 def get_visitor_stats(days=30):
-	"""إحصائيات الزوار — Visitor analytics."""
+	"""Visitor analytics."""
 	frappe.only_for(["System Manager", "ARK Admin", "ARK User"])
 	from frappe.utils import add_days
 
@@ -329,11 +318,9 @@ def get_visitor_stats(days=30):
 		"period_days": days,
 	}
 
-
 # ═══════════════════════════════════════════════════════════════════════════
 # Internal Helpers
 # ═══════════════════════════════════════════════════════════════════════════
-
 
 def _generate_visitor_token(visitor):
 	"""Generate a QR token for visitor pass."""
@@ -342,7 +329,6 @@ def _generate_visitor_token(visitor):
 	token = hashlib.sha256(f"{secret}:{payload}".encode()).hexdigest()[:24]
 	visitor.db_set("qr_token", token, update_modified=False)
 	return token
-
 
 def _assign_badge(visitor_name):
 	"""Auto-assign the next available badge number."""

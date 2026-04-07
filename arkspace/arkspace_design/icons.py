@@ -4,12 +4,11 @@
 # For license information, please see license.txt
 
 """
-نظام الأيقونات — ARKSpace Icon System
 Font Awesome 6 icon mappings for all modules.
 """
 
 ICONS = {
-    # Navigation Icons — أيقونات التنقل
+    # Navigation Icons
     "dashboard": "fa-solid fa-gauge-high",
     "home": "fa-solid fa-house",
     "settings": "fa-solid fa-gear",
@@ -17,7 +16,7 @@ ICONS = {
     "back": "fa-solid fa-arrow-right",
     "forward": "fa-solid fa-arrow-left",
 
-    # Module Icons — أيقونات الوحدات
+    # Module Icons
     "spaces": "fa-solid fa-building",
     "bookings": "fa-solid fa-calendar-check",
     "memberships": "fa-solid fa-id-card",
@@ -32,7 +31,7 @@ ICONS = {
     "voip": "fa-solid fa-phone",
     "iot": "fa-solid fa-microchip",
 
-    # Action Icons — أيقونات الأفعال
+    # Action Icons
     "add": "fa-solid fa-plus",
     "edit": "fa-solid fa-pen",
     "delete": "fa-solid fa-trash",
@@ -49,7 +48,7 @@ ICONS = {
     "expand": "fa-solid fa-expand",
     "collapse": "fa-solid fa-compress",
 
-    # Status Icons — أيقونات الحالات
+    # Status Icons
     "success": "fa-solid fa-circle-check",
     "warning": "fa-solid fa-triangle-exclamation",
     "error": "fa-solid fa-circle-xmark",
@@ -59,7 +58,7 @@ ICONS = {
     "inactive": "fa-solid fa-circle-pause",
     "verified": "fa-solid fa-badge-check",
 
-    # Business Icons — أيقونات العمل
+    # Business Icons
     "invoice": "fa-solid fa-file-invoice-dollar",
     "payment": "fa-solid fa-credit-card",
     "contract": "fa-solid fa-file-signature",
@@ -68,7 +67,7 @@ ICONS = {
     "discount": "fa-solid fa-percent",
     "offer": "fa-solid fa-tag",
 
-    # Communication Icons — أيقونات التواصل
+    # Communication Icons
     "email": "fa-solid fa-envelope",
     "phone_call": "fa-solid fa-phone-volume",
     "whatsapp": "fa-brands fa-whatsapp",
@@ -76,7 +75,7 @@ ICONS = {
     "video_call": "fa-solid fa-video",
     "meeting": "fa-solid fa-people-group",
 
-    # Rating Icons — أيقونات التقييم
+    # Rating Icons
     "star_full": "fa-solid fa-star",
     "star_half": "fa-solid fa-star-half-stroke",
     "star_empty": "fa-regular fa-star",
@@ -84,7 +83,7 @@ ICONS = {
     "thumbs_down": "fa-solid fa-thumbs-down",
     "heart": "fa-solid fa-heart",
 
-    # Amenity Icons — أيقونات المرافق
+    # Amenity Icons
     "wifi": "fa-solid fa-wifi",
     "parking": "fa-solid fa-square-parking",
     "coffee": "fa-solid fa-mug-hot",
@@ -97,7 +96,8 @@ ICONS = {
     "gym": "fa-solid fa-dumbbell",
     "prayer_room": "fa-solid fa-mosque",
 
-    # Environment Icons — أيقونات البيئة (ARKAMOR)
+    # Environment Icons(ARKAMOR)
+
     "temperature": "fa-solid fa-temperature-half",
     "humidity": "fa-solid fa-droplet",
     "co2": "fa-solid fa-cloud",
@@ -105,7 +105,7 @@ ICONS = {
     "light": "fa-solid fa-lightbulb",
     "air_quality": "fa-solid fa-wind",
 
-    # Badge Icons — أيقونات الشارات
+    # Badge Icons
     "badge_gold": "fa-solid fa-medal",
     "badge_certified": "fa-solid fa-certificate",
     "badge_top_rated": "fa-solid fa-trophy",
@@ -113,10 +113,8 @@ ICONS = {
     "badge_eco": "fa-solid fa-leaf",
 }
 
-
 def get_icon(name: str, color: str = None, size: str = "md") -> str:
     """
-    الحصول على HTML للأيقونة
     Get icon HTML with optional color and size.
 
     Args:

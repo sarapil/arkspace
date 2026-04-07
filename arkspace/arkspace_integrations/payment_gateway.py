@@ -4,7 +4,6 @@
 # For license information, please see license.txt
 
 """ARKSpace Payment Gateway Controller
-محرك بوابات الدفع الإلكتروني
 
 Unified interface for multiple payment gateways (Stripe, Tap, PayPal, etc.).
 Each gateway is implemented as a strategy class that plugs into the controller.

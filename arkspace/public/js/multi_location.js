@@ -3,7 +3,7 @@
 // License: MIT
 // For license information, please see license.txt
 
-// Multi-Location / Branch Management — إدارة الفروع المتعددة
+// Multi-Location / Branch Management
 
 frappe.provide("arkspace.branches");
 

@@ -4,13 +4,11 @@
 # For license information, please see license.txt
 
 """ARKSpace Memberships — Public API
-إدارة العضويات — واجهة برمجة التطبيقات
 """
 
 import frappe
 from frappe import _
 from frappe.utils import add_months, flt, getdate, nowdate
-
 
 @frappe.whitelist()
 def get_active_memberships(member=None):
@@ -38,7 +36,6 @@ def get_active_memberships(member=None):
 		order_by="end_date desc",
 	)
 
-
 @frappe.whitelist()
 def get_membership_plans(plan_type=None, is_active=True):
 	"""Return available membership plans.
@@ -65,7 +62,6 @@ def get_membership_plans(plan_type=None, is_active=True):
 		],
 		order_by="monthly_price asc",
 	)
-
 
 @frappe.whitelist()
 def create_membership(
@@ -111,7 +107,6 @@ def create_membership(
 		"net_amount": membership.net_amount,
 	}
 
-
 @frappe.whitelist()
 def get_wallet_balance(member):
 	"""Get credit wallet balance for a member.
@@ -136,10 +131,9 @@ def get_wallet_balance(member):
 		"available_credits": wallet.available_credits,
 	}
 
-
 @frappe.whitelist()
 def get_member_dashboard(member):
-	"""ملخص لوحة تحكم العضو — Comprehensive member dashboard data.
+	"""Comprehensive member dashboard data.
 
 	Args:
 		member: Customer name
@@ -218,15 +212,13 @@ def get_member_dashboard(member):
 		},
 	}
 
-
 # ═══════════════════════════════════════════════════════════════════════════
 # Self-Service Portal APIs
 # ═══════════════════════════════════════════════════════════════════════════
 
-
 @frappe.whitelist()
 def renew_membership(membership_name, billing_cycle=None):
-	"""تجديد العضوية — Renew an existing membership.
+	"""Renew an existing membership.
 
 	Creates a new Membership as a continuation of the current one.
 
@@ -271,10 +263,9 @@ def renew_membership(membership_name, billing_cycle=None):
 		"billing_cycle": new_membership.billing_cycle,
 	}
 
-
 @frappe.whitelist()
 def upgrade_membership(membership_name, new_plan, billing_cycle=None):
-	"""ترقية / تغيير الخطة — Upgrade or change membership plan.
+	"""Upgrade or change membership plan.
 
 	Cancels the current membership and creates a new one with the new plan.
 
@@ -336,10 +327,9 @@ def upgrade_membership(membership_name, new_plan, billing_cycle=None):
 		"net_amount": new_membership.net_amount,
 	}
 
-
 @frappe.whitelist()
 def get_renewal_options(membership_name):
-	"""خيارات التجديد — Get renewal options for a membership.
+	"""Get renewal options for a membership.
 
 	Returns pricing for different billing cycles based on current plan.
 	"""
@@ -373,11 +363,10 @@ def get_renewal_options(membership_name):
 		"options": options,
 	}
 
-
 @frappe.whitelist(allow_guest=True)
 def register_member(full_name, email, phone=None, plan=None,
                     billing_cycle="Monthly", company_name=None):
-	"""تسجيل عضو جديد — Self-service member registration.
+	"""Self-service member registration.
 
 	Creates a User + Customer + optional Membership.
 
@@ -458,10 +447,9 @@ def register_member(full_name, email, phone=None, plan=None,
 
 	return result
 
-
 @frappe.whitelist()
 def get_payment_history(member=None, limit=20):
-	"""سجل المدفوعات — Get payment history for a member.
+	"""Get payment history for a member.
 
 	Returns invoices and online payments.
 	"""
@@ -524,10 +512,9 @@ def get_payment_history(member=None, limit=20):
 		},
 	}
 
-
 @frappe.whitelist()
 def toggle_auto_renew(membership_name, auto_renew):
-	"""تبديل التجديد التلقائي — Toggle auto-renewal for a membership."""
+	"""Toggle auto-renewal for a membership."""
 	frappe.only_for(["System Manager", "ARK Admin", "ARK User"])
 	mem = frappe.get_doc("Membership", membership_name)
 	_validate_member_access(mem.member)
@@ -535,11 +522,9 @@ def toggle_auto_renew(membership_name, auto_renew):
 	mem.db_set("auto_renew", 1 if int(auto_renew) else 0)
 	return {"membership": mem.name, "auto_renew": mem.auto_renew}
 
-
 # ═══════════════════════════════════════════════════════════════════════════
 # Internal Helpers
 # ═══════════════════════════════════════════════════════════════════════════
-
 
 def _validate_member_access(member):
 	"""Ensure the current user has access to this member's data."""
@@ -553,7 +538,6 @@ def _validate_member_access(member):
 	current_member = _get_current_member()
 	if current_member != member:
 		frappe.throw(_("You do not have permission to access this data"), frappe.PermissionError)
-
 
 def _get_current_member():
 	"""Find Customer linked to current user."""

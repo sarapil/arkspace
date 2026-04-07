@@ -48,11 +48,11 @@ frappe.ui.form.on("Member Contract", {
         // Status indicator colors
         if (frm.doc.status) {
             let color = {
-                "Draft / مسودة": "orange",
-                "Active / ساري": "green",
-                "Expired / منتهي": "red",
-                "Terminated / منهي": "darkgrey",
-                "Cancelled / ملغي": "red"
+                "Draft": "orange",
+                "Active": "green",
+                "Expired": "red",
+                "Terminated": "darkgrey",
+                "Cancelled": "red"
             }[frm.doc.status] || "blue";
             frm.page.set_indicator(frm.doc.status, color);
         }

@@ -4,7 +4,6 @@
 # For license information, please see license.txt
 
 """ARKSpace Spaces — Public API
-إدارة المساحات — واجهة برمجة التطبيقات العامة
 """
 
 import frappe

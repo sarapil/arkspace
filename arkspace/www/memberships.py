@@ -6,9 +6,8 @@
 import frappe
 from frappe import _
 
-
 def get_context(context):
-	"""إدارة العضويات — Membership Management Portal Page"""
+	"""Membership Management Portal Page"""
 	if frappe.session.user == "Guest":
 		frappe.throw(_("Please login to access your memberships"), frappe.PermissionError)
 
@@ -48,7 +47,6 @@ def get_context(context):
 
 	# Wallet
 	context.wallet = get_wallet_balance(member)
-
 
 def _get_member_for_user():
 	"""Find Customer linked to the current user."""

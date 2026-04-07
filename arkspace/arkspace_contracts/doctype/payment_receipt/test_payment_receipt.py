@@ -25,12 +25,12 @@ class TestPaymentReceipt(ARKSpaceTestCase):
     def _make_receipt(self, **kwargs):
         defaults = {
             "doctype": "Payment Receipt",
-            "receipt_type": "Membership Payment / دفعة عضوية",
+            "receipt_type": "Membership Payment",
             "receipt_date": today(),
             "member": self._get_customer(),
             "amount": 5000,
             "currency": "EGP",
-            "payment_method": "Cash / نقدي",
+            "payment_method": "Cash",
             "payment_date": today(),
         }
         defaults.update(kwargs)
@@ -87,12 +87,12 @@ class TestPaymentReceipt(ARKSpaceTestCase):
     def test_all_receipt_types(self):
         """Test all valid receipt types."""
         types = [
-            "Membership Payment / دفعة عضوية",
-            "Booking Payment / دفعة حجز",
-            "Deposit / تأمين",
-            "Setup Fee / رسوم تأسيس",
-            "Amenity Fee / رسوم خدمات",
-            "Other / أخرى",
+            "Membership Payment",
+            "Booking Payment",
+            "Deposit",
+            "Setup Fee",
+            "Amenity Fee",
+            "Other",
         ]
         for rt in types:
             r = self._make_receipt(receipt_type=rt)
@@ -102,12 +102,12 @@ class TestPaymentReceipt(ARKSpaceTestCase):
     def test_all_payment_methods(self):
         """Test all valid payment methods."""
         methods = [
-            "Cash / نقدي",
-            "Bank Transfer / تحويل بنكي",
-            "Check / شيك",
-            "Card / بطاقة",
-            "Online / إلكتروني",
-            "Other / أخرى",
+            "Cash",
+            "Bank Transfer",
+            "Check",
+            "Card",
+            "Online",
+            "Other",
         ]
         for pm in methods:
             r = self._make_receipt(payment_method=pm)

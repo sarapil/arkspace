@@ -4,7 +4,6 @@
 # For license information, please see license.txt
 
 """Day Pass Portal — Context Builder
-تصريح اليوم — بوابة العملاء
 """
 
 import frappe
@@ -29,11 +28,11 @@ def get_context(context):
 
     # Pass types with default pricing
     context.pass_types = [
-        {"type": "Full Day", "label": "Full Day / يوم كامل"},
-        {"type": "Half Day", "label": "Half Day / نصف يوم"},
-        {"type": "Hourly", "label": "Hourly / بالساعة"},
-        {"type": "Evening", "label": "Evening / مسائي"},
-        {"type": "Weekend", "label": "Weekend / عطلة نهاية الأسبوع"},
+        {"type": "Full Day", "label": "Full Day"},
+        {"type": "Half Day", "label": "Half Day"},
+        {"type": "Hourly", "label": "Hourly"},
+        {"type": "Evening", "label": "Evening"},
+        {"type": "Weekend", "label": "Weekend"},
     ]
 
     # Trial plans (if any)

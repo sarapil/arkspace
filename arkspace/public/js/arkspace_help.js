@@ -4,7 +4,7 @@
 // For license information, please see license.txt
 
 /**
- * ARKSpace Contextual Help — نظام المساعدة السياقية
+ * ARKSpace Contextual Help
  *
  * Provides a floating-window-based help system that:
  *  - Adds ❓ button to every ARKSpace form toolbar
@@ -40,7 +40,7 @@
 	// ── Topic help content per DocType ──
 	const HELP_TOPICS = {
 		"Co-working Space": {
-			title: __("Spaces — المساحات"),
+			title: __("Spaces"),
 			icon: "🏢",
 			slides: [
 				{ title: __("What is a Space?"), body: __("A co-working space is a bookable resource — desks, rooms, studios, or any physical area.") },
@@ -50,7 +50,7 @@
 			],
 		},
 		"Space Booking": {
-			title: __("Bookings — الحجوزات"),
+			title: __("Bookings"),
 			icon: "📅",
 			slides: [
 				{ title: __("Creating a Booking"), body: __("Select space, date/time range, and member. Pricing is auto-calculated.") },
@@ -60,7 +60,7 @@
 			],
 		},
 		"Membership": {
-			title: __("Memberships — العضويات"),
+			title: __("Memberships"),
 			icon: "🎫",
 			slides: [
 				{ title: __("Plans & Tiers"), body: __("Create membership plans with different access levels, amenities, and pricing.") },
@@ -69,7 +69,7 @@
 			],
 		},
 		"Day Pass": {
-			title: __("Day Pass — تصاريح اليوم"),
+			title: __("Day Pass"),
 			icon: "🎟️",
 			slides: [
 				{ title: __("Quick Access"), body: __("Day passes provide single-day access without a full membership.") },
@@ -78,7 +78,7 @@
 			],
 		},
 		"Workspace Lead": {
-			title: __("CRM — إدارة العملاء"),
+			title: __("CRM"),
 			icon: "🎯",
 			slides: [
 				{ title: __("Lead Pipeline"), body: __("Track prospective members from inquiry to tour to conversion.") },
@@ -87,7 +87,7 @@
 			],
 		},
 		"Community Event": {
-			title: __("Events — الفعاليات"),
+			title: __("Events"),
 			icon: "🎉",
 			slides: [
 				{ title: __("Event Management"), body: __("Create events with capacity limits, RSVP, and space allocation.") },
@@ -95,7 +95,7 @@
 			],
 		},
 		"Space Type": {
-			title: __("Space Types — أنواع المساحات"),
+			title: __("Space Types"),
 			icon: "🏷️",
 			slides: [
 				{ title: __("What are Space Types?"), body: __("Space Types categorize your physical resources — Hot Desk, Private Office, Meeting Room, Event Hall, Studio, etc.") },
@@ -103,7 +103,7 @@
 			],
 		},
 		"Pricing Rule": {
-			title: __("Pricing Rules — قواعد التسعير"),
+			title: __("Pricing Rules"),
 			icon: "💰",
 			slides: [
 				{ title: __("Dynamic Pricing"), body: __("Create rules that adjust pricing based on peak hours, membership tier, duration, or advance booking.") },
@@ -111,7 +111,7 @@
 			],
 		},
 		"Visitor Log": {
-			title: __("Visitors — الزوار"),
+			title: __("Visitors"),
 			icon: "🚪",
 			slides: [
 				{ title: __("Visitor Management"), body: __("Pre-register visitors, track walk-ins, and generate entry badges with QR codes.") },
@@ -119,7 +119,7 @@
 			],
 		},
 		"Workspace Tour": {
-			title: __("Tours — الجولات"),
+			title: __("Tours"),
 			icon: "🗺️",
 			slides: [
 				{ title: __("Tour Scheduling"), body: __("Schedule guided tours for prospective members. Track attendance and follow-up.") },
@@ -127,7 +127,7 @@
 			],
 		},
 		"Community Post": {
-			title: __("Community Board — لوحة المجتمع"),
+			title: __("Community Board"),
 			icon: "💬",
 			slides: [
 				{ title: __("Community Posts"), body: __("Members can share knowledge, ask questions, and post announcements on the community board.") },
@@ -135,7 +135,7 @@
 			],
 		},
 		"Networking Request": {
-			title: __("Networking — التواصل"),
+			title: __("Networking"),
 			icon: "🤝",
 			slides: [
 				{ title: __("Connect with Members"), body: __("Send networking requests to other members based on skills and interests.") },
@@ -143,7 +143,7 @@
 			],
 		},
 		"Training Session": {
-			title: __("Training — التدريب"),
+			title: __("Training"),
 			icon: "🎓",
 			slides: [
 				{ title: __("Training Sessions"), body: __("Create and manage training sessions for member skill development.") },
@@ -151,7 +151,7 @@
 			],
 		},
 		"Member Contract": {
-			title: __("Contracts — العقود"),
+			title: __("Contracts"),
 			icon: "📄",
 			slides: [
 				{ title: __("Contract Management"), body: __("Create and manage contracts for memberships, space rentals, and services.") },
@@ -159,7 +159,7 @@
 			],
 		},
 		"Analytics Snapshot": {
-			title: __("Analytics — التحليلات"),
+			title: __("Analytics"),
 			icon: "📊",
 			slides: [
 				{ title: __("Daily Snapshots"), body: __("Automatic daily captures of occupancy, revenue, and membership metrics.") },
@@ -167,7 +167,7 @@
 			],
 		},
 		"ARKSpace Settings": {
-			title: __("Settings — الإعدادات"),
+			title: __("Settings"),
 			icon: "⚙️",
 			slides: [
 				{ title: __("App Configuration"), body: __("Configure payment gateways, notification preferences, QR settings, and branch defaults.") },
@@ -175,7 +175,7 @@
 			],
 		},
 		"ARKSpace Branch": {
-			title: __("Branches — الفروع"),
+			title: __("Branches"),
 			icon: "🏢",
 			slides: [
 				{ title: __("Multi-Branch Management"), body: __("Manage multiple locations with independent settings but centralized reporting.") },
@@ -183,7 +183,7 @@
 			],
 		},
 		"Online Payment": {
-			title: __("Online Payments — الدفع الإلكتروني"),
+			title: __("Online Payments"),
 			icon: "💳",
 			slides: [
 				{ title: __("Payment Gateways"), body: __("Accept payments via Stripe, Tap, or other gateways configured in ARKSpace Settings.") },
@@ -191,7 +191,7 @@
 			],
 		},
 		"Space Amenity": {
-			title: __("Space Amenities — مرافق المساحة"),
+			title: __("Space Amenities"),
 			icon: "🛋️",
 			slides: [
 				{ title: __("What are Space Amenities?"), body: __("Amenities are the features available in a space — WiFi, projector, whiteboard, coffee machine, etc.") },
@@ -199,7 +199,7 @@
 			],
 		},
 		"Space Image": {
-			title: __("Space Images — صور المساحة"),
+			title: __("Space Images"),
 			icon: "🖼️",
 			slides: [
 				{ title: __("Gallery Images"), body: __("Upload multiple images for each space to showcase in the portal and booking screen.") },
@@ -207,7 +207,7 @@
 			],
 		},
 		"Membership Plan": {
-			title: __("Membership Plans — خطط العضوية"),
+			title: __("Membership Plans"),
 			icon: "📋",
 			slides: [
 				{ title: __("Plan Setup"), body: __("Define membership tiers with different access levels, credit allowances, and amenity bundles.") },
@@ -216,7 +216,7 @@
 			],
 		},
 		"Credit Transaction": {
-			title: __("Credit Transactions — معاملات الرصيد"),
+			title: __("Credit Transactions"),
 			icon: "💱",
 			slides: [
 				{ title: __("Credit Flow"), body: __("Each booking, day pass, or amenity usage deducts credits. Top-ups and plan renewals add credits.") },
@@ -224,7 +224,7 @@
 			],
 		},
 		"Member Credit Wallet": {
-			title: __("Credit Wallet — محفظة الرصيد"),
+			title: __("Credit Wallet"),
 			icon: "👛",
 			slides: [
 				{ title: __("Wallet Balance"), body: __("Each member has a credit wallet showing current balance, total earned, and total spent.") },
@@ -232,7 +232,7 @@
 			],
 		},
 		"Member Skill": {
-			title: __("Member Skills — مهارات العضو"),
+			title: __("Member Skills"),
 			icon: "🧠",
 			slides: [
 				{ title: __("Skill Profiles"), body: __("Members can list their skills and expertise for the community directory and networking.") },
@@ -240,7 +240,7 @@
 			],
 		},
 		"Contract Template": {
-			title: __("Contract Templates — قوالب العقود"),
+			title: __("Contract Templates"),
 			icon: "📑",
 			slides: [
 				{ title: __("Reusable Templates"), body: __("Create contract templates with standard terms for memberships, space rental, and services.") },
@@ -248,7 +248,7 @@
 			],
 		},
 		"Contract Legal Document": {
-			title: __("Legal Documents — المستندات القانونية للعقود"),
+			title: __("Legal Documents"),
 			icon: "⚖️",
 			slides: [
 				{ title: __("Attached Legals"), body: __("Link legal documents (NDAs, terms of service, waivers) to specific contracts.") },
@@ -256,7 +256,7 @@
 			],
 		},
 		"Legal Document": {
-			title: __("Legal Documents — المستندات القانونية"),
+			title: __("Legal Documents"),
 			icon: "📜",
 			slides: [
 				{ title: __("Master Legal Library"), body: __("Maintain a library of legal documents — terms of service, NDAs, waivers, and policies.") },
@@ -264,7 +264,7 @@
 			],
 		},
 		"Training Module": {
-			title: __("Training Modules — وحدات التدريب"),
+			title: __("Training Modules"),
 			icon: "📚",
 			slides: [
 				{ title: __("Module Structure"), body: __("Organize training content into modules — each module contains sessions, resources, and assessments.") },
@@ -272,7 +272,7 @@
 			],
 		},
 		"Training Badge": {
-			title: __("Training Badges — شارات التدريب"),
+			title: __("Training Badges"),
 			icon: "🏅",
 			slides: [
 				{ title: __("Achievement Badges"), body: __("Award badges upon completing training modules or achieving milestones.") },
@@ -280,7 +280,7 @@
 			],
 		},
 		"Design Configuration": {
-			title: __("Design Config — إعدادات التصميم"),
+			title: __("Design Config"),
 			icon: "🎨",
 			slides: [
 				{ title: __("Portal Appearance"), body: __("Customize colors, logo, and layout for the member-facing portal.") },
@@ -288,7 +288,7 @@
 			],
 		},
 		"Documentation Entry": {
-			title: __("Documentation — التوثيق"),
+			title: __("Documentation"),
 			icon: "📝",
 			slides: [
 				{ title: __("Knowledge Base"), body: __("Create internal documentation for space policies, procedures, and member guidelines.") },
@@ -296,7 +296,7 @@
 			],
 		},
 		"Payment Receipt": {
-			title: __("Payment Receipts — إيصالات الدفع"),
+			title: __("Payment Receipts"),
 			icon: "🧾",
 			slides: [
 				{ title: __("Receipt Generation"), body: __("Auto-generated receipts for every payment — linked to invoices and credit transactions.") },
@@ -304,7 +304,7 @@
 			],
 		},
 		"User Training Progress": {
-			title: __("Training Progress — تقدم التدريب"),
+			title: __("Training Progress"),
 			icon: "📈",
 			slides: [
 				{ title: __("Progress Tracking"), body: __("Track each member's progress through training modules and sessions.") },
@@ -312,7 +312,7 @@
 			],
 		},
 		"Amenity": {
-			title: __("Amenities — المرافق"),
+			title: __("Amenities"),
 			icon: "✨",
 			slides: [
 				{ title: __("Amenity Catalog"), body: __("Define all available amenities — WiFi, projector, printer, coffee, parking, lockers, etc.") },
@@ -320,21 +320,21 @@
 			],
 		},
 		"Documentation Code Example": {
-			title: __("Code Examples — أمثلة البرمجة"),
+			title: __("Code Examples"),
 			icon: "💻",
 			slides: [
 				{ title: __("Code Snippets"), body: __("Attach code examples to documentation entries for API usage, integrations, and automation recipes.") },
 			],
 		},
 		"Documentation Prerequisite": {
-			title: __("Prerequisites — المتطلبات المسبقة"),
+			title: __("Prerequisites"),
 			icon: "🔗",
 			slides: [
 				{ title: __("Reading Order"), body: __("Define which documentation entries must be read before this one, creating a structured learning path.") },
 			],
 		},
 		"Documentation Relation": {
-			title: __("Related Docs — مستندات ذات صلة"),
+			title: __("Related Docs"),
 			icon: "🔀",
 			slides: [
 				{ title: __("Cross-references"), body: __("Link related documentation entries to help readers discover connected topics and guides.") },
@@ -344,7 +344,7 @@
 
 	// ── Default help for unknown DocTypes ──
 	const DEFAULT_HELP = {
-		title: __("ARKSpace Help — مساعدة أرك سبيس"),
+		title: __("ARKSpace Help"),
 		icon: "❓",
 		slides: [
 			{ title: __("About ARKSpace"), body: __("ARKSpace is a comprehensive co-working space management platform.") },

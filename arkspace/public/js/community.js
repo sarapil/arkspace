@@ -3,7 +3,7 @@
 // License: MIT
 // For license information, please see license.txt
 
-// Community & Networking — المجتمع والتواصل
+// Community & Networking
 
 frappe.provide("arkspace.community");
 
@@ -139,7 +139,7 @@ frappe.ui.form.on("Networking Request", {
 
 arkspace.community.open_feed = function (branch) {
     const d = new frappe.ui.Dialog({
-        title: __("Community Board — لوحة المجتمع"),
+        title: __("Community Board"),
         size: "extra-large",
         minimizable: true,
     });

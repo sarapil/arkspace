@@ -3,7 +3,7 @@
 # License: MIT
 # For license information, please see license.txt
 
-"""Analytics Snapshot — لقطة تحليلية
+"""Analytics Snapshot
 Stores daily, weekly, or monthly analytics snapshots for historical reporting.
 """
 

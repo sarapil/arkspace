@@ -10,7 +10,7 @@ import frappe
 
 def get_context(context):
     context.no_cache = 1
-    context.title = "Member Directory — دليل الأعضاء"
+    context.title = "Member Directory"
 
     if frappe.session.user == "Guest":
         frappe.throw("Please log in to view the directory", frappe.PermissionError)

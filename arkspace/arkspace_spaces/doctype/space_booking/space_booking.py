@@ -8,7 +8,6 @@ from frappe import _
 from frappe.model.document import Document
 from frappe.utils import flt, time_diff_in_hours
 
-
 class SpaceBooking(Document):
 	def validate(self):
 		self.calculate_duration()
@@ -36,7 +35,7 @@ class SpaceBooking(Document):
 				})
 
 	def calculate_duration(self):
-		"""حساب مدة الحجز — Calculate booking duration."""
+		"""Calculate booking duration."""
 		if self.start_datetime and self.end_datetime:
 			self.duration_hours = flt(
 				time_diff_in_hours(self.end_datetime, self.start_datetime), 2
@@ -45,7 +44,7 @@ class SpaceBooking(Document):
 				frappe.throw(_("End time must be after start time"))
 
 	def _apply_dynamic_pricing(self):
-		"""تطبيق التسعير الديناميكي — Apply dynamic pricing rules to the rate.
+		"""Apply dynamic pricing rules to the rate.
 
 		Adjusts self.rate based on active Pricing Rules. Skips if the user
 		has manually set a rate and flagged skip_dynamic_pricing.
@@ -92,7 +91,7 @@ class SpaceBooking(Document):
 				)
 
 	def calculate_amounts(self):
-		"""حساب المبالغ — Calculate total and net amounts."""
+		"""Calculate total and net amounts."""
 		if not self.rate or not self.duration_hours:
 			return
 
@@ -112,7 +111,7 @@ class SpaceBooking(Document):
 		self.net_amount = flt(self.total_amount * (1 - discount / 100), 2)
 
 	def calculate_amenity_costs(self):
-		"""حساب تكلفة المرافق — Calculate add-on amenity costs."""
+		"""Calculate add-on amenity costs."""
 		self.amenity_total = 0
 		if not self.get("booking_amenities"):
 			return
@@ -141,7 +140,7 @@ class SpaceBooking(Document):
 			self.amenity_total += flt(row.amount)
 
 	def check_availability(self):
-		"""التحقق من التوفر — Ensure space is available for the time range."""
+		"""Ensure space is available for the time range."""
 		if not self.space or not self.start_datetime or not self.end_datetime:
 			return
 
@@ -165,7 +164,7 @@ class SpaceBooking(Document):
 			)
 
 	def _generate_qr_code(self):
-		"""توليد QR تلقائي عند تأكيد الحجز — Auto-generate QR on submit."""
+		"""Auto-generate QR on submit."""
 		try:
 			from arkspace.arkspace_spaces.qr_checkin import generate_booking_qr
 			generate_booking_qr(self.name)

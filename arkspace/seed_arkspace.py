@@ -331,6 +331,5 @@ def run():
     for k, v in counts.items():
         print(f"  {k}: {v}")
 
-
 if __name__ == "__main__":
     run()

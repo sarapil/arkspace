@@ -4,7 +4,6 @@
 # For license information, please see license.txt
 
 """ARKSpace — Smart Analytics Engine
-محرك التحليلات الذكية
 
 Provides occupancy heatmaps, revenue trends, forecasting, member analytics,
 space utilization, booking patterns, and period-over-period comparisons.

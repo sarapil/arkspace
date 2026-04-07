@@ -3,7 +3,7 @@
 # License: MIT
 # For license information, please see license.txt
 
-"""ARKSpace Setup Wizard — معالج الإعداد
+"""ARKSpace Setup Wizard
 Adds ARKSpace-specific steps to the Frappe setup wizard.
 """
 
@@ -28,7 +28,7 @@ def get_setup_slides():
 	return [
 		{
 			"slide_name": "arkspace_welcome",
-			"slide_title": _("Welcome to ARKSpace — مرحباً بكم"),
+			"slide_title": _("Welcome to ARKSpace"),
 			"slide_desc": _("Configure your co-working space management system."),
 			"slide_icon": "fa-solid fa-cubes",
 			"slide_order": 30,
@@ -61,7 +61,7 @@ def get_setup_slides():
 		},
 		{
 			"slide_name": "arkspace_branches",
-			"slide_title": _("Branches — الفروع"),
+			"slide_title": _("Branches"),
 			"slide_desc": _("Add your co-working space locations. You can add more later."),
 			"slide_icon": "fa-solid fa-map-marker-alt",
 			"slide_order": 31,
@@ -87,7 +87,7 @@ def get_setup_slides():
 		},
 		{
 			"slide_name": "arkspace_spaces",
-			"slide_title": _("Space Types — أنواع المساحات"),
+			"slide_title": _("Space Types"),
 			"slide_desc": _("Select the types of spaces you offer."),
 			"slide_icon": "fa-solid fa-th-large",
 			"slide_order": 32,
@@ -95,42 +95,42 @@ def get_setup_slides():
 				{
 					"fieldtype": "Check",
 					"fieldname": "type_hot_desk",
-					"label": _("Hot Desk — مكتب مشترك"),
+					"label": _("Hot Desk"),
 					"default": 1,
 				},
 				{
 					"fieldtype": "Check",
 					"fieldname": "type_dedicated_desk",
-					"label": _("Dedicated Desk — مكتب مخصص"),
+					"label": _("Dedicated Desk"),
 					"default": 1,
 				},
 				{
 					"fieldtype": "Check",
 					"fieldname": "type_private_office",
-					"label": _("Private Office — مكتب خاص"),
+					"label": _("Private Office"),
 					"default": 1,
 				},
 				{
 					"fieldtype": "Check",
 					"fieldname": "type_meeting_room",
-					"label": _("Meeting Room — غرفة اجتماعات"),
+					"label": _("Meeting Room"),
 					"default": 1,
 				},
 				{
 					"fieldtype": "Check",
 					"fieldname": "type_event_space",
-					"label": _("Event Space — قاعة فعاليات"),
+					"label": _("Event Space"),
 				},
 				{
 					"fieldtype": "Check",
 					"fieldname": "type_virtual_office",
-					"label": _("Virtual Office — مكتب افتراضي"),
+					"label": _("Virtual Office"),
 				},
 			],
 		},
 		{
 			"slide_name": "arkspace_plan",
-			"slide_title": _("First Membership Plan — خطة العضوية الأولى"),
+			"slide_title": _("First Membership Plan"),
 			"slide_desc": _("Create your first membership plan to get started."),
 			"slide_icon": "fa-solid fa-id-card",
 			"slide_order": 33,

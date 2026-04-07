@@ -5,7 +5,7 @@
 
 /**
  * ARKSpace QR Check-in Frontend
- * تسجيل الدخول بـ QR — QR Code Check-in UI
+ * QR Code Check-in UI
  *
  * Adds QR generation, preview, print, and bulk-generate functionality
  * to Space Booking forms and list views.

@@ -6,9 +6,8 @@
 import frappe
 from frappe import _
 
-
 def get_context(context):
-	"""صفحة حجز المساحات — Space Booking Page"""
+	"""Space Booking Page"""
 	if frappe.session.user == "Guest":
 		frappe.throw(_("Please login to book a space"), frappe.PermissionError)
 

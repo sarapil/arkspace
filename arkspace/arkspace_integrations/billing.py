@@ -4,7 +4,6 @@
 # For license information, please see license.txt
 
 """ARKSpace Integrations — ERPNext Billing Bridge
-جسر الفوترة — ربط الحجوزات والاشتراكات بالفواتير
 
 Automatically creates Sales Invoices when Space Bookings or Memberships
 are submitted, and handles payment reconciliation.

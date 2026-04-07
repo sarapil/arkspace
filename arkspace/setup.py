@@ -4,15 +4,13 @@
 # For license information, please see license.txt
 
 """ARKSpace — Setup Workflows, Notifications & Dashboard Charts
-إعداد سير العمل والإشعارات والرسوم البيانية
 """
 
 import frappe
 from frappe import _
 
-
 # =============================================================================
-# WORKFLOWS — سير العمل
+# WORKFLOWS
 # =============================================================================
 
 def create_workflow_states():
@@ -49,7 +47,6 @@ def create_workflow_states():
             except Exception:
                 pass
 
-
 def create_workflow_actions():
     """Create Workflow Action Master records."""
     actions = [
@@ -66,7 +63,6 @@ def create_workflow_actions():
                 doc.insert(ignore_permissions=True)
             except Exception:
                 pass
-
 
 def create_booking_workflow():
     """Create Space Booking Workflow.
@@ -176,7 +172,6 @@ def create_booking_workflow():
 
     wf.insert(ignore_permissions=True)
     return wf_name
-
 
 def create_membership_workflow():
     """Create Membership Workflow.
@@ -288,7 +283,6 @@ def create_membership_workflow():
     wf.insert(ignore_permissions=True)
     return wf_name
 
-
 def create_lead_workflow():
     """Create Workspace Lead Workflow.
     Flow: New → Contacted → Tour Scheduled → Negotiating → Converted/Lost
@@ -351,9 +345,8 @@ def create_lead_workflow():
     wf.insert(ignore_permissions=True)
     return wf_name
 
-
 # =============================================================================
-# NOTIFICATIONS — الإشعارات
+# NOTIFICATIONS
 # =============================================================================
 
 def create_booking_confirmation_notification():
@@ -399,7 +392,6 @@ def create_booking_confirmation_notification():
     n.append("recipients", {"receiver_by_document_field": "member_email"})
     n.insert(ignore_permissions=True)
 
-
 def create_membership_welcome_notification():
     """Welcome notification when a new membership is activated."""
     name = "ARKSpace - Membership Welcome"
@@ -443,7 +435,6 @@ def create_membership_welcome_notification():
 
     n.append("recipients", {"receiver_by_document_field": "member_email"})
     n.insert(ignore_permissions=True)
-
 
 def create_membership_expiry_notification():
     """Notification sent 7 days before membership expiry."""
@@ -491,7 +482,6 @@ def create_membership_expiry_notification():
     n.append("recipients", {"receiver_by_document_field": "member_email"})
     n.insert(ignore_permissions=True)
 
-
 def create_booking_cancelled_notification():
     """Notification when a booking is cancelled."""
     name = "ARKSpace - Booking Cancelled"
@@ -532,9 +522,8 @@ def create_booking_cancelled_notification():
     n.append("recipients", {"receiver_by_document_field": "member_email"})
     n.insert(ignore_permissions=True)
 
-
 # =============================================================================
-# DASHBOARD CHARTS — الرسوم البيانية
+# DASHBOARD CHARTS
 # =============================================================================
 
 def create_dashboard_charts():
@@ -637,9 +626,9 @@ def create_dashboard_charts():
         except Exception:
             frappe.log_error(f"Error creating chart {chart_name}")
 
-
 # =============================================================================
-# CUSTOM FIELDS — حقول مخصصة لربط ERPNext
+# CUSTOM FIELDSERPNext
+
 # =============================================================================
 
 def create_custom_fields():
@@ -684,7 +673,6 @@ def create_custom_fields():
     _create(custom_fields, update=True)
     frappe.db.commit()
 
-
 def _erpnext_installed():
     """Check if ERPNext is available."""
     try:
@@ -692,9 +680,8 @@ def _erpnext_installed():
     except Exception:
         return False
 
-
 # =============================================================================
-# MAIN SETUP FUNCTION — دالة الإعداد الرئيسية
+# MAIN SETUP FUNCTION
 # =============================================================================
 
 def setup_arkspace():

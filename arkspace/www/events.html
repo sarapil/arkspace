@@ -5,7 +5,7 @@
 
 {% extends "templates/web.html" %}
 
-{% block title %}{{ _("Events — الفعاليات") }}{% endblock %}
+{% block title %}{{ _("Events") }}{% endblock %}
 
 {% block page_content %}
 <div class="container py-4">
@@ -13,14 +13,14 @@
         <h2>📅 {{ _("Community Events") }}</h2>
         {% if frappe.session.user != "Guest" %}
         <a href="/app/community-event/new" class="btn btn-primary">
-            ➕ {{ _("Create Event / إنشاء فعالية") }}
+            ➕ {{ _("Create Event") }}
         </a>
         {% endif %}
     </div>
 
     <!-- Upcoming Events -->
     {% if upcoming_events %}
-    <h5 class="mb-3">{{ _("Upcoming Events / الفعاليات القادمة") }}</h5>
+    <h5 class="mb-3">{{ _("Upcoming Events") }}</h5>
     <div class="row">
         {% for e in upcoming_events %}
         <div class="col-md-4 mb-4">
@@ -62,7 +62,7 @@
                     <button class="btn btn-primary btn-sm register-btn"
                             data-event="{{ e.name }}"
                             {% if e.current_attendees >= e.max_attendees %}disabled{% endif %}>
-                        {{ _("Register / تسجيل") }}
+                        {{ _("Register") }}
                     </button>
                     {% endif %}
                     <small class="float-right text-muted">{{ e.organizer_name }}</small>
@@ -80,7 +80,7 @@
 
     <!-- Past Events -->
     {% if past_events %}
-    <h5 class="mt-4 mb-3">{{ _("Past Events / الفعاليات السابقة") }}</h5>
+    <h5 class="mt-4 mb-3">{{ _("Past Events") }}</h5>
     <div class="table-responsive">
         <table class="table table-sm table-hover">
             <thead>
@@ -118,7 +118,7 @@ frappe.ready(function () {
             callback(r) {
                 if (r.message && r.message.status === "registered") {
                     frappe.show_alert({
-                        message: "{{ _('Registered successfully! / تم التسجيل بنجاح') }}",
+                        message: "{{ _('Registered successfully!') }}",
                         indicator: "green",
                     });
                     btn.prop("disabled", true).text("{{ _('Registered ✓') }}");

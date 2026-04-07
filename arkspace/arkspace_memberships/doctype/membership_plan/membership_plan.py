@@ -7,13 +7,12 @@ import frappe
 from frappe import _
 from frappe.model.document import Document
 
-
 class MembershipPlan(Document):
 	def validate(self):
 		self.validate_pricing()
 
 	def validate_pricing(self):
-		"""التحقق من التسعير — At least monthly price is required."""
+		"""At least monthly price is required."""
 		if not self.monthly_price or self.monthly_price <= 0:
 			frappe.throw(_("Monthly price must be greater than zero"))
 

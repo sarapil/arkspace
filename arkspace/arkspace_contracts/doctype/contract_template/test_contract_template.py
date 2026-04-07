@@ -6,7 +6,6 @@
 import frappe
 from arkspace.tests.compat import ARKSpaceTestCase
 
-
 class TestContractTemplate(ARKSpaceTestCase):
     """Test cases for Contract Template DocType."""
 

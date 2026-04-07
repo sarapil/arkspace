@@ -4,7 +4,6 @@
 # For license information, please see license.txt
 
 """ARKSpace — Multi-Location / Branch Management API
-إدارة الفروع المتعددة
 
 Provides cross-location search, branch statistics, membership transfer,
 and branch comparison for multi-site workspace management.

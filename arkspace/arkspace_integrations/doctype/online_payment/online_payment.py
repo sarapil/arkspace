@@ -3,7 +3,7 @@
 # License: MIT
 # For license information, please see license.txt
 
-"""Online Payment — بوابة الدفع الإلكتروني
+"""Online Payment
 
 Tracks every online payment attempt (Stripe, Tap, PayPal, etc.) and links
 the result back to its originating booking, membership, or invoice.

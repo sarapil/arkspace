@@ -6,9 +6,8 @@
 import frappe
 from frappe import _
 
-
 def get_context(context):
-	"""صفحة ملف العضو — Member Profile Page"""
+	"""Member Profile Page"""
 	if frappe.session.user == "Guest":
 		frappe.throw(_("Please login to view your profile"), frappe.PermissionError)
 

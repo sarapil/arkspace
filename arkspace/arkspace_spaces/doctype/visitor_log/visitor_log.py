@@ -3,7 +3,7 @@
 # License: MIT
 # For license information, please see license.txt
 
-"""Visitor Log — سجل الزوار
+"""Visitor Log
 
 Tracks visitors to the co-working space with check-in/out,
 host notification, badge generation, and pre-registration.
@@ -12,7 +12,6 @@ host notification, badge generation, and pre-registration.
 import frappe
 from frappe import _
 from frappe.utils import now_datetime
-
 
 class VisitorLog(frappe.model.document.Document):
 	def validate(self):
@@ -34,7 +33,7 @@ class VisitorLog(frappe.model.document.Document):
 				)
 
 	def check_in(self):
-		"""تسجيل دخول الزائر — Mark visitor as checked in."""
+		"""Mark visitor as checked in."""
 		if self.status == "Checked In":
 			frappe.throw(_("Visitor is already checked in"))
 		if self.status in ("Checked Out", "Cancelled"):
@@ -61,7 +60,7 @@ class VisitorLog(frappe.model.document.Document):
 		)
 
 	def check_out(self):
-		"""تسجيل خروج الزائر — Mark visitor as checked out."""
+		"""Mark visitor as checked out."""
 		if self.status != "Checked In":
 			frappe.throw(_("Visitor must be checked in before checking out"))
 

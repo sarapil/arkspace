@@ -11,7 +11,7 @@ from frappe.utils import cint
 
 def get_context(context):
     context.no_cache = 1
-    context.title = "Community — المجتمع"
+    context.title = "Community"
 
     # Get branches for filter
     context.branches = frappe.get_all("Branch", pluck="name")

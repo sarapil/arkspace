@@ -5,7 +5,6 @@
 
 /**
  * ARKSpace — Portal JavaScript
- * تفاعل بوابة الأعضاء
  *
  * Provides interactive features for the member portal:
  * - Quick booking modal

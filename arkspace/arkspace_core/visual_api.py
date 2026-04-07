@@ -4,7 +4,6 @@
 # For license information, please see license.txt
 
 """ARKSpace — Visual API
-واجهة البيانات البصرية
 
 Provides graph-ready data (nodes + edges) for all visual screens:
   1. Command Center  — KPIs + space/booking/member overview graph

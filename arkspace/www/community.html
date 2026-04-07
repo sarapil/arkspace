@@ -5,7 +5,7 @@
 
 {% extends "templates/web.html" %}
 
-{% block title %}{{ _("Community — المجتمع") }}{% endblock %}
+{% block title %}{{ _("Community") }}{% endblock %}
 
 {% block page_content %}
 <div class="container py-4">
@@ -13,7 +13,7 @@
         <h2>🤝 {{ _("Community Board") }}</h2>
         {% if frappe.session.user != "Guest" %}
         <a href="/app/community-post/new" class="btn btn-primary">
-            ✏️ {{ _("New Post / منشور جديد") }}
+            ✏️ {{ _("New Post") }}
         </a>
         {% endif %}
     </div>
@@ -24,7 +24,7 @@
             <!-- Pinned Posts -->
             {% if pinned_posts %}
             <div class="mb-3">
-                <h5>📌 {{ _("Pinned / مثبت") }}</h5>
+                <h5>📌 {{ _("Pinned") }}</h5>
                 {% for p in pinned_posts %}
                 <div class="card mb-2 border-primary">
                     <div class="card-body p-3">
@@ -39,7 +39,7 @@
             {% endif %}
 
             <!-- Feed -->
-            <h5>{{ _("Recent Posts / المنشورات الأخيرة") }}</h5>
+            <h5>{{ _("Recent Posts") }}</h5>
             {% for p in recent_posts %}
             <div class="card mb-2">
                 <div class="card-body p-3">
@@ -74,11 +74,11 @@
             <!-- Quick Navigation -->
             <div class="card mb-3">
                 <div class="card-body">
-                    <h6>{{ _("Quick Links / روابط سريعة") }}</h6>
+                    <h6>{{ _("Quick Links") }}</h6>
                     <ul class="list-unstyled">
-                        <li><a href="/events">📅 {{ _("Events / الفعاليات") }}</a></li>
-                        <li><a href="/directory">👥 {{ _("Member Directory / دليل الأعضاء") }}</a></li>
-                        <li><a href="/arkspace_portal">🏠 {{ _("Dashboard / لوحة التحكم") }}</a></li>
+                        <li><a href="/events">📅 {{ _("Events") }}</a></li>
+                        <li><a href="/directory">👥 {{ _("Member Directory") }}</a></li>
+                        <li><a href="/arkspace_portal">🏠 {{ _("Dashboard") }}</a></li>
                     </ul>
                 </div>
             </div>

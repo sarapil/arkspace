@@ -3,12 +3,11 @@
 # License: MIT
 # For license information, please see license.txt
 
-"""تقرير إشغال المساحات — Space Occupancy Report"""
+"""Space Occupancy Report"""
 
 import frappe
 from frappe import _
 from frappe.utils import getdate, nowdate, add_days
-
 
 def execute(filters=None):
 	filters = filters or {}
@@ -17,7 +16,6 @@ def execute(filters=None):
 	chart = get_chart(data)
 	summary = get_summary(data)
 	return columns, data, None, chart, summary
-
 
 def get_columns():
 	return [
@@ -32,7 +30,6 @@ def get_columns():
 		{"fieldname": "revenue", "label": _("Revenue"), "fieldtype": "Currency", "width": 130},
 		{"fieldname": "occupancy_rate", "label": _("Occupancy %"), "fieldtype": "Percent", "width": 110},
 	]
-
 
 def get_data(filters):
 	from_date = getdate(filters.get("from_date") or add_days(nowdate(), -30))
@@ -82,7 +79,6 @@ def get_data(filters):
 
 	return data
 
-
 def _get_space_filters(filters):
 	f = {}
 	if filters.get("space_type"):
@@ -92,7 +88,6 @@ def _get_space_filters(filters):
 	if filters.get("status"):
 		f["status"] = filters["status"]
 	return f
-
 
 def get_chart(data):
 	if not data:
@@ -113,7 +108,6 @@ def get_chart(data):
 		"type": "bar",
 		"colors": ["#2563EB", "#C4A962"],
 	}
-
 
 def get_summary(data):
 	if not data:

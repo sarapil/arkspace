@@ -4,7 +4,7 @@
 // For license information, please see license.txt
 
 /**
- * ARK Community Network — شبكة المجتمع
+ * ARK Community Network
  *
  * Social graph: members as nodes, accepted connections as edges,
  * community events as meeting nodes, popular posts as content nodes.
@@ -16,7 +16,7 @@
 frappe.pages["ark-community"].on_page_load = async function (wrapper) {
 	const page = frappe.ui.make_app_page({
 		parent: wrapper,
-		title: __("ARK Community — شبكة المجتمع"),
+		title: __("ARK Community"),
 		single_column: true,
 	});
 
@@ -24,7 +24,7 @@ frappe.pages["ark-community"].on_page_load = async function (wrapper) {
 	page.branch_field = page.add_field({
 		fieldtype: "Link",
 		fieldname: "branch",
-		label: __("Branch — الفرع"),
+		label: __("Branch"),
 		options: "ARKSpace Branch",
 		change: () => community.refresh(),
 	});
@@ -50,7 +50,6 @@ frappe.pages["ark-community"].on_page_load = async function (wrapper) {
 	frappe.realtime.on("networking_request_accepted", () => community.refresh());
 	frappe.realtime.on("new_community_post", () => community.refresh());
 };
-
 
 class ArkCommunityNetwork {
 	constructor(page) {

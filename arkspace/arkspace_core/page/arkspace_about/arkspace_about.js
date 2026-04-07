@@ -4,7 +4,7 @@
 // For license information, please see license.txt
 
 /**
- * ARKSpace About — عن أرك سبيس
+ * ARKSpace About
  *
  * Full app showcase storyboard for admins, executives, and decision makers.
  * 10 slides: Overview, Modules, ERD, Workflows, Stakeholders, Industry,
@@ -16,7 +16,7 @@
 frappe.pages["arkspace-about"].on_page_load = async function (wrapper) {
 	const page = frappe.ui.make_app_page({
 		parent: wrapper,
-		title: __("About ARKSpace — عن أرك سبيس"),
+		title: __("About ARKSpace"),
 		single_column: true,
 	});
 
@@ -63,13 +63,13 @@ frappe.pages["arkspace-about"].on_page_load = async function (wrapper) {
 					</div>
 					<div style="margin-top:20px;padding:16px;background:rgba(27,54,93,0.04);border-radius:12px;border:1px solid var(--border-color)">
 						<p style="font-size:14px;color:${PRIMARY};font-weight:700;margin-bottom:8px;text-align:center">
-							${__('حيوي وعصري — إدارة مساحتك بالكامل من نظام واحد')}
+							${__('Dynamic and modern — manage your entire space from one system')}
 						</p>
 						<div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap">
-							<span class="badge" style="background:rgba(27,54,93,0.08);color:${PRIMARY};padding:5px 12px;border-radius:16px;font-size:11px">👤 ${__('مالك مساحة مشتركة')}</span>
-							<span class="badge" style="background:rgba(27,54,93,0.08);color:${PRIMARY};padding:5px 12px;border-radius:16px;font-size:11px">⚙️ ${__('مدير عمليات')}</span>
-							<span class="badge" style="background:rgba(27,54,93,0.08);color:${PRIMARY};padding:5px 12px;border-radius:16px;font-size:11px">🏠 ${__('عضو/مستأجر')}</span>
-							<span class="badge" style="background:rgba(27,54,93,0.08);color:${PRIMARY};padding:5px 12px;border-radius:16px;font-size:11px">💰 ${__('محاسب')}</span>
+							<span class="badge" style="background:rgba(27,54,93,0.08);color:${PRIMARY};padding:5px 12px;border-radius:16px;font-size:11px">👤 ${__('Coworking Space Owner')}</span>
+							<span class="badge" style="background:rgba(27,54,93,0.08);color:${PRIMARY};padding:5px 12px;border-radius:16px;font-size:11px">⚙️ ${__('Operations Manager')}</span>
+							<span class="badge" style="background:rgba(27,54,93,0.08);color:${PRIMARY};padding:5px 12px;border-radius:16px;font-size:11px">🏠 ${__('Member/Tenant')}</span>
+							<span class="badge" style="background:rgba(27,54,93,0.08);color:${PRIMARY};padding:5px 12px;border-radius:16px;font-size:11px">💰 ${__('Accountant')}</span>
 						</div>
 					</div>
 				</div>`,
@@ -77,7 +77,7 @@ frappe.pages["arkspace-about"].on_page_load = async function (wrapper) {
 
 		/* ── 2. Module Map ── */
 		{
-			title: __("Module Map — خريطة الوحدات"),
+			title: __("Module Map"),
 			content: `<div id="about-module-map" style="height:500px"></div>`,
 			onEnter: (el) => {
 				const target = el.querySelector("#about-module-map");
@@ -92,7 +92,7 @@ frappe.pages["arkspace-about"].on_page_load = async function (wrapper) {
 
 		/* ── 3. Entity Relationships ── */
 		{
-			title: __("Entity Relationships — علاقات البيانات"),
+			title: __("Entity Relationships"),
 			content: `<div id="about-erd" style="height:500px"></div>`,
 			onEnter: (el) => {
 				const target = el.querySelector("#about-erd");
@@ -140,7 +140,7 @@ frappe.pages["arkspace-about"].on_page_load = async function (wrapper) {
 
 		/* ── 4. Workflows ── */
 		{
-			title: __("Workflows — سير العمل"),
+			title: __("Workflows"),
 			content: `
 				<p style="text-align:center;color:var(--text-muted);margin-bottom:16px">
 					${__("Key business workflows in ARKSpace")}
@@ -196,7 +196,7 @@ frappe.pages["arkspace-about"].on_page_load = async function (wrapper) {
 
 		/* ── 5. Stakeholder Perspectives ── */
 		{
-			title: __("Stakeholders — أصحاب المصلحة"),
+			title: __("Stakeholders"),
 			content: `
 				<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;padding:8px">
 					${_roleCard("🛡️", __("Admin"), __("ARKSpace Admin"), [
@@ -238,7 +238,7 @@ frappe.pages["arkspace-about"].on_page_load = async function (wrapper) {
 
 		/* ── 6. Industry Use-Cases ── */
 		{
-			title: __("Industry Use-Cases — حالات الاستخدام"),
+			title: __("Industry Use-Cases"),
 			content: `
 				<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;padding:8px">
 					${_useCaseCard("🏢", __("Traditional Co-Working"), __("Shared desks, private offices, meeting rooms. Hourly/daily/monthly booking with membership tiers and community events."))}
@@ -252,7 +252,7 @@ frappe.pages["arkspace-about"].on_page_load = async function (wrapper) {
 
 		/* ── 7. Integrations ── */
 		{
-			title: __("Integrations — التكاملات"),
+			title: __("Integrations"),
 			content: `
 				<div id="about-integrations" style="height:420px"></div>`,
 			onEnter: (el) => {
@@ -294,7 +294,7 @@ frappe.pages["arkspace-about"].on_page_load = async function (wrapper) {
 
 		/* ── 8. Security & CAPS ── */
 		{
-			title: __("Security & Permissions — الأمان والصلاحيات"),
+			title: __("Security & Permissions"),
 			content: `
 				<div style="padding:8px">
 					<p style="text-align:center;color:var(--text-muted);margin-bottom:20px">
@@ -346,7 +346,7 @@ frappe.pages["arkspace-about"].on_page_load = async function (wrapper) {
 
 		/* ── 9. Reports & Analytics ── */
 		{
-			title: __("Reports & Analytics — التقارير والتحليلات"),
+			title: __("Reports & Analytics"),
 			content: `
 				<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;padding:8px">
 					${_reportCard("📊", __("Revenue Summary"), __("Daily/weekly/monthly revenue breakdown by branch, space type, and payment method."))}
@@ -360,7 +360,7 @@ frappe.pages["arkspace-about"].on_page_load = async function (wrapper) {
 
 		/* ── 10. Competitive Comparison ── */
 		{
-			title: __("Why ARKSpace? — لماذا أرك سبيس؟"),
+			title: __("Why ARKSpace?"),
 			content: `
 				<div style="padding:8px">
 					<p style="text-align:center;color:var(--text-muted);margin-bottom:16px">
@@ -406,7 +406,7 @@ frappe.pages["arkspace-about"].on_page_load = async function (wrapper) {
 
 		/* ── 11. Getting Started ── */
 		{
-			title: __("Getting Started — ابدأ الآن"),
+			title: __("Getting Started"),
 			content: `
 				<div style="text-align:center;padding:20px 0">
 					<h3 style="color:${PRIMARY};margin-bottom:16px">${__("Ready to explore ARKSpace?")}</h3>

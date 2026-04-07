@@ -4,7 +4,7 @@
 // For license information, please see license.txt
 
 /**
- * ARK Explorer — المستكشف المركزي
+ * ARK Explorer
  *
  * Radial relationship explorer: pick any entity (space, member, branch,
  * booking, membership) and see ALL its relationships radiate outward.
@@ -16,7 +16,7 @@
 frappe.pages["ark-explorer"].on_page_load = async function (wrapper) {
 	const page = frappe.ui.make_app_page({
 		parent: wrapper,
-		title: __("ARK Explorer — المستكشف"),
+		title: __("ARK Explorer"),
 		single_column: true,
 	});
 
@@ -24,7 +24,7 @@ frappe.pages["ark-explorer"].on_page_load = async function (wrapper) {
 	page.doctype_field = page.add_field({
 		fieldtype: "Select",
 		fieldname: "explore_doctype",
-		label: __("Entity Type — نوع الكيان"),
+		label: __("Entity Type"),
 		options: [
 			"Co-working Space", "Customer", "Membership", "Space Booking",
 			"ARKSpace Branch", "Day Pass", "Membership Plan", "Workspace Lead",
@@ -41,7 +41,7 @@ frappe.pages["ark-explorer"].on_page_load = async function (wrapper) {
 	page.entity_field = page.add_field({
 		fieldtype: "Link",
 		fieldname: "explore_entity",
-		label: __("Entity — الكيان"),
+		label: __("Entity"),
 		options: "Co-working Space",
 		change: () => {
 			const dt = page.doctype_field.get_value();
@@ -53,7 +53,7 @@ frappe.pages["ark-explorer"].on_page_load = async function (wrapper) {
 	page.depth_field = page.add_field({
 		fieldtype: "Select",
 		fieldname: "depth",
-		label: __("Depth — العمق"),
+		label: __("Depth"),
 		options: "1\n2\n3",
 		default: "1",
 	});
@@ -79,7 +79,6 @@ frappe.pages["ark-explorer"].on_page_load = async function (wrapper) {
 		}, 300);
 	}
 };
-
 
 class ArkExplorer {
 	constructor(page) {
@@ -120,7 +119,7 @@ class ArkExplorer {
 					<div style="font-size:64px;margin-bottom:16px">🔍</div>
 					<div>${__("Select an entity and click Explore")}</div>
 					<div style="font-size:13px;margin-top:8px">
-						${__("اختر كياناً واضغط استكشاف")}
+						${__("Select an entity and click Explore")}
 					</div>
 				</div>
 			</div>

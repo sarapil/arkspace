@@ -3,7 +3,7 @@
 # License: MIT
 # For license information, please see license.txt
 
-"""Community Event — فعالية مجتمعية
+"""Community Event
 Meetups, workshops, hackathons, networking events.
 """
 

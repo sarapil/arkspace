@@ -6,9 +6,8 @@
 import frappe
 from frappe import _
 
-
 def get_context(context):
-	"""بوابة الأعضاء — Member Portal Dashboard"""
+	"""Member Portal Dashboard"""
 	if frappe.session.user == "Guest":
 		frappe.throw(_("Please login to access the member portal"), frappe.PermissionError)
 
@@ -31,7 +30,6 @@ def get_context(context):
 	context.upcoming_bookings = dashboard.get("upcoming_bookings", [])
 	context.wallet = dashboard.get("wallet", {})
 	context.stats = dashboard.get("stats", {})
-
 
 def _get_member_for_user():
 	"""Find Customer linked to the current user via Dynamic Link."""

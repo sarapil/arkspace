@@ -4,7 +4,6 @@
 # For license information, please see license.txt
 
 """
-مولد التوثيق التلقائي — Auto Documentation Generator
 Generates documentation entries from code structure.
 """
 
@@ -15,10 +14,8 @@ from typing import Optional
 import frappe
 from frappe import _
 
-
 class DocumentationGenerator:
     """
-    مولد التوثيق التلقائي
     Auto-generates documentation from code structure.
     """
 
@@ -30,7 +27,6 @@ class DocumentationGenerator:
 
     def generate_doctype_docs(self):
         """
-        توثيق جميع الـ DocTypes تلقائياً
         Auto-document all DocTypes in ARKSpace modules.
         """
         doctypes = frappe.get_all(
@@ -98,7 +94,6 @@ class DocumentationGenerator:
 
     def generate_api_docs(self):
         """
-        توثيق جميع الـ APIs من الكود
         Document all whitelisted functions.
         """
         try:
@@ -221,7 +216,6 @@ class DocumentationGenerator:
 
     def generate_ai_context(self):
         """
-        توليد ملف AI-CONTEXT.md المحدث
         Generate updated AI context file.
         """
         context = []
@@ -323,14 +317,11 @@ class DocumentationGenerator:
         }
         return translations.get(title, title)
 
-
 # --- Whitelisted methods for hooks / scheduled tasks ---
-
 
 @frappe.whitelist()
 def regenerate_documentation():
     """
-    مهمة مجدولة لتحديث التوثيق
     Scheduled task to regenerate documentation.
     """
     frappe.only_for(["ARKSpace Manager", "System Manager"])
@@ -338,7 +329,6 @@ def regenerate_documentation():
     generator = DocumentationGenerator()
     generator.generate_all()
     frappe.db.commit()
-
 
 @frappe.whitelist()
 def regenerate_single(doc_name: Optional[str] = None):

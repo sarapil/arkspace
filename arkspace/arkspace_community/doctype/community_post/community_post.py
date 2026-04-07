@@ -3,7 +3,7 @@
 # License: MIT
 # For license information, please see license.txt
 
-"""Community Post — منشور مجتمعي
+"""Community Post
 Posts, discussions, announcements, questions in the ARKSpace community.
 """
 

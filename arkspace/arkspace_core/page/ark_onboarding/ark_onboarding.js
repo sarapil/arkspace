@@ -4,7 +4,7 @@
 // For license information, please see license.txt
 
 /**
- * ARK Onboarding — جولة تعريفية تفاعلية
+ * ARK Onboarding
  *
  * Interactive storyboard wizard that teaches new users how ARKSpace works.
  * Each step includes mini-graphs and live data to make learning immersive.
@@ -18,7 +18,7 @@
 frappe.pages["ark-onboarding"].on_page_load = async function (wrapper) {
 	const page = frappe.ui.make_app_page({
 		parent: wrapper,
-		title: __("ARK Onboarding — جولة تعريفية"),
+		title: __("ARK Onboarding"),
 		single_column: true,
 	});
 
@@ -50,7 +50,7 @@ frappe.pages["ark-onboarding"].on_page_load = async function (wrapper) {
 	frappe.visual.Storyboard.create(container, [
 		// ── Step 0: Welcome ──
 		{
-			title: __("مرحباً بك في أرك سبيس! 🚀"),
+			title: __("Welcome to ARKSpace! 🚀"),
 			content: (el) => {
 				el.innerHTML = `
 					<div style="text-align:center;padding:20px">
@@ -87,7 +87,7 @@ frappe.pages["ark-onboarding"].on_page_load = async function (wrapper) {
 
 		// ── Step 1: Choose what to learn (role-filtered choices) ──
 		{
-			title: __("ماذا تريد أن تتعلم؟"),
+			title: __("What do you want to learn?"),
 			content: `
 				<div style="text-align:center;padding:10px">
 					<p style="color:var(--text-muted);margin-bottom:16px">
@@ -105,7 +105,7 @@ frappe.pages["ark-onboarding"].on_page_load = async function (wrapper) {
 
 		// ── Step 2: Spaces & Bookings ──
 		{
-			title: __("🏢 المساحات والحجوزات"),
+			title: __("🏢 Spaces & Bookings"),
 			content: (el) => {
 				el.innerHTML = `
 					<div style="padding:10px">
@@ -168,7 +168,7 @@ frappe.pages["ark-onboarding"].on_page_load = async function (wrapper) {
 
 		// ── Step 3: Memberships ──
 		{
-			title: __("🎫 العضويات"),
+			title: __("🎫 Memberships"),
 			content: (el) => {
 				el.innerHTML = `
 					<div style="padding:10px">
@@ -228,7 +228,7 @@ frappe.pages["ark-onboarding"].on_page_load = async function (wrapper) {
 
 		// ── Step 4: Analytics ──
 		{
-			title: __("📊 التحليلات والتقارير"),
+			title: __("📊 Analytics وReports"),
 			content: (el) => {
 				el.innerHTML = `
 					<div style="padding:10px">
@@ -291,7 +291,7 @@ frappe.pages["ark-onboarding"].on_page_load = async function (wrapper) {
 
 		// ── Step 5: Community ──
 		{
-			title: __("👥 المجتمع والتواصل"),
+			title: __("👥 Community & Networking"),
 			content: (el) => {
 				el.innerHTML = `
 					<div style="padding:10px">
@@ -353,7 +353,7 @@ frappe.pages["ark-onboarding"].on_page_load = async function (wrapper) {
 
 		// ── Step 6: Where to go ──
 		{
-			title: __("🎯 ابدأ الآن!"),
+			title: __("🎯 Get Started!"),
 			content: `
 				<div style="text-align:center;padding:20px">
 					<div style="font-size:64px;margin-bottom:16px">🎉</div>
@@ -363,19 +363,19 @@ frappe.pages["ark-onboarding"].on_page_load = async function (wrapper) {
 					</p>
 					<div style="display:flex;flex-direction:column;gap:10px;max-width:400px;margin:20px auto;text-align:start">
 						<a href="/app/ark-command" class="btn btn-default btn-sm" style="text-align:start">
-							🧭 ${__("Command Center")} — ${__("مركز القيادة")}
+							🧭 ${__("Command Center")} — ${__("Command Center")}
 						</a>
 						<a href="/app/ark-explorer" class="btn btn-default btn-sm" style="text-align:start">
-							🔍 ${__("Explorer")} — ${__("المستكشف")}
+							🔍 ${__("Explorer")} — ${__("Explorer")}
 						</a>
 						<a href="/app/ark-command" class="btn btn-default btn-sm" style="text-align:start">
-							📊 ${__("Bookings & CRM")} — ${__("الحجوزات والعملاء")}
+							📊 ${__("Bookings & CRM")} — ${__("Bookings & CRM")}
 						</a>
 						<a href="/app/ark-community" class="btn btn-default btn-sm" style="text-align:start">
-							👥 ${__("Community Network")} — ${__("شبكة المجتمع")}
+							👥 ${__("Community Network")} — ${__("Community Network")}
 						</a>
 						<a href="/app/ark-live" class="btn btn-default btn-sm" style="text-align:start">
-							🗺️ ${__("Live Floor Plan")} — ${__("المخطط التفاعلي")}
+							🗺️ ${__("Live Floor Plan")} — ${__("Live Floor Plan")}
 						</a>
 					</div>
 				</div>
@@ -384,7 +384,7 @@ frappe.pages["ark-onboarding"].on_page_load = async function (wrapper) {
 	], {
 		onComplete: () => {
 			frappe.show_alert({
-				message: __("Welcome aboard! 🎉 مرحباً بك!"),
+				message: __("Welcome aboard! 🎉"),
 				indicator: "green",
 			});
 			frappe.set_route("ark-command");

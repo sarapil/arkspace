@@ -4,7 +4,6 @@
 # For license information, please see license.txt
 
 """ARKSpace QR Code Check-in Engine
-محرك تسجيل الدخول بـ QR
 
 Generates unique QR codes for Space Bookings and provides
 scan-to-check-in functionality without additional hardware.
@@ -27,7 +26,6 @@ from frappe.utils.file_manager import save_file
 # ═══════════════════════════════════════════════════════════════════════════
 # QR Code Generation
 # ═══════════════════════════════════════════════════════════════════════════
-
 
 def generate_booking_qr(booking_name, force=False):
 	"""Generate a QR code image for a Space Booking.
@@ -86,7 +84,6 @@ def generate_booking_qr(booking_name, force=False):
 		"checkin_url": checkin_url,
 	}
 
-
 def _create_qr_image(data, size=10, border=2):
 	"""Create a QR code PNG image from data string.
 
@@ -124,7 +121,6 @@ def _create_qr_image(data, size=10, border=2):
 			)
 		)
 
-
 def _generate_token(booking_name):
 	"""Generate a signed HMAC token for the booking."""
 	secret = frappe.utils.password.get_encryption_key()
@@ -132,7 +128,6 @@ def _generate_token(booking_name):
 	return hashlib.sha256(
 		f"{secret}:{payload}".encode()
 	).hexdigest()[:32]
-
 
 def _build_checkin_url(booking_name, token=None):
 	"""Build the check-in URL for a booking."""
@@ -145,11 +140,9 @@ def _build_checkin_url(booking_name, token=None):
 		f".scan_checkin?booking={booking_name}&token={token}"
 	)
 
-
 # ═══════════════════════════════════════════════════════════════════════════
 # QR Scan & Check-in API
 # ═══════════════════════════════════════════════════════════════════════════
-
 
 @frappe.whitelist(allow_guest=True)
 def scan_checkin(booking=None, token=None):
@@ -262,14 +255,12 @@ def scan_checkin(booking=None, token=None):
 		booking=doc,
 	)
 
-
 @frappe.whitelist()
 def generate_qr(booking_name):
 	"""API endpoint to generate/regenerate QR code for a booking."""
 	frappe.only_for(["ARKSpace Manager", "System Manager"])
 
 	return generate_booking_qr(booking_name, force=True)
-
 
 @frappe.whitelist()
 def bulk_generate_qr():
@@ -304,11 +295,9 @@ def bulk_generate_qr():
 		"bookings": generated,
 	}
 
-
 # ═══════════════════════════════════════════════════════════════════════════
 # Check-in Response (Mobile-friendly HTML)
 # ═══════════════════════════════════════════════════════════════════════════
-
 
 def _checkin_response(success, message, booking=None, already=False):
 	"""Return a mobile-friendly HTML page for QR scan result."""

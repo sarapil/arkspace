@@ -5,7 +5,6 @@
 
 /**
  * ARKSpace Dynamic Pricing — Client-side Preview
- * أرك سبيس — معاينة التسعير الديناميكي
  *
  * Shows real-time pricing adjustments on the Space Booking form.
  */

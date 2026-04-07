@@ -3,14 +3,13 @@
 # License: MIT
 # For license information, please see license.txt
 
-"""تحليلات العضويات — Membership Analytics Report
+"""Membership Analytics Report
 Breakdown of memberships by plan, status, cycle with churn and growth metrics.
 """
 
 import frappe
 from frappe import _
 from frappe.utils import getdate, nowdate, add_months, flt
-
 
 def execute(filters=None):
 	filters = filters or {}
@@ -24,7 +23,6 @@ def execute(filters=None):
 		return period_view(filters)
 	else:
 		return plan_view(filters)
-
 
 def plan_view(filters):
 	columns = [
@@ -83,7 +81,6 @@ def plan_view(filters):
 
 	return columns, data, None, chart, summary
 
-
 def status_view(filters):
 	columns = [
 		{"fieldname": "status", "label": _("Status"), "fieldtype": "Data", "width": 150},
@@ -117,7 +114,6 @@ def status_view(filters):
 	}
 
 	return columns, data, None, chart, []
-
 
 def period_view(filters):
 	from_date = getdate(filters.get("from_date") or add_months(nowdate(), -12))

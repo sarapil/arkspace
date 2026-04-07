@@ -3,7 +3,7 @@
 # License: MIT
 # For license information, please see license.txt
 
-"""ARKSpace Bulk Operations — العمليات المجمعة
+"""ARKSpace Bulk Operations
 
 Provides server-side bulk action endpoints for Space Bookings.
 """

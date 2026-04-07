@@ -18,10 +18,10 @@ class MemberContract(Document):
     def before_submit(self):
         if not self.contract_terms_ar and not self.contract_terms_en:
             frappe.throw(_("Contract terms (Arabic or English) are required before submission"))
-        self.status = "Active / ساري"
+        self.status = "Active"
 
     def on_cancel(self):
-        self.status = "Cancelled / ملغي"
+        self.status = "Cancelled"
 
     def _calculate_net_amount(self):
         """Calculate net amount after discount."""
@@ -41,9 +41,9 @@ class MemberContract(Document):
             self.docstatus == 1
             and self.end_date
             and getdate(self.end_date) < getdate(today())
-            and self.status == "Active / ساري"
+            and self.status == "Active"
         ):
-            self.status = "Expired / منتهي"
+            self.status = "Expired"
 
     @frappe.whitelist()
     def populate_from_template(self):

@@ -6,9 +6,8 @@
 import frappe
 from frappe import _
 
-
 def get_context(context):
-	"""تسجيل عضو جديد — Member Self-Registration Page"""
+	"""Member Self-Registration Page"""
 	context.title = _("Join ARKSpace")
 	context.no_cache = 1
 

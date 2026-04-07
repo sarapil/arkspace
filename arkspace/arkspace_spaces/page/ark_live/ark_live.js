@@ -5,7 +5,6 @@
 
 /**
  * ARK Live — Interactive Space Viewer
- * عرض المساحات التفاعلي
  *
  * Unified page with 2 view modes:
  *   1. 2D Plan  — SVG overlay on floor plan PNG (original ark-live)
@@ -17,7 +16,7 @@
 frappe.pages["ark-live"].on_page_load = function (wrapper) {
 	const page = frappe.ui.make_app_page({
 		parent: wrapper,
-		title: __("ARK Live — عرض المساحات التفاعلي"),
+		title: __("ARK Live"),
 		single_column: true,
 	});
 
@@ -27,7 +26,7 @@ frappe.pages["ark-live"].on_page_load = function (wrapper) {
 	page.branch_field = page.add_field({
 		fieldtype: "Link",
 		fieldname: "branch",
-		label: __("Branch — الفرع"),
+		label: __("Branch"),
 		options: "Branch",
 		change: () => arkLive.refresh(),
 	});
@@ -36,7 +35,7 @@ frappe.pages["ark-live"].on_page_load = function (wrapper) {
 	page.floor_field = page.add_field({
 		fieldtype: "Select",
 		fieldname: "floor",
-		label: __("Floor — الطابق"),
+		label: __("Floor"),
 		options: "",
 		change: () => arkLive.refresh(),
 	});
@@ -51,7 +50,6 @@ frappe.pages["ark-live"].on_page_load = function (wrapper) {
 	frappe.realtime.on("space_status_changed", () => arkLive.refresh());
 	frappe.realtime.on("booking_created", () => arkLive.refresh());
 };
-
 
 /*──────────────────────────────────────────────────────────────
  * ZONE MAP — Maps floor plan image regions to Co-working Spaces
@@ -73,7 +71,6 @@ const ZONE_MAP = [
 	{ id: "zone-c2", zoneLabel: "C2", points: "27.1,31.4 32.5,31.4 32.5,41.4 27.1,41.4" },
 	{ id: "zone-hall", zoneLabel: "HALL", points: "69.0,37.4 93.6,37.4 93.6,93.5 69.0,93.5" },
 ];
-
 
 class ArkLiveView {
 	constructor(page) {
@@ -130,13 +127,13 @@ class ArkLiveView {
 					style="padding:8px 20px;font-weight:600;border:none;background:none;
 					cursor:pointer;border-bottom:2px solid ${!isGrid ? 'var(--primary)' : 'transparent'};
 					margin-bottom:-2px;color:${!isGrid ? 'var(--text-color)' : 'var(--text-muted)'};font-size:13px">
-					🗺️ ${__("2D Plan — المخطط")}
+					🗺️ ${__("2D Plan")}
 				</button>
 				<button class="ark-vtab ${isGrid ? 'active' : ''}" data-mode="grid"
 					style="padding:8px 20px;font-weight:600;border:none;background:none;
 					cursor:pointer;border-bottom:2px solid ${isGrid ? 'var(--primary)' : 'transparent'};
 					margin-bottom:-2px;color:${isGrid ? 'var(--text-color)' : 'var(--text-muted)'};font-size:13px">
-					📋 ${__("Grid View — عرض الشبكة")}
+					📋 ${__("Grid View")}
 				</button>
 			</div>
 
@@ -174,11 +171,11 @@ class ArkLiveView {
 
 			<!-- Legend -->
 			<div class="ark-live-legend">
-				<span class="ark-legend-item"><span class="ark-dot available"></span> ${__("Available — متاح")}</span>
-				<span class="ark-legend-item"><span class="ark-dot occupied"></span> ${__("Occupied — مشغول")}</span>
-				<span class="ark-legend-item"><span class="ark-dot confirmed"></span> ${__("Confirmed — مؤكد")}</span>
-				<span class="ark-legend-item"><span class="ark-dot membership"></span> ${__("Membership — عضوية")}</span>
-				<span class="ark-legend-item"><span class="ark-dot maintenance"></span> ${__("Maintenance — صيانة")}</span>
+				<span class="ark-legend-item"><span class="ark-dot available"></span> ${__("Available")}</span>
+				<span class="ark-legend-item"><span class="ark-dot occupied"></span> ${__("Occupied")}</span>
+				<span class="ark-legend-item"><span class="ark-dot confirmed"></span> ${__("Confirmed")}</span>
+				<span class="ark-legend-item"><span class="ark-dot membership"></span> ${__("Membership")}</span>
+				<span class="ark-legend-item"><span class="ark-dot maintenance"></span> ${__("Maintenance")}</span>
 				<span class="ark-legend-tip">
 					<i class="fa-solid fa-mouse-pointer"></i>
 					${__("Click on a space to view details or book")}
@@ -313,7 +310,7 @@ class ArkLiveView {
 		const opts = ["", ...(floors || [])];
 		if (this.page.floor_field?.df) this.page.floor_field.df.options = opts.join("\n");
 		this.page.floor_field?.$input?.empty().append(
-			opts.map(f => `<option value="${f}">${f || __("All Floors — كل الطوابق")}</option>`).join(""),
+			opts.map(f => `<option value="${f}">${f || __("All Floors")}</option>`).join(""),
 		);
 		if (cur) this.page.floor_field?.set_value(cur);
 	}
@@ -477,7 +474,7 @@ class ArkLiveView {
 		h += `<div class="ark-detail-actions">`;
 		if (space.status === "Available" && !space.occupancy)
 			h += `<button class="btn btn-primary btn-sm ark-btn-book" data-space="${space.name}">
-				<i class="fa-solid fa-calendar-plus"></i> ${__("Book Now — احجز الآن")}</button>`;
+				<i class="fa-solid fa-calendar-plus"></i> ${__("Book Now")}</button>`;
 		h += `<button class="btn btn-default btn-sm ark-btn-open" data-space="${space.name}">
 			<i class="fa-solid fa-external-link-alt"></i> ${__("Open Space")}</button></div>`;
 
@@ -498,24 +495,24 @@ class ArkLiveView {
 		const end = frappe.datetime.add_to_date(now, { hours: 2 });
 
 		const dlg = new frappe.ui.Dialog({
-			title: __("Book Space — حجز المساحة"),
+			title: __("Book Space"),
 			fields: [
 				{ fieldtype: "HTML", fieldname: "space_info",
 				  options: `<div class="alert alert-info mb-3"><i class="fa-solid fa-map-pin"></i> <strong>${spaceName}</strong></div>` },
-				{ fieldtype: "Link", fieldname: "member", label: __("Member — العضو"),
+				{ fieldtype: "Link", fieldname: "member", label: __("Member"),
 				  options: "Customer", reqd: 1,
 				  get_query: () => ({ filters: { customer_type: ["in", ["Individual", "Company"]] } }) },
-				{ fieldtype: "Select", fieldname: "booking_type", label: __("Booking Type — نوع الحجز"),
+				{ fieldtype: "Select", fieldname: "booking_type", label: __("Booking Type"),
 				  options: "Hourly\nDaily", default: "Hourly", reqd: 1 },
 				{ fieldtype: "Column Break" },
-				{ fieldtype: "Datetime", fieldname: "start_datetime", label: __("Start — البداية"),
+				{ fieldtype: "Datetime", fieldname: "start_datetime", label: __("Start"),
 				  reqd: 1, default: now },
-				{ fieldtype: "Datetime", fieldname: "end_datetime", label: __("End — النهاية"),
+				{ fieldtype: "Datetime", fieldname: "end_datetime", label: __("End"),
 				  reqd: 1, default: end },
 				{ fieldtype: "Section Break" },
-				{ fieldtype: "Small Text", fieldname: "notes", label: __("Notes — ملاحظات") },
+				{ fieldtype: "Small Text", fieldname: "notes", label: __("Notes") },
 			],
-			primary_action_label: __("Confirm Booking — تأكيد الحجز"),
+			primary_action_label: __("Confirm Booking"),
 			primary_action(vals) {
 				frappe.call({
 					method: "arkspace.arkspace_spaces.ark_live.quick_book_space",

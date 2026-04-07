@@ -5,7 +5,7 @@
 
 {% extends "templates/web.html" %}
 
-{% block title %}{{ _("Member Directory — دليل الأعضاء") }}{% endblock %}
+{% block title %}{{ _("Member Directory") }}{% endblock %}
 
 {% block page_content %}
 <div class="container py-4">
@@ -15,11 +15,11 @@
     <div class="row mb-4">
         <div class="col-md-4">
             <input type="text" id="member-search" class="form-control"
-                   placeholder="{{ _('Search members... / بحث عن أعضاء...') }}">
+                   placeholder="{{ _('Search members...') }}">
         </div>
         <div class="col-md-3">
             <select class="form-control" id="branch-filter">
-                <option value="">{{ _("All Branches / جميع الفروع") }}</option>
+                <option value="">{{ _("All Branches") }}</option>
                 {% for b in branches %}
                 <option value="{{ b }}">{{ b }}</option>
                 {% endfor %}
@@ -110,7 +110,7 @@ frappe.ready(function () {
                     callback(r) {
                         if (r.message && r.message.status === "sent") {
                             frappe.show_alert({
-                                message: "{{ _('Request sent! / تم إرسال الطلب') }}",
+                                message: "{{ _('Request sent!') }}",
                                 indicator: "green",
                             });
                             btn.prop("disabled", true).text("{{ _('Pending') }}");

@@ -11,7 +11,7 @@ from frappe.utils import add_days, nowdate
 
 def get_context(context):
     context.no_cache = 1
-    context.title = "Analytics — التحليلات"
+    context.title = "Analytics"
 
     if frappe.session.user == "Guest":
         frappe.throw("Please log in to view analytics", frappe.PermissionError)

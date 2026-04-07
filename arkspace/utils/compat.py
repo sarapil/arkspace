@@ -4,7 +4,6 @@
 # For license information, please see license.txt
 
 """ARKSpace — Version Compatibility Utilities
-أدوات التوافق بين الإصدارات
 
 Provides helper functions that abstract Frappe v15/v16 API differences,
 so the rest of the codebase can remain clean and version-agnostic.

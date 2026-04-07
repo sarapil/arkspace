@@ -5,7 +5,8 @@
 
 /**
  * ARKSpace — Main JavaScript Bundle
- * أرك سبيس — ملف JavaScript الرئيسي
+ * ARKSpace Main JavaScript
+
  */
 
 frappe.provide("arkspace");

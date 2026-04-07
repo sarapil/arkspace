@@ -4,7 +4,7 @@
 // For license information, please see license.txt
 
 /**
- * ARK Command Center — مركز القيادة
+ * ARK Command Center
  *
  * Unified command screen with 3 tabs:
  *   1. Overview  — KPI dashboard + interactive space/booking graph
@@ -18,7 +18,7 @@
 frappe.pages["ark-command"].on_page_load = async function (wrapper) {
 	const page = frappe.ui.make_app_page({
 		parent: wrapper,
-		title: __("ARK Command Center — مركز القيادة"),
+		title: __("ARK Command Center"),
 		single_column: true,
 	});
 
@@ -28,7 +28,7 @@ frappe.pages["ark-command"].on_page_load = async function (wrapper) {
 	page.branch_field = page.add_field({
 		fieldtype: "Link",
 		fieldname: "branch",
-		label: __("Branch — الفرع"),
+		label: __("Branch"),
 		options: "ARKSpace Branch",
 		change: () => cmd.refresh(),
 	});
@@ -37,7 +37,7 @@ frappe.pages["ark-command"].on_page_load = async function (wrapper) {
 	page.date_field = page.add_field({
 		fieldtype: "Date",
 		fieldname: "date",
-		label: __("Date — التاريخ"),
+		label: __("Date"),
 		default: frappe.datetime.get_today(),
 		change: () => { if (cmd.activeTab !== "overview") cmd.refresh(); },
 	});
@@ -57,7 +57,6 @@ frappe.pages["ark-command"].on_page_load = async function (wrapper) {
 	frappe.realtime.on("booking_created", () => cmd.refresh());
 	frappe.realtime.on("booking_status_changed", () => cmd.refresh());
 };
-
 
 class ArkCommandCenter {
 	constructor(page) {
@@ -80,19 +79,19 @@ class ArkCommandCenter {
 						style="padding:10px 24px;font-weight:600;border:none;
 						background:none;cursor:pointer;border-bottom:2px solid transparent;
 						margin-bottom:-2px;color:var(--text-color);font-size:13px">
-						📊 ${__("Overview — نظرة عامة")}
+						📊 ${__("Overview")}
 					</button>
 					<button class="ark-tab" data-tab="bookings"
 						style="padding:10px 24px;font-weight:600;border:none;
 						background:none;cursor:pointer;border-bottom:2px solid transparent;
 						margin-bottom:-2px;color:var(--text-muted);font-size:13px">
-						📅 ${__("Bookings — الحجوزات")}
+						📅 ${__("Bookings")}
 					</button>
 					<button class="ark-tab" data-tab="crm"
 						style="padding:10px 24px;font-weight:600;border:none;
 						background:none;cursor:pointer;border-bottom:2px solid transparent;
 						margin-bottom:-2px;color:var(--text-muted);font-size:13px">
-						🎯 ${__("CRM — العملاء")}
+						🎯 ${__("CRM")}
 					</button>
 				</div>
 

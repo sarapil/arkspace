@@ -4,7 +4,6 @@
 # For license information, please see license.txt
 
 """ARKSpace Floor Plan — API
-عرض مخطط الطابق — واجهة برمجة التطبيقات
 """
 
 import frappe

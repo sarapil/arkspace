@@ -4,7 +4,6 @@
 # For license information, please see license.txt
 
 """Day Pass DocType controller
-تصريح اليوم — منطق الأعمال
 
 Handles day-pass lifecycle: creation, validation, check-in/out,
 expiry, and optional conversion to full membership.

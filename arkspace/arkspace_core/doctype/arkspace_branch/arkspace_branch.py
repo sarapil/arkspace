@@ -3,7 +3,7 @@
 # License: MIT
 # For license information, please see license.txt
 
-"""ARKSpace Branch — فرع ARKSpace
+"""ARKSpace BranchARKSpace
 Extended branch management with workspace-specific settings,
 operating hours, location, and capacity tracking.
 """
@@ -12,7 +12,6 @@ import frappe
 from frappe import _
 from frappe.model.document import Document
 from frappe.utils import cint
-
 
 class ARKSpaceBranch(Document):
     def validate(self):

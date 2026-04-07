@@ -6,9 +6,8 @@
 import frappe
 from frappe import _
 
-
 def get_context(context):
-	"""سجل المدفوعات — Payment History Portal Page"""
+	"""Payment History Portal Page"""
 	if frappe.session.user == "Guest":
 		frappe.throw(_("Please login to view your payments"), frappe.PermissionError)
 
@@ -28,7 +27,6 @@ def get_context(context):
 	context.invoices = history.get("invoices", [])
 	context.online_payments = history.get("online_payments", [])
 	context.summary = history.get("summary", {})
-
 
 def _get_member_for_user():
 	"""Find Customer linked to the current user."""
