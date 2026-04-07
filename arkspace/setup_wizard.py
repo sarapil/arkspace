@@ -11,7 +11,7 @@ import frappe
 from frappe import _
 
 
-def get_setup_stages():
+def get_setup_stages(args=None):
 	"""Return setup wizard stages for hooks.py setup_wizard_stages."""
 	return [
 		{
