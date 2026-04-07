@@ -15,10 +15,15 @@ def get_setup_stages(args=None):
 	"""Return setup wizard stages for hooks.py setup_wizard_stages."""
 	return [
 		{
-			"title": _("ARKSpace Configuration"),
-			"fn": "arkspace.setup_wizard.setup_arkspace_config",
-			"args": {},
-			"is_app_setup": True,
+			"status": _("Configuring ARKSpace"),
+			"fail_msg": _("Failed to configure ARKSpace"),
+			"tasks": [
+				{
+					"fn": setup_arkspace_config,
+					"args": args,
+					"fail_msg": _("Failed to configure ARKSpace"),
+				}
+			],
 		}
 	]
 
@@ -174,7 +179,8 @@ def setup_arkspace_config(args):
 
 	Called by the setup wizard framework with collected slide data.
 	"""
-	frappe.only_for(["System Manager"])
+	if not args:
+		return
 
 	if isinstance(args, str):
 		import json
@@ -191,8 +197,6 @@ def setup_arkspace_config(args):
 
 	# 4. Create First Membership Plan
 	_create_first_plan(args)
-
-	frappe.db.commit()
 
 
 def _update_settings(args):
