@@ -202,10 +202,20 @@ def setup_arkspace_config(args):
 def _update_settings(args):
 	"""Update ARKSpace Settings with wizard values."""
 	settings = frappe.get_single("ARKSpace Settings")
+
+	company = args.get("company_name")
+	if company and frappe.db.exists("Company", company):
+		settings.company = company
+
 	if args.get("default_currency"):
 		settings.default_currency = args["default_currency"]
 	if args.get("timezone"):
 		settings.timezone = args["timezone"]
+
+	# Skip save if mandatory company is still missing (will be set on first use)
+	if not settings.company:
+		return
+
 	settings.save(ignore_permissions=True)
 
 
