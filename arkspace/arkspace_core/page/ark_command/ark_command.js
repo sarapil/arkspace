@@ -95,6 +95,9 @@ class ArkCommandCenter {
 					</button>
 				</div>
 
+				<!-- Scene header -->
+				<div id="ark-scene-header" style="height:180px;border-radius:12px;margin-bottom:12px;overflow:hidden;"></div>
+
 				<!-- Dashboard / summary row -->
 				<div id="ark-cmd-dashboard" style="margin-bottom:12px"></div>
 
@@ -149,6 +152,29 @@ class ArkCommandCenter {
 		]);
 		this._renderDashboard(kpis);
 		this._renderGraph(graph, "elk-layered", { expandCollapse: true, antLines: true });
+		this._initSceneHeader(kpis);
+	}
+
+	async _initSceneHeader(kpis) {
+		const el = document.getElementById("ark-scene-header");
+		if (!el || this._sceneLoaded) return;
+		try {
+			if (frappe.visual?.scenePresetOffice) {
+				const frames = (kpis || []).slice(0, 4).map((k) => ({
+					label: k.label || "",
+					value: String(k.value || ""),
+					status: "info",
+				}));
+				await frappe.visual.scenePresetOffice({
+					container: el,
+					theme: "cool",
+					frames,
+				});
+				this._sceneLoaded = true;
+			}
+		} catch {
+			el.style.display = "none";
+		}
 	}
 
 	/* ─── Tab 2: Bookings Flow ─── */
