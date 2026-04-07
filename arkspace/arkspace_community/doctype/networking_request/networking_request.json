@@ -23,14 +23,14 @@
   {
    "fieldname": "request_section",
    "fieldtype": "Section Break",
-   "label": "Request / الطلب"
+   "label": "Request"
   },
   {
    "default": "__user",
    "fieldname": "from_member",
    "fieldtype": "Link",
    "in_list_view": 1,
-   "label": "From / من",
+   "label": "From",
    "options": "User",
    "reqd": 1
   },
@@ -38,7 +38,7 @@
    "fetch_from": "from_member.full_name",
    "fieldname": "from_member_name",
    "fieldtype": "Data",
-   "label": "From Name / اسم المرسل",
+   "label": "From Name",
    "read_only": 1
   },
   {
@@ -49,7 +49,7 @@
    "fieldname": "to_member",
    "fieldtype": "Link",
    "in_list_view": 1,
-   "label": "To / إلى",
+   "label": "To",
    "options": "User",
    "reqd": 1
   },
@@ -57,23 +57,23 @@
    "fetch_from": "to_member.full_name",
    "fieldname": "to_member_name",
    "fieldtype": "Data",
-   "label": "To Name / اسم المستلم",
+   "label": "To Name",
    "read_only": 1
   },
   {
    "fieldname": "details_section",
    "fieldtype": "Section Break",
-   "label": "Details / التفاصيل"
+   "label": "Details"
   },
   {
    "fieldname": "message",
    "fieldtype": "Text",
-   "label": "Message / الرسالة"
+   "label": "Message"
   },
   {
    "fieldname": "branch",
    "fieldtype": "Link",
-   "label": "Branch / الفرع",
+   "label": "Branch",
    "options": "Branch"
   },
   {
@@ -85,7 +85,7 @@
    "fieldname": "status",
    "fieldtype": "Select",
    "in_list_view": 1,
-   "label": "Status / الحالة",
+   "label": "Status",
    "options": "Pending\nAccepted\nDeclined\nWithdrawn"
   },
   {
@@ -95,7 +95,7 @@
   {
    "fieldname": "responded_at",
    "fieldtype": "Datetime",
-   "label": "Responded At / تاريخ الرد",
+   "label": "Responded At",
    "read_only": 1
   }
  ],

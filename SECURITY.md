@@ -1,59 +1,69 @@
-# Security Policy
+# Security Policy — سياسة الأمان
 
-## Supported Versions
+## Supported Versions — الإصدارات المدعومة
 
-| Version | Supported |
-|---------|-----------|
-| 6.x     | ✅ Active  |
-| 5.x     | ⚠️ Security fixes only |
-| < 5.0   | ❌ End of life |
+| Version | Supported | الحالة |
+|---------|-----------|--------|
+| latest (main) | ✅ Active | نشط |
+| previous minor | ✅ Security fixes | إصلاحات أمنية |
+| older | ❌ End of Life | نهاية الدعم |
 
-## Reporting a Vulnerability
+## Reporting a Vulnerability — الإبلاغ عن ثغرة أمنية
 
-If you discover a security vulnerability in ARKSpace, please report it responsibly.
+### ⚠️ DO NOT open a public issue for security vulnerabilities — لا تفتح مشكلة عامة للثغرات الأمنية
 
-### How to Report
+Instead, please use one of these methods:
 
-1. **Email:** security@arkspace.io
-2. **Subject:** `[SECURITY] Brief description of the vulnerability`
-3. **Include:**
-   - Description of the vulnerability
-   - Steps to reproduce
-   - Potential impact assessment
-   - Suggested fix (if any)
+1. **GitHub Security Advisory** (preferred — مُفضّل):
+   - Go to the [Security tab](../../security/advisories/new) of this repository
+   - Click "Report a vulnerability"
+   - Fill in the details
 
-### What to Expect
+2. **Email — البريد الإلكتروني**:
+   - Send to: `security@arkan.it.com`
+   - Include: vulnerability description, steps to reproduce, impact assessment
+   - PGP key available upon request
 
-| Phase | Timeline |
-|-------|----------|
-| Acknowledgment | Within 48 hours |
-| Initial assessment | Within 1 week |
-| Fix for critical issues | Within 2 weeks |
-| Fix for other issues | Within 4 weeks |
-| Public disclosure | After fix is released |
+### What to Include — ماذا تتضمن
 
-### Please Do NOT
+- **Type of vulnerability** — نوع الثغرة (e.g., SQL injection, XSS, CSRF)
+- **Affected component** — المكون المتأثر (file path, API endpoint)
+- **Steps to reproduce** — خطوات إعادة الإنتاج
+- **Proof of concept** — إثبات المفهوم (if available)
+- **Impact assessment** — تقييم التأثير
+- **Suggested fix** — الإصلاح المقترح (if any)
 
-- Open a public GitHub issue for security vulnerabilities
-- Share vulnerability details publicly before a fix is released
-- Access or modify other users' data during testing
+### Response Timeline — الجدول الزمني للاستجابة
 
-### Scope
+| Action | Timeline |
+|--------|----------|
+| Acknowledgment — الإقرار | Within 48 hours — خلال ٤٨ ساعة |
+| Initial assessment — التقييم الأولي | Within 1 week — خلال أسبوع |
+| Fix development — تطوير الإصلاح | Within 2 weeks — خلال أسبوعين |
+| Security release — إصدار أمني | Within 30 days — خلال ٣٠ يوماً |
 
-**In scope:**
-- ARKSpace application code (Python, JavaScript)
-- ARKSpace API endpoints and permission logic
-- Data handling, access control, and storage
+### Disclosure Policy — سياسة الإفصاح
 
-**Out of scope:**
-- Frappe Framework core (report to [frappe.io](https://frappe.io))
-- ERPNext core (report to the ERPNext team)
-- Infrastructure/hosting issues (report to your hosting provider)
+- We follow **Coordinated Disclosure** — نتبع الإفصاح المنسق
+- We will credit you in the security advisory (unless you prefer anonymity) — سننسب الفضل إليك
+- We ask that you give us a reasonable window to fix before public disclosure — نطلب منك منحنا وقتاً معقولاً
 
-## Security Documentation
+## Security Standards — معايير الأمان
 
-For detailed security architecture, see [docs/SECURITY.md](docs/SECURITY.md).
+This app follows the [Arkan Lab Security Commandments](https://github.com/sarapil/frappe_docker/blob/main/.github/copilot-instructions.md):
 
-## Thank You
+- ✅ No `eval()`/`exec()`
+- ✅ Parameterized SQL only
+- ✅ Permission checks on all whitelisted APIs
+- ✅ No hardcoded credentials
+- ✅ No sensitive data in logs
+- ✅ External API calls use timeout
+- ✅ Semgrep security scanning in CI
+- ✅ No `frappe.db.commit()` in document events
 
-We appreciate responsible disclosure and will credit reporters (with permission) in our security advisories.
+## Security Scanning — الفحص الأمني
+
+Every PR and release is scanned using:
+- **Semgrep** — static analysis for Python/JS vulnerabilities
+- **Ruff** — Python linting including security rules
+- **Custom Frappe checks** — forbidden patterns detection

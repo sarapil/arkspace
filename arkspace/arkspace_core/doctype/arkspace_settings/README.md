@@ -54,6 +54,10 @@ No description provided.
 | freepbx_host | Data | FreePBX Host |
 | freepbx_api_key | Password | FreePBX API Key |
 | openai_api_key | Password | OpenAI API Key |
+| license_key | Password | License Key |
+| license_status | Data | License Status |
+| license_tier | Select | Current Tier |
+| license_source | Data | License Source |
 
 
 ## Usage
@@ -72,4 +76,4 @@ records = frappe.get_all("ARKSpace Settings")
 _Add related DocTypes here_
 
 ---
-*Last updated: 2026-03-21 12:53:05.201441*
+*Last updated: 2026-04-07 15:35:19.255960*

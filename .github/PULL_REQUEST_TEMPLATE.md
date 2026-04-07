@@ -1,75 +1,67 @@
-## Description / الوصف
+## الوصف | Description
+<!-- وصف مختصر للتغييرات — Brief description of changes -->
 
-<!-- What does this PR do? Brief summary of changes -->
 
-## Related Issue / المسألة المرتبطة
+## نوع التغيير | Type of Change
+- [ ] 🐛 Bug fix — إصلاح خطأ
+- [ ] ✨ New feature — ميزة جديدة
+- [ ] 💥 Breaking change — تغيير كسري
+- [ ] 📝 Documentation — توثيق
+- [ ] 🧪 Tests — اختبارات
+- [ ] 🔧 Refactoring — إعادة هيكلة
+- [ ] 🎨 UI/UX — واجهة المستخدم
+- [ ] ⚡ Performance — أداء
+- [ ] 🔒 Security — أمان
+- [ ] 🌐 Translation / i18n — ترجمة
 
-Closes #
+## المشكلات المرتبطة | Related Issues
+<!-- Fixes #123, Relates to #456 -->
 
-## Type of Change / نوع التغيير
+## التغييرات الرئيسية | Key Changes
+<!-- قائمة بالتغييرات الرئيسية — List the key changes -->
+-
+-
 
-- [ ] 🐛 Bug fix (non-breaking change that fixes an issue)
-- [ ] ✨ New feature (non-breaking change that adds functionality)
-- [ ] 💥 Breaking change (fix or feature that would cause existing functionality to change)
-- [ ] 📝 Documentation update
-- [ ] 🌐 Translation update
-- [ ] 🎨 Design / UI change
-- [ ] ♻️ Refactor (no functional changes)
-- [ ] 🧪 Tests
+## لقطات الشاشة | Screenshots
+<!-- إذا كان التغيير مرئياً — If the change is visual -->
 
-## Module(s) Affected / الوحدات المتأثرة
+## خطة الاختبار | Test Plan
+<!-- كيف تم اختبار هذا التغيير — How was this change tested? -->
+- [ ] Unit tests pass — اختبارات الوحدة ناجحة
+- [ ] Integration tests pass — اختبارات التكامل ناجحة
+- [ ] Manual testing done — الاختبار اليدوي تم
 
-- [ ] arkspace_core
-- [ ] arkspace_spaces
-- [ ] arkspace_memberships
-- [ ] arkspace_crm
-- [ ] arkspace_contracts
-- [ ] arkspace_training
-- [ ] arkspace_integrations
-- [ ] arkspace_documentation
-- [ ] arkspace_design
+## قائمة التحقق | Checklist
 
-## Checklist / قائمة المراجعة
+### الكود | Code
+- [ ] Follows [Arkan Lab Standards](/.github/copilot-instructions.md) — يتبع معايير أركان لاب
+- [ ] Self-reviewed the code — راجعت الكود ذاتياً
+- [ ] No `frappe.db.commit()` inside document events — لا `commit` داخل أحداث المستندات
+- [ ] No raw SQL without parameterization — لا SQL خام بدون معاملات
+- [ ] All `@frappe.whitelist()` APIs have permission checks — كل APIs لديها فحص صلاحيات
+- [ ] No hardcoded credentials — لا بيانات اعتماد مضمنة
+- [ ] Uses `extend_doctype_class` NOT `override_doctype_class` — يستخدم extend وليس override
+- [ ] Thin Controller pattern (logic in services/) — نمط المتحكم الخفيف
 
-### Code Quality
-- [ ] Code follows project conventions
-- [ ] Functions are under 50 lines
-- [ ] Meaningful variable names used
-- [ ] Docstrings added for new functions
-- [ ] No hardcoded secrets or credentials
+### الاختبارات | Tests
+- [ ] Tests added/updated for changes — اختبارات مضافة/محدثة
+- [ ] All existing tests pass — كل الاختبارات الموجودة تمرّ
 
-### Bilingual / ثنائي اللغة
-- [ ] All new strings wrapped in `_()` or `__()`
-- [ ] Arabic translations added to `translations/ar.csv`
-- [ ] RTL layout tested (if UI changes)
-- [ ] Works in both Arabic and English
+### التوثيق والترجمة | Docs & Translation
+- [ ] New user-facing strings wrapped in `__()` — النصوص الجديدة ملفوفة في `__()`
+- [ ] Arabic translation added for new strings — ترجمة عربية مضافة
+- [ ] Help files updated (if DocType changed) — ملفات المساعدة محدّثة
+- [ ] CHANGELOG updated — سجل التغييرات محدّث
 
-### Security
-- [ ] Permission checks on all new APIs (`frappe.has_permission()`)
-- [ ] No SQL injection vulnerabilities
-- [ ] `@frappe.whitelist()` on all exposed methods
+### الأمان | Security
+- [ ] No SQL injection vectors — لا ثغرات حقن SQL
+- [ ] No XSS vectors — لا ثغرات XSS
+- [ ] External API calls use timeout — استدعاءات API خارجية تستخدم timeout
+- [ ] Sensitive data not logged — البيانات الحساسة لا تُسجّل
 
-### Documentation
-- [ ] `docs/FEATURES_EN.md` updated (if new features)
-- [ ] `docs/FEATURES_AR.md` updated (if new features)
-- [ ] `docs/API_REFERENCE.md` updated (if API changes)
-- [ ] `docs/DOCTYPES_REFERENCE.md` updated (if schema changes)
-- [ ] `CHANGELOG.md` updated
-
-### Testing
-- [ ] Tests added for new functionality
-- [ ] All existing tests pass
-- [ ] Manual testing completed
-
-## Screenshots / لقطات الشاشة
-
-<!-- If UI changes, add before/after screenshots -->
-
-## Testing Instructions / تعليمات الاختبار
-
-<!-- How should reviewers test this? -->
-
-```bash
-# Run tests
-cd frappe-bench/sites && ../env/bin/python -m pytest ../apps/arkspace/ -x -v
-```
+### Visual (if UI changes) — المرئيات
+- [ ] Uses `frappe.visual` components — يستخدم مكونات frappe_visual
+- [ ] CSS Logical Properties (RTL support) — خصائص CSS المنطقية
+- [ ] Icons via `frappe.visual.icons` — الأيقونات عبر frappe.visual.icons
+- [ ] Responsive (320px to 4K) — متجاوب
+- [ ] Dark mode compatible — متوافق مع الوضع الداكن

@@ -57,12 +57,12 @@
   {
    "fieldname": "terms_section",
    "fieldtype": "Section Break",
-   "label": "Contract Terms / شروط العقد"
+   "label": "Contract Terms"
   },
   {
    "fieldname": "terms_ar",
    "fieldtype": "Text Editor",
-   "label": "Terms (Arabic) / الشروط بالعربية",
+   "label": "Terms (Arabic)",
    "description": "Use placeholders: {{member_name}}, {{space_name}}, {{start_date}}, {{end_date}}, {{rate}}, {{plan_name}}, etc."
   },
   {

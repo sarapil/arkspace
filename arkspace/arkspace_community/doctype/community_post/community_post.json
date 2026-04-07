@@ -28,13 +28,13 @@
   {
    "fieldname": "post_section",
    "fieldtype": "Section Break",
-   "label": "Post / المنشور"
+   "label": "Post"
   },
   {
    "fieldname": "title",
    "fieldtype": "Data",
    "in_list_view": 1,
-   "label": "Title / العنوان",
+   "label": "Title",
    "reqd": 1
   },
   {
@@ -42,7 +42,7 @@
    "fieldname": "post_type",
    "fieldtype": "Select",
    "in_list_view": 1,
-   "label": "Type / النوع",
+   "label": "Type",
    "options": "Discussion\nAnnouncement\nQuestion\nIdea\nShowcase\nJob Posting\nEvent"
   },
   {
@@ -54,7 +54,7 @@
    "fieldname": "author",
    "fieldtype": "Link",
    "in_list_view": 1,
-   "label": "Author / الكاتب",
+   "label": "Author",
    "options": "User",
    "read_only": 1
   },
@@ -62,57 +62,57 @@
    "fetch_from": "author.full_name",
    "fieldname": "author_name",
    "fieldtype": "Data",
-   "label": "Author Name / اسم الكاتب",
+   "label": "Author Name",
    "read_only": 1
   },
   {
    "fieldname": "branch",
    "fieldtype": "Link",
-   "label": "Branch / الفرع",
+   "label": "Branch",
    "options": "Branch"
   },
   {
    "fieldname": "content_section",
    "fieldtype": "Section Break",
-   "label": "Content / المحتوى"
+   "label": "Content"
   },
   {
    "fieldname": "content",
    "fieldtype": "Text Editor",
-   "label": "Content / المحتوى",
+   "label": "Content",
    "reqd": 1
   },
   {
    "fieldname": "tags",
    "fieldtype": "Small Text",
-   "label": "Tags / الوسوم",
+   "label": "Tags",
    "description": "Comma-separated tags"
   },
   {
    "fieldname": "engagement_section",
    "fieldtype": "Section Break",
-   "label": "Engagement / التفاعل"
+   "label": "Engagement"
   },
   {
    "default": "0",
    "fieldname": "likes_count",
    "fieldtype": "Int",
    "in_list_view": 1,
-   "label": "Likes / إعجابات",
+   "label": "Likes",
    "read_only": 1
   },
   {
    "default": "0",
    "fieldname": "comments_count",
    "fieldtype": "Int",
-   "label": "Comments / تعليقات",
+   "label": "Comments",
    "read_only": 1
   },
   {
    "default": "0",
    "fieldname": "views_count",
    "fieldtype": "Int",
-   "label": "Views / مشاهدات",
+   "label": "Views",
    "read_only": 1
   },
   {
@@ -123,19 +123,19 @@
    "default": "0",
    "fieldname": "is_pinned",
    "fieldtype": "Check",
-   "label": "Pinned / مثبت"
+   "label": "Pinned"
   },
   {
    "default": "0",
    "fieldname": "is_anonymous",
    "fieldtype": "Check",
-   "label": "Anonymous / مجهول"
+   "label": "Anonymous"
   },
   {
    "default": "Published",
    "fieldname": "status",
    "fieldtype": "Select",
-   "label": "Status / الحالة",
+   "label": "Status",
    "options": "Draft\nPublished\nArchived\nReported"
   }
  ],

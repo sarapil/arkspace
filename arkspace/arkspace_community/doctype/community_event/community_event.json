@@ -38,26 +38,26 @@
   {
    "fieldname": "event_section",
    "fieldtype": "Section Break",
-   "label": "Event / الفعالية"
+   "label": "Event"
   },
   {
    "fieldname": "event_name",
    "fieldtype": "Data",
    "in_list_view": 1,
-   "label": "Event Name / اسم الفعالية",
+   "label": "Event Name",
    "reqd": 1
   },
   {
    "fieldname": "event_name_ar",
    "fieldtype": "Data",
-   "label": "Event Name (Arabic) / الاسم بالعربية"
+   "label": "Event Name (Arabic)"
   },
   {
    "default": "Meetup",
    "fieldname": "event_type",
    "fieldtype": "Select",
    "in_list_view": 1,
-   "label": "Type / النوع",
+   "label": "Type",
    "options": "Meetup\nWorkshop\nSocial\nNetworking\nLunch & Learn\nHackathon\nDemo Day\nPanel\nOther"
   },
   {
@@ -68,44 +68,44 @@
    "default": "__user",
    "fieldname": "organizer",
    "fieldtype": "Link",
-   "label": "Organizer / المنظم",
+   "label": "Organizer",
    "options": "User"
   },
   {
    "fetch_from": "organizer.full_name",
    "fieldname": "organizer_name",
    "fieldtype": "Data",
-   "label": "Organizer Name / اسم المنظم",
+   "label": "Organizer Name",
    "read_only": 1
   },
   {
    "fieldname": "branch",
    "fieldtype": "Link",
-   "label": "Branch / الفرع",
+   "label": "Branch",
    "options": "Branch"
   },
   {
    "fieldname": "space",
    "fieldtype": "Link",
-   "label": "Space / المساحة",
+   "label": "Space",
    "options": "Co-working Space"
   },
   {
    "fieldname": "schedule_section",
    "fieldtype": "Section Break",
-   "label": "Schedule / الجدول"
+   "label": "Schedule"
   },
   {
    "fieldname": "start_datetime",
    "fieldtype": "Datetime",
    "in_list_view": 1,
-   "label": "Start / البداية",
+   "label": "Start",
    "reqd": 1
   },
   {
    "fieldname": "end_datetime",
    "fieldtype": "Datetime",
-   "label": "End / النهاية",
+   "label": "End",
    "reqd": 1
   },
   {
@@ -115,39 +115,39 @@
   {
    "fieldname": "registration_deadline",
    "fieldtype": "Datetime",
-   "label": "Registration Deadline / آخر موعد للتسجيل"
+   "label": "Registration Deadline"
   },
   {
    "fieldname": "details_section",
    "fieldtype": "Section Break",
-   "label": "Details / التفاصيل"
+   "label": "Details"
   },
   {
    "fieldname": "description",
    "fieldtype": "Text Editor",
-   "label": "Description / الوصف"
+   "label": "Description"
   },
   {
    "fieldname": "image",
    "fieldtype": "Attach Image",
-   "label": "Image / الصورة"
+   "label": "Image"
   },
   {
    "fieldname": "attendance_section",
    "fieldtype": "Section Break",
-   "label": "Attendance / الحضور"
+   "label": "Attendance"
   },
   {
    "default": "50",
    "fieldname": "max_attendees",
    "fieldtype": "Int",
-   "label": "Max Attendees / أقصى عدد حضور"
+   "label": "Max Attendees"
   },
   {
    "default": "0",
    "fieldname": "current_attendees",
    "fieldtype": "Int",
-   "label": "Registered / المسجلون",
+   "label": "Registered",
    "read_only": 1
   },
   {
@@ -158,19 +158,19 @@
    "default": "1",
    "fieldname": "registration_required",
    "fieldtype": "Check",
-   "label": "Registration Required / التسجيل مطلوب"
+   "label": "Registration Required"
   },
   {
    "default": "1",
    "fieldname": "is_free",
    "fieldtype": "Check",
-   "label": "Free Event / فعالية مجانية"
+   "label": "Free Event"
   },
   {
    "depends_on": "eval:!doc.is_free",
    "fieldname": "fee",
    "fieldtype": "Currency",
-   "label": "Fee / الرسوم"
+   "label": "Fee"
   },
   {
    "fieldname": "status_section",
@@ -181,7 +181,7 @@
    "fieldname": "status",
    "fieldtype": "Select",
    "in_list_view": 1,
-   "label": "Status / الحالة",
+   "label": "Status",
    "options": "Draft\nUpcoming\nOpen for Registration\nFull\nIn Progress\nCompleted\nCancelled"
   },
   {
@@ -192,7 +192,7 @@
    "default": "0",
    "fieldname": "is_featured",
    "fieldtype": "Check",
-   "label": "Featured / مميز"
+   "label": "Featured"
   }
  ],
  "image_field": "image",

@@ -38,8 +38,8 @@
    "fieldname": "receipt_type",
    "fieldtype": "Select",
    "in_list_view": 1,
-   "label": "Receipt Type / نوع الإيصال",
-   "options": "Membership Payment / دفعة عضوية\nBooking Payment / دفعة حجز\nDeposit / تأمين\nSetup Fee / رسوم تأسيس\nAmenity Fee / رسوم خدمات\nOther / أخرى",
+   "label": "Receipt Type",
+   "options": "Membership Payment\nBooking Payment\nDeposit\nSetup Fee\nAmenity Fee\nOther",
    "reqd": 1
   },
   {
@@ -47,7 +47,7 @@
    "fieldname": "receipt_date",
    "fieldtype": "Date",
    "in_list_view": 1,
-   "label": "Receipt Date / تاريخ الإيصال",
+   "label": "Receipt Date",
    "reqd": 1
   },
   {
@@ -58,7 +58,7 @@
    "fieldname": "member",
    "fieldtype": "Link",
    "in_list_view": 1,
-   "label": "Member / العميل",
+   "label": "Member",
    "options": "Customer",
    "reqd": 1
   },
@@ -66,24 +66,24 @@
    "fetch_from": "member.customer_name",
    "fieldname": "member_name",
    "fieldtype": "Data",
-   "label": "Member Name / اسم العميل",
+   "label": "Member Name",
    "read_only": 1
   },
   {
    "fieldname": "contract_section",
    "fieldtype": "Section Break",
-   "label": "Related Documents / المستندات المرتبطة"
+   "label": "Related Documents"
   },
   {
    "fieldname": "member_contract",
    "fieldtype": "Link",
-   "label": "Contract / العقد",
+   "label": "Contract",
    "options": "Member Contract"
   },
   {
    "fieldname": "membership",
    "fieldtype": "Link",
-   "label": "Membership / العضوية",
+   "label": "Membership",
    "options": "Membership"
   },
   {
@@ -93,23 +93,23 @@
   {
    "fieldname": "space_booking",
    "fieldtype": "Link",
-   "label": "Booking / الحجز",
+   "label": "Booking",
    "options": "Space Booking"
   },
   {
    "fieldname": "period_section",
    "fieldtype": "Section Break",
-   "label": "Payment Period / فترة الدفع"
+   "label": "Payment Period"
   },
   {
    "fieldname": "period_from",
    "fieldtype": "Date",
-   "label": "From / من"
+   "label": "From"
   },
   {
    "fieldname": "period_to",
    "fieldtype": "Date",
-   "label": "To / إلى"
+   "label": "To"
   },
   {
    "fieldname": "column_break_period",
@@ -118,26 +118,26 @@
   {
    "fieldname": "billing_cycle",
    "fieldtype": "Select",
-   "label": "Billing Cycle / دورة الفوترة",
-   "options": "\nMonthly / شهري\nQuarterly / ربع سنوي\nYearly / سنوي\nOne-time / مرة واحدة"
+   "label": "Billing Cycle",
+   "options": "\nMonthly\nQuarterly\nYearly\nOne-time"
   },
   {
    "fieldname": "payment_section",
    "fieldtype": "Section Break",
-   "label": "Payment Details / بيانات الدفع"
+   "label": "Payment Details"
   },
   {
    "fieldname": "amount",
    "fieldtype": "Currency",
    "in_list_view": 1,
-   "label": "Amount / المبلغ",
+   "label": "Amount",
    "reqd": 1
   },
   {
    "default": "EGP",
    "fieldname": "currency",
    "fieldtype": "Link",
-   "label": "Currency / العملة",
+   "label": "Currency",
    "options": "Currency"
   },
   {
@@ -148,29 +148,29 @@
    "default": "Cash / نقدي",
    "fieldname": "payment_method",
    "fieldtype": "Select",
-   "label": "Payment Method / طريقة الدفع",
-   "options": "Cash / نقدي\nBank Transfer / تحويل بنكي\nCheck / شيك\nCard / بطاقة\nOnline / إلكتروني\nOther / أخرى"
+   "label": "Payment Method",
+   "options": "Cash\nBank Transfer\nCheck\nCard\nOnline\nOther"
   },
   {
    "fieldname": "reference_number",
    "fieldtype": "Data",
-   "label": "Reference Number / رقم المرجع"
+   "label": "Reference Number"
   },
   {
    "fieldname": "payment_date",
    "fieldtype": "Date",
-   "label": "Payment Date / تاريخ الدفع"
+   "label": "Payment Date"
   },
   {
    "fieldname": "notes_section",
    "fieldtype": "Section Break",
-   "label": "Notes / ملاحظات",
+   "label": "Notes",
    "collapsible": 1
   },
   {
    "fieldname": "notes",
    "fieldtype": "Small Text",
-   "label": "Notes / ملاحظات"
+   "label": "Notes"
   },
   {
    "fieldname": "amended_from",

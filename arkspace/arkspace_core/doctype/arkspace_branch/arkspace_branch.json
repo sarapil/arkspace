@@ -60,26 +60,26 @@
   {
    "fieldname": "basic_section",
    "fieldtype": "Section Break",
-   "label": "Basic Info / المعلومات الأساسية"
+   "label": "Basic Info"
   },
   {
    "fieldname": "branch_name",
    "fieldtype": "Data",
    "in_list_view": 1,
-   "label": "Branch Name / اسم الفرع",
+   "label": "Branch Name",
    "reqd": 1,
    "unique": 1
   },
   {
    "fieldname": "branch_name_ar",
    "fieldtype": "Data",
-   "label": "Branch Name (Arabic) / الاسم بالعربية"
+   "label": "Branch Name (Arabic)"
   },
   {
    "fieldname": "branch_code",
    "fieldtype": "Data",
    "in_list_view": 1,
-   "label": "Branch Code / رمز الفرع",
+   "label": "Branch Code",
    "unique": 1
   },
   {
@@ -89,14 +89,14 @@
   {
    "fieldname": "branch",
    "fieldtype": "Link",
-   "label": "ERPNext Branch / فرع ERPNext",
+   "label": "ERPNext Branch",
    "options": "Branch",
    "description": "Links to ERPNext Branch for accounting integration"
   },
   {
    "fieldname": "company",
    "fieldtype": "Link",
-   "label": "Company / الشركة",
+   "label": "Company",
    "options": "Company"
   },
   {
@@ -104,28 +104,28 @@
    "fieldname": "is_active",
    "fieldtype": "Check",
    "in_list_view": 1,
-   "label": "Active / نشط"
+   "label": "Active"
   },
   {
    "fieldname": "location_section",
    "fieldtype": "Section Break",
-   "label": "Location / الموقع"
+   "label": "Location"
   },
   {
    "fieldname": "address_line_1",
    "fieldtype": "Data",
-   "label": "Address Line 1 / العنوان 1"
+   "label": "Address Line 1"
   },
   {
    "fieldname": "address_line_2",
    "fieldtype": "Data",
-   "label": "Address Line 2 / العنوان 2"
+   "label": "Address Line 2"
   },
   {
    "fieldname": "city",
    "fieldtype": "Data",
    "in_list_view": 1,
-   "label": "City / المدينة"
+   "label": "City"
   },
   {
    "fieldname": "column_break_location",
@@ -134,29 +134,29 @@
   {
    "fieldname": "state",
    "fieldtype": "Data",
-   "label": "State / Province / الولاية"
+   "label": "State / Province"
   },
   {
    "fieldname": "country",
    "fieldtype": "Link",
-   "label": "Country / الدولة",
+   "label": "Country",
    "options": "Country"
   },
   {
    "fieldname": "postal_code",
    "fieldtype": "Data",
-   "label": "Postal Code / الرمز البريدي"
+   "label": "Postal Code"
   },
   {
    "fieldname": "coordinates_section",
    "fieldtype": "Section Break",
-   "label": "Coordinates / الإحداثيات",
+   "label": "Coordinates",
    "collapsible": 1
   },
   {
    "fieldname": "latitude",
    "fieldtype": "Float",
-   "label": "Latitude / خط العرض",
+   "label": "Latitude",
    "precision": "6"
   },
   {
@@ -166,24 +166,24 @@
   {
    "fieldname": "longitude",
    "fieldtype": "Float",
-   "label": "Longitude / خط الطول",
+   "label": "Longitude",
    "precision": "6"
   },
   {
    "fieldname": "contact_section",
    "fieldtype": "Section Break",
-   "label": "Contact / التواصل"
+   "label": "Contact"
   },
   {
    "fieldname": "branch_manager",
    "fieldtype": "Link",
-   "label": "Branch Manager / مدير الفرع",
+   "label": "Branch Manager",
    "options": "User"
   },
   {
    "fieldname": "phone",
    "fieldtype": "Phone",
-   "label": "Phone / الهاتف"
+   "label": "Phone"
   },
   {
    "fieldname": "column_break_contact",
@@ -192,31 +192,31 @@
   {
    "fieldname": "email",
    "fieldtype": "Data",
-   "label": "Email / البريد الإلكتروني",
+   "label": "Email",
    "options": "Email"
   },
   {
    "fieldname": "website",
    "fieldtype": "Data",
-   "label": "Website / الموقع الإلكتروني",
+   "label": "Website",
    "options": "URL"
   },
   {
    "fieldname": "operations_section",
    "fieldtype": "Section Break",
-   "label": "Operations / العمليات"
+   "label": "Operations"
   },
   {
    "default": "08:00",
    "fieldname": "operating_hours_start",
    "fieldtype": "Time",
-   "label": "Opening Time / وقت الافتتاح"
+   "label": "Opening Time"
   },
   {
    "default": "22:00",
    "fieldname": "operating_hours_end",
    "fieldtype": "Time",
-   "label": "Closing Time / وقت الإغلاق"
+   "label": "Closing Time"
   },
   {
    "fieldname": "column_break_ops",
@@ -225,38 +225,38 @@
   {
    "fieldname": "timezone",
    "fieldtype": "Select",
-   "label": "Timezone / المنطقة الزمنية",
+   "label": "Timezone",
    "options": "\nAsia/Dubai\nAsia/Riyadh\nAsia/Kuwait\nEurope/London\nEurope/Berlin\nAmerica/New_York\nAmerica/Los_Angeles\nAsia/Kolkata\nAsia/Singapore\nAsia/Tokyo"
   },
   {
    "default": "Sunday\nMonday\nTuesday\nWednesday\nThursday",
    "fieldname": "working_days",
    "fieldtype": "Small Text",
-   "label": "Working Days / أيام العمل",
+   "label": "Working Days",
    "description": "One day per line"
   },
   {
    "fieldname": "capacity_section",
    "fieldtype": "Section Break",
-   "label": "Capacity / السعة"
+   "label": "Capacity"
   },
   {
    "default": "0",
    "fieldname": "total_desks",
    "fieldtype": "Int",
-   "label": "Total Desks / إجمالي المكاتب"
+   "label": "Total Desks"
   },
   {
    "default": "0",
    "fieldname": "total_offices",
    "fieldtype": "Int",
-   "label": "Total Offices / إجمالي المكاتب الخاصة"
+   "label": "Total Offices"
   },
   {
    "default": "0",
    "fieldname": "total_meeting_rooms",
    "fieldtype": "Int",
-   "label": "Total Meeting Rooms / إجمالي قاعات الاجتماعات"
+   "label": "Total Meeting Rooms"
   },
   {
    "fieldname": "column_break_capacity",
@@ -266,31 +266,31 @@
    "default": "0",
    "fieldname": "max_capacity",
    "fieldtype": "Int",
-   "label": "Max Capacity / السعة القصوى"
+   "label": "Max Capacity"
   },
   {
    "default": "0",
    "fieldname": "current_occupancy",
    "fieldtype": "Int",
-   "label": "Current Occupancy / الإشغال الحالي",
+   "label": "Current Occupancy",
    "read_only": 1
   },
   {
    "fieldname": "settings_section",
    "fieldtype": "Section Break",
-   "label": "Branch Settings / إعدادات الفرع"
+   "label": "Branch Settings"
   },
   {
    "fieldname": "default_currency",
    "fieldtype": "Link",
-   "label": "Currency / العملة",
+   "label": "Currency",
    "options": "Currency"
   },
   {
    "default": "1",
    "fieldname": "default_rate_multiplier",
    "fieldtype": "Float",
-   "label": "Rate Multiplier / مضاعف السعر",
+   "label": "Rate Multiplier",
    "description": "1.0 = standard pricing. 1.5 = 50% premium.",
    "precision": "2"
   },
@@ -302,28 +302,28 @@
    "default": "1",
    "fieldname": "allow_walkin_bookings",
    "fieldtype": "Check",
-   "label": "Allow Walk-in Bookings / السماح بالحجوزات المباشرة"
+   "label": "Allow Walk-in Bookings"
   },
   {
    "default": "1",
    "fieldname": "allow_day_passes",
    "fieldtype": "Check",
-   "label": "Allow Day Passes / السماح بتصاريح اليوم"
+   "label": "Allow Day Passes"
   },
   {
    "fieldname": "display_section",
    "fieldtype": "Section Break",
-   "label": "Display / العرض"
+   "label": "Display"
   },
   {
    "fieldname": "image",
    "fieldtype": "Attach Image",
-   "label": "Branch Image / صورة الفرع"
+   "label": "Branch Image"
   },
   {
    "fieldname": "description",
    "fieldtype": "Text Editor",
-   "label": "Description / الوصف"
+   "label": "Description"
   },
   {
    "fieldname": "column_break_display",
@@ -332,7 +332,7 @@
   {
    "fieldname": "description_ar",
    "fieldtype": "Text Editor",
-   "label": "Description (Arabic) / الوصف بالعربية"
+   "label": "Description (Arabic)"
   }
  ],
  "image_field": "image",

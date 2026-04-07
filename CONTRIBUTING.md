@@ -1,276 +1,120 @@
-# Contributing to ARKSpace — المساهمة في أرك سبيس
+# Contributing to ARKSpace — المساهمة في ARKSpace
 
-> Thank you for your interest in contributing to ARKSpace!  
-> شكراً لاهتمامك بالمساهمة في أرك سبيس!
+شكراً لاهتمامك بالمساهمة! — Thank you for your interest in contributing!
 
-## Table of Contents / جدول المحتويات
+## 📋 Code of Conduct — قواعد السلوك
 
-- [Code of Conduct](#code-of-conduct)
-- [Getting Started](#getting-started)
-- [Development Setup](#development-setup)
-- [Making Changes](#making-changes)
-- [Coding Standards](#coding-standards)
-- [Bilingual Requirements](#bilingual-requirements)
-- [Pull Request Process](#pull-request-process)
-- [Reporting Bugs](#reporting-bugs)
+This project follows the [Arkan Lab Code of Conduct](https://github.com/sarapil/frappe_docker/blob/main/CODE_OF_CONDUCT.md).
 
----
+## 🚀 Getting Started — البدء
 
-## Code of Conduct
-
-Be respectful, inclusive, and constructive. We welcome contributions from everyone regardless of experience level, gender, identity, orientation, disability, ethnicity, or religion.
-
----
-
-## Getting Started
-
-### Prerequisites
-
-- Python 3.12+
-- Node.js 20+
-- MariaDB 10.6+
-- Redis 7+
-- Frappe v16 bench environment
-- ERPNext v16
-
-### Development Setup
+### 1. Fork & Clone — التفريع والنسخ
 
 ```bash
-# 1. Clone and set up bench
-bench init --frappe-branch version-16 frappe-bench
-cd frappe-bench
-
-# 2. Install ERPNext
-bench get-app --branch version-16 erpnext
-
-# 3. Clone ARKSpace
-bench get-app arkspace <your-fork-url>
-
-# 4. Create a development site
-bench new-site dev.local --admin-password admin
-bench --site dev.local install-app erpnext
-bench --site dev.local install-app arkspace
-
-# 5. Enable developer mode
-bench --site dev.local set-config developer_mode 1
-
-# 6. Build and start
-bench build --app arkspace
-bench start
+git clone https://github.com/YOUR_USERNAME/arkspace.git
+cd arkspace
 ```
 
----
+### 2. Setup Development Environment — إعداد بيئة التطوير
 
-## Making Changes
-
-### Branch Naming
-
-```
-feature/short-description
-fix/issue-number-description
-docs/what-was-updated
-i18n/language-updates
+```bash
+bench get-app arkspace /path/to/your/fork
+bench --site dev.localhost install-app arkspace
+bench --site dev.localhost migrate
 ```
 
-### Workflow
+### 3. Create a Branch — إنشاء فرع
 
-1. Fork the repository
-2. Create a feature branch from `main`
-3. Make your changes
-4. Write/update tests
-5. Update documentation
-6. Submit a pull request
+```bash
+# For features — للميزات
+git checkout -b feat/my-feature
 
----
+# For bug fixes — لإصلاح الأخطاء
+git checkout -b fix/bug-description
 
-## Coding Standards
+# For documentation — للتوثيق
+git checkout -b docs/topic
+```
+
+## 📐 Development Standards — معايير التطوير
 
 ### Python
-
-- Follow [PEP 8](https://peps.python.org/pep-0008/) conventions
-- Use `ruff` for linting (configured in `pyproject.toml`)
-- Maximum line length: 110 characters
-- Add docstrings to all public functions
-- Use type hints where practical
-
-```bash
-# Lint check
-ruff check arkspace/
-
-# Format check
-ruff format --check arkspace/
-```
+- **Style:** Ruff linter + formatter
+- **Type hints:** Required on all functions
+- **Pattern:** Thin Controller — logic in `services/`
+- **SQL:** Parameterized only — NEVER f-strings
+- **Tests:** Required for new features
 
 ### JavaScript
+- **Style:** ESLint
+- **Components:** Use `frappe.visual` components
+- **Icons:** `frappe.visual.icons` — NEVER Font Awesome
+- **RTL:** CSS Logical Properties
 
-- Use Frappe's JS conventions
-- Prefer `const`/`let` over `var`
-- Use arrow functions where appropriate
-- Add JSDoc comments for complex functions
+### Translations
+- **Arabic is mandatory** for all user-facing strings
+- Wrap strings in `__()` (Python and JS)
 
-### DocType Naming
+## 🔒 Security Rules — قواعد الأمان
 
-- **DocType name**: Title Case with spaces (e.g., `Space Booking`)
-- **Field names**: snake_case (e.g., `booking_type`)
-- **Module names**: `arkspace_` prefix (e.g., `arkspace_spaces`)
+- ❌ No `eval()`/`exec()`
+- ❌ No `override_doctype_class`
+- ❌ No `frappe.db.commit()` in document events
+- ❌ No hardcoded credentials
+- ✅ Permission checks on all `@frappe.whitelist()` APIs
+- ✅ Parameterized SQL only
 
-### API Conventions
+## 🧪 Testing — الاختبارات
 
-```python
-@frappe.whitelist()
-def my_function(required_param, optional_param=None):
-    """Brief description of what this does.
+```bash
+# Run all tests — تشغيل كل الاختبارات
+bench --site dev.localhost run-tests --app arkspace
 
-    Args:
-        required_param (str): Description
-        optional_param (str, optional): Description
-
-    Returns:
-        dict: Description of return value
-    """
-    frappe.has_permission("DocType", "read", throw=True)
-    # Implementation
-    return {"status": "success"}
+# Run specific test — تشغيل اختبار محدد
+bench --site dev.localhost run-tests --app arkspace --module arkspace.tests.unit.test_my_service
 ```
 
----
+## 📝 Commit Convention — اتفاقية الالتزامات
 
-## Bilingual Requirements
+Use [Conventional Commits](https://www.conventionalcommits.org/):
 
-### All UI Strings Must Be Translatable
-
-```python
-# ✅ Correct
-frappe.throw(_("Space {0} is already booked").format(space_name))
-
-# ❌ Wrong
-frappe.throw(f"Space {space_name} is already booked")
+```
+feat: add new reservation type
+fix: correct date validation
+docs: update API reference
+perf: optimize query performance
+security: fix SQL injection in API
+refactor: extract service layer
+test: add unit tests for booking
+i18n: add Arabic translations
 ```
 
-### Arabic Translation Process
+## 🔄 Pull Request Process — عملية طلب الدمج
 
-1. Add English string in code wrapped with `_()`
-2. Add translation to `arkspace/translations/ar.csv`:
-   ```csv
-   source_text,translated_text,context
-   "Space {0} is already booked","المساحة {0} محجوزة بالفعل","Validation"
-   ```
-3. Preserve `{0}`, `{1}` placeholders
-4. Keep HTML tags intact
-5. No trailing spaces
-6. UTF-8 encoding
+1. **Update your branch** with latest `main`
+2. **Run tests** locally
+3. **Run linters:** `ruff check . && ruff format --check .`
+4. **Create PR** using the [PR template](/.github/PULL_REQUEST_TEMPLATE.md)
+5. **Wait for CI** — all checks must pass
+6. **Request review** from code owners
+7. **Address feedback** promptly
 
-### Arabic Translation Glossary
+## 🏷️ Issue Labels — تصنيفات المشكلات
 
-| English | Arabic | Notes |
-|---------|--------|-------|
-| Lead | عميل محتمل | NOT رصيد |
-| Customer | عميل | |
-| Contact | جهة اتصال | |
-| Booking | حجز | |
-| Membership | عضوية | |
-| Space | مساحة | |
-| Amenity | مرفق | |
-| Submit | اعتماد | For submittable docs |
-| Save | حفظ | |
-| Cancel | إلغاء | |
-| Status | الحالة | |
-| Enabled | مفعّل | |
-| Template | قالب | |
-| Schedule | جدولة | |
-| Badge | شارة | |
+When creating issues, use the templates provided. Labels are auto-assigned based on content.
 
-### DocType Bilingual Fields
+Key labels:
+- `good first issue` — مناسب للمبتدئين
+- `help wanted` — يحتاج مساعدة
+- `priority: critical` — أولوية حرجة
 
-For fields visible to users, add an `_ar` suffix field:
+## 📖 Documentation — التوثيق
 
-```json
-{
-    "fieldname": "space_name",
-    "fieldtype": "Data",
-    "label": "Space Name",
-    "reqd": 1
-},
-{
-    "fieldname": "space_name_ar",
-    "fieldtype": "Data",
-    "label": "Space Name (Arabic)"
-}
-```
+- Update help files in `arkspace/help/` for DocType changes
+- Both English and Arabic versions required
+- Update wiki pages for architectural changes
 
-### Bilingual Select Options
+## 💬 Questions? — أسئلة؟
 
-Use the format `"English / العربي"`:
-
-```json
-{
-    "fieldname": "document_type",
-    "fieldtype": "Select",
-    "options": "National ID / البطاقة الشخصية\nPassport / جواز السفر\nCommercial Register / السجل التجاري"
-}
-```
-
----
-
-## Pull Request Process
-
-### Before Submitting
-
-- [ ] All new strings are translatable (`_()` or `__()`)
-- [ ] Arabic translations added for new strings
-- [ ] Tests written and passing
-- [ ] Documentation updated
-- [ ] `CHANGELOG.md` updated
-- [ ] `ruff check` passes
-- [ ] Works in both LTR and RTL
-- [ ] No console errors
-
-### PR Template
-
-Use the [Pull Request Template](/.github/PULL_REQUEST_TEMPLATE.md) provided.
-
-### Review Process
-
-1. Automated CI runs (lint, test, translation check)
-2. Code review by maintainer
-3. Testing on development site
-4. Merge to `main`
-
----
-
-## Reporting Bugs
-
-Use the [Bug Report Template](/.github/ISSUE_TEMPLATE/bug_report.md) and include:
-
-1. Steps to reproduce
-2. Expected vs actual behavior
-3. Browser console errors
-4. Server logs (if applicable)
-5. Environment details (Frappe/ERPNext/ARKSpace versions)
-
----
-
-## Documentation Updates
-
-When making changes, update the relevant files:
-
-| Changed | Update |
-|---------|--------|
-| New feature | `docs/FEATURES_EN.md`, `docs/FEATURES_AR.md` |
-| New/changed API | `docs/API_REFERENCE.md` |
-| New/changed DocType | `docs/DOCTYPES_REFERENCE.md` |
-| Architecture change | `docs/TECHNICAL_IMPLEMENTATION.md` |
-| New strings | `arkspace/translations/ar.csv` |
-| Any change | `CHANGELOG.md` |
-
----
-
-## Getting Help
-
-- Open an issue with the **question** label
-- Check [docs/TROUBLESHOOTING.md](docs/TROUBLESHOOTING.md) for common issues
-- Review existing documentation in the `docs/` directory
-
----
-
-*Thank you for contributing to ARKSpace! — !شكراً لمساهمتكم في أرك سبيس*
+- [GitHub Discussions](https://github.com/orgs/sarapil/discussions)
+- [Wiki](../../wiki)

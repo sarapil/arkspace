@@ -1,0 +1,36 @@
+# CODEOWNERS — مالكو الكود
+# https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
+#
+# These owners will be automatically requested for review when a PR
+# modifies files matching the patterns.
+# سيتم طلب مراجعة هؤلاء المالكين تلقائياً عند تعديل ملفات مطابقة.
+
+# ─── Default Owner — المالك الافتراضي ─────────────────────────────────────────
+*                           @sarapil/arkspace-maintainers
+
+# ─── Core Configuration — الإعدادات الأساسية ──────────────────────────────────
+arkspace/hooks.py       @sarapil/arkspace-maintainers
+arkspace/install.py     @sarapil/arkspace-maintainers
+arkspace/seed.py        @sarapil/arkspace-maintainers
+pyproject.toml              @sarapil/arkspace-maintainers
+setup.cfg                   @sarapil/arkspace-maintainers
+
+# ─── API Layer — طبقة الواجهة البرمجية ────────────────────────────────────────
+arkspace/api/           @sarapil/arkspace-maintainers
+
+# ─── Security & Permissions — الأمان والصلاحيات ───────────────────────────────
+arkspace/caps/          @sarapil/arkspace-maintainers
+SECURITY.md                 @sarapil/arkspace-maintainers
+
+# ─── CI/CD — خط الأنابيب ─────────────────────────────────────────────────────
+.github/workflows/          @sarapil/arkspace-maintainers
+
+# ─── Frontend — الواجهة الأمامية ──────────────────────────────────────────────
+arkspace/public/        @sarapil/arkspace-maintainers
+
+# ─── Translations — الترجمات ──────────────────────────────────────────────────
+arkspace/translations/  @sarapil/arkspace-maintainers
+
+# ─── Documentation — التوثيق ──────────────────────────────────────────────────
+arkspace/help/          @sarapil/arkspace-maintainers
+*.md                        @sarapil/arkspace-maintainers

@@ -57,20 +57,20 @@
   {
    "fieldname": "overview_section",
    "fieldtype": "Section Break",
-   "label": "Overview / نظرة عامة"
+   "label": "Overview"
   },
   {
    "fieldname": "snapshot_date",
    "fieldtype": "Date",
    "in_list_view": 1,
-   "label": "Date / التاريخ",
+   "label": "Date",
    "reqd": 1
   },
   {
    "fieldname": "branch",
    "fieldtype": "Link",
    "in_list_view": 1,
-   "label": "Branch / الفرع",
+   "label": "Branch",
    "options": "Branch"
   },
   {
@@ -81,7 +81,7 @@
    "default": "Daily",
    "fieldname": "period_type",
    "fieldtype": "Select",
-   "label": "Period / الفترة",
+   "label": "Period",
    "options": "Daily\nWeekly\nMonthly"
   },
   {
@@ -94,26 +94,26 @@
   {
    "fieldname": "spaces_section",
    "fieldtype": "Section Break",
-   "label": "Spaces / المساحات"
+   "label": "Spaces"
   },
   {
    "default": "0",
    "fieldname": "total_spaces",
    "fieldtype": "Int",
    "in_list_view": 1,
-   "label": "Total Spaces / إجمالي المساحات"
+   "label": "Total Spaces"
   },
   {
    "default": "0",
    "fieldname": "occupied_spaces",
    "fieldtype": "Int",
-   "label": "Occupied / مشغولة"
+   "label": "Occupied"
   },
   {
    "default": "0",
    "fieldname": "available_spaces",
    "fieldtype": "Int",
-   "label": "Available / متاحة"
+   "label": "Available"
   },
   {
    "fieldname": "column_break_spaces",
@@ -124,42 +124,42 @@
    "fieldname": "occupancy_rate",
    "fieldtype": "Percent",
    "in_list_view": 1,
-   "label": "Occupancy Rate / نسبة الإشغال"
+   "label": "Occupancy Rate"
   },
   {
    "default": "0",
    "fieldname": "maintenance_spaces",
    "fieldtype": "Int",
-   "label": "Maintenance / صيانة"
+   "label": "Maintenance"
   },
   {
    "default": "0",
    "fieldname": "reserved_spaces",
    "fieldtype": "Int",
-   "label": "Reserved / محجوزة"
+   "label": "Reserved"
   },
   {
    "fieldname": "bookings_section",
    "fieldtype": "Section Break",
-   "label": "Bookings / الحجوزات"
+   "label": "Bookings"
   },
   {
    "default": "0",
    "fieldname": "total_bookings",
    "fieldtype": "Int",
-   "label": "Total Bookings / إجمالي الحجوزات"
+   "label": "Total Bookings"
   },
   {
    "default": "0",
    "fieldname": "new_bookings",
    "fieldtype": "Int",
-   "label": "New Bookings / حجوزات جديدة"
+   "label": "New Bookings"
   },
   {
    "default": "0",
    "fieldname": "cancelled_bookings",
    "fieldtype": "Int",
-   "label": "Cancelled / ملغاة"
+   "label": "Cancelled"
   },
   {
    "fieldname": "column_break_bookings",
@@ -169,37 +169,37 @@
    "default": "0",
    "fieldname": "no_shows",
    "fieldtype": "Int",
-   "label": "No Shows / لم يحضر"
+   "label": "No Shows"
   },
   {
    "default": "0",
    "fieldname": "checked_in_count",
    "fieldtype": "Int",
-   "label": "Checked In / تسجيل دخول"
+   "label": "Checked In"
   },
   {
    "default": "0",
    "fieldname": "avg_booking_duration",
    "fieldtype": "Float",
-   "label": "Avg Duration (hrs) / متوسط المدة",
+   "label": "Avg Duration (hrs)",
    "precision": "1"
   },
   {
    "fieldname": "members_section",
    "fieldtype": "Section Break",
-   "label": "Members / الأعضاء"
+   "label": "Members"
   },
   {
    "default": "0",
    "fieldname": "active_members",
    "fieldtype": "Int",
-   "label": "Active Members / أعضاء نشطون"
+   "label": "Active Members"
   },
   {
    "default": "0",
    "fieldname": "new_members",
    "fieldtype": "Int",
-   "label": "New Members / أعضاء جدد"
+   "label": "New Members"
   },
   {
    "fieldname": "column_break_members",
@@ -209,37 +209,37 @@
    "default": "0",
    "fieldname": "churned_members",
    "fieldtype": "Int",
-   "label": "Churned / مغادرون"
+   "label": "Churned"
   },
   {
    "default": "0",
    "fieldname": "retention_rate",
    "fieldtype": "Percent",
-   "label": "Retention Rate / معدل الاحتفاظ"
+   "label": "Retention Rate"
   },
   {
    "fieldname": "revenue_section",
    "fieldtype": "Section Break",
-   "label": "Revenue / الإيرادات"
+   "label": "Revenue"
   },
   {
    "default": "0",
    "fieldname": "total_revenue",
    "fieldtype": "Currency",
    "in_list_view": 1,
-   "label": "Total Revenue / إجمالي الإيرادات"
+   "label": "Total Revenue"
   },
   {
    "default": "0",
    "fieldname": "booking_revenue",
    "fieldtype": "Currency",
-   "label": "Booking Revenue / إيرادات الحجوزات"
+   "label": "Booking Revenue"
   },
   {
    "default": "0",
    "fieldname": "membership_revenue",
    "fieldtype": "Currency",
-   "label": "Membership Revenue / إيرادات العضويات"
+   "label": "Membership Revenue"
   },
   {
    "fieldname": "column_break_revenue",
@@ -249,36 +249,36 @@
    "default": "0",
    "fieldname": "day_pass_revenue",
    "fieldtype": "Currency",
-   "label": "Day Pass Revenue / إيرادات التصاريح"
+   "label": "Day Pass Revenue"
   },
   {
    "default": "0",
    "fieldname": "other_revenue",
    "fieldtype": "Currency",
-   "label": "Other Revenue / إيرادات أخرى"
+   "label": "Other Revenue"
   },
   {
    "default": "0",
    "fieldname": "avg_revenue_per_booking",
    "fieldtype": "Currency",
-   "label": "Avg Revenue/Booking / متوسط الإيرادات لكل حجز"
+   "label": "Avg Revenue/Booking"
   },
   {
    "fieldname": "passes_visitors_section",
    "fieldtype": "Section Break",
-   "label": "Day Passes & Visitors / التصاريح والزوار"
+   "label": "Day Passes & Visitors"
   },
   {
    "default": "0",
    "fieldname": "day_pass_count",
    "fieldtype": "Int",
-   "label": "Day Passes / تصاريح اليوم"
+   "label": "Day Passes"
   },
   {
    "default": "0",
    "fieldname": "visitor_count",
    "fieldtype": "Int",
-   "label": "Visitors / الزوار"
+   "label": "Visitors"
   },
   {
    "fieldname": "column_break_passes",
@@ -288,22 +288,22 @@
    "default": "0",
    "fieldname": "trial_conversions",
    "fieldtype": "Int",
-   "label": "Trial Conversions / تحويلات التجربة"
+   "label": "Trial Conversions"
   },
   {
    "fieldname": "patterns_section",
    "fieldtype": "Section Break",
-   "label": "Patterns / الأنماط"
+   "label": "Patterns"
   },
   {
    "fieldname": "peak_hour",
    "fieldtype": "Int",
-   "label": "Peak Hour / ساعة الذروة"
+   "label": "Peak Hour"
   },
   {
    "fieldname": "popular_space_type",
    "fieldtype": "Data",
-   "label": "Popular Space Type / نوع المساحة الأكثر طلباً"
+   "label": "Popular Space Type"
   },
   {
    "fieldname": "column_break_patterns",
@@ -312,12 +312,12 @@
   {
    "fieldname": "popular_booking_type",
    "fieldtype": "Data",
-   "label": "Popular Booking Type / نوع الحجز الأكثر شيوعاً"
+   "label": "Popular Booking Type"
   },
   {
    "fieldname": "busiest_day",
    "fieldtype": "Data",
-   "label": "Busiest Day / أكثر الأيام ازدحاماً"
+   "label": "Busiest Day"
   }
  ],
  "index_web_pages_for_search": 0,

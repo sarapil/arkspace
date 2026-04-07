@@ -211,27 +211,27 @@
   {
    "fieldname": "online_payments_section",
    "fieldtype": "Section Break",
-   "label": "Online Payments / الدفع الإلكتروني"
+   "label": "Online Payments"
   },
   {
    "default": "0",
    "fieldname": "enable_online_payments",
    "fieldtype": "Check",
-   "label": "Enable Online Payments / تفعيل الدفع الإلكتروني"
+   "label": "Enable Online Payments"
   },
   {
    "default": "Stripe",
    "depends_on": "eval:doc.enable_online_payments",
    "fieldname": "default_payment_gateway",
    "fieldtype": "Select",
-   "label": "Default Gateway / البوابة الافتراضية",
+   "label": "Default Gateway",
    "options": "Stripe\nTap"
   },
   {
    "depends_on": "eval:doc.enable_online_payments",
    "fieldname": "payment_success_message",
    "fieldtype": "Small Text",
-   "label": "Payment Success Message / رسالة نجاح الدفع",
+   "label": "Payment Success Message",
    "default": "Payment received successfully! Thank you."
   },
   {
@@ -243,14 +243,14 @@
    "depends_on": "eval:doc.enable_online_payments",
    "fieldname": "auto_reconcile_payments",
    "fieldtype": "Check",
-   "label": "Auto-Reconcile Payments / مطابقة المدفوعات تلقائياً"
+   "label": "Auto-Reconcile Payments"
   },
   {
    "default": "24",
    "depends_on": "eval:doc.enable_online_payments",
    "fieldname": "payment_link_expiry_hours",
    "fieldtype": "Int",
-   "label": "Payment Link Expiry (hours) / انتهاء رابط الدفع (ساعات)"
+   "label": "Payment Link Expiry (hours)"
   },
   {
    "depends_on": "eval:doc.enable_online_payments && doc.default_payment_gateway=='Stripe'",
@@ -311,20 +311,20 @@
   {
    "fieldname": "day_pass_section",
    "fieldtype": "Section Break",
-   "label": "Day Pass & Trials / تصريح اليوم والتجربة"
+   "label": "Day Pass & Trials"
   },
   {
    "default": "1",
    "fieldname": "enable_day_pass",
    "fieldtype": "Check",
-   "label": "Enable Day Pass / تفعيل تصريح اليوم"
+   "label": "Enable Day Pass"
   },
   {
    "default": "50",
    "depends_on": "eval:doc.enable_day_pass",
    "fieldname": "default_day_pass_rate",
    "fieldtype": "Currency",
-   "label": "Default Day Pass Rate / سعر التصريح الافتراضي"
+   "label": "Default Day Pass Rate"
   },
   {
    "fieldname": "column_break_day_pass",
@@ -335,32 +335,32 @@
    "depends_on": "eval:doc.enable_day_pass",
    "fieldname": "day_pass_auto_expire",
    "fieldtype": "Check",
-   "label": "Auto-Expire Day Passes / انتهاء التصاريح تلقائياً"
+   "label": "Auto-Expire Day Passes"
   },
   {
    "default": "3",
    "depends_on": "eval:doc.enable_day_pass",
    "fieldname": "max_trial_days",
    "fieldtype": "Int",
-   "label": "Max Trial Days / أقصى أيام التجربة"
+   "label": "Max Trial Days"
   },
   {
    "fieldname": "analytics_section",
    "fieldtype": "Section Break",
-   "label": "Analytics / التحليلات"
+   "label": "Analytics"
   },
   {
    "default": "1",
    "fieldname": "enable_analytics",
    "fieldtype": "Check",
-   "label": "Enable Analytics / تفعيل التحليلات"
+   "label": "Enable Analytics"
   },
   {
    "default": "365",
    "depends_on": "eval:doc.enable_analytics",
    "fieldname": "analytics_retention_days",
    "fieldtype": "Int",
-   "label": "Retention Days / أيام الاحتفاظ بالبيانات"
+   "label": "Retention Days"
   },
   {
    "fieldname": "column_break_analytics",
@@ -371,24 +371,24 @@
    "depends_on": "eval:doc.enable_analytics",
    "fieldname": "auto_capture_snapshots",
    "fieldtype": "Check",
-   "label": "Auto-Capture Snapshots / التقاط تلقائي للقطات"
+   "label": "Auto-Capture Snapshots"
   },
   {
    "fieldname": "multi_location_section",
    "fieldtype": "Section Break",
-   "label": "Multi-Location / تعدد الفروع"
+   "label": "Multi-Location"
   },
   {
    "default": "0",
    "fieldname": "enable_multi_location",
    "fieldtype": "Check",
-   "label": "Enable Multi-Location / تفعيل تعدد الفروع"
+   "label": "Enable Multi-Location"
   },
   {
    "depends_on": "eval:doc.enable_multi_location",
    "fieldname": "default_branch",
    "fieldtype": "Link",
-   "label": "Default Branch / الفرع الافتراضي",
+   "label": "Default Branch",
    "options": "ARKSpace Branch"
   },
   {
@@ -400,25 +400,25 @@
    "depends_on": "eval:doc.enable_multi_location",
    "fieldname": "allow_cross_location_booking",
    "fieldtype": "Check",
-   "label": "Allow Cross-Location Booking / السماح بالحجز بين الفروع"
+   "label": "Allow Cross-Location Booking"
   },
   {
    "fieldname": "community_section",
    "fieldtype": "Section Break",
-   "label": "Community / المجتمع"
+   "label": "Community"
   },
   {
    "default": "1",
    "fieldname": "enable_community",
    "fieldtype": "Check",
-   "label": "Enable Community / تفعيل المجتمع"
+   "label": "Enable Community"
   },
   {
    "default": "0",
    "depends_on": "eval:doc.enable_community",
    "fieldname": "allow_anonymous_posts",
    "fieldtype": "Check",
-   "label": "Allow Anonymous Posts / السماح بالمنشورات المجهولة"
+   "label": "Allow Anonymous Posts"
   },
   {
    "fieldname": "column_break_community",
@@ -429,14 +429,14 @@
    "depends_on": "eval:doc.enable_community",
    "fieldname": "enable_member_directory",
    "fieldtype": "Check",
-   "label": "Enable Member Directory / تفعيل دليل الأعضاء"
+   "label": "Enable Member Directory"
   },
   {
    "default": "1",
    "depends_on": "eval:doc.enable_community",
    "fieldname": "enable_events",
    "fieldtype": "Check",
-   "label": "Enable Events / تفعيل الفعاليات"
+   "label": "Enable Events"
   },
   {
    "fieldname": "integration_section",
@@ -471,12 +471,52 @@
    "fieldname": "openai_api_key",
    "fieldtype": "Password",
    "label": "OpenAI API Key"
+  },
+  {
+   "fieldname": "license_tab",
+   "fieldtype": "Tab Break",
+   "label": "License & Subscription"
+  },
+  {
+   "fieldname": "license_section",
+   "fieldtype": "Section Break",
+   "label": "License Configuration"
+  },
+  {
+   "fieldname": "license_key",
+   "fieldtype": "Password",
+   "label": "License Key",
+   "description": "Enter your license key (XXXX-XXXX-XXXX-HASH) or subscribe on Frappe Cloud Marketplace"
+  },
+  {
+   "fieldname": "license_status",
+   "fieldtype": "Data",
+   "label": "License Status",
+   "read_only": 1
+  },
+  {
+   "fieldname": "cb_license",
+   "fieldtype": "Column Break",
+   "label": ""
+  },
+  {
+   "fieldname": "license_tier",
+   "fieldtype": "Select",
+   "label": "Current Tier",
+   "options": "\nFree\nPremium",
+   "read_only": 1
+  },
+  {
+   "fieldname": "license_source",
+   "fieldtype": "Data",
+   "label": "License Source",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "issingle": 1,
  "links": [],
- "modified": "2026-02-09 00:00:00.000000",
+ "modified": "2026-04-07 12:00:00.000000",
  "modified_by": "Administrator",
  "module": "ARKSpace Core",
  "name": "ARKSpace Settings",

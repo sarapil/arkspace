@@ -27,7 +27,7 @@
    "fieldname": "member",
    "fieldtype": "Link",
    "in_list_view": 1,
-   "label": "Member / العميل",
+   "label": "Member",
    "options": "Customer",
    "reqd": 1
   },
@@ -35,7 +35,7 @@
    "fetch_from": "member.customer_name",
    "fieldname": "member_name",
    "fieldtype": "Data",
-   "label": "Member Name / اسم العميل",
+   "label": "Member Name",
    "read_only": 1
   },
   {
@@ -46,31 +46,31 @@
    "fieldname": "document_type",
    "fieldtype": "Select",
    "in_list_view": 1,
-   "label": "Document Type / نوع المستند",
-   "options": "National ID / البطاقة الشخصية\nPassport / جواز السفر\nDriver License / رخصة القيادة\nTax Card / البطاقة الضريبية\nCommercial Register / السجل التجاري\nCompany License / ترخيص الشركة\nForeign Company Docs / مستندات شركة أجنبية\nPower of Attorney / توكيل رسمي\nNotarized Document / مستند موثق\nOther / أخرى",
+   "label": "Document Type",
+   "options": "National ID\nPassport\nDriver License\nTax Card\nCommercial Register\nCompany License\nForeign Company Docs\nPower of Attorney\nNotarized Document\nOther",
    "reqd": 1
   },
   {
    "fieldname": "document_number",
    "fieldtype": "Data",
    "in_list_view": 1,
-   "label": "Document Number / رقم المستند"
+   "label": "Document Number"
   },
   {
    "fieldname": "details_section",
    "fieldtype": "Section Break",
-   "label": "Details / التفاصيل"
+   "label": "Details"
   },
   {
    "fieldname": "issue_date",
    "fieldtype": "Date",
-   "label": "Issue Date / تاريخ الإصدار"
+   "label": "Issue Date"
   },
   {
    "fieldname": "expiry_date",
    "fieldtype": "Date",
    "in_list_view": 1,
-   "label": "Expiry Date / تاريخ الانتهاء"
+   "label": "Expiry Date"
   },
   {
    "fieldname": "column_break_details",
@@ -79,41 +79,41 @@
   {
    "fieldname": "issuing_authority",
    "fieldtype": "Data",
-   "label": "Issuing Authority / جهة الإصدار"
+   "label": "Issuing Authority"
   },
   {
    "default": "Valid / ساري",
    "fieldname": "status",
    "fieldtype": "Select",
    "in_list_view": 1,
-   "label": "Status / الحالة",
-   "options": "Valid / ساري\nExpired / منتهي\nPending / قيد المراجعة\nRejected / مرفوض"
+   "label": "Status",
+   "options": "Valid\nExpired\nPending\nRejected"
   },
   {
    "fieldname": "attachment_section",
    "fieldtype": "Section Break",
-   "label": "Attachments / المرفقات"
+   "label": "Attachments"
   },
   {
    "fieldname": "document_file",
    "fieldtype": "Attach Image",
-   "label": "Document (Front) / المستند (وجه أمامي)"
+   "label": "Document (Front)"
   },
   {
    "fieldname": "document_file_back",
    "fieldtype": "Attach Image",
-   "label": "Document (Back) / المستند (وجه خلفي)"
+   "label": "Document (Back)"
   },
   {
    "fieldname": "notes_section",
    "fieldtype": "Section Break",
-   "label": "Notes / ملاحظات",
+   "label": "Notes",
    "collapsible": 1
   },
   {
    "fieldname": "notes",
    "fieldtype": "Small Text",
-   "label": "Notes / ملاحظات"
+   "label": "Notes"
   }
  ],
  "index_web_pages_for_search": 1,

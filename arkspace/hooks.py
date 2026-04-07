@@ -16,7 +16,38 @@ app_color = "#1B365D"
 app_home = "/desk"
 
 # Required Apps
-required_apps = ["erpnext", "frappe_visual", "arkan_help"]
+required_apps = ["erpnext", "frappe_visual", "arkan_help", "base_base"]
+
+# ---------------------------------------------------------------------------
+# Feature Registry (Open Core) — consumed by base_base.utils.feature_gating
+# ---------------------------------------------------------------------------
+app_feature_registry = {
+    # FREE TIER — Core coworking
+    "desk_management": "free",
+    "booking_basic": "free",
+    "member_management": "free",
+    "meeting_rooms": "free",
+    "basic_billing": "free",
+    "basic_reports": "free",
+    "access_control": "free",
+    "visitor_management": "free",
+    "amenity_tracking": "free",
+    "basic_portal": "free",
+    # PREMIUM TIER — Advanced coworking
+    "ai_space_optimization": "premium",
+    "advanced_analytics": "premium",
+    "multi_location": "premium",
+    "community_platform": "premium",
+    "event_management": "premium",
+    "smart_access": "premium",
+    "energy_monitoring": "premium",
+    "occupancy_sensors": "premium",
+    "member_app": "premium",
+    "custom_dashboards": "premium",
+    "api_bulk_operations": "premium",
+    "white_labeling": "premium",
+    "priority_support": "premium",
+}
 
 # --- v16: App Screen Integration ---------------------------------------------
 # Shows ARKSpace on the Frappe v16 desktop apps screen

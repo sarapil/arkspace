@@ -16,7 +16,7 @@
    "fieldname": "legal_document",
    "fieldtype": "Link",
    "in_list_view": 1,
-   "label": "Legal Document / المستند القانوني",
+   "label": "Legal Document",
    "options": "Legal Document",
    "reqd": 1
   },
@@ -25,7 +25,7 @@
    "fieldname": "document_type",
    "fieldtype": "Data",
    "in_list_view": 1,
-   "label": "Type / النوع",
+   "label": "Type",
    "read_only": 1
   },
   {
@@ -33,7 +33,7 @@
    "fieldname": "document_number",
    "fieldtype": "Data",
    "in_list_view": 1,
-   "label": "Number / الرقم",
+   "label": "Number",
    "read_only": 1
   },
   {
@@ -41,7 +41,7 @@
    "fieldname": "expiry_date",
    "fieldtype": "Date",
    "in_list_view": 1,
-   "label": "Expiry / الانتهاء",
+   "label": "Expiry",
    "read_only": 1
   },
   {
@@ -49,7 +49,7 @@
    "fieldname": "status",
    "fieldtype": "Data",
    "in_list_view": 1,
-   "label": "Status / الحالة",
+   "label": "Status",
    "read_only": 1
   }
  ],

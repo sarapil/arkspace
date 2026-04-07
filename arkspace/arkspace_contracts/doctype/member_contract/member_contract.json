@@ -65,7 +65,7 @@
    "fieldname": "contract_title",
    "fieldtype": "Data",
    "in_list_view": 1,
-   "label": "Contract Title / عنوان العقد",
+   "label": "Contract Title",
    "reqd": 1
   },
   {
@@ -73,7 +73,7 @@
    "fieldname": "contract_date",
    "fieldtype": "Date",
    "in_list_view": 1,
-   "label": "Contract Date / تاريخ العقد",
+   "label": "Contract Date",
    "reqd": 1
   },
   {
@@ -83,7 +83,7 @@
   {
    "fieldname": "contract_template",
    "fieldtype": "Link",
-   "label": "Contract Template / نموذج العقد",
+   "label": "Contract Template",
    "options": "Contract Template"
   },
   {
@@ -91,19 +91,19 @@
    "fieldname": "status",
    "fieldtype": "Select",
    "in_list_view": 1,
-   "label": "Status / الحالة",
-   "options": "Draft / مسودة\nActive / ساري\nExpired / منتهي\nTerminated / منهي\nCancelled / ملغي"
+   "label": "Status",
+   "options": "Draft\nActive\nExpired\nTerminated\nCancelled"
   },
   {
    "fieldname": "member_section",
    "fieldtype": "Section Break",
-   "label": "Member Details / بيانات العميل"
+   "label": "Member Details"
   },
   {
    "fieldname": "member",
    "fieldtype": "Link",
    "in_list_view": 1,
-   "label": "Member / العميل",
+   "label": "Member",
    "options": "Customer",
    "reqd": 1
   },
@@ -111,14 +111,14 @@
    "fetch_from": "member.customer_name",
    "fieldname": "member_name",
    "fieldtype": "Data",
-   "label": "Member Name / اسم العميل",
+   "label": "Member Name",
    "read_only": 1
   },
   {
    "fetch_from": "member.email_id",
    "fieldname": "member_email",
    "fieldtype": "Data",
-   "label": "Email / البريد الإلكتروني",
+   "label": "Email",
    "options": "Email",
    "read_only": 1
   },
@@ -130,30 +130,30 @@
    "fetch_from": "member.mobile_no",
    "fieldname": "member_phone",
    "fieldtype": "Data",
-   "label": "Phone / الهاتف",
+   "label": "Phone",
    "options": "Phone"
   },
   {
    "fieldname": "member_address",
    "fieldtype": "Small Text",
-   "label": "Address / العنوان"
+   "label": "Address"
   },
   {
    "fieldname": "space_section",
    "fieldtype": "Section Break",
-   "label": "Unit / Space Details / بيانات الوحدة"
+   "label": "Unit / Space Details"
   },
   {
    "fieldname": "space",
    "fieldtype": "Link",
-   "label": "Space / الوحدة",
+   "label": "Space",
    "options": "Co-working Space"
   },
   {
    "fetch_from": "space.space_type",
    "fieldname": "space_type",
    "fieldtype": "Data",
-   "label": "Space Type / نوع الوحدة",
+   "label": "Space Type",
    "read_only": 1
   },
   {
@@ -163,36 +163,36 @@
   {
    "fieldname": "branch",
    "fieldtype": "Link",
-   "label": "Branch / الفرع",
+   "label": "Branch",
    "options": "Branch"
   },
   {
    "fieldname": "floor",
    "fieldtype": "Data",
-   "label": "Floor / الطابق"
+   "label": "Floor"
   },
   {
    "fieldname": "unit_details",
    "fieldtype": "Small Text",
-   "label": "Unit Description / وصف الوحدة",
-   "description": "Area, capacity, facilities, etc. / المساحة، السعة، التجهيزات"
+   "label": "Unit Description",
+   "description": "Area, capacity, facilities, etc."
   },
   {
    "fieldname": "membership_section",
    "fieldtype": "Section Break",
-   "label": "Membership / العضوية"
+   "label": "Membership"
   },
   {
    "fieldname": "membership",
    "fieldtype": "Link",
-   "label": "Membership / العضوية",
+   "label": "Membership",
    "options": "Membership"
   },
   {
    "fetch_from": "membership.membership_plan",
    "fieldname": "membership_plan",
    "fieldtype": "Data",
-   "label": "Plan / الخطة",
+   "label": "Plan",
    "read_only": 1
   },
   {
@@ -203,25 +203,25 @@
    "fetch_from": "membership.billing_cycle",
    "fieldname": "billing_cycle",
    "fieldtype": "Data",
-   "label": "Billing Cycle / دورة الفوترة",
+   "label": "Billing Cycle",
    "read_only": 1
   },
   {
    "fieldname": "period_section",
    "fieldtype": "Section Break",
-   "label": "Contract Period / مدة العقد"
+   "label": "Contract Period"
   },
   {
    "fieldname": "start_date",
    "fieldtype": "Date",
    "in_list_view": 1,
-   "label": "Start Date / تاريخ البداية",
+   "label": "Start Date",
    "reqd": 1
   },
   {
    "fieldname": "end_date",
    "fieldtype": "Date",
-   "label": "End Date / تاريخ النهاية",
+   "label": "End Date",
    "reqd": 1
   },
   {
@@ -232,24 +232,24 @@
    "default": "0",
    "fieldname": "auto_renew",
    "fieldtype": "Check",
-   "label": "Auto Renew / تجديد تلقائي"
+   "label": "Auto Renew"
   },
   {
    "fieldname": "financial_section",
    "fieldtype": "Section Break",
-   "label": "Financial / البيانات المالية"
+   "label": "Financial"
   },
   {
    "fieldname": "rate",
    "fieldtype": "Currency",
-   "label": "Rate / القيمة",
+   "label": "Rate",
    "reqd": 1
   },
   {
    "default": "EGP",
    "fieldname": "currency",
    "fieldtype": "Link",
-   "label": "Currency / العملة",
+   "label": "Currency",
    "options": "Currency"
   },
   {
@@ -259,60 +259,60 @@
   {
    "fieldname": "discount_percent",
    "fieldtype": "Percent",
-   "label": "Discount % / نسبة الخصم"
+   "label": "Discount %"
   },
   {
    "fieldname": "net_amount",
    "fieldtype": "Currency",
-   "label": "Net Amount / الصافي",
+   "label": "Net Amount",
    "read_only": 1
   },
   {
    "default": "0",
    "fieldname": "deposit_amount",
    "fieldtype": "Currency",
-   "label": "Security Deposit / التأمين"
+   "label": "Security Deposit"
   },
   {
    "fieldname": "legal_docs_section",
    "fieldtype": "Section Break",
-   "label": "Legal Documents / المستندات القانونية"
+   "label": "Legal Documents"
   },
   {
    "fieldname": "legal_documents",
    "fieldtype": "Table",
-   "label": "Attached Legal Documents / المستندات المرفقة",
+   "label": "Attached Legal Documents",
    "options": "Contract Legal Document"
   },
   {
    "fieldname": "terms_section",
    "fieldtype": "Section Break",
-   "label": "Contract Terms / شروط العقد"
+   "label": "Contract Terms"
   },
   {
    "fieldname": "contract_terms_ar",
    "fieldtype": "Text Editor",
-   "label": "Terms (Arabic) / الشروط بالعربية"
+   "label": "Terms (Arabic)"
   },
   {
    "fieldname": "contract_terms_en",
    "fieldtype": "Text Editor",
-   "label": "Terms (English) / الشروط بالإنجليزية"
+   "label": "Terms (English)"
   },
   {
    "fieldname": "signatures_section",
    "fieldtype": "Section Break",
-   "label": "Signatures / التوقيعات"
+   "label": "Signatures"
   },
   {
    "fieldname": "company_signatory",
    "fieldtype": "Data",
-   "label": "Company Representative / ممثل الشركة"
+   "label": "Company Representative"
   },
   {
    "fieldname": "company_signatory_title",
    "fieldtype": "Data",
-   "label": "Title / المسمى الوظيفي"
+   "label": "Title"
   },
   {
    "fieldname": "column_break_signatures",
@@ -321,39 +321,39 @@
   {
    "fieldname": "member_signature",
    "fieldtype": "Signature",
-   "label": "Member Signature / توقيع العميل"
+   "label": "Member Signature"
   },
   {
    "fieldname": "signed_date",
    "fieldtype": "Date",
-   "label": "Signed Date / تاريخ التوقيع"
+   "label": "Signed Date"
   },
   {
    "fieldname": "witness_section",
    "fieldtype": "Section Break",
-   "label": "Witness / الشاهد",
+   "label": "Witness",
    "collapsible": 1
   },
   {
    "fieldname": "witness_name",
    "fieldtype": "Data",
-   "label": "Witness Name / اسم الشاهد"
+   "label": "Witness Name"
   },
   {
    "fieldname": "witness_id",
    "fieldtype": "Data",
-   "label": "Witness ID / رقم هوية الشاهد"
+   "label": "Witness ID"
   },
   {
    "fieldname": "notes_section",
    "fieldtype": "Section Break",
-   "label": "Notes / ملاحظات",
+   "label": "Notes",
    "collapsible": 1
   },
   {
    "fieldname": "notes",
    "fieldtype": "Text Editor",
-   "label": "Notes / ملاحظات"
+   "label": "Notes"
   },
   {
    "fieldname": "amended_from",
