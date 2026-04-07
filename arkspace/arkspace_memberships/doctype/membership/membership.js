@@ -30,6 +30,11 @@ frappe.ui.form.on("Membership", {
 				});
 			}
 		}
+
+		// Visual membership dashboard
+		if (!frm.is_new()) {
+			render_as_membership_visual(frm);
+		}
 	},
 
 	membership_plan(frm) {
@@ -50,3 +55,43 @@ frappe.ui.form.on("Membership", {
 		frm.trigger("membership_plan");
 	},
 });
+
+function render_as_membership_visual(frm) {
+	const sc = {
+		Draft: "var(--orange-500)", Active: "var(--green-500)", Expired: "var(--text-muted)",
+		Cancelled: "var(--red-500)", Suspended: "var(--yellow-500)",
+	};
+	const color = sc[frm.doc.status] || "var(--text-muted)";
+
+	let days_left = null;
+	if (frm.doc.end_date && frm.doc.status === "Active") {
+		days_left = frappe.datetime.get_diff(frm.doc.end_date, frappe.datetime.get_today());
+	}
+
+	const wrapper = frm.dashboard.add_section("", __("Membership Overview"));
+	$(wrapper).html(`
+		<div class="as-membership-visual fv-fx-page-enter" style="padding:12px 0;">
+			<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:10px;">
+				<div class="fv-fx-glass fv-fx-hover-lift" style="padding:14px;border-radius:10px;text-align:center;">
+					<div style="font-size:22px;font-weight:700;color:${color};">${__(frm.doc.status || "Draft")}</div>
+					<div style="font-size:11px;color:var(--text-muted);">${__("Status")}</div>
+				</div>
+				<div class="fv-fx-glass fv-fx-hover-lift" style="padding:14px;border-radius:10px;text-align:center;">
+					<div style="font-size:16px;font-weight:600;">${frappe.utils.escape_html(frm.doc.membership_plan || "—")}</div>
+					<div style="font-size:11px;color:var(--text-muted);">${__("Plan")}</div>
+				</div>
+				<div class="fv-fx-glass fv-fx-hover-lift" style="padding:14px;border-radius:10px;text-align:center;">
+					<div style="font-size:22px;font-weight:700;color:var(--green-500);">${format_currency(frm.doc.rate || 0)}</div>
+					<div style="font-size:11px;color:var(--text-muted);">${__(frm.doc.billing_cycle || "Rate")}</div>
+				</div>
+				${days_left !== null ? `
+				<div class="fv-fx-glass fv-fx-hover-lift" style="padding:14px;border-radius:10px;text-align:center;">
+					<div style="font-size:22px;font-weight:700;color:${days_left <= 7 ? "var(--red-500)" : "var(--primary)"};">
+						${days_left} ${__("days")}
+					</div>
+					<div style="font-size:11px;color:var(--text-muted);">${__("Remaining")}</div>
+				</div>` : ""}
+			</div>
+		</div>
+	`);
+}
