@@ -57,4 +57,4 @@ records = frappe.get_all("Pricing Rule")
 _Add related DocTypes here_
 
 ---
-*Last updated: 2026-04-07 22:22:33.760230*
+*Last updated: 2026-04-08 12:43:50.802001*

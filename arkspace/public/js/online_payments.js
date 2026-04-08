@@ -10,6 +10,10 @@
  * and provides utilities for payment flow management.
  */
 
+(function() {
+"use strict";
+// Guard: skip if frappe core not loaded
+if (typeof frappe === "undefined" || typeof frappe.provide !== "function") return;
 frappe.provide("arkspace.payments");
 
 // ═══════════════════════════════════════════════════════════════════════════
@@ -412,3 +416,4 @@ frappe.realtime.on("online_payment_completed", function (data) {
 		cur_frm.reload_doc();
 	}
 });
+})();

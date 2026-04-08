@@ -8,7 +8,7 @@
     // App branding registration
     const APP_CONFIG = {
         name: "arkspace",
-        title: __("ARKSpace"),
+        title: "ARKSpace",
         color: "#1B365D",
         module: "ARKSpace Core",
     };
