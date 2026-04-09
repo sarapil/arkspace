@@ -141,8 +141,8 @@ def _create_snapshot(snapshot_date, branch=None):
     }) or 0
 
     vis_count = frappe.db.count("Visitor Log", {
-        "visit_date": snapshot_date,
-        **({"branch": branch} if branch else {}),
+        "creation": ["between", [snapshot_date, add_days(snapshot_date, 1)]],
+        **({"visiting_branch": branch} if branch else {}),
     }) or 0
 
     trial_conv = frappe.db.count("Day Pass", {
