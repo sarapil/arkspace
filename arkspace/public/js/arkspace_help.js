@@ -37,12 +37,12 @@
 		"Documentation Code Example", "Documentation Prerequisite", "Documentation Relation",
 	];
 
+	// Guard: skip if translation function not loaded
+	if (typeof __ === "undefined") { window.__ = function(s) { return s; }; }
+
 	// ── Topic help content per DocType ──
 	const HELP_TOPICS = {
 		"Co-working Space": {
-// Guard: skip if translation function not loaded
-if (typeof __ === "undefined") { window.__ = function(s) { return s; }; }
-
 			title: __("Spaces"),
 			icon: "🏢",
 			slides: [
