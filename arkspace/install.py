@@ -85,5 +85,19 @@ def _create_roles():
 
 def _create_default_space_types():
     """Create default space types if module is ready."""
-    # Will be populated after Space Type doctype is migrated
-    pass
+    if not frappe.db.exists("DocType", "Space Type"):
+        return
+
+    space_types = [
+        {"type_name": "Hot Desk", "type_name_ar": "مكتب مشترك", "icon": "desk", "color": "#3B82F6", "default_capacity": 1, "hourly_booking": 1, "daily_booking": 1, "monthly_booking": 1},
+        {"type_name": "Dedicated Desk", "type_name_ar": "مكتب مخصص", "icon": "monitor", "color": "#10B981", "default_capacity": 1, "hourly_booking": 0, "daily_booking": 1, "monthly_booking": 1},
+        {"type_name": "Private Office", "type_name_ar": "مكتب خاص", "icon": "building", "color": "#6366F1", "default_capacity": 4, "hourly_booking": 0, "daily_booking": 0, "monthly_booking": 1},
+        {"type_name": "Meeting Room", "type_name_ar": "غرفة اجتماعات", "icon": "users", "color": "#F59E0B", "default_capacity": 8, "hourly_booking": 1, "daily_booking": 1, "monthly_booking": 0},
+        {"type_name": "Event Space", "type_name_ar": "قاعة فعاليات", "icon": "calendar", "color": "#EC4899", "default_capacity": 50, "hourly_booking": 1, "daily_booking": 1, "monthly_booking": 0},
+        {"type_name": "Virtual Office", "type_name_ar": "مكتب افتراضي", "icon": "globe", "color": "#8B5CF6", "default_capacity": 0, "hourly_booking": 0, "daily_booking": 0, "monthly_booking": 1},
+    ]
+    for st in space_types:
+        if not frappe.db.exists("Space Type", st["type_name"]):
+            doc = frappe.new_doc("Space Type")
+            doc.update(st)
+            doc.insert(ignore_permissions=True)
