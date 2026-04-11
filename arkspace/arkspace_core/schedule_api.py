@@ -57,8 +57,8 @@ _STATUS_COLORS = {
 
 def _booking_card(b, card_type="booking"):
     """Format a booking/day-pass record as a timeline card dict."""
-    start = get_datetime(b.get("start_time") or b.get("start"))
-    end = get_datetime(b.get("end_time") or b.get("end"))
+    start = get_datetime(b.get("start_datetime") or b.get("start_time") or b.get("start"))
+    end = get_datetime(b.get("end_datetime") or b.get("end_time") or b.get("end"))
 
     return {
         "id": b.get("name"),
@@ -174,15 +174,15 @@ def get_schedule_data(space_type, date=None, branch=None, business_hours_only=0)
         "Space Booking",
         filters=[
             ["space", "in", space_names],
-            ["start_time", ">=", day_start],
-            ["start_time", "<=", day_end],
+            ["start_datetime", ">=", day_start],
+            ["start_datetime", "<=", day_end],
             ["docstatus", "=", 1],
             ["status", "not in", ["Cancelled", "No Show"]],
         ],
-        fields=["name", "space", "member", "member_name", "start_time", "end_time",
+        fields=["name", "space", "member", "member_name", "start_datetime", "end_datetime",
                 "status", "booking_type", "rate", "net_amount", "total_amount",
                 "discount_percent", "docstatus"],
-        order_by="start_time asc",
+        order_by="start_datetime asc",
     )
 
     # Also get bookings that SPAN into this date (started before, ends during/after)
@@ -190,15 +190,15 @@ def get_schedule_data(space_type, date=None, branch=None, business_hours_only=0)
         "Space Booking",
         filters={
             "space": ["in", space_names],
-            "start_time": ["<", day_start],
-            "end_time": [">", day_start],
+            "start_datetime": ["<", day_start],
+            "end_datetime": [">", day_start],
             "docstatus": 1,
             "status": ["not in", ["Cancelled", "No Show"]],
         },
-        fields=["name", "space", "member", "member_name", "start_time", "end_time",
+        fields=["name", "space", "member", "member_name", "start_datetime", "end_datetime",
                 "status", "booking_type", "rate", "net_amount", "total_amount",
                 "discount_percent", "docstatus"],
-        order_by="start_time asc",
+        order_by="start_datetime asc",
     )
 
     seen = {b.name for b in bookings_raw}
@@ -270,8 +270,8 @@ def check_conflicts(space, start_time, end_time, exclude_booking=None):
         "space": space,
         "docstatus": 1,
         "status": ["not in", ["Cancelled", "No Show", "Checked Out"]],
-        "start_time": ["<", end],
-        "end_time": [">", start],
+        "start_datetime": ["<", end],
+        "end_datetime": [">", start],
     }
 
     if exclude_booking:
@@ -280,7 +280,7 @@ def check_conflicts(space, start_time, end_time, exclude_booking=None):
     conflicts = frappe.get_all(
         "Space Booking",
         filters=filters,
-        fields=["name", "member_name", "start_time", "end_time", "status"],
+        fields=["name", "member_name", "start_datetime", "end_datetime", "status"],
     )
 
     space_status = frappe.db.get_value("Co-working Space", space, "status") or "Available"
@@ -318,11 +318,11 @@ def move_booking(booking, new_space, new_start_time=None, new_end_time=None):
         frappe.throw(_("Cannot move a {0} booking.").format(_(doc.status)))
 
     old_space = doc.space
-    old_start = doc.start_time
-    old_end = doc.end_time
+    old_start = doc.start_datetime
+    old_end = doc.end_datetime
 
-    new_start = get_datetime(new_start_time) if new_start_time else doc.start_time
-    new_end = get_datetime(new_end_time) if new_end_time else doc.end_time
+    new_start = get_datetime(new_start_time) if new_start_time else doc.start_datetime
+    new_end = get_datetime(new_end_time) if new_end_time else doc.end_datetime
 
     # Validate duration
     if new_end <= new_start:
@@ -346,8 +346,8 @@ def move_booking(booking, new_space, new_start_time=None, new_end_time=None):
     # Apply changes via amend-like pattern (direct update for submitted docs)
     frappe.db.set_value("Space Booking", booking, {
         "space": new_space,
-        "start_time": new_start,
-        "end_time": new_end,
+        "start_datetime": new_start,
+        "end_datetime": new_end,
     }, update_modified=True)
 
     # Update duration
@@ -399,12 +399,12 @@ def extend_booking(booking, new_end_time):
 
     new_end = get_datetime(new_end_time)
 
-    if new_end <= doc.start_time:
+    if new_end <= doc.start_datetime:
         frappe.throw(_("End time must be after start time."))
 
     # Check conflicts (only if extending, not shrinking)
-    if new_end > doc.end_time:
-        conflict = check_conflicts(doc.space, str(doc.end_time), str(new_end), exclude_booking=booking)
+    if new_end > doc.end_datetime:
+        conflict = check_conflicts(doc.space, str(doc.end_datetime), str(new_end), exclude_booking=booking)
         if isinstance(conflict, str):
             import json
             conflict = json.loads(conflict)
@@ -413,10 +413,10 @@ def extend_booking(booking, new_end_time):
             names = ", ".join([c["name"] for c in conflict["conflicts"]])
             frappe.throw(_("Cannot extend — conflict with: {0}").format(names))
 
-    old_end = doc.end_time
+    old_end = doc.end_datetime
 
-    frappe.db.set_value("Space Booking", booking, "end_time", new_end)
-    duration = time_diff_in_hours(new_end, doc.start_time)
+    frappe.db.set_value("Space Booking", booking, "end_datetime", new_end)
+    duration = time_diff_in_hours(new_end, doc.start_datetime)
     frappe.db.set_value("Space Booking", booking, "duration_hours", duration)
 
     doc.add_comment("Info", _(
@@ -460,7 +460,7 @@ def swap_bookings(booking_a, booking_b):
         frappe.throw(_("Both bookings are in the same space. Nothing to swap."))
 
     # Check conflicts: A's time in B's space (excluding B)
-    conflict = check_conflicts(space_b, str(doc_a.start_time), str(doc_a.end_time), exclude_booking=booking_b)
+    conflict = check_conflicts(space_b, str(doc_a.start_datetime), str(doc_a.end_datetime), exclude_booking=booking_b)
     if isinstance(conflict, str):
         import json
         conflict = json.loads(conflict)
@@ -468,7 +468,7 @@ def swap_bookings(booking_a, booking_b):
         frappe.throw(_("Cannot swap — conflict for {0} in {1}").format(booking_a, space_b))
 
     # Check conflicts: B's time in A's space (excluding A)
-    conflict = check_conflicts(space_a, str(doc_b.start_time), str(doc_b.end_time), exclude_booking=booking_a)
+    conflict = check_conflicts(space_a, str(doc_b.start_datetime), str(doc_b.end_datetime), exclude_booking=booking_a)
     if isinstance(conflict, str):
         import json
         conflict = json.loads(conflict)
@@ -534,8 +534,8 @@ def quick_book(space, start_time, end_time, member=None, guest_name=None, bookin
         "space": space,
         "member": member,
         "booking_type": booking_type,
-        "start_time": start,
-        "end_time": end,
+        "start_datetime": start,
+        "end_datetime": end,
         "rate": rate,
         "status": "Confirmed",
     })
@@ -571,22 +571,22 @@ def split_booking(booking, split_time, second_space):
 
     split = get_datetime(split_time)
 
-    if split <= doc.start_time or split >= doc.end_time:
+    if split <= doc.start_datetime or split >= doc.end_datetime:
         frappe.throw(_("Split time must be between booking start and end."))
 
     # Check conflicts for the second part
-    conflict = check_conflicts(second_space, str(split), str(doc.end_time))
+    conflict = check_conflicts(second_space, str(split), str(doc.end_datetime))
     if isinstance(conflict, str):
         import json
         conflict = json.loads(conflict)
     if conflict.get("has_conflict"):
         frappe.throw(_("Conflict in target space for the second part."))
 
-    original_end = doc.end_time
+    original_end = doc.end_datetime
 
     # Shrink original booking to end at split time
-    frappe.db.set_value("Space Booking", booking, "end_time", split)
-    duration1 = time_diff_in_hours(split, doc.start_time)
+    frappe.db.set_value("Space Booking", booking, "end_datetime", split)
+    duration1 = time_diff_in_hours(split, doc.start_datetime)
     frappe.db.set_value("Space Booking", booking, "duration_hours", duration1)
 
     # Create second booking
@@ -595,8 +595,8 @@ def split_booking(booking, split_time, second_space):
         "space": second_space,
         "member": doc.member,
         "booking_type": doc.booking_type,
-        "start_time": split,
-        "end_time": original_end,
+        "start_datetime": split,
+        "end_datetime": original_end,
         "rate": doc.rate,
         "status": doc.status,
     })
@@ -766,8 +766,8 @@ def _update_space_status(space_name, member=None):
             "space": space_name,
             "docstatus": 1,
             "status": "Checked In",
-            "start_time": ["<=", now],
-            "end_time": [">=", now],
+            "start_datetime": ["<=", now],
+            "end_datetime": [">=", now],
         },
         fields=["member"],
         limit=1,
@@ -786,8 +786,8 @@ def _update_space_status(space_name, member=None):
                 "space": space_name,
                 "docstatus": 1,
                 "status": "Confirmed",
-                "start_time": ["<=", now],
-                "end_time": [">=", now],
+                "start_datetime": ["<=", now],
+                "end_datetime": [">=", now],
             },
             limit=1,
         )
