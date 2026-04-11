@@ -1,0 +1,968 @@
+/* arkspace — Combined CSS (reduces HTTP requests) */
+/* Auto-generated from 4 individual files */
+
+/* === arkspace-theme.css === */
+/* Copyright (c) 2024, Moataz M Hassan (Arkan Lab)
+   Developer Website: https://arkan.it.com
+   License: MIT
+   For license information, please see license.txt */
+
+/* ARKSpace — Theme CSS Variables
+ * Brand colors and design tokens for ARKSpace
+ * Domain: Coworking Space Management
+ */
+
+:root {
+  /* Primary Colors */
+  --arkspace-primary: #14B8A6;
+  --arkspace-primary-dark: #0D9488;
+  --arkspace-primary-light: #14B8A633;
+  --arkspace-primary-subtle: #14B8A60D;
+
+  /* Neutral Colors */
+  --arkspace-bg: #FFFFFF;
+  --arkspace-bg-subtle: #F8FAFC;
+  --arkspace-text: #1E293B;
+  --arkspace-text-muted: #64748B;
+  --arkspace-border: #E2E8F0;
+
+  /* Status Colors */
+  --arkspace-success: #10B981;
+  --arkspace-warning: #F59E0B;
+  --arkspace-danger: #EF4444;
+  --arkspace-info: #3B82F6;
+
+  /* Spacing */
+  --arkspace-radius-sm: 6px;
+  --arkspace-radius-md: 10px;
+  --arkspace-radius-lg: 16px;
+
+  /* Shadows */
+  --arkspace-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --arkspace-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  --arkspace-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+
+  /* Typography */
+  --arkspace-font-family: 'Inter', 'Noto Sans Arabic', sans-serif;
+  --arkspace-font-size-xs: 0.75rem;
+  --arkspace-font-size-sm: 0.875rem;
+  --arkspace-font-size-base: 1rem;
+  --arkspace-font-size-lg: 1.125rem;
+  --arkspace-font-size-xl: 1.25rem;
+}
+
+/* Dark Mode */
+[data-theme="dark"] {
+  --arkspace-bg: #0F172A;
+  --arkspace-bg-subtle: #1E293B;
+  --arkspace-text: #F1F5F9;
+  --arkspace-text-muted: #94A3B8;
+  --arkspace-border: #334155;
+  --arkspace-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --arkspace-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4);
+  --arkspace-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+}
+
+/* RTL Support */
+[dir="rtl"] .arkspace-sidebar {
+  border-inline-start: 2px solid var(--arkspace-primary);
+  margin-inline-start: 0;
+  margin-inline-end: 1rem;
+}
+
+/* Glassmorphism Card */
+.arkspace-glass-card {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--arkspace-border);
+  border-radius: var(--arkspace-radius-lg);
+  box-shadow: var(--arkspace-shadow-md);
+  padding: 1.5rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.arkspace-glass-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--arkspace-shadow-lg);
+}
+
+[data-theme="dark"] .arkspace-glass-card {
+  background: rgba(30, 41, 59, 0.7);
+}
+
+/* Status Badge */
+.arkspace-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: var(--arkspace-font-size-xs);
+  font-weight: 600;
+}
+
+.arkspace-badge--success { background: var(--arkspace-success)1A; color: var(--arkspace-success); }
+.arkspace-badge--warning { background: var(--arkspace-warning)1A; color: var(--arkspace-warning); }
+.arkspace-badge--danger { background: var(--arkspace-danger)1A; color: var(--arkspace-danger); }
+.arkspace-badge--info { background: var(--arkspace-info)1A; color: var(--arkspace-info); }
+
+/* Workspace Header */
+.arkspace-ws-header {
+  background: linear-gradient(135deg, var(--arkspace-primary), var(--arkspace-primary-dark));
+  color: white;
+  padding: 2rem;
+  border-radius: var(--arkspace-radius-lg);
+  margin-bottom: 1.5rem;
+}
+
+.arkspace-ws-header h1 {
+  margin: 0;
+  font-size: 1.75rem;
+  font-weight: 700;
+}
+
+.arkspace-ws-header p {
+  margin: 0.5rem 0 0;
+  opacity: 0.85;
+  font-size: var(--arkspace-font-size-sm);
+}
+
+
+/* === arkspace-variables.css === */
+/* Copyright (c) 2024, Moataz M Hassan (Arkan Lab)
+   Developer Website: https://arkan.it.com
+   License: MIT
+   For license information, please see license.txt */
+
+/* ============================================================
+   ARKSpace Brand Variables — متغيرات الهوية البصرية
+   Auto-generated per Arkan Lab branding standards
+   ============================================================ */
+
+:root {
+    /* Brand — canonical navy */
+    --as-navy: #1B365D;
+
+    /* Primary palette */
+    --as-primary: var(--as-navy);
+    --as-primary-light: #2A4A7F;
+    --as-primary-dark: #0F1F3A;
+    --as-primary-rgb: 27, 54, 93;
+
+    /* Secondary / Accent */
+    --as-secondary: #C4A962;
+    --as-secondary-light: #D4BC78;
+    --as-secondary-dark: #A38B4C;
+    --as-accent: #2563EB;
+
+    /* Semantic */
+    --as-success: var(--green-500, #10B981);
+    --as-warning: var(--yellow-500, #F59E0B);
+    --as-danger: var(--red-500, #EF4444);
+    --as-info: var(--blue-500, #3B82F6);
+
+    /* Surfaces */
+    --as-bg: var(--fg-color, #FFFFFF);
+    --as-bg-secondary: #F8FAFC;
+    --as-bg-tertiary: #F1F5F9;
+    --as-text: var(--text-color, #1F2937);
+    --as-text-secondary: #6B7280;
+    --as-text-muted: #9CA3AF;
+
+    /* Borders & Radius */
+    --as-border: var(--border-color, #E5E7EB);
+    --as-radius: 8px;
+    --as-radius-lg: 12px;
+
+    /* Transitions */
+    --as-transition: all 0.3s ease;
+    --as-transition-fast: all 0.15s ease;
+
+    /* Shadows */
+    --as-shadow-sm: 0 1px 2px rgba(27, 54, 93, 0.06);
+    --as-shadow: 0 2px 8px rgba(27, 54, 93, 0.1);
+    --as-shadow-lg: 0 8px 24px rgba(27, 54, 93, 0.15);
+}
+
+/* Dark mode overrides */
+[data-theme="dark"] {
+    --as-navy: #4A7FC9;
+    --as-primary-light: #5A8FD9;
+    --as-primary-dark: #1B365D;
+    --as-primary-rgb: 74, 127, 201;
+    --as-secondary: #D4BC78;
+    --as-bg-secondary: #1A1A2E;
+    --as-bg-tertiary: #16213E;
+    --as-success: #34D399;
+    --as-warning: #FBBF24;
+    --as-danger: #F87171;
+    --as-info: #60A5FA;
+    --as-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.2);
+    --as-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    --as-shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+/* Global brand accent for ARKSpace pages */
+.page-container[data-page-container^="ark-"] .page-head .title-text,
+.page-container[data-page-container^="ark-"] .page-head .indicator-pill {
+    color: var(--as-primary);
+}
+
+
+/* === design-system.css === */
+/* Copyright (c) 2024, Moataz M Hassan (Arkan Lab)
+   Developer Website: https://arkan.it.com
+   License: MIT
+   For license information, please see license.txt */
+
+/* ============================================================
+   ARKSpace Design System — نظام التصميم
+   ============================================================ */
+
+/* ========================
+   CSS VARIABLES
+   ======================== */
+:root {
+    --ark-navy: #1B365D;
+    --ark-gold: #C4A962;
+    --ark-blue: #2563EB;
+    --ark-blue-dark: #1D4ED8;
+    --ark-blue-darker: #1E40AF;
+    --ark-green: #10B981;
+    --ark-green-dark: #059669;
+    --ark-orange: #F59E0B;
+    --ark-red: #EF4444;
+    --ark-red-dark: #DC2626;
+    --ark-purple: #6366F1;
+    --ark-bg-primary: #FFFFFF;
+    --ark-bg-secondary: #F8FAFC;
+    --ark-bg-tertiary: #F1F5F9;
+    --ark-text-primary: #1F2937;
+    --ark-text-secondary: #6B7280;
+    --ark-text-muted: #9CA3AF;
+    --ark-radius: 8px;
+    --ark-transition: all 0.3s ease;
+}
+
+/* ========================
+   BUTTON STYLES — أنماط الأزرار
+   ======================== */
+
+.btn-arkspace-primary {
+    background: linear-gradient(135deg, var(--ark-blue) 0%, var(--ark-blue-dark) 100%);
+    color: #FFFFFF;
+    border: none;
+    border-radius: var(--ark-radius);
+    padding: 12px 24px;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    transition: var(--ark-transition);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 2px 4px rgba(37, 99, 235, 0.3);
+}
+
+.btn-arkspace-primary:hover {
+    background: linear-gradient(135deg, var(--ark-blue-dark) 0%, var(--ark-blue-darker) 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.4);
+}
+
+.btn-arkspace-primary:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(37, 99, 235, 0.3);
+}
+
+.btn-arkspace-primary i {
+    font-size: 16px;
+}
+
+/* Secondary Button */
+.btn-arkspace-secondary {
+    background: #FFFFFF;
+    color: var(--ark-navy);
+    border: 2px solid var(--ark-navy);
+    border-radius: var(--ark-radius);
+    padding: 10px 22px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--ark-transition);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-arkspace-secondary:hover {
+    background: var(--ark-navy);
+    color: #FFFFFF;
+}
+
+/* Success Button */
+.btn-arkspace-success {
+    background: linear-gradient(135deg, var(--ark-green) 0%, var(--ark-green-dark) 100%);
+    color: #FFFFFF;
+    border: none;
+    border-radius: var(--ark-radius);
+    padding: 12px 24px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--ark-transition);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-arkspace-success:hover {
+    background: linear-gradient(135deg, var(--ark-green-dark) 0%, #047857 100%);
+    transform: translateY(-2px);
+}
+
+/* Danger Button */
+.btn-arkspace-danger {
+    background: linear-gradient(135deg, var(--ark-red) 0%, var(--ark-red-dark) 100%);
+    color: #FFFFFF;
+    border: none;
+    border-radius: var(--ark-radius);
+    padding: 12px 24px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--ark-transition);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-arkspace-danger:hover {
+    background: linear-gradient(135deg, var(--ark-red-dark) 0%, #B91C1C 100%);
+}
+
+/* Gold / VIP Button */
+.btn-arkspace-gold {
+    background: linear-gradient(135deg, var(--ark-gold) 0%, #A38B4C 100%);
+    color: var(--ark-navy);
+    border: none;
+    border-radius: var(--ark-radius);
+    padding: 12px 24px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: var(--ark-transition);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 2px 8px rgba(196, 169, 98, 0.4);
+}
+
+.btn-arkspace-gold:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(196, 169, 98, 0.5);
+}
+
+/* Icon-Only Button */
+.btn-arkspace-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background: var(--ark-bg-tertiary);
+    color: var(--ark-navy);
+    cursor: pointer;
+    transition: var(--ark-transition);
+}
+
+.btn-arkspace-icon:hover {
+    background: var(--ark-navy);
+    color: #FFFFFF;
+}
+
+/* ========================
+   LINK STYLES — أنماط الروابط
+   ======================== */
+
+.link-arkspace {
+    color: var(--ark-blue);
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.link-arkspace:hover {
+    color: var(--ark-blue-dark);
+    text-decoration: underline;
+}
+
+.link-arkspace:visited {
+    color: #7C3AED;
+}
+
+.link-arkspace i {
+    font-size: 12px;
+    transition: transform 0.2s ease;
+}
+
+.link-arkspace:hover i {
+    transform: translateX(-4px);
+}
+
+/* Navigation Link */
+.link-arkspace-nav {
+    color: var(--ark-navy);
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.2s ease;
+}
+
+.link-arkspace-nav:hover {
+    background: var(--ark-bg-tertiary);
+    color: var(--ark-blue);
+}
+
+.link-arkspace-nav.active {
+    background: var(--ark-blue);
+    color: #FFFFFF;
+}
+
+/* Card Link */
+.link-arkspace-card {
+    display: block;
+    padding: 16px;
+    border-radius: 12px;
+    background: #FFFFFF;
+    border: 1px solid #E5E7EB;
+    text-decoration: none;
+    color: inherit;
+    transition: var(--ark-transition);
+}
+
+.link-arkspace-card:hover {
+    border-color: var(--ark-blue);
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.15);
+    transform: translateY(-2px);
+}
+
+/* ========================
+   SHORTCUT CARDS — بطاقات الاختصارات
+   ======================== */
+
+.shortcut-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #FFFFFF 0%, var(--ark-bg-secondary) 100%);
+    border: 1px solid #E5E7EB;
+    text-decoration: none;
+    color: var(--ark-navy);
+    transition: var(--ark-transition);
+    min-width: 120px;
+}
+
+.shortcut-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(27, 54, 93, 0.15);
+    border-color: var(--ark-gold);
+}
+
+.shortcut-card .icon-wrapper {
+    width: 56px;
+    height: 56px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 12px;
+    font-size: 24px;
+}
+
+.shortcut-card .icon-wrapper.blue { background: rgba(37, 99, 235, 0.1); color: var(--ark-blue); }
+.shortcut-card .icon-wrapper.green { background: rgba(16, 185, 129, 0.1); color: var(--ark-green); }
+.shortcut-card .icon-wrapper.gold { background: rgba(196, 169, 98, 0.1); color: var(--ark-gold); }
+.shortcut-card .icon-wrapper.purple { background: rgba(139, 92, 246, 0.1); color: var(--ark-purple); }
+.shortcut-card .icon-wrapper.red { background: rgba(239, 68, 68, 0.1); color: var(--ark-red); }
+
+.shortcut-card .label {
+    font-weight: 600;
+    font-size: 14px;
+    text-align: center;
+}
+
+.shortcut-card .count {
+    font-size: 12px;
+    color: var(--ark-text-secondary);
+    margin-top: 4px;
+}
+
+/* ========================
+   STATUS BADGES — شارات الحالة
+   ======================== */
+
+.status-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.status-badge.status-active { background: rgba(16, 185, 129, 0.1); color: var(--ark-green); }
+.status-badge.status-pending { background: rgba(245, 158, 11, 0.1); color: var(--ark-orange); }
+.status-badge.status-cancelled { background: rgba(239, 68, 68, 0.1); color: var(--ark-red); }
+.status-badge.status-draft { background: rgba(107, 114, 128, 0.1); color: var(--ark-text-secondary); }
+.status-badge.status-completed { background: rgba(37, 99, 235, 0.1); color: var(--ark-blue); }
+
+/* ========================
+   KPI CARDS — بطاقات المؤشرات
+   ======================== */
+
+.kpi-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 20px;
+    border-radius: 12px;
+    background: #FFFFFF;
+    border: 1px solid #E5E7EB;
+}
+
+.kpi-card .kpi-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+}
+
+.kpi-card.kpi-blue .kpi-icon { background: rgba(37, 99, 235, 0.1); color: var(--ark-blue); }
+.kpi-card.kpi-green .kpi-icon { background: rgba(16, 185, 129, 0.1); color: var(--ark-green); }
+.kpi-card.kpi-gold .kpi-icon { background: rgba(196, 169, 98, 0.1); color: var(--ark-gold); }
+.kpi-card.kpi-purple .kpi-icon { background: rgba(139, 92, 246, 0.1); color: var(--ark-purple); }
+
+.kpi-card .kpi-content { flex: 1; }
+
+.kpi-card .kpi-title {
+    font-size: 13px;
+    color: var(--ark-text-secondary);
+    margin-bottom: 4px;
+}
+
+.kpi-card .kpi-value {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--ark-text-primary);
+}
+
+.kpi-card .kpi-trend {
+    font-size: 12px;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    margin-top: 4px;
+}
+
+.kpi-card .kpi-trend.trend-up { color: var(--ark-green); }
+.kpi-card .kpi-trend.trend-down { color: var(--ark-red); }
+.kpi-card .kpi-trend.trend-neutral { color: var(--ark-text-muted); }
+
+/* ========================
+   RTL SUPPORT — دعم العربية
+   ======================== */
+
+[dir="rtl"] .link-arkspace:hover i {
+    transform: translateX(4px);
+}
+
+[dir="rtl"] .btn-arkspace-primary,
+[dir="rtl"] .btn-arkspace-secondary,
+[dir="rtl"] .btn-arkspace-success,
+[dir="rtl"] .btn-arkspace-danger {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .link-arkspace-nav {
+    flex-direction: row-reverse;
+}
+
+
+/* === arkspace.css === */
+/* Copyright (c) 2024, Moataz M Hassan (Arkan Lab)
+   Developer Website: https://arkan.it.com
+   License: MIT
+   For license information, please see license.txt */
+
+/* ============================================================
+   ARKSpace — Application Styles
+   أنماط التطبيق — آرك سبيس
+   ============================================================ */
+
+/* ========================
+   WORKSPACE HEADER BLOCKS — عناوين أقسام الصفحة
+   ======================== */
+
+/* White text for all h4 headers in workspace content blocks */
+.codex-editor .ce-block .ce-header .h4,
+.codex-editor .ce-block .ce-header .h4 b,
+.codex-editor .ce-block .ce-header .h3,
+.codex-editor .ce-block .ce-header .h3 b {
+    color: #FFFFFF !important;
+}
+
+/* Header block — navy gradient background with gold accent */
+.codex-editor .ce-block .widget.header {
+    background: linear-gradient(135deg, var(--ark-navy) 0%, #243B61 50%, #1B365D 100%) !important;
+    border-radius: 12px !important;
+    padding: 14px 20px !important;
+    margin-bottom: 4px !important;
+    box-shadow: 0 2px 8px rgba(27, 54, 93, 0.25) !important;
+    border-right: 4px solid var(--ark-gold) !important;
+    min-height: auto !important;
+}
+
+.codex-editor .ce-block .widget.header .ce-header {
+    padding-left: 12px !important;
+}
+
+/* ========================
+   LINKS / CARD WIDGET BLOCKS — بطاقات الروابط
+   ======================== */
+
+/* Card widget container styling */
+.widget.links-widget-box {
+    background: #FFFFFF !important;
+    border: 1px solid #E2E8F0 !important;
+    border-radius: 14px !important;
+    padding: 16px !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.06) !important;
+    transition: all 0.3s ease !important;
+}
+
+.widget.links-widget-box:hover {
+    box-shadow: 0 4px 16px rgba(27, 54, 93, 0.12), 0 2px 4px rgba(0, 0, 0, 0.06) !important;
+    border-color: var(--ark-gold) !important;
+    transform: translateY(-2px);
+}
+
+/* Card widget title with icon styling */
+.widget.links-widget-box .widget-head .widget-label .widget-title {
+    color: var(--ark-navy) !important;
+    font-weight: 700 !important;
+    font-size: 15px !important;
+    letter-spacing: 0.3px;
+}
+
+.widget.links-widget-box .widget-head .widget-label .widget-title svg {
+    color: var(--ark-blue) !important;
+    stroke: var(--ark-blue) !important;
+    margin-right: 10px !important;
+    width: 20px;
+    height: 20px;
+}
+
+/* Link items inside card widgets */
+.widget.links-widget-box .link-item {
+    padding: 8px 10px !important;
+    margin: 2px 0 !important;
+    border-radius: 8px !important;
+    transition: all 0.2s ease !important;
+    border: 1px solid transparent !important;
+}
+
+.widget.links-widget-box .link-item:hover {
+    background: linear-gradient(135deg, rgba(37, 99, 235, 0.06) 0%, rgba(196, 169, 98, 0.04) 100%) !important;
+    border-color: rgba(37, 99, 235, 0.12) !important;
+    padding-right: 14px !important;
+}
+
+.widget.links-widget-box .link-item .link-content {
+    font-weight: 500 !important;
+}
+
+.widget.links-widget-box .link-item .link-content:hover {
+    color: var(--ark-blue) !important;
+}
+
+/* Link arrow icon */
+.widget.links-widget-box .link-item svg {
+    color: var(--ark-gold) !important;
+    stroke: var(--ark-gold) !important;
+    opacity: 0;
+    transition: all 0.2s ease !important;
+}
+
+.widget.links-widget-box .link-item:hover svg {
+    opacity: 1;
+}
+
+/* ========================
+   SHORTCUT WIDGETS — اختصارات سريعة
+   ======================== */
+
+.widget.shortcut-widget-box {
+    border-radius: 12px !important;
+    border: 1px solid #E2E8F0 !important;
+    padding: 10px 14px !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    background: #FFFFFF !important;
+    position: relative;
+    overflow: hidden;
+}
+
+.widget.shortcut-widget-box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(180deg, var(--ark-gold) 0%, var(--ark-blue) 100%);
+    border-radius: 0 12px 12px 0;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.widget.shortcut-widget-box:hover {
+    transform: translateY(-3px) !important;
+    box-shadow: 0 6px 20px rgba(27, 54, 93, 0.15) !important;
+    border-color: var(--ark-blue) !important;
+    background: linear-gradient(135deg, var(--ark-navy) 0%, #2A4A7F 100%) !important;
+}
+
+.widget.shortcut-widget-box:hover::before {
+    opacity: 1;
+}
+
+.widget.shortcut-widget-box:hover .widget-title {
+    color: #FFFFFF !important;
+}
+
+.widget.shortcut-widget-box .widget-title {
+    font-weight: 600 !important;
+    color: var(--ark-navy) !important;
+    transition: color 0.3s ease !important;
+}
+
+.widget.shortcut-widget-box .indicator-pill {
+    font-size: 12px !important;
+    font-weight: 600 !important;
+    border-radius: 20px !important;
+    padding: 2px 10px !important;
+}
+
+/* ========================
+   NUMBER CARD WIDGETS — بطاقات الأرقام
+   ======================== */
+
+.widget.number-widget-box {
+    border-radius: 14px !important;
+    border: 1px solid #E2E8F0 !important;
+    padding: 18px !important;
+    transition: all 0.3s ease !important;
+    background: #FFFFFF !important;
+    position: relative;
+    overflow: hidden;
+}
+
+.widget.number-widget-box::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, var(--ark-blue) 0%, var(--ark-gold) 50%, var(--ark-green) 100%);
+    opacity: 0.7;
+}
+
+.widget.number-widget-box:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 16px rgba(27, 54, 93, 0.12) !important;
+    border-color: var(--ark-blue) !important;
+}
+
+.widget.number-widget-box .widget-title {
+    color: var(--ark-navy) !important;
+    font-weight: 600 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+    font-size: 11px !important;
+}
+
+.widget.number-widget-box .widget-body .number {
+    color: var(--ark-navy) !important;
+    font-weight: 800 !important;
+}
+
+/* ========================
+   WIDGET GROUP HEADERS — عناوين مجموعات الويدجت
+   ======================== */
+
+.widget-group .widget-group-head .widget-group-title {
+    color: var(--ark-navy) !important;
+    font-weight: 700 !important;
+    font-size: 17px !important;
+    position: relative;
+    padding-right: 12px;
+}
+
+/* ========================
+   WORKSPACE PAGE LAYOUT — تخطيط الصفحة
+   ======================== */
+
+/* Desk page main content area */
+.desk-page.page-main-content {
+    padding: 8px 4px !important;
+}
+
+/* Workspace sidebar selected item accent */
+.desk-sidebar .sidebar-item-container .desk-sidebar-item.selected {
+    border-right: 3px solid var(--ark-gold) !important;
+}
+
+/* ========================
+   WIDGET GROUP SECTIONS — أقسام المحتوى
+   ======================== */
+
+/* Space between widget groups */
+.widget-group {
+    margin-bottom: 28px !important;
+}
+
+/* Grid spacing improvements */
+.widget-group .grid-col-3 {
+    gap: 16px !important;
+}
+
+.widget-group .grid-col-2 {
+    gap: 16px !important;
+}
+
+/* ========================
+   SCROLLBAR STYLING — شريط التمرير
+   ======================== */
+
+.layout-main-section::-webkit-scrollbar {
+    width: 6px;
+}
+
+.layout-main-section::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.layout-main-section::-webkit-scrollbar-thumb {
+    background: var(--ark-gold);
+    border-radius: 3px;
+}
+
+.layout-main-section::-webkit-scrollbar-thumb:hover {
+    background: var(--ark-navy);
+}
+
+/* ========================
+   RTL ADJUSTMENTS — تعديلات اللغة العربية
+   ======================== */
+
+[dir="rtl"] .codex-editor .ce-block .widget.header {
+    border-right: none !important;
+    border-left: 4px solid var(--ark-gold) !important;
+}
+
+[dir="rtl"] .widget.shortcut-widget-box::before {
+    right: auto;
+    left: 0;
+    border-radius: 12px 0 0 12px;
+}
+
+[dir="rtl"] .widget.links-widget-box .link-item:hover {
+    padding-right: 10px !important;
+    padding-left: 14px !important;
+}
+
+[dir="rtl"] .widget.links-widget-box .widget-head .widget-label .widget-title svg {
+    margin-right: 0 !important;
+    margin-left: 10px !important;
+}
+
+[dir="rtl"] .widget-group .widget-group-head .widget-group-title {
+    padding-right: 0;
+    padding-left: 12px;
+}
+
+/* ========================
+   DARK MODE SUPPORT — الوضع الداكن
+   ======================== */
+
+[data-theme="dark"] .widget.links-widget-box {
+    background: var(--card-bg) !important;
+    border-color: var(--border-color) !important;
+}
+
+[data-theme="dark"] .widget.links-widget-box:hover {
+    border-color: var(--ark-gold) !important;
+    box-shadow: 0 4px 16px rgba(196, 169, 98, 0.15) !important;
+}
+
+[data-theme="dark"] .widget.shortcut-widget-box {
+    background: var(--card-bg) !important;
+    border-color: var(--border-color) !important;
+}
+
+[data-theme="dark"] .widget.number-widget-box {
+    background: var(--card-bg) !important;
+    border-color: var(--border-color) !important;
+}
+
+[data-theme="dark"] .codex-editor .ce-block .widget.header {
+    background: linear-gradient(135deg, #0F1D33 0%, #162744 50%, #1B365D 100%) !important;
+}
+
+[data-theme="dark"] .widget.links-widget-box .widget-head .widget-label .widget-title {
+    color: var(--text-color) !important;
+}
+
+[data-theme="dark"] .widget.number-widget-box .widget-title,
+[data-theme="dark"] .widget.number-widget-box .widget-body .number {
+    color: var(--text-color) !important;
+}
+
+/* ========================
+   ANIMATIONS — حركات
+   ======================== */
+
+@keyframes ark-fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.widget-group {
+    animation: ark-fadeInUp 0.4s ease-out;
+}
+
+.widget-group:nth-child(2) { animation-delay: 0.05s; }
+.widget-group:nth-child(3) { animation-delay: 0.1s; }
+.widget-group:nth-child(4) { animation-delay: 0.15s; }
+.widget-group:nth-child(5) { animation-delay: 0.2s; }
+.widget-group:nth-child(6) { animation-delay: 0.25s; }
+
+

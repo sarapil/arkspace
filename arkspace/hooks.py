@@ -72,26 +72,9 @@ website_context = {
 
 # --- Static Assets -----------------------------------------------------------
 
-app_include_css = [
-    "/assets/arkspace/css/arkspace-theme.css",
-    "/assets/arkspace/css/arkspace-variables.css",
-    "/assets/arkspace/css/design-system.css",
-    "/assets/arkspace/css/arkspace.css",
-]
+app_include_css = ["/assets/arkspace/css/arkspace_combined.css"]
 
-app_include_js = [
-    "/assets/arkspace/js/arkspace.js",
-    "/assets/arkspace/js/arkspace_help.js",
-    "/assets/arkspace/js/online_payments.js",
-    "/assets/arkspace/js/dynamic_pricing.js",
-    "/assets/arkspace/js/qr_checkin.js",
-    "/assets/arkspace/js/visitor_management.js",
-    "/assets/arkspace/js/day_pass.js",
-    "/assets/arkspace/js/analytics.js",
-    "/assets/arkspace/js/multi_location.js",
-    "/assets/arkspace/js/community.js",
-    "/assets/arkspace/js/fv_integration.js",
-]
+app_include_js = ["/assets/arkspace/js/arkspace_combined.js"]
 
 # --- Website Assets -----------------------------------------------------------
 
