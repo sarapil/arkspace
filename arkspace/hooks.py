@@ -16,7 +16,7 @@ app_color = "#1B365D"
 app_home = "/desk"
 
 # Required Apps
-required_apps = ["erpnext", "frappe_visual", "arkan_help", "base_base"]
+required_apps = ["frappe", "erpnext", "frappe_visual", "arkan_help", "base_base"]
 
 # ---------------------------------------------------------------------------
 # Feature Registry (Open Core) — consumed by base_base.utils.feature_gating
@@ -255,12 +255,29 @@ website_route_rules = [
 # CAPS Integration — Capability-Based Access Control
 # ------------------------------------------------------------
 caps_capabilities = [
-    {"name": "ARK_manage_spaces", "category": "Module", "description": "Manage coworking spaces"},
-    {"name": "ARK_manage_members", "category": "Module", "description": "Manage memberships"},
-    {"name": "ARK_manage_bookings", "category": "Module", "description": "Manage room bookings"},
-    {"name": "ARK_manage_events", "category": "Module", "description": "Manage events and programs"},
-    {"name": "ARK_manage_billing", "category": "Module", "description": "Manage billing and invoices"},
-    {"name": "ARK_view_analytics", "category": "Report", "description": "View occupancy and revenue reports"},
-    {"name": "ARK_manage_visitors", "category": "Action", "description": "Manage day passes and visitors"},
+    # Module capabilities
+    {"name": "ARK_manage_spaces", "category": "Module", "description": "Manage coworking spaces and branches"},
+    {"name": "ARK_manage_members", "category": "Module", "description": "Manage memberships and member profiles"},
+    {"name": "ARK_manage_bookings", "category": "Module", "description": "Manage room/desk bookings"},
+    {"name": "ARK_manage_events", "category": "Module", "description": "Manage community events and programs"},
+    {"name": "ARK_manage_billing", "category": "Module", "description": "Manage billing, invoices, and credits"},
+    {"name": "ARK_manage_visitors", "category": "Module", "description": "Manage day passes and visitor logs"},
+    {"name": "ARK_manage_contracts", "category": "Module", "description": "Manage member contracts and legal docs"},
+    {"name": "ARK_manage_training", "category": "Module", "description": "Manage training modules and sessions"},
+    {"name": "ARK_manage_community", "category": "Module", "description": "Manage community posts and networking"},
     {"name": "ARK_admin_settings", "category": "Module", "description": "Configure ARKSpace settings"},
+    # Action capabilities
+    {"name": "ARK_approve_bookings", "category": "Action", "description": "Approve or reject booking requests"},
+    {"name": "ARK_issue_day_pass", "category": "Action", "description": "Issue day passes to visitors"},
+    {"name": "ARK_process_payments", "category": "Action", "description": "Process payments and issue receipts"},
+    {"name": "ARK_manage_credits", "category": "Action", "description": "Issue/revoke member credit wallets"},
+    {"name": "ARK_approve_contracts", "category": "Action", "description": "Approve member contracts"},
+    {"name": "ARK_export_data", "category": "Action", "description": "Export member and booking data"},
+    # Report capabilities
+    {"name": "ARK_view_analytics", "category": "Report", "description": "View occupancy and revenue reports"},
+    {"name": "ARK_view_financial_reports", "category": "Report", "description": "View billing and payment reports"},
+    {"name": "ARK_view_member_reports", "category": "Report", "description": "View membership analytics"},
+    # Field capabilities
+    {"name": "ARK_view_financials", "category": "Field", "description": "View financial data on bookings/contracts"},
+    {"name": "ARK_view_member_contact", "category": "Field", "description": "View member contact information"},
 ]
