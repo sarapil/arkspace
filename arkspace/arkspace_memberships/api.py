@@ -82,6 +82,7 @@ def create_membership(
 	Returns:
 		dict with membership details
 	"""
+	frappe.has_permission("AS Membership", "create", throw=True)
 	frappe.only_for(["System Manager", "ARK Admin", "ARK User"])
 	if not start_date:
 		start_date = nowdate()
@@ -229,6 +230,7 @@ def renew_membership(membership_name, billing_cycle=None):
 	Returns:
 		dict with new membership details
 	"""
+	frappe.has_permission("AS Membership", "write", throw=True)
 	frappe.only_for(["System Manager", "ARK Admin", "ARK User"])
 	old = frappe.get_doc("Membership", membership_name)
 
@@ -277,6 +279,7 @@ def upgrade_membership(membership_name, new_plan, billing_cycle=None):
 	Returns:
 		dict with new membership details
 	"""
+	frappe.has_permission("AS Membership", "write", throw=True)
 	frappe.only_for(["System Manager", "ARK Admin", "ARK User"])
 	old = frappe.get_doc("Membership", membership_name)
 

@@ -173,6 +173,7 @@ def quick_book_space(space, member, booking_type, start_datetime, end_datetime, 
     Returns:
         dict with booking name and details
     """
+    frappe.has_permission("AS Booking", "create", throw=True)
     frappe.only_for(["ARKSpace User", "ARKSpace Manager", "System Manager"])
 
     space_doc = frappe.get_doc("Co-working Space", space)

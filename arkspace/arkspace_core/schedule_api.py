@@ -121,6 +121,7 @@ def get_schedule_data(space_type, date=None, branch=None, business_hours_only=0)
             "hours": { "start": 0, "end": 24, "step": 1 },
         }
     """
+    frappe.has_permission("AS Booking", "read", throw=True)
     frappe.has_permission("Co-working Space", "read", throw=True)
     date = getdate(date or nowdate())
     day_start = datetime.combine(date, dt_time(0, 0))
@@ -307,6 +308,7 @@ def move_booking(booking, new_space, new_start_time=None, new_end_time=None):
     Returns:
         { "success": True, "booking": updated_booking_card }
     """
+    frappe.has_permission("AS Booking", "write", throw=True)
     frappe.only_for(["System Manager", "ARKSpace Admin", "ARKSpace Manager", "ARKSpace Front Desk"])
 
     doc = frappe.get_doc("Space Booking", booking)

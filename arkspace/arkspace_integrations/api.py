@@ -62,6 +62,7 @@ def initiate_payment(
 	Returns:
 		dict with checkout_url, payment_name, gateway
 	"""
+	frappe.has_permission("AS Booking", "write", throw=True)
 	frappe.only_for(["System Manager", "ARK Admin", "ARK User"])
 	from arkspace.arkspace_integrations.payment_gateway import (
 		initiate_payment as _initiate,

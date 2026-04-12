@@ -33,6 +33,7 @@ def preregister_visitor(
 	Returns:
 		dict with visitor log details
 	"""
+	frappe.has_permission("AS Visitor Log", "create", throw=True)
 	frappe.only_for(["System Manager", "ARK Admin", "ARK User"])
 	visitor = frappe.get_doc({
 		"doctype": "Visitor Log",

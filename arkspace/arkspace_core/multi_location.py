@@ -253,6 +253,7 @@ def transfer_membership(membership, target_branch):
 
     Creates a note on the membership and updates the branch field.
     """
+    frappe.has_permission("AS Membership", "write", throw=True)
     mem = frappe.get_doc("Membership", membership)
     mem.check_permission("write")
 

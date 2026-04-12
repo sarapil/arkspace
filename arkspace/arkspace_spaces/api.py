@@ -25,6 +25,7 @@ def get_available_spaces(space_type=None, branch=None, booking_type=None, start=
 	Returns:
 		list of dicts with space details and availability
 	"""
+	frappe.has_permission("AS Space", "read", throw=True)
 	frappe.only_for(["ARKSpace User", "ARKSpace Manager", "System Manager"])
 
 	filters = {"status": ["in", ["Available", "Reserved"]]}
@@ -94,6 +95,7 @@ def create_booking(space, member, booking_type, start_datetime, end_datetime, di
 	Returns:
 		dict with booking name and status
 	"""
+	frappe.has_permission("AS Booking", "create", throw=True)
 	frappe.only_for(["ARKSpace Manager", "System Manager"])
 
 	space_doc = frappe.get_doc("Co-working Space", space)

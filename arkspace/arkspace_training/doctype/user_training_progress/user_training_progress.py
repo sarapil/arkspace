@@ -91,6 +91,7 @@ def update_progress(name, status=None, progress_percent=None, score=None, badge=
 	Returns:
 		updated dict
 	"""
+	frappe.has_permission("User Training Progress", "write", throw=True)
 	frappe.only_for(["ARKSpace Manager", "System Manager"])
 
 	doc = frappe.get_doc("User Training Progress", name)

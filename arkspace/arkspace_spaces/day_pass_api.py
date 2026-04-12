@@ -58,6 +58,7 @@ def create_day_pass(
     Returns:
         dict with day_pass name and details
     """
+    frappe.has_permission("AS Day Pass", "create", throw=True)
     frappe.only_for(["System Manager", "ARK Admin", "ARK User"])
     # Auto-set rate from settings if not provided
     if not rate:
@@ -194,6 +195,7 @@ def convert_day_pass_to_membership(name, plan, billing_cycle="Monthly"):
     Returns:
         dict with membership name and credit applied
     """
+    frappe.has_permission("AS Membership", "create", throw=True)
     frappe.only_for(["System Manager", "ARK Admin", "ARK User"])
     doc = frappe.get_doc("Day Pass", name)
     membership_name = doc.convert_to_membership(plan, billing_cycle)
