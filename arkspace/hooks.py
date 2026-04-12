@@ -72,9 +72,9 @@ website_context = {
 
 # --- Static Assets -----------------------------------------------------------
 
-app_include_css = ["/assets/arkspace/css/arkspace_combined.css"]
+# CODESPACES: app_include_css = ["/assets/arkspace/css/arkspace_combined.css"]
 
-app_include_js = ["/assets/arkspace/js/arkspace_combined.js"]
+# CODESPACES: app_include_js = ["/assets/arkspace/js/arkspace_combined.js"]
 
 # --- Website Assets -----------------------------------------------------------
 
