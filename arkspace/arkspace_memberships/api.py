@@ -68,6 +68,11 @@ def create_membership(
 	member, membership_plan, billing_cycle="Monthly",
 	start_date=None, discount_percent=0, assigned_space=None, branch=None,
 ):
+    frappe.only_for(["AS User", "AS Manager", "System Manager"])
+def create_membership(
+	member, membership_plan, billing_cycle="Monthly",
+	start_date=None, discount_percent=0, assigned_space=None, branch=None,
+):
 	"""Create and submit a new Membership.
 
 	Args:
@@ -219,6 +224,8 @@ def get_member_dashboard(member):
 
 @frappe.whitelist()
 def renew_membership(membership_name, billing_cycle=None):
+    frappe.only_for(["AS User", "AS Manager", "System Manager"])
+def renew_membership(membership_name, billing_cycle=None):
 	"""Renew an existing membership.
 
 	Creates a new Membership as a continuation of the current one.
@@ -266,6 +273,8 @@ def renew_membership(membership_name, billing_cycle=None):
 	}
 
 @frappe.whitelist()
+def upgrade_membership(membership_name, new_plan, billing_cycle=None):
+    frappe.only_for(["AS User", "AS Manager", "System Manager"])
 def upgrade_membership(membership_name, new_plan, billing_cycle=None):
 	"""Upgrade or change membership plan.
 

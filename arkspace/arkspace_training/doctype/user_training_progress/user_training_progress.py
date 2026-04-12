@@ -37,6 +37,8 @@ class UserTrainingProgress(Document):
 
 @frappe.whitelist()
 def enroll_user(user, training_module, training_session=None):
+    frappe.only_for(["AS User", "AS Manager", "System Manager"])
+def enroll_user(user, training_module, training_session=None):
 	"""Enroll a user in a training module / session.
 
 	Args:
@@ -78,6 +80,8 @@ def enroll_user(user, training_module, training_session=None):
 
 
 @frappe.whitelist()
+def update_progress(name, status=None, progress_percent=None, score=None, badge=None):
+    frappe.only_for(["AS User", "AS Manager", "System Manager"])
 def update_progress(name, status=None, progress_percent=None, score=None, badge=None):
 	"""Update a User Training Progress record.
 

@@ -160,6 +160,8 @@ def _get_upcoming_bookings(space_name, now, limit=3):
 
 @frappe.whitelist()
 def quick_book_space(space, member, booking_type, start_datetime, end_datetime, notes=None):
+    frappe.only_for(["AS User", "AS Manager", "System Manager"])
+def quick_book_space(space, member, booking_type, start_datetime, end_datetime, notes=None):
     """Create a quick booking from the ARK Live floor plan.
 
     Args:

@@ -22,6 +22,13 @@ def preregister_visitor(
 	expected_arrival=None, expected_departure=None,
 	visiting_space=None, visiting_branch=None, notes=None,
 ):
+    frappe.only_for(["AS User", "AS Manager", "System Manager"])
+def preregister_visitor(
+	visitor_name, purpose="Meeting", host=None,
+	visitor_email=None, visitor_phone=None, visitor_company=None,
+	expected_arrival=None, expected_departure=None,
+	visiting_space=None, visiting_branch=None, notes=None,
+):
 	"""Pre-register an expected visitor.
 
 	Args:

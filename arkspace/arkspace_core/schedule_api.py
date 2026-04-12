@@ -107,6 +107,8 @@ def get_space_types():
 
 @frappe.whitelist()
 def get_schedule_data(space_type, date=None, branch=None, business_hours_only=0):
+    frappe.only_for(["AS User", "AS Manager", "System Manager"])
+def get_schedule_data(space_type, date=None, branch=None, business_hours_only=0):
     """
     Return the full schedule grid for a given space type on a date.
 
@@ -253,6 +255,8 @@ def get_schedule_data(space_type, date=None, branch=None, business_hours_only=0)
 
 @frappe.whitelist()
 def check_conflicts(space, start_time, end_time, exclude_booking=None):
+    frappe.only_for(["AS User", "AS Manager", "System Manager"])
+def check_conflicts(space, start_time, end_time, exclude_booking=None):
     """
     Check if a time slot has any conflicts.
 
@@ -294,6 +298,8 @@ def check_conflicts(space, start_time, end_time, exclude_booking=None):
 
 
 @frappe.whitelist()
+def move_booking(booking, new_space, new_start_time=None, new_end_time=None):
+    frappe.only_for(["AS User", "AS Manager", "System Manager"])
 def move_booking(booking, new_space, new_start_time=None, new_end_time=None):
     """
     Move a booking to a different space and/or time slot.

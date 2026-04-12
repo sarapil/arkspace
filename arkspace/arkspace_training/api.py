@@ -43,6 +43,8 @@ def get_training_catalog(category=None, level=None):
 
 @frappe.whitelist()
 def get_upcoming_sessions(training_module=None, branch=None, limit=20):
+    frappe.only_for(["AS User", "AS Manager", "System Manager"])
+def get_upcoming_sessions(training_module=None, branch=None, limit=20):
 	"""Return upcoming training sessions.
 
 	Args:

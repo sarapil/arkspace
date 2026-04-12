@@ -13,6 +13,8 @@ from frappe.utils import now_datetime
 
 @frappe.whitelist()
 def get_available_spaces(space_type=None, branch=None, booking_type=None, start=None, end=None):
+    frappe.only_for(["AS User", "AS Manager", "System Manager"])
+def get_available_spaces(space_type=None, branch=None, booking_type=None, start=None, end=None):
 	"""Return spaces that are available for the given time range.
 
 	Args:
@@ -81,6 +83,8 @@ def get_available_spaces(space_type=None, branch=None, booking_type=None, start=
 
 
 @frappe.whitelist()
+def create_booking(space, member, booking_type, start_datetime, end_datetime, discount_percent=0):
+    frappe.only_for(["AS User", "AS Manager", "System Manager"])
 def create_booking(space, member, booking_type, start_datetime, end_datetime, discount_percent=0):
 	"""Create and optionally submit a new Space Booking.
 

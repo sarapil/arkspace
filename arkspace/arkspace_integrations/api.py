@@ -48,6 +48,16 @@ def initiate_payment(
 	member=None,
 	payment_for=None,
 ):
+    frappe.only_for(["AS User", "AS Manager", "System Manager"])
+def initiate_payment(
+	reference_doctype,
+	reference_name,
+	amount,
+	currency="AED",
+	gateway=None,
+	member=None,
+	payment_for=None,
+):
 	"""Start an online payment flow and return a checkout URL.
 
 	Args:
@@ -98,6 +108,8 @@ def verify_payment(payment_name):
 
 
 @frappe.whitelist()
+def refund_payment(payment_name, amount=None, reason=None):
+    frappe.only_for(["AS User", "AS Manager", "System Manager"])
 def refund_payment(payment_name, amount=None, reason=None):
 	"""Initiate a refund for a completed online payment.
 
