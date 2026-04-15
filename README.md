@@ -170,3 +170,10 @@ For vulnerability reports, see [SECURITY.md](SECURITY.md).
 ## License
 
 [MIT](LICENSE) — ARKSpace Team (dev@arkspace.io)
+
+## Contact
+
+For support and inquiries:
+- Phone: +201508268982
+- WhatsApp: https://wa.me/201508268982
+
