@@ -36,4 +36,4 @@ records = frappe.get_all("Contract Template")
 _Add related DocTypes here_
 
 ---
-*Last updated: 2026-04-11 07:52:38.794340*
+*Last updated: 2026-04-14 05:54:20.325784*
